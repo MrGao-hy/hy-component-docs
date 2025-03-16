@@ -1,14 +1,16 @@
 # 空状态组件
+> 该组件内部实现以uni-app的基础button组件为基础，进行二次封装
 
-::: tip
-需要在最外层包裹一层 view，并且 view 有宽度和高度
+::: tip 温馨提示
+本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。目前该组件仍处于测试阶段。<br>
+感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [button组件](https://uiadmin.net/uview-plus/components/button.html) 的代码实现。
 :::
 
 ## 平台差异说明
 
 | APP | H5 | 微信小程序 |
-|---|---|----|
-|✔| ✔  | ✔     |
+|-----|----|-------|
+| ✔   | ✔  | ✔     |
 
 ## 基本使用示例
 
@@ -24,10 +26,12 @@ import { HyButton } from "hfyk-app"
 
 ## API
 
-| 参数        | 说明           | 类型             | 默认值   | 可选值 |
-| ----------- | -------------- | ---------------- | -------- | ------ |
-| show        | 是否显示空状态 | boolean          | false    | true   |
-| imageUrl    | 空状态图片     | string           | -        | -      |
-| imageSize   | 图片大小       | string \| number | null     | -      |
-| description | 提示文字信息   | string           | 暂无数据 | -      |
-| imgTop      | 图片 top 高度  | string \| number | 0        | -      |
+| 参数        | 说明           | 类型             | 默认值 | 可选值 |
+| ----------- | -------------- | ---------------- |-----|-----|
+| show        | 是否显示空状态 | `boolean`          | -   | -   |
+
+## Events
+
+| 事件名   | 说明 | 回调参数 |
+|-------|----|------|
+| click | -  | -    |

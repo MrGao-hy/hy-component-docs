@@ -1,11 +1,24 @@
 import { defineConfig } from 'vitepress';
-import gitalkPlugin from 'vuepress-plugin-gitalk';
 
 // refer https://vitepress.dev/reference/site-config for details
 export default defineConfig({
-  lang: 'en-US',
+  lang: 'zh-CN',
   title: '华玥组件库',
-  description: 'Vite & Vue powered static site generator.',
+  description: '自定义移动端vue3组件',
+  locales: {
+    root: {
+      label: '中文',
+      lang: 'zh-CN',
+      title: '我的文档',
+      description: '这是一个 VitePress 中文文档示例'
+    },
+    en: {
+      label: 'English',
+      lang: 'en-US',
+      title: 'My Documentation',
+      description: 'This is a VitePress documentation example'
+    }
+  },
   themeConfig: {
     logo: '',
     nav: [
@@ -70,11 +83,12 @@ export default defineConfig({
           text: '表单组件',
           items: [
             { text: 'Form 表单', link: '/components/form' },
-            { text: '日历', link: '/components/calendar' },
+            { text: 'Calendar 日历', link: '/components/calendar' },
             { text: 'Select 下拉框', link: '/components/select' },
             { text: 'Picker 选择器', link: '/components/picker' },
             { text: 'DatetimePicker 时间选择器', link: '/components/datetimePicker' },
-            { text: 'Search 评分', link: '/components/search' },
+            { text: 'Search 搜索', link: '/components/search' },
+            { text: 'rate 评分', link: '/components/rate' },
             { text: 'NumberBox 步进器', link: '/components/numberBox' },
             { text: 'Input 输入框', link: '/components/input' },
             { text: 'Textarea 文本域', link: '/components/textarea' },

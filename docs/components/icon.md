@@ -30,10 +30,16 @@ import { IconConfig, HyIcon } from "hfyk-app";
 ```
 
 ## 图片图标
-
-## 自定义icon
 ```html
 <hy-icon label="uview-plus" size="40" name="https://cdn.uviewui.com/uview/example/button.png"></hy-icon>
+```
+
+## 自定义icon
+- 直接在阿里矢量图标库下载, 
+  - `name`为图标名称, 
+  - `customPrefix`为你项目设置中的FontClass/Symbol前缀
+```html
+<hy-icon label="uview-plus" size="40" name="search" customPrefix="custom-icon"></hy-icon>
 ```
 
 
