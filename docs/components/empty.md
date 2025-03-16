@@ -4,21 +4,22 @@
 需要在最外层包裹一层 view，并且 view 有宽度和高度
 :::
 
-## 使用示例
+## 平台差异说明
+
+| APP | H5 | 微信小程序 |
+|---|---|----|
+|✔| ✔  | ✔     |
+
+## 基本使用示例
 
 ```html
-<template>
-  <view class="outer">
-    <yk-empty></yk-empry>
-  </view>
-</template>
-
-<style lang="scss" scoped>
-.outer {
-  width: 100px;
-  height: 200px;
-}
-</style>
+<!-- 全局使用 -->
+<hy-button text="月落"></hy-button>
+<!-- 单个组件引入 -->
+<HyButton type="primary">按钮</HyButton>
+```
+```ts
+import { HyButton } from "hfyk-app"
 ```
 
 ## API

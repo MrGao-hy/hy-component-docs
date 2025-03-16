@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress';
+import gitalkPlugin from 'vuepress-plugin-gitalk';
 
 // refer https://vitepress.dev/reference/site-config for details
 export default defineConfig({
@@ -19,6 +20,10 @@ export default defineConfig({
       {
         text: 'api',
         link: '/api/index'
+      },
+      {
+        text: '下载软件',
+        link: '/download/service'
       },
 
       // {
@@ -52,6 +57,32 @@ export default defineConfig({
             // ...
           ],
         },
+        {
+          text: '基础组件',
+          items: [
+            { text: 'Icon 图标', link: '/components/icon' },
+            { text: 'Button 按钮', link: '/components/button' },
+            { text: 'Badge 徽标', link: '/components/badge' },
+            { text: 'Tag 标签', link: '/components/tag' },
+          ]
+        },
+        {
+          text: '表单组件',
+          items: [
+            { text: 'Form 表单', link: '/components/form' },
+            { text: '日历', link: '/components/calendar' },
+            { text: 'Select 下拉框', link: '/components/select' },
+            { text: 'Picker 选择器', link: '/components/picker' },
+            { text: 'DatetimePicker 时间选择器', link: '/components/datetimePicker' },
+            { text: 'Search 评分', link: '/components/search' },
+            { text: 'NumberBox 步进器', link: '/components/numberBox' },
+            { text: 'Input 输入框', link: '/components/input' },
+            { text: 'Textarea 文本域', link: '/components/textarea' },
+            { text: 'Checkbox 复选框', link: '/components/checkbox' },
+            { text: 'Radio 单选框', link: '/components/radio' },
+            { text: 'Slider 滑块', link: '/components/slider' },
+          ]
+        }
       ],
       '/api/': [
         {
@@ -118,6 +149,25 @@ export default defineConfig({
             }
           ]
         }
+      ],
+      '/download': [
+        {
+          text: '免费下载软件',
+          items: [
+            {
+              text: '前端下载软件',
+              link: '/download/web',
+            },
+            {
+              text: '服务器下载软件',
+              link: '/download/service',
+            },
+            {
+              text: '后端下载软件',
+              link: '/download/java',
+            }
+          ]
+        },
       ]
     },
   },
