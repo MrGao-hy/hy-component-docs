@@ -21,7 +21,7 @@ export default defineConfig({
     }
   },
   themeConfig: {
-    logo: '',
+    logo: 'https://pic1.imgdb.cn/item/67d7edcc88c538a9b5bfec44.png',
     nav: [
       {
         text: '组件库',
