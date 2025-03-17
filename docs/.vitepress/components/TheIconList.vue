@@ -8,9 +8,11 @@
       </div>
     </template>
   </div>
+
 </template>
 <script setup lang="ts">
 import { reactive } from "vue";
+import {notification} from "ant-design-vue";
 
 // 图标集合
 const icon = reactive([
@@ -419,8 +421,11 @@ const icon = reactive([
 // 复制icon值
 const copyIconValFn = async (value: string) => {
   await navigator.clipboard.writeText(value);
-  alert(`“${value}”已复制到剪贴板！`);
+  notification.success( {
+    message: `“${value}”已复制到剪贴板！`
+  })
 }
+
 </script>
 
 <style lang="scss" scoped>
@@ -428,8 +433,8 @@ const copyIconValFn = async (value: string) => {
   display: flex;
   flex-wrap: wrap;
   &-box {
-    width: 20%;
-    height: 150px;
+    width: 16.5%;
+    height: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -442,16 +447,20 @@ const copyIconValFn = async (value: string) => {
       box-shadow: 0 0 10rpx 10rpx rgba(0, 0, 0, 0.51);
     }
     .iconfont {
-      font-size: 40px;
+      font-size: 30px;
+      color: var(--vp-c-text-2);
     }
     .name {
       margin-top: 20px;
+      font-size: 12px;
+      line-height: 14px;
     }
     .value {
+      font-size: 12px;
       width: 100%;
-      overflow: hidden; //超出的文本隐藏
-      text-overflow: ellipsis; //用省略号显示
-      white-space: nowrap; //不换行
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
       text-align: center;
     }
   }

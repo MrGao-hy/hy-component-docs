@@ -23,6 +23,7 @@
 ```ts
 import { HyButton } from "hfyk-app"
 ```
+<yk-button :text="按钮" />
 
 ## 设置按钮的多种形态
 

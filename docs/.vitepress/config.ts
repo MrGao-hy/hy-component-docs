@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress';
 
 // refer https://vitepress.dev/reference/site-config for details
 export default defineConfig({
+  appearance: 'dark',
   lang: 'zh-CN',
   title: '华玥组件库',
   description: '自定义移动端vue3组件',

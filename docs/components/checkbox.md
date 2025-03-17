@@ -172,7 +172,7 @@ const value = ref(["apply"]);
 
 ## Slots
 
-| 插槽名   | 说明           |
-|-------|--------------|
-| icon  | 自定义`icon`内容  |
-| label | 自定义`label`内容 |
+| 插槽名   | 说明           | 传值                    |
+|-------|--------------|-----------------------|
+| icon  | 自定义`icon`内容  | iconColor \| iconSize |
+| label | 自定义`label`内容 | record                |

@@ -12,6 +12,7 @@
     "vitepress": "latest"
   },
   "dependencies": {
+    "ant-design-vue": "4.x",
     "gitalk": "^1.8.0"
   }
 }
