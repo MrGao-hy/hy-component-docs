@@ -7,6 +7,8 @@
     "docs:preview": "vitepress preview docs"
   },
   "devDependencies": {
+    "sass-embedded": "^1.85.1",
+    "scss": "^0.2.4",
     "vitepress": "latest"
   },
   "dependencies": {

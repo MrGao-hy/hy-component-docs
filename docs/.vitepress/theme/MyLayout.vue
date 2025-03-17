@@ -39,3 +39,7 @@ onMounted(() => {
   );
 });
 </script>
+
+<style>
+@import "https://at.alicdn.com/t/c/font_4305932_u681xk47ct.css";
+</style>

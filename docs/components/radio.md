@@ -34,7 +34,7 @@ const columns = [
         value: "banana"
     }
 ];
-const value = ref(["apply"]);
+const value = ref("apply");
 ```
 
 ## 自定义columns键
@@ -55,7 +55,7 @@ const columns = [
         value_1: "banana"
     }
 ];
-const value = ref([]);
+const value = ref("");
 const fieldNames = ref({
     label: "name",
     value: "value_1",
@@ -108,7 +108,7 @@ const columns = [
         value: "banana"
     }
 ];
-const value = ref(["apply"]);
+const value = ref("apply");
 ```
 
 ## 插槽
@@ -138,7 +138,7 @@ const columns = [
         value: "banana"
     }
 ];
-const value = ref(["apply"]);
+const value = ref("apply");
 ```
 
 ## API

@@ -12,6 +12,7 @@
 
 ## 基本使用示例
 
+
 ```html
 <!-- 全局导入 -->
 <hy-icon :name="IconConfig.Loading"></hy-icon>
@@ -71,3 +72,10 @@ import { IconConfig, HyIcon } from "hfyk-app";
 |事件名|说明| 回调参数                         |
 |--|--|------------------------------|
 |click|点击图标时触发| `index`: 通过`props`传递的`index`值 |
+
+
+## 图标集
+<script setup>
+import TheIconList from '../.vitepress/components/TheIconList.vue'
+</script>
+<TheIconList />
