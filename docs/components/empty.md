@@ -8,7 +8,7 @@
 
 ## 平台差异说明
 
-| APP | H5 | 微信小程序 |
+| APP(vue) | H5 | 微信小程序 |
 |-----|----|-------|
 | ✔   | ✔  | ✔     |
 
@@ -35,3 +35,12 @@ import { HyButton } from "hfyk-app"
 | 事件名   | 说明 | 回调参数 |
 |-------|----|------|
 | click | -  | -    |
+
+## slots
+
+| 插槽名  | 说明 | 传值 |
+|------|----|----|
+| name | -  | -  |
+
+`small` \| `medium` \| `large`
+`error` \|  `warning` \|  `success` \| `primary` \| `info`

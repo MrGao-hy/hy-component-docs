@@ -76,6 +76,7 @@ export default defineConfig({
           items: [
             { text: 'Icon 图标', link: '/components/icon' },
             { text: 'Button 按钮', link: '/components/button' },
+            { text: 'Cell 徽标', link: '/components/cell' },
             { text: 'Badge 徽标', link: '/components/badge' },
             { text: 'Tag 标签', link: '/components/tag' },
           ]

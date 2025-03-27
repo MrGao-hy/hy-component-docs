@@ -237,9 +237,19 @@ const icon = reactive([
     name: "WARNING"
   },
   {
+    icon: "warning-fill",
+    label: "警告-实心",
+    name: "WARNING_FILL"
+  },
+  {
     icon: "delete",
     label: "删除",
     name: "DELETE"
+  },
+  {
+    icon: "delete-fill",
+    label: "删除-实心",
+    name: "DELETE_FILL"
   },
   {
     icon: "screen",
@@ -283,8 +293,13 @@ const icon = reactive([
   },
   {
     icon: "close-circle",
-    label: "关闭-圈",
+    label: "关闭圆圈",
     name: "CLOSE_CIRCLE"
+  },
+  {
+    icon: "close-circle-fill",
+    label: "关闭圆圈-实心",
+    name: "CLOSE_CIRCLE_FILL"
   },
   {
     icon: "notice",
@@ -292,9 +307,9 @@ const icon = reactive([
     name: "NOTICE"
   },
   {
-    icon: "checked",
-    label: "选中",
-    name: "CHECKED"
+    icon: "notice-fill",
+    label: "注意-实心",
+    name: "NOTICE_FILL"
   },
   {
     icon: "success",
@@ -302,9 +317,19 @@ const icon = reactive([
     name: "SUCCESS"
   },
   {
+    icon: "success-fill",
+    label: "成功-实心",
+    name: "SUCCESS_FILL"
+  },
+  {
     icon: "help",
     label: "帮助",
     name: "HELP"
+  },
+  {
+    icon: "help-fill",
+    label: "帮助-实心",
+    name: "HELP_FILL"
   },
   {
     icon: "upload",
@@ -387,6 +412,21 @@ const icon = reactive([
     name: "COMMENT"
   },
   {
+    icon: "message",
+    label: "消息",
+    name: "MESSAGE"
+  },
+  {
+    icon: "message-fill",
+    label: "消息-实心",
+    name: "MESSAGE_FILL"
+  },
+  {
+    icon: "systemprompt_fill",
+    label: "通知-实心",
+    name: "NOTIFICATION_FILL"
+  },
+  {
     icon: "attachment",
     label: "附件",
     name: "ATTACHMENT"
@@ -415,6 +455,21 @@ const icon = reactive([
     icon: "order",
     label: "订单",
     name: "ORDER"
+  },
+  {
+    icon: "share",
+    label: "分享",
+    name: "SHARE"
+  },
+  {
+    icon: "share-fill",
+    label: "分享-实心",
+    name: "SHARE_FILL"
+  },
+  {
+    icon: "send",
+    label: "发送",
+    name: "SEND"
   }
 ])
 
@@ -429,6 +484,7 @@ const copyIconValFn = async (value: string) => {
 </script>
 
 <style lang="scss" scoped>
+@import "https://at.alicdn.com/t/c/font_4305932_ldk8742h9z7.css";
 .container {
   display: flex;
   flex-wrap: wrap;
