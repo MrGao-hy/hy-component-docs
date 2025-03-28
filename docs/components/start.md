@@ -1,8 +1,30 @@
-# 我的组件库
+# 华玥组件库
 
 ::: tip
-
 针对移动端项目，uniapp+vue3，需要使用到 uview-plus 组件库
+:::
+
+::: info 温馨提示
+node(推荐) >= 16.14.0
+:::
+
+## 安装组件
+::: code-group
+```shell [npm]
+$ npm install hfyk-app
+```
+
+```shell [pnpm]
+$ pnpm install hfyk-app
+```
+
+```shell [cnpm]
+$ cnpm install hfyk-app
+```
+
+```shell [yarn]
+$ yarn install hfyk-app
+```
 :::
 
 ## 按需引入组件
@@ -17,7 +39,7 @@ import { ykInput } from 'hfyk-app'
 
 ## 如何全局引入组件
 
-###### 如果你只想在h5使用，你可以这么引入
+###### 1. 如果你只想在h5使用，你可以这么引入
 ::: tip 温馨提示
 这种会增加主包体积，不推荐微信小程序使用
 :::
@@ -36,7 +58,7 @@ export function createApp() {
 }
 ```
 
-###### 如果你想按需加载。你可以这个全局定义
+###### 2. 如果你想按需加载。你可以这个全局定义
 ```html
 <!-- 然后在所需页面直接使用 -->
 <yk-input></yk-input>

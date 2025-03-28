@@ -17,7 +17,7 @@ import {notification} from "ant-design-vue";
 // 图标集合
 const icon = reactive([
   {
-    icon: "jiazai",
+    icon: "loading",
     label: "加载动画",
     name: "LOADING"
   },

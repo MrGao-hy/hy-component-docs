@@ -8,9 +8,9 @@
 
 ## 平台差异说明
 
-| APP | H5 | 微信小程序 |
-|-----|----|-------|
-| ✔   | ✔  | ✔     |
+| APP(vue) | H5 | 微信小程序 |
+|----------|----|-------|
+| ✔        | ✔  | ✔     |
 
 ## 基本使用示例
 
@@ -126,19 +126,19 @@ const change = (e) => {
 
 ## API
 
-| 参数            | 说明                    | 类型                   | 默认值                 | 可选值 |
-|---------------|-----------------------|----------------------|---------------------|-----|
-| v-model       | 通过v-model双向绑定的值       | `boolean`            | false               | -   |
-| loading       | 是否处于加载中               | `boolean`            | false               | -   |
-| disabled      | 是否禁用	                 | `boolean`            | false               | -   |
-| size          | 开关尺寸，单位rpx            | `string` \| `number` | 25                  | -   |
-| activeColor   | 打开时的背景色               | `string`             | ColorConfig.primary | -   |
-| inactiveColor | 关闭时的背景色               | `string`             | #ffffff             | -   |
-| activeValue   | switch打开时的值           | `boolean`            | true                | -   |
-| inactiveValue | switch关闭时的值	          | `boolean`            | false               | -   |
-| asyncChange   | 是否开启异步变更，开启后需要手动控制输入值 | `boolean`            | false               | -   |
-| space         | 圆点与外边框的距离             | `string` \| `number` | 0                   | -   |
-| customStyle   | 自定义样式                 | `CSSProperties`      | -                   | -   |
+| 参数            | 说明                    | 类型                 | 默认值                 |
+|---------------|-----------------------|--------------------|---------------------|
+| v-model       | 通过v-model双向绑定的值       | `boolean`          | false               |
+| loading       | 是否处于加载中               | `boolean`          | false               |
+| disabled      | 是否禁用	                 | `boolean`          | false               |
+| size          | 开关尺寸，单位rpx            | `string`\|`number` | 25                  |
+| activeColor   | 打开时的背景色               | `string`           | ColorConfig.primary |
+| inactiveColor | 关闭时的背景色               | `string`           | #ffffff             |
+| activeValue   | switch打开时的值           | `boolean`          | true                |
+| inactiveValue | switch关闭时的值	          | `boolean`          | false               |
+| asyncChange   | 是否开启异步变更，开启后需要手动控制输入值 | `boolean`          | false               |
+| space         | 圆点与外边框的距离             | `string`\|`number` | 0                   |
+| customStyle   | 自定义样式                 | `CSSProperties`    | -                   |
 
 ## Events
 

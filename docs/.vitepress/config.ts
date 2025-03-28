@@ -22,6 +22,17 @@ export default defineConfig({
   },
   themeConfig: {
     logo: 'https://pic1.imgdb.cn/item/67d7edcc88c538a9b5bfec44.png',
+    search: {
+      provider: 'local'
+    },
+    // aside: false,
+    lastUpdated: {
+      text: 'Updated at',
+      formatOptions: {
+        dateStyle: 'full',
+        timeStyle: 'medium'
+      }
+    },
     nav: [
       {
         text: '组件库',
@@ -76,9 +87,10 @@ export default defineConfig({
           items: [
             { text: 'Icon 图标', link: '/components/icon' },
             { text: 'Button 按钮', link: '/components/button' },
-            { text: 'Cell 徽标', link: '/components/cell' },
+            { text: 'Cell 单元格', link: '/components/cell' },
             { text: 'Badge 徽标', link: '/components/badge' },
             { text: 'Tag 标签', link: '/components/tag' },
+            { text: 'Swiper 轮播图', link: '/components/swiper' }
           ]
         },
         {
@@ -94,9 +106,39 @@ export default defineConfig({
             { text: 'NumberBox 步进器', link: '/components/numberBox' },
             { text: 'Input 输入框', link: '/components/input' },
             { text: 'Textarea 文本域', link: '/components/textarea' },
+            { text: 'CheckButton 复选框按钮', link: '/components/checkButton' },
             { text: 'Checkbox 复选框', link: '/components/checkbox' },
             { text: 'Radio 单选框', link: '/components/radio' },
             { text: 'Slider 滑块', link: '/components/slider' },
+            { text: 'Switch 开关', link: '/components/switch' },
+            { text: 'Upload 上传', link: '/components/upload' },
+          ]
+        },
+        {
+          text: "布局组件",
+          items: [
+            {text: 'List 虚拟列表', link: '/components/list'},
+            {text: 'LineProgress 线形进度条', link: '/components/lineProgress'},
+            {text: 'ScrollList 横向滚动列表', link: '/components/scrollList'},
+            {text: 'Line 线条', link: '/components/line'},
+            {text: 'Card 卡片', link: '/components/card'},
+            {text: 'Overlay 遮罩层', link: '/components/overlay'},
+            {text: 'Grid 宫格布局', link: '/components/grid'},
+            {text: 'Waterfall 瀑布流', link: '/components/waterfall'},
+            {text: 'Divider 分割线', link: '/components/divider'}
+          ]
+        },
+        {
+          text: "反馈组件",
+          items: [
+            { text: 'Tooltip 长按提示', link: '/components/tooltip' },
+            { text: 'ActionSheet 操作菜单', link: '/components/actionSheet' },
+            { text: 'Warn 警告提示', link: '/components/warn' },
+            { text: 'NoticeBar 滚动通知', link: '/components/noticeBar' },
+            { text: 'SwipeAction 滑动单元格', link: '/components/swipeAction' },
+            { text: 'FoldingPanel 折叠面板', link: '/components/foldingPanel' },
+            { text: 'Popup 弹出层', link: '/components/popup' },
+            { text: 'Modal 模态框', link: '/components/modal' }
           ]
         }
       ],

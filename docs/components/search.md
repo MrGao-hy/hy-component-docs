@@ -70,31 +70,31 @@ import { HySearch } from "hfyk-app"
 
 ## API
 
-| 参数               | 说明                              | 类型                   | 默认值               | 可选值             |
-|------------------|---------------------------------|----------------------|-------------------|-----------------|
-| v-model          | 双向绑定输入框搜索值                      | `string`             | -                 | -               |
-| shape            | 搜索框形状，round-圆形，square-方形        | `string`             | round             | round \| square |
-| bgColor          | 搜索框背景颜色	                        | `string`             | #f2f2f2           | -               |
-| placeholder      | 占位文字内容	                         | `string`             | 请输入关键字            | -               |
-| clearabled       | 是否启用清除控件	                       | `boolean`            | true              | -               |
-| focus            | 是否自动获得焦点	                       | `boolean`            | false             | -               |
-| showAction       | 是否显示右侧控件(右侧的"搜索"按钮)	            | `boolean`            | true              | -               |
-| actionStyle      | 右侧控件的样式，对象形式	                   | `CSSProperties`      | -                 | -               |
-| actionText       | 右侧控件文字	                         | `string`             | 搜索                | -               |
-| inputAlign       | 输入框内容水平对齐方式	                    | `string`             | -                 | -               |
-| inputStyle       | 自定义输入框样式，对象形式                   | `CSSProperties`      | left              | left \| right   |
-| disabled         | 是否启用输入框                         | `boolean`            | false             | -               |
-| borderColor      | 边框颜色，配置了颜色，才会有边框                | `string`             | transparent       | -               |
-| searchIconColor  | 搜索图标的颜色，默认同输入框字体颜色              | `string`             | #909399           | -               |
-| searchIconSize   | 搜索图标的大小                         | `number`             | 22                | -               |
-| color            | 输入框字体颜色                         | `string`             | -                 | #606266         |
-| placeholderColor | placeholder的颜色                  | `string`             | #909399           | -               |
-| searchIcon       | 输入框左边的图标，可以为uview-plus图标名称或图片路径 | `string`             | IconConfig.SEARCH | -               |
-| margin           | 组件与其他上下左右元素之间的距离，带单位的字符串形式      | `string`             | -                 | -               |
-| animation        | 是否开启动画，见上方说明                    | `boolean`            | false             | -               |
-| maxlength        | 输入框最大能输入的长度，-1为不限制长度            | `string` \| `number` | -1                | -               |
-| height           | 输入框高度，单位rpx                     | `string` \| `number` | 64                | -               |
-| label            | 搜索左侧文本信息                        | `string`             | -                 | -               |
+| 参数               | 说明                              | 类型                 | 默认值               |
+|------------------|---------------------------------|--------------------|-------------------|
+| v-model          | 双向绑定输入框搜索值                      | `string`           | -                 |
+| shape            | 搜索框形状，round-圆形，square-方形        | `circle`\|`square` | circle            |
+| bgColor          | 搜索框背景颜色	                        | `string`           | #f2f2f2           |
+| placeholder      | 占位文字内容	                         | `string`           | 请输入关键字            |
+| clearabled       | 是否启用清除控件	                       | `boolean`          | true              |
+| focus            | 是否自动获得焦点	                       | `boolean`          | false             |
+| showAction       | 是否显示右侧控件(右侧的"搜索"按钮)	            | `boolean`          | true              |
+| actionStyle      | 右侧控件的样式，对象形式	                   | `CSSProperties`    | -                 |
+| actionText       | 右侧控件文字	                         | `string`           | 搜索                |
+| inputAlign       | 输入框内容水平对齐方式	                    | `left` \| `right`  | left              |
+| inputStyle       | 自定义输入框样式，对象形式                   | `CSSProperties`    | -                 |
+| disabled         | 是否启用输入框                         | `boolean`          | false             |
+| borderColor      | 边框颜色，配置了颜色，才会有边框                | `string`           | transparent       |
+| searchIconColor  | 搜索图标的颜色，默认同输入框字体颜色              | `string`           | #909399           |
+| searchIconSize   | 搜索图标的大小                         | `number`           | 22                |
+| color            | 输入框字体颜色                         | `string`           | #606266           |
+| placeholderColor | placeholder的颜色                  | `string`           | #909399           |
+| searchIcon       | 输入框左边的图标，可以为uview-plus图标名称或图片路径 | `string`           | IconConfig.SEARCH |
+| margin           | 组件与其他上下左右元素之间的距离，带单位的字符串形式      | `string`           | -                 |
+| animation        | 是否开启动画，见上方说明                    | `boolean`          | false             |
+| maxlength        | 输入框最大能输入的长度，-1为不限制长度            | `string`\|`number` | -1                |
+| height           | 输入框高度，单位rpx                     | `string`\|`number` | 64                |
+| label            | 搜索左侧文本信息                        | `string`           | -                 |
 
 ## Events
 

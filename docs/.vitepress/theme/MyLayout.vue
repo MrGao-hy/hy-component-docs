@@ -3,6 +3,9 @@
     <template #doc-after>
       <div id="gitalk-container"></div>
     </template>
+    <template #aside-outline-after>
+      <iframe src="http://localhost:3002/#/" width="100%" height="500px"></iframe>
+    </template>
   </Layout>
 </template>
 
@@ -39,3 +42,10 @@ onMounted(() => {
   );
 });
 </script>
+
+<style>
+@import "../lib/styles/custom.css";
+.gt-container {
+  min-width: 860px;
+}
+</style>

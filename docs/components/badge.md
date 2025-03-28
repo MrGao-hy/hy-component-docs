@@ -79,19 +79,19 @@ import { HyBadge } from "hfyk-app"
 
 ## API
 
-| 参数          | 说明                                                                  | 类型                                                         | 默认值      | 可选值                                        |
-|-------------|---------------------------------------------------------------------|------------------------------------------------------------|----------|--------------------------------------------|
-| isDot       | 不展示数字，只有一个小点                                                        | `boolean`                                                  | -        | -                                          |
-| value       | 展示的数字，大于 overflowCount 时显示为 ${overflowCount}+，为0且show-zero为false时隐藏 | `number`                                                   | -        | -                                          |
-| show        | 组件是否显示                                                              | `boolean`                                                  | true     | -                                          |
-| max         | 最大值，超过最大值会显示 '{max}+'                                               | `number`                                                   | 99       | -                                          |
-| type        | 主题类型                                                                | `error` \|  `warning` \|  `success` \| `primary` \| `info` | error    | error / warning / success / primary / info |
-| showZero    | 当数值为 0 时，是否展示 Badge                                                 | `boolean`                                                  | false    | -                                          |
-| bgColor     | 背景颜色，优先级比type高，如设置，type参数会失效                                        | `string`                                                   | -        | -                                          |
-| color       | 字体颜色                                                                | `string`                                                   | #ffffff  | -                                          |
-| shape       | 徽标形状，circle-四角均为圆角，horn-左下角为直角                                      | `circle` \| `horn`                                         | circle   | circle/horn                                |
-| numberType  | 置数字的显示方式，详细见上方文档                                                    | `overflow` \| `ellipsis` \| `limit`                        | overflow | overflow / ellipsis / limit                |
-| offset      | 设置badge的位置偏移，格式为 [x, y]，也即设置的为top和right的值，absolute为true时有效          | `array`                                                    | -        | -                                          |
-| inverted    | 是否反转背景和字体颜色                                                         | `boolean`                                                  | false    | -                                          |
-| absolute    | 组件是否绝对定位                                                            | `boolean`                                                  | false    | -                                          |
-| customStyle | 定义需要用到的外部样式                                                         | `CSSProperties`                                            | -        | -                                          |
+| 参数          | 说明                                                                  | 类型                                                         | 默认值      |
+|-------------|---------------------------------------------------------------------|------------------------------------------------------------|----------|
+| isDot       | 不展示数字，只有一个小点                                                        | `boolean`                                                  | -        |
+| value       | 展示的数字，大于 overflowCount 时显示为 ${overflowCount}+，为0且show-zero为false时隐藏 | `number`                                                   | -        |
+| show        | 组件是否显示                                                              | `boolean`                                                  | true     |
+| max         | 最大值，超过最大值会显示 '{max}+'                                               | `number`                                                   | 99       |
+| type        | 主题类型                                                                | `error` \|  `warning` \|  `success` \| `primary` \| `info` | error    |
+| showZero    | 当数值为 0 时，是否展示 Badge                                                 | `boolean`                                                  | false    |
+| bgColor     | 背景颜色，优先级比type高，如设置，type参数会失效                                        | `string`                                                   | -        |
+| color       | 字体颜色                                                                | `string`                                                   | #ffffff  |
+| shape       | 徽标形状，circle-四角均为圆角，horn-左下角为直角                                      | `circle` \| `horn`                                         | circle   |
+| numberType  | 置数字的显示方式，详细见上方文档                                                    | `overflow` \| `ellipsis` \| `limit`                        | overflow |
+| offset      | 设置badge的位置偏移，格式为 [x, y]，也即设置的为top和right的值，absolute为true时有效          | `array`                                                    | -        |
+| inverted    | 是否反转背景和字体颜色                                                         | `boolean`                                                  | false    |
+| absolute    | 组件是否绝对定位                                                            | `boolean`                                                  | false    |
+| customStyle | 定义需要用到的外部样式                                                         | `CSSProperties`                                            | -        |

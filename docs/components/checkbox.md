@@ -8,9 +8,9 @@
 
 ## 平台差异说明
 
-| APP | H5 | 微信小程序 |
-|-----|----|-------|
-| ✔   | ✔  | ✔     |
+| APP(vue) | H5 | 微信小程序 |
+|----------|----|-------|
+| ✔        | ✔  | ✔     |
 
 ## 基本使用示例
 
@@ -143,26 +143,41 @@ const value = ref(["apply"]);
 
 ## API
 
-| 参数            | 说明                                           | 类型                   | 默认值                                                  | 可选值              |
-|---------------|----------------------------------------------|----------------------|------------------------------------------------------|------------------|
-| v-model       | 双向绑定值，数组类型                                   | `array`              | -                                                    | -                |
-| columns       | 接收数组值                                        | `array`              | -                                                    | -                |
-| fieldNames    | 自定义接收columns的键                               | `object`             | \{label: "label",value: "value",checked: "checked"\} | -                |
-| shape         | 复选框形状                                        | `string`             | square                                               | square \| circle |
-| size          | 复选框大小                                        | `string` \| `number` | 18                                                   | -                |
-| disabled      | 是否禁用                                         | `boolean`            | false                                                | -                |
-| activeColor   | 选中状态下的颜色                                     | `string`             | ColorConfig.primary                                  | -                |
-| inactiveColor | 未选中的颜色                                       | `string`             | #c8c9cc                                              | -                |
-| iconSize      | 图标的大小，单位px                                   | `string` \| `number` | 20                                                   | -                |
-| iconColor     | 图标颜色                                         | `string`             | -                                                    | -                |
-| label         | label提示文字，因为nvue下，直接slot进来的文字，由于特殊的结构，无法修改样式 | `string`             | -                                                    | -                |
-| labelSize     | label的字体大小，px单位                              | `string` \| `number` | -                                                    | -                |
-| labelColor    | label的颜色                                     | `string`             | -                                                    | -                |
-| iconPlacement | 勾选图标的对齐方式                                    | `string`             | left                                                 | left \| right    |
-| borderBottom  | 竖向配列时，是否显示下划线                                | `boolean`            | false                                                | -                |
-| labelDisabled | 是否禁止点击提示语选中复选框                               | `string`             | -                                                    | -                |
-| placement     | 布局方式                                         | `string`             | row                                                  | row \| column    |
-| customStyle   | 定义需要用到的外部样式                                  | `CSSProperties`      | -                                                    | -                |
+| 参数            | 说明              | 类型                 | 默认值                                                  |
+|---------------|-----------------|--------------------|------------------------------------------------------|
+| v-model       | 双向绑定值，数组类型      | `array`            | -                                                    |
+| columns       | 接收数组值           | `array`            | -                                                    |
+| fieldNames    | 自定义接收columns的键  | `object`           | \{label: "label",value: "value",checked: "checked"\} |
+| shape         | 复选框形状           | `circle`\|`square` | square                                               |
+| size          | 复选框大小           | `string`\|`number` | 18                                                   |
+| disabled      | 是否禁用            | `boolean`          | false                                                |
+| activeColor   | 选中状态下的颜色        | `string`           | ColorConfig.primary                                  |
+| inactiveColor | 未选中的颜色          | `string`           | #c8c9cc                                              |
+| iconSize      | 图标的大小，单位px      | `string`\|`number` | 20                                                   |
+| iconColor     | 图标颜色            | `string`           | -                                                    |
+| label         | label提示文字       | `string`           | -                                                    |
+| labelSize     | label的字体大小，px单位 | `string`\|`number` | -                                                    |
+| labelColor    | label的颜色        | `string`           | -                                                    |
+| iconPlacement | 勾选图标的对齐方式       | `left`\|`right`    | left                                                 |
+| borderBottom  | 竖向配列时，是否显示下划线   | `boolean`          | false                                                |
+| labelDisabled | 是否禁止点击提示语选中复选框  | `string`           | -                                                    |
+| placement     | 布局方式            | `row`\|`column`    | row                                                  |
+| customStyle   | 定义需要用到的外部样式     | `CSSProperties`    | -                                                    |
+
+## columns
+| 参数       | 说明     | 类型        | 默认值 |
+|----------|--------|-----------|-----|
+| label    | 显示文本内容 | `string`  | -   |
+| value    | 值      | `string`  | -   |
+| checked  | 是否选中   | `boolean` | -   |
+| disabled | 是否禁用   | `boolean` | -   |
+
+## API
+| 参数      | 说明             | 类型       | 默认值     |
+|---------|----------------|----------|---------|
+| label   | 自定义columns的文本键 | `string` | label   |
+| value   | 自定义columns的值键  | `string` | value   |
+| checked | 自定义columns的选中键 | `string` | checked |
 
 ## Events
 
