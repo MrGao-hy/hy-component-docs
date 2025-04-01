@@ -57,24 +57,49 @@ const columns = [
 
 ## API
 
-| 参数        | 说明           | 类型             | 默认值 |
-| ----------- | -------------- | ---------------- |-----|
-| show        | 是否显示空状态 | `boolean`          | -   |
+| 参数            | 说明          | 类型                         | 默认值                 |
+|---------------|-------------|----------------------------|---------------------|
+| list          | 列表数据集       | `array`                    | -                   |
+| accordion     | 是否手风琴模式     | `boolean`                  | false               |
+| title         | 头部标题        | `string`                   | -                   |
+| titleBorder   | 是否显示头部底部边框  | `boolean`                  | false               |
+| border        | 是否显示cell下边框 | `boolean`                  | true                |
+| verticalColor | 标题前缀竖线颜色    | `string`                   | ColorConfig.primary |
+| showVertical  | 是否显示标题前缀竖线  | `boolean`                  | true                |
+| disabled      | 是否禁用        | `boolean`                  | false               |
+| size          | 单元的大小       | `small`\|`medium`\|`large` | medium              |
+| contentHeight | 内容面板高度      | `string` \| `number`       | 120                 |
+| customStyle   | 定义需要用到的外部样式 | `CSSProperties`            | -                   |
+
+
+## list
+
+| 参数             | 说明         | 类型                   | 默认值  |
+|----------------|------------|----------------------|------|
+| spread         | 是否展示       | `boolean`            | -    |
+| icon           | 单元格左图标     | `string`             | -    |
+| title          | 单元格标题      | `string`             | -    |
+| sub            | 单元格副标题     | `string`             | -    |
+| disabled       | 是否禁用单元格    | `boolean`            | -    |
+| rightIcon      | 单元格右图标     | `string`             | -    |
+| value          | 单元格值       | `string`             | -    |
+| url            | 跳转页面地址     | `string`             | -    |
+| arrowDirection | 单元格右侧箭头的方向 | `left`\|`up`\|`down` | left |
+| content        | 展示面板里值     | `string`             | -    |
 
 ## Events
 
-| 事件名   | 说明 | 回调参数 |
-|-------|----|------|
-| click | -  | -    |
+| 事件名    | 说明       | 回调参数                    |
+|--------|----------|-------------------------|
+| change | 改成面板开关状态 | temp：list单条数据, index：索引 |
+| open   | 打开面板     | temp：list单条数据, index：索引 |
+| close  | 关闭面板     | temp：list单条数据, index：索引 |
 
 ## slots
 
-| 插槽名  | 说明 | 接收值 |
-|------|----|----|
-| name | -  | -  |
-
-`circle`\|`square`
-`small`\|`medium`\|`large`
-`error`\|`warning`\|`success`\|`primary`\|`info`
-`bottom`\|`center`\|`left`\|`right`\|`top`
-`row`\|`column`
+| 插槽名     | 说明         | 接收值    |
+|---------|------------|--------|
+| default | 主体部分的内容    | record |
+| icon    | 单元格图标      | icon   |
+| title   | 单元格标题内容    | title  |
+| value   | 单元格右侧value | record |

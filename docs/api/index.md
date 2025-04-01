@@ -1,6 +1,6 @@
 # 便捷工具
-::: tip
-此专题内容为一些方便用户快速，便捷使用的小工具，可能是uview-plus的一些方法的简易版，或者对uni的一些方法进行二次封装，方便用户 快速使用。
+::: tip 温馨提示
+此封装方法挂载在全局上，通过全局注入可以开箱即用，方便用户快速使用。
 :::
 
 ### 全局注入
@@ -20,27 +20,27 @@ export function createApp () {
 ## 添加单位
 ```html
 <template>
-    <div :style="{ height: $gxh.addUnit(10) }"></div>
+    <view :style="{ height: $hy.addUnit(10) }"></view>
 </template>
 ```
 
 ## 获取随机数
 ```html
 <template>
-    <div>{{$gxh.random(1, 10)}}</div>
+    <view>{{$hy.random(1, 10)}}</view>
 </template>
 ```
 
 ## 时间戳格式化
 ```html
 <template>
-    <div>{{$gxh.formatTime(1702051200000)}}</div>
+    <view>{{$hy.formatTime(1702051200000)}}</view>
 </template>
 ```
 
 ## 字节转化单位
 ```html
 <template>
-    <div>{{$gxh.bytesToSize(10000)}}</div>
+    <view>{{$hy.bytesToSize(10000)}}</view>
 </template>
 ```

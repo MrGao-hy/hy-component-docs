@@ -10,7 +10,7 @@ export default defineConfig({
     root: {
       label: '中文',
       lang: 'zh-CN',
-      title: '我的文档',
+      title: '华玥组件库',
       description: '这是一个 VitePress 中文文档示例'
     },
     en: {
@@ -139,6 +139,29 @@ export default defineConfig({
             { text: 'FoldingPanel 折叠面板', link: '/components/foldingPanel' },
             { text: 'Popup 弹出层', link: '/components/popup' },
             { text: 'Modal 模态框', link: '/components/modal' }
+          ]
+        },
+        {
+          text: "导航组件",
+          items: [
+            { text: 'Dropdown 下拉菜单', link: '/components/dropdown' },
+            { text: 'TabBar 底部导航栏', link: '/components/tabBar' },
+            { text: 'BackTop 返回顶部', link: '/components/backTop' },
+            { text: 'Navbar 自定义导航栏', link: '/components/navbar' },
+            { text: 'Tabs 标签', link: '/components/tabs' },
+            { text: 'Subsection 分段器', link: '/components/subsection' },
+            { text: 'Steps 步骤条', link: '/components/steps' },
+            { text: 'Empty 空状态', link: '/components/empty' }
+          ]
+        },
+        {
+          text: "其他组件",
+          items: [
+            { text: 'Parse 富文本', link: '/components/parse' },
+            { text: 'ReadMore 展开阅读更多', link: '/components/readMore' },
+            { text: 'Avatar 头像', link: '/components/avatar' },
+            { text: 'Transition 动画', link: '/components/transition' },
+            { text: 'Qrcode 二维码', link: '/components/qrcode' }
           ]
         }
       ],
