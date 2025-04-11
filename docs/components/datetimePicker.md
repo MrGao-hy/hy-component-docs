@@ -1,5 +1,5 @@
-# 空状态组件
-> 此选择器用于时间日期
+# DatetimePicker 时间选择器组件
+> 此选择器用于时间日期选择
 
 ::: danger 注意
 注意： 请先执行npm i dayjs安装依赖。
@@ -7,7 +7,7 @@
 
 ::: tip 温馨提示
 本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。目前该组件仍处于测试阶段。<br>
-感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [button组件](https://uiadmin.net/uview-plus/components/button.html) 的代码实现。
+感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [datetimePicker组件](https://uiadmin.net/uview-plus/components/datetimePicker.html) 的代码实现。
 :::
 
 
@@ -196,6 +196,10 @@ const value1 = ref(Date.now());
 | visibleItemCount    | 每列中可见选项的数量           | `number`                                                                                   | 5                  |
 | closeOnClickOverlay | 是否允许点击遮罩关闭选择器        | `boolean`                                                                                  | false              |
 | defaultIndex        | 各列的默认索引              | `array`                                                                                    | -                  |
+| disabled            | 是否禁用输入框              | `boolean`                                                                                  | false              |
+| disabledColor       | 禁用时候输入框背景色           | `string`                                                                                   | #F5F5F5            |
+| toolbarRightSlot    | 是否右边插槽               | `boolean`                                                                                  | false              |
+| customStyle         | 自定义输入框外部样式           | `CSSProperties`                                                                            | -                  |
 
 ## Events
 
@@ -207,10 +211,10 @@ const value1 = ref(Date.now());
 | cancel  | 点击取消按钮	         | -                    |
 
 ## Slots
-| 插槽名            | 说明                                                          |
-|----------------|-------------------------------------------------------------|
-| toolbar-right  | 工具栏右侧内容，自定义右侧内容，因为微信小程序限制，需要同时设置:toolbarRightSlot="true"生效。 |
-| toolbar-bottom | 输入框下方自定义区域                                                  |
+| 插槽名            | 说明                                                          | 接收值 |
+|----------------|-------------------------------------------------------------|-----|
+| toolbar-right  | 工具栏右侧内容，自定义右侧内容，因为微信小程序限制，需要同时设置:toolbarRightSlot="true"生效。 | -   |
+| toolbar-bottom | 输入框下方自定义区域                                                  | -   |
 
 ## Methods
 | 方法名          | 说明                     |

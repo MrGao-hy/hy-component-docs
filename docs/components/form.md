@@ -1,78 +1,211 @@
-# 表单组件
+# Form 表单组件
+> 此组件一般用于表单场景，可以配置Input输入框，Select弹出框，进行表单验证等。
 
-::: tip
-上传图片目前还是有问题，待优化
+::: tip 温馨提示
+本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。目前该组件仍处于测试阶段。<br>
+感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [form组件](https://uiadmin.net/uview-plus/components/form.html) 的代码实现。
 :::
+
+## 平台差异说明
+
+| APP(vue) | H5 | 微信小程序 |
+|----------|----|-------|
+| ✔        | ✔  | ✔     |
 
 ## 使用示例
 
 ```html
-<template>
-  <yk-form :columns="columns" :formData="formData"></yk-form>
-</template>
+<!-- 全局使用 -->
+<hy-form :columns="columns" :formData="formData"></hy-form>
+<!-- 单个组件引入 -->
+<HyForm :columns="columns" :formData="formData"></HyForm>
 ```
 
-```javascript
-import { TypeEnum } from "hfyk-app";
+```ts
+import { reactive, ref } from "vue";
+import { HyWarn, FormTypeEnum, HyForm, HyInput, HyButton } from "hfyk-app";
+import type { FormColumnsType } from "hfyk-app";
 
-const sexList = [
-	{
-		name: "男生",
-		value: "1",
-	},
-	{
-		name: "女生",
-		value: "0",
-	}
-];
-const constellationList = [
-	[
-		"水瓶座",
-		"双鱼座",
-		"白羊座",
-		"金牛座",
-		"双子座",
-		"巨蟹座",
-		"狮子座",
-		"处女座",
-		"天秤座",
-		"天蝎座",
-		"射手座",
-		"摩羯座",
-	],
-];
-const columns = [
-	{ field: "name", label: "用户名", type: TypeEnum.INPUT },
-	{
-		field: "avatar",
-		label: "网络头像",
-		type: TypeEnum.UPLOAD
-	},
-	{ field: "address", label: "省/市/县", type: TypeEnum.ADDRESS },
-	{ field: "sex", label: "性别", type: TypeEnum.RADIO, actions: sexList },
-  { field: "birthDate", label: "出生日期", type: TypeEnum.DATE, mode: "date" },
-	{
-		field: "constellation",
-		label: "星座",
-		type: TypeEnum.SELECT,
-		column: constellationList,
-	},
-	{ field: "isShow", label: "是否显示", type: TypeEnum.SWITCH },
-  { field: "detail", label: "详情", type: TypeEnum.DETAIL },
-  { field: "textarea", label: "备注", type: TypeEnum.TEXTAREA }
-];
+const formData: AnyObject = reactive({
+    custom: "自定义值",
+    isShow: true,
+    sex: "1"
+});
+const formRef = ref<InstanceType<typeof HyForm>>(null);
 
-const formData = {
-  name: "",
-  avatar: "",
-  address: "",
-  sex: 0,
-  birthDate: "",
-  constellation: "",
-  isShow: false,
-  detail: "",
-  textarea: ""
-}
+const columns: FormColumnsType[] = reactive([
+    {
+        field: "name",
+        label: "名字",
+        type: FormTypeEnum.TEXT,
+        rules: {
+            required: true,
+            message: "没有填内容",
+            trigger: ["blur"]
+        }
+    },
+    {
+        field: "sex",
+        label: "性别",
+        type: FormTypeEnum.RADIO,
+        actions: [
+            { label: "女", value: "0" },
+            { label: "男", value: "1" }
+        ],
+        rules: {
+            required: true,
+            message: "没有填内容",
+            trigger: ["blur", "change"]
+        }
+    },
+    {
+        field: "phone",
+        label: "手机号",
+        type: FormTypeEnum.TEXT,
+        rules: [
+            {
+                required: true,
+                message: "请输入您的手机号",
+                trigger: ["blur", "change"]
+            },
+            {
+                type: "phone",
+                trigger: ["blur", "change"]
+            }
+        ]
+    },
+    {
+        field: "password",
+        label: "密码",
+        type: FormTypeEnum.PASSWORD,
+        rules: {
+            type: "password",
+            trigger: ["blur", "change"]
+        }
+    },
+    {
+        field: "isShow",
+        label: "是否禁用",
+        type: FormTypeEnum.SWITCH
+    },
+    {
+        field: "time",
+        label: "日期",
+        type: FormTypeEnum.DATE,
+        border: "bottom",
+        rules: {
+            required: true,
+            message: "请输入您的日期",
+            trigger: ["blur", "change"]
+        }
+    },
+    {
+        field: "address",
+        label: "地址",
+        type: FormTypeEnum.ADDRESS,
+        rules: {
+            required: true,
+            message: "请输入您的地址",
+            trigger: ["blur", "change"]
+        }
+    },
+    {
+        field: "select",
+        label: "选择学历",
+        type: FormTypeEnum.SELECT,
+        select: [
+            [
+                { text: "小学", id: "1" },
+                { text: "初中", id: "2" },
+                { text: "高中", id: "3" },
+                { text: "大学", id: "4" }
+            ]
+        ],
+        rules: {
+            required: true,
+            message: "请输入您的学历",
+            trigger: ["blur", "change"]
+        }
+    },
+    {
+        field: "age",
+        label: "年龄",
+        type: FormTypeEnum.NUMBER,
+        rules: [
+            {
+                required: true,
+                message: "请输入您的年龄",
+                trigger: ["blur", "change"]
+            },
+            {
+                required: true,
+                message: "不能小于最小值",
+                min: 10,
+                trigger: ["blur", "change"]
+            },
+            {
+                message: "不能大于最大值",
+                max: 20,
+                trigger: ["change"]
+            }
+        ]
+    },
+    {
+        field: "remark",
+        label: "备注",
+        type: FormTypeEnum.TEXTAREA,
+        rules: {
+            required: true,
+            message: "请输入您的地址",
+            trigger: ["blur", "change"]
+        }
+    }
+]);
+
+const handleSubmit = () => {
+    formRef.value.handleSubmit().then((res) => {
+        console.log(res);
+    });
+};
+```
+
+## 自定义插槽
+
+```html
+<template>
+    <HyForm
+            ref="formRef"
+            :columns="columns"
+            :form-data="formData"
+            labelWidth="90"
+    >
+        <template #default="{ record, errorStyle }">
+            <HyInput
+                v-model="formData[record.field]"
+                :custom-style="errorStyle"
+            ></HyInput>
+        </template>
+    </HyForm>
+</template>
+
+<script setup lang="ts">
+    import { reactive } from "vue";
+    import { FormTypeEnum, HyForm, HyInput } from "hfyk-app";
+    import type { FormColumnsType } from "hfyk-app";
+    
+    const columns: FormColumnsType[] = reactive([
+        {
+            field: "custom",
+            label: "自定义内容",
+            type: FormTypeEnum.CUSTOM,
+            rules: {
+                required: true,
+                message: "请输入您的自定义内容",
+                trigger: ["blur", "change"]
+            }
+        }
+    ]);
+</script>
 ```
 
 ## API

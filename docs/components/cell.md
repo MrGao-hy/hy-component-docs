@@ -123,7 +123,7 @@ const list = ref([
 |----------------|-----------|----------------------|-----|
 | icon           | 左图标       | `string`             | -   |
 | title          | 标题        | `string`             | -   |
-| sub            | 副标题       | `string`             | -   |
+| subhead        | 副标题       | `string`             | -   |
 | disabled       | 是否禁用      | `boolean`            | -   |
 | rightIcon      | 右图标       | `string`             | -   |
 | value          | cell中间的值  | `string`             | -   |

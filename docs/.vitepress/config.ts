@@ -101,6 +101,7 @@ export default defineConfig({
             { text: 'Select 下拉框', link: '/components/select' },
             { text: 'Picker 选择器', link: '/components/picker' },
             { text: 'DatetimePicker 时间选择器', link: '/components/datetimePicker' },
+            { text: 'AddressPicker 地址选择器', link: '/components/addressPicker' },
             { text: 'Search 搜索', link: '/components/search' },
             { text: 'rate 评分', link: '/components/rate' },
             { text: 'NumberBox 步进器', link: '/components/numberBox' },
