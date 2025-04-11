@@ -3,9 +3,9 @@
     <template #doc-after>
       <div id="gitalk-container"></div>
     </template>
-    <template #aside-outline-after>
-      <iframe src="http://localhost:3002/#/" width="100%" height="500px"></iframe>
-    </template>
+<!--    <template #aside-outline-after>-->
+<!--      <iframe src="http://localhost:3002/#/" width="100%" height="500px"></iframe>-->
+<!--    </template>-->
   </Layout>
 </template>
 
