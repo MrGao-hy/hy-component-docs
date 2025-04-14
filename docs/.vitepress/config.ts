@@ -258,7 +258,6 @@ export default defineConfig({
             noResultsText: '没有找到结果',
             footer: {
               selectText: '选择',
-              noResultsText: '未找到结果',
               statsText: {
                 one: '1个结果',
                 other: '{n}个结果'
@@ -284,7 +283,6 @@ export default defineConfig({
     },
     socialLinks: [
       { icon: "github", link: 'https://github.com/gaoxianhua/' },
-      { icon: "gitlab", link: 'https://gitee.com/gao-xianhua' },
       { icon: "gitee", link: 'https://gitee.com/gao-xianhua' }
     ]
   },
