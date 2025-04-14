@@ -284,8 +284,8 @@ export default defineConfig({
     },
     socialLinks: [
       { icon: "github", link: 'https://github.com/gaoxianhua/' },
-      { icon: "gitee", link: 'https://gitee.com/gao-xianhua' },
-      { icon: "https://pic1.imgdb.cn/item/67f8dc6288c538a9b5cadf4e.png", link: 'https://gxh151.top/h5' }
+      { icon: "gitlab", link: 'https://gitee.com/gao-xianhua' },
+      { icon: "gitee", link: 'https://gitee.com/gao-xianhua' }
     ]
   },
 });
