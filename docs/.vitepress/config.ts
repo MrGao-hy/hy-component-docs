@@ -6,6 +6,7 @@ export default defineConfig({
   lang: 'zh-CN',
   title: '华玥组件库',
   description: '自定义移动端vue3组件',
+  ignoreDeadLinks: true,
   locales: {
     root: {
       label: '中文',
