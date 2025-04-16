@@ -25,7 +25,7 @@
 </HyReadMore>
 ```
 ```ts
-import { HyReadMore } from "hfyk-app";
+import { HyReadMore } from "hy-app";
 import { ref } from 'vue';
 
 const content = ref(`山不在高，有仙则名。水不在深，有龙则灵。斯是陋室，惟吾德馨。  

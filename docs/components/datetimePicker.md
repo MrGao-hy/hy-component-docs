@@ -26,7 +26,7 @@
 <HyDatetimePicker hasInput></HyButton>
 ```
 ```ts
-import { HyDatetimePicker } from "hfyk-app"
+import { HyDatetimePicker } from "hy-app"
 ```
 
 ## 通过外部按钮打开

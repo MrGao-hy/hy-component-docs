@@ -21,7 +21,7 @@
 <HyWarn type="primary">按钮</HyWarn>
 ```
 ```ts
-import { HyWarn } from "hfyk-app"
+import { HyWarn } from "hy-app"
 ```
 
 ## 基本使用示例

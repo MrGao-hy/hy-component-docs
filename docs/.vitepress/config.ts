@@ -1,4 +1,9 @@
 import { defineConfig } from 'vitepress';
+import footnote from 'markdown-it-footnote';
+import {
+  groupIconMdPlugin,
+  groupIconVitePlugin
+} from 'vitepress-plugin-group-icons'
 
 // refer https://vitepress.dev/reference/site-config for details
 export default defineConfig({
@@ -23,8 +28,8 @@ export default defineConfig({
   },
   themeConfig: {
     logo: {
-      light: "https://pic1.imgdb.cn/item/67f8d95b88c538a9b5cad4f1.png",
-      dark: "https://pic1.imgdb.cn/item/67f8dfea88c538a9b5caea38.png",
+      light: "/images/hy_logo_light.png",
+      dark: "/images/hy_logo_dark.png",
     },
     nav: [
       {
@@ -58,20 +63,12 @@ export default defineConfig({
     sidebar: {
       '/components/': [
         {
-          text: '组件库',
+          text: '开发指南',
           items: [
-            {
-              text: '快速开始',
-              link: '/components/start',
-            },
-            { text: '登录组件', link: '/components/login' },
-            { text: '表单组件', link: '/components/form' },
-            { text: '空状态组件', link: '/components/empty' },
-            { text: '底部导航栏组件', link: '/components/tabbar' },
-            { text: '金额组件', link: '/components/price' },
-            { text: '选项卡组件', link: '/components/tabs' },
-            { text: '上传组件', link: '/components/upload' },
-            // ...
+            { text: '介绍', link: '/components/intro' },
+            { text: '快速开始', link: '/components/start' },
+            { text: '配置主题', link: '/components/theme' },
+            { text: '内置样式', link: '/components/style' },
           ],
         },
         {
@@ -152,6 +149,16 @@ export default defineConfig({
           items: [
             { text: 'Parse 富文本', link: '/components/parse' },
             { text: 'ReadMore 展开阅读更多', link: '/components/readMore' },
+            { text: 'Avatar 头像', link: '/components/avatar' },
+            { text: 'Transition 动画', link: '/components/transition' },
+            { text: 'Qrcode 二维码', link: '/components/qrcode' }
+          ]
+        },
+        {
+          text: "业务组件",
+          items: [
+            { text: 'Login 登录', link: '/components/login' },
+            { text: 'Price 金额', link: '/components/price' },
             { text: 'Avatar 头像', link: '/components/avatar' },
             { text: 'Transition 动画', link: '/components/transition' },
             { text: 'Qrcode 二维码', link: '/components/qrcode' }
@@ -253,16 +260,10 @@ export default defineConfig({
             buttonAriaLabel: '搜索'
           },
           modal: {
-            searchBoxPlaceholder: '搜索文档',
             resetButtonTitle: '清除查询条件',
-            closeButtonAriaLabel: '关闭搜索',
             noResultsText: '没有找到结果',
             footer: {
               selectText: '选择',
-              statsText: {
-                one: '1个结果',
-                other: '{n}个结果'
-              },
               closeText: '关闭',
               navigateText: '导航到结果'
             }
@@ -284,7 +285,22 @@ export default defineConfig({
     },
     socialLinks: [
       { icon: "github", link: 'https://github.com/gaoxianhua/' },
-      { icon: "gitee", link: 'https://gitee.com/gao-xianhua' }
+      { icon: "gitee", link: 'https://gitee.com/gao-xianhua' },
+      { icon: "csdn", link: 'https://blog.csdn.net/weixin_68340504?type=blog' }
     ]
   },
+  head: [
+    ['link', { rel: 'icon', href: '/images/hy_logo_light.png' }]
+  ],
+  markdown: {
+    config: (md) => {
+      md.use(footnote);
+      md.use(groupIconMdPlugin);
+    },
+  },
+  vite: {
+    plugins: [
+      groupIconVitePlugin()
+    ],
+  }
 });

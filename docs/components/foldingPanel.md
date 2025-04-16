@@ -27,7 +27,7 @@
 <HyFoldingPanel type="primary"></HyFoldingPanel>
 ```
 ```ts
-import { HyFoldingPanel } from "hfyk-app";
+import { HyFoldingPanel } from "hy-app";
 
 const columns = [
     {

@@ -29,7 +29,7 @@
 </HyScrollList>
 ```
 ```ts
-import { HyScrollList } from "hfyk-app";
+import { HyScrollList } from "hy-app";
 
 const list = ref<any[]>([
     "https://img0.baidu.com/it/u=1913990970,584854398&fm=253&id=1",

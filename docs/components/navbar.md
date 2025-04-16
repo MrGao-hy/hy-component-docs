@@ -21,7 +21,7 @@
 <HyNavbar title="个人中心"></HyNavbar>
 ```
 ```ts
-import { HyNavbar } from "hfyk-app"
+import { HyNavbar } from "hy-app"
 ```
 
 ## 防止塌陷

@@ -21,7 +21,7 @@
 <HyModal :show="true" title="通知"></HyModal>
 ```
 ```ts
-import { HyModal } from "hfyk-app"
+import { HyModal } from "hy-app"
 ```
 
 ## 点击遮罩关闭

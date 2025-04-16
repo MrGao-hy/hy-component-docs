@@ -21,7 +21,7 @@
 <HyQrcode text="https://gxh151.top"></HyQrcode>
 ```
 ```ts
-import { HyQrcode } from "hfyk-app"
+import { HyQrcode } from "hy-app"
 ```
 
 ## 加载状态

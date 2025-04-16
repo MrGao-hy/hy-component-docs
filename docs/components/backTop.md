@@ -21,7 +21,7 @@
 <HyBackTop :scroll-top="scrollTop"></HyBackTop>
 ```
 ```ts
-import { HyBackTop } from "hfyk-app";
+import { HyBackTop } from "hy-app";
 import { onPageScroll } from '@dcloudio/uni-app';
 
 // 创建响应式数据 scrollTop  

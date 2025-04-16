@@ -20,7 +20,7 @@
 <HyTextarea v-model="value"></HyTextarea>
 ```
 ```javascript
-import { HyTextarea } from "hfyk-app"
+import { HyTextarea } from "hy-app"
 import { ref } from 'vue';
 
 const value = ref('');

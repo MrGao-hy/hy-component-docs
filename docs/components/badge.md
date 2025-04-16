@@ -21,7 +21,7 @@
 <HyBadge :value="10"></HyBadge>
 ```
 ```ts
-import { HyBadge } from "hfyk-app"
+import { HyBadge } from "hy-app"
 ```
 
 ## 设置徽标的类型为一个圆点

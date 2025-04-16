@@ -9,10 +9,12 @@
   "devDependencies": {
     "sass-embedded": "^1.85.1",
     "scss": "^0.2.4",
-    "vitepress": "latest"
+    "vitepress": "latest",
+    "vitepress-plugin-group-icons": "^1.5.2"
   },
   "dependencies": {
     "ant-design-vue": "4.x",
-    "gitalk": "^1.8.0"
+    "gitalk": "^1.8.0",
+    "markdown-it-footnote": "^4.0.0"
   }
 }

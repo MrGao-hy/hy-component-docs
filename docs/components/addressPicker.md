@@ -23,7 +23,7 @@
 <HyAddressPicker hasInput></HyButton>
 ```
 ```ts
-import { HyAddressPicker } from "hfyk-app"
+import { HyAddressPicker } from "hy-app"
 ```
 
 ## 通过外部按钮打开

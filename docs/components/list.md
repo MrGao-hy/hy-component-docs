@@ -29,7 +29,7 @@
 </HyList>
 ```
 ```ts
-import { HyButton } from "hfyk-app";
+import { HyButton } from "hy-app";
 
 const list = ref([]);
 for (let i = 0; i < 2000; i++) {

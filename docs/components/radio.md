@@ -21,7 +21,7 @@
 <HyRadio v-model="value" :columns="columns"></HyRadio>
 ```
 ```ts
-import { HyRadio } from "hfyk-app";
+import { HyRadio } from "hy-app";
 import { ref } from "vue";
 
 const columns = [
@@ -145,7 +145,7 @@ const value = ref("apply");
 
 | 参数            | 说明              | 类型                 | 默认值                                                  |
 |---------------|-----------------|--------------------|------------------------------------------------------|
-| v-model       | 双向绑定值，数组类型      | `array`            | -                                                    |
+| v-model       | 双向绑定值，数组类型      | `string`\|`number` | -                                                    |
 | columns       | 接收数组值           | `array`            | -                                                    |
 | fieldNames    | 自定义接收columns的键  | `object`           | \{label: "label",value: "value",checked: "checked"\} |
 | shape         | 复选框形状           | `circle`\|`square` | circle                                               |
@@ -172,7 +172,7 @@ const value = ref("apply");
 | checked  | 是否选中   | `boolean` | -   |
 | disabled | 是否禁用   | `boolean` | -   |
 
-## API
+## fieldNames
 | 参数      | 说明             | 类型       | 默认值     |
 |---------|----------------|----------|---------|
 | label   | 自定义columns的文本键 | `string` | label   |

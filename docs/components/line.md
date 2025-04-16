@@ -21,7 +21,7 @@
 <HyLine></HyLine>
 ```
 ```ts
-import { HyLine } from "hfyk-app"
+import { HyLine } from "hy-app"
 ```
 
 ## 自定义颜色

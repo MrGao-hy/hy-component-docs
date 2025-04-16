@@ -21,9 +21,8 @@
 <HyButton type="primary">按钮</HyButton>
 ```
 ```ts
-import { HyButton } from "hfyk-app"
+import { HyButton } from "hy-app"
 ```
-<yk-button :text="按钮" />
 
 ## 设置按钮的多种形态
 

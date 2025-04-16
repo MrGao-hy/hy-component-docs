@@ -72,7 +72,7 @@ $ yarn install hfyk-app
 ```
 
 ```javascript
-import { ykInput } from 'hfyk-app'
+import { ykInput } from 'hy-app'
 ```
 
 ## 如何全局引入组件
@@ -82,10 +82,10 @@ import { ykInput } from 'hfyk-app'
 这种会增加主包体积，不推荐微信小程序使用
 :::
 
-```javascript
+```ts [./src/main.ts]
 import { createSSRApp } from "vue";
 import App from "./App.vue";
-import { install } from "hfyk-app";
+import { install } from "hy-app";
 
 export function createApp() {
     const app = createSSRApp(App);
@@ -99,15 +99,15 @@ export function createApp() {
 ###### 2. 如果你想按需加载。你可以这个全局定义
 ```html
 <!-- 然后在所需页面直接使用 -->
-<yk-input></yk-input>
+<hy-input></hy-input>
 ```
 
 > 在pages.json文件引入全局组件库
-```json
+```json [./src/pages.json]
 {
   "easycom": {
     "custom": {
-      "^yk-(.*)": "hfyk-app/components/yk-$1/yk-$1.vue"
+      "^hy-(.*)": "hy-app/components/hy-$1/hy-$1.vue"
     }
   }
 }

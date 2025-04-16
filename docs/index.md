@@ -20,13 +20,13 @@ features:
     details: 作者是Amoureux555，
     link: http://43.138.46.170/
   - icon:
-      src: https://pic1.imgdb.cn/item/67f8dc6288c538a9b5cadf4e.png
+      src: /images/diary_logo.png
     title: h5项目端
     details: 通过uniapp+vue3自己搭建的第一个H5项目，用于旅游打卡...
     link: https://gxh151.top/h5
   - icon:
-      dark: /img.png
-      light: /img.png
+      dark: /images/img.png
+      light: /images/img.png
     title: 低代码平台
     details: 未完待续...
 ---

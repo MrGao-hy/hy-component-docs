@@ -21,7 +21,7 @@
 <HyLineProgress :percentage="30"></HyLineProgress>
 ```
 ```ts
-import { HyLineProgress } from "hfyk-app"
+import { HyLineProgress } from "hy-app"
 ```
 
 ## 不显示百分比

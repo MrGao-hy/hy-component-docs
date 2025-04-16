@@ -21,7 +21,7 @@
 <HyButton :show="show" :columns="columns"></HyButton>
 ```
 ```ts
-import { HyButton } from "hfyk-app"
+import { HyButton } from "hy-app"
 import { ref, reactive } from 'vue';
 
 const show = ref(true);

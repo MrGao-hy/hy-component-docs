@@ -1,5 +1,5 @@
-# ActionSheet 操作菜单组件
-> 本组件用于从底部弹出一个操作菜单，供用户选择并返回结果。
+# 空状态组件
+> 该组件内部实现以uni-app的基础button组件为基础，进行二次封装
 
 ::: tip 温馨提示
 本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。目前该组件仍处于测试阶段。<br>
@@ -55,3 +55,8 @@ import { HyButton } from "hy-app"
 `error`\|`warning`\|`success`\|`primary`\|`info`
 `bottom`\|`center`\|`left`\|`right`\|`top`
 `row`\|`column`
+`surround`\|`bottom`\|`none`
+
+[^1]: `normal`：默认尺寸；`large`：大尺寸； `small`：小尺寸；`mini`：迷你尺寸
+[^2]: `error`：#fa3534；`warning`：#ff9900；`success`：#19be6b；`primary`：#2979ff； `info`：#909399；
+[^3]: `circle`：两边为半圆；`square`：方形带圆角

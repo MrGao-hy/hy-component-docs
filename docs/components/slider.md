@@ -21,7 +21,7 @@
 <HySlider v-model="value">按钮</HySlider>
 ```
 ```ts
-import { HySlider } from "hfyk-app"
+import { HySlider } from "hy-app"
 import { ref } from 'vue';
 
 const value = ref(30);  

@@ -21,7 +21,7 @@
 <HyDivider text="月落"></HyDivider>
 ```
 ```ts
-import { HyDivider } from "hfyk-app"
+import { HyDivider } from "hy-app"
 ```
 
 ## 设置虚线

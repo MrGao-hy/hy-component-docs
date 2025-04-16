@@ -21,7 +21,7 @@
 <HyNoticeBar text="欢迎使用华悦组件库"></HyNoticeBar>
 ```
 ```ts
-import { HyNoticeBar } from "hfyk-app"
+import { HyNoticeBar } from "hy-app"
 ```
 
 ## 可关闭

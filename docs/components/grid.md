@@ -21,7 +21,7 @@
 <HyGrid :list="list"></HyGrid>
 ```
 ```ts
-import { HyGrid, IconConfig } from "hfyk-app"
+import { HyGrid, IconConfig } from "hy-app"
 import { ref } from 'vue';
 
 // 创建响应式数据  

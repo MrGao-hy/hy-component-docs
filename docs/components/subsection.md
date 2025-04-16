@@ -21,7 +21,7 @@
 <HySubsection :list="list"></HySubsection>
 ```
 ```ts
-import { HyButton } from "hfyk-app";
+import { HyButton } from "hy-app";
 import { ref } from "vue";
 
 const list = ref(['未付款', '待评价', '已付款']);

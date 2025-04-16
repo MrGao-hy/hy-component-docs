@@ -20,7 +20,7 @@
 <HyIcon :name="IconConfig.Loading"></HyIcon>
 ```
 ```js
-import { IconConfig, HyIcon } from "hfyk-app";
+import { IconConfig, HyIcon } from "hy-app";
 ```
 
 ## 修改图标的样式
@@ -30,10 +30,32 @@ import { IconConfig, HyIcon } from "hfyk-app";
 <hy-icon name="photo" color="#2979ff" size="28"></hy-icon>
 ```
 
-## 图片图标
+## 图片图标(带圆角)
 ```html
-<hy-icon label="uview-plus" size="40" name="https://cdn.uviewui.com/uview/example/button.png"></hy-icon>
+<view class="hy-flex">
+  <hy-icon
+          name="https://q9.itc.cn/q_70/images03/20250211/6ee1b8e0f4704083ba715986c8c3795f.jpeg"
+          size="80"
+          round="5px"
+  />
+</view>
 ```
+
+## 图标文字位置
+```html
+<view class="hy-flex">
+  <hy-icon :name="IconConfig.LOCK" label="横向" label-pos="right" />
+  <hy-icon :name="IconConfig.LOCK" label="纵向" label-pos="bottom" />
+</view>
+```
+
+## 图标旋转
+```html
+<view class="hy-flex">
+  <hy-icon :name="IconConfig.LOCK" is-rotate />
+</view>
+```
+
 
 ## 自定义icon
 - 直接在阿里矢量图标库下载, 

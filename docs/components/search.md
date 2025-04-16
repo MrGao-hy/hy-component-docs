@@ -21,7 +21,7 @@
 <HySearch type="primary">按钮</HySearch>
 ```
 ```ts
-import { HySearch } from "hfyk-app"
+import { HySearch } from "hy-app"
 ```
 
 ## 设置输入框形状

@@ -13,18 +13,19 @@
 | ✔        | ✔  | ✔     |
 
 ## 使用示例
+::: code-group
 
-```html
+```html [vue]
 <!-- 全局使用 -->
 <hy-form :columns="columns" :formData="formData"></hy-form>
 <!-- 单个组件引入 -->
 <HyForm :columns="columns" :formData="formData"></HyForm>
 ```
 
-```ts
+```ts [index.ts]
 import { reactive, ref } from "vue";
 import { HyWarn, FormTypeEnum, HyForm, HyInput, HyButton } from "hfyk-app";
-import type { FormColumnsType } from "hfyk-app";
+import type { FormColumnsType } from "hy-app";
 
 const formData: AnyObject = reactive({
     custom: "自定义值",
@@ -168,10 +169,15 @@ const handleSubmit = () => {
     });
 };
 ```
+:::
 
 ## 自定义插槽
+::: danger 微信小程序差异
+微信小程序不能动态设置插槽，所以不支持自定义插槽，后续有其他方法会更新文档
+::: 
 
-```html
+::: code-group
+```vue
 <template>
     <HyForm
             ref="formRef"
@@ -179,7 +185,7 @@ const handleSubmit = () => {
             :form-data="formData"
             labelWidth="90"
     >
-        <template #default="{ record, errorStyle }">
+        <template #custom="{ record, errorStyle }">
             <HyInput
                 v-model="formData[record.field]"
                 :custom-style="errorStyle"
@@ -187,63 +193,88 @@ const handleSubmit = () => {
         </template>
     </HyForm>
 </template>
-
-<script setup lang="ts">
-    import { reactive } from "vue";
-    import { FormTypeEnum, HyForm, HyInput } from "hfyk-app";
-    import type { FormColumnsType } from "hfyk-app";
-    
-    const columns: FormColumnsType[] = reactive([
-        {
-            field: "custom",
-            label: "自定义内容",
-            type: FormTypeEnum.CUSTOM,
-            rules: {
-                required: true,
-                message: "请输入您的自定义内容",
-                trigger: ["blur", "change"]
-            }
-        }
-    ]);
-</script>
 ```
+
+```ts [index.ts]
+import { reactive } from "vue";
+import { FormTypeEnum, HyForm, HyInput } from "hfyk-app";
+import type { FormColumnsType } from "hfyk-app";
+
+const columns: FormColumnsType[] = reactive([
+    {
+        field: "custom",
+        label: "自定义内容",
+        type: FormTypeEnum.CUSTOM,
+        rules: {
+            required: true,
+            message: "请输入您的自定义内容",
+            trigger: ["blur", "change"]
+        }
+    }
+]);
+```
+:::
 
 ## API
 
-| 参数          | 说明                 | 类型    | 默认值 | 可选值                                           |
-| ------------- | -------------------- | ------- | ------ | ------------------------------------------------ |
-| labelPosition | 表单域提示文字的位置 | string  | left   | left - 左侧、top - 上方                          |
-| labelWidth    | label 宽度           | string  | auto   | 数字 - 固定值、auto - 自适应                     |
-| right         | 输入值是否右对齐     | boolean | false  | true                                             |
-| labelAlign    | lable 字体的对齐方式 | string  | left   | left - 左对齐、center - 中间对齐、right - 右对齐 |
-| columns       | 表单配置             | array   | -      | -                                                |
-| formData      | 表单值               | object  | -      | -                                                |
-| formRules     | 表单效验             | object  | -      | -                                                |
+| 参数            | 说明            | 类型                           | 默认值      |
+|---------------|---------------|------------------------------|----------|
+| labelPosition | 表单域提示文字的位置    | `left` \| `top`              | left     |
+| labelWidth    | label 宽度      | `string` \| `number`         | auto     |
+| right         | 输入值是否右对齐      | `boolean`                    | false    |
+| labelAlign    | label 字体的对齐方式 | `string`                     | left     |
+| disabled      | 是否全部禁用[^1]    | `boolean`                    | left     |
+| shape         | 输入框形状         | `circle` \| `square`         | square   |
+| border        | 输入框边框         | `surround`\|`bottom`\|`none` | surround |
+| columns       | 表单字段配置        | `array`                      | -        |
+| formData      | 表单值           | `object`                     | -        |
 
 ### columns
 
-| 参数        | 说明                                                   | 类型    | 默认值   | 可选值                                                          |
-| ----------- | ------------------------------------------------------ | ------- | -------- | --------------------------------------------------------------- |
-| label       | 文字描述                                               | string  | -        | -                                                               |
-| field       | 字段名                                                 | string  | -        | -                                                               |
-| required    | 是否需要校验，只显示红星，需要和 formRules 搭配        | boolean | false    | true                                                            |
-| right       | 内容右固定                                             | boolean | false    | true                                                            |
-| type        | 表单类型                                               | enum    | -        | 见下示例                                                        |
-| maxCount    | 文件上传最大数（type 为 upload 时候）                  | number  | -        | -                                                               |
-| disabled    | 是否禁用                                               | boolean | false    | true                                                            |
-| placeholder | 输入框为空时的占位符                                   | string  | -        | -                                                               |
-| clearable   | 显示清除输入框 icon                                    | boolean | false    | true                                                            |
-| readonly    | 是否只读                                               | boolean | false    | true                                                            |
-| column      | type = select 时候必填(参考 uview-plus 得 Picker 组件) | array   | -        | -                                                               |
-| actions     | type = radio 时候必填(参考 uview-plus 得 radio 组件)   | string  | -        | -                                                               |
-| shape       | 输入框形状(type 等于 input)                            | enum    | square   | CIRCLE - 半圆，<br>SQUARE - 方块                                |
-| border      | 边框类型(type 等于 input)                              | enum    | surround | SURROUND - 四周边框，<br> BOTTOM - 底部边框，<br> NONE - 无边框 |
-| mode        | 日期展示的格式（type 等于 date 选填）                  | enum    | -        | 见下示例                                                        |
+| 参数          | 说明                            | 类型                                          | 默认值 |
+|-------------|-------------------------------|---------------------------------------------|-----|
+| label       | 文字描述                          | `string`                                    | -   |
+| field       | 字段名                           | `string`                                    | -   |
+| required    | 是否需要校验，只显示红星，需要和 formRules 搭配 | `boolean`                                   | -   |
+| right       | 内容右固定                         | `boolean`                                   | -   |
+| type        | 表单类型(见下面枚举出来字段)。              | `enum`                                      | -   |
+| maxCount    | 文件上传最大数（type 为 upload 时候）     | `number`                                    | -   |
+| disabled    | 是否禁用                          | `boolean`                                   | -   |
+| placeholder | 输入框为空时的占位符                    | `string`                                    | -   |
+| clearable   | 显示清除输入框 icon                  | `boolean`                                   | -   |
+| readonly    | 是否只读                          | `boolean`                                   | -   |
+| select      | 选择器配置数据集合[^2]                 | `string[][]`\|`{text:string;id:string}[][]` | -   |
+| actions     | 单选框配置数据集合[^3]                 | `string`                                    | -   |
+| shape       | 输入框形状                         | `circle`\|`square`                          | -   |
+| border      | 边框类型                          | `surround`\|`bottom`\|`none`                | -   |
+| mode        | 日期展示的格式（type 等于 date 选填）      | `enum`                                      | -   |
+| rules       | 校验规则                          | `object`\|`array`                           | -   |
+
+## actions
+
+| 参数       | 说明     | 类型                 | 默认值 |
+|----------|--------|--------------------|-----|
+| label    | 显示文本内容 | `string`           | -   |
+| value    | 获取的值   | `string`\|`number` | -   |
+| checked  | 是否选中   | `boolean`          | -   |
+| disabled | 是否禁用   | `boolean`          | -   |
+
+
+## rules
+
+| 参数        | 说明                | 类型                           | 默认值 |
+|-----------|-------------------|------------------------------|-----|
+| required  | 是否必填              | `boolean`                    | -   |
+| message   | 校验不通过时的提示信息       | `string`                     | -   |
+| trigger   | 表单事件校验            | `(blur\|change)[]`           | -   |
+| min       | 最小输入内容个数          | `number`                     | -   |
+| max       | 最大输入内容个数          | `number`                     | -   |
+| type      | 手机号校验、邮箱校验、复杂密码校验 | `phone`\|`email`\|`password` | -   |
+| validator | 自定义校验规则           | `Function`                   | -   |
 
 ### type 类型
-
 - `UPLOAD` 上传文件
-- `INPUT` 普通输入框
+- `TEXT` 普通输入框
 - `NUMBER` 数字输入框
 - `PASSWORD` 密码输入框
 - `ID_CARD` 身份证 id 输入框
@@ -254,6 +285,7 @@ const handleSubmit = () => {
 - `SWITCH` 开关
 - `DETAIL` 详情
 - `TEXTAREA` 文本域
+- `CUSTOM` 自定义插槽
 
 ### mode 类型
 
@@ -261,3 +293,10 @@ const handleSubmit = () => {
 - `DATE` yyyy-MM-dd
 - `TIME` hh:MM:ss
 - `YEAR_MONTH` yyyy-MM
+- `MONTH_DAY` MM-dd
+- `HOUR_MINUTE` HH:mm
+- `MINUTE_SECOND` mm:SS
+
+[^1]: 这个禁用优先级高于columns里面的disabled
+[^2]: type = select 时候必填(参考 [HyPicker](./picker.md) 组件)
+[^3]: type = radio 时候必填(参考 [HyRadio](./radio.md) 组件)

@@ -21,7 +21,7 @@
 <HySteps :list="list"></HySteps>
 ```
 ```ts
-import { HySteps } from "hfyk-app";
+import { HySteps } from "hy-app";
 const HySteps = ref([
     {title: "已下单", desc: "2024-10-13",},
     {title: "已发货", desc: "2024-10-13",},

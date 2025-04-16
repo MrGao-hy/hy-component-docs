@@ -25,7 +25,7 @@
 <HyNumberStep  v-model="value"></HyNumberStep>
 ```
 ```ts
-import { HyNumberStep } from "hfyk-app"
+import { HyNumberStep } from "hy-app"
 import { vue } from "vue";
 
 const value = ref(12);

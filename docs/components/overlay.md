@@ -21,7 +21,7 @@
 <HyOverlay :show="show" @click="show = false"></HyOverlay>
 ```
 ```ts
-import { HyOverlay } from "hfyk-app";
+import { HyOverlay } from "hy-app";
 import { ref } from 'vue';
 
 const show = ref(true);

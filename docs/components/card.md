@@ -21,7 +21,7 @@
 <HyCard title="标题"></HyCard>
 ```
 ```ts
-import { HyCard } from "hfyk-app"
+import { HyCard } from "hy-app"
 ```
 
 ## 卡片阴影

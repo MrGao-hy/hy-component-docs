@@ -14,10 +14,10 @@
 
 ## 基本使用示例
 
-- 通过type设置输入框的类型，默认text
-- 通过placeholder设置输入框为空时的占位符
-- 通过border配置是否显示输入框的边框
-- 绑定@change事件
+- 通过`type`设置输入框的类型，默认`text`
+- 通过`placeholder`设置输入框为空时的占位符
+- 通过`border`配置是否显示输入框的边框
+- 绑定`@change`事件
 ```html
 <!-- 全局使用 -->
 <hy-input 
@@ -31,7 +31,7 @@
 <HyInput type="primary"  v-model="value"></HyInput>
 ```
 ```ts
-import { HyInput } from "hfyk-app";
+import { HyInput } from "hy-app";
 import { ref } from 'vue';
 
 const value = ref('');

@@ -20,7 +20,7 @@
 <HyTooltip text="复制内容"></HyTooltip>
 ```
 ```ts
-import { HyTooltip } from "hfyk-app"
+import { HyTooltip } from "hy-app"
 ```
 
 ## 下方显示

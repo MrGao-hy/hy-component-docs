@@ -21,7 +21,7 @@
 <HyRate v-model="value"></HyRate>
 ```
 ```ts
-import { HyRate } from "hfyk-app";
+import { HyRate } from "hy-app";
 import { ref } from "vue";
 
 const value = ref(2);

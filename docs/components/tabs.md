@@ -21,7 +21,7 @@
 <HyTabs :list="list"></HyTabs>
 ```
 ```ts
-import { HyTabs } from "hfyk-app"
+import { HyTabs } from "hy-app"
 
 const list = [{ name: "全部" }, { name: "未核销" }, { name: "已核销" }];
 ```

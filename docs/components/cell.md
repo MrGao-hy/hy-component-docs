@@ -21,7 +21,7 @@
 <HyCell :list="list"></HyCell>
 ```
 ```ts
-import { HyCell } from "hfyk-app";
+import { HyCell } from "hy-app";
 import { ref } from "vue";
 
 const list = ref([

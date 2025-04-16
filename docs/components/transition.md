@@ -25,7 +25,7 @@
 </HyTransition>
 ```
 ```ts
-import { HyTransition } from "hfyk-app";
+import { HyTransition } from "hy-app";
 import { ref } from 'vue';
 
 const show = ref(true);

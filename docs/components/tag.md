@@ -21,7 +21,7 @@
 <HyTag text="标签"></HyTag>
 ```
 ```ts
-import { HyTag } from "hfyk-app"
+import { HyTag } from "hy-app"
 ```
 
 ## 主题色

@@ -21,7 +21,7 @@
 <HyUpload :fileList="list"></HyUpload>
 ```
 ```ts
-import { HyUpload } from "hfyk-app"
+import { HyUpload } from "hy-app"
 ```
 
 ## 上传图片模拟状态

@@ -21,7 +21,7 @@
 <HySwitch v-model="value" @change="change">按钮</HySwitch>
 ```
 ```ts
-import { HySwitch } from "hfyk-app";
+import { HySwitch } from "hy-app";
 import { ref } from "vue";
 
 const value = ref(false);

@@ -21,7 +21,7 @@
 <HyPopup :show="true"></HyPopup>
 ```
 ```ts
-import { HyPopup } from "hfyk-app"
+import { HyPopup } from "hy-app"
 ```
 
 ## 设置弹出层的方向
