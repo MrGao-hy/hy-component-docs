@@ -24,28 +24,76 @@
 import { HyButton } from "hy-app"
 ```
 
-## 设置按钮的多种形态
+## 设置按钮的颜色
+- `type`值设置主题色;
+  - `primary`：信息按钮（默认）
+  - `success`：主要按钮
+  - `info`：默认按钮
+  - `warning`：警告按钮
+  - `error`：危险按钮
+- `color`值设置自定义颜色，渐变色;
+```html
+<hy-button type="info" text="默认按钮"></hy-button>
+<hy-button type="success" text="主要按钮"></hy-button>
+<hy-button type="primary" text="信息按钮"></hy-button>
+<hy-button type="error" text="危险按钮"></hy-button>
+<hy-button type="warning" text="警告按钮"></hy-button>
+<hy-button
+        text="渐变色"
+        color="linear-gradient(to right, red, blue)"
+></hy-button>
+```
 
-- `type`值可选的有`default`(默认)、`primary`、`success`、`info`、`warning`、`error`；
+## 按钮镂空
 - 通过`plain`值设置是否镂空。
+```html
+<hy-button type="info" text="默认按钮" plain></hy-button>
+<hy-button type="success" text="主要按钮" plain></hy-button>
+<hy-button type="primary" text="信息按钮" plain></hy-button>
+<hy-button type="error" text="危险按钮" plain></hy-button>
+<hy-button type="warning" text="警告按钮" plain></hy-button>
+<hy-button
+        text="渐变色"
+        color="linear-gradient(to right, red, blue)"
+        plain
+></hy-button>
+```
+
+## 设置按钮图标
+- 通过`icon`值设置是否显示图标。
+- 通过`loading`值设置是否开启加载图标，loadingText设置加载中文字。
+```html
+<!-- 删除图标 -->
+<hy-button type="error" text="删除" :icon="IconConfig.DELETE"></hy-button>
+<!-- 加载按钮 -->
+<hy-button type="success" text="主要按钮" loading></hy-button>
+```
+
+## 按钮形状
+- 通过`shape`值设置按钮形状;
+  - `square`为方形（默认）
+  - `circle`为圆角
+```html
+<hy-button type="success" text="方形按钮" shape="square"></hy-button>
+<hy-button type="success" text="圆形按钮" shape="circle"></hy-button>
+```
+
+
+## 按钮大小
+- 通过`size`值设置按钮的大小。
+```html
+<hy-button type="success" text="大尺寸按钮" size="large" :custom-style="{ marginBottom: '20px' }"></hy-button>
+<hy-button type="success" text="默认按钮" size="medium" :custom-style="{ marginBottom: '20px' }"></hy-button>
+<hy-button type="success" text="小尺寸按钮" size="small" :custom-style="{ marginBottom: '20px' }"></hy-button>
+<hy-button type="success" text="迷你按钮" size="mini" :custom-style="{ marginBottom: '20px' }"></hy-button>
+```
+
+## 设置按钮的多种形态
 - 通过`hairline`值设置是否细边。
 - 通过`disabled`值设置是否禁用。
-- 通过`loading`值设置是否开启加载图标，loadingText设置加载中文字。
-- 通过`icon`值设置是否显示图标。
-- 通过`shape`值设置按钮形状，circle为圆角;
-- 通过`color`值设置按钮渐变颜色;
-- 通过`size`值设置按钮的大小。
-
 ```html
-<hy-button type="primary" text="确定"></hy-button>
-<hy-button type="primary" :plain="true" text="镂空"></hy-button>
-<hy-button type="primary" :plain="true" :hairline="true" text="细边"></hy-button>
-<hy-button type="primary" :disabled="true" text="禁用"></hy-button>
-<hy-button type="primary" loading loadingText="加载中"></hy-button>
-<hy-button type="primary" icon="map" text="图标按钮"></hy-button>
-<hy-button type="primary" shape="circle" text="按钮形状"></hy-button>
-<hy-button text="渐变色按钮" color="linear-gradient(to right, rgb(66, 83, 216), rgb(213, 51, 186))"></hy-button>
-<hy-button type="primary" size="small" text="大小尺寸"></hy-button>
+<hy-button :hairline="true" text="细边"></hy-button>
+<hy-button :disabled="true" text="禁用"></hy-button>
 ```
 
 ## 各家小程序开放能力的对接
@@ -63,7 +111,7 @@ import { HyButton } from "hy-app"
 | customStyle          | 定义需要用到的外部样式                                                                                 | `CSSProperties`                                   | -       |
 | hairline             | 是否显示按钮的细边框                                                                                  | `boolean`                                         | true    |
 | type                 | 按钮的样式类型                                                                                     | `error`\|`warning`\| `success`\|`primary`\|`info` | info    |
-| size                 | 按钮的大小                                                                                       | `small`\|`medium`\|`large`                        | normal  |
+| size                 | 按钮的大小                                                                                       | `small`\|`medium`\|`large`\|`mini`                | medium  |
 | shape                | 按钮外观形状，见上方说明                                                                                | `circle`\|`square`                                | square  |
 | plain                | 按钮是否镂空，背景色透明                                                                                | `boolean`                                         | false   |
 | disabled             | 是否禁用                                                                                        | `boolean`                                         | false   |
@@ -97,3 +145,9 @@ import { HyButton } from "hy-app"
 | error          | 当使用开放能力时，发生错误的回调                                        | -    | 微信小程序 |
 | opensetting    | 在打开授权设置页并关闭后回调	                                         | -    | 微信小程序 |
 | launchapp      | 打开 APP 成功的回调                                            | -    | 微信小程序 |
+
+## slots
+
+| 插槽名     | 说明   | 接收值 |
+|---------|------|----|
+| default | 默认插槽 | -  |

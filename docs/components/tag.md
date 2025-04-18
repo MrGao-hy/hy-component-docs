@@ -25,60 +25,91 @@ import { HyTag } from "hy-app"
 ```
 
 ## 主题色
+- 通过设置`type`配置主题色
+  - `primary`：信息标签（默认）
+  - `success`：主要标签
+  - `info`：默认标签
+  - `warning`：警告标签
+  - `error`：危险标签
+- `color`值设置自定义颜色，渐变色;
 ```html
 <template>
-    <hy-cell :type="warning" text="标签"></hy-cell>
-    <hy-cell :type="success" text="标签"></hy-cell>
-    <hy-cell :type="error" text="标签"></hy-cell>
-    <hy-cell :type="primary" text="标签"></hy-cell>
-    <hy-cell :type="info" text="标签"></hy-cell>
-</template>
-```
-
-## 圆形标签
-```html
-<template>
-    <hy-cell shape="circle" text="标签"></hy-cell>
-    <hy-cell shape="square" text="标签"></hy-cell>
+    <hy-tag text="标签" type="primary"></hy-tag>
+    <hy-tag text="标签" type="success"></hy-tag>
+    <hy-tag text="标签" type="error"></hy-tag>
+    <hy-tag text="标签" type="warning"></hy-tag>
+    <hy-tag text="标签" type="info"></hy-tag>
+    <hy-tag text="标签" bgColor="#800080"></hy-tag>
 </template>
 ```
 
 ## 镂空标签
+- 通过设置`plain`设置镂空背景色
 ```html
 <template>
-    <hy-cell :type="warning" text="标签" plain></hy-cell>
-    <hy-cell :type="success" text="标签" plain></hy-cell>
-    <hy-cell :type="error" text="标签" plain></hy-cell>
-    <hy-cell :type="primary" text="标签" plain></hy-cell>
-    <hy-cell :type="info" text="标签" plain></hy-cell>
+    <hy-tag text="标签" type="primary" plain></hy-tag>
+    <hy-tag text="标签" type="success" plain></hy-tag>
+    <hy-tag text="标签" type="error" plain></hy-tag>
+    <hy-tag text="标签" type="warning" plain></hy-tag>
+    <hy-tag text="标签" type="info" plain></hy-tag>
+    <hy-tag text="标签" color="#800080" borderColor="#800080" plain></hy-tag>
 </template>
 ```
 
 ## 镂空带背景色
+- 通过设置`plainFill`给背景色半透明
 ```html
 <template>
-    <hy-cell :type="warning" text="标签" plain plainFill></hy-cell>
-    <hy-cell :type="success" text="标签" plain plainFill></hy-cell>
-    <hy-cell :type="error" text="标签" plain plainFill></hy-cell>
-    <hy-cell :type="primary" text="标签" plain plainFill></hy-cell>
-    <hy-cell :type="info" text="标签" plain plainFill></hy-cell>
+    <hy-tag text="标签" type="primary" plain plainFill></hy-tag>
+    <hy-tag text="标签" type="success" plain plainFill></hy-tag>
+    <hy-tag text="标签" type="error" plain plainFill></hy-tag>
+    <hy-tag text="标签" type="warning" plain plainFill></hy-tag>
+    <hy-tag text="标签" type="info" plain plainFill></hy-tag>
+    <hy-tag
+            text="标签"
+            color="#800080"
+            borderColor="#800080"
+            bgColor="8000803F"
+            plain
+            plainFill
+    ></hy-tag>
 </template>
 ```
 
 ## 镂空带背景色不带边框
-- 添加`plainFill`属性镂空带背景色
+- 通过`borderColor`属性设置边框颜色
 ```html
 <template>
-    <hy-cell :type="warning" text="标签" plain plainFill borderColor="transparent"></hy-cell>
-    <hy-cell :type="success" text="标签" plain plainFill borderColor="transparent"></hy-cell>
-    <hy-cell :type="error" text="标签" plain plainFill borderColor="transparent"></hy-cell>
-    <hy-cell :type="primary" text="标签" plain plainFill borderColor="transparent"></hy-cell>
-    <hy-cell :type="info" text="标签" plain plainFill borderColor="transparent"></hy-cell>
+    <hy-tag text="标签" type="primary" plain plainFill borderColor="transparent"></hy-tag>
+    <hy-tag text="标签" type="success" plain plainFill borderColor="transparent"></hy-tag>
+    <hy-tag text="标签" type="error" plain plainFill borderColor="transparent"></hy-tag>
+    <hy-tag text="标签" type="warning" plain plainFill borderColor="transparent"></hy-tag>
+    <hy-tag text="标签" type="info" plain plainFill borderColor="transparent"></hy-tag>
+    <hy-tag
+            text="标签"
+            color="#800080"
+            borderColor="transparent"
+            bgColor="8000803F"
+            plain
+            plainFill
+    ></hy-tag>
+</template>
+```
+
+
+## 标签形状
+- 通过设置`shape`设置标签形状
+  - `circle`: 半圆形
+  - `square`: 方块
+```html
+<template>
+  <hy-tag text="圆形" shape="circle"></hy-tag>
+  <hy-tag text="方形" shape="square"></hy-tag>
 </template>
 ```
 
 ## 可关闭标签
-- `tag`在右上角提供了删除标签的样式
+- 通过配置`closable`在右上角提供了删除标签的图标
 ```html
 <template>
     <up-tag text="标签" closable :show="show" @close="show = false"></up-tag>
@@ -93,18 +124,22 @@ import { HyTag } from "hy-app"
 
 ## 标签大小设置
 - `size`属性为您提供了三种规格的标签大小，默认中等。
+  - `large`: 大标签
+  - `medium`: 中标签
+  - `small`: 小标签
 ```html
 <template>
-    <hy-cell text="标签" size="small"></hy-cell>
-    <hy-cell text="标签" size="medium"></hy-cell>
-    <hy-cell text="标签" size="large"></hy-cell>
+  <hy-tag text="标签" size="large"></hy-tag>
+  <hy-tag text="标签" size="medium"></hy-tag>
+  <hy-tag text="标签" size="small"></hy-tag>
 </template>
 ```
 
 ## 标签前缀图标
 ```html
 <template>
-    <hy-cell text="标签" :icon="IconConfig.HELP"></hy-cell>
+    <hy-tag text="地址" :icon="IconConfig.MAP"></hy-tag>
+    <hy-tag text="帮助" :icon="IconConfig.HELP"></hy-tag>
 </template>
 
 <script setup>

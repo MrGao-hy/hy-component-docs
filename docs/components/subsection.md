@@ -58,7 +58,7 @@ const list_1 = ref([{ name: "全部"}, { name: "未核销" }, { name: "已核销
 | 参数            | 说明                    | 类型                       | 默认值                 |
 |---------------|-----------------------|--------------------------|---------------------|
 | list          | 选项的数组，形式见上方"基本使用"     | `array`                  | -                   |
-| current       | 初始化时默认选中的选项索引值        | `number`                 | 0                   |
+| fieldNames    | list自定义键值             | `object`                 | -                   |
 | activeColor   | 激活时的颜色                | `string`                 | ColorConfig.success |
 | inactiveColor | 未激活时的颜色               | `string`                 | #303133             |
 | mode          | 模式选择，见上方"模式选择"说明      | `button` \| `subsection` | button              |
@@ -66,6 +66,12 @@ const list_1 = ref([{ name: "全部"}, { name: "未核销" }, { name: "已核销
 | bold          | 激活选项的字体是否加粗           | `boolean`                | true                |
 | bgColor       | 组件背景颜色，mode为button时有效 | `string`                 | #eeeeef             |
 | keyName       | 从list元素对象中读取的键名       | `string`                 | name                |
+
+## fieldNames
+| 参数    | 说明    | 类型       | 默认值   |
+|-------|-------|----------|-------|
+| label | 显示的文本 | `string` | name  |
+| value | 需要传的值 | `string` | value |
 
 ## Events
 

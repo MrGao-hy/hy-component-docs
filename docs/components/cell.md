@@ -25,10 +25,10 @@ import { HyCell } from "hy-app";
 import { ref } from "vue";
 
 const list = ref([
-    {title: "西施", sub: "沉鱼"},
-    {title: "王昭君", sub: "落雁"},
-    {title: "貂蝉", sub: "闭月"},
-    {title: "杨玉环", sub: "羞花"}
+    {title: "西施", subhead: "沉鱼"},
+    {title: "王昭君", subhead: "落雁"},
+    {title: "貂蝉", subhead: "闭月"},
+    {title: "杨玉环", subhead: "羞花"}
 ])
 ```
 
@@ -48,18 +48,24 @@ const list = ref([
 <script setup>
     import { IconConfig } from "hfyk-app";
     const list = ref([
-        {title: "西施", sub: "沉鱼", icon: IconConfig.HOME_FILL},
-        {title: "王昭君", sub: "落雁"},
-        {title: "貂蝉", sub: "闭月"},
-        {title: "杨玉环", sub: "羞花"}
+        {title: "西施", subhead: "沉鱼", icon: IconConfig.HOME_FILL},
+        {title: "王昭君", subhead: "落雁"},
+        {title: "貂蝉", subhead: "闭月"},
+        {title: "杨玉环", subhead: "羞花"}
     ])
 </script>
 ```
 
-## 右侧内容垂直居中
+## 右侧内容定位
+- 通过设置`arrange`设置改变value的位置
+  - `left`：左边
+  - `center`：中间
+  - `right`：右边
 ```html
 <template>
-    <hy-cell :list="list" center></hy-cell>
+    <hy-cell :list="list" arrange="left"></hy-cell>
+    <hy-cell :list="list" arrange="center"></hy-cell>
+    <hy-cell :list="list" arrange=right""></hy-cell>
 </template>
 ```
 
@@ -78,6 +84,7 @@ const list = ref([
     <hy-cell :list="list" arrow-direction="up"></hy-cell>
     <hy-cell :list="list" arrow-direction="right"></hy-cell>
     <hy-cell :list="list" arrow-direction="down"></hy-cell>
+    <hy-cell :list="list" arrow-direction="left"></hy-cell>
 </template>
 ```
 
@@ -89,10 +96,10 @@ const list = ref([
 
 <script setup>
     const list = ref([
-        {title: "西施", sub: "沉鱼", url: "/pages/componentsB/tag/tag"},
+        {title: "西施", subhead: "沉鱼", url: "/pages/componentsB/tag/tag"},
         {title: "王昭君", url: "/pages/componentsB/tag/tag"},
-        {title: "貂蝉", sub: "闭月"},
-        {title: "杨玉环", sub: "羞花"}
+        {title: "貂蝉", subhead: "闭月"},
+        {title: "杨玉环", subhead: "羞花"}
     ])
 </script>
 ```

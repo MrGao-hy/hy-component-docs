@@ -25,9 +25,21 @@ import { HyBadge } from "hy-app"
 ```
 
 ## 设置徽标的类型为一个圆点
+- 通过`isDot`为true设置圆点
 ```html
 <template>
-    <hy-cell isDot></hy-cell>
+    <hy-badge :value="12" isDot></hy-badge>
+</template>
+```
+
+## 边角形状
+- 通过`shape`设置徽标形状
+  - `circle`四角均为圆角
+  - `horn`左下角为直角
+```html
+<template>
+    <hy-badge :value="123" shape="circle"></hy-badge>
+    <hy-badge :value="123" shape="horn"></hy-badge>
 </template>
 ```
 
@@ -37,45 +49,69 @@ import { HyBadge } from "hy-app"
 - `limit`会依据`1000`作为判断条件，超出1000，显示`${value/1000}K`，比如`2.2k`、`3.34w`，最多保留2位小数
 ```html
 <template>
-    <hy-badge numberType="overflow" max="99" :value="9999"></hy-badge>
-    <hy-badge numberType="ellipsis" max="99" :value="9999"></hy-badge>
-    <hy-badge numberType="limit" max="99" :value="9999"></hy-badge>
+    <hy-badge numberType="overflow" :value="9999"></hy-badge>
+    <hy-badge numberType="ellipsis" :value="9999"></hy-badge>
+    <hy-badge numberType="limit" :value="123456"></hy-badge>
 </template>
 ```
 
-## 主题色
+## 显示主题色
+- 通过`type`设置主题色
+ - `primary`主题信息
+ - `success`主题主要
+ - `error`主题危险
+ - `warning`主题警告
+ - `info`主题默认
+- 通过`bg-color`设置背景色
 ```html
 <template>
-    <hy-cell :type="warning" :value="99"></hy-cell>
-    <hy-cell :type="success" :value="99"></hy-cell>
-    <hy-cell :type="error" :value="99"></hy-cell>
-    <hy-cell :type="primary" :value="99"></hy-cell>
-    <hy-cell :type="info" :value="99"></hy-cell>
+    <hy-badge :value="12" type="primary"></hy-badge>
+    <hy-badge :value="12" type="error"></hy-badge>
+    <hy-badge :value="12" type="info"></hy-badge>
+    <hy-badge :value="12" type="success"></hy-badge>
+    <hy-badge :value="12" type="warning"></hy-badge>
+    <hy-badge :value="12" bg-color="#800080"></hy-badge>
 </template>
 ```
 
-## 设置徽标的类型为一个圆点
-::: tip 提示
-使用`offset`属性必须把`absolute`设置为`true`
+## 反转色
+- 通过`inverted`属性设置为`true`
+::: tip 温馨提示
+如果是自定义颜色反转需要把`color`设置自定义颜色
 :::
 ```html
-<template>
-    <view class="box">
-        <hy-cell absolute :offset="[10, 10]" :value="99"></hy-cell>
-    </view>
-</template>
-
-<style>
-    .box {
-        width: 40px;
-        height: 40px;
-        top: 100px;
-        left: 100px;
-        background: #3a5ccc;
-        position: relative;
-    }
-</style>
+<hy-badge :value="12" type="primary" inverted></hy-badge>
+<hy-badge :value="12" type="error" inverted></hy-badge>
+<hy-badge :value="12" type="info" inverted></hy-badge>
+<hy-badge :value="12" type="success" inverted></hy-badge>
+<hy-badge :value="12" type="warning" inverted></hy-badge>
+<hy-badge :value="12" color="#800080" inverted></hy-badge>
 ```
+
+## 反转色
+::: warning 提示
+此组件内部默认为absulote绝对定位，所以需要给badge父组件(元素)设置position: relative相对定位， 再通过调整`offset`偏移值
+(数组，两个元素，第一个元素为top值，第二个元素为right值，单位rpx，可为负值，如"[-10, -10]")设置到合适的位置即可。
+如果不需要组件内容默认的自动绝对定位，设置absolute参数为false即可。
+:::
+::: code-group
+```html [vue]
+<view class="relative">
+    <hy-badge :value="12" absolute :offset="[-8, 50]"></hy-badge>
+    <hy-avatar
+            size="large"
+            shape="square"
+            src="https://img0.baidu.com/it/u=3196617431,1263013381&fm=253"
+    ></hy-avatar>
+</view>
+```
+
+```scss [index.scss]
+.relative {
+  position: relative;
+}
+```
+:::
 
 ## API
 
