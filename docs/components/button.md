@@ -81,6 +81,10 @@ import { HyButton } from "hy-app"
 
 ## 按钮大小
 - 通过`size`值设置按钮的大小。
+  - `large` 大的
+  - `medium` 中等的
+  - `small` 小的
+  - `mini` 迷你的
 ```html
 <hy-button type="success" text="大尺寸按钮" size="large" :custom-style="{ marginBottom: '20px' }"></hy-button>
 <hy-button type="success" text="默认按钮" size="medium" :custom-style="{ marginBottom: '20px' }"></hy-button>

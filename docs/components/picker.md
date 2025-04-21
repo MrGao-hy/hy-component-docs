@@ -54,12 +54,13 @@ const columns = reactive([
 
 ```html
 <template>
-    <hy-picker has-input :columns="columns"></-picker>
+    <hy-picker v-model="value" has-input :columns="columns"></-picker>
 </template>
 
 <script setup>
-    import { reactive } from 'vue';
+    import { reactive, ref } from 'vue';
     
+    const value = ref("");
     const columns = reactive([
         ['中国', '美国', '日本']
     ]);
@@ -70,13 +71,13 @@ const columns = reactive([
 此模式通过传入`columns`参数，此参数为二维数组，通过`change`事件完成联动操作。
 ```html
 <template>
-    <hy-picker :show="show" ref="uPickerRef" :columns="columns" @confirm="confirm" @change="changeHandler"></hy-picker>
+    <hy-picker v-model="value" ref="uPickerRef" has-input :columns="columns" @change="changeHandler"></hy-picker>
 </template>
 
 <script setup>
 import { ref, reactive } from 'vue';
 
-const show = ref(true);
+const value = ref("");
 const columns = reactive([
   ['中国', '美国'],
   ['深圳', '厦门', '上海', '拉萨']
@@ -99,11 +100,6 @@ const changeHandler = (e) => {
     uPickerRef.value.setColumnValues(1, columnData[index]);
   }
 };
-
-const confirm = (e) => {
-  console.log('confirm', e);
-  show.value = false;
-};
 </script>
 ```
 
@@ -111,7 +107,7 @@ const confirm = (e) => {
 
 ```html
 <template>
-    <hy-picker :show="show" :columns="columns" keyName="label"></hy-picker>
+    <hy-picker :show="show" :columns="columns"></hy-picker>
 </template>
 
 <script setup>
@@ -169,6 +165,7 @@ const columns = reactive([
 | disabled            | 是否禁用输入框（hasInput为true可以设置） | `boolean`                                  | true    |
 | show                | 是否显示选择器（hasInput为true不用设置） | `boolean`                                  | true    |
 | popupMode           | 弹窗弹出模式                     | `bottom`\|`center`\|`left`\|`right`\|`top` | bottom  |
+| separator           | 多列分隔符                      | `string`                                   | \       |
 | showToolbar         | 是否显示顶部的操作栏                 | `boolean`                                  | true    |
 | title               | 顶部标题                       | `string`                                   | -       |
 | columns             | 设置每一列的数据，见上方说明             | `array`                                    | -       |
@@ -197,7 +194,8 @@ const columns = reactive([
 | cancel  | 点击取消按钮	         | -                    |
 
 ## Slots
-| 插槽名            | 说明                                                          |
-|----------------|-------------------------------------------------------------|
-| toolbar-right  | 工具栏右侧内容，自定义右侧内容，因为微信小程序限制，需要同时设置:toolbarRightSlot="true"生效。 |
-| toolbar-bottom | 输入框下方自定义区域                                                  |
+| 插槽名            | 说明                                                          | 回调参数 |
+|----------------|-------------------------------------------------------------|------|
+| default        | 自定义输入框内容                                                    | -    |
+| toolbar-right  | 工具栏右侧内容，自定义右侧内容，因为微信小程序限制，需要同时设置:toolbarRightSlot="true"生效。 | -    |
+| toolbar-bottom | 输入框下方自定义区域                                                  | -    |

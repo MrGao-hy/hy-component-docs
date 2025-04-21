@@ -95,8 +95,8 @@ const value = ref(12);
 ```
 
 ## 自定义插槽
-::: details 点击我查看代码
-```html
+::: code-group
+```html [vue]
 <template>
     <hy-number-step v-model="value">
         <template #minus>
@@ -128,40 +128,41 @@ const value = ref(12);
         </template>
     </hy-number-step>
 </template>
+```
 
-<script setup>
-    import { ref } from 'vue';
+```ts [index.ts]
+import { ref } from 'vue';
 
-    // 创建响应式数据  
-    const value = ref(1);
-</script>
+// 创建响应式数据  
+const value = ref(1);
 
-<style lang="scss">
-    .minus {
-        width: 22px;
-        height: 22px;
-        border-width: 1px;
-        border-color: #E6E6E6;
-        border-radius: 100px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+```
 
-    .input {
-        padding: 0 10px;
-    }
+```scss [index.scss]
+.minus {
+  width: 22px;
+  height: 22px;
+  border: 1px solid black;
+  box-sizing: border-box;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    .plus {
-        width: 22px;
-        height: 22px;
-        background-color: #FF0000;
-        border-radius: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-</style>
+.input {
+  padding: 0 10px;
+}
+
+.plus {
+  width: 22px;
+  height: 22px;
+  background-color: #ff0000;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 ```
 :::
 

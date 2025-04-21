@@ -119,7 +119,7 @@ const value = ref('');
 | 参数                    | 说明                                                      | 类型                                               | 默认值               |
 |-----------------------|---------------------------------------------------------|--------------------------------------------------|-------------------|
 | modelValue            | 输入的值                                                    | `string` \| `number`                             | -                 |
-| type                  | 输入框类型，见上方说明                                             | `number`\|`idcard`\|`digit`\| `password`\|`text` | text              |
+| type                  | 输入框类型[^1]                                               | `number`\|`idcard`\|`digit`\| `password`\|`text` | text              |
 | disabled              | 是否禁用输入框                                                 | `boolean`                                        | false             |
 | disabledColor         | 禁用状态时的背景色                                               | `string`                                         | #f5f7fa           |
 | clearable             | 是否显示清除控件                                                | `boolean`                                        | false             |
@@ -147,9 +147,9 @@ const value = ref('');
 | prefixIconStyle       | 前置图标样式                                                  | `CSSProperties`                                  | -                 |
 | suffixIcon            | 输入框后置图标                                                 | `string`                                         | -                 |
 | suffixIconStyle       | 后置图标样式                                                  | `CSSProperties`                                  | -                 |
-| border                | 边框类型                                                    | `surround`\|`bottom`\|`none`                     | surround          |
+| border                | 边框类型[^2]                                                | `surround`\|`bottom`\|`none`                     | surround          |
 | readonly              | 是否只读，与disabled不同之处在于disabled会置灰组件，而readonly则不会          | `boolean`                                        | false             |
-| shape                 | 输入框形状                                                   | `circle`\|`square`                               | square            |
+| shape                 | 输入框形状[^3]                                               | `circle`\|`square`                               | square            |
 | formatter             | 输入过滤或格式化函数(如需兼容微信小程序，则只能通过setFormatter方法)               | `function` \| `null`                             | null              |
 | customStyle           | 定义需要用到的外部样式	                                            | `CSSProperties`                                  | -                 |
 
@@ -171,3 +171,7 @@ const value = ref('');
 |--------|---------|
 | prefix | 输入框前置内容 |
 | suffix | 输入框后置内容 |
+
+[^1]: `text`：输入文本内容；`number`：数字输入键盘，app-vue下可以输入浮点数，app-nvue和小程序平台下只能输入整数；`idcard`：身份证输入键盘，微信、支付宝、百度、QQ小程序；`digit`-带小数点的数字键盘，App的nvue页面、微信、支付宝、百度、头条、QQ小程序；`password`-密码输入框
+[^2]: `surround`：四周边框；`bottom`：底部有边框；`none`：无边框
+[^3]: `circle`：两边为半圆；`square`：方形带圆角

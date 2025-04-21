@@ -42,7 +42,7 @@ const value = ref(2);
 <!-- icon自定义 -->
 <hy-rate :activeIcon="IconConfig.CHECK_MASK" :inactiveIcon="IconConfig.CHECK_MASK"></hy-rate>
 <!-- 图片地址 -->
-<hy-rate activeIcon="https://pic1.imgdb.cn/item/67d6820788c538a9b5bf333a.png" :inactiveIcon="https://pic1.imgdb.cn/item/67d6820788c538a9b5bf333b.png"></hy-rate>
+<hy-rate activeIcon="https://pic1.imgdb.cn/item/67d6820788c538a9b5bf333a.png" inactiveIcon="https://pic1.imgdb.cn/item/67d6820788c538a9b5bf333b.png"></hy-rate>
 ```
 ```javascript
 import { IconConfig } from "hfyk-app";

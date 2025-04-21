@@ -25,19 +25,26 @@ import { HySearch } from "hy-app"
 ```
 
 ## 设置输入框形状
-通过`shape`设置输入框两端的形状，`square`-方形带圆角，`round`(默认)-半圆形
+- 通过`shape`设置输入框两端的形状。
+  - `square`：方形带圆角；
+  - `round`：半圆形(默认)
 ```html
 <hy-search shape="round"></hy-search>
 ```
 
-## 设置输入框形状
-通过`shape`设置输入框两端的形状，`square`-方形带圆角，`round`(默认)-半圆形
+## 设置输入框内文本位置
+- 通过`inputAlign`设置输入框内文本位置
+  - `left`: 左边(默认)
+  - `center`: 中间
+  - `right`: 右边
 ```html
-<hy-search shape="round"></hy-search>
+<hy-search inputAlign="left"></hy-search>
+<hy-search inputAlign="center"></hy-search>
+<hy-search inputAlign="right"></hy-search>
 ```
 
 ## 是否开启清除控件
-`clearabled`(默认为true)设置为`true`的话，输入框有内容时，右边会显示一个清除的图标
+- `clearabled`(默认为true)设置为`true`的话，输入框有内容时，右边会显示一个清除的图标
 ```html
 <hy-search clearabled></hy-search>
 ```

@@ -16,28 +16,188 @@
 
 ```html
 <!-- 全局使用 -->
-<hy-check-button text="月落"></hy-check-button>
+<hy-check-button v-model="value" :columns="columns"></hy-check-button>
 <!-- 单个组件引入 -->
-<HyCheckButton type="primary">按钮</HyCheckButton>
+<HyCheckButton v-model="value" :columns="columns"></HyCheckButton>
 ```
 ```ts
-import { HyCheckButton } from "hy-app"
+import { reactive, ref } from "vue";
+import { HyCheckButton } from "hy-app";
+
+const value = ref("");
+const columns = reactive([
+    { label: "老师", value: 0 },
+    { label: "护士", value: 1 },
+    { label: "空姐", value: 2 },
+    { label: "作家", value: 3 },
+    { label: "网红", value: 4 },
+    { label: "科学家", value: 5 },
+]);
 ```
+
+## 主题色
+- 通过`type`设置配置主题色
+  - `primary`：信息按钮（默认）
+  - `success`：主要按钮
+  - `info`：默认按钮
+  - `warning`：警告按钮
+  - `error`：危险按钮
+::: code-group
+
+```html [vue]
+<hy-check-button
+    v-model="value"
+    :columns="columns"
+    :type="type"
+></hy-check-button>
+```
+
+```ts [index.ts]
+import { reactive, ref } from "vue";
+
+const value = ref("");
+const type = ref<HyApp.ThemeType>("primary");
+
+const columns = reactive([
+    { label: "老师", value: 0 },
+    { label: "护士", value: 1 },
+    { label: "空姐", value: 2 },
+    { label: "作家", value: 3 },
+    { label: "网红", value: 4 },
+    { label: "科学家", value: 5 },
+]);
+```
+:::
+
+## 配置按钮大小
+- 通过`size`设置配置按钮大小
+  - `large` 大的
+  - `medium` 中等的
+  - `small` 小的
+::: code-group
+```html [vue]
+<hy-check-button
+    v-model="value"
+    :columns="columns"
+    :type="type"
+></hy-check-button>
+```
+
+```ts [index.ts]
+import { reactive, ref } from "vue";
+
+const value = ref("");
+const type = ref<HyApp.SizeType>("medium");
+
+const columns = reactive([
+    { label: "老师", value: 0 },
+    { label: "护士", value: 1 },
+    { label: "空姐", value: 2 },
+    { label: "作家", value: 3 },
+    { label: "网红", value: 4 },
+    { label: "科学家", value: 5 },
+]);
+```
+:::
+
+## 配置形状
+- 通过`shape`值设置按钮形状;
+  - `square`为方形（默认）
+  - `circle`为圆角
+::: code-group
+```html [vue]
+<hy-check-button
+    v-model="value"
+    :columns="columns"
+    :shape="shape"
+></hy-check-button>
+```
+
+```ts [index.ts]
+import { reactive, ref } from "vue";
+
+const value = ref("");
+const type = ref<HyApp.ShapeType>("square");
+
+const columns = reactive([
+    { label: "老师", value: 0 },
+    { label: "护士", value: 1 },
+    { label: "空姐", value: 2 },
+    { label: "作家", value: 3 },
+    { label: "网红", value: 4 },
+    { label: "科学家", value: 5 },
+]);
+```
+:::
+
+## 单选按钮
+- 通过`selectType`设置为`radio`
+::: code-group
+```html [vue]
+<hy-check-button
+    v-model="value"
+    :columns="columns"
+    selectType="radio"
+></hy-check-button>
+```
+
+```ts [index.ts]
+import { reactive, ref } from "vue";
+
+const value = ref("");
+
+const columns = reactive([
+    { label: "老师", value: 0 },
+    { label: "护士", value: 1 },
+    { label: "空姐", value: 2 },
+    { label: "作家", value: 3 },
+    { label: "网红", value: 4 },
+    { label: "科学家", value: 5 },
+]);
+```
+:::
+
+## 多选按钮
+- 通过`selectType`设置为`checkbox`
+::: code-group
+```html [vue]
+<hy-check-button
+    v-model="value"
+    :columns="columns"
+    selectType="checkbox"
+></hy-check-button>
+```
+
+```ts [index.ts]
+import { reactive, ref } from "vue";
+
+const value = ref([0]);
+
+const columns = reactive([
+    { label: "老师", value: 0 },
+    { label: "护士", value: 1 },
+    { label: "空姐", value: 2 },
+    { label: "作家", value: 3 },
+    { label: "网红", value: 4 },
+    { label: "科学家", value: 5 },
+]);
+```
+:::
 
 ## API
 
-| 参数         | 说明                                   | 类型                                             | 默认值                                                  |
-|------------|--------------------------------------|------------------------------------------------|------------------------------------------------------|
-| v-model    | 选中得值，radio是字符串，checkbox是数组           | `(string\|number)`\| `(string\|number)[]`       | -                                                    |
-| columns    | 列表数据                                 | `array`                                        | -                                                    |
-| fieldNames | 自定义columns对应得键                       | `object`                                       | \{label: "label",value: "value",checked: "checked"\} |
-| selectType | 选择单选框还是复选框（checkbox-复选框，radio-单选框）   | `checkbox`\|`radio`                            | checkbox                                             |
-| disabled   | 禁用                                   | `boolean`                                      | false                                                |
-| col        | 每行几列，每列等宽                            | `string`                                       | repeat(3, 1fr)                                       |
-| gap        | 设置每行间距,需要加单位                         | `string`\| `number`                            | 10px                                                 |
-| type       | 标签类型                                 | `error`\|`warning`\|`success` \|`primary`\|`info` | primary                                              |
-| size       | 标签的大小                                | `small`\|`medium`\|`large`                     | medium                                               |
-| shape      | tag的形状，circle（两边半圆形）, square（方形，带圆角） | `circle`\|`square`                             | square                                               |
+| 参数         | 说明             | 类型                                                | 默认值                                                  |
+|------------|----------------|---------------------------------------------------|------------------------------------------------------|
+| v-model    | 选中得值[^1]       | `string`\|`number`\| `(string\|number)[]`         | -                                                    |
+| columns    | 列表数据           | `array`                                           | -                                                    |
+| fieldNames | 自定义columns对应得键 | `object`                                          | \{label: "label",value: "value",checked: "checked"\} |
+| selectType | 单选还是多选[^2]     | `checkbox`\|`radio`                               | checkbox                                             |
+| disabled   | 禁用             | `boolean`                                         | false                                                |
+| col        | 每行几列，每列等宽      | `string`                                          | repeat(3, 1fr)                                       |
+| gap        | 设置每行间距,需要加单位   | `string`\| `number`                               | 10px                                                 |
+| type       | 标签类型[^3]       | `error`\|`warning`\|`success` \|`primary`\|`info` | primary                                              |
+| size       | 标签的大小[^4]      | `small`\|`medium`\|`large`                        | medium                                               |
+| shape      | tag的形状[^5]     | `circle`\|`square`                                | square                                               |
 
 ## columns
 | 参数       | 说明     | 类型        | 默认值 |
@@ -66,3 +226,9 @@ import { HyCheckButton } from "hy-app"
 | 插槽名  | 说明 | 接收值 |
 |------|----|----|
 | name | -  | -  |
+
+[^1]: `selectType`设置为`radio`时候v-model必须传是字符串/数字，设置为`checkbox`时候`v-model`必须传数组
+[^2]: `checkbox`：多选；`radio`：单选
+[^3]: `error`：#fa3534；`warning`：#ff9900；`success`：#19be6b；`primary`：#2979ff； `info`：#909399；
+[^4]: `normal`：默认尺寸；`large`：大尺寸； `small`：小尺寸；
+[^5]: `circle`：两边半圆形； `square`：方形，带圆角

@@ -143,26 +143,25 @@ const value = ref(["apply"]);
 
 ## API
 
-| 参数            | 说明              | 类型                   | 默认值                                                  |
-|---------------|-----------------|----------------------|------------------------------------------------------|
-| v-model       | 双向绑定值，数组类型      | `(string\|number)[]` | -                                                    |
-| columns       | 接收数组值           | `array`              | -                                                    |
-| fieldNames    | 自定义接收columns的键  | `object`             | \{label: "label",value: "value",checked: "checked"\} |
-| shape         | 复选框形状           | `circle`\|`square`   | square                                               |
-| size          | 复选框大小           | `string`\|`number`   | 18                                                   |
-| disabled      | 是否禁用            | `boolean`            | false                                                |
-| activeColor   | 选中状态下的颜色        | `string`             | ColorConfig.primary                                  |
-| inactiveColor | 未选中的颜色          | `string`             | #c8c9cc                                              |
-| iconSize      | 图标的大小，单位px      | `string`\|`number`   | 20                                                   |
-| iconColor     | 图标颜色            | `string`             | -                                                    |
-| label         | label提示文字       | `string`             | -                                                    |
-| labelSize     | label的字体大小，px单位 | `string`\|`number`   | -                                                    |
-| labelColor    | label的颜色        | `string`             | -                                                    |
-| iconPlacement | 勾选图标的对齐方式       | `left`\|`right`      | left                                                 |
-| borderBottom  | 竖向配列时，是否显示下划线   | `boolean`            | false                                                |
-| labelDisabled | 是否禁止点击提示语选中复选框  | `string`             | -                                                    |
-| placement     | 布局方式            | `row`\|`column`      | row                                                  |
-| customStyle   | 定义需要用到的外部样式     | `CSSProperties`      | -                                                    |
+| 参数            | 说明              | 类型                                             | 默认值                                                  |
+|---------------|-----------------|------------------------------------------------|------------------------------------------------------|
+| v-model       | 双向绑定值，数组类型      | `(string\|number)[]`                           | -                                                    |
+| columns       | 接收数组值           | `array`                                        | -                                                    |
+| fieldNames    | 自定义接收columns的键  | `object`                                       | \{label: "label",value: "value",checked: "checked"\} |
+| shape         | 复选框形状[^1]       | `circle`\|`square`                             | square                                               |
+| size          | 复选框大小[^2]       | `small`\|`medium`\|`large`\|`string`\|`number` | medium                                               |
+| disabled      | 是否禁用            | `boolean`                                      | false                                                |
+| activeColor   | 选中状态下的颜色        | `string`                                       | ColorConfig.primary                                  |
+| inactiveColor | 未选中的颜色          | `string`                                       | #c8c9cc                                              |
+| iconSize      | 图标的大小，单位px      | `string`\|`number`                             | 20                                                   |
+| iconColor     | 图标颜色            | `string`                                       | -                                                    |
+| labelSize     | label的字体大小，px单位 | `string`\|`number`                             | -                                                    |
+| labelColor    | label的颜色        | `string`                                       | -                                                    |
+| iconPlacement | 勾选图标的对齐方式       | `left`\|`right`                                | left                                                 |
+| borderBottom  | 竖向配列时，是否显示下划线   | `boolean`                                      | false                                                |
+| labelDisabled | 是否禁止点击提示语选中复选框  | `string`                                       | -                                                    |
+| placement     | 布局方式[^3]        | `row`\|`column`                                | row                                                  |
+| customStyle   | 定义需要用到的外部样式     | `CSSProperties`                                | -                                                    |
 
 ## columns
 | 参数       | 说明     | 类型        | 默认值 |
@@ -191,3 +190,7 @@ const value = ref(["apply"]);
 |-------|--------------|-----------------------|
 | icon  | 自定义`icon`内容  | iconColor \| iconSize |
 | label | 自定义`label`内容 | record                |
+
+[^1]: `circle`：两边为半圆；`square`：方形带圆角
+[^2]: `normal`：默认尺寸；`large`：大尺寸； `small`：小尺寸；
+[^3]: `row`: 横向；`column`：纵向
