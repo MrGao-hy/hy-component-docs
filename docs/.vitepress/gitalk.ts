@@ -12,7 +12,7 @@ export default function createGitalk(path: string) {
     const gitalk = new Gitalk({
         clientID: "Ov23liVepKSFp8TKOvti",
         clientSecret: "4b35538303d731b15f2f4e0acbb89c780b050c54",
-        repo: "gxh-component",
+        repo: "hy-component-docs",
         owner: "gaoxianhua",
         admin: ["gaoxianhua"],
         id: generateId(path), // 确保唯一性和长度小于 50
