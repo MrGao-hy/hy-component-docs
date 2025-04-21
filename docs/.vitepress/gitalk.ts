@@ -11,7 +11,7 @@ const generateId = (path) => {
 export default function createGitalk(path: string) {
     const gitalk = new Gitalk({
         clientID: "Ov23liVepKSFp8TKOvti",
-        clientSecret: "13e996654a22b40045d8384675f8c4d7064f6aa1",
+        clientSecret: "4b35538303d731b15f2f4e0acbb89c780b050c54",
         repo: "gxh-component",
         owner: "gaoxianhua",
         admin: ["gaoxianhua"],
