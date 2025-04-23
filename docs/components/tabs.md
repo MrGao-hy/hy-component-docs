@@ -27,6 +27,17 @@ const list = [{ name: "全部" }, { name: "未核销" }, { name: "已核销" }];
 ```
 
 ## 自定义读取键
+- 通过`badge`设置徽标属性，可以直接参考[hy-badge](./badge.md)组件属性配置
+```html
+<template>
+    <hy-tabs :list="list"></hy-tabs>
+</template>
+<script setup>
+    const list = [{ title: "全部", badge: { isDot: true } }, { title: "未核销", badge: { value: 5 }}, { title: "已核销" }];
+</script>
+```
+
+## 显示徽标
 - 通过`keyName`自定义需要显示的值
 ```html
 <template>
@@ -47,7 +58,7 @@ const list = [{ name: "全部" }, { name: "未核销" }, { name: "已核销" }];
         @change="change"
     >
         <template #default="{record}">
-            {{content.content}}
+            {{record.value}}
         </template>
     </hy-tabs>
 </template>

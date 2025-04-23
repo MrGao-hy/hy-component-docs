@@ -28,14 +28,22 @@ const list = ref(['未付款', '待评价', '已付款']);
 const list_1 = ref([{ name: "全部"}, { name: "未核销" }, { name: "已核销" }]);
 ```
 
-## 基本使用示例
-- `mode`值为`button`时为按钮类型
-- `mode`值为`subsection`时为分段器形式
+## 模式选择
+- 通过`mode`设置分段器的模式
+  - 值为`button`时为按钮类型
+  - 值为`subsection`时为分段器形式
 ```html
 <template>
     <hy-subsection :list="list" mode="button"></hy-subsection>
     <hy-subsection :list="list" mode="subsection"></hy-subsection>
 </template>
+
+<script setup>
+    import { ref } from "vue";
+    
+    const value = ref("未付款");
+    const list = ["未付款", "待评价", "已付款"];
+</script>
 ```
 
 ## 颜色配置

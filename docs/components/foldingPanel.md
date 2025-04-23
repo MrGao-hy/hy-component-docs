@@ -16,7 +16,7 @@
 
 ```html
 <!-- 全局使用 -->
-<hy-folding-panel :list="columns" title="你好" :border="false">
+<hy-folding-panel :list="columns" title="水果摊" :border="false">
     <template #default="{ record }">
         <view style="padding: 20px">
             {{ record }}

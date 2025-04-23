@@ -22,7 +22,7 @@
 ```
 ```ts
 import { HySteps } from "hy-app";
-const HySteps = ref([
+const list = ref([
     {title: "已下单", desc: "2024-10-13",},
     {title: "已发货", desc: "2024-10-13",},
     {title: "发货失败", desc: "2024-10-14", error: true},

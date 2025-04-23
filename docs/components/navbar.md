@@ -28,7 +28,7 @@ import { HyNavbar } from "hy-app"
 - 通过配置`placeholder`在固定在顶部时生成一个等高元素，以防止塌陷
 ```html
 <template>
-    <hy-navbar title="个人中心"></hy-navbar>
+    <hy-navbar title="个人中心" placeholder></hy-navbar>
 </template>
 ```
 
@@ -67,6 +67,39 @@ import { HyNavbar } from "hy-app"
 <script setup>
     import { IconConfig } from "hy-app";
 </script>
+```
+
+## 自定义左边插槽
+```html
+<template>
+    <hy-navbar title="自定义插槽" :fixed="false" bg-color="#F8F8F8">
+        <template #left>
+            <view class="u-nav-slot">
+                <hy-icon :name="IconConfig.LEFT" size="16"></hy-icon>
+                <hy-line
+                        direction="column"
+                        :hairline="false"
+                        length="16"
+                        margin="0 8px"
+                ></hy-line>
+                <hy-icon name="home" size="15"></hy-icon>
+            </view>
+        </template>
+    </hy-navbar>
+</template>
+
+<style lang="scss">
+    .u-nav-slot {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 100px;
+        border: 1rpx solid gainsboro;
+        padding: 3px 7px;
+        opacity: 0.8;
+    }
+</style>
 ```
 
 ## API

@@ -93,8 +93,7 @@ import { HyAvatar } from "hy-app"
 | random-bg-color | 是否使用随机背景色                                                                   | `boolean`                            | false       |
 | default-url     | 加载失败的默认头像(组件有内置默认图片)                                                        | `string`                             | -           |
 | color-index     | 如果配置了randomBgColor为true，且配置了此值，则从默认的背景色数组中取出对应索引的颜色值，取值0-19之间               | `number`                             | -           |
-| name            | 组件标识符	String	level	-                                                        |                                      |             |
-| Avatar Event    | `string`                                                                    | level                                |             |
+| name            | 组件标识符                                                                       | `string`                             | level       |
 
 ## Events
 

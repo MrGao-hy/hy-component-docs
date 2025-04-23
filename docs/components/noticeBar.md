@@ -40,10 +40,14 @@ import { HyNoticeBar } from "hy-app"
 ```
 
 ## 跳转页面
-- `url`可配置跳转
+- 通过配置`url`跳转到指定页面
+- 通过配置`mode`为`line`右边出现向右箭头
+:::tips 注意
+必须`url`和`mode`都设置了才能跳转
+:::
 ```html
 <template>
-    <hy-notice-bar text="欢迎使用华悦组件库" url="/pages/components/tag/tag"></hy-notice-bar>
+    <hy-notice-bar text="欢迎使用华悦组件库" url="/pages/components/tag/tag" mode="line"></hy-notice-bar>
 </template>
 ```
 
@@ -63,7 +67,7 @@ import { HyNoticeBar } from "hy-app"
 
 | 参数             | 说明                                                 | 类型                                 | 默认值                          |
 |----------------|----------------------------------------------------|------------------------------------|------------------------------|
-| text           | 显示的内容，direction为column时要求为数组， 为row时要求为字符串          | `array` \| `string`                | -                            |
+| text           | 显示的内容，direction为column时要求为数组                       | `array` \| `string`                | -                            |
 | direction      | 通告滚动模式，row-横向滚动，column-竖向滚动                        | `row` \| `column`                  | row                          |
 | step           | direction = row时，是否使用步进形式滚动                        | `boolean`                          | false                        |
 | icon           | 是否显示左侧的音量图标                                        | `string`                           | IconConfig.NOTIFICATION_FILL |
@@ -74,6 +78,8 @@ import { HyNoticeBar } from "hy-app"
 | fontSize       | 字体大小                                               | `string` \| `number`               | 14                           |
 | duration       | 滚动一个周期的时间长，单位ms                                    | `number`                           | 2000                         |
 | disableTouch   | 是否禁止用手滑动切换                                         | `boolean`                          | true                         |
+| url            | 跳转的页面路径                                            | `string`                           | -                            |
+| linkType       | 页面跳转的类型                                            | `string`                           | navigateTo                   |
 | justifyContent | 文字水平布局类型                                           | `flex-start`\|`center`\|`flex-end` | flex-start                   |
 
 ## Events
