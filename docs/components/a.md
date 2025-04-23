@@ -48,7 +48,7 @@ import { HyButton } from "hy-app"
 
 | 插槽名  | 说明 | 接收值 |
 |------|----|----|
-| name | -  | -  |
+| default | -  | -  |
 
 `circle`\|`square`
 `small`\|`medium`\|`large`

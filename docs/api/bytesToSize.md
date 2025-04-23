@@ -6,7 +6,7 @@
 - `bytes` \<Number> 字节大小
 
 ```javascript
-import { bytesToSize } from "hfyk-app";
+import { bytesToSize } from "hy-app";
 
 const num = bytesToSize(1024);
 console.log(num); // 打印出：1MB

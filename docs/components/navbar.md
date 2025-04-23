@@ -53,7 +53,7 @@ import { HyNavbar } from "hy-app"
 - 通过配置`leftText`定义导航栏左边文字
 - 通过配置`rightText`定义导航栏右边文字
 - 通过配置`rightIcon`定义导航栏右边图标
-```vue
+```html
 <template>
     <hy-navbar 
         title="文档"
@@ -65,7 +65,7 @@ import { HyNavbar } from "hy-app"
 </template>
 
 <script setup>
-    import { IconConfig } from "hfyk-app";
+    import { IconConfig } from "hy-app";
 </script>
 ```
 

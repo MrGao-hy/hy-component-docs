@@ -49,19 +49,19 @@ $ yarn install dayjs
 ## 安装组件
 ::: code-group
 ```shell [npm]
-$ npm install hfyk-app
+$ npm install hy-app
 ```
 
 ```shell [pnpm]
-$ pnpm install hfyk-app
+$ pnpm install hy-app
 ```
 
 ```shell [cnpm]
-$ cnpm install hfyk-app
+$ cnpm install hy-app
 ```
 
 ```shell [yarn]
-$ yarn install hfyk-app
+$ yarn install hy-app
 ```
 :::
 

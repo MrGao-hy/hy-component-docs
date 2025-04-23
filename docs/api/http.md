@@ -18,7 +18,7 @@
 ## 基本使用
 
 ```ts
-import Http from "hfyk-app";
+import Http from "hy-app";
 
 const http = new Http();
 http.config = {

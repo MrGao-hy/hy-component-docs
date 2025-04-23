@@ -170,7 +170,7 @@ for (let i = 0; i < 2000; i++) {
 
 <script setup lang="ts">
 import { ref, reactive, onMounted } from "vue";
-import HyList from "hfyk-app/components/hy-list/hy-list.vue";
+import HyList from "hy-app/components/hy-list/hy-list.vue";
 
 const list = ref<AnyObject[]>([]);
 const page = reactive({
@@ -205,7 +205,7 @@ const queryData = () => {
 </script>
 
 <style scoped lang="scss">
-@import "hfyk-app/theme.scss";
+@import "hy-app/theme.scss";
 .container {
   &-bottom {
     padding: 15rpx;

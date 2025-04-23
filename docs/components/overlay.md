@@ -27,6 +27,15 @@ import { ref } from 'vue';
 const show = ref(true);
 ```
 
+## 设置透明度
+- 设置`opacity`值可以设置遮罩层透明度，取值范围0~1
+```html
+<template>
+    <hy-overlay :show="show" :opacity="0.1"></hy-overlay>
+    <hy-overlay :show="show" :opacity="0.9"></hy-overlay>
+</template>
+```
+
 ## 自定义插槽
 通过默认插槽可以在遮罩层上嵌入任意内容
 ::: tip 注意

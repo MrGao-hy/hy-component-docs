@@ -57,7 +57,7 @@ const HySteps = ref([
 </template>
 
 <script setup>
-  import { IconConfig } from "hfyk-app";
+  import { IconConfig } from "hy-app";
 </script>
 ```
 

@@ -6,7 +6,7 @@
 ### 全局注入
 ```javascript
 // main.ts全局注入方法
-import { globalRegister } from "hfyk-app";
+import { globalRegister } from "hy-app";
 import { createSSRApp } from "vue";
 export function createApp () {
     const app = createSSRApp(App);

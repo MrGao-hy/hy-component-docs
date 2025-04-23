@@ -25,7 +25,7 @@ import { HyDivider } from "hy-app"
 ```
 
 ## 设置虚线
-- 可以通过`dashed`指定虚线
+- 通过设置`dashed`指定虚线
 ```html
 <template>
     <hy-divider text="月落" dashed></hy-divider>
@@ -33,7 +33,7 @@ import { HyDivider } from "hy-app"
 ```
 
 ## 设置细线
-- 可以通过`hairline`指定细线
+- 通过`hairline`指定细线
 ```html
 <template>
     <!--细线-->
@@ -44,7 +44,7 @@ import { HyDivider } from "hy-app"
 ```
 
 ## 设置以点代替文字
-- 可以通过`dot`指定以点代替文字
+- 通过设置`dot`指定以点代替文字
 ```html
 <template>
     <hy-divider dot></hy-divider>
@@ -52,7 +52,10 @@ import { HyDivider } from "hy-app"
 ```
 
 ## 设置文本靠左靠右
-- 可以通过`textPosition`指定文字靠左靠右
+- 通过设置`textPosition`指定文字靠左靠右
+  - `left`：文字靠左
+  - `center`：文字靠中间（默认）
+  - `right`：文字靠右
 ```html
 <template>
     <hy-divider text="月落" textPosition="left"></hy-divider>
@@ -61,7 +64,7 @@ import { HyDivider } from "hy-app"
 ```
 
 ## 设置文本颜色和线条颜色
-- 可以通过`textColor`和`lineColor`指定文字刚线条颜色
+- 通过设置`textColor`和`lineColor`指定文字颜色、线条颜色
 ```html
 <template>
     <hy-divider text="月落" textColor="#2979ff" lineColor="#ff0000"></hy-divider>

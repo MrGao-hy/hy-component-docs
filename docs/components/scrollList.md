@@ -45,8 +45,8 @@ const list = ref<any[]>([
 
 ## 业务实现代码
 
-```html
-<template>
+:::code-group
+```html [vue]
     <up-scroll-list @right="right" @left="left">
         <view class="scroll-list" style="flex-direction: row;">
             <view
@@ -64,39 +64,69 @@ const list = ref<any[]>([
             </view>
         </view>
     </up-scroll-list>
-</template>
+```
 
-<script setup>
-    import { ref } from 'vue';
+```ts [index.ts]
+import { ref } from 'vue';
 
-    // 响应式数据  
-    const list = ref([
-        {
-            price: '230.5',
-            thumb: 'https://cdn.uviewui.com/uview/goods/1.jpg'
-        },
-        {
-            price: '74.1',
-            thumb: 'https://cdn.uviewui.com/uview/goods/2.jpg'
-        },
-        // ... 其他对象  
-        {
-            price: '251.5',
-            thumb: 'https://cdn.uviewui.com/uview/goods/1.jpg'
-        }
-    ]);
+const goodsArr = [
+    {
+        price: "230.5",
+        thumbnail:
+            "https://img11.360buyimg.com/n1/s450x450_jfs/t1/281169/10/14028/31748/67ecf51dF384c5bd6/1ec0c214ea7a914e.png",
+    },
+    {
+        price: "74.1",
+        thumbnail:
+            "https://img11.360buyimg.com/n1/s450x450_jfs/t1/281169/10/14028/31748/67ecf51dF384c5bd6/1ec0c214ea7a914e.png",
+    },
+    {
+        price: "8457",
+        thumbnail:
+            "https://img11.360buyimg.com/n1/s450x450_jfs/t1/281169/10/14028/31748/67ecf51dF384c5bd6/1ec0c214ea7a914e.png",
+    },
+    {
+        price: "1442",
+        thumbnail:
+            "https://img11.360buyimg.com/n1/s450x450_jfs/t1/281169/10/14028/31748/67ecf51dF384c5bd6/1ec0c214ea7a914e.png",
+    },
+    {
+        price: "541",
+        thumbnail:
+            "https://img11.360buyimg.com/n1/s450x450_jfs/t1/281169/10/14028/31748/67ecf51dF384c5bd6/1ec0c214ea7a914e.png",
+    },
+    {
+        price: "234",
+        thumbnail:
+            "https://img11.360buyimg.com/n1/s450x450_jfs/t1/281169/10/14028/31748/67ecf51dF384c5bd6/1ec0c214ea7a914e.png",
+    },
+    {
+        price: "562",
+        thumbnail:
+            "https://img11.360buyimg.com/n1/s450x450_jfs/t1/281169/10/14028/31748/67ecf51dF384c5bd6/1ec0c214ea7a914e.png",
+    },
+    {
+        price: "251.5",
+        thumbnail:
+            "https://img11.360buyimg.com/n1/s450x450_jfs/t1/281169/10/14028/31748/67ecf51dF384c5bd6/1ec0c214ea7a914e.png",
+    },
+];
 
-    // 方法  
-    const left = () => {
-        console.log('left');
-    }
+// 方法  
+const left = () => {
+    console.log('left');
+}
 
-    const right = () => {
-        console.log('right');
-    }
-</script>
+const right = () => {
+    console.log('right');
+}
 
-<style lang="scss">
+const showMore = () => {
+    uni.showToast({ title: "查看更多" });
+};
+```
+
+```scss [index.scss]
     .scroll-list {
         display: flex;
         flex-direction: column;
@@ -134,8 +164,8 @@ const list = ref<any[]>([
             }
         }
     }
-</style>
 ```
+:::
 
 ## API
 

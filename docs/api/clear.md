@@ -6,7 +6,7 @@
 - `obj` \<Object | String | Number | Undefined| Boolean> 需要清空数值
 
 ```javascript
-import { clearVal } from "hfyk-app";
+import { clearVal } from "hy-app";
 const obj = {
     name: "我有值",
     is: true,

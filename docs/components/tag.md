@@ -143,7 +143,7 @@ import { HyTag } from "hy-app"
 </template>
 
 <script setup>
-    import { IconConfig } from "hfyk-app";
+    import { IconConfig } from "hy-app";
 </script>
 ```
 

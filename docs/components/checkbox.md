@@ -42,7 +42,7 @@ const value = ref(["apply"]);
 <hy-checkbox v-model="value" :columns="columns" :fieldNames="fieldNames"></hy-checkbox>
 ```
 ```ts
-import { HyCheckobox } from "hfyk-app";
+import { HyCheckobox } from "hy-app";
 import { ref } from "vue";
 
 const columns = [

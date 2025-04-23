@@ -11,7 +11,7 @@
 - `source` \<Object> 对象或数组
 
 ```javascript
-import { deepClone } from "hfyk-app";
+import { deepClone } from "hy-app";
 
 const oldObj = {
     name: "旧数据"

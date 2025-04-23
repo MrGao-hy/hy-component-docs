@@ -46,7 +46,7 @@ const list = ref([
 </template>
 
 <script setup>
-    import { IconConfig } from "hfyk-app";
+    import { IconConfig } from "hy-app";
     const list = ref([
         {title: "西施", subhead: "沉鱼", icon: IconConfig.HOME_FILL},
         {title: "王昭君", subhead: "落雁"},

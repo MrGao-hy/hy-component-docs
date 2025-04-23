@@ -7,7 +7,7 @@
 - `max` \<String | Number> 最大值
 
 ```javascript
-import { random } from "hfyk-app";
+import { random } from "hy-app";
 
 const val = random(1, 10);
 console.log(val) // 随机数

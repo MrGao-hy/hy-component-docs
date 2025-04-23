@@ -32,10 +32,13 @@ import { HyLine } from "hy-app"
 ```
 
 ## 自定义线条方向
+:::tips 温馨提示
+在设置线为竖直时候要么父元素有固定宽度，否则需要给length设置值，解决不显示问题
+:::
 ```html
 <template>
     <!--竖向-->
-    <hy-line direction="column"></hy-line>
+    <hy-line direction="column" length="100"></hy-line>
     <!--横向-->
     <hy-line direction="row"></hy-line>
 </template>
@@ -51,7 +54,7 @@ import { HyLine } from "hy-app"
 ## 虚线
 ```html
 <template>
-    <hy-line dashed></hy-line>
+    <hy-line dashed color="red"></hy-line>
 </template>
 ```
 

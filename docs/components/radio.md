@@ -42,7 +42,7 @@ const value = ref("apply");
 <hy-radio v-model="value" :columns="columns" :fieldNames="fieldNames"></hy-radio>
 ```
 ```ts
-import { HyCheckobox } from "hfyk-app";
+import { HyCheckobox } from "hy-app";
 import { ref } from "vue";
 
 const columns = [

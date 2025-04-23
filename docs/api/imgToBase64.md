@@ -6,7 +6,7 @@
 - `path` \<String> 本地上传图片路径
 
 ```javascript
-import { imageToBase64 } from "hfyk-app";
+import { imageToBase64 } from "hy-app";
 
 // 时间格式转换
 const base64 = imageToBase64();

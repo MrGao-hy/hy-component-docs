@@ -110,7 +110,7 @@ const value = ref('');
 </template>
 
 <script setup lang="ts">
-    import { IconConfig } from "hfyk-app"
+    import { IconConfig } from "hy-app"
 </script>
 ```
 

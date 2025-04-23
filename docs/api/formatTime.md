@@ -7,7 +7,7 @@
 - `fmt` \<String> 时间格式，默认值：yyyy-MM-dd
 
 ```javascript
-import { formatTime } from "hfyk-app";
+import { formatTime } from "hy-app";
 
 // 时间格式转换
 const day = formatTime(new Date())
@@ -23,7 +23,7 @@ const time = formatTime(1702051200000, "HH:mm:ss")
 - `format` \<String> 时间格式，默认值：yyyy-MM-dd
 
 ```javascript
-import { formatTimeToString } from "hfyk-app";
+import { formatTimeToString } from "hy-app";
 
 // 时间格式转换
 const day = formatTimeToString("2020-10-10 09:00:00")
@@ -38,7 +38,7 @@ const time = formatTimeToString(1702051200000, false)
 - `value` \<String | Number> 数值
 
 ```javascript
-import { padZero } from "hfyk-app";
+import { padZero } from "hy-app";
 
 // 时间格式转换
 const num = padZero(2)

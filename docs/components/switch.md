@@ -72,14 +72,22 @@ const change = (e) => {
 ```
 
 ## 自定义尺寸
+- 通过设置`size`为数字或者`small`、`medium`、`large`来设置开关大小
+  - `small`：小开关
+  - `medium`：中开关
+  - `large`：大开关
+  - `number`：数字
 ```html
 <template>
-    <hy-switch v-model="value" size="28" ></hy-switch>
+    <hy-switch v-model="value" size="small"></hy-switch>
+    <hy-switch v-model="value" size="medium"></hy-switch>
+    <hy-switch v-model="value" size="large"></hy-switch>
+    <hy-switch v-model="value" :size="28" ></hy-switch>
 </template>
 <script setup>
     import { ref } from "vue";
 
-    const value = ref(false);
+    const value = ref(true);
 </script>
 ```
 
@@ -93,7 +101,34 @@ const change = (e) => {
 <script setup>
     import { ref } from "vue";
 
-    const value = ref(false);
+    const value = ref(true);
+</script>
+```
+
+## 自定义图标
+```html
+<template>
+    <hy-switch v-model="value"  icon-color="red" :active-icon="IconConfig.SUCCESS" :inactive-icon="IconConfig.CLOSE" ></hy-switch>
+</template>
+<script setup>
+    import { ref } from "vue";
+    import { IconConfig } from "hy-app";
+
+    const value = ref(true);
+</script>
+```
+
+## 自定义插槽
+```html
+<template>
+  <hy-switch v-model="value">
+    <view style="font-size: 16rpx">禁用</view>
+  </hy-switch>
+</template>
+<script setup>
+    import { ref } from "vue";
+
+    const value = ref(true);
 </script>
 ```
 
@@ -126,22 +161,31 @@ const change = (e) => {
 
 ## API
 
-| 参数            | 说明                    | 类型                 | 默认值                 |
-|---------------|-----------------------|--------------------|---------------------|
-| v-model       | 通过v-model双向绑定的值       | `boolean`          | false               |
-| loading       | 是否处于加载中               | `boolean`          | false               |
-| disabled      | 是否禁用	                 | `boolean`          | false               |
-| size          | 开关尺寸，单位rpx            | `string`\|`number` | 25                  |
-| activeColor   | 打开时的背景色               | `string`           | ColorConfig.primary |
-| inactiveColor | 关闭时的背景色               | `string`           | #ffffff             |
-| activeValue   | switch打开时的值           | `boolean`          | true                |
-| inactiveValue | switch关闭时的值	          | `boolean`          | false               |
-| asyncChange   | 是否开启异步变更，开启后需要手动控制输入值 | `boolean`          | false               |
-| space         | 圆点与外边框的距离             | `string`\|`number` | 0                   |
-| customStyle   | 自定义样式                 | `CSSProperties`    | -                   |
+| 参数            | 说明                    | 类型                                              | 默认值                 |
+|---------------|-----------------------|-------------------------------------------------|---------------------|
+| v-model       | 通过v-model双向绑定的值       | `boolean`                                       | false               |
+| loading       | 是否处于加载中               | `boolean`                                       | false               |
+| disabled      | 是否禁用	                 | `boolean`                                       | false               |
+| size          | 开关尺寸，单位rpx            | `small`\|`medium`\|`large`\| `string`\|`number` | medium              |
+| activeColor   | 打开时的背景色               | `string`                                        | ColorConfig.primary |
+| inactiveColor | 关闭时的背景色               | `string`                                        | #ffffff             |
+| activeValue   | switch打开时的值           | `boolean`                                       | true                |
+| inactiveValue | switch关闭时的值	          | `boolean`                                       | false               |
+| activeIcon    | 打开选择器时图标	             | `string`                                        | -                   |
+| inactiveIcon  | 关闭选择器时图标	             | `string`                                        | -                   |
+| iconColor     | 图标颜色	                 | `string`                                        | -                   |
+| asyncChange   | 是否开启异步变更，开启后需要手动控制输入值 | `boolean`                                       | false               |
+| space         | 圆点与外边框的距离             | `string`\|`number`                              | 0                   |
+| customStyle   | 自定义样式                 | `CSSProperties`                                 | -                   |
 
 ## Events
 
 | 事件名    | 说明              | 回调参数                                      |
 |--------|-----------------|-------------------------------------------|
 | change | 在switch打开或关闭时触发 | value：打开时为activeValue值，关闭时为inactiveValue值 |
+
+## slots
+
+| 插槽名     | 说明   | 接收值 |
+|---------|------|-----|
+| default | 默认插槽 | -   |

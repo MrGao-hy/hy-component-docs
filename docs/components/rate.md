@@ -45,7 +45,7 @@ const value = ref(2);
 <hy-rate activeIcon="https://pic1.imgdb.cn/item/67d6820788c538a9b5bf333a.png" inactiveIcon="https://pic1.imgdb.cn/item/67d6820788c538a9b5bf333b.png"></hy-rate>
 ```
 ```javascript
-import { IconConfig } from "hfyk-app";
+import { IconConfig } from "hy-app";
 ```
 
 ## 最多评分数

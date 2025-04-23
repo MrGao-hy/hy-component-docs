@@ -24,7 +24,7 @@
 
 ```ts [index.ts]
 import { reactive, ref } from "vue";
-import { HyWarn, FormTypeEnum, HyForm, HyInput, HyButton } from "hfyk-app";
+import { HyWarn, FormTypeEnum, HyForm, HyInput, HyButton } from "hy-app";
 import type { FormColumnsType } from "hy-app";
 
 const formData: AnyObject = reactive({
@@ -197,8 +197,8 @@ const handleSubmit = () => {
 
 ```ts [index.ts]
 import { reactive } from "vue";
-import { FormTypeEnum, HyForm, HyInput } from "hfyk-app";
-import type { FormColumnsType } from "hfyk-app";
+import { FormTypeEnum, HyForm, HyInput } from "hy-app";
+import type { FormColumnsType } from "hy-app";
 
 const columns: FormColumnsType[] = reactive([
     {
