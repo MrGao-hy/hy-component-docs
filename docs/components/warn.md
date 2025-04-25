@@ -76,3 +76,6 @@ import { HyWarn } from "hy-app"
 |-------|---------|------|
 | click | 点击组件时触发 | -    |
 | close | 点击组件时触发 | -    |
+
+
+<demo-model url="pages/components/warn/warn"></demo-model>

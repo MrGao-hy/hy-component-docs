@@ -77,3 +77,6 @@ onPageScroll((e) => {
 | 插槽名     | 说明    | 接收值 |
 |---------|-------|-----|
 | default | 自定义内容 | -   |
+
+
+<demo-model url="pages/components/backTop/backTop"></demo-model>

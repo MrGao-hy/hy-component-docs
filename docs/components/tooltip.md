@@ -65,3 +65,6 @@ import { HyTooltip } from "hy-app"
 | 事件名   | 说明     | 回调参数           |
 |-------|--------|----------------|
 | click | 点击触发事件 | index：被点击按钮的索引 |
+
+
+<demo-model url="pages/components/tooltip/tooltip"></demo-model>

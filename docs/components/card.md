@@ -140,3 +140,5 @@ import { HyCard } from "hy-app"
 | header | 自定义卡片头部内容   | -   |
 | body   | 自定义卡片主体部分内容 | -   |
 | footer | 自定义卡片底部部分内容 | -   |
+
+<demo-model url="pages/components/card/card"></demo-model>

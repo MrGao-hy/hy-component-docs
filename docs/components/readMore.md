@@ -158,3 +158,5 @@ const content = ref(`山不在高，有仙则名。水不在深，有龙则灵�
 | 插槽名  | 说明              |
 |------|-----------------|
 | init | 重新初始化组件内部高度计算过程 |
+
+<demo-model url="pages/components/readMore/readMore"></demo-model>

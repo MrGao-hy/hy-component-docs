@@ -130,3 +130,6 @@ onMounted(() => {
 [^1]: `surround`：四周边框；`bottom`：底部有边框；`none`：无边框
 [^2]: 注意页面或组件的style中写了scoped时，需要在类名前写/deep/
 [^3]: 如需兼容微信小程序，则只能通过setFormatter方法
+
+
+<demo-model url="pages/components/textarea/textarea"></demo-model>

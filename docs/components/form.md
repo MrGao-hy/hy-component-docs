@@ -300,3 +300,5 @@ const columns: FormColumnsType[] = reactive([
 [^1]: 这个禁用优先级高于columns里面的disabled
 [^2]: type = select 时候必填(参考 [HyPicker](./picker.md) 组件)
 [^3]: type = radio 时候必填(参考 [HyRadio](./radio.md) 组件)
+
+<demo-model url="pages/components/form/form"></demo-model>

@@ -100,3 +100,5 @@ import { HyAvatar } from "hy-app"
 | 事件名   | 说明     | 回调参数            |
 |-------|--------|-----------------|
 | click | 头像被点击	 | index: 用户传递的标识符 |
+
+<demo-model url="pages/components/avatar/avatar"></demo-model>

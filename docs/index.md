@@ -3,14 +3,14 @@ layout: home
 
 hero:
   name: 华玥组件库
-  text: 这是个丰富的组件库。
-  tagline: 争对uview-plus平台组件库封装了属于vue3+ts自定义组件库
+  text: 这是个聚集多方功能的、丰富的UI组件库。
+  tagline: 酷炫、快捷、方便且高可用，适用于vue3+ts项目
   actions:
     - theme: brand
       text: 开始使用
       link: /components/start
     - theme: alt
-      text: 我的Gitee仓库
+      text: 演示
       link: https://gitee.com/gao-xianhua/tour.git
       
 

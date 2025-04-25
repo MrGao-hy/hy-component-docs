@@ -89,3 +89,5 @@ import { HyPopup } from "hy-app"
 | 插槽名     | 说明 | 接收值 |
 |---------|----|-----|
 | default | -  | -   |
+
+<demo-model url="pages/components/popup/popup"></demo-model>

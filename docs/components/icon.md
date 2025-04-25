@@ -98,7 +98,6 @@ import { IconConfig, HyIcon } from "hy-app";
 
 
 ## 图标集
-<script setup>
-import TheIconList from '../.vitepress/components/TheIconList.vue'
-</script>
 <TheIconList />
+
+<demo-model url="pages/components/icon/icon"></demo-model>

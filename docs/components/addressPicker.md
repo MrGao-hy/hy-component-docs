@@ -111,3 +111,5 @@ import { HyAddressPicker } from "hy-app"
 |--------------|------------------------|
 | setFormatter | 为兼容微信小程序而暴露的内部方法，见上方说明 |
 
+<demo-model url="pages/components/addressPicker/addressPicker"></demo-model>
+

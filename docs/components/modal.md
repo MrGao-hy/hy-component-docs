@@ -128,3 +128,5 @@ import { HyModal } from "hy-app"
 |---------------|-----------------------------|-----|
 | default       | 传入自定义内容，见上方说明               | -   |
 | confirmButton | 传入自定义按钮，用于在微信小程序弹窗通过按钮授权的场景 | -   |
+
+<demo-model url="pages/components/modal/modal"></demo-model>

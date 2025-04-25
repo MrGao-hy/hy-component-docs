@@ -103,3 +103,5 @@ const columns = [
 | icon    | 单元格图标      | icon   |
 | title   | 单元格标题内容    | title  |
 | value   | 单元格右侧value | record |
+
+<demo-model url="pages/components/foldingPanel/foldingPanel"></demo-model>

@@ -13,8 +13,8 @@
 ## 平台差异说明
 
 | APP(vue) | H5 | 微信小程序 |
-|-----|----|-------|
-| ✔   | ✔  | ✔     |
+|----------|----|-------|
+| ✔        | ✔  | ✔     |
 
 ## 基本使用示例
 
@@ -262,3 +262,5 @@ const list = ref([
 |-----------|----|-----------------------|
 | default   | -  | record:对象值, index: 索引 |
 | indicator | -  | -                     |
+
+<demo-model url="pages/components/swiper/swiper"></demo-model>

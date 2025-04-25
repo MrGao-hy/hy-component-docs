@@ -88,3 +88,5 @@ import { HyNoticeBar } from "hy-app"
 |-------|------------|-------------------|
 | click | 点击通告文字触发   | index: 点击的text的索引 |
 | close | 点击右侧关闭图标触发 | -                 |
+
+<demo-model url="pages/components/noticeBar/noticeBar"></demo-model>

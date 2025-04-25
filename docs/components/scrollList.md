@@ -190,3 +190,5 @@ const showMore = () => {
 | 插槽名     | 说明 | 接收值 |
 |---------|----|-----|
 | default | -  | -   |
+
+<demo-model url="pages/components/scrollList/scrollList"></demo-model>

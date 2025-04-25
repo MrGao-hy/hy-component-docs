@@ -85,3 +85,5 @@ import { HyQrcode } from "hy-app"
 | result    | 二维码生成成功 | res: 生成成功返回数据 |
 | preview   | 打开图片事件  | url: 图片地址     |
 | longPress | 长按事件    | -             |
+
+<demo-model url="pages/components/qrcode/qrcode"></demo-model>

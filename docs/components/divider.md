@@ -95,3 +95,5 @@ import { HyDivider } from "hy-app"
 | 事件名   | 说明   | 回调参数 |
 |-------|------|------|
 | click | 点击事件 | -    |
+
+<demo-model url="pages/components/divider/divider"></demo-model>

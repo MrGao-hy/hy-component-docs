@@ -110,3 +110,5 @@ const list = ref([
 | 插槽名     | 说明   | 接收值    |
 |---------|------|--------|
 | default | 默认插槽 | record |
+
+<demo-model url="pages/components/grid/grid"></demo-model>

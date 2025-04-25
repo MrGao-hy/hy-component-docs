@@ -264,3 +264,5 @@ const queryData = () => {
 | left-list  | 左边列表插槽（两列）            | record: 列表数据    |
 | right      | 右边单个容器插槽（适用h5/app，两列） | record: 单条数据    |
 | right-list | 右边列表插槽（两列）            | record: 列表数据    |
+
+<demo-model url="pages/components/list/list"></demo-model>

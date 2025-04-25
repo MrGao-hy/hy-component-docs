@@ -170,8 +170,11 @@ const sliderValue = ref(4);
 
 ## Events
 
-| 事件名   | 说明          | 回调参数 |
-|-------|-------------|----|
-| changing | 触发事件（拖动过程中） | value：当前值   |
-| change | 触发事件        | value：当前值   |
-| start | 开始滑动        | value：当前值   |
+| 事件名      | 说明          | 回调参数      |
+|----------|-------------|-----------|
+| changing | 触发事件（拖动过程中） | value：当前值 |
+| change   | 触发事件        | value：当前值 |
+| start    | 开始滑动        | value：当前值 |
+
+
+<demo-model url="pages/components/slider/slider"></demo-model>

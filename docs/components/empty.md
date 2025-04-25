@@ -94,3 +94,5 @@ import { HyEmpty } from "hy-app"
 [^1]: `normal`：默认尺寸；`large`：大尺寸； `small`：小尺寸；`mini`：迷你尺寸
 [^2]: `error`：#fa3534；`warning`：#ff9900；`success`：#19be6b；`primary`：#2979ff； `info`：#909399；
 [^3]: `circle`：两边为半圆；`square`：方形带圆角
+
+<demo-model url="pages/components/empty/empty"></demo-model>

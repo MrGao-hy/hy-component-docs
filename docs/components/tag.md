@@ -180,3 +180,6 @@ import { HyTag } from "hy-app"
 |-------|---------------------------|------------------------------|
 | click | 点击标签触发                    | \{value:文本text值, name:自定义值\} |
 | close | closable为true时，点击标签关闭按钮触发 | text：文本内容                    |
+
+
+<demo-model url="pages/components/tag/tag"></demo-model>

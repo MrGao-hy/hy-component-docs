@@ -115,3 +115,6 @@ import { HySearch } from "hy-app"
 | clear     | 配置了clearabled后，清空内容时会发出此事件          | -           |
 | click     | disabled为true时，点击输入框，发出此事件，用于跳转搜索页  | -           |
 | clickIcon | 左侧icon点击时候时触发                       | -           |
+
+
+<demo-model url="pages/components/search/search"></demo-model>

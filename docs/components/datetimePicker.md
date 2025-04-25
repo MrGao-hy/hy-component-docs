@@ -221,3 +221,5 @@ const value1 = ref(Date.now());
 |--------------|------------------------|
 | setFormatter | 为兼容微信小程序而暴露的内部方法，见上方说明 |
 
+<demo-model url="pages/components/dateTimePicker/dateTimePicker"></demo-model>
+

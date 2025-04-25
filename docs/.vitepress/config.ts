@@ -9,7 +9,7 @@ import {
 export default defineConfig({
   lang: 'zh-CN',
   title: '华玥组件库',
-  description: '自定义移动端vue3组件',
+  description: '华玥UI-是作者打造的开发者全成长周期开源平台，围绕效率、成就、变现三大用户价值布局平台能力，全力服务开发者，旨在成为开发者的好朋友。华玥历经多轮打磨雕刻，集海量高品质华玥模板、实时在线预览、多元化场景模板、轻便好学、易上手等多重优势于一身的开发神器，更自带免费开源可商用属性，为企业集团、公司团队、前端后端开发者、运营大佬、社交达人、学生小白提供了一个零成本的在线开发平台和资源库。',
   ignoreDeadLinks: true,
   locales: {
     root: {
@@ -78,7 +78,8 @@ export default defineConfig({
             { text: 'Cell 单元格', link: '/components/cell' },
             { text: 'Badge 徽标', link: '/components/badge' },
             { text: 'Tag 标签', link: '/components/tag' },
-            { text: 'Swiper 轮播图', link: '/components/swiper' }
+            { text: 'Swiper 轮播图', link: '/components/swiper' },
+            { text: 'Loading 加载动画', link: '/components/loading' }
           ]
         },
         {

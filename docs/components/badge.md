@@ -131,3 +131,6 @@ import { HyBadge } from "hy-app"
 | inverted    | 是否反转背景和字体颜色                                                         | `boolean`                                                  | false    |
 | absolute    | 组件是否绝对定位                                                            | `boolean`                                                  | false    |
 | customStyle | 定义需要用到的外部样式                                                         | `CSSProperties`                                            | -        |
+
+
+<demo-model url="pages/components/badge/badge"></demo-model>

@@ -95,3 +95,5 @@ import { HyLineProgress } from "hy-app"
 | 插槽名     | 说明                       | 接收值 |
 |---------|--------------------------|-----|
 | default | 传入自定义的显示内容，将会覆盖默认显示的百分比值 | -   |
+
+<demo-model url="pages/components/lineProgress/lineProgress"></demo-model>

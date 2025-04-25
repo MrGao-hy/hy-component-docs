@@ -145,3 +145,5 @@ const list = [{ name: "全部" }, { name: "未核销" }, { name: "已核销" }];
 | content | tabs的内容        | record: item内容, index: 索引 |
 | right   | 整体右侧插槽         | -                         |
 | main    | 自定义掉底部轮播图      | -                         |
+
+<demo-model url="pages/components/tabs/tabs"></demo-model>

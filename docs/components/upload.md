@@ -185,3 +185,5 @@ const afterRead = (event: any) => {
 |---------|----|-----|
 | default | -  | -   |
 | trigger | -  | -   |
+
+<demo-model url="pages/components/upload/upload"></demo-model>

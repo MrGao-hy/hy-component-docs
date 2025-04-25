@@ -97,3 +97,6 @@ import { IconConfig } from "hy-app";
 | 事件名    | 说明           | 回调参数                                       |
 |--------|--------------|--------------------------------------------|
 | change | 选中的星星发生变化时触发 | value：当前选中的星星的数量，如果使用v-model双向绑定方式，无需监听此事件 |
+
+
+<demo-model url="pages/components/rate/rate"></demo-model>

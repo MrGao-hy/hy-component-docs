@@ -50,8 +50,5 @@ import { HyButton } from "hy-app"
 |------|----|----|
 | name | -  | -  |
 
-`circle`\|`square`
-`small`\|`medium`\|`large`
-`error`\|`warning`\|`success`\|`primary`\|`info`
-`bottom`\|`center`\|`left`\|`right`\|`top`
-`row`\|`column`
+
+<demo-model url="pages/components/actionSheet/actionSheet"></demo-model>

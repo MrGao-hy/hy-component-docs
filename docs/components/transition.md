@@ -91,3 +91,6 @@ const show = ref(true);
 | 插槽名     | 说明 | 接收值 |
 |---------|----|-----|
 | default | -  | -   |
+
+
+<demo-model url="pages/components/transition/transition"></demo-model>

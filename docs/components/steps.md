@@ -111,3 +111,5 @@ const list = ref([
 | content | 自定步骤右侧整体内容  | item: 整体内容, index: 当前索引     |
 | title   | 自定步骤右侧标题内容  | title: 标题内容， index: 当前索引    |
 | desc    | 自定步骤右侧描述    | desc: 描述内容，index: 当前索引      |
+
+<demo-model url="pages/components/steps/steps"></demo-model>

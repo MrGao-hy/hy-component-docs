@@ -92,3 +92,5 @@ const show = ref(true);
 | 插槽名     | 说明                | 接收值 |
 |---------|-------------------|-----|
 | default | 默认插槽，用于在遮罩层上方嵌入内容 | -   |
+
+<demo-model url="pages/components/overlay/overlay"></demo-model>

@@ -138,3 +138,5 @@ import { HyNavbar } from "hy-app"
 | left   | 自定义左侧部分内容 | -   |
 | right  | 自定义右侧部分内容 | -   |
 | center | 自定义中部内容   | -   |
+
+<demo-model url="pages/components/navbar/navbar"></demo-model>
