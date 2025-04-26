@@ -158,7 +158,7 @@ import { HyCalendar } from "hy-app"
 | confirmDisabledText | 确认按钮处于禁用状态时的文字                                                       | `string`                              | 确定                                  |
 | closeOnClickOverlay | 是否允许点击遮罩关闭日历 （注意：关闭事件需要自行处理，只会在开启closeOnClickOverlay后点击遮罩层执行close回调） | `boolean`                             | false                               |
 | readonly            | 是否为只读状态，只读状态下禁止选择日期                                                  | `boolean`                             | false                               |
-| maxRange            | 日期区间最多可选天数，默认无限制，mode = range时有效                                     | `number`                              |  Number.MAX_SAFE_INTEGER                                 |
+| maxRange            | 日期区间最多可选天数，默认无限制，mode = range时有效                                     | `number`                              | Number.MAX_SAFE_INTEGER             |
 | rangePrompt         | 范围选择超过最多可选天数时的提示文案，mode = range时有效                                   | `string` \| `null`                    | 选择天数不能超过 xx 天                       |
 | showRangePrompt     | 范围选择超过最多可选天数时，是否展示提示文案，mode = range时有效                               | `boolean`                             | true                                |
 | allowSameDay        | 是否允许日期范围的起止时间为同一天，mode = range时有效                                    | `boolean`                             | false                               |
