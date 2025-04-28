@@ -1,4 +1,4 @@
-# 空状态组件
+## 空状态组件
 > 该组件内部实现以uni-app的基础button组件为基础，进行二次封装
 
 ::: tip 温馨提示
@@ -59,4 +59,4 @@ import { HyButton } from "hy-app"
 
 [^1]: `normal`：默认尺寸；`large`：大尺寸； `small`：小尺寸；`mini`：迷你尺寸
 [^2]: `error`：#fa3534；`warning`：#ff9900；`success`：#19be6b；`primary`：#2979ff； `info`：#909399；
-[^3]: `circle`：两边为半圆；`square`：方形带圆角
+[^3]: `circle`：两边为半圆；`square`：方形带圆角~~

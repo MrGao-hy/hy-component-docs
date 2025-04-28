@@ -60,23 +60,23 @@ import { HyQrcode } from "hy-app"
 
 ## API
 
-| 参数              | 说明          | 类型                 | 默认值                                           |
-|-----------------|-------------|--------------------|-----------------------------------------------|
-| cid             | 实例ID字符串(必须) | `string`           | "hy-qrcode-canvas" + Math.random().toString() |
-| size            | 二维码大小       | `string`\|`number` | 200                                           |
-| text            | 二维码内容       | `string`           | -                                             |
-| show            | 是否显示二维码     | `boolean`          | true                                          |
-| background      | 二维码背景色      | `string`           | #ffffff                                       |
-| foreground      | 二维码颜色       | `string`           | #000000                                       |
-| pdGround        | 定位角点颜色      | `string`           | #000000                                       |
-| lv              | 容错级别        | `number`           | 3                                             |
-| usingComponents | 是否是自定义组件    | `boolean`          | true                                          |
-| icon            | 二维码中间图标     | `string`           | -                                             |
-| iconSize        | 二维码中间图标大小   | `string`\|`number` | 40                                            |
-| showLoading     | 显示加载状态      | `boolean`          | true                                          |
-| loadingText     | 加载中提示语      | `string`           | 二维码生成中                                        |
-| allowPreview    | 是否预览        | `boolean`          | false                                         |
-| customStyle     | 定义需要用到的外部样式 | `CSSProperties`    | -                                             |
+| 参数              | 说明                             | 类型                 | 默认值                                           |
+|-----------------|--------------------------------|--------------------|-----------------------------------------------|
+| cid             | 实例ID字符串(如果有多个二维码组件必须设置不一样的cid) | `string`           | "hy-qrcode-canvas" + Math.random().toString() |
+| size            | 二维码大小                          | `string`\|`number` | 200                                           |
+| text            | 二维码内容                          | `string`           | -                                             |
+| show            | 是否显示二维码                        | `boolean`          | true                                          |
+| background      | 二维码背景色                         | `string`           | #ffffff                                       |
+| foreground      | 二维码颜色                          | `string`           | #000000                                       |
+| pdGround        | 定位角点颜色                         | `string`           | #000000                                       |
+| lv              | 容错级别                           | `number`           | 3                                             |
+| usingComponents | 是否是自定义组件                       | `boolean`          | true                                          |
+| icon            | 二维码中间图标                        | `string`           | -                                             |
+| iconSize        | 二维码中间图标大小                      | `string`\|`number` | 40                                            |
+| showLoading     | 显示加载状态                         | `boolean`          | true                                          |
+| loadingText     | 加载中提示语                         | `string`           | 二维码生成中                                        |
+| allowPreview    | 是否预览                           | `boolean`          | false                                         |
+| customStyle     | 定义需要用到的外部样式                    | `CSSProperties`    | -                                             |
 
 ## Events
 

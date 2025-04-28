@@ -45,7 +45,4 @@ onMounted(() => {
 
 <style>
 @import "../lib/styles/custom.css";
-.gt-container {
-  min-width: 860px;
-}
 </style>

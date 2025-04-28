@@ -223,6 +223,8 @@ const columns: FormColumnsType[] = reactive([
 | labelWidth    | label 宽度      | `string` \| `number`         | auto     |
 | right         | 输入值是否右对齐      | `boolean`                    | false    |
 | labelAlign    | label 字体的对齐方式 | `string`                     | left     |
+| symbol        | 显示label后冒号符号  | `boolean`                    | false    |
+| borderBottom  | 显示表单单行底部下划线   | `boolean`                    | false    |
 | disabled      | 是否全部禁用[^1]    | `boolean`                    | left     |
 | shape         | 输入框形状         | `circle` \| `square`         | square   |
 | border        | 输入框边框         | `surround`\|`bottom`\|`none` | surround |

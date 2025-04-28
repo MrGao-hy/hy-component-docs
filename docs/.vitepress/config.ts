@@ -73,7 +73,9 @@ export default defineConfig({
         {
           text: '基础组件',
           items: [
+            { text: 'Color 颜色', link: '/components/color' },
             { text: 'Icon 图标', link: '/components/icon' },
+            { text: 'Image 图片', link: '/components/image' },
             { text: 'Button 按钮', link: '/components/button' },
             { text: 'Cell 单元格', link: '/components/cell' },
             { text: 'Badge 徽标', link: '/components/badge' },
@@ -147,6 +149,8 @@ export default defineConfig({
         {
           text: "其他组件",
           items: [
+            { text: 'CountTo 数字滚动', link: '/components/countTo' },
+            { text: 'CountDown 倒计时', link: '/components/countDown' },
             { text: 'Parse 富文本', link: '/components/parse' },
             { text: 'ReadMore 展开阅读更多', link: '/components/readMore' },
             { text: 'Avatar 头像', link: '/components/avatar' },

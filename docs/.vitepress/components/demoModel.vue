@@ -1,60 +1,76 @@
 <template>
   <div>
-    <div class="demo-model" v-if="isShow">
+    <div class="demo-model">
+      <div class="peak">
+        <div class="sound"></div>
+      </div>
+
+      <!--  头部  -->
+      <div class="status-bar">
+        <div class="status-bar__left">
+          <div class="status-bar__left--time">{{ nowTime }}</div>
+        </div>
+        <div class="status-bar__right">
+          <img :width="24" src="/images/hy_logo_light.png"></img>
+          <img :width="18" src="/images/battery_level.png"></img>
+        </div>
+      </div>
+      <!--  头部  -->
+
+
+      <!--  主体  -->
       <div class="model-content">
         <iframe id="demo-modal" :src="href" class="iframe" frameborder="0" scrolling="auto"></iframe>
       </div>
-    </div>
-    <div class="Helper" @click="toggle">
-<!--      <img class="littleHelper" src="../../.vitepress/public/common/logo/tnkewo.jpg" alt="">-->
+      <!--  主体  -->
+
+
+      <!--  尾部  -->
+      <div class="demo-model__footer">
+        <div class="demo-model__footer--line"></div>
+      </div>
+      <!--  尾部  -->
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    url: {
-      type: String,
-      default: '/'
-    },
-    prefix: {
-      type: String,
-      default: '/web/#'
-    }
-  },
-  data() {
-    return {
-      // baseUrl: 'https://tuniao.ahuaaa.cn/#',
-      baseUrl: 'https://gxh151.top/hy-ui/#/',
-      isShow: true,
-    }
-  },
-  methods: {
-    //切换显示隐藏
-    toggle() {
-      this.isShow = !this.isShow;
-    },
-  },
-  computed: {
-    href() {
-      // return this.url.indexOf('http') === 0 ? this.url : `${this.baseUrl}${this.url}`;
-      console.log(`${this.baseUrl}${this.url}`)
-      return this.url.indexOf('http') === 0 ? this.url : `${this.baseUrl}${this.url}`;
-    }
-  },
-  created() {
-  }
+<script setup lang="ts">
+import {computed, ref} from "vue";
+import {Image} from "ant-design-vue";
+
+interface IProps {
+  url: string;
+  prefix?: string;
 }
+
+const props = withDefaults(defineProps<IProps>(), {
+  url: "/",
+  prefix: "/web/#"
+})
+const baseUrl = ref("https://gxh151.top/hy-ui/#/");
+const href = computed(() => {
+  return props.url.indexOf('http') === 0 ? props.url : `${baseUrl.value}${props.url}`;
+})
+const nowTime = computed(() => {
+  const now = new Date();
+  const hours = now.getHours();
+  const minutes = now.getMinutes();
+  const formattedHours = String(hours).padStart(2, '0');
+  const formattedMinutes = String(minutes).padStart(2, '0');
+  return `${formattedHours}:${formattedMinutes}`;
+})
+
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .Helper{
   position: fixed;
   right: 0;
   top: 0;
   z-index: 9999;
 }
+
+
 .littleHelper{
   font-size: 42px;
   background-color: #fff;
@@ -85,20 +101,90 @@ export default {
   background-size: 100%;
   box-shadow: 0 4px 25px 0 rgba(4, 40, 60, 0.18);
   border-radius: 30px;
-  /*padding: 31px 15px 25px 15px;*/
-  padding: 5px;
-}
 
-.model-content {
-  box-sizing: border-box;
-  height: 100%;
-  border-bottom-left-radius: 30px;
-}
+  /* 头部样式 */
+  .status-bar {
+    width: 100%;
+    height: 27px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 1;
+    padding-top: 3px;
+    box-sizing: border-box;
 
-.iframe {
-  height: 100%;
-  width: 100%;
-  border-radius: 30px;
+    &__left {
+      &--time {
+        position: absolute;
+        font-size: 12px;
+        left: 8%;
+      }
+    }
+
+    &__right {
+      position: absolute;
+      width: 25%;
+      height: 100%;
+      right: 8%;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+  .peak {
+    width: 50%;
+    height: 27px;
+    border-radius: 0 0 20px 20px;
+    background-color: #e9e5f3;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 2;
+    .sound {
+      width: 58px;
+      height: 6px;
+      border-radius: 15px;
+      background-color: #555;
+      position: absolute;
+      left: 50%;
+      top: 0%;
+      box-shadow: 0 4px 4px #444 inset;
+      transform: translate(-50%);
+    }
+  }
+
+  /* 主体部分 */
+  .model-content {
+    box-sizing: border-box;
+    width: 100%;
+    height: calc(100% - 27px);
+    padding-top: 27px;
+
+    .iframe {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  /* 底部 */
+  &__footer {
+    background-color: transparent;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    z-index: 1000;
+    &--line {
+      position: absolute;
+      width: 36%;
+      height: 7px;
+      bottom: 10px;
+      left: 50%;
+      transform: translate(-50%);
+      border-radius: 4px;
+      background-color: #000;
+    }
+  }
 }
 
 @media screen and (min-width: 1200px) {
