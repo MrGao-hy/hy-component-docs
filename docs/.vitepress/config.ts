@@ -117,7 +117,8 @@ export default defineConfig({
             {text: 'Overlay 遮罩层', link: '/components/overlay'},
             {text: 'Grid 宫格布局', link: '/components/grid'},
             {text: 'Waterfall 瀑布流', link: '/components/waterfall'},
-            {text: 'Divider 分割线', link: '/components/divider'}
+            {text: 'Divider 分割线', link: '/components/divider'},
+            {text: 'FloatButton 悬浮按钮', link: '/components/floatButton'},
           ]
         },
         {

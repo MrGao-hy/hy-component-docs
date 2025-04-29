@@ -6,7 +6,7 @@
             .content-container {
                 margin: 0;
                 .main {
-                    min-width: 860px !important;
+                    min-width: 800px !important;
                 }
             }
         }
