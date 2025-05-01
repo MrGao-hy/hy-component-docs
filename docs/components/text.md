@@ -129,31 +129,31 @@ import { HyText } from "hy-app"
 
 ## API
 
-| 参数          | 说明                         | 类型                                                | 默认值                |
-|-------------|----------------------------|---------------------------------------------------|--------------------|
-| text        | 显示的值                       | `string`\|`number`                                | -                  |
-| type        | 主题颜色                       | `string`                                          | -                  |
-| show        | 是否显示                       | `boolean`                                         | true               |
-| prefixIcon  | 前置图标                       | `string`                                          | -                  |
-| suffixIcon  | 后置图标                       | `string`                                          | -                  |
-| mode        | 文本处理的匹配模式[^1]              | `text`\|`price`\|`phone` \|`name`\|`date`\|`link` | text               |
-| href        | mode=link下，配置的链接           | `string`                                          | -                  |
-| format      | 格式化规则[^2]                  | `string`\|`Function`                              | -                  |
-| call        | mode=phone时，点击文本是否拨打电话     | `boolean`                                         | false              |
-| openType    | 小程序的打开方式                   | `string`                                          | -                  |
-| bold        | 是否粗体，默认normal              | `boolean`                                         | false              |
-| block       | 是否块状                       | `boolean`                                         | false              |
-| lines       | 文本显示的行数，如果设置，超出此行数，将会显示省略号 | `string`\|`number`                                | -                  |
-| color       | 文本颜色                       | `string`                                          | -                  |
-| size        | 字体大小                       | `string`\|`number`                                | 15                 |
-| iconStyle   | 图标的样式                      | `CSSProperties`                                   | {fontSize: "15px"} |
-| decoration  | 文字装饰，下划线，中划线等              | `none`\|`underline`\|`line-through`               | -                  |
-| margin      | 外边距、字符串，数值形式均可             | `string`                                          | 0                  |
-| lineHeight  | 文本行高                       | `string`\|`number`                                | -                  |
-| align       | 文本对齐方式                     | `center`\|`left`\|`right`                         | left               |
-| wordWrap    | 文字换行                       | `normal`\|`break-word`\|`anywhere`                | normal             |
-| flex        | 是否占满剩余空间                   | `boolean`                                         | true               |
-| customStyle | 定义需要用到的外部样式                | `CSSProperties`                                   | -                  |
+| 参数          | 说明                         | 类型                                                | 默认值                  |
+|-------------|----------------------------|---------------------------------------------------|----------------------|
+| text        | 显示的值                       | `string`\|`number`                                | -                    |
+| type        | 主题颜色                       | `string`                                          | -                    |
+| show        | 是否显示                       | `boolean`                                         | true                 |
+| prefixIcon  | 前置图标                       | `string`                                          | -                    |
+| suffixIcon  | 后置图标                       | `string`                                          | -                    |
+| mode        | 文本处理的匹配模式[^1]              | `text`\|`price`\|`phone` \|`name`\|`date`\|`link` | text                 |
+| href        | mode=link下，配置的链接           | `string`                                          | -                    |
+| format      | 格式化规则[^2]                  | `string`\|`Function`                              | -                    |
+| call        | mode=phone时，点击文本是否拨打电话     | `boolean`                                         | false                |
+| openType    | 小程序的打开方式                   | `string`                                          | -                    |
+| bold        | 是否粗体，默认normal              | `boolean`                                         | false                |
+| block       | 是否块状                       | `boolean`                                         | false                |
+| lines       | 文本显示的行数，如果设置，超出此行数，将会显示省略号 | `string`\|`number`                                | -                    |
+| color       | 文本颜色                       | `string`                                          | -                    |
+| size        | 字体大小                       | `string`\|`number`                                | 15                   |
+| iconStyle   | 图标的样式                      | `CSSProperties`                                   | \{fontSize: "15px"\} |
+| decoration  | 文字装饰，下划线，中划线等              | `none`\|`underline`\|`line-through`               | -                    |
+| margin      | 外边距、字符串，数值形式均可             | `string`                                          | 0                    |
+| lineHeight  | 文本行高                       | `string`\|`number`                                | -                    |
+| align       | 文本对齐方式                     | `center`\|`left`\|`right`                         | left                 |
+| wordWrap    | 文字换行                       | `normal`\|`break-word`\|`anywhere`                | normal               |
+| flex        | 是否占满剩余空间                   | `boolean`                                         | true                 |
+| customStyle | 定义需要用到的外部样式                | `CSSProperties`                                   | -                    |
 
 ## Events
 
