@@ -1,6 +1,12 @@
 # 登录组件
 
-## 使用示例
+## 平台差异说明
+
+| APP(vue) | H5 | 微信小程序 |
+|----------|----|-------|
+| ✔        | ✔  | ❌     |
+
+## 基本使用示例
 
 ```html
 <yk-login :loginType="1"></yk-login>
@@ -58,5 +64,12 @@ const userNumValidator = ref({
 | userNumValidator     | 用户名输入数量校验（密码登录）                     | object        | -                 | -                             |
 | pwdNumValidator      | 密码输入数量校验（密码登录）                      | object        | -                 | -                             |
 | customPhoneValidator | 自定义手机号校验规则（手机号登录）                   | object        | -                 | -                             |
+
+## Events
+
+| 事件名             | 说明      | 回调参数                    |
+|-----------------|---------|-------------------------|
+| login           | 点击登录    | \{ user, pwd \}: 用户名和密码 |
+| handleClickMenu | 点击底部小文字 | index: 点击索引             |
 
 <demo-model url="pages/components/login/login"></demo-model>

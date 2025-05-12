@@ -144,7 +144,7 @@ const list = ref([
 | click | 点击cell列表时触发 | temp: cell列表当行值, index: cell索引 |
 
 
-## slots
+## Slots
 
 | 插槽名        | 说明           | 接收值    |
 |------------|--------------|--------|

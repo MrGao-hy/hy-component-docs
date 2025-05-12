@@ -122,7 +122,7 @@ import { HyModal } from "hy-app"
 | close         | 点击遮罩关闭出发，closeOnClickOverlay为true有效 | -    |
 | cancelOnAsync | 异步操作进行中点击取消按钮触发                     | -    |
 
-## slots
+## Slots
 
 | 插槽名           | 说明                          | 接收值 |
 |---------------|-----------------------------|-----|

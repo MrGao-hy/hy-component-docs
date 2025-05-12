@@ -95,7 +95,7 @@ const columns = [
 | open   | 打开面板     | temp：list单条数据, index：索引 |
 | close  | 关闭面板     | temp：list单条数据, index：索引 |
 
-## slots
+## Slots
 
 | 插槽名     | 说明         | 接收值    |
 |---------|------------|--------|

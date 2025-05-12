@@ -34,12 +34,15 @@ import { HyTag } from "hy-app"
 - `color`值设置自定义颜色，渐变色;
 ```html
 <template>
-    <hy-tag text="标签" type="primary"></hy-tag>
-    <hy-tag text="标签" type="success"></hy-tag>
-    <hy-tag text="标签" type="error"></hy-tag>
-    <hy-tag text="标签" type="warning"></hy-tag>
-    <hy-tag text="标签" type="info"></hy-tag>
-    <hy-tag text="标签" bgColor="#800080"></hy-tag>
+  <hy-tag text="标签" type="primary"></hy-tag>
+  <hy-tag text="标签" type="success"></hy-tag>
+  <hy-tag text="标签" type="error"></hy-tag>
+  <hy-tag text="标签" type="warning"></hy-tag>
+  <hy-tag text="标签" type="info"></hy-tag>
+  <hy-tag text="标签" color="#800080"></hy-tag>
+  <hy-tag text="标签" color="#FFF420"></hy-tag>
+  <hy-tag text="标签" color="#A4E82F"></hy-tag>
+  <hy-tag text="标签" color="#E72F8C"></hy-tag>
 </template>
 ```
 
@@ -47,12 +50,15 @@ import { HyTag } from "hy-app"
 - 通过设置`plain`设置镂空背景色
 ```html
 <template>
-    <hy-tag text="标签" type="primary" plain></hy-tag>
-    <hy-tag text="标签" type="success" plain></hy-tag>
-    <hy-tag text="标签" type="error" plain></hy-tag>
-    <hy-tag text="标签" type="warning" plain></hy-tag>
-    <hy-tag text="标签" type="info" plain></hy-tag>
-    <hy-tag text="标签" color="#800080" borderColor="#800080" plain></hy-tag>
+  <hy-tag text="标签" type="primary" plain></hy-tag>
+  <hy-tag text="标签" type="success" plain></hy-tag>
+  <hy-tag text="标签" type="error" plain></hy-tag>
+  <hy-tag text="标签" type="warning" plain></hy-tag>
+  <hy-tag text="标签" type="info" plain></hy-tag>
+  <hy-tag text="标签" color="#800080" plain></hy-tag>
+  <hy-tag text="标签" color="#FFF420" plain></hy-tag>
+  <hy-tag text="标签" color="#A4E82F" plain></hy-tag>
+  <hy-tag text="标签" color="#E72F8C" plain></hy-tag>
 </template>
 ```
 
@@ -60,19 +66,15 @@ import { HyTag } from "hy-app"
 - 通过设置`plainFill`给背景色半透明
 ```html
 <template>
-    <hy-tag text="标签" type="primary" plain plainFill></hy-tag>
-    <hy-tag text="标签" type="success" plain plainFill></hy-tag>
-    <hy-tag text="标签" type="error" plain plainFill></hy-tag>
-    <hy-tag text="标签" type="warning" plain plainFill></hy-tag>
-    <hy-tag text="标签" type="info" plain plainFill></hy-tag>
-    <hy-tag
-            text="标签"
-            color="#800080"
-            borderColor="#800080"
-            bgColor="8000803F"
-            plain
-            plainFill
-    ></hy-tag>
+  <hy-tag text="标签" type="primary" plain plainFill></hy-tag>
+  <hy-tag text="标签" type="success" plain plainFill></hy-tag>
+  <hy-tag text="标签" type="error" plain plainFill></hy-tag>
+  <hy-tag text="标签" type="warning" plain plainFill></hy-tag>
+  <hy-tag text="标签" type="info" plain plainFill></hy-tag>
+  <hy-tag text="标签" color="#800080" plain plainFill></hy-tag>
+  <hy-tag text="标签" color="#FFF420" plain plainFill></hy-tag>
+  <hy-tag text="标签" color="#A4E82F" plain plainFill></hy-tag>
+  <hy-tag text="标签" color="#E72F8C" plain plainFill></hy-tag>
 </template>
 ```
 
@@ -88,10 +90,9 @@ import { HyTag } from "hy-app"
     <hy-tag
             text="标签"
             color="#800080"
-            borderColor="transparent"
-            bgColor="8000803F"
             plain
             plainFill
+            borderColor="transparent"
     ></hy-tag>
 </template>
 ```

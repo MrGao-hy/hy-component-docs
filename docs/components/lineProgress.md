@@ -90,7 +90,7 @@ import { HyLineProgress } from "hy-app"
 | customStyle   | 自定义样式           | `CSSProperties`      | -                   |
 
 
-## slots
+## Slots
 
 | 插槽名     | 说明                       | 接收值 |
 |---------|--------------------------|-----|

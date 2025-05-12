@@ -150,7 +150,7 @@ import { HyButton } from "hy-app"
 | opensetting    | 在打开授权设置页并关闭后回调	                                         | -    | 微信小程序 |
 | launchapp      | 打开 APP 成功的回调                                            | -    | 微信小程序 |
 
-## slots
+## Slots
 
 | 插槽名     | 说明   | 接收值 |
 |---------|------|----|

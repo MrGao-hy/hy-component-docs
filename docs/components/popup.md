@@ -84,7 +84,7 @@ import { HyPopup } from "hy-app"
 | open  | 弹出层打开 | -    |
 | close | 弹出层收起 | -    |
 
-## slots
+## Slots
 
 | 插槽名     | 说明 | 接收值 |
 |---------|----|-----|

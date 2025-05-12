@@ -184,10 +184,10 @@ const change = (e) => {
 |--------|-----------------|-------------------------------------------|
 | change | 在switch打开或关闭时触发 | value：打开时为activeValue值，关闭时为inactiveValue值 |
 
-## slots
+## Slots
 
 | 插槽名     | 说明   | 接收值 |
 |---------|------|-----|
 | default | 默认插槽 | -   |
 
-<demo-model url="pages/components/tabBar/tabBar"></demo-model>
+<demo-model url="pages/components/switch/switch"></demo-model>

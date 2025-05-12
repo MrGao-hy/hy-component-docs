@@ -131,7 +131,7 @@ import { HyNavbar } from "hy-app"
 | leftClick  | 点击左侧区域 | -    |
 | rightClick | 点击右侧区域 | -    |
 
-## slots
+## Slots
 
 | 插槽名    | 说明        | 接收值 |
 |--------|-----------|-----|

@@ -165,9 +165,7 @@ export default defineConfig({
           items: [
             { text: 'Login 登录', link: '/components/login' },
             { text: 'Price 金额', link: '/components/price' },
-            { text: 'Avatar 头像', link: '/components/avatar' },
-            { text: 'Transition 动画', link: '/components/transition' },
-            { text: 'Qrcode 二维码', link: '/components/qrcode' }
+            { text: 'SubmitBar 提交订单', link: '/components/submitBar' }
           ]
         }
       ],

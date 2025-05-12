@@ -1,4 +1,4 @@
-## FloatButton 悬浮按钮组件
+# FloatButton 悬浮按钮组件
 > 该组件内部实现以uni-app的基础button组件为基础，进行二次封装
 
 ::: tip 温馨提示
@@ -154,7 +154,7 @@ import { HyFloatButton } from "hy-app"
 | click     | 点击按钮  | -                    |
 | clickItem | 点击菜单栏 | temp：菜单栏数据，index: 索引 |
 
-## slots
+## Slots
 
 | 插槽名     | 说明   | 接收值 |
 |---------|------|-----|

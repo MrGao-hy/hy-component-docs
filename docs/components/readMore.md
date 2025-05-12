@@ -146,7 +146,7 @@ const content = ref(`山不在高，有仙则名。水不在深，有龙则灵�
 | open  | 内容被展开时触发  | name - props中传入的name参数值 |
 | close | 内容被收起时触发	 | name - props中传入的name参数值 |
 
-## slots
+## Slots
 
 | 插槽名     | 说明   | 接收值 |
 |---------|------|-----|

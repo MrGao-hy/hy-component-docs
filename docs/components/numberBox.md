@@ -207,7 +207,7 @@ const value = ref(1);
 | plus      | 点击增加按钮       | value: 数值             |
 | minus     | 点击减少按钮       | value: 数值             |
 
-## slots
+## Slots
 
 | 插槽名   | 说明   | 接收值    |
 |-------|------|--------|

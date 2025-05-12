@@ -179,7 +179,7 @@ const afterRead = (event: any) => {
 | clickPreview | 全屏预览图片时触发    | (url, lists, name)，url为当前选中的图片地址，index为通过props传递的index参数 |
 | delete       | 删除图片         | 传递index 回调 event 参数 包含index，file                         |
 
-## slots
+## Slots
 
 | 插槽名     | 说明 | 接收值 |
 |---------|----|-----|

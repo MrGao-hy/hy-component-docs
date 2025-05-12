@@ -44,7 +44,7 @@ import { HyButton } from "hy-app"
 |-------|----|------|
 | click | -  | -    |
 
-## slots
+## Slots
 
 | 插槽名  | 说明 | 接收值 |
 |------|----|----|

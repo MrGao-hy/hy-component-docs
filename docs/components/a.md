@@ -1,4 +1,4 @@
-## 空状态组件
+# 空状态组件
 > 该组件内部实现以uni-app的基础button组件为基础，进行二次封装
 
 ::: tip 温馨提示
@@ -25,7 +25,7 @@ import { HyButton } from "hy-app"
 ```
 
 ## 基本使用示例
-
+- 通过设置``啊啊啊
 ```html
 <template>
     <hy-button text="月落"></hy-button>
@@ -44,7 +44,7 @@ import { HyButton } from "hy-app"
 |-------|----|------|
 | click | -  | -    |
 
-## slots
+## Slots
 
 | 插槽名  | 说明 | 接收值 |
 |------|----|----|

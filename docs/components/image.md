@@ -90,7 +90,7 @@ import { HyImage } from "hy-app"
 | error | 图片加载失败时触发 | err: 错误信息 |
 | load  | 图片加载成功时触发 | e         |
 
-## slots
+## Slots
 
 | 插槽名     | 说明          | 接收值 |
 |---------|-------------|-----|

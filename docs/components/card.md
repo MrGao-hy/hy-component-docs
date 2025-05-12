@@ -133,7 +133,7 @@ import { HyCard } from "hy-app"
 | body-click | 卡片主体部分被点击时触发   | index: 用户传递的标识符 |
 | foot-click | 卡片底部部分被点击时触发   | index: 用户传递的标识符 |
 
-## slots
+## Slots
 
 | 插槽名    | 说明          | 接收值 |
 |--------|-------------|-----|

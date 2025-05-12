@@ -68,6 +68,7 @@ const value = ref(30);
             <hy-slider v-if="popupShow" v-model="sliderValue" min="1" max="4" showValue></hy-slider>
         </view>
     </hy-popup>
+    <hy-button type="primary" @click="popupShow = !popupShow" text="打开遮罩框"></hy-button>
 </template>
 
 <script setup> 

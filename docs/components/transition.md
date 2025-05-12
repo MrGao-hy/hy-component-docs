@@ -86,7 +86,7 @@ const show = ref(true);
 | leave       | 离开中触发 | -    |
 | afterLeave  | 离开后触发 | -    |
 
-## slots
+## Slots
 
 | 插槽名     | 说明 | 接收值 |
 |---------|----|-----|
