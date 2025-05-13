@@ -225,12 +225,36 @@ export default defineConfig({
               link: '/api/imgToBase64'
             },
             {
+              text: '全局唯一标识符',
+              link: '/api/guid'
+            },
+            {
+              text: '颜色转换',
+              link: '/api/colorSwitch'
+            },
+            {
+              text: '获取元素节点信息',
+              link: '/api/getRect'
+            },
+            {
               text: '对象参数转换地址栏参数',
               link: '/api/objectToParams'
             },
             {
               text: '数值转换px单位',
               link: '/api/addUnit'
+            },
+            {
+              text: '随机数值',
+              link: '/api/random'
+            },
+            {
+              text: '校验判断',
+              link: '/api/estimate'
+            },
+            {
+              text: '小程序分享',
+              link: '/api/share'
             }
           ]
         }

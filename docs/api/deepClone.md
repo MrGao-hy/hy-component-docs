@@ -6,7 +6,7 @@
 
 
 ## 深度递归
-###### deepClone(timestamp, fmt)
+###### deepClone(source)
 
 - `source` \<Object> 对象或数组
 
@@ -16,7 +16,13 @@ import { deepClone } from "hy-app";
 const oldObj = {
     name: "旧数据"
 }
-// 时间格式转换
+
+// 浅拷贝
+newObj.name = "新数据";
+console.log(oldObj); // 打印出name是“新数据”
+console.log(newObj); // 打印出name是“新数据”
+
+// 深拷贝
 const newObj = deepClone(oldObj);
 newObj.name = "新数据";
 
