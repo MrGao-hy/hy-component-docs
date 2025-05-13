@@ -228,8 +228,8 @@ const nowTime = computed(() => {
 
 @media screen and (min-width: 1366px) {
   .demo-model {
-    width: 330px;
-    height: calc(330px * 2 + 60px);
+    width: 320px;
+    height: calc(320px * 2 + 60px + 30px);
     top: calc(50vh - 330px);
     right: 0;
     margin-right: 5px;
