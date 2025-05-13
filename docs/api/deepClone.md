@@ -6,10 +6,8 @@
 
 
 ## 深度递归
-###### deepClone(source)
-
+### deepClone(source)
 - `source` \<Object> 对象或数组
-
 ```javascript
 import { deepClone } from "hy-app";
 

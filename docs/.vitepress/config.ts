@@ -241,8 +241,8 @@ export default defineConfig({
               link: '/api/objectToParams'
             },
             {
-              text: '数值转换px单位',
-              link: '/api/addUnit'
+              text: '数组互相转换单位',
+              link: '/api/unitSwitch'
             },
             {
               text: '随机数值',

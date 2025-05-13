@@ -15,10 +15,10 @@
 :::
 
 ## 节流
-###### throttle(function, wait = 500)
-
-- `function` \<Function> 触发回调执行的函数
+### throttle(fn, wait = 500, immediate = true)
+- `fn` \<Function> 触发回调执行的函数
 - `wait` \<Number> 时间间隔，单位ms
+- `immediate` \<Boolean> 是否立马执行
 
 ```html
 <template>
@@ -27,7 +27,7 @@
   </view>
 </template>
 
-<script setup lang="ts">
+<script setup lang="ts[throttle.md](throttle.md)">
   import { throttle } from "hy-app";
   const throttleFn = throttle(() => {
       console.log("执行了")
@@ -36,12 +36,10 @@
 ```
 
 ## 防抖
-###### debounce(function, wait = 500)
+### debounce(fn, wait = 500)
 在连续的操作中，无论进行了多长时间，只有某一次的操作后在指定的时间内没有再操作，这一次才被判定有效
-
-- `function` \<Function> 触发回调执行的函数
+- `fn` \<Function> 触发回调执行的函数
 - `wait` \<Number> 时间间隔，单位ms
-
 ```html
 <template>
   <view class="debounce" @tap="debounceFn">

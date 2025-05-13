@@ -6,10 +6,8 @@
 :::
 
 ## base64加密
-###### encryptData(data)
-
+### encryptData(data)
 - `data` \<Object | string> 加密对象或者字符串
-
 ```javascript
 import { encryptData } from "hy-app";
 const encryptObj = encryptData({name: "加密对象"});
@@ -17,10 +15,8 @@ const encryptStr = encryptData("加密字符串");
 ```
 
 ## base64解密
-###### decryptData(encryptedVal)
-
+### decryptData(encryptedVal)
 - `encryptedVal` \<String> 需要解密的加密数据
-
 ```javascript
 import { decryptData } from "hy-app";
 const decryptVal = decryptData("DSSFFGfh234nr");

@@ -1,10 +1,8 @@
 # bytesToSize 字节转化（b/KB/MB/GB）单位
 
 ## 字节转换单位
-###### bytesToSize(bytes)
-
+### bytesToSize(bytes)
 - `bytes` \<Number> 字节大小
-
 ```javascript
 import { bytesToSize } from "hy-app";
 

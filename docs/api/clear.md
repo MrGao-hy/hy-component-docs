@@ -1,10 +1,8 @@
 # clearVal 清空对象值
 
 ## 递归清空对象里面基本类型的值
-###### clearVal(obj)
-
+### clearVal(obj)
 - `obj` \<Object | String | Number | Undefined| Boolean> 需要清空数值
-
 ```javascript
 import { clearVal } from "hy-app";
 const obj = {

@@ -4,9 +4,7 @@
 ## getRect(selector, all = false, ins)
 
 - `selector` \<String\> 此参数为元素节点，可以是id或者class，比如"#user-name"，".box"
-
 - `all` \<Boolean\> 是否返回全部节点信息，当页面有多个相同selector的元素时，all为true，会以数组形式返回所有节点的信息(结果为数组，数组元素为对象)，否则只返回第一个节点的信息(结果为一个对象)
-
 - `ins` \<String\> 节点`const instance = getCurrentInstance();`在小程序时候必须传，否则获取不到元素的信息
 
 ::: tip 建议
