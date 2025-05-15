@@ -7,7 +7,6 @@ import {
 
 // refer https://vitepress.dev/reference/site-config for details
 export default defineConfig({
-  base: "/hy-component-docs/",
   lang: 'zh-CN',
   title: '华玥组件库',
   description: '华玥UI-是作者打造的开发者全成长周期开源平台，围绕效率、成就、变现三大用户价值布局平台能力，全力服务开发者，旨在成为开发者的好朋友。华玥历经多轮打磨雕刻，集海量高品质华玥模板、实时在线预览、多元化场景模板、轻便好学、易上手等多重优势于一身的开发神器，更自带免费开源可商用属性，为企业集团、公司团队、前端后端开发者、运营大佬、社交达人、学生小白提供了一个零成本的在线开发平台和资源库。',
