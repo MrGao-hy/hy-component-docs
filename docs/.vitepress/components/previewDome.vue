@@ -1,7 +1,7 @@
 <template>
   <a-flex wrap="wrap" gap="large">
     <a-card hoverable style="width: 240px">
-      <img src="/public/images/h5_qrcode.png" />
+      <img :src="h5QrCode" />
       <template #actions>
         <div class="platform-name">
           华玥UI（H5）
@@ -10,7 +10,7 @@
       </template>
     </a-card>
     <a-card hoverable style="width: 240px">
-      <img src="/public/images/mini_qrcode.png" />
+      <img :src="miniQrCode" />
       <template #actions>
         <div class="platform-name">
           华玥UI（小程序）
@@ -22,7 +22,10 @@
 </template>
 
 <script setup lang="ts">
-import {Flex as AFlex, Card as ACard} from "ant-design-vue"
+import {Flex as AFlex, Card as ACard} from "ant-design-vue";
+
+import h5QrCode from "/images/h5_qrcode.png"
+import miniQrCode from "/images/mini_qrcode.png"
 </script>
 
 <style scoped lang="scss">

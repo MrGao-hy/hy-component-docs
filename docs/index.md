@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: 开始使用
-      link: /components/start
+      link: /components/intro
     - theme: alt
       text: 演示
       link: /components/intro#演示模板

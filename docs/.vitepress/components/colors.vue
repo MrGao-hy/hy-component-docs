@@ -1,72 +1,4 @@
 <template>
-  <div v-if="props.type==1">
-    <div class="tn-color__wrap">
-      <div class="tn-color__item tn-color__item--no-child" style="background-color: #01BEFF;">
-        <div class="tn-color__item--main">
-          <div class="tn-color__item--main__info">
-            <div class="tn-color__item--main__info__title">主题色</div>
-            <div class="tn-color__item--main__info__color-value">#01BEFF</div>
-          </div>
-        </div>
-      </div>
-      <div class="tn-color__item tn-color__item--no-child" style="background-color: #FBBD12;">
-        <div class="tn-color__item--main">
-          <div class="tn-color__item--main__info">
-            <div class="tn-color__item--main__info__title">图鸟橙</div>
-            <div class="tn-color__item--main__info__color-value">#FBBD12</div>
-          </div>
-        </div>
-      </div>
-      <div class="tn-color__item tn-color__item--no-child" style="background-color: #00FFC8;">
-        <div class="tn-color__item--main">
-          <div class="tn-color__item--main__info">
-            <div class="tn-color__item--main__info__title">子配色</div>
-            <div class="tn-color__item--main__info__color-value">#00FFC8</div>
-          </div>
-        </div>
-      </div>
-      <div class="tn-color__item tn-color__item--no-child" style="background-color: #FFF00D;">
-        <div class="tn-color__item--main">
-          <div class="tn-color__item--main__info">
-            <div class="tn-color__item--main__info__title">反色调</div>
-            <div class="tn-color__item--main__info__color-value">#FFF00D</div>
-          </div>
-        </div>
-      </div>
-      <div class="tn-color__item tn-color__item--no-child" style="background-color: #080808;">
-        <div class="tn-color__item--main">
-          <div class="tn-color__item--main__info">
-            <div class="tn-color__item--main__info__title">文本</div>
-            <div class="tn-color__item--main__info__color-value">#080808</div>
-          </div>
-        </div>
-      </div>
-      <div class="tn-color__item tn-color__item--no-child" style="background-color: #F4F4F4;">
-        <div class="tn-color__item--main">
-          <div class="tn-color__item--main__info" style="color: #080808;">
-            <div class="tn-color__item--main__info__title">背景</div>
-            <div class="tn-color__item--main__info__color-value">#F4F4F4</div>
-          </div>
-        </div>
-      </div>
-      <div class="tn-color__item tn-color__item--no-child" style="background-color: #FF71D2;">
-        <div class="tn-color__item--main">
-          <div class="tn-color__item--main__info">
-            <div class="tn-color__item--main__info__title">辅助粉</div>
-            <div class="tn-color__item--main__info__color-value">#FF71D2</div>
-          </div>
-        </div>
-      </div>
-      <div class="tn-color__item tn-color__item--no-child" style="background-color: #82B2FF;">
-        <div class="tn-color__item--main">
-          <div class="tn-color__item--main__info">
-            <div class="tn-color__item--main__info__title">辅助蓝</div>
-            <div class="tn-color__item--main__info__color-value">#82B2FF</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
   <div v-if="props.type==2">
     <div class="tn-color__wrap">
       <template v-for="(item, index) in colorList" :key="index">
@@ -100,80 +32,6 @@
         </div>
       </template>
     </div>
-  </div>
-
-  <div v-if="props.type==3">
-    <div class="tn-color__wrap" style="margin-top: 20px">
-      <template v-for="(item, index) in colorList.slice(0,16)">
-        <div :class="['tn-main-gradient-' +item.color]" class="tn-color__item" style="padding: 0px">
-          <div class="tn-color__item--main" style="padding: 0px">
-            <div style="text-align: center;line-height: 110px">{{ `tn-main-gradient-${item.color}` }}
-            </div>
-          </div>
-        </div>
-      </template>
-    </div>
-  </div>
-  <div v-if="props.type==4">
-    <div class="tn-color__wrap" style="margin-top: 20px">
-      <template v-for="(item, index) in colorList.slice(0,16)">
-        <div v-for="(item2, index2) in ['reverse']" class="tn-color__item" style="padding: 0px">
-          <div :key="index" :class="['tn-main-gradient-' +item.color +'--' + item2]" class="tn-color__item"
-               style="padding: 0px">
-            <div class="tn-color__item--main">
-              <div style="text-align: center;line-height: 110px">{{ `tn-main-gradient-${item.color}--${item2}` }}
-              </div>
-            </div>
-          </div>
-        </div>
-      </template>
-    </div>
-  </div>
-  <div v-if="props.type==5">
-    <div class="tn-color__wrap" style="margin-top: 20px">
-      <template v-for="(item, index) in colorList.slice(0,16)">
-        <div v-for="(item2, index2) in ['light']" class="tn-color__item" style="padding: 0px">
-          <div :key="index" :class="['tn-main-gradient-' +item.color +'--' + item2]" class="tn-color__item"
-               style="padding: 0px">
-            <div class="tn-color__item--main">
-              <div style="text-align: center;line-height: 110px">{{ `tn-main-gradient-${item.color}--${item2}` }}
-              </div>
-            </div>
-          </div>
-        </div>
-      </template>
-
-    </div>
-  </div>
-  <div v-if="props.type==6">
-    <div class="tn-color__wrap" style="margin-top: 20px">
-      <template v-for="(item, index) in colorList.slice(0,16)">
-        <div v-for="(item2, index2) in ['single']" class="tn-color__item" style="padding: 0px">
-          <div :class="['tn-main-gradient-' +item.color +'--' + item2]" class="tn-color__item"
-               style="padding: 0px">
-            <div class="tn-color__item--main">
-              <div style="text-align: center;line-height: 110px">{{ `tn-main-gradient-${item.color}--${item2}` }}
-              </div>
-            </div>
-          </div>
-        </div>
-      </template>
-
-    </div>
-
-  </div>
-  <div v-if="props.type==7">
-    <div class="tn-color__wrap">
-      <template v-for="(item, index) in 16" :key="index">
-        <div :class="['tn-cool-bg-color-' + item]" class="tn-color__item">
-          <div class="tn-color__item--main">
-            <div style="margin: 0 auto;text-align: center;margin-top: 42px;">{{ 'tn-cool-bg-color-' + item }}
-            </div>
-          </div>
-        </div>
-      </template>
-    </div>
-
   </div>
 </template>
 <script lang="ts" setup>
@@ -374,8 +232,8 @@ const colorList = ref([{
 </script>
 
 <style lang="scss" scoped>
-@import '../../public/scss/theme.scss';
-@import '../../public/scss/color.scss';
+@import '/public/scss/theme.scss';
+@import '/public/scss/color.scss';
 
 .tn-color__wrap {
   display: flex;

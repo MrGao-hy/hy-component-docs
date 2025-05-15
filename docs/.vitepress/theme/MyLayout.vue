@@ -21,6 +21,7 @@ import { useRouter } from "vitepress";
 import createGitalk from "../gitalk";
 
 const { route } = useRouter();
+// 使用@vercel/analytics监听完整访客量
 inject()
 
 const initGitalk = () => {
