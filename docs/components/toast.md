@@ -41,14 +41,6 @@ onMounted(() => {
 }) 
 ```
 
-## 基本使用示例
-- 通过设置``啊啊啊
-```html
-<template>
-    <hy-button text="月落"></hy-button>
-</template>
-```
-
 ## API（params）{#params}
 
 | 参数       | 说明                    | 类型                                               | 默认值    |
