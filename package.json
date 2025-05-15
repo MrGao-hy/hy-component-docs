@@ -17,6 +17,7 @@
     "ant-design-vue": "4.x",
     "gitalk": "^1.8.0",
     "markdown-it-footnote": "^4.0.0",
-    "vue": "^3.5.13"
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.1"
   }
 }
