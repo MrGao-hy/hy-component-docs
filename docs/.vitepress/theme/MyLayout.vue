@@ -12,7 +12,7 @@
 
 <script lang="ts" setup>
 import DefaultTheme from "vitepress/theme";
-import { Analytics } from '@vercel/analytics/vue';
+import { inject  } from '@vercel/analytics';
 
 const {Layout} = DefaultTheme
 import { watch, nextTick, onMounted } from "vue";
@@ -21,6 +21,7 @@ import { useRouter } from "vitepress";
 import createGitalk from "../gitalk";
 
 const { route } = useRouter();
+inject()
 
 const initGitalk = () => {
   if (typeof window !== "undefined") {
