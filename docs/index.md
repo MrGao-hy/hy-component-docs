@@ -11,7 +11,7 @@ hero:
       link: /components/start
     - theme: alt
       text: 演示
-      link: https://gitee.com/gao-xianhua/tour.git
+      link: /components/intro#演示模板
       
 
 features:

@@ -33,7 +33,7 @@ export default defineConfig({
     nav: [
       {
         text: '组件库',
-        link: '/components/start',
+        link: '/components/intro',
         items: [
           { text: '空状态', link: '/start' },
           { text: '空状态', link: '/empty' },
@@ -45,7 +45,7 @@ export default defineConfig({
       },
       {
         text: '下载软件',
-        link: '/download/service'
+        link: '/download/web'
       },
 
       // {
@@ -128,6 +128,7 @@ export default defineConfig({
             { text: 'Tooltip 长按提示', link: '/components/tooltip' },
             { text: 'ActionSheet 操作菜单', link: '/components/actionSheet' },
             { text: 'Warn 警告提示', link: '/components/warn' },
+            { text: 'Toast 提示信息', link: '/components/toast' },
             { text: 'NoticeBar 滚动通知', link: '/components/noticeBar' },
             { text: 'SwipeAction 滑动单元格', link: '/components/swipeAction' },
             { text: 'FoldingPanel 折叠面板', link: '/components/foldingPanel' },
@@ -175,7 +176,7 @@ export default defineConfig({
           items: [
             {
               text: '介绍',
-              link: '/api/index',
+              link: '/api/1',
             },
             {
               text: '便捷工具',
@@ -312,8 +313,8 @@ export default defineConfig({
       }
     },
     socialLinks: [
-      { icon: "github", link: 'https://github.com/gaoxianhua/' },
-      { icon: "gitee", link: 'https://gitee.com/gao-xianhua' },
+      { icon: "github", link: 'https://github.com/MrGao-hy/' },
+      { icon: "gitee", link: 'https://gitee.com/MrGao-hy' },
       { icon: "csdn", link: 'https://blog.csdn.net/weixin_68340504?type=blog' }
     ]
   },

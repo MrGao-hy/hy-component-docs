@@ -8,26 +8,26 @@
 node(推荐) >= 16.14.0
 :::
 
-## 下载scss
+## 下载scss(没有的话需要安装)
 ::: code-group
 ```shell [npm]
-$ npm install sass
+$ npm install sass -D
 ```
 
 ```shell [pnpm]
-$ pnpm install sass
+$ pnpm install sass -D
 ```
 
 ```shell [cnpm]
-$ cnpm install sass
+$ cnpm install sass -D
 ```
 
 ```shell [yarn]
-$ yarn install sass
+$ yarn install sass -D
 ```
 :::
 
-## 下载dayjs
+## 下载dayjs(没有的话需要安装)
 ::: code-group
 ```shell [npm]
 $ npm install dayjs
