@@ -3,6 +3,7 @@
     <template #doc-after>
       <div id="gitalk-container"></div>
     </template>
+    <Analytics />
 <!--    <template #aside-outline-after>-->
 <!--      <iframe src="http://localhost:3002/#/" width="100%" height="500px"></iframe>-->
 <!--    </template>-->
@@ -11,6 +12,7 @@
 
 <script lang="ts" setup>
 import DefaultTheme from "vitepress/theme";
+import { Analytics } from '@vercel/analytics/vue';
 
 const {Layout} = DefaultTheme
 import { watch, nextTick, onMounted } from "vue";

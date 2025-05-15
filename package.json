@@ -13,6 +13,7 @@
     "vitepress-plugin-group-icons": "^1.5.2"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.5.0",
     "ant-design-vue": "4.x",
     "gitalk": "^1.8.0",
     "markdown-it-footnote": "^4.0.0",
