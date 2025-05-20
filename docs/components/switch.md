@@ -109,6 +109,8 @@ const change = (e) => {
 ```html
 <template>
     <hy-switch v-model="value"  icon-color="red" :active-icon="IconConfig.SUCCESS" :inactive-icon="IconConfig.CLOSE" ></hy-switch>
+    <!-- 使用自己的矢量图标库 -->
+    <hy-switch v-model="value"  icon-color="red" :active-icon="open" :inactive-icon="close" :icon="{ customPrefix: 'icon' }"></hy-switch>
 </template>
 <script setup>
     import { ref } from "vue";
@@ -161,22 +163,22 @@ const change = (e) => {
 
 ## API
 
-| 参数            | 说明                    | 类型                                              | 默认值                 |
-|---------------|-----------------------|-------------------------------------------------|---------------------|
-| v-model       | 通过v-model双向绑定的值       | `boolean`                                       | false               |
-| loading       | 是否处于加载中               | `boolean`                                       | false               |
-| disabled      | 是否禁用	                 | `boolean`                                       | false               |
-| size          | 开关尺寸，单位rpx            | `small`\|`medium`\|`large`\| `string`\|`number` | medium              |
-| activeColor   | 打开时的背景色               | `string`                                        | ColorConfig.primary |
-| inactiveColor | 关闭时的背景色               | `string`                                        | #ffffff             |
-| activeValue   | switch打开时的值           | `boolean`                                       | true                |
-| inactiveValue | switch关闭时的值	          | `boolean`                                       | false               |
-| activeIcon    | 打开选择器时图标	             | `string`                                        | -                   |
-| inactiveIcon  | 关闭选择器时图标	             | `string`                                        | -                   |
-| iconColor     | 图标颜色	                 | `string`                                        | -                   |
-| asyncChange   | 是否开启异步变更，开启后需要手动控制输入值 | `boolean`                                       | false               |
-| space         | 圆点与外边框的距离             | `string`\|`number`                              | 0                   |
-| customStyle   | 自定义样式                 | `CSSProperties`                                 | -                   |
+| 参数            | 说明                             | 类型                                              | 默认值                 |
+|---------------|--------------------------------|-------------------------------------------------|---------------------|
+| v-model       | 通过v-model双向绑定的值                | `boolean`                                       | false               |
+| loading       | 是否处于加载中                        | `boolean`                                       | false               |
+| disabled      | 是否禁用	                          | `boolean`                                       | false               |
+| size          | 开关尺寸，单位rpx                     | `small`\|`medium`\|`large`\| `string`\|`number` | medium              |
+| activeColor   | 打开时的背景色                        | `string`                                        | ColorConfig.primary |
+| inactiveColor | 关闭时的背景色                        | `string`                                        | #ffffff             |
+| activeValue   | switch打开时的值                    | `boolean`                                       | true                |
+| inactiveValue | switch关闭时的值	                   | `boolean`                                       | false               |
+| activeIcon    | 打开选择器时图标	                      | `string`                                        | -                   |
+| inactiveIcon  | 关闭选择器时图标	                      | `string`                                        | -                   |
+| icon          | 图标api集合，详见[图标Api](./icon#api)	 | `HyIconProps`                                   | -                   |
+| asyncChange   | 是否开启异步变更，开启后需要手动控制输入值          | `boolean`                                       | false               |
+| space         | 圆点与外边框的距离                      | `string`\|`number`                              | 0                   |
+| customStyle   | 自定义样式                          | `CSSProperties`                                 | -                   |
 
 ## Events
 

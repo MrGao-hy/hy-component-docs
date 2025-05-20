@@ -168,38 +168,36 @@ const value1 = ref(Date.now());
 
 ## API
 
-| 参数                  | 说明                   | 类型                                                                                         | 默认值                |
-|---------------------|----------------------|--------------------------------------------------------------------------------------------|--------------------|
-| hasInput            | 是否自带input输入框         | `boolean`                                                                                  | false              |
-| format              | 输入框显示日期格式            | `string`                                                                                   | 'YYYY-MM-DD HH:mm' |
-| placeholder         | 输入框placeholder       | `string`                                                                                   | 请选择                |
-| show                | 用于控制选择器的弹出与收起        | `boolean`                                                                                  | false              |
-| popupMode           | 用于控制选择器的弹出方向         | `bottom`\|`center`\|`left`\|`right`\|`top`                                                 | bottom             |
-| showToolbar         | 是否显示顶部的操作栏           | `boolean`                                                                                  | true               |
-| v-model             | 绑定值                  | `string` \| `number` \| `Date`                                                             | -                  |
-| title               | 顶部标题                 | `string`                                                                                   | -                  |
-| mode                | 展示格式                 | `date`\|`datetime`\|`time`\|`year-month`<br/>\|`month-day`\|`hour-minute`\|`minute-second` | datetime           |
-| maxDate             | 可选的最大时间（时间戳毫秒）       | `number`                                                                                   | 最大默认值为后10年         |
-| minDate             | 可选的最小时间（时间戳毫秒）       | `number`                                                                                   | 最小默认值为前10年         |
-| minHour             | 可选的最小小时，仅mode=time有效 | `number`                                                                                   | 23                 |
-| maxHour             | 可选的最大小时，仅mode=time有效 | `number`                                                                                   | 0                  |
-| minMinute           | 可选的最小分钟，仅mode=time有效 | `number`                                                                                   | 0                  |
-| maxMinute           | 可选的最大分钟，仅mode=time有效 | `number`                                                                                   | 59                 |
-| filter              | 选项过滤函数               | `null` \| `function`                                                                       | null               |
-| formatter           | 输入过滤或格式化函数           | `null` \| `function`                                                                       | null               |
-| loading             | 是否显示加载中状态            | `boolean`                                                                                  | false              |
-| itemHeight          | 各列中，单个选项的高度          | `number`                                                                                   | 44                 |
-| cancelText          | 取消按钮的文字              | `string`                                                                                   | 取消                 |
-| confirmText         | 确认按钮的文字              | `string`                                                                                   | 确认                 |
-| cancelColor         | 取消按钮的颜色              | `string`                                                                                   | #909193            |
-| confirmColor        | 确认按钮的颜色              | `string`                                                                                   | #3c9cff            |
-| visibleItemCount    | 每列中可见选项的数量           | `number`                                                                                   | 5                  |
-| closeOnClickOverlay | 是否允许点击遮罩关闭选择器        | `boolean`                                                                                  | false              |
-| defaultIndex        | 各列的默认索引              | `array`                                                                                    | -                  |
-| disabled            | 是否禁用输入框              | `boolean`                                                                                  | false              |
-| disabledColor       | 禁用时候输入框背景色           | `string`                                                                                   | #F5F5F5            |
-| toolbarRightSlot    | 是否右边插槽               | `boolean`                                                                                  | false              |
-| customStyle         | 自定义输入框外部样式           | `CSSProperties`                                                                            | -                  |
+| 参数                  | 说明                                              | 类型                                                                                         | 默认值                |
+|---------------------|-------------------------------------------------|--------------------------------------------------------------------------------------------|--------------------|
+| hasInput            | 是否自带input输入框                                    | `boolean`                                                                                  | false              |
+| input               | 输入框属性集合，hasInput为true可填，详见[输入框Api](./input#api) | `HyInputProps`                                                                             | -                  |
+| format              | 输入框显示日期格式                                       | `string`                                                                                   | 'YYYY-MM-DD HH:mm' |
+| show                | 用于控制选择器的弹出与收起                                   | `boolean`                                                                                  | false              |
+| popupMode           | 用于控制选择器的弹出方向                                    | `bottom`\|`center`\|`left`\|`right`\|`top`                                                 | bottom             |
+| showToolbar         | 是否显示顶部的操作栏                                      | `boolean`                                                                                  | true               |
+| v-model             | 绑定值                                             | `string` \| `number` \| `Date`                                                             | -                  |
+| title               | 顶部标题                                            | `string`                                                                                   | -                  |
+| mode                | 展示格式                                            | `date`\|`datetime`\|`time`\|`year-month`<br/>\|`month-day`\|`hour-minute`\|`minute-second` | datetime           |
+| maxDate             | 可选的最大时间（时间戳毫秒）                                  | `number`                                                                                   | 最大默认值为后10年         |
+| minDate             | 可选的最小时间（时间戳毫秒）                                  | `number`                                                                                   | 最小默认值为前10年         |
+| minHour             | 可选的最小小时，仅mode=time有效                            | `number`                                                                                   | 23                 |
+| maxHour             | 可选的最大小时，仅mode=time有效                            | `number`                                                                                   | 0                  |
+| minMinute           | 可选的最小分钟，仅mode=time有效                            | `number`                                                                                   | 0                  |
+| maxMinute           | 可选的最大分钟，仅mode=time有效                            | `number`                                                                                   | 59                 |
+| filter              | 选项过滤函数                                          | `null` \| `function`                                                                       | null               |
+| formatter           | 输入过滤或格式化函数                                      | `null` \| `function`                                                                       | null               |
+| loading             | 是否显示加载中状态                                       | `boolean`                                                                                  | false              |
+| itemHeight          | 各列中，单个选项的高度                                     | `number`                                                                                   | 44                 |
+| cancelText          | 取消按钮的文字                                         | `string`                                                                                   | 取消                 |
+| confirmText         | 确认按钮的文字                                         | `string`                                                                                   | 确认                 |
+| cancelColor         | 取消按钮的颜色                                         | `string`                                                                                   | #909193            |
+| confirmColor        | 确认按钮的颜色                                         | `string`                                                                                   | #3c9cff            |
+| visibleItemCount    | 每列中可见选项的数量                                      | `number`                                                                                   | 5                  |
+| closeOnClickOverlay | 是否允许点击遮罩关闭选择器                                   | `boolean`                                                                                  | false              |
+| defaultIndex        | 各列的默认索引                                         | `array`                                                                                    | -                  |
+| toolbarRightSlot    | 是否右边插槽                                          | `boolean`                                                                                  | false              |
+| customStyle         | 自定义输入框外部样式                                      | `CSSProperties`                                                                            | -                  |
 
 ## Events
 

@@ -67,29 +67,27 @@ import { HyAddressPicker } from "hy-app"
 
 ## API
 
-| 参数                  | 说明             | 类型                                         | 默认值                |
-|---------------------|----------------|--------------------------------------------|--------------------|
-| hasInput            | 是否自带input输入框   | `boolean`                                  | false              |
-| placeholder         | 输入框placeholder | `string`                                   | 请选择                |
-| show                | 用于控制选择器的弹出与收起  | `boolean`                                  | false              |
-| popupMode           | 用于控制选择器的弹出方向   | `bottom`\|`center`\|`left`\|`right`\|`top` | bottom             |
-| showToolbar         | 是否显示顶部的操作栏     | `boolean`                                  | true               |
-| v-model             | 绑定值            | `string`                                   | -                  |
-| title               | 顶部标题           | `string`                                   | -                  |
-| separator           | 字符串截取数组条件      | `string`                                   | " "                |
-| loading             | 是否显示加载中状态      | `boolean`                                  | false              |
-| itemHeight          | 各列中，单个选项的高度    | `number`                                   | 44                 |
-| cancelText          | 取消按钮的文字        | `string`                                   | 取消                 |
-| confirmText         | 确认按钮的文字        | `string`                                   | 确认                 |
-| cancelColor         | 取消按钮的颜色        | `string`                                   | #909193            |
-| confirmColor        | 确认按钮的颜色        | `string`                                   | #3c9cff            |
-| visibleItemCount    | 每列中可见选项的数量     | `number`                                   | 5                  |
-| closeOnClickOverlay | 是否允许点击遮罩关闭选择器  | `boolean`                                  | false              |
-| defaultIndex        | 各列的默认索引        | `array`                                    | -                  |
-| disabled            | 是否禁用输入框        | `boolean`                                  | false              |
-| disabledColor       | 禁用时候输入框背景色     | `string`                                   | #F5F5F5            |
-| toolbarRightSlot    | 是否右边插槽         | `boolean`                                  | false              |
-| customStyle         | 自定义输入框外部样式     | `CSSProperties`                            | -                  |
+| 参数                  | 说明                                              | 类型                                         | 默认值     |
+|---------------------|-------------------------------------------------|--------------------------------------------|---------|
+| hasInput            | 是否自带input输入框                                    | `boolean`                                  | false   |
+| input               | 输入框属性集合，hasInput为true可填，详见[输入框Api](./input#api) | `HyInputProps`                             | -       |
+| show                | 用于控制选择器的弹出与收起                                   | `boolean`                                  | false   |
+| popupMode           | 用于控制选择器的弹出方向                                    | `bottom`\|`center`\|`left`\|`right`\|`top` | bottom  |
+| showToolbar         | 是否显示顶部的操作栏                                      | `boolean`                                  | true    |
+| v-model             | 绑定值                                             | `string`                                   | -       |
+| title               | 顶部标题                                            | `string`                                   | -       |
+| separator           | 字符串截取数组条件                                       | `string`                                   | " "     |
+| loading             | 是否显示加载中状态                                       | `boolean`                                  | false   |
+| itemHeight          | 各列中，单个选项的高度                                     | `number`                                   | 44      |
+| cancelText          | 取消按钮的文字                                         | `string`                                   | 取消      |
+| confirmText         | 确认按钮的文字                                         | `string`                                   | 确认      |
+| cancelColor         | 取消按钮的颜色                                         | `string`                                   | #909193 |
+| confirmColor        | 确认按钮的颜色                                         | `string`                                   | #3c9cff |
+| visibleItemCount    | 每列中可见选项的数量                                      | `number`                                   | 5       |
+| closeOnClickOverlay | 是否允许点击遮罩关闭选择器                                   | `boolean`                                  | false   |
+| defaultIndex        | 各列的默认索引                                         | `array`                                    | -       |
+| toolbarRightSlot    | 是否右边插槽                                          | `boolean`                                  | false   |
+| customStyle         | 自定义输入框外部样式                                      | `CSSProperties`                            | -       |
 
 ## Events
 

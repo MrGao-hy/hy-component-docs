@@ -160,7 +160,7 @@ const value = ref("apply");
 | labelColor    | label的颜色        | `string`                                       | -                                                    |
 | iconPlacement | 勾选图标的对齐方式       | `left`\|`right`                                | left                                                 |
 | borderBottom  | 竖向配列时，是否显示下划线   | `boolean`                                      | false                                                |
-| labelDisabled | 是否禁止点击提示语选中复选框  | `string`                                       | -                                                    |
+| labelDisabled | 是否禁止点击提示语选中复选框  | `boolean`                                      | false                                                |
 | placement     | 布局方式[^3]        | `row`\|`column`                                | row                                                  |
 | customStyle   | 定义需要用到的外部样式     | `CSSProperties`                                | -                                                    |
 

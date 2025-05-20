@@ -159,30 +159,29 @@ const columns = reactive([
 
 ## API
 
-| 参数                  | 说明                         | 类型                                         | 默认值     |
-|---------------------|----------------------------|--------------------------------------------|---------|
-| modelValue          | 回显到输入框值（hasInput为true必须设置） | `string` \| `array`                        | -       |
-| disabled            | 是否禁用输入框（hasInput为true可以设置） | `boolean`                                  | true    |
-| show                | 是否显示选择器（hasInput为true不用设置） | `boolean`                                  | true    |
-| popupMode           | 弹窗弹出模式                     | `bottom`\|`center`\|`left`\|`right`\|`top` | bottom  |
-| separator           | 多列分隔符                      | `string`                                   | \       |
-| showToolbar         | 是否显示顶部的操作栏                 | `boolean`                                  | true    |
-| title               | 顶部标题                       | `string`                                   | -       |
-| columns             | 设置每一列的数据，见上方说明             | `array`                                    | -       |
-| loading             | 是否显示加载中状态                  | `boolean`                                  | false   |
-| itemHeight          | 各列中，单个选项的高度                | `number`                                   | 44      |
-| cancelText          | 取消按钮的文字                    | `string`                                   | 取消      |
-| confirmText         | 确认按钮的文字                    | `string`                                   | 确定      |
-| cancelColor         | 取消按钮的颜色                    | `string`                                   | #909193 |
-| confirmColor        | 确认按钮的颜色                    | `string`                                   | #3c9cff |
-| visibleItemCount    | 每列中可见选项的数量                 | `number`                                   | 5       |
-| keyName             | 选项对象中，需要展示的属性键名            | `string`                                   | text    |
-| closeOnClickOverlay | 是否允许点击遮罩关闭选择器              | `boolean`                                  | false   |
-| defaultIndex        | 各列的默认索引                    | `array`                                    | -       |
-| immediateChange     | 是否在手指松开时立即触发change事件       | `boolean`                                  | true    |
-| zIndex              | 最高层级                       | `number`                                   | 10076   |
-| hasInput            | 是否显示输入框                    | `boolean`                                  | false   |
-| placeholder         | 输入框默认占位内容                  | `string`                                   | 请选择     |
+| 参数                  | 说明                                                | 类型                                         | 默认值     |
+|---------------------|---------------------------------------------------|--------------------------------------------|---------|
+| modelValue          | 回显到输入框值（hasInput为true必须设置）                        | `string` \| `array`                        | -       |
+| show                | 是否显示选择器（hasInput为true不用设置）                        | `boolean`                                  | true    |
+| popupMode           | 弹窗弹出模式                                            | `bottom`\|`center`\|`left`\|`right`\|`top` | bottom  |
+| separator           | 多列分隔符                                             | `string`                                   | \       |
+| showToolbar         | 是否显示顶部的操作栏                                        | `boolean`                                  | true    |
+| title               | 顶部标题                                              | `string`                                   | -       |
+| columns             | 设置每一列的数据，见上方说明                                    | `array`                                    | -       |
+| loading             | 是否显示加载中状态                                         | `boolean`                                  | false   |
+| itemHeight          | 各列中，单个选项的高度                                       | `number`                                   | 44      |
+| cancelText          | 取消按钮的文字                                           | `string`                                   | 取消      |
+| confirmText         | 确认按钮的文字                                           | `string`                                   | 确定      |
+| cancelColor         | 取消按钮的颜色                                           | `string`                                   | #909193 |
+| confirmColor        | 确认按钮的颜色                                           | `string`                                   | #3c9cff |
+| visibleItemCount    | 每列中可见选项的数量                                        | `number`                                   | 5       |
+| keyName             | 选项对象中，需要展示的属性键名                                   | `string`                                   | text    |
+| closeOnClickOverlay | 是否允许点击遮罩关闭选择器                                     | `boolean`                                  | false   |
+| defaultIndex        | 各列的默认索引                                           | `array`                                    | -       |
+| immediateChange     | 是否在手指松开时立即触发change事件                              | `boolean`                                  | true    |
+| zIndex              | 最高层级                                              | `number`                                   | 10076   |
+| hasInput            | 是否显示输入框                                           | `boolean`                                  | false   |
+| input               | 输入框集合属性,hasInput为true可以配置，详见[输入框Api](./input#api) | `HyInputProps`                             | -       |
 
 ## Events
 

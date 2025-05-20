@@ -64,7 +64,9 @@ import { HyButton } from "hy-app"
 - 通过`loading`值设置是否开启加载图标，loadingText设置加载中文字。
 ```html
 <!-- 删除图标 -->
-<hy-button type="error" text="删除" :icon="IconConfig.DELETE"></hy-button>
+<hy-button type="error" text="删除" :icon="{name: IconConfig.DELETE}"></hy-button>
+<!-- 自定义图标 -->
+<hy-button type="error" text="删除" plain :icon="{name: 'delete', customPrefix: 'icon'}" ></hy-button>
 <!-- 加载按钮 -->
 <hy-button type="success" text="主要按钮" loading></hy-button>
 ```
@@ -108,8 +110,7 @@ import { HyButton } from "hy-app"
 | 参数                   | 说明                                                                                          | 类型                                                | 默认值     |
 |----------------------|---------------------------------------------------------------------------------------------|---------------------------------------------------|---------|
 | text                 | 按钮文字                                                                                        | `string`                                          | -       |
-| icon                 | 按钮图标                                                                                        | `string`                                          | -       |
-| iconColor            | 按钮图标颜色                                                                                      | `string`                                          | -       |
+| icon                 | 按钮图标集合，详见[图标Api](./icon#api)                                                                | `HyIconProps`                                     | -       |
 | color                | 按钮颜色，支持传入linear-gradient渐变色                                                                 | `string`                                          | -       |
 | stop                 | 阻止事件冒泡                                                                                      | `boolean`                                         | false   |
 | customStyle          | 定义需要用到的外部样式                                                                                 | `CSSProperties`                                   | -       |

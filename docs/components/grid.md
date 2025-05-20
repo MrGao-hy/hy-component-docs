@@ -77,27 +77,26 @@ const list = ref([
 
 ## API
 
-| 参数          | 说明     | 类型                        | 默认值         |
-|-------------|--------|---------------------------|-------------|
-| list        | 数据集    | `array`                   | -           |
-| col         | 宫格的列数 | `number`                  | 4           |
-| border      | 是否显示宫格的边框 | `boolean`                 | false       |
-| itemHeight  | 单个宫格高度 | `string` \| `number`      | 100px       |
-| align       | 格对齐方式，表现为数量少的时候，靠左，居中，还是靠右  | `center`\|`left`\|`right` | left        |
-| gap         | 间隔 | `string` \| `number`      | 0px         |
-| bgColor     | 宫格的背景颜色 | `string`                  | transparent |
-| iconSize    | icon图片大小 | `string` \| `number`      | 50px        |
-| round       | icon图片圆角 | `string` \| `number`      | 6px         |
-| space       | icon图片和文字间距 | `string` \| `number`      | 12px        |
-| customStyle | 定义需要用到的外部样式 | `CSSProperties`           | -           |
+| 参数          | 说明                              | 类型                        | 默认值         |
+|-------------|---------------------------------|---------------------------|-------------|
+| list        | 数据集                             | `array`                   | -           |
+| col         | 宫格的列数                           | `number`                  | 4           |
+| border      | 是否显示宫格的边框                       | `boolean`                 | false       |
+| itemHeight  | 单个宫格高度                          | `string` \| `number`      | 100px       |
+| align       | 格对齐方式，表现为数量少的时候，靠左，居中，还是靠右      | `center`\|`left`\|`right` | left        |
+| gap         | 间隔                              | `string` \| `number`      | 0px         |
+| bgColor     | 宫格的背景颜色                         | `string`                  | transparent |
+| iconConfig  | 图标属性api配置，详见[图标Api](./icon#api) | `HyIconProps`             | -           |
+| customStyle | 定义需要用到的外部样式                     | `CSSProperties`           | -           |
 
 ## list
 > 或者自定义添加其他键，通过插槽自定义内容
 
-| 参数   | 说明       | 类型       | 默认值 |
-|------|----------|----------|-----|
-| icon | 图片或者icon | `string` | -   |
-| name | 名称       | `string` | -   |
+| 参数         | 说明                              | 类型            | 默认值 |
+|------------|---------------------------------|---------------|-----|
+| icon       | 图片或者icon                        | `string`      | -   |
+| name       | 名称                              | `string`      | -   |
+| iconConfig | 图标属性api配置，详见[图标Api](./icon#api) | `HyIconProps` | -   |
 
 ## Events
 

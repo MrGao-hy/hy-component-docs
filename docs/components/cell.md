@@ -48,7 +48,7 @@ const list = ref([
 <script setup>
     import { IconConfig } from "hy-app";
     const list = ref([
-        {title: "西施", subhead: "沉鱼", icon: IconConfig.HOME_FILL},
+        {title: "西施", subhead: "沉鱼", icon: {name: IconConfig.HOME_FILL, color: 'red'}},
         {title: "王昭君", subhead: "落雁"},
         {title: "貂蝉", subhead: "闭月"},
         {title: "杨玉环", subhead: "羞花"}
@@ -106,36 +106,35 @@ const list = ref([
 
 ## API
 
-| 参数             | 说明                        | 类型                             | 默认值                 |
-|----------------|---------------------------|--------------------------------|---------------------|
-| list           | cell列表数据                  | `array`                        | -                   |
-| title          | 头部标题                      | `string`                       | -                   |
-| titleBorder    | 是否显示头部底部边框                | `boolean`                      | true                |
-| border         | 是否显示cell下边框               | `boolean`                      | true                |
-| showVertical   | 是否显示标题前缀竖线                | `boolean`                      | true                |
-| verticalColor  | 标题前缀竖线颜色                  | `string`                       | ColorConfig.primary |
-| disabled       | 是否禁用cell                  | `boolean`                      | false               |
-| clickable      | 是否开启点击反馈(表现为点击时加上灰色背景)    | `boolean`                      | false               |
-| size           | 单元的大小                     | `small` \| `medium` \| `large` | medium              |
-| value          | 右侧的内容                     | `string`                       | -                   |
-| center         | 内容是否垂直居中(主要是针对右侧的value部分) | `boolean`                      | false               |
-| rightIcon      | 右侧的图标箭头                   | `string`                       | IconConfig.RIGHT    |
-| arrowDirection | 右侧箭头的方向                   | `left` \| `up` \| `down`       | left                |
-| rightIconStyle | 自定义右侧icon样式               | `CSSProperties`                | -                   |
-| customStyle    | 定义需要用到的外部样式               | `CSSProperties`                | -                   |
+| 参数             | 说明                          | 类型                             | 默认值                 |
+|----------------|-----------------------------|--------------------------------|---------------------|
+| list           | cell列表数据                    | `array`                        | -                   |
+| title          | 头部标题                        | `string`                       | -                   |
+| titleBorder    | 是否显示头部底部边框                  | `boolean`                      | true                |
+| border         | 是否显示cell下边框                 | `boolean`                      | true                |
+| showVertical   | 是否显示标题前缀竖线                  | `boolean`                      | true                |
+| verticalColor  | 标题前缀竖线颜色                    | `string`                       | ColorConfig.primary |
+| disabled       | 是否禁用cell                    | `boolean`                      | false               |
+| clickable      | 是否开启点击反馈(表现为点击时加上灰色背景)      | `boolean`                      | false               |
+| size           | 单元的大小                       | `small` \| `medium` \| `large` | medium              |
+| value          | 右侧的内容                       | `string`                       | -                   |
+| center         | 内容是否垂直居中(主要是针对右侧的value部分)   | `boolean`                      | false               |
+| rightIcon      | 右侧的图标,详见[图标Api](./icon#api) | `HyIconProps`                  | -                   |
+| arrowDirection | 右侧箭头的方向                     | `left` \| `up` \| `down`       | left                |
+| customStyle    | 定义需要用到的外部样式                 | `CSSProperties`                | -                   |
 
 ### list集合
 
-| 参数             | 说明        | 类型                   | 默认值 |
-|----------------|-----------|----------------------|-----|
-| icon           | 左图标       | `string`             | -   |
-| title          | 标题        | `string`             | -   |
-| subhead        | 副标题       | `string`             | -   |
-| disabled       | 是否禁用      | `boolean`            | -   |
-| rightIcon      | 右图标       | `string`             | -   |
-| value          | cell中间的值  | `string`             | -   |
-| url            | 跳转页面地址    | `string`             | -   |
-| arrowDirection | 单个右侧箭头的方向 | `left`\|`up`\|`down` | -   |
+| 参数             | 说明                         | 类型                   | 默认值 |
+|----------------|----------------------------|----------------------|-----|
+| icon           | 左边图标，详见[图标Api](./icon#api) | `HyIconProps`        | -   |
+| title          | 标题                         | `string`             | -   |
+| subhead        | 副标题                        | `string`             | -   |
+| disabled       | 是否禁用                       | `boolean`            | -   |
+| rightIcon      | 右边图标，详见[图标Api](./icon#api) | `HyIconProps`        | -   |
+| value          | cell中间的值                   | `string`             | -   |
+| url            | 跳转页面地址                     | `string`             | -   |
+| arrowDirection | 单个右侧箭头的方向                  | `left`\|`up`\|`down` | -   |
 
 ## Events
 

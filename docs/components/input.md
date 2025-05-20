@@ -76,16 +76,20 @@ const value = ref('');
 ```
 
 ## 前后图标
-全后置图标可自由设置样式信息。
+- 通过设置`prefixIcon`配置前缀图标可自由设置样式信息。
+- 通过设置`suffixIcon`配置后缀图标可自由设置样式信息。
 ```html
 <hy-input
         placeholder="前置图标"
-        prefixIcon="search"
-        prefixIconStyle="font-size: 22px;color: #909399"
+        :prefixIcon="{
+            name: 'search'
+        }"
 ></hy-input>
 <hy-input
         placeholder="后置图标"
-        suffixIcon="map-fill"
+        :suffixIcon="{
+            name: 'map-fill'
+        }"
         suffixIconStyle="color: #909399"
 ></hy-input>
 ```
@@ -143,10 +147,8 @@ const value = ref('');
 | inputAlign            | 输入框内容对齐方式	                                              | `string`                                         | left              |
 | fontSize              | 输入框字体的大小	                                               | `string` \| `number`                             | 15px              |
 | color                 | 输入框字体颜色	                                                | `string`                                         | #303133           |
-| prefixIcon            | 输入框前置图标	                                                | `string`                                         | -                 |
-| prefixIconStyle       | 前置图标样式                                                  | `CSSProperties`                                  | -                 |
-| suffixIcon            | 输入框后置图标                                                 | `string`                                         | -                 |
-| suffixIconStyle       | 后置图标样式                                                  | `CSSProperties`                                  | -                 |
+| prefixIcon            | 输入框前置图标,配置详情见[图标Api](./icon#api)	                       | `HyIconProps`                                    | -                 |
+| suffixIcon            | 输入框后置图标,配置详情见[图标Api](./icon#api)                        | `HyIconProps`                                    | -                 |
 | border                | 边框类型[^2]                                                | `surround`\|`bottom`\|`none`                     | surround          |
 | readonly              | 是否只读，与disabled不同之处在于disabled会置灰组件，而readonly则不会          | `boolean`                                        | false             |
 | shape                 | 输入框形状[^3]                                               | `circle`\|`square`                               | square            |

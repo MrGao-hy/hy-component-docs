@@ -88,11 +88,11 @@ import { HyTag } from "hy-app"
     <hy-tag text="标签" type="warning" plain plainFill borderColor="transparent"></hy-tag>
     <hy-tag text="标签" type="info" plain plainFill borderColor="transparent"></hy-tag>
     <hy-tag
-            text="标签"
-            color="#800080"
-            plain
-            plainFill
-            borderColor="transparent"
+        text="标签"
+        color="#800080"
+        plain
+        plainFill
+        borderColor="transparent"
     ></hy-tag>
 </template>
 ```
@@ -166,8 +166,7 @@ import { HyTag } from "hy-app"
 | plain        | 是否镂空                        | `boolean`                                        | false   |
 | closable     | 是否可关闭，设置为true，文字右边会出现一个关闭图标 | `boolean`                                        | false   |
 | show         | 标签显示                        | `boolean`                                        | true    |
-| icon         | 内置图标，或绝对路径的图片               | `string`                                         | -       |
-| iconColor    | 图标颜色                        | `string`                                         | -       |
+| icon         | 图标，详见[图标Api](./icon#api)    | `HyIconProps`                                    | -       |
 | textSize     | 文字大小                        | `string` \| `number`                             | -       |
 | height       | 自定义高度                       | `string` \| `number`                             | -       |
 | padding      | 自定义内间距                      | `string` \| `number`                             | -       |
