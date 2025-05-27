@@ -135,10 +135,10 @@ import { HyFloatButton } from "hy-app"
 | bottom      | 按钮距离底部的距离   | `number`\|`string`                              | 80      |
 | left        | 按钮距离左边的距离   | `number`\|`string`                              | 20      |
 | zIndex      | 层级          | `number`                                        | 10086   |
-| bgColor     | 按钮背景颜色      | `string`                                        | #3D7EFF |
+| bgColor     | 按钮背景颜色      | `string`                                        | -       |
 | text        | 按钮文字        | `string`                                        | -       |
 | fontSize    | 按钮文字大小      | `number`\|`string`                              | 12px    |
-| textColor   | 按钮文字的颜色     | `string`                                        | #FFFFFF |
+| textColor   | 按钮文字的颜色     | `string`                                        | -       |
 | size        | 按钮的尺寸[^2]   | `small`\|`medium`\|`large` \|`number`\|`string` | medium  |
 | shape       | 按钮的形状[^3]   | `circle`\|`square`                              | circle  |
 | opacity     | 按钮的透明度      | `number`                                        | 1       |

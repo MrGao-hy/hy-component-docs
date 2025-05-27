@@ -63,6 +63,25 @@ const fieldNames = ref({
 })
 ```
 
+## 单独一个
+```html
+<template>
+    <hy-checkbox v-model="value" :columns="columns"></hy-checkbox>
+</template>
+
+<script setup lang="ts">
+    import {ref} from "vue";
+    const value = ref(false);
+
+    const columns = [
+        {
+            name: "记住密码",
+            value: 1
+        }
+    ];
+</script>
+```
+
 ## 自定义形状
 可以通过设置`shape`为`square`或者`circle`，将复选框设置为方形或者圆形
 ```html
@@ -145,13 +164,13 @@ const value = ref(["apply"]);
 
 | 参数            | 说明              | 类型                                             | 默认值                                                  |
 |---------------|-----------------|------------------------------------------------|------------------------------------------------------|
-| v-model       | 双向绑定值，数组类型      | `(string\|number)[]`                           | -                                                    |
+| v-model       | 双向绑定值，数组类型      | `(string\|number)[]`\|`boolean`                | -                                                    |
 | columns       | 接收数组值           | `array`                                        | -                                                    |
 | fieldNames    | 自定义接收columns的键  | `object`                                       | \{label: "label",value: "value",checked: "checked"\} |
 | shape         | 复选框形状[^1]       | `circle`\|`square`                             | square                                               |
 | size          | 复选框大小[^2]       | `small`\|`medium`\|`large`\|`string`\|`number` | medium                                               |
 | disabled      | 是否禁用            | `boolean`                                      | false                                                |
-| activeColor   | 选中状态下的颜色        | `string`                                       | ColorConfig.primary                                  |
+| activeColor   | 选中状态下的颜色        | `string`                                       | -                                                    |
 | inactiveColor | 未选中的颜色          | `string`                                       | #c8c9cc                                              |
 | iconSize      | 图标的大小，单位px      | `string`\|`number`                             | 20                                                   |
 | iconColor     | 图标颜色            | `string`                                       | -                                                    |

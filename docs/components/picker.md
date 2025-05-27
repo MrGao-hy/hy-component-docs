@@ -173,7 +173,7 @@ const columns = reactive([
 | cancelText          | 取消按钮的文字                                           | `string`                                   | 取消      |
 | confirmText         | 确认按钮的文字                                           | `string`                                   | 确定      |
 | cancelColor         | 取消按钮的颜色                                           | `string`                                   | #909193 |
-| confirmColor        | 确认按钮的颜色                                           | `string`                                   | #3c9cff |
+| confirmColor        | 确认按钮的颜色                                           | `string`                                   | -       |
 | visibleItemCount    | 每列中可见选项的数量                                        | `number`                                   | 5       |
 | keyName             | 选项对象中，需要展示的属性键名                                   | `string`                                   | text    |
 | closeOnClickOverlay | 是否允许点击遮罩关闭选择器                                     | `boolean`                                  | false   |

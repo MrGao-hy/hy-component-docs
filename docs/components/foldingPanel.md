@@ -57,19 +57,19 @@ const columns = [
 
 ## API
 
-| 参数            | 说明          | 类型                         | 默认值                 |
-|---------------|-------------|----------------------------|---------------------|
-| list          | 列表数据集       | `array`                    | -                   |
-| accordion     | 是否手风琴模式     | `boolean`                  | false               |
-| title         | 头部标题        | `string`                   | -                   |
-| titleBorder   | 是否显示头部底部边框  | `boolean`                  | false               |
-| border        | 是否显示cell下边框 | `boolean`                  | true                |
-| verticalColor | 标题前缀竖线颜色    | `string`                   | ColorConfig.primary |
-| showVertical  | 是否显示标题前缀竖线  | `boolean`                  | true                |
-| disabled      | 是否禁用        | `boolean`                  | false               |
-| size          | 单元的大小       | `small`\|`medium`\|`large` | medium              |
-| contentHeight | 内容面板高度      | `string` \| `number`       | 120                 |
-| customStyle   | 定义需要用到的外部样式 | `CSSProperties`            | -                   |
+| 参数            | 说明          | 类型                         | 默认值    |
+|---------------|-------------|----------------------------|--------|
+| list          | 列表数据集       | `array`                    | -      |
+| accordion     | 是否手风琴模式     | `boolean`                  | false  |
+| title         | 头部标题        | `string`                   | -      |
+| titleBorder   | 是否显示头部底部边框  | `boolean`                  | false  |
+| border        | 是否显示cell下边框 | `boolean`                  | true   |
+| verticalColor | 标题前缀竖线颜色    | `string`                   | -      |
+| showVertical  | 是否显示标题前缀竖线  | `boolean`                  | true   |
+| disabled      | 是否禁用        | `boolean`                  | false  |
+| size          | 单元的大小       | `small`\|`medium`\|`large` | medium |
+| contentHeight | 内容面板高度      | `string` \| `number`       | 120    |
+| customStyle   | 定义需要用到的外部样式 | `CSSProperties`            | -      |
 
 
 ## list

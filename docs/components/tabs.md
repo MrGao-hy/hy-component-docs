@@ -98,24 +98,24 @@ const list = [{ name: "全部" }, { name: "未核销" }, { name: "已核销" }];
 
 ## API
 
-| 参数            | 说明                           | 类型                   | 默认值                    |
-|---------------|------------------------------|----------------------|------------------------|
-| current       | 当前选中标签的索引                    | number               | 0                      |
-| list          | 选项卡数组                        | `array`              | -                      |
-| keyName       | 从list元素对象中读取的键名              | `string`             | name                   |
-| duration      | 滑块移动一次所需的时间，单位 ms            | `number`             | 300                    |
-| scrollable    | 菜单是否可滚动                      | `boolean`            | false                  |
-| lineWidth     | 滑块长度                         | `string` \| `number` | 20                     |
-| lineHeight    | 滑块高度                         | `string` \| `number` | 3                      |
-| lineColor     | 滑块颜色                         | `string`             | #3c9cff                |
-| lineBgSize    | 滑块背景显示大小，当滑块背景设置为图片时使用       | `string` \| `number` | cover                  |
-| activeStyle   | 菜单选择中时的样式                    | `CSSProperties`      | \{ color: "#303133" \} |
-| inactiveStyle | 菜单非选中时的样式                    | `CSSProperties`      | \{ color: "#606266" \} |
-| itemStyle     | 菜单 item 的样式                  | `string`             | \{ height: "44px" \}   |
-| BadgeProps    | 徽标props全局定义(list里的badge优先级高) | `BadgeProps`         | -                      |
-| swiperHeight  | 轮播图高度                        | `string` \| `number` | calc(100vh - 44px)     |
-| iconStyle     | 标签左侧图标样式自定义                  | `CSSProperties`      | -                      |
-| customStyle   | 定义需要用到的外部样式                  | `CSSProperties`      | -                      |
+| 参数            | 说明                           | 类型                   | 默认值                |
+|---------------|------------------------------|----------------------|--------------------|
+| current       | 当前选中标签的索引                    | number               | 0                  |
+| list          | 选项卡数组                        | `array`              | -                  |
+| keyName       | 从list元素对象中读取的键名              | `string`             | name               |
+| duration      | 滑块移动一次所需的时间，单位 ms            | `number`             | 300                |
+| scrollable    | 菜单是否可滚动                      | `boolean`            | false              |
+| lineWidth     | 滑块长度                         | `string` \| `number` | 20                 |
+| lineHeight    | 滑块高度                         | `string` \| `number` | 3                  |
+| lineColor     | 滑块颜色                         | `string`             | #3c9cff            |
+| lineBgSize    | 滑块背景显示大小，当滑块背景设置为图片时使用       | `string` \| `number` | cover              |
+| activeStyle   | 菜单选择中时的样式                    | `CSSProperties`      | -                  |
+| inactiveStyle | 菜单非选中时的样式                    | `CSSProperties`      | -                  |
+| itemStyle     | 菜单 item 的样式                  | `string`             | -                  |
+| BadgeProps    | 徽标props全局定义(list里的badge优先级高) | `BadgeProps`         | -                  |
+| swiperHeight  | 轮播图高度                        | `string` \| `number` | calc(100vh - 44px) |
+| iconStyle     | 标签左侧图标样式自定义                  | `CSSProperties`      | -                  |
+| customStyle   | 定义需要用到的外部样式                  | `CSSProperties`      | -                  |
 
 ## list
 

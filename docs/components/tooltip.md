@@ -51,7 +51,7 @@ import { HyTooltip } from "hy-app"
 | text      | 需要显示的提示文字                | `string`             | -           |
 | copyText  | 点击复制按钮时，复制的文本，为空则使用text值 | `string`             | -           |
 | size      | 文本大小                     | `string` \| `number` | 14          |
-| color     | 字体颜色                     | `string`             | #606266     |
+| color     | 字体颜色                     | `string`             | -           |
 | bgColor   | 弹出提示框时，文本的背景色            | `string`             | transparent |
 | direction | 弹出提示的方向，top-上方，bottom-下方 | `top` \| `bottom`    | top         |
 | zIndex    | 弹出提示的z-index             | `number`             | 10071       |

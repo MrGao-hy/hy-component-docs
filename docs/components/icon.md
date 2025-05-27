@@ -72,14 +72,14 @@ import { IconConfig, HyIcon } from "hy-app";
 |--------------------|-----------------------------------------------------------------------------------------------------------|----------------------------------|---------|
 | name               | 图标名称，见示例图标集                                                                                               | `string` \| `IconConfig`         | -       |
 | size               | 图标字体大小，单位默认px                                                                                             | `string` \| `number`             | 16px    |
-| color              | 图标颜色                                                                                                      | `string`                         | #606266 |
+| color              | 图标颜色                                                                                                      | `string`                         | -       |
 | bold               | 是否显示粗体                                                                                                    | `boolean`                        | false   |
 | index              | 一个用于区分多个图标的值，点击图标时通过click事件传出                                                                             | `string` \| `number`             | -       |
 | hoverClass         | 图标按下去的样式类，用法同uni的view组件的hover-class参数, 详见：[hover-class](https://uniapp.dcloud.net.cn/component/view.html) | `string`                         | -       |
 | customPrefix（暂不可用） | 自定义字体图标库时，需要写上此值，详见：扩展自定义图标库                                                                              | `string`                         | hy-icon |
 | label              | 图标右侧/下方的label文字                                                                                           | `string`                         | -       |
 | labelPos           | label相对于图标的位置                                                                                             | `string`                         | right   |
-| labelSize          | label字体大小，单位默认px                                                                                          | `string` \| `number`             | 15px    |
+| labelSize          | label字体大小，单位默认px                                                                                          | `string` \| `number`             | -       |
 | labelColor         | label字体颜色                                                                                                 | `string`                         | -       |
 | space              | label与图标的距离，单位默认px                                                                                        | `string` \| `number`             | 3px     |
 | imgMode            | 图片裁剪、缩放的模式，image组件原生属性,详见：[image](https://uniapp.dcloud.net.cn/component/image.html#image)                | `string`                         | -       |

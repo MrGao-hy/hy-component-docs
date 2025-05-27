@@ -151,7 +151,7 @@ const value = ref("apply");
 | shape         | 复选框形状[^1]       | `circle`\|`square`                             | circle                                               |
 | size          | 复选框大小[^2]       | `small`\|`medium`\|`large`\|`string`\|`number` | medium                                               |
 | disabled      | 是否禁用            | `boolean`                                      | false                                                |
-| activeColor   | 选中状态下的颜色        | `string`                                       | ColorConfig.primary                                  |
+| activeColor   | 选中状态下的颜色        | `string`                                       | -                                                    |
 | inactiveColor | 未选中的颜色          | `string`                                       | #c8c9cc                                              |
 | iconSize      | 图标的大小，单位px      | `string`\|`number`                             | 20                                                   |
 | iconColor     | 图标颜色            | `string`                                       | -                                                    |

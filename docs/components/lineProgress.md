@@ -80,14 +80,15 @@ import { HyLineProgress } from "hy-app"
 
 ## API
 
-| 参数            | 说明              | 类型                   | 默认值                 |
-|---------------|-----------------|----------------------|---------------------|
-| activeColor   | 进度条激活部分的颜色      | `string`             | ColorConfig.primary |
-| inactiveColor | 进度条的底色，默认为灰色    | `string`             | #ececec             |
-| percentage    | 进度百分比，数值        | `number`             | 0                   |
-| showText      | 是否在进度条内部显示百分比的值 | `boolean`            | true                |
-| height        | 进度条的高度，默认单位px	  | `number` \| `string` | 12                  |
-| customStyle   | 自定义样式           | `CSSProperties`      | -                   |
+| 参数            | 说明              | 类型                   | 默认值  |
+|---------------|-----------------|----------------------|------|
+| activeColor   | 进度条激活部分的颜色      | `string`             | -    |
+| inactiveColor | 进度条的底色，默认为灰色    | `string`             | -    |
+| percentage    | 进度百分比，数值        | `number`             | 0    |
+| showText      | 是否在进度条内部显示百分比的值 | `boolean`            | true |
+| height        | 进度条的高度，默认单位px	  | `number` \| `string` | 12   |
+| fontSize      | 字体大小，默认单位px	    | `number` \| `string` | -    |
+| customStyle   | 自定义样式           | `CSSProperties`      | -    |
 
 
 ## Slots

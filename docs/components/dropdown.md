@@ -116,7 +116,7 @@ const options_3 = ref([
 #### Dropdown Props
 | 参数                  | 说明                          | 类型                 | 默认值             |
 |---------------------|-----------------------------|--------------------|-----------------|
-| active-color        | 标题和选项卡选中的颜色                 | `string`           | #3c9cff         |
+| active-color        | 标题和选项卡选中的颜色                 | `string`           | -               |
 | inactive-color      | 标题和选项卡未选中的颜色                | `string`           | #606266         |
 | close-on-click-mask | 点击遮罩是否关闭菜单                  | `boolean`          | true            |
 | height              | 标题菜单的高度，单位任意，数值默认为px单位      | `string`\|`number` | 40              |

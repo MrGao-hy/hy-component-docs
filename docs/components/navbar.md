@@ -115,7 +115,7 @@ import { HyNavbar } from "hy-app"
 | rightText        | 右边的提示文字                       | `string`             | -               |
 | rightIcon        | 右边返回图标的名称                     | `string`             | -               |
 | title            | 导航栏标题，如设置为空字符，将会隐藏标题占位区域      | `string`             | -               |
-| bgColor          | 导航栏背景设置                       | `string`             | #ffffff         |
+| bgColor          | 导航栏背景设置                       | `string`             | -               |
 | titleWidth       | 导航栏标题的最大宽度，内容超出会以省略号隐藏，单位rpx  | `string` \| `number` | 400rpx          |
 | height           | 导航栏高度(不包括状态栏高度在内，内部自动加上)，单位px | `string` \| `number` | 44px            |
 | leftIconSize     | 左侧返回图标的大小                     | `string` \| `number` | 20              |

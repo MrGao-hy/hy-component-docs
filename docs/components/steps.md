@@ -75,18 +75,18 @@ const list = ref([
 
 ## API
 
-| 参数            | 说明               | 类型                   | 默认值     |
-|---------------|------------------|----------------------|---------|
-| list          | 步骤条数据集合          | `array`              | -       |
-| current       | 设置当前处于第几步        | `number`             | 0       |
-| direction     | row-横向，column-竖向 | `row` \| `column`    | row     |
-| activeColor   | 激活状态颜色           | `string`             | #3c9cff |
-| inactiveColor | 未激活状态颜色          | `string`             | #969799 |
-| activeIcon    | 激活状态的图标          | `string`             | -       |
-| inactiveIcon  | 未激活状态图标          | `string`             | -       |
-| dot           | 是否显示点类型          | `boolean`            | false   |
-| iconSize      | 图标大小             | `string` \| `number` | 17      |
-| customStyle   | 定义需要用到的外部样式      | `CSSProperties`      | -       |
+| 参数            | 说明               | 类型                   | 默认值   |
+|---------------|------------------|----------------------|-------|
+| list          | 步骤条数据集合          | `array`              | -     |
+| current       | 设置当前处于第几步        | `number`             | 0     |
+| direction     | row-横向，column-竖向 | `row` \| `column`    | row   |
+| activeColor   | 激活状态颜色           | `string`             | -     |
+| inactiveColor | 未激活状态颜色          | `string`             | -     |
+| activeIcon    | 激活状态的图标          | `string`             | -     |
+| inactiveIcon  | 未激活状态图标          | `string`             | -     |
+| dot           | 是否显示点类型          | `boolean`            | false |
+| iconSize      | 图标大小             | `string` \| `number` | 17    |
+| customStyle   | 定义需要用到的外部样式      | `CSSProperties`      | -     |
 
 ## list
 

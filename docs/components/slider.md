@@ -151,23 +151,23 @@ const sliderValue = ref(4);
 
 ## API
 
-| 参数            | 说明                | 类型                   | 默认值                 |
-|---------------|-------------------|----------------------|---------------------|
-| v-model       | 双向绑定滑块选择值         | `number`             | 0                   |
-| blockSize     | 滑块的大小             | `number` \| `string` | 18                  |
-| min           | 可选的最小值            | `number`             | 1                   |
-| max           | 可选的最大值            | `number`             | 100                 |
-| step          | 选择的步长             | `number`             | 1                   |
-| activeColor   | 进度条的激活部分颜色        | `string`             | ColorConfig.primary |
-| inactiveColor | 进度条的背景颜色          | `string`             | #c0c4cc             |
-| blockColor    | 滑块背景颜色            | `string`             | #ffffff             |
-| showValue     | 是否显示当前 value      | `boolean`            | false               |
-| blockStyle    | 滑块按钮自定义样式，对象形式    | `CSSProperties`      | -                   |
-| height        | 进度条高度             | `string` \| `number` | 2px                 |
-| isRange       | 开始其双滑快模式          | `boolean`            | false               |
-| useNative     | 是否渲染uni-app框架内置组件 | `boolean`            | false               |
-| rangeValue    | 双滑快双向绑定值，数组形式     | `array`              | [0, 0]              |
-| customStyle   | 自定义样式             | `CSSProperties`      | -                   |
+| 参数            | 说明                | 类型                   | 默认值     |
+|---------------|-------------------|----------------------|---------|
+| v-model       | 双向绑定滑块选择值         | `number`             | 0       |
+| blockSize     | 滑块的大小             | `number` \| `string` | 18      |
+| min           | 可选的最小值            | `number`             | 1       |
+| max           | 可选的最大值            | `number`             | 100     |
+| step          | 选择的步长             | `number`             | 1       |
+| activeColor   | 进度条的激活部分颜色        | `string`             | -       |
+| inactiveColor | 进度条的背景颜色          | `string`             | -       |
+| blockColor    | 滑块背景颜色            | `string`             | #ffffff |
+| showValue     | 是否显示当前 value      | `boolean`            | false   |
+| blockStyle    | 滑块按钮自定义样式，对象形式    | `CSSProperties`      | -       |
+| height        | 进度条高度             | `string` \| `number` | 2px     |
+| isRange       | 开始其双滑快模式          | `boolean`            | false   |
+| useNative     | 是否渲染uni-app框架内置组件 | `boolean`            | false   |
+| rangeValue    | 双滑快双向绑定值，数组形式     | `array`              | [0, 0]  |
+| customStyle   | 自定义样式             | `CSSProperties`      | -       |
 
 ## Events
 

@@ -73,6 +73,7 @@ export default defineConfig({
         {
           text: '基础组件',
           items: [
+            { text: 'ConfigProvider 全局配置', link: '/components/configProvider' },
             { text: 'Color 颜色', link: '/components/color' },
             { text: 'Icon 图标', link: '/components/icon' },
             { text: 'Image 图片', link: '/components/image' },

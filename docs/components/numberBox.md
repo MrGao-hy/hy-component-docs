@@ -170,7 +170,7 @@ const value = ref(1);
 
 | 参数            | 说明                              | 类型                 | 默认值                     |
 |---------------|---------------------------------|--------------------|-------------------------|
-| v-model       | 用于双向绑定的值，初始化时设置设为默认min值(最小值)    | `boolean`          | -                       |
+| v-model       | 用于双向绑定的值，初始化时设置设为默认min值(最小值)    | `number`          | -                       |
 | min           | 用户可输入的最小值                       | `number`           | 1                       |
 | max           | 用户可输入的最大值                       | `number`           | Number.MAX_SAFE_INTEGER |
 | step          | 步长，每次加或减的值， 支持小数值，如需小数          | `number`           | 1                       |
@@ -183,12 +183,12 @@ const value = ref(1);
 | showPlus      | 是否显示增加按钮                        | `boolean`          | true                    |
 | decimalLength | 显示的小数位数                         | `string`\|`number` | -                       |
 | longPress     | 是否允许长按进行加减                      | `boolean`          | true                    |
-| color         | 输入框文字和加减按钮图标的颜色                 | `string`           | #323233                 |
+| color         | 输入框文字和加减按钮图标的颜色                 | `string`           | -                       |
 | buttonWidth   | 按钮宽度，单位px                       | `string`\|`number` | 30                      |
 | buttonSize    | 按钮高度，单位px，输入框高度和此值保持一致          | `string`\|`number` | 30                      |
-| buttonRadius  | 按钮圆角                            | `string`\|`number` | 2px                     |
-| bgColor       | 输入框和按钮的背景颜色                     | `string`           | #EBECEE                 |
-| inputBgColor  | 输入框独立背景颜色                       | `string`           | #EBECEE                 |
+| buttonRadius  | 按钮圆角                            | `string`\|`number` | -                       |
+| bgColor       | 输入框和按钮的背景颜色                     | `string`           | -                       |
+| inputBgColor  | 输入框独立背景颜色                       | `string`           | -                       |
 | cursorSpacing | 指定光标于键盘的距离，避免键盘遮挡输入框，单位px       | `string`\|`number` | 100                     |
 | disablePlus   | 是否禁用增加按钮                        | `boolean`          | false                   |
 | disableMinus  | 是否禁用减少按钮                        | `boolean`          | false                   |

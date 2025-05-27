@@ -169,14 +169,14 @@ const showMore = () => {
 
 ## API
 
-| 参数                   | 说明                             | 类型              | 默认值                 |
-|----------------------|--------------------------------|-----------------|---------------------|
-| indicatorWidth       | 指示器的整体宽度                       | `number`        | 50                  |
-| indicatorBarWidth    | 滑块的宽度                          | `number`        | 20                  |
-| indicator            | 是否显示面板指示器                      | `boolean`       | true                |
-| indicatorColor       | 指示器非激活颜色                       | `string`        | #f2f2f2             |
-| indicatorActiveColor | 指示器滑块颜色                        | `string`        | ColorConfig.primary |
-| indicatorStyle       | 指示器样式，可通过bottom，left，right进行定位 | `CSSProperties` | -                   |
+| 参数                   | 说明                             | 类型              | 默认值  |
+|----------------------|--------------------------------|-----------------|------|
+| indicatorWidth       | 指示器的整体宽度                       | `number`        | 50   |
+| indicatorBarWidth    | 滑块的宽度                          | `number`        | 20   |
+| indicator            | 是否显示面板指示器                      | `boolean`       | true |
+| indicatorColor       | 指示器非激活颜色                       | `string`        | -    |
+| indicatorActiveColor | 指示器滑块颜色                        | `string`        | -    |
+| indicatorStyle       | 指示器样式，可通过bottom，left，right进行定位 | `CSSProperties` | -    |
 
 ## Events
 
