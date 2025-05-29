@@ -83,7 +83,7 @@ import { IconConfig } from "hy-app";
 | readonly      | 是否只读           | `boolean`            | false                |
 | size          | 星星的大小，单位rpx    | `number` \| `string` | 18                   |
 | inactiveColor | 未选中星星的颜色       | `string`             | #b2b2b2              |
-| activeColor   | 选中的星星颜色        | `string`             | ColorConfig.primary  |
+| activeColor   | 选中的星星颜色        | `string`             | #FFF00D              |
 | gutter        | 星星之间的距离        | `number`             | 4                    |
 | minCount      | 最少选中星星的个数      | `number`             | 1                    |
 | allowHalf     | 是否允许半星选择       | `boolean`            | false                |

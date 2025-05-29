@@ -66,7 +66,7 @@ import { HyQrcode } from "hy-app"
 | size            | 二维码大小                          | `string`\|`number` | 200                                           |
 | text            | 二维码内容                          | `string`           | -                                             |
 | show            | 是否显示二维码                        | `boolean`          | true                                          |
-| background      | 二维码背景色                         | `string`           | #ffffff                                       |
+| background      | 二维码背景色                         | `string`           | -                                             |
 | foreground      | 二维码颜色                          | `string`           | #000000                                       |
 | pdGround        | 定位角点颜色                         | `string`           | #000000                                       |
 | lv              | 容错级别                           | `number`           | 3                                             |

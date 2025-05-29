@@ -107,7 +107,7 @@ const list = [{ name: "全部" }, { name: "未核销" }, { name: "已核销" }];
 | scrollable    | 菜单是否可滚动                      | `boolean`            | false              |
 | lineWidth     | 滑块长度                         | `string` \| `number` | 20                 |
 | lineHeight    | 滑块高度                         | `string` \| `number` | 3                  |
-| lineColor     | 滑块颜色                         | `string`             | #3c9cff            |
+| lineColor     | 滑块颜色                         | `string`             | -                  |
 | lineBgSize    | 滑块背景显示大小，当滑块背景设置为图片时使用       | `string` \| `number` | cover              |
 | activeStyle   | 菜单选择中时的样式                    | `CSSProperties`      | -                  |
 | inactiveStyle | 菜单非选中时的样式                    | `CSSProperties`      | -                  |

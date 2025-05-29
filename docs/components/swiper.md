@@ -244,7 +244,7 @@ const list = ref([
 | keyName                | list数组中指定对象的目标属性名                                                             | `string`                                                              | url                       |
 | imgMode                | 图片的裁剪模式,见uniapp基础组件[image](https://uniapp.dcloud.net.cn/component/image.html) | `string`                                                              | aspectFill                |
 | height                 | 组件高度                                                                          | `string` \| `number`                                                  | 130                       |
-| bgColor                | 背景颜色                                                                          | `string`                                                              | #f3f4f6                   |
+| bgColor                | 背景颜色                                                                          | `string`                                                              | -                         |
 | radius                 | 组件圆角，数值或带单位的字符串                                                               | `string` \| `number`                                                  | 4                         |
 | loading                | 是否加载中                                                                         | `boolean`                                                             | false                     |
 | showTitle              | 是否显示标题，要求数组对象中有title属性                                                        | `boolean`                                                             | false                     |

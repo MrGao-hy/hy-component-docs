@@ -1,0 +1,21 @@
+
+.gt-header-comment {
+  .gt-header-textarea {
+    background-color: var(--vp-c-divider);
+    &:hover {
+      background-color: var(--vp-c-default-2);
+    }
+  }
+}
+.gt-comment {
+  .gt-comment-content {
+    background-color: var(--vp-c-divider);
+    border-radius: 4px;
+    &:hover {
+      box-shadow: var(--vp-shadow-3);
+    }
+    .markdown-body {
+      color: var(--vp-c-text-1) !important;
+    }
+  }
+}

@@ -125,13 +125,13 @@ const value = ref('');
 | modelValue            | 输入的值                                                    | `string` \| `number`                             | -                 |
 | type                  | 输入框类型[^1]                                               | `number`\|`idcard`\|`digit`\| `password`\|`text` | text              |
 | disabled              | 是否禁用输入框                                                 | `boolean`                                        | false             |
-| disabledColor         | 禁用状态时的背景色                                               | `string`                                         | #f5f7fa           |
+| disabledColor         | 禁用状态时的背景色                                               | `string`                                         | -                 |
 | clearable             | 是否显示清除控件                                                | `boolean`                                        | false             |
 | password              | 是否密码类型                                                  | `boolean`                                        | false             |
 | maxlength             | 最大输入长度，设置为 -1 的时候不限制最大长度                                | `number`                                         | 140               |
 | placeholder           | 输入框为空时的占位符                                              | `string`                                         | -                 |
 | placeholderClass      | 指定placeholder的样式类，注意页面或组件的style中写了scoped时，需要在类名前写/deep/ | `string`                                         | input-placeholder |
-| placeholderStyle      | 指定placeholder的样式                                        | `CSSProperties`                                  | {color: #c0c4cc}  |
+| placeholderStyle      | 指定placeholder的样式                                        | `CSSProperties`                                  | -                 |
 | showWordLimit         | 是否显示输入字数统计，只在 type ="text"或type ="textarea"时有效          | `boolean`                                        | false             |
 | confirmType           | 设置右下角按钮的文字，兼容性详见uni-app文档                               | `string`                                         | done              |
 | confirmHold           | 点击键盘右下角按钮时是否保持键盘不收起，H5无效	                               | `boolean`                                        | false             |

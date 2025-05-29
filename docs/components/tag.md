@@ -157,7 +157,7 @@ import { HyTag } from "hy-app"
 | disabled     | 禁用                          | `boolean`                                        | false   |
 | size         | 标签大小                        | `small`\|`medium`\|`large`                       | medium  |
 | shape        | 标签形状                        | ``                                               | square  |
-| bgColor      | 背景颜色，默认为空字符串，即不处理           | `string`                                         | #C6C7CB |
+| bgColor      | 背景颜色，默认为空字符串，即不处理           | `string`                                         | -       |
 | color        | 标签字体颜色，默认为空字符串，即不处理         | `string`                                         | -       |
 | borderColor  | 标签的边框颜色                     | `string`                                         | -       |
 | closeColor   | 关闭按钮图标的颜色                   | `string`                                         | -       |

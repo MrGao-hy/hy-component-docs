@@ -216,7 +216,7 @@ const nowTime = computed(() => {
     display: none;
   }
 }
-@media screen and (width<969px) {
+@media screen and (width<1069px) {
   .demo-model {
     display: none;
   }

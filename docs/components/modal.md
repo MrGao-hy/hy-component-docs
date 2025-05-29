@@ -91,27 +91,27 @@ import { HyModal } from "hy-app"
 
 ## API
 
-| 参数                  | 说明                                                                     | 类型                        | 默认值     |
-|---------------------|------------------------------------------------------------------------|---------------------------|---------|
-| show                | 是否显示模态框                                                                | `boolean`                 | false   |
-| title               | 标题内容	                                                                  | `string`                  | -       |
-| content             | 模态框内容，如传入slot内容，则此参数无效                                                 | `string`                  | -       |
-| confirmText         | 确认按钮的文字                                                                | `string`                  | 确认      |
-| cancelText          | 取消按钮的文字                                                                | `string`                  | 取消      |
-| showConfirmButton   | 是否显示确认按钮                                                               | `boolean`                 | true    |
-| showCancelButton    | 是否显示取消按钮                                                               | `boolean`                 | false   |
-| confirmColor        | 确认按钮的颜色                                                                | `string`                  | -       |
-| cancelColor         | 取消按钮的颜色                                                                | `string`                  | #606266 |
-| buttonReverse       | 对调确认和取消的位置                                                             | `boolean`                 | false   |
-| zoom                | 是否开启缩放模式                                                               | `boolean`                 | true    |
-| asyncClose          | 是否异步关闭，只对确定按钮有效，见上方说明                                                  | `boolean`                 | false   |
-| asyncCloseTip       | 确定按钮异步关闭启用时，如果点击取消时的文案提示                                               | `string`                  | -       |
-| asyncCancelClose    | 是否异步关闭，只对取消按钮有效                                                        | `boolean`                 | false   |
-| closeOnClickOverlay | 是否允许点击遮罩关闭Modal（注意：关闭事件需要自行处理，只会在开启closeOnClickOverlay后点击遮罩层执行close回调） | `boolean`                 | false   |
-| negativeTop         | 往上偏移的值，给一个负的margin-top，往上偏移，避免和键盘重合的情况，单位任意，数值则默认为px单位                 | `string` \| `number`      | 0       |
-| width               | modal宽度，不支持百分比，可以数值，px，rpx单位                                           | `string` \| `number`      | 650rpx  |
-| confirmButtonShape  | 确认按钮的样式,如设置，将不会显示取消按钮                                                  | `circle` \| `square`      | -       |
-| contentTextAlign    | 文案对齐方式                                                                 | `center`\|`left`\|`right` | left    |
+| 参数                  | 说明                                                                     | 类型                        | 默认值    |
+|---------------------|------------------------------------------------------------------------|---------------------------|--------|
+| show                | 是否显示模态框                                                                | `boolean`                 | false  |
+| title               | 标题内容	                                                                  | `string`                  | -      |
+| content             | 模态框内容，如传入slot内容，则此参数无效                                                 | `string`                  | -      |
+| confirmText         | 确认按钮的文字                                                                | `string`                  | 确认     |
+| cancelText          | 取消按钮的文字                                                                | `string`                  | 取消     |
+| showConfirmButton   | 是否显示确认按钮                                                               | `boolean`                 | true   |
+| showCancelButton    | 是否显示取消按钮                                                               | `boolean`                 | false  |
+| confirmColor        | 确认按钮的颜色                                                                | `string`                  | -      |
+| cancelColor         | 取消按钮的颜色                                                                | `string`                  | -      |
+| buttonReverse       | 对调确认和取消的位置                                                             | `boolean`                 | false  |
+| zoom                | 是否开启缩放模式                                                               | `boolean`                 | true   |
+| asyncClose          | 是否异步关闭，只对确定按钮有效，见上方说明                                                  | `boolean`                 | false  |
+| asyncCloseTip       | 确定按钮异步关闭启用时，如果点击取消时的文案提示                                               | `string`                  | -      |
+| asyncCancelClose    | 是否异步关闭，只对取消按钮有效                                                        | `boolean`                 | false  |
+| closeOnClickOverlay | 是否允许点击遮罩关闭Modal（注意：关闭事件需要自行处理，只会在开启closeOnClickOverlay后点击遮罩层执行close回调） | `boolean`                 | false  |
+| negativeTop         | 往上偏移的值，给一个负的margin-top，往上偏移，避免和键盘重合的情况，单位任意，数值则默认为px单位                 | `string` \| `number`      | 0      |
+| width               | modal宽度，不支持百分比，可以数值，px，rpx单位                                           | `string` \| `number`      | 650rpx |
+| confirmButtonShape  | 确认按钮的样式,如设置，将不会显示取消按钮                                                  | `circle` \| `square`      | -      |
+| contentTextAlign    | 文案对齐方式                                                                 | `center`\|`left`\|`right` | left   |
 
 ## Events
 

@@ -72,8 +72,8 @@ import { HyNoticeBar } from "hy-app"
 | step           | direction = row时，是否使用步进形式滚动                        | `boolean`                          | false                        |
 | icon           | 是否显示左侧的音量图标                                        | `string`                           | IconConfig.NOTIFICATION_FILL |
 | mode           | 通告模式，link-显示右箭头，closable-显示右侧关闭图标                  | `link` \| `closable`               | -                            |
-| color          | 文字颜色                                               | `string`                           | #f9ae3d                      |
-| bgColor        | 背景颜色                                               | `string`                           | #fdf6ec                      |
+| color          | 文字颜色                                               | `string`                           | -                            |
+| bgColor        | 背景颜色                                               | `string`                           | -                            |
 | speed          | 水平滚动时的滚动速度，即每秒滚动多少px(rpx)，这有利于控制文字无论多少时，都能有一个恒定的速度 | `string` \| `number`               | 80                           |
 | fontSize       | 字体大小                                               | `string` \| `number`               | 14                           |
 | duration       | 滚动一个周期的时间长，单位ms                                    | `number`                           | 2000                         |
