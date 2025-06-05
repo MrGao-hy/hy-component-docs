@@ -75,7 +75,7 @@ const nowTime = computed(() => {
   background-color: #fff;
   border-radius: 50%;
   margin: 2px;
-  box-shadow: 0 0 10px 5px #0000000d;
+  //box-shadow: 0 0 10px 5px #0000000d;
   line-height: 1;
   width: 60px;
   height: 60px;
@@ -227,9 +227,9 @@ const nowTime = computed(() => {
 
 @media screen and (min-width: 1366px) {
   .demo-model {
-    width: 320px;
-    height: calc(320px * 2 + 60px + 30px);
-    top: calc(50vh - 330px);
+    width: 300px;
+    height: calc(300px * 2 + 60px);
+    top: calc(50vh - 300px);
     right: 0;
     margin-right: 5px;
   }

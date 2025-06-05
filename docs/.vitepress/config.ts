@@ -111,55 +111,61 @@ export default defineConfig({
         {
           text: "布局组件",
           items: [
-            {text: 'List 虚拟列表', link: '/components/list'},
-            {text: 'LineProgress 线形进度条', link: '/components/lineProgress'},
-            {text: 'ScrollList 横向滚动列表', link: '/components/scrollList'},
-            {text: 'Line 线条', link: '/components/line'},
             {text: 'Card 卡片', link: '/components/card'},
-            {text: 'Overlay 遮罩层', link: '/components/overlay'},
-            {text: 'Grid 宫格布局', link: '/components/grid'},
-            {text: 'Waterfall 瀑布流', link: '/components/waterfall'},
             {text: 'Divider 分割线', link: '/components/divider'},
             {text: 'FloatButton 悬浮按钮', link: '/components/floatButton'},
+            {text: 'Grid 宫格布局', link: '/components/grid'},
+            {text: 'List 虚拟列表', link: '/components/list'},
+            {text: 'LineProgress 线形进度条', link: '/components/lineProgress'},
+            {text: 'Line 线条', link: '/components/line'},
+            {text: 'Overlay 遮罩层', link: '/components/overlay'},
+            {text: 'ScrollList 横向滚动列表', link: '/components/scrollList'},
+            {text: 'Waterfall 瀑布流', link: '/components/waterfall'},
+            {text: 'Watermark 水印', link: '/components/watermark'},
           ]
         },
         {
           text: "反馈组件",
           items: [
-            { text: 'Tooltip 长按提示', link: '/components/tooltip' },
             { text: 'ActionSheet 操作菜单', link: '/components/actionSheet' },
-            { text: 'Warn 警告提示', link: '/components/warn' },
-            { text: 'Toast 提示信息', link: '/components/toast' },
-            { text: 'NoticeBar 滚动通知', link: '/components/noticeBar' },
-            { text: 'SwipeAction 滑动单元格', link: '/components/swipeAction' },
             { text: 'FoldingPanel 折叠面板', link: '/components/foldingPanel' },
+            { text: 'Modal 模态框', link: '/components/modal' },
+            { text: 'NoticeBar 滚动通知', link: '/components/noticeBar' },
+            { text: 'Notify 消息提示', link: '/components/notify' },
             { text: 'Popup 弹出层', link: '/components/popup' },
-            { text: 'Modal 模态框', link: '/components/modal' }
+            { text: 'SwipeAction 滑动单元格', link: '/components/swipeAction' },
+            { text: 'Toast 提示信息', link: '/components/toast' },
+            { text: 'Tooltip 长按提示', link: '/components/tooltip' },
+            { text: 'Warn 警告提示', link: '/components/warn' },
           ]
         },
         {
           text: "导航组件",
           items: [
-            { text: 'Dropdown 下拉菜单', link: '/components/dropdown' },
-            { text: 'TabBar 底部导航栏', link: '/components/tabBar' },
             { text: 'BackTop 返回顶部', link: '/components/backTop' },
+            { text: 'Dropdown 下拉菜单', link: '/components/dropdown' },
+            { text: 'Empty 空状态', link: '/components/empty' },
+            { text: 'Menu 侧边菜单栏', link: '/components/menu' },
             { text: 'Navbar 自定义导航栏', link: '/components/navbar' },
-            { text: 'Tabs 标签', link: '/components/tabs' },
+            { text: 'Pagination 分页', link: '/components/pagination' },
             { text: 'Subsection 分段器', link: '/components/subsection' },
             { text: 'Steps 步骤条', link: '/components/steps' },
-            { text: 'Empty 空状态', link: '/components/empty' }
+            { text: 'Tabs 标签', link: '/components/tabs' },
+            { text: 'TabBar 底部导航栏', link: '/components/tabBar' },
           ]
         },
         {
           text: "其他组件",
           items: [
+            { text: 'Avatar 头像', link: '/components/avatar' },
+            { text: 'CodeInput 验证码输入', link: '/components/codeInput' },
             { text: 'CountTo 数字滚动', link: '/components/countTo' },
             { text: 'CountDown 倒计时', link: '/components/countDown' },
             { text: 'Parse 富文本', link: '/components/parse' },
+            { text: 'Qrcode 二维码', link: '/components/qrcode' },
             { text: 'ReadMore 展开阅读更多', link: '/components/readMore' },
-            { text: 'Avatar 头像', link: '/components/avatar' },
+            { text: 'Signature 签名', link: '/components/signature' },
             { text: 'Transition 动画', link: '/components/transition' },
-            { text: 'Qrcode 二维码', link: '/components/qrcode' }
           ]
         },
         {
