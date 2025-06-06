@@ -1,14 +1,12 @@
 # 华玥组件库
-
-::: tip
-针对移动端项目，uniapp+vue3，需要使用到 uview-plus 组件库
-:::
-
 ::: info 温馨提示
 node(推荐) >= 16.14.0
 :::
 
 ## 下载scss(没有的话需要安装)
+::: tip 提示
+华玥组件库使用的是`scss`，所有对于没有使用`scss`插件的需要安装`scss`插件
+:::
 ::: code-group
 ```shell [npm]
 $ npm install sass -D
@@ -23,11 +21,14 @@ $ cnpm install sass -D
 ```
 
 ```shell [yarn]
-$ yarn install sass -D
+$ yarn add sass -D
 ```
 :::
 
 ## 下载dayjs(没有的话需要安装)
+::: tip 提示
+由于时间选择器使用到`dayjs`，所有在使用时候需要下载`dayjs`，否则会报错
+:::
 ::: code-group
 ```shell [npm]
 $ npm install dayjs
@@ -42,7 +43,7 @@ $ cnpm install dayjs
 ```
 
 ```shell [yarn]
-$ yarn install dayjs
+$ yarn add dayjs
 ```
 :::
 
