@@ -269,18 +269,18 @@ export default defineConfig({
       ],
       '/download': [
         {
-          text: '免费下载软件',
+          text: '开发软件',
           items: [
             {
-              text: '前端下载软件',
+              text: '前端软件集合',
               link: '/download/web',
             },
             {
-              text: '服务器下载软件',
+              text: '服务软件集合',
               link: '/download/service',
             },
             {
-              text: '后端下载软件',
+              text: '后端软件集合',
               link: '/download/java',
             }
           ]

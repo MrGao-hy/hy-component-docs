@@ -13,7 +13,9 @@
 | ✔        | ✔  | ✔     |
 
 ## 基本使用示例
-
+::: tip 提示
+如果遇到导出图片不清晰，可以将 exportScale 设置为 2 以上。
+:::
 ```html
 <!-- 全局使用 -->
 <hy-signature></hy-signature>

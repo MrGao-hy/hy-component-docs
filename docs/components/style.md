@@ -4,7 +4,7 @@
 :::
 
 ## 使用配置
-```ts  [./vite.config.ts]
+```ts  [vite.config.ts]
 css: {
     // 配置`scss`和`less`全局变量
     preprocessorOptions: {
@@ -15,100 +15,122 @@ css: {
 }
 ```
 
+## 设置组件默认主题色
+```scss
+:root {
+  --hy-theme-color: red;
+}
+```
+
+## 根据不同主题设置不同颜色
+::: tip 注意
+为了实现根据主题动态调整不同环境下的颜色，可以在页面的最外层使用一个`ConfigProvider`组件来包裹整个页面内容。通过这种方式，
+`ConfigProvider`能够统一管理主题相关的配置，从而确保整个应用的颜色风格能够根据主题设置进行动态切换，实现一致的视觉效果。
+:::
+> 通过如下设置可以设置暗色和亮色两种主题下的公共颜色
+```scss
+/* 亮色 */
+.hy-theme--light {
+  --hy-text-color: #000000;
+  --hy-background: #f8f8f8;
+}
+/* 暗色 */
+.hy-theme--dark {
+  --hy-text-color: #ffffff;
+  --hy-background: #1b1b1f;
+}
+```
+
 ## 主题集合
 ```scss
 /* 主题是相关颜色 */
-$hy-primary: #2979ff;
-$hy-primary-dark: #2b85e4;
-$hy-primary-disabled: #a0cfff;
-$hy-primary-light: #ecf5ff;
+$hy-primary: var(--hy-theme-color, #2979ff) !default;
+$hy-primary-dark: var(--hy-theme--dark, #2b85e4) !default;
+$hy-primary-disabled: var(--hy-theme--disabled, #a0cfff) !default;
+$hy-primary-light: var(--hy-theme--light, #ecf5ff) !default;
 
-$hy-warning: #ff9900;
-$hy-warning-dark: #f29100;
-$hy-warning-disabled: #fcbd71;
-$hy-warning-light: #fdf6ec;
+$hy-warning: var(--hy-warning, #ff9900) !default;
+$hy-warning-dark: var(--hy-warning--dark, #f29100) !default;
+$hy-warning-disabled: var(--hy-warning--disabled, #fcbd71) !default;
+$hy-warning-light: var(--hy-warning--light, #fdf6ec) !default;
 
-$hy-success: #19be6b;
-$hy-success-dark: #18b566;
-$hy-success-disabled: #71d5a1;
-$hy-success-light: #dbf1e1;
+$hy-success: var(--hy-success, #19be6b) !default;
+$hy-success-dark: var(--hy-success--dark, #18b566) !default;
+$hy-success-disabled: var(--hy-success--disabled, #71d5a1) !default;
+$hy-success-light: var(--hy-success--light, #dbf1e1) !default;
 
-$hy-error: #fa3534;
-$hy-error-dark: #dd6161;
-$hy-error-disabled: #fab6b6;
-$hy-error-light: #fef0f0;
+$hy-error: var(--hy-error, #fa3534) !default;
+$hy-error-dark: var(--hy-error--dark, #dd6161) !default;
+$hy-error-disabled: var(--hy-error--disabled, #fab6b6) !default;
+$hy-error-light: var(--hy-error--light, #fef0f0) !default;
 
-$hy-info: #909399;
-$hy-info-dark: #82848a;
-$hy-info-disabled: #c8c9cc;
-$hy-info-light: #f4f4f5;
+$hy-info: var(--hy-info, #909399) !default;
+$hy-info-dark: var(--hy-info--dark, #82848a) !default;
+$hy-info-disabled: var(--hy-info--disabled, #c8c9cc) !default;
+$hy-info-light: var(--hy-info--light, #f4f4f5) !default;
 
-/* 文字基本颜色 */
-$hy-text-color: #333; //基本色
-$hy-text-color-inverse: #fff; //反色
-$hy-text-color-grey: #999; //辅助灰色，如加载更多的提示信息
-$hy-text-color-placeholder: #808080;
-$hy-text-color-disable: #c0c0c0;
-$hy-text-color-light: rgba(192, 192, 192, 0.38);
+/* 字体颜色 */
+$hy-text-color: var(--hy-text-color, #3c3c43) !default; // 一般用于基础文字
+$hy-text-color--2: var(--hy-text-color--2, #67676c) !default; // 一般用于提示
+$hy-text-color--3: var(--hy-text-color--3, #929295) !default; // 一般用于浅色提示
+$hy-text-color--4: var(--hy-text-color--4, rgba(0, 0, 0, 0.1)) !default; // 一般用于浅色
+$hy-icon-color: var(--hy-icon-color, #606266) !default; // 一般用于icon
+$hy-text-color--grey: var(--hy-text-color--grey, #999) !default; // 辅助灰色，如加载更多的提示信息
+$hy-text-color--placeholder: var(--hy-text-color--placeholder, #808080) !default; // 输入框提示颜色
+$hy-text-color--disabled: var(--hy-text-color--disabled, #c0c0c0) !default; // 禁用文字颜色
+$hy-border-color: var(--hy-border-color, #c0c0c0) !default; // 边框颜色
+$hy-text-color-hover: var(--hy-text-color-hover, #58595b)!default; // 点击状态文字颜色
 
-$hy-tips-color: #909193FF;
-$hy-color-disable-bg: #F5F5F5;
-$hy-color-disable-icon:  #c8c9cc;
+
+/* 背景色 */
+$hy-background: var(--hy-background, #f8f8f8) !default; // 背景色
+$hy-background--2: var(--hy-background--2, #ffffff) !default; // 弹窗背景色
+$hy-background--3: var(--hy-background--3, #646566) !default; // 弹窗背景色
+$hy-background--container: var(--hy-background--container, #ffffff) !default; // 容器背景色
+$hy-background--disabled: var(--hy-background--disabled, #F5F5F5); // 禁用背景色
+$hy-background--track: var(--hy-background--track, #F6F6F6) !default; // 轨道背景色
+$hy-background--empty: var(--hy-background--empty, #F3F3F3) !default; // 搜索背景色
+$hy-background--hover: var(--hy-background--hover, rgba(0,0,0,0.1)) !default; // 点击状态
+$hy-light-background-mask: var(--hy-light-background-mask, rgba(0, 0, 0, 0.5)); //遮罩颜色
+$hy-background--active: var(--hy-background--active, #131313); // 选中背景色
 
 /* 文字尺寸 */
-$hy-font-size-sm: 24rpx;
-$hy-font-size-base: 28rpx;
-$hy-font-size-lg: 32rpx;
-
-/* 背景颜色 */
-$hy-bg-color: #F8F8F8;
-$hy-bg-color-disabled: #87BAF3;
-$hy-bg-color-light: #a7cff9a5;
-$hy-bg-color-grey: #f8f8f8;
-$hy-bg-color-hover: #f1f1f1; //点击状态颜色
-$hy-bg-color-mask: rgba(0, 0, 0, 0.5); //遮罩颜色
-$hy-image-bg-color: #F3F3F3;
-
-/* 文章场景相关 */
-$hy-color-title: #2c405a; // 文章标题颜色
-$hy-weight-title: 700;
-$hy-font-size-title: 44rpx;
-$hy-color-subtitle: #555555; // 二级标题颜色
-$hy-font-size-subtitle: 38rpx;
-$hy-color-paragraph: #3f536e; // 文章段落颜色
-$hy-font-size-paragraph: 32rpx;
-$hy-color-hint: #999; // 提示文字
-$hy-font-size-hint: 26rpx;
+$hy-font-size-sm: 24rpx; // 提示文字大小
+$hy-font-size-base: 32rpx; // 基本文字大小
+$hy-font-size-lg: 40rpx; // 标题文字大小
 
 
 /* 边框颜色 */
-$k-border-color-light: #c8c7cc;
-$hy-border-color: #c8c7cc66;
+$hy-border-color-light: var(--hy-border-color-light, #c8c7cc) !default;
+$hy-border-color: var(--hy-border-color, #c2c2c4) !default;
+$hy-border-color--2: var(--hy-border-color--2, #c9cacc) !default;
 
 /* 图片尺寸 */
-$hy-img-size-sm: 45rpx;
-$hy-img-size-base: 80rpx;
-$hy-img-size-lg: 120rpx;
+$hy-img-size-sm: var(--hy-img-size-sm, 45rpx) !default;
+$hy-img-size-base: var(--hy-img-size-base, 80rpx) !default;
+$hy-img-size-lg: var(--hy-img-size-lg, 120rpx) !default;
 
 /* 头像大小 */
-$hy-avatar-size-sm: 80rpx;
-$hy-avatar-size-base: 100rpx;
-$hy-avatar-size-lg: 120rpx;
+$hy-avatar-size-sm: var(--hy-avatar-size-sm, 80rpx) !default;
+$hy-avatar-size-base: var(--hy-avatar-size-base, 100rpx) !default;
+$hy-avatar-size-lg: var(--hy-avatar-size-lg, 120rpx) !default;
 
 /* 透明度 */
-$hy-opacity-disabled: 0.3; // 组件禁用态的透明度
+$hy-opacity-disabled: var(--hy-opacity-disabled, 0.3) !default; // 组件禁用态的透明度
 
 /* 盒子的圆角 */
-$hy-border-radius-sm: 6rpx;
-$hy-border-radius-base: 12rpx;
-$hy-border-radius-lg: 20rpx;
-$hy-border-radius-circle: 50%;
+$hy-border-radius-no: var(--hy-border-radius-no, 0) !default;
+$hy-border-radius-sm: var(--hy-border-radius-sm, 8rpx) !default;
+$hy-border-radius-base: var(--hy-border-radius-base, 20rpx) !default;
+$hy-border-radius-lg: var(--hy-border-radius-lg, 32rpx) !default;
+$hy-border-radius-circle: var(--hy-border-radius-circle, 50%) !default;
+$hy-border-radius-semicircle: var(--hy-border-radius-semicircle, 100px) !default;
 /* 盒子阴影 */
-$hy-box-shadow: 0 0 10rpx 4rpx rgba(0, 0, 0, 0.16);
+$hy-box-shadow: var(--hy-box-shadow, 0 0 10rpx 4rpx rgba(0, 0, 0, 0.16)) !default;
 /* 盒内盒外间距 */
-$hy-border-margin-padding-sm: 10rpx;
-$hy-border-margin-padding-base: 20rpx;
-$hy-border-margin-padding-lg: 25rpx;
+$hy-border-margin-padding-sm: var(--hy-border-margin-padding-sm, 10rpx) !default;
+$hy-border-margin-padding-base: var(--hy-border-margin-padding-base, 20rpx) !default;
+$hy-border-margin-padding-lg: var(--hy-border-margin-padding-lg, 30rpx) !default;
 /* 底部线条 */
-$hy-border-line: 1px solid #dadbde;
+$hy-border-line: var(--hy-border-line, 1px solid #c2c2c4) !default;
 ```
