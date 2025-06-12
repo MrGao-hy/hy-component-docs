@@ -4,15 +4,18 @@
       <div id="gitalk-container"></div>
     </template>
     <Analytics />
-<!--    <template #aside-outline-after>-->
-<!--      <iframe src="http://localhost:3002/#/" width="100%" height="500px"></iframe>-->
-<!--    </template>-->
+    <template #nav-bar-content-before>
+      <Documate/>
+    </template>
   </Layout>
 </template>
 
 <script lang="ts" setup>
 import DefaultTheme from "vitepress/theme";
 import { inject  } from '@vercel/analytics';
+// ai模型
+import Documate from '@documate/vue';
+import '@documate/vue/dist/style.css';
 
 const {Layout} = DefaultTheme
 import { watch, nextTick, onMounted } from "vue";

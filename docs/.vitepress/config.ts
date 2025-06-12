@@ -323,7 +323,7 @@ export default defineConfig({
       { icon: "github", link: 'https://github.com/MrGao-hy/' },
       { icon: "gitee", link: 'https://gitee.com/MrGao-hy' },
       { icon: "csdn", link: 'https://blog.csdn.net/weixin_68340504?type=blog' },
-      { icon: "qq", link: '/guide/join-group' }
+      { icon: "qq", link: 'https://d.4rxb.com/s/0zydgj' }
     ]
   },
   head: [

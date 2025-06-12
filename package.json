@@ -2,18 +2,21 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vitepress dev docs --port 8080",
+    "dev": "vitepress dev docs --port 8099",
     "build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
-    "clean": "rimraf node_modules && npm cache verify --force"
+    "clean": "rimraf node_modules && npm cache verify --force",
+    "documate:upload": "documate upload"
   },
   "devDependencies": {
+    "@documate/documate": "^0.2.1",
     "sass": "^1.63.6",
     "sass-embedded": "^1.85.1",
     "vitepress": "latest",
     "vitepress-plugin-group-icons": "^1.5.2"
   },
   "dependencies": {
+    "@documate/vue": "^0.3.1",
     "@vercel/analytics": "^1.5.0",
     "ant-design-vue": "4.x",
     "gitalk": "^1.8.0",
