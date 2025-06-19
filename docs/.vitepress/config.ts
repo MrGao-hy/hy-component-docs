@@ -3,7 +3,8 @@ import footnote from 'markdown-it-footnote';
 import {
   groupIconMdPlugin,
   groupIconVitePlugin
-} from 'vitepress-plugin-group-icons'
+} from 'vitepress-plugin-group-icons';
+import llmstxt from 'vitepress-plugin-llms';
 
 // refer https://vitepress.dev/reference/site-config for details
 export default defineConfig({
@@ -337,7 +338,8 @@ export default defineConfig({
   },
   vite: {
     plugins: [
-      groupIconVitePlugin()
+      groupIconVitePlugin(),
+      llmstxt() // ai理解文档
     ],
   }
 });

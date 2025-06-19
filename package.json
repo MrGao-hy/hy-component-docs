@@ -13,7 +13,8 @@
     "sass": "^1.63.6",
     "sass-embedded": "^1.85.1",
     "vitepress": "latest",
-    "vitepress-plugin-group-icons": "^1.5.2"
+    "vitepress-plugin-group-icons": "^1.5.2",
+    "vitepress-plugin-llms": "^1.5.1"
   },
   "dependencies": {
     "@documate/vue": "^0.3.1",
