@@ -337,6 +337,10 @@ export default defineConfig({
     },
   },
   vite: {
+    server: {
+      host: '0.0.0.0',
+      port: 6699
+    },
     plugins: [
       groupIconVitePlugin(),
       llmstxt() // ai理解文档

@@ -12,6 +12,9 @@ hero:
     - theme: alt
       text: 演示
       link: /components/intro#演示模板
+  image:
+    src: /images/home.png
+    alt: Star
       
 
 features:
