@@ -72,7 +72,7 @@ import { HyPopup } from "hy-app"
 | safeAreaInsetBottom | 是否为留出底部安全距离                                                           | `boolean`                                  | true      |
 | safeAreaInsetTop    | 是否留出顶部安全距离（状态栏高度）                                                     | `boolean`                                  | false     |
 | closeIconPos        | 自定义关闭图标位置，top-left为左上角，top-right为右上角，bottom-left为左下角，bottom-right为右下角 | `top-left`\|`bottom-left`\|`bottom-right`  | top-right |
-| round               | 设置圆角值，仅对mode = top\|bottom\|center                                    | `string`                                   | 0         |
+| round               | 设置圆角值，仅对mode = top\|bottom\|center                                    | `string` \| `number`                       | -         |
 | zoom                | 当mode=center时 是否开启缩放                                                  | `boolean`                                  | true      |
 | bgColor             | 背景色，一般用于特殊弹窗内容场景，设置为transparent可去除默认的白色背景                             | `string`                                   | -         |
 | customStyle         | 用户自定义样式	                                                              | `CSSProperties`                            | -         |
