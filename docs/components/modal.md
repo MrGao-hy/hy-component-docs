@@ -16,9 +16,9 @@
 
 ```html
 <!-- 全局使用 -->
-<hy-modal :show="true" title="通知"></hy-modal>
+<hy-modal v-model="true" title="通知"></hy-modal>
 <!-- 单个组件引入 -->
-<HyModal :show="true" title="通知"></HyModal>
+<HyModal v-model="true" title="通知"></HyModal>
 ```
 ```ts
 import { HyModal } from "hy-app"
@@ -31,7 +31,7 @@ import { HyModal } from "hy-app"
 :::
 ```html
 <template>
-    <hy-modal :show="show" closeOnClickOverlay @close="show = false"></hy-modal>
+    <hy-modal v-model="show" closeOnClickOverlay @close="show = false"></hy-modal>
 </template>
 
 <script setup>
@@ -44,7 +44,7 @@ import { HyModal } from "hy-app"
 - 可以通过设置`width`参数控制模态框的宽度，不支持百分比，可以数值，px，rpx单位
 ```html
 <template>
-    <hy-modal :show="true" width="300px"></hy-modal>
+    <hy-modal v-model="true" width="300px"></hy-modal>
 </template>
 ```
 
@@ -52,7 +52,7 @@ import { HyModal } from "hy-app"
 - 开启缩放效果，在打开和收起模态框的时候，会带有缩放效果，具体效果请见示例，此效果默认开启，通过`zoom`参数配置
 ```html
 <template>
-    <hy-modal :show="true" :zoom="false"></hy-modal>
+    <hy-modal v-model="true" :zoom="false"></hy-modal>
 </template>
 ```
 
@@ -61,7 +61,7 @@ import { HyModal } from "hy-app"
 - 通过配置`showCancelButton`来显示取消按钮
 ```html
 <template>
-    <hy-modal :show="true" buttonReverse showCancelButton></hy-modal>
+    <hy-modal v-model="true" buttonReverse showCancelButton></hy-modal>
 </template>
 ```
 
@@ -70,11 +70,11 @@ import { HyModal } from "hy-app"
 ```html
 <template>
     <view >
-        <hy-modal :show="show"  :title="title" >
+        <hy-modal v-model="show"  :title="title" >
             <view class="slot-content">
                 <rich-text :nodes="content"></rich-text>
             </view>
-        </-modal>
+        </hy-modal>
         <up-button @click="show = true">打开</up-button>
     </view>
 </template>
@@ -93,7 +93,7 @@ import { HyModal } from "hy-app"
 
 | 参数                  | 说明                                                                     | 类型                        | 默认值    |
 |---------------------|------------------------------------------------------------------------|---------------------------|--------|
-| show                | 是否显示模态框                                                                | `boolean`                 | false  |
+| modelValue          | 是否显示模态框                                                                | `boolean`                 | false  |
 | title               | 标题内容	                                                                  | `string`                  | -      |
 | content             | 模态框内容，如传入slot内容，则此参数无效                                                 | `string`                  | -      |
 | confirmText         | 确认按钮的文字                                                                | `string`                  | 确认     |
@@ -104,6 +104,7 @@ import { HyModal } from "hy-app"
 | cancelColor         | 取消按钮的颜色                                                                | `string`                  | -      |
 | buttonReverse       | 对调确认和取消的位置                                                             | `boolean`                 | false  |
 | zoom                | 是否开启缩放模式                                                               | `boolean`                 | true   |
+| round               | 模态框圆角                                                                  | `string` \| `number`      | 16     |
 | asyncClose          | 是否异步关闭，只对确定按钮有效，见上方说明                                                  | `boolean`                 | false  |
 | asyncCloseTip       | 确定按钮异步关闭启用时，如果点击取消时的文案提示                                               | `string`                  | -      |
 | asyncCancelClose    | 是否异步关闭，只对取消按钮有效                                                        | `boolean`                 | false  |

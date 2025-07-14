@@ -79,6 +79,7 @@ import { HyImage } from "hy-app"
 | webp                | 只支持网络资源，只对微信小程序有效                                                   | `boolean`          | false         |
 | duration            | 搭配fade参数的过渡时间，单位ms                                                  | `number`           | 500           |
 | bgColor             | 背景颜色，用于深色页面加载图片时，为了和背景色融合                                           | `string`           | -             |
+| indistinct          | 模糊图片，给图片加上模糊样式                                                      | `boolean`          | false         |
 | previewImage        | 是否预览图片                                                              | `boolean`          | false         |
 | customStyle         | 定义需要用到的外部样式                                                         | `boolean`          | CSSProperties |
 

@@ -133,6 +133,7 @@ export default defineConfig({
             { text: 'Modal 模态框', link: '/components/modal' },
             { text: 'NoticeBar 滚动通知', link: '/components/noticeBar' },
             { text: 'Notify 消息提示', link: '/components/notify' },
+            { text: 'Popover 气泡', link: '/components/popover' },
             { text: 'Popup 弹出层', link: '/components/popup' },
             { text: 'SwipeAction 滑动单元格', link: '/components/swipeAction' },
             { text: 'Toast 提示信息', link: '/components/toast' },

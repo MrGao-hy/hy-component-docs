@@ -125,27 +125,39 @@ import { HyFloatButton } from "hy-app"
 
 ## API
 
-| 参数          | 说明          | 类型                                              | 默认值     |
-|-------------|-------------|-------------------------------------------------|---------|
-| menus       | 菜单栏集合       | `(string\|AnyObject)[]`                         | -       |
-| direction   | 打开方向[^1]    | `row`\|`column`                                 | column  |
-| icon        | 按钮显示的图标     | `string`                                        | PLUS    |
-| iconSize    | 按钮图标大小      | `number`\|`string`                              | -       |
-| iconColor   | 按钮图标颜色      | `string`                                        | #FFFFFF |
-| bottom      | 按钮距离底部的距离   | `number`\|`string`                              | 80      |
-| left        | 按钮距离左边的距离   | `number`\|`string`                              | 20      |
-| zIndex      | 层级          | `number`                                        | 10086   |
-| bgColor     | 按钮背景颜色      | `string`                                        | -       |
-| text        | 按钮文字        | `string`                                        | -       |
-| fontSize    | 按钮文字大小      | `number`\|`string`                              | 12px    |
-| textColor   | 按钮文字的颜色     | `string`                                        | -       |
-| size        | 按钮的尺寸[^2]   | `small`\|`medium`\|`large` \|`number`\|`string` | medium  |
-| shape       | 按钮的形状[^3]   | `circle`\|`square`                              | circle  |
-| opacity     | 按钮的透明度      | `number`                                        | 1       |
-| shadow      | 是否显示阴影      | `boolean`                                       | true    |
-| float       | 是否显示漂浮的动画   | `boolean`                                       | true    |
-| fixed       | 是否固定位置      | `boolean`                                       | true    |
-| customStyle | 定义需要用到的外部样式 | `CSSProperties`                                 | -       |
+| 参数          | 说明             | 类型                                                                                                                    | 默认值                                            |
+|-------------|----------------|-----------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
+| menus       | 菜单栏集合          | `(string\|AnyObject)[]`                                                                                               | -                                              |
+| direction   | 打开方向[^1]       | `row`\|`column`                                                                                                       | column                                         |
+| icon        | 按钮显示的图标        | `string`                                                                                                              | PLUS                                           |
+| iconSize    | 按钮图标大小         | `number`\|`string`                                                                                                    | -                                              |
+| iconColor   | 按钮图标颜色         | `string`                                                                                                              | #FFFFFF                                        |
+| gap         | 悬浮按钮与可视区域边缘的间距 | `Object`                                                                                                              | \{ left: 16, right: 16, top: 16, bottom: 40 \} |
+| zIndex      | 层级             | `number`                                                                                                              | 10086                                          |
+| bgColor     | 按钮背景颜色         | `string`                                                                                                              | -                                              |
+| text        | 按钮文字           | `string`                                                                                                              | -                                              |
+| fontSize    | 按钮文字大小         | `number`\|`string`                                                                                                    | 12px                                           |
+| textColor   | 按钮文字的颜色        | `string`                                                                                                              | -                                              |
+| size        | 按钮的尺寸[^2]      | `small`\|`medium`\|`large` \|`number`\|`string`                                                                       | medium                                         |
+| shape       | 按钮的形状[^3]      | `circle`\|`square`                                                                                                    | circle                                         |
+| opacity     | 按钮的透明度         | `number`                                                                                                              | 1                                              |
+| shadow      | 是否显示阴影         | `boolean`                                                                                                             | true                                           |
+| float       | 是否显示漂浮的动画      | `boolean`                                                                                                             | true                                           |
+| fixed       | 是否固定位置         | `boolean`                                                                                                             | true                                           |
+| draggable   | 悬浮按钮能否拖动       | `boolean`                                                                                                             | true                                           |
+| position    | 悬浮按钮位置         | `left-top`\|`left-bottom`\|`right-top`\|`right-bottom`\| `left-center`\|`right-center`\|`top-center`\|`bottom-center` | 'right-bottom'                                 |                                                              |                                                |
+| expandable  | 用于控制点击时是否展开菜单  | `boolean`                                                                                                             | true                                           |
+| customStyle | 定义需要用到的外部样式    | `CSSProperties`                                                                                                       | -                                              |
+
+## gap
+
+| 参数     | 说明       | 类型       | 默认值 |
+|--------|----------|----------|-----|
+| left   | 距离左边最小距离 | `number` | 16  |
+| right  | 距离右边最小距离 | `number` | 16  |
+| top    | 距离顶部最小距离 | `number` | 16  |
+| bottom | 距离底部最小距离 | `number` | 40  |
+
 
 ## Events
 
