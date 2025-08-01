@@ -205,8 +205,8 @@ const value = ref(1);
 | blur      | 输入框失去焦点时触发   | value: 数值             |
 | change    | 输入框内容发生变化时触发 | value: 数值             |
 | overLimit | 超过范围阈值时触发    | type: `minus`\|`plus` |
-| plus      | 点击增加按钮       | value: 数值             |
-| minus     | 点击减少按钮       | value: 数值             |
+| plus      | 点击增加按钮触发     | value: 数值             |
+| minus     | 点击减少按钮触发     | value: 数值             |
 
 ## Slots
 

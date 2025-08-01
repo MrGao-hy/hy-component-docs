@@ -162,10 +162,12 @@ const value = ref('');
 | blur                 | 输入框失去焦点时触发       | value：内容值 |
 | focus                | 输入框聚焦时触发         | -         |
 | confirm              | 点击完成按钮时触发        | value：内容值 |
-| keyboardheightchange | 键盘高度发生变化的时候触发此事件 | -         |
+| keyboardheightchange | 键盘高度发生变化的时候触发此事件 | event     |
 | update:modelValue    | 内容发生变化触发此事件      | value：内容值 |
 | change               | 内容发生变化触发此事件      | value：内容值 |
 | clear                | 点击清空内容           | -         |
+| onPrefix             | 点击前缀触发           | -         |
+| onSuffix             | 点击后缀触发           | -         |
 
 
 ## Slots

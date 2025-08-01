@@ -116,12 +116,12 @@ import { HyModal } from "hy-app"
 
 ## Events
 
-| 事件名           | 说明                                  | 回调参数 |
-|---------------|-------------------------------------|------|
-| confirm       | 点击确认按钮时触发                           | -    |
-| cancel        | 点击取消按钮时触发                           | -    |
-| close         | 点击遮罩关闭出发，closeOnClickOverlay为true有效 | -    |
-| cancelOnAsync | 异步操作进行中点击取消按钮触发                     | -    |
+| 事件名           | 说明                                   | 回调参数 |
+|---------------|--------------------------------------|------|
+| confirm       | 点击确认按钮时触发                            | -    |
+| cancel        | 点击取消按钮时触发                            | -    |
+| close         | 点击遮罩关闭时触发，closeOnClickOverlay为true有效 | -    |
+| cancelOnAsync | 异步操作进行中点击取消按钮触发                      | -    |
 
 ## Slots
 

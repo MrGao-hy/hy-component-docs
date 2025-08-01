@@ -1,4 +1,5 @@
 # Textarea 文本域组件
+> 用于输入多行文本信息,聊天输入框等。
 
 ::: tip 温馨提示
 本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。目前该组件仍处于测试阶段。<br>
@@ -118,14 +119,14 @@ onMounted(() => {
 | setFormatter | 为兼容微信小程序而暴露的内部方法，见上方说明 |
 
 ## Events
-| 事件名                  | 说明                   | 回调参数           |
-|----------------------|----------------------|----------------|
-| focus                | 输入框聚焦时触发             | e              |
-| blur                 | 输入框失去焦点时触发           | e              |
-| linechange           | 输入框行数变化时调用           | e              |
-| update:modelValue    | 当键盘输入时，触发 input 事件   | e.detail.value |
-| confirm              | 点击完成时， 触发 confirm 事件 | e              |
-| keyboardheightchange | 键盘高度发生变化的时候触发此事件     | e              |
+| 事件名                  | 说明                   | 回调参数  |
+|----------------------|----------------------|-------|
+| focus                | 输入框聚焦时触发             | e     |
+| blur                 | 输入框失去焦点时触发           | e     |
+| linechange           | 输入框行数变化时调用           | e     |
+| change               | 当键盘输入时，触发 input 事件   | value |
+| confirm              | 点击完成时， 触发 confirm 事件 | e     |
+| keyboardheightchange | 键盘高度发生变化的时候触发此事件     | e     |
 
 [^1]: `surround`：四周边框；`bottom`：底部有边框；`none`：无边框
 [^2]: 注意页面或组件的style中写了scoped时，需要在类名前写/deep/

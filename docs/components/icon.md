@@ -1,4 +1,6 @@
 # Icon 图标组件
+> 基于字体的图标集，包含了大多数常见场景的图标，使用简单，开箱即用，无需自己再写每个图标的样式，直接简单配置即可。支持自定义图标。
+
 ::: tip 温馨提示
 本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。目前该组件仍处于测试阶段。<br>
 感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [icon组件](https://uiadmin.net/uview-plus/components/icon.html) 的代码实现。
