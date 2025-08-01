@@ -1,34 +1,55 @@
-# :cactus: 前端软件工具
+# :cactus: 前端文档 / 软件 / 工具
 
-## :speedboat: 下载软件集合
+## :monorail: 开发 & 下载
 
-- [微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)
-- [Vscode开发软件](https://code.visualstudio.com/Download)
-- [Webstorm开发软件（非免费）](https://webstorm.p2hp.com/)
-- [HBuildX开发软件](https://www.dcloud.io/hbuilderx.html)
-- [Snipaste截图工具](https://zh.snipaste.com/)
-- [postman接口测试工具](https://identity.getpostman.com/)
+| 名称                                                                                 | 简介                         |
+|------------------------------------------------------------------------------------|----------------------------|
+| [微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html) | 小程序调试、预览与发布                |
+| [VS Code](https://code.visualstudio.com/Download)                                  | 轻量级跨平台编辑器                  |
+| [WebStorm](https://www.jetbrains.com/webstorm/)                                    | JetBrains 全家桶之专业前端 IDE（付费） |
+| [HBuilderX](https://www.dcloud.io/hbuilderx.html)                                  | uni-app 官方推荐 IDE           |
+| [Snipaste](https://zh.snipaste.com/)                                               | 轻量截图 + 贴图                  |
+| [Postman](https://www.postman.com/downloads/)                                      | 接口调试、Mock、自动化测试            |
 
-## :ferry: 前端常用工具
-- [websocket测试工具](http://www.websocket-test.com/)
-- [api测试工具](https://app.apifox.com/)
-- [json格式工具](https://www.json.cn/)
-- [数字统计工具](https://tools.manmankan.com/zishutongji/)
-- [图片压缩工具](https://yasuo.xunjiepdf.com/img/?eqid=c814e2b40000796a00000006648fad3f)
-- [英语大小写转换](https://app.xunjiepdf.com/yinwen)
-- [时间戳转换](http://shijianchuo.wiicha.com/)
-- [菜鸟工具canvas运行](https://www.runoob.com/try/try.php?filename=tryhtml5_canvas_quadraticcurveto)
-- [草料生成二维码](https://cli.im/)
-- [图片互相转换base64](https://www.67tool.com/images/convert/base64)
-- [英语大小写转换](https://app.xunjiepdf.com/yinwen)
-- [英语大小写转换](https://app.xunjiepdf.com/yinwen)
-- [英语大小写转换](https://app.xunjiepdf.com/yinwen)
+## :hammer_and_wrench: 常用在线工具
 
-## uniapp 前端项目下载插件
+> 无需安装，打开即用，方便在线测试
+
+- [WebSocket 测试](http://www.websocket-test.com/)
+- [Apifox](https://app.apifox.com/) – API 设计 / 调试 / Mock
+- [JSON 格式化](https://www.json.cn/)
+- [字数统计](https://tools.manmankan.com/zishutongji/)
+- [图片批量压缩](https://yasuo.xunjiepdf.com/img/)
+- [大小写转换](https://app.xunjiepdf.com/yinwen)
+- [时间戳互转](http://shijianchuo.wiicha.com/)
+- [Canvas 在线运行](https://www.runoob.com/try/try.php?filename=tryhtml5_canvas_quadraticcurveto)
+- [草料二维码](https://cli.im/)
+- [图片 ↔ Base64](https://www.67tool.com/images/convert/base64)
+- [百度 AI 去水印](https://image.baidu.com/search/index?tn=baiduimage&word=百度AI图片助手)
+
+## :books: 官方文档
+
+| 技术栈        | 链接                                                                            |
+|------------|-------------------------------------------------------------------------------|
+| uni-app    | [https://uniapp.dcloud.net.cn/](https://uniapp.dcloud.net.cn/)                |
+| Vite（中文）   | [https://cn.vitejs.dev/](https://cn.vitejs.dev/)                              |
+| 微信小程序      | [https://developers.weixin.qq.com](https://developers.weixin.qq.com)          |
+| TypeScript | 英文 [官方](https://www.typescriptlang.org/) / 中文 [社区](https://www.tsplain.cn/)   |
+| VitePress  | [https://vitepress.dev/](https://vitepress.dev/)                              |
+| uni-best   | [https://unibest.tech/](https://unibest.tech/)                                |
+| Vue DocGen | [https://vue-styleguidist.github.io/](https://vue-styleguidist.github.io.io/) |
+
+## :jigsaw: 教程精选
+
+- [在 VitePress 站点中集成 Gitalk 评论](https://cloud.tencent.com/developer/article/2453691)
+- [3D 中国地图省市区三级下钻](https://juejin.cn/post/7365831792428875813)
+- [Vue 3 + TS 使用 VueDocGen 自动生成文档](https://blog.csdn.net/billku/article/details/149056009)
+
+## :rocket: uni-app 常用插件
 
 ### 1.unplugin-vue-components/vite
+> 自动按需导入组件，告别手写 `import`。
 [unplugin-vue-components/vite]("https://npmmirror.com/package/unplugin-vue-components/vite")
-> 用于自动导入组件
 
 ```shell
 $ pnpm i unplugin-vue-components -D

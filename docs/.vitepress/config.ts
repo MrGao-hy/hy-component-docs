@@ -46,7 +46,7 @@ export default defineConfig({
         link: "/api/intro",
       },
       {
-        text: "下载软件",
+        text: "学习文档",
         link: "/download/web",
       },
 
@@ -229,7 +229,7 @@ export default defineConfig({
       ],
       "/download": [
         {
-          text: "开发软件",
+          text: "文档集合",
           items: [
             { text: "前端软件集合", link: "/download/web" },
             { text: "服务软件集合", link: "/download/service" },
