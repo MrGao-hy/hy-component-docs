@@ -6,8 +6,7 @@
     "build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
     "clean": "rimraf node_modules && npm cache verify --force",
-    "documate:upload": "documate upload",
-    "web-types": "tsx ./scripts/component-helper.ts"
+    "documate:upload": "documate upload"
   },
   "devDependencies": {
     "@documate/documate": "^0.2.1",

@@ -1,10 +1,6 @@
-# Form 表单组件
-> 此组件一般用于表单场景，可以配置Input输入框，Select弹出框，进行表单验证等。
-
-::: tip 温馨提示
-本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。目前该组件仍处于测试阶段。<br>
-感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [form组件](https://uiadmin.net/uview-plus/components/form.html) 的代码实现。
-:::
+# 表单组件 (hy-form)
+> 一个简单易用的表单组件，包含 `hy-form` 和 `hy-form-item` 两个组件，支持表单验证、数据绑定等功能。
+> 这个表单组件系统为你提供了一个完整、灵活、易用的表单解决方案，可以满足大部分表单开发需求。
 
 ## 平台差异说明
 
@@ -12,295 +8,390 @@
 |----------|----|-------|
 | ✔        | ✔  | ✔     |
 
-## 使用示例
-::: code-group
+## 组件特性
 
-```html [vue]
-<!-- 全局使用 -->
-<hy-form :columns="columns" :formData="formData"></hy-form>
-<!-- 单个组件引入 -->
-<HyForm :columns="columns" :formData="formData"></HyForm>
-```
+- ✅ 表单数据双向绑定
+- ✅ 表单验证（必填、长度、类型、自定义验证）
+- ✅ 实时验证和失焦验证
+- ✅ 支持多种表单控件
+- ✅ 灵活的标签布局
+- ✅ 错误信息显示
+- ✅ 表单重置和清除验证
 
-```ts [index.ts]
-import { reactive, ref } from "vue";
-import { HyWarn, FormTypeEnum, HyForm, HyInput, HyButton } from "hy-app";
-import type { FormColumnsType } from "hy-app";
-
-const formData: AnyObject = reactive({
-    custom: "自定义值",
-    isShow: true,
-    sex: "1"
-});
-const formRef = ref<InstanceType<typeof HyForm>>(null);
-
-const columns: FormColumnsType[] = reactive([
-    {
-        field: "name",
-        label: "名字",
-        type: FormTypeEnum.TEXT,
-        rules: {
-            required: true,
-            message: "没有填内容",
-            trigger: ["blur"]
-        }
-    },
-    {
-        field: "sex",
-        label: "性别",
-        type: FormTypeEnum.RADIO,
-        actions: [
-            { label: "女", value: "0" },
-            { label: "男", value: "1" }
-        ],
-        rules: {
-            required: true,
-            message: "没有填内容",
-            trigger: ["blur", "change"]
-        }
-    },
-    {
-        field: "phone",
-        label: "手机号",
-        type: FormTypeEnum.TEXT,
-        rules: [
-            {
-                required: true,
-                message: "请输入您的手机号",
-                trigger: ["blur", "change"]
-            },
-            {
-                type: "phone",
-                trigger: ["blur", "change"]
-            }
-        ]
-    },
-    {
-        field: "password",
-        label: "密码",
-        type: FormTypeEnum.PASSWORD,
-        rules: {
-            type: "password",
-            trigger: ["blur", "change"]
-        }
-    },
-    {
-        field: "isShow",
-        label: "是否禁用",
-        type: FormTypeEnum.SWITCH
-    },
-    {
-        field: "time",
-        label: "日期",
-        type: FormTypeEnum.DATE,
-        border: "bottom",
-        rules: {
-            required: true,
-            message: "请输入您的日期",
-            trigger: ["blur", "change"]
-        }
-    },
-    {
-        field: "address",
-        label: "地址",
-        type: FormTypeEnum.ADDRESS,
-        rules: {
-            required: true,
-            message: "请输入您的地址",
-            trigger: ["blur", "change"]
-        }
-    },
-    {
-        field: "select",
-        label: "选择学历",
-        type: FormTypeEnum.SELECT,
-        select: [
-            [
-                { text: "小学", id: "1" },
-                { text: "初中", id: "2" },
-                { text: "高中", id: "3" },
-                { text: "大学", id: "4" }
-            ]
-        ],
-        rules: {
-            required: true,
-            message: "请输入您的学历",
-            trigger: ["blur", "change"]
-        }
-    },
-    {
-        field: "age",
-        label: "年龄",
-        type: FormTypeEnum.NUMBER,
-        rules: [
-            {
-                required: true,
-                message: "请输入您的年龄",
-                trigger: ["blur", "change"]
-            },
-            {
-                required: true,
-                message: "不能小于最小值",
-                min: 10,
-                trigger: ["blur", "change"]
-            },
-            {
-                message: "不能大于最大值",
-                max: 20,
-                trigger: ["change"]
-            }
-        ]
-    },
-    {
-        field: "remark",
-        label: "备注",
-        type: FormTypeEnum.TEXTAREA,
-        rules: {
-            required: true,
-            message: "请输入您的地址",
-            trigger: ["blur", "change"]
-        }
-    }
-]);
-
-const handleSubmit = () => {
-    formRef.value.handleSubmit().then((res) => {
-        console.log(res);
-    });
-};
-```
+::: danger 注意事项
+1. 表单组件使用 `provide/inject` 进行数据通信，确保 `hy-form-item` 组件在 `hy-form` 内部使用
+2. 验证规则支持数组形式，可以设置多个验证规则
+3. 自定义验证函数返回 `true` 表示验证通过，返回 `false` 或字符串表示验证失败
+4. 表单数据会自动双向绑定，无需手动处理数据同步
+5. 支持实时验证和失焦验证，可以通过 `trigger` 属性控制验证时机
 :::
 
-## 自定义插槽
-::: danger 微信小程序差异
-微信小程序不能动态设置插槽，所以不支持自定义插槽，后续有其他方法会更新文档
-::: 
+### ✅ 表单验证系统
+- **必填验证** - 支持 `required` 属性
+- **长度验证** - 支持 `min` 和 `max` 属性
+- **类型验证** - 支持手机号、邮箱、密码格式验证
+- **自定义验证** - 支持自定义验证函数
+- **触发时机** - 支持 `blur` 和 `change` 事件触发验证
 
-::: code-group
+### ✅ 灵活的布局
+- 支持标签位置设置（`left` / `top`）
+- 支持标签宽度自定义
+- 支持标签对齐方式设置
+
+### ✅ 错误信息显示
+- 实时显示验证错误信息
+- 支持清除验证和重置表单
+
+### ✅ 丰富的 API
+- `validate()` - 验证表单
+- `resetFields()` - 重置表单
+- `clearValidate()` - 清除验证
+- `submit()` - 提交表单
+
+## 验证系统
+
+### 验证类型
+
+1. **必填验证**
+   ```javascript
+   { required: true, message: '请输入用户名' }
+   ```
+
+2. **长度验证**
+   ```javascript
+   { min: 2, max: 20, message: '长度在 2 到 20 个字符' }
+   ```
+
+3. **类型验证**
+   ```javascript
+   { type: 'phone', message: '请输入正确的手机号' }
+   { type: 'email', message: '请输入正确的邮箱格式' }
+   { type: 'password', message: '密码格式不正确' }
+   ```
+
+4. **自定义验证**
+   ```javascript
+   {
+     validator: (value: string) => {
+       if (value !== formData.password) {
+         return '两次输入的密码不一致'
+       }
+       return true
+     }
+   }
+   ```
+5. **触发时机**
+    ```ts
+    { required: true, message: '请输入用户名', trigger: ['blur', 'change'] }
+    ```
+
+### 验证触发
+
+- **实时验证** - 数据变化时触发
+- **失焦验证** - 失去焦点时触发
+- **手动验证** - 调用 `validate()` 方法
+
+## 样式设计
+
+### 响应式布局
+- 支持标签位置切换（左侧/顶部）
+- 自适应标签宽度
+- 错误信息实时显示
+
+### 视觉反馈
+- 必填项红色星号标识
+- 错误信息红色文字显示
+- 表单控件错误状态样式
+
+## 使用建议
+
+1. **表单数据管理**
+    - 使用 `reactive` 创建响应式表单数据
+    - 避免直接修改表单数据，通过组件方法操作
+
+2. **验证规则设计**
+    - 合理设置验证触发时机
+    - 提供清晰的错误提示信息
+    - 使用自定义验证处理复杂逻辑
+
+3. **性能优化**
+    - 避免在验证函数中进行复杂计算
+    - 合理使用验证触发时机
+    - 及时清理不需要的验证规则
+
+4. **用户体验**
+    - 提供即时的验证反馈
+    - 清晰的错误信息提示
+    - 支持表单重置和清除验证
+
+
+## 扩展性
+
+这个表单组件设计具有良好的扩展性：
+
+1. **支持新的表单控件** - 只需在表单项中放入新的控件即可
+2. **支持新的验证类型** - 可以在验证系统中添加新的验证规则
+3. **支持自定义样式** - 通过 CSS 变量和类名可以自定义样式
+4. **支持国际化** - 错误信息可以支持多语言
+
+
+## 基础用法
+
 ```vue
 <template>
-    <HyForm
-            ref="formRef"
-            :columns="columns"
-            :form-data="formData"
-            labelWidth="90"
-    >
-        <template #custom="{ record, errorStyle }">
-            <HyInput
-                v-model="formData[record.field]"
-                :custom-style="errorStyle"
-            ></HyInput>
-        </template>
-    </HyForm>
+  <hy-form
+    ref="formRef"
+    :model="formData"
+    :rules="rules"
+    label-width="80px"
+    @submit="handleSubmit"
+  >
+    <hy-form-item label="用户名" prop="username" required>
+      <hy-input v-model="formData.username" placeholder="请输入用户名" />
+    </hy-form-item>
+    
+    <hy-form-item label="手机号" prop="phone" required>
+      <hy-input v-model="formData.phone" type="number" placeholder="请输入手机号" />
+    </hy-form-item>
+    
+    <hy-form-item label="性别" prop="gender">
+      <hy-radio v-model="formData.gender" :columns="genderOptions" />
+    </hy-form-item>
+  </hy-form>
 </template>
+
+<script setup lang="ts">
+import { reactive, ref } from 'vue'
+
+const formData = reactive({
+  username: '',
+  phone: '',
+  gender: ''
+})
+
+const rules = {
+  username: [
+    { required: true, message: '请输入用户名' },
+    { min: 2, max: 20, message: '用户名长度在 2 到 20 个字符' }
+  ],
+  phone: [
+    { required: true, message: '请输入手机号' },
+    { type: 'phone', message: '请输入正确的手机号' }
+  ]
+}
+
+const formRef = ref()
+
+const handleSubmit = (data: any) => {
+  console.log('表单数据:', data)
+}
+</script>
 ```
 
-```ts [index.ts]
-import { reactive } from "vue";
-import { FormTypeEnum, HyForm, HyInput } from "hy-app";
-import type { FormColumnsType } from "hy-app";
+### 验证规则示例
 
-const columns: FormColumnsType[] = reactive([
+```javascript
+const rules = {
+  // 基础验证
+  username: [
+    { required: true, message: '请输入用户名' },
+    { min: 2, max: 20, message: '用户名长度在 2 到 20 个字符' }
+  ],
+  
+  // 类型验证
+  phone: [
+    { required: true, message: '请输入手机号' },
+    { type: 'phone', message: '请输入正确的手机号' }
+  ],
+  
+  // 自定义验证
+  confirmPassword: [
+    { required: true, message: '请确认密码' },
     {
-        field: "custom",
-        label: "自定义内容",
-        type: FormTypeEnum.CUSTOM,
-        rules: {
-            required: true,
-            message: "请输入您的自定义内容",
-            trigger: ["blur", "change"]
+      validator: (value: string) => {
+        if (value !== formData.password) {
+          return '两次输入的密码不一致'
         }
+        return true
+      }
     }
-]);
+  ],
+  
+  // 触发时机控制
+  email: [
+    { 
+      type: 'email', 
+      message: '请输入正确的邮箱格式',
+      trigger: ['blur', 'change']
+    }
+  ]
+}
+```
+
+## 完整示例
+
+::: details 点我查看完整示例
+```vue
+<template>
+  <view class="form-demo">
+    <hy-form
+      ref="formRef"
+      :model="formData"
+      :rules="rules"
+      label-width="100px"
+      label-position="left"
+    >
+      <hy-form-item label="用户名" prop="username" required>
+        <hy-input v-model="formData.username" placeholder="请输入用户名" />
+      </hy-form-item>
+      
+      <hy-form-item label="手机号" prop="phone" required>
+        <hy-input v-model="formData.phone" type="number" placeholder="请输入手机号" />
+      </hy-form-item>
+      
+      <hy-form-item label="邮箱" prop="email">
+        <hy-input v-model="formData.email" placeholder="请输入邮箱" />
+      </hy-form-item>
+      
+      <hy-form-item label="性别" prop="gender">
+        <hy-radio v-model="formData.gender" :columns="genderOptions" />
+      </hy-form-item>
+      
+      <hy-form-item label="爱好" prop="hobbies">
+        <hy-check-button
+          v-model="formData.hobbies"
+          :columns="hobbyOptions"
+          select-type="multiple"
+        />
+      </hy-form-item>
+      
+      <hy-form-item label="备注" prop="remark">
+        <hy-textarea v-model="formData.remark" placeholder="请输入备注" />
+      </hy-form-item>
+    </hy-form>
+    
+    <view class="form-actions">
+      <hy-button type="primary" @click="handleSubmit">提交</hy-button>
+      <hy-button @click="handleReset">重置</hy-button>
+    </view>
+  </view>
+</template>
+
+<script setup lang="ts">
+import { reactive, ref } from 'vue'
+
+const formData = reactive({
+  username: '',
+  phone: '',
+  email: '',
+  gender: '',
+  hobbies: [],
+  remark: ''
+})
+
+const rules = {
+  username: [
+    { required: true, message: '请输入用户名' },
+    { min: 2, max: 20, message: '用户名长度在 2 到 20 个字符', trigger: ['change', 'blur'] }
+  ],
+  phone: [
+    { required: true, message: '请输入手机号' },
+    { type: 'phone', message: '请输入正确的手机号', trigger: ['change', 'blur'] }
+  ],
+  email: [
+    { type: 'email', message: '请输入正确的邮箱格式', trigger: ['change', 'blur'] }
+  ]
+}
+
+const genderOptions = [
+  { label: '男', value: 'male' },
+  { label: '女', value: 'female' }
+]
+
+const hobbyOptions = [
+  { label: '阅读', value: 'reading' },
+  { label: '音乐', value: 'music' },
+  { label: '运动', value: 'sports' }
+]
+
+const formRef = ref()
+
+const handleSubmit = () => {
+  const result = formRef.value?.submit()
+  if (result) {
+    console.log('表单提交成功:', result)
+  }
+}
+
+const handleReset = () => {
+  formRef.value?.resetFields()
+}
+</script>
 ```
 :::
 
-## API
 
-| 参数            | 说明            | 类型                           | 默认值      |
-|---------------|---------------|------------------------------|----------|
-| labelPosition | 表单域提示文字的位置    | `left` \| `top`              | left     |
-| labelWidth    | label 宽度      | `string` \| `number`         | auto     |
-| right         | 输入值是否右对齐      | `boolean`                    | false    |
-| labelAlign    | label 字体的对齐方式 | `string`                     | left     |
-| symbol        | 显示label后冒号符号  | `boolean`                    | false    |
-| borderBottom  | 显示表单单行底部下划线   | `boolean`                    | false    |
-| disabled      | 是否全部禁用[^1]    | `boolean`                    | left     |
-| shape         | 输入框形状         | `circle` \| `square`         | square   |
-| border        | 输入框边框         | `surround`\|`bottom`\|`none` | surround |
-| columns       | 表单字段配置        | `array`                      | -        |
-| formData      | 表单值           | `object`                     | -        |
+## hy-form Props
 
-### columns
+| 参数            | 说明     | 类型                            | 默认值      |
+|---------------|--------|-------------------------------|----------|
+| model         | 表单数据对象 | `Record<string, any>`         | -        |
+| rules         | 验证规则   | `FormItemRule`                | -        |
+| labelWidth    | 标签宽度   | `string` \| `number`          | `'auto'` |
+| labelPosition | 标签位置   | `left` \| `top`               | `'left'` |
+| labelAlign    | 标签对齐方式 | `left` \| `center` \| `right` | `'left'` |
 
-| 参数          | 说明                            | 类型                                          | 默认值 |
-|-------------|-------------------------------|---------------------------------------------|-----|
-| label       | 文字描述                          | `string`                                    | -   |
-| field       | 字段名                           | `string`                                    | -   |
-| required    | 是否需要校验，只显示红星，需要和 formRules 搭配 | `boolean`                                   | -   |
-| right       | 内容右固定                         | `boolean`                                   | -   |
-| type        | 表单类型(见下面枚举出来字段)。              | `enum`                                      | -   |
-| maxCount    | 文件上传最大数（type 为 upload 时候）     | `number`                                    | -   |
-| disabled    | 是否禁用                          | `boolean`                                   | -   |
-| placeholder | 输入框为空时的占位符                    | `string`                                    | -   |
-| clearable   | 显示清除输入框 icon                  | `boolean`                                   | -   |
-| readonly    | 是否只读                          | `boolean`                                   | -   |
-| select      | 选择器配置数据集合[^2]                 | `string[][]`\|`{text:string;id:string}[][]` | -   |
-| actions     | 单选框配置数据集合[^3]                 | `string`                                    | -   |
-| shape       | 输入框形状                         | `circle`\|`square`                          | -   |
-| border      | 边框类型                          | `surround`\|`bottom`\|`none`                | -   |
-| mode        | 日期展示的格式（type 等于 date 选填）      | `enum`                                      | -   |
-| rules       | 校验规则                          | `object`\|`array`                           | -   |
+### FormItemRule
+> rules类型`{[key: string]: FormItemRule | FormItemRule[]}`
 
-## actions
+| 参数        | 说明         | 类型                               | 默认值 |
+|-----------|------------|----------------------------------|-----|
+| required  | 是否必填       | `boolean`                        | -   |
+| message   | 验证失败时的提示信息 | `string`                         | -   |
+| min       | 最小长度       | `number`                         | -   |
+| max       | 最大长度       | `number`                         | -   |
+| type      | 验证类型       | `phone` \| `email` \| `password` | -   |
+| trigger   | 触发验证的时机    | `(blur \| change)[]`             | -   |
+| validator | 自定义验证函数    | `Function`                       | -   |
 
-| 参数       | 说明     | 类型                 | 默认值 |
-|----------|--------|--------------------|-----|
-| label    | 显示文本内容 | `string`           | -   |
-| value    | 获取的值   | `string`\|`number` | -   |
-| checked  | 是否选中   | `boolean`          | -   |
-| disabled | 是否禁用   | `boolean`          | -   |
+## hy-form Events
 
+| 事件名      | 说明      | 回调参数                                               |
+|----------|---------|----------------------------------------------------|
+| submit   | 表单提交时触发 | `(data: Record<string, any>)`                      |
+| validate | 表单验证时触发 | `(valid: boolean, errors: Record<string, string>)` |
 
-## rules
+## hy-form Methods
 
-| 参数        | 说明                | 类型                           | 默认值 |
-|-----------|-------------------|------------------------------|-----|
-| required  | 是否必填              | `boolean`                    | -   |
-| message   | 校验不通过时的提示信息       | `string`                     | -   |
-| trigger   | 表单事件校验            | `(blur\|change)[]`           | -   |
-| min       | 最小输入内容个数          | `number`                     | -   |
-| max       | 最大输入内容个数          | `number`                     | -   |
-| type      | 手机号校验、邮箱校验、复杂密码校验 | `phone`\|`email`\|`password` | -   |
-| validator | 自定义校验规则           | `Function`                   | -   |
+| 方法名           | 说明   | 参数                    |
+|---------------|------|-----------------------|
+| validate      | 验证表单 | -                     |
+| resetFields   | 重置表单 | -                     |
+| clearValidate | 清除验证 | `(fields?: string[])` |
+| submit        | 提交表单 | -                     |
 
-### type 类型
-- `UPLOAD` 上传文件
-- `TEXT` 普通输入框
-- `NUMBER` 数字输入框
-- `PASSWORD` 密码输入框
-- `ID_CARD` 身份证 id 输入框
-- `RADIO` 单选
-- `DATE` 时间选择器
-- `SELECT` 选择器
-- `ADDRESS` 地址选择器
-- `SWITCH` 开关
-- `DETAIL` 详情
-- `TEXTAREA` 文本域
-- `CUSTOM` 自定义插槽
+## hy-form-item Props
 
-### mode 类型
+| 参数       | 说明    | 类型        | 默认值     |
+|----------|-------|-----------|---------|
+| label    | 标签文本  | `string`  | -       |
+| prop     | 表单字段名 | `string`  | -       |
+| required | 是否必填  | `boolean` | `false` |
+| rules    | 验证规则  | `any`     | `{}`    |
 
-- `DATETIME` yyyy-MM-dd HH:mm:SS
-- `DATE` yyyy-MM-dd
-- `TIME` hh:MM:ss
-- `YEAR_MONTH` yyyy-MM
-- `MONTH_DAY` MM-dd
-- `HOUR_MINUTE` HH:mm
-- `MINUTE_SECOND` mm:SS
+## hy-form-item Events
 
-[^1]: 这个禁用优先级高于columns里面的disabled
-[^2]: type = select 时候必填(参考 [HyPicker](./picker.md) 组件)
-[^3]: type = radio 时候必填(参考 [HyRadio](./radio.md) 组件)
+| 事件名    | 说明     | 回调参数           |
+|--------|--------|----------------|
+| change | 值变化时触发 | `(value: any)` |
+| blur   | 失焦时触发  | `(value: any)` |
+
+## hy-form-item Methods
+
+| 方法名           | 说明   | 参数                               |
+|---------------|------|----------------------------------|
+| validate      | 验证字段 | `(trigger?: 'blur' \| 'change')` |
+| resetField    | 重置字段 | -                                |
+| clearValidate | 清除验证 | -                                |
 
 <demo-model url="pages/components/form/form"></demo-model>
