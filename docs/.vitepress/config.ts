@@ -293,5 +293,14 @@ export default defineConfig({
       groupIconVitePlugin(),
       llmstxt(), // ai理解文档
     ],
+    assetsInclude: ['**/*.ico'],
+    build: {
+      rollupOptions: {
+        external: (id) => {
+          // 允许外部图片资源
+          return /^https?:\/\//.test(id);
+        }
+      }
+    }
   },
 });
