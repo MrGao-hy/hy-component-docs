@@ -153,7 +153,8 @@ const value = ref('');
 | readonly              | 是否只读，与disabled不同之处在于disabled会置灰组件，而readonly则不会          | `boolean`                                        | false             |
 | shape                 | 输入框形状[^3]                                               | `circle`\|`square`                               | square            |
 | formatter             | 输入过滤或格式化函数(如需兼容微信小程序，则只能通过setFormatter方法)               | `function` \| `null`                             | null              |
-| customStyle           | 定义需要用到的外部样式	                                            | `CSSProperties`                                  | -                 |
+| customStyle           | 自定义需要用到的外部样式                                            | `CSSProperties`                                  | -                 |
+| customClass           | 自定义外部类名                                                 | `string`                                         | -                 |
 
 
 ## Events

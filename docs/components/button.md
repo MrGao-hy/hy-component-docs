@@ -138,6 +138,8 @@ import { HyButton } from "hy-app"
 | throttleTime         | 节流，一定时间内只能触发一次，单位毫秒                                                                         | `number`                                          | 0       |
 | hoverStartTime       | 按住后多久出现点击态，单位毫秒                                                                             | `number`                                          | 0       |
 | hoverStayTime        | 手指松开后点击态保留时间，单位毫秒                                                                           | `number`                                          | 200     |
+| customStyle          | 自定义需要用到的外部样式                                                                                | `CSSProperties`                                   | -       |
+| customClass          | 自定义外部类名                                                                                     | `string`                                          | -       |
 
 
 ## Events

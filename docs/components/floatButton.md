@@ -147,7 +147,8 @@ import { HyFloatButton } from "hy-app"
 | draggable   | 悬浮按钮能否拖动       | `boolean`                                                                                                             | true                                           |
 | position    | 悬浮按钮位置         | `left-top`\|`left-bottom`\|`right-top`\|`right-bottom`\| `left-center`\|`right-center`\|`top-center`\|`bottom-center` | 'right-bottom'                                 |                                                              |                                                |
 | expandable  | 用于控制点击时是否展开菜单  | `boolean`                                                                                                             | true                                           |
-| customStyle | 定义需要用到的外部样式    | `CSSProperties`                                                                                                       | -                                              |
+| customStyle | 自定义需要用到的外部样式   | `CSSProperties`                                                                                                       | -                                              |
+| customClass | 自定义外部类名        | `string`                                                                                                              | -                                              |
 
 ## gap
 

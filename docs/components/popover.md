@@ -102,6 +102,10 @@ import { HyButton, HyPopover } from "hy-app"
 ```
 
 ## 插槽
+::: warn 提示
+在使用自定义插槽内容时候,需要给最外层元素加上`width`和`background`和`z-index`和`position`属性，
+防止有角标样式问题
+:::
 ```html
 <template>
     <hy-popover>
@@ -115,15 +119,15 @@ import { HyButton, HyPopover } from "hy-app"
 ```scss
 .pop-content {
   /* 必填 开始 */
-  position: relative;
-  z-index: 500;
-  border-radius: 4px;
-  /* 必填 结束 */
+  width: 150px;
   background: #fff;
+  z-index: 999;
+  position: relative;
+  /* 必填 结束 */
   color: #8268de;
   font-weight: bolder;
   padding: 10px;
-  width: 150px;
+  border-radius: 4px;
 }
 ```
 

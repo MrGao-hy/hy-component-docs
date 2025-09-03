@@ -13,7 +13,7 @@ $ npm install sass -D
 ```
 
 ```shell [pnpm]
-$ pnpm install sass -D
+$ pnpm add sass -D
 ```
 
 ```shell [cnpm]
@@ -35,7 +35,7 @@ $ npm install dayjs
 ```
 
 ```shell [pnpm]
-$ pnpm install dayjs
+$ pnpm add dayjs
 ```
 
 ```shell [cnpm]
@@ -54,7 +54,7 @@ $ npm install hy-app
 ```
 
 ```shell [pnpm]
-$ pnpm install hy-app
+$ pnpm add hy-app
 ```
 
 ```shell [cnpm]
@@ -97,7 +97,7 @@ export function createApp() {
 }
 ```
 
-###### 2. 如果你想按需加载。你可以这个全局定义
+###### 2. 如果你想按需加载。你可以这个全局定义（推荐）
 ```html
 <!-- 然后在所需页面直接使用 -->
 <hy-input></hy-input>

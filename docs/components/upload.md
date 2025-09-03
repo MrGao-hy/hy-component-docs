@@ -74,9 +74,13 @@ const afterRead = (event: any) => {
 ```
 :::
 
+## 限制上传图片大小
+- 通过`maxSize`设置上传图片最大值，单位（byte）
+```html [vue]
+<hy-upload :fileList="list_1" @afterRead="afterRead_1" :maxSize="200000"></hy-upload>
+```
 
 ## 上传多张图片
-
 :::code-group
 ```html [vue]
 <hy-upload :fileList="list_1" @afterRead="afterRead_1" multiple></hy-upload>
@@ -151,6 +155,8 @@ const afterRead = (event: any) => {
 | autoUploadAuthUrl | 自动上传OSS模式下，授权接口                                        | `string`                                         | -                           |
 | autoUploadHeader  | 自动上传模式下，携带的额外header，一般为比如Authorization等。               | `object`                                         | -                           |
 | getVideoThumb     | 视频上传后是否获取封面图                                           | `boolean`                                        | false                       |
+| customStyle       | 自定义需要用到的外部样式                                           | `CSSProperties`                                  | -                           |
+| customClass       | 自定义外部类名                                                | `string`                                         | -                           |
 
 
 ## fileList

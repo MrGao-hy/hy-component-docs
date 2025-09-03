@@ -52,18 +52,19 @@ onPageScroll((e) => {
 
 ## API
 
-| 参数          | 说明                       | 类型                   | 默认值                                   |
-|-------------|--------------------------|----------------------|---------------------------------------|
-| mode        | 按钮形状                     | `circle` \| `square` | circle                                |
-| icon        | 图标，详见[图标Api](./icon#api) | `string`             | IconConfig.DOWNLOAD                   |
-| text        | 返回顶部按钮的提示文字              | `string`             | -                                     |
-| duration    | 返回顶部过程中的过渡时间，单位ms        | `number`             | 500                                   |
-| scrollTop   | 页面的滚动距离                  | `number`             | 0                                     |
-| top         | 滚动条滑动多少距离时显示，单位px        | `number` \| `string` | 400                                   |
-| bottom      | 返回按钮位置到屏幕底部的距离，单位px      | `number` \| `string` | 100                                   |
-| right       | 返回按钮位置到屏幕右边的距离，单位px      | `number` \| `string` | 20                                    |
-| z-index     | 返回顶部按钮的层级                | `number`             | 888                                   |
-| customStyle | 按钮外层的自定义样式               | `CSSProperties`      | \{transform: "rotate(180deg)"\}       |
+| 参数          | 说明                       | 类型                   | 默认值                 |
+|-------------|--------------------------|----------------------|---------------------|
+| mode        | 按钮形状                     | `circle` \| `square` | circle              |
+| icon        | 图标，详见[图标Api](./icon#api) | `string`             | IconConfig.DOWNLOAD |
+| text        | 返回顶部按钮的提示文字              | `string`             | -                   |
+| duration    | 返回顶部过程中的过渡时间，单位ms        | `number`             | 500                 |
+| scrollTop   | 页面的滚动距离                  | `number`             | 0                   |
+| top         | 滚动条滑动多少距离时显示，单位px        | `number` \| `string` | 400                 |
+| bottom      | 返回按钮位置到屏幕底部的距离，单位px      | `number` \| `string` | 100                 |
+| right       | 返回按钮位置到屏幕右边的距离，单位px      | `number` \| `string` | 20                  |
+| z-index     | 返回顶部按钮的层级                | `number`             | 888                 |
+| customStyle | 自定义需要用到的外部样式             | `CSSProperties`      | -                   |
+| customClass | 自定义外部类名                  | `string`             | -                   |
 
 ## Events
 

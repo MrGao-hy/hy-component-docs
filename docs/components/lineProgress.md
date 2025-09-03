@@ -88,7 +88,8 @@ import { HyLineProgress } from "hy-app"
 | showText      | 是否在进度条内部显示百分比的值 | `boolean`            | true |
 | height        | 进度条的高度，默认单位px	  | `number` \| `string` | 12   |
 | fontSize      | 字体大小，默认单位px	    | `number` \| `string` | -    |
-| customStyle   | 自定义样式           | `CSSProperties`      | -    |
+| customStyle   | 自定义需要用到的外部样式    | `CSSProperties`      | -    |
+| customClass   | 自定义外部类名         | `string`             | -    |
 
 
 ## Slots

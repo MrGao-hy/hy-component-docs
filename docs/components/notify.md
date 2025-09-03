@@ -48,7 +48,8 @@ const show = ref(true);
 | duration         | 展示时长，为0时不消失，单位ms                 | `number`                                         | 3000    |
 | fontSize         | 字体大小，单位rpx                       | `string`\|`number`                               | 15      |
 | safeAreaInsetTop | 是否留出顶部安全距离（状态栏高度）                | `boolean`                                        | false   |
-| customStyle      | 定义需要用到的外部样式                      | `CSSProperties`                                  | -       |
+| customStyle      | 自定义需要用到的外部样式                     | `CSSProperties`                                  | -       |
+| customClass      | 自定义外部类名                          | `string`                                         | -       |
 
 
 ## Methods

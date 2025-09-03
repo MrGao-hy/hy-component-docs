@@ -61,27 +61,28 @@ import { HyImage } from "hy-app"
 
 ## API
 
-| 参数                  | 说明                                                                  | 类型                 | 默认值           |
-|---------------------|---------------------------------------------------------------------|--------------------|---------------|
-| src                 | 图片地址，**强烈建议**使用绝对或者网络路径                                             | `string`           | -             |
-| mode                | 裁剪模式，详见[image组件](https://uniapp.dcloud.net.cn/component/image.html) | `string`           | aspectFill    |
-| width               | 宽度，单位任意，如果为数值，默认单位px                                                | `string`\|`number` | 200           |
-| height              | 高度，单位任意，如果为数值，默认单位px                                                | `string`\|`number` | 150           |
-| shape               | 图片形状[^1]                                                            | `circle`\|`square` | square        |
-| radius              | 圆角，默认单位px                                                           | `string`\|`number` | 0             |
-| lazyLoad            | 是否懒加载，仅微信小程序、App、百度小程序、字节跳动小程序有效                                    | `boolean`          | true          |
-| showMenuByLongPress | 是否开启长按图片显示识别小程序码菜单，仅微信小程序有效                                         | `boolean`          | true          |
-| loadingIcon         | 加载中的图标，或者小图片                                                        | `string`           | LOADING       |
-| errorIcon           | 加载失败的图标，或者小图片                                                       | `string`           | NOTICE        |
-| showLoading         | 是否显示加载中的图标或者自定义的slot                                                | `boolean`          | true          |
-| showError           | 是否显示加载错误的图标或者自定义的slot                                               | `boolean`          | true          |
-| fade                | 是否需要淡入效果                                                            | `boolean`          | true          |
-| webp                | 只支持网络资源，只对微信小程序有效                                                   | `boolean`          | false         |
-| duration            | 搭配fade参数的过渡时间，单位ms                                                  | `number`           | 500           |
-| bgColor             | 背景颜色，用于深色页面加载图片时，为了和背景色融合                                           | `string`           | -             |
-| indistinct          | 模糊图片，给图片加上模糊样式                                                      | `boolean`          | false         |
-| previewImage        | 是否预览图片                                                              | `boolean`          | false         |
-| customStyle         | 定义需要用到的外部样式                                                         | `boolean`          | CSSProperties |
+| 参数                  | 说明                                                                  | 类型                 | 默认值        |
+|---------------------|---------------------------------------------------------------------|--------------------|------------|
+| src                 | 图片地址，**强烈建议**使用绝对或者网络路径                                             | `string`           | -          |
+| mode                | 裁剪模式，详见[image组件](https://uniapp.dcloud.net.cn/component/image.html) | `string`           | aspectFill |
+| width               | 宽度，单位任意，如果为数值，默认单位px                                                | `string`\|`number` | 200        |
+| height              | 高度，单位任意，如果为数值，默认单位px                                                | `string`\|`number` | 150        |
+| shape               | 图片形状[^1]                                                            | `circle`\|`square` | square     |
+| radius              | 圆角，默认单位px                                                           | `string`\|`number` | 0          |
+| lazyLoad            | 是否懒加载，仅微信小程序、App、百度小程序、字节跳动小程序有效                                    | `boolean`          | true       |
+| showMenuByLongPress | 是否开启长按图片显示识别小程序码菜单，仅微信小程序有效                                         | `boolean`          | true       |
+| loadingIcon         | 加载中的图标，或者小图片                                                        | `string`           | LOADING    |
+| errorIcon           | 加载失败的图标，或者小图片                                                       | `string`           | NOTICE     |
+| showLoading         | 是否显示加载中的图标或者自定义的slot                                                | `boolean`          | true       |
+| showError           | 是否显示加载错误的图标或者自定义的slot                                               | `boolean`          | true       |
+| fade                | 是否需要淡入效果                                                            | `boolean`          | true       |
+| webp                | 只支持网络资源，只对微信小程序有效                                                   | `boolean`          | false      |
+| duration            | 搭配fade参数的过渡时间，单位ms                                                  | `number`           | 500        |
+| bgColor             | 背景颜色，用于深色页面加载图片时，为了和背景色融合                                           | `string`           | -          |
+| indistinct          | 模糊图片，给图片加上模糊样式                                                      | `boolean`          | false      |
+| previewImage        | 是否预览图片                                                              | `boolean`          | false      |
+| customStyle         | 自定义需要用到的外部样式                                                        | `CSSProperties`    | -          |
+| customClass         | 自定义外部类名                                                             | `string`           | -          |
 
 ## Events
 

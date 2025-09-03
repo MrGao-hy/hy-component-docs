@@ -73,7 +73,8 @@ const value = ref<number>(1)
 | prevText      | 上一页按钮文字                     | `string`        | 上一页   |
 | nextText      | 下一页按钮文字                     | `string`        | 下一页   |
 | hideIfOnePage | 总页数只有一页时是否隐藏                | `boolean`       | true  |
-| customStyle   | 定义需要用到的外部样式                 | `CSSProperties` | -     |
+| customStyle   | 自定义需要用到的外部样式                | `CSSProperties` | -     |
+| customClass   | 自定义外部类名                     | `string`        | -     |
 
 ## Events
 

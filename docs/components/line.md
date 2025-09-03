@@ -78,6 +78,7 @@ import { HyLine } from "hy-app"
 | hairline    | 是否显示空状态                                          | `boolean`            | true  |
 | margin      | 线条与上下左右元素的间距，字符串形式，如"30rpx"、"20rpx 30rpx"，默认单位px | `string`             | 0     |
 | dashed      | 是否虚线，false-实线，true-虚线                            | `boolean`            | false |
-| customStyle | 定义需要用到的外部样式                                      | `CSSProperties`      | false |
+| customStyle | 自定义需要用到的外部样式                                     | `CSSProperties`      | -     |
+| customClass | 自定义外部类名                                          | `string`             | -     |
 
 <demo-model url="pages/components/line/line"></demo-model>

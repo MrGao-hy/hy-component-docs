@@ -66,7 +66,7 @@ import { HyWarn } from "hy-app"
 | description | 辅助性文字，颜色比title浅一点，字号也小一点，可选 | `string`                                         | -       |
 | closable    | 关闭按钮(默认为叉号icon图标)           | `boolean`                                        | false   |
 | showIcon    | 是否显示左边的辅助图标                 | `boolean`                                        | false   |
-| theme       | 显示的暗色或者亮色                   | `light` \| `dark`                                | light   |
+| theme       | 显示的暗色或者亮色                   | `light` \| `dark`                                | dark    |
 | center      | 文字是否居中                      | `boolean`                                        | false   |
 | fontSize    | 字体大小                        | `string` \| `number`                             | 14      |
 

@@ -59,20 +59,22 @@ import { HyEmpty } from "hy-app"
 
 ## API
 
-| 参数          | 说明                                        | 类型                 | 默认值  |
-|-------------|-------------------------------------------|--------------------|------|
-| show        | 是否显示组件                                    | `boolean`          | true |
-| imageUrl    | 空状态icon图片                                 | `string`           | -    |
-| zIndex      | 组件层级                                      | `number`           | 889  |
-| width       | icon图片宽度                                  | `string`\|`number` | 350  |
-| height      | icon图片高度                                  | `string`\|`number` | auto |
-| description | 提示信息                                      | `string`           | 暂无数据 |
-| desSize     | 提示信息大小                                    | `string`\|`number` | 15   |
-| desColor    | 提示信息颜色                                    | `string`           | -    |
-| imgMargin   | icon图片margin                              | `string`           | -    |
-| button      | 按钮属性集合，text有值时候显示，详见[按钮Api](./button#api) | `HyButtonProps`    | -    |
-| navigateUrl | 跳转地址                                      | `string`           | -    |
-| customStyle | 自定义输入框外部样式                                | `CSSProperties`    | -    |
+| 参数          | 说明                                        | 类型                                                                                                                 | 默认值     |
+|-------------|-------------------------------------------|--------------------------------------------------------------------------------------------------------------------|---------|
+| show        | 是否显示组件                                    | `boolean`                                                                                                          | true    |
+| mode        | 缺省页内容                                     | `content`\|`search`\|`address`\|`network`\|`order`\|`coupon`\|`favor`\|`history`\|`message`\|`comment`\|`integral` | content |
+| imageUrl    | 空状态icon图片                                 | `string`                                                                                                           | -       |
+| zIndex      | 组件层级                                      | `number`                                                                                                           | 889     |
+| width       | 图片宽度                                      | `string`\|`number`                                                                                                 | 240px   |
+| height      | 图片高度                                      | `string`\|`number`                                                                                                 | 240px   |
+| description | 提示信息                                      | `string`                                                                                                           | 暂无数据    |
+| desSize     | 提示信息大小                                    | `string`\|`number`                                                                                                 | 15      |
+| desColor    | 提示信息颜色                                    | `string`                                                                                                           | -       |
+| imgMargin   | icon图片margin                              | `string`                                                                                                           | -       |
+| button      | 按钮属性集合，text有值时候显示，详见[按钮Api](./button#api) | `HyButtonProps`                                                                                                    | -       |
+| navigateUrl | 跳转地址                                      | `string`                                                                                                           | -       |
+| customStyle | 自定义输入框外部样式                                | `CSSProperties`                                                                                                    | -       |
+| customClass | 自定义外部类名                                   | `string`                                                                                                           | -       |
 
 ## Events
 

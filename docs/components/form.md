@@ -144,7 +144,6 @@
     :model="formData"
     :rules="rules"
     label-width="80px"
-    @submit="handleSubmit"
   >
     <hy-form-item label="用户名" prop="username" required>
       <hy-input v-model="formData.username" placeholder="请输入用户名" />
@@ -337,6 +336,7 @@ const handleReset = () => {
 |---------------|--------|-------------------------------|----------|
 | model         | 表单数据对象 | `Record<string, any>`         | -        |
 | rules         | 验证规则   | `FormItemRule`                | -        |
+| border        | 表单底部边框 | `boolean`                     | false    |
 | labelWidth    | 标签宽度   | `string` \| `number`          | `'auto'` |
 | labelPosition | 标签位置   | `left` \| `top`               | `'left'` |
 | labelAlign    | 标签对齐方式 | `left` \| `center` \| `right` | `'left'` |

@@ -91,7 +91,8 @@ import { IconConfig, HyIcon } from "hy-app";
 | stop               | 是否阻止事件传播                                                                                                  | `booolean`                       | false   |
 | isRotate           | 是否自动旋转（用于loading）                                                                                         | `booolean`                       | false   |
 | round              | 图标圆角                                                                                                      | `string` \| `number`             | -       |
-| customStyle        | 自定义样式                                                                                                     | `CSSProperties`                  | -       |
+| customStyle        | 自定义需要用到的外部样式                                                                                              | `CSSProperties`                  | -       |
+| customClass        | 自定义外部类名                                                                                                   | `string`                         | -       |
 
 ## Events
 | 事件名   | 说明      | 回调参数                          |

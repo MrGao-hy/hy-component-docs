@@ -9,7 +9,9 @@ css: {
     // 配置`scss`和`less`全局变量
     preprocessorOptions: {
         scss: {
-            additionalData: '@import "hy-app/theme.scss";'
+            additionalData:
+                '@use "hy-app/theme.scss" as *;\n' +
+                '@use "hy-app/index.scss" as *;\n'
         }
     }
 }

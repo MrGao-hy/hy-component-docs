@@ -124,6 +124,7 @@ export default defineConfig({
           items: [
             { text: "Card 卡片", link: "/components/card" },
             { text: "Divider 分割线", link: "/components/divider" },
+            { text: "Flex 弹性布局", link: "/components/flex" },
             { text: "FloatButton 悬浮按钮", link: "/components/floatButton" },
             { text: "Grid 宫格布局", link: "/components/grid" },
             { text: "List 虚拟列表", link: "/components/list" },

@@ -154,7 +154,7 @@ const sliderValue = ref(4);
 | 参数            | 说明                | 类型                   | 默认值    |
 |---------------|-------------------|----------------------|--------|
 | v-model       | 双向绑定滑块选择值         | `number`             | 0      |
-| blockSize     | 滑块的大小             | `number` \| `string` | 18     |
+| blockSize     | 滑块的大小             | `number`             | 18     |
 | min           | 可选的最小值            | `number`             | 1      |
 | max           | 可选的最大值            | `number`             | 100    |
 | step          | 选择的步长             | `number`             | 1      |

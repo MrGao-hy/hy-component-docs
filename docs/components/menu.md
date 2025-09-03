@@ -513,7 +513,8 @@ export const data = [
 | width       | 侧边菜单栏宽度                       | `number`\|`string` | 120 |
 | icon        | 图标集合，详见[图标Api](./icon#api)    | `HyIconProps`      | -   |
 | badge       | 徽标属性集合，详见[徽标Api](./badge#api) | `HyBadgeProps`     | -   |
-| customStyle | 定义需要用到的外部样式                   | `CSSProperties`    | -   |
+| customStyle | 自定义需要用到的外部样式                  | `CSSProperties`    | -   |
+| customClass | 自定义外部类名                       | `string`           | -   |
 
 ## list
 | 参数       | 说明    | 类型        | 默认值 |

@@ -75,7 +75,8 @@ import { HyPopup } from "hy-app"
 | round               | 设置圆角值，仅对mode = top\|bottom\|center                                    | `string` \| `number`                       | -         |
 | zoom                | 当mode=center时 是否开启缩放                                                  | `boolean`                                  | true      |
 | bgColor             | 背景色，一般用于特殊弹窗内容场景，设置为transparent可去除默认的白色背景                             | `string`                                   | -         |
-| customStyle         | 用户自定义样式	                                                              | `CSSProperties`                            | -         |
+| customStyle         | 自定义需要用到的外部样式                                                          | `CSSProperties`                            | -         |
+| customClass         | 自定义外部类名                                                               | `string`                                   | -         |
 
 ## Events
 

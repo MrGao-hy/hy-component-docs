@@ -89,6 +89,8 @@ import { HyDivider } from "hy-app"
 | noMoreText   | 没有更多的提示语              | `string`                                   | 没有更多了              |
 | marginTop    | 与前一个元素的距离，单位px        | `string` \| `number`                       | 0                  |
 | marginBottom | 与后一个元素的距离，单位px        | `string` \| `number`                       | 0                  |
+| customStyle  | 自定义需要用到的外部样式          | `CSSProperties`                            | -                  |
+| customClass  | 自定义外部类名               | `string`                                   | -                  |
 
 ## Events
 

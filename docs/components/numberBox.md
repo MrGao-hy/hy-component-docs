@@ -195,7 +195,8 @@ const value = ref(1);
 | minusIcon     | 减号按钮图标属性集合，详见[图标Api](./icon#api) | `HyIconProps`      | -                       |
 | plusIcon      | 加号按钮图标属性集合，详见[图标Api](./icon#api) | `HyIconProps`      | -                       |
 | miniMode      | 迷你模式常用于外卖，值为0时只显示+号按钮            | `boolean`          | false                   |
-| customStyle   | 定义需要用到的外部样式                      | `CSSProperties`    | -                       |
+| customStyle   | 自定义需要用到的外部样式                     | `CSSProperties`    | -                       |
+| customClass   | 自定义外部类名                          | `string`           | -                       |
 
 ## Events
 

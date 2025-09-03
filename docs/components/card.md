@@ -115,14 +115,15 @@ import { HyCard } from "hy-app"
 | thumb              | 缩略图路径，如设置将显示在标题的左边，不建议使用相对路径              | `string`              | -       |
 | thumb-width        | 缩略图的宽度，高等于宽，单位px                          | `string` \| `number`  | 30px    |
 | thumb-circle       | 缩略图是否为圆形                                  | `string`              | false   |
-| padding            | 给head，body，foot部的内边距，见上方说明，单位rpx          | `string` \| `number`  | 15px    |
+| padding            | 给head，body，foot部的内边距，见上方说明，单位rpx          | `string` \| `number`  | 10px    |
 | paddingHead        | 头部内边距                                     | `string` \| `number`  | -       |
 | paddingBody        | 中部内边距                                     | `string` \| `number`  | -       |
 | paddingFoot        | 尾部内边距                                     | `string` \| `number`  | -       |
 | show-head          | 是否显示头部                                    | `boolean`             | true    |
 | show-foot          | 是否显示尾部                                    | `boolean`             | true    |
 | box-shadow         | 卡片外围阴影，字符串形式                              | `string` \| `boolean` | true    |
-| customStyle        | 定义需要用到的外部样式                               | `CSSProperties`       | -       |
+| customStyle        | 自定义需要用到的外部样式                              | `CSSProperties`       | -       |
+| customClass        | 自定义外部类名                                   | `string`              | -       |
 
 ## Events
 

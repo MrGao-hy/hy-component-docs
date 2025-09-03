@@ -74,12 +74,14 @@ const show = ref(true);
 
 ## API
 
-| 参数       | 说明                 | 类型        | 默认值   |
-|----------|--------------------|-----------|-------|
-| show     | 是否显示遮罩             | `boolean` | false |
-| zIndex   | z-index 层级         | `number`  | 10070 |
-| duration | 动画时长，单位毫秒          | `number`  | 300   |
-| opacity  | 不透明度值，当做rgba的第四个参数 | `number`  | 0.5   |
+| 参数          | 说明                 | 类型              | 默认值   |
+|-------------|--------------------|-----------------|-------|
+| show        | 是否显示遮罩             | `boolean`       | false |
+| zIndex      | z-index 层级         | `number`        | 10070 |
+| duration    | 动画时长，单位毫秒          | `number`        | 300   |
+| opacity     | 不透明度值，当做rgba的第四个参数 | `number`        | 0.5   |
+| customStyle | 自定义需要用到的外部样式       | `CSSProperties` | -     |
+| customClass | 自定义外部类名            | `string`        | -     |
 
 ## Events
 

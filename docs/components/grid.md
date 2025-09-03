@@ -87,7 +87,8 @@ const list = ref([
 | gap         | 间隔                              | `string` \| `number`      | 0px         |
 | bgColor     | 宫格的背景颜色                         | `string`                  | transparent |
 | iconConfig  | 图标属性api配置，详见[图标Api](./icon#api) | `HyIconProps`             | -           |
-| customStyle | 定义需要用到的外部样式                     | `CSSProperties`           | -           |
+| customStyle | 自定义需要用到的外部样式                    | `CSSProperties`           | -           |
+| customClass | 自定义外部类名                         | `string`                  | -           |
 
 ## list
 > 或者自定义添加其他键，通过插槽自定义内容

@@ -122,7 +122,8 @@ import { HyNavbar } from "hy-app"
 | leftIconColor    | 左侧返回图标的颜色                     | `string`             | -               |
 | autoBack         | 点击左侧区域(返回图标)，是否自动返回上一页        | `boolean`            | false           |
 | titleStyle       | 标题的样式，对象或字符串形式	               | `CSSProperties`      | -               |
-| customStyle      | 定义需要用到的外部样式                   | `CSSProperties`      | -               |
+| customStyle      | 自定义需要用到的外部样式                  | `CSSProperties`      | -               |
+| customClass      | 自定义外部类名                       | `string`             | -               |
 
 ## Events
 

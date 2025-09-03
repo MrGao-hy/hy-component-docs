@@ -113,6 +113,8 @@ import { HyModal } from "hy-app"
 | width               | modal宽度，不支持百分比，可以数值，px，rpx单位                                           | `string` \| `number`      | 650rpx |
 | confirmButtonShape  | 确认按钮的样式,如设置，将不会显示取消按钮                                                  | `circle` \| `square`      | -      |
 | contentTextAlign    | 文案对齐方式                                                                 | `center`\|`left`\|`right` | left   |
+| customStyle         | 自定义需要用到的外部样式                                                           | `CSSProperties`           | -      |
+| customClass         | 自定义外部类名                                                                | `string`                  | -      |
 
 ## Events
 

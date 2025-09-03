@@ -86,17 +86,18 @@ const price = 10
 
 ## API
 
-| 参数          | 说明          | 类型                   | 默认值     |
-|-------------|-------------|----------------------|---------|
-| text        | 金额值         | `string` \| `number` | 0.00    |
-| symbol      | 金额符号        | `string`             | ￥       |
-| ratio       | 比例大小        | `number`             | 1.4     |
-| num         | 保留小数点后几位数   | `number`             | 2       |
-| color       | 字体颜色        | `string`             | #FE3232 |
-| size        | 字体大小        | `string` \| `number` | 12      |
-| weight      | 字体粗细        | `number`             | 500     |
-| slant       | 是否倾斜        | `boolean`            | false   |
-| customStyle | 定义需要用到的外部样式 | `CSSProperties`      | -       |
+| 参数          | 说明           | 类型                   | 默认值     |
+|-------------|--------------|----------------------|---------|
+| text        | 金额值          | `string` \| `number` | 0.00    |
+| symbol      | 金额符号         | `string`             | ￥       |
+| ratio       | 比例大小         | `number`             | 1.4     |
+| num         | 保留小数点后几位数    | `number`             | 2       |
+| color       | 字体颜色         | `string`             | #FE3232 |
+| size        | 字体大小         | `string` \| `number` | 12      |
+| weight      | 字体粗细         | `number`             | 500     |
+| slant       | 是否倾斜         | `boolean`            | false   |
+| customStyle | 自定义需要用到的外部样式 | `CSSProperties`      | -       |
+| customClass | 自定义外部类名      | `string`             | -       |
 
 ## Events
 

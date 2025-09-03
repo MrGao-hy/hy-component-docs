@@ -1,5 +1,5 @@
-# Form 表单组件
-> 此组件一般用于表单场景，可以配置Input输入框，Select弹出框，进行表单验证等。
+# FormGroup 表单组件
+> 此组件一般用于快速搭建表单场景，可以配置Input输入框，Select弹出框，进行表单验证等。
 
 ::: tip 温馨提示
 本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。目前该组件仍处于测试阶段。<br>
@@ -17,9 +17,9 @@
 
 ```html [vue]
 <!-- 全局使用 -->
-<hy-form :columns="columns" :formData="formData"></hy-form>
+<hy-form-group :columns="columns" :formData="formData"></hy-form-group>
 <!-- 单个组件引入 -->
-<HyForm :columns="columns" :formData="formData"></HyForm>
+<HyFormGroup :columns="columns" :formData="formData"></HyFormGroup>
 ```
 
 ```ts [index.ts]

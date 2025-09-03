@@ -130,7 +130,8 @@ import { HyBadge } from "hy-app"
 | offset      | 设置badge的位置偏移，格式为 [x, y]，也即设置的为top和right的值，absolute为true时有效          | `array`                                                    | -        |
 | inverted    | 是否反转背景和字体颜色                                                         | `boolean`                                                  | false    |
 | absolute    | 组件是否绝对定位                                                            | `boolean`                                                  | false    |
-| customStyle | 定义需要用到的外部样式                                                         | `CSSProperties`                                            | -        |
+| customStyle | 自定义需要用到的外部样式                                                        | `CSSProperties`                                            | -        |
+| customClass | 自定义外部类名                                                             | `string`                                                   | -        |
 
 
 <demo-model url="pages/components/badge/badge"></demo-model>

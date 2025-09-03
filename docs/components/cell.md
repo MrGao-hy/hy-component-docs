@@ -65,7 +65,7 @@ const list = ref([
 <template>
     <hy-cell :list="list" arrange="left"></hy-cell>
     <hy-cell :list="list" arrange="center"></hy-cell>
-    <hy-cell :list="list" arrange=right""></hy-cell>
+    <hy-cell :list="list" arrange="right"></hy-cell>
 </template>
 ```
 
@@ -120,7 +120,8 @@ const list = ref([
 | center         | 内容是否垂直居中(主要是针对右侧的value部分)   | `boolean`                      | false  |
 | rightIcon      | 右侧的图标,详见[图标Api](./icon#api) | `HyIconProps`                  | -      |
 | arrowDirection | 右侧箭头的方向                     | `left` \| `up` \| `down`       | left   |
-| customStyle    | 定义需要用到的外部样式                 | `CSSProperties`                | -      |
+| customStyle    | 自定义需要用到的外部样式                | `CSSProperties`                | -      |
+| customClass    | 自定义外部类名                     | `string`                       | -      |
 
 ### list集合
 
