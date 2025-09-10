@@ -167,7 +167,7 @@ const sliderValue = ref(4);
 | isRange       | 开始其双滑快模式          | `boolean`            | false  |
 | useNative     | 是否渲染uni-app框架内置组件 | `boolean`            | false  |
 | rangeValue    | 双滑快双向绑定值，数组形式     | `array`              | [0, 0] |
-| customStyle   | 自定义样式             | `CSSProperties`      | -      |
+| customStyle   | 定义需要用到的外部样式       | `CSSProperties`      | -      |
 
 ## Events
 

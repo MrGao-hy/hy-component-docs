@@ -77,29 +77,34 @@ import { HySearch } from "hy-app"
 
 ## API
 
-| 参数               | 说明                             | 类型                 | 默认值               |
-|------------------|--------------------------------|--------------------|-------------------|
-| v-model          | 双向绑定输入框搜索值                     | `string`           | -                 |
-| shape            | 搜索框形状，round-圆形，square-方形       | `circle`\|`square` | circle            |
-| bgColor          | 搜索框背景颜色	                       | `string`           | -                 |
-| placeholder      | 占位文字内容	                        | `string`           | 请输入关键字            |
-| clear            | 是否启用清除控件	                      | `boolean`          | true              |
-| focus            | 是否自动获得焦点	                      | `boolean`          | false             |
-| showAction       | 是否显示右侧控件(右侧的"搜索"按钮)	           | `boolean`          | true              |
-| actionStyle      | 右侧控件的样式，对象形式	                  | `CSSProperties`    | -                 |
-| actionText       | 右侧控件文字	                        | `string`           | 搜索                |
-| inputAlign       | 输入框内容水平对齐方式	                   | `left` \| `right`  | left              |
-| inputStyle       | 自定义输入框样式，对象形式                  | `CSSProperties`    | -                 |
-| disabled         | 是否启用输入框                        | `boolean`          | false             |
-| borderColor      | 边框颜色，配置了颜色，才会有边框               | `string`           | transparent       |
-| color            | 输入框字体颜色                        | `string`           | -                 |
-| placeholderColor | placeholder的颜色                 | `string`           | -                 |
-| searchIcon       | 输入框左边的图标，详见[图标Api](./icon#api) | `HyIconProps`      | IconConfig.SEARCH |
-| margin           | 组件与其他上下左右元素之间的距离，带单位的字符串形式     | `string`           | -                 |
-| animation        | 是否开启动画，见上方说明                   | `boolean`          | false             |
-| maxlength        | 输入框最大能输入的长度，-1为不限制长度           | `string`\|`number` | -1                |
-| height           | 输入框高度，单位rpx                    | `string`\|`number` | 64                |
-| label            | 搜索左侧文本信息                       | `string`           | -                 |
+| 参数               | 说明                             | 类型                                     | 默认值               |
+|------------------|--------------------------------|----------------------------------------|-------------------|
+| v-model          | 双向绑定输入框搜索值                     | `string`                               | -                 |
+| shape            | 搜索框形状，round-圆形，square-方形       | `circle`\|`square`                     | circle            |
+| bgColor          | 搜索框背景颜色	                       | `string`                               | -                 |
+| placeholder      | 占位文字内容	                        | `string`                               | 请输入关键字            |
+| confirmType      | 设置键盘右下角按钮的文字	                  | `send`\|`search`\|`next`\|`go`\|`done` | search            |
+| clearable        | 是否启用清除控件	                      | `boolean`                              | true              |
+| autoFocus        | 是否自动获得焦点	                      | `boolean`                              | false             |
+| autoBlur         | 键盘收起时，是否自动失去焦点	                | `boolean`                              | true              |
+| adjustPosition   | 键盘弹起时，是否自动上推页面	                | `boolean`                              | true              |
+| showAction       | 是否显示右侧控件(右侧的"搜索"按钮)	           | `boolean`                              | true              |
+| actionStyle      | 右侧控件的样式，对象形式	                  | `CSSProperties`                        | -                 |
+| actionText       | 右侧控件文字	                        | `string`                               | 搜索                |
+| inputAlign       | 输入框内容水平对齐方式	                   | `left` \| `right`                      | left              |
+| inputStyle       | 自定义输入框样式，对象形式                  | `CSSProperties`                        | -                 |
+| disabled         | 是否启用输入框                        | `boolean`                              | false             |
+| borderColor      | 边框颜色，配置了颜色，才会有边框               | `string`                               | transparent       |
+| color            | 输入框字体颜色                        | `string`                               | -                 |
+| placeholderColor | placeholder的颜色                 | `string`                               | -                 |
+| searchIcon       | 输入框左边的图标，详见[图标Api](./icon#api) | `HyIconProps`                          | IconConfig.SEARCH |
+| margin           | 组件与其他上下左右元素之间的距离，带单位的字符串形式     | `string`                               | -                 |
+| animation        | 是否开启动画，见上方说明                   | `boolean`                              | false             |
+| maxlength        | 输入框最大能输入的长度，-1为不限制长度           | `string`\|`number`                     | -1                |
+| height           | 输入框高度，单位rpx                    | `string`\|`number`                     | 64                |
+| label            | 搜索左侧文本信息                       | `string`                               | -                 |
+| customStyle      | 定义需要用到的外部样式                    | `CSSProperties`                        | -                 |
+| customClass      | 自定义外部类名                        | `string`                               | -                 |
 
 ## Events
 

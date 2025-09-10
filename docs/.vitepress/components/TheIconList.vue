@@ -3,488 +3,531 @@
     <template v-for="item in icon" :key="item.icon">
       <div class="container-box" @click="copyIconValFn(item.name)">
         <i :class="['iconfont', `hy-icon-${item.icon}`]"></i>
-        <text class="name">{{item.label}}</text>
-        <text class="value">{{item.name}}</text>
+        <text class="name">{{ item.label }}</text>
+        <text class="value">{{ item.name }}</text>
       </div>
     </template>
   </div>
-
 </template>
 <script setup lang="ts">
 import { reactive } from "vue";
-import {notification} from "ant-design-vue";
+import { notification } from "ant-design-vue";
 
 // 图标集合
 const icon = reactive([
   {
     icon: "loading",
     label: "加载动画",
-    name: "LOADING"
+    name: "LOADING",
   },
   {
     icon: "close",
     label: "关闭",
-    name: "CLOSE"
+    name: "CLOSE",
   },
   {
     icon: "collect",
     label: "空星",
-    name: "STAR"
+    name: "STAR",
   },
   {
     icon: "collect-fill",
     label: "实星",
-    name: "STAR_FILL"
+    name: "STAR_FILL",
   },
   {
     icon: "smile",
     label: "微笑",
-    name: "SMILE"
+    name: "SMILE",
   },
   {
     icon: "smile-fill",
     label: "微笑-实心",
-    name: "SMILE_FILL"
+    name: "SMILE_FILL",
   },
   {
     icon: "cry-fill",
     label: "难过-实心",
-    name: "CRY_FILL"
+    name: "CRY_FILL",
   },
   {
     icon: "check-mask",
     label: "打勾，勾选",
-    name: "CHECK_MASK"
+    name: "CHECK_MASK",
   },
   {
     icon: "edit",
     label: "编辑",
-    name: "EDIT"
+    name: "EDIT",
   },
   {
     icon: "shop",
     label: "商城",
-    name: "SHOP"
+    name: "SHOP",
   },
   {
     icon: "lock-fill",
     label: "实心锁",
-    name: "LOCK_FILL"
+    name: "LOCK_FILL",
   },
   {
     icon: "lock-open-fill",
     label: "打开实心锁",
-    name: "LOCK_OPEN_FILL"
+    name: "LOCK_OPEN_FILL",
   },
   {
     icon: "lock",
     label: "空心锁",
-    name: "LOCK"
+    name: "LOCK",
   },
   {
     icon: "map",
     label: "地点",
-    name: "MAP"
+    name: "MAP",
   },
   {
     icon: "map-fill",
     label: "地点-实心",
-    name: "MAP_FILL"
+    name: "MAP_FILL",
   },
   {
     icon: "shopping-cart",
     label: "购物车",
-    name: "SHOPPING_CART"
+    name: "SHOPPING_CART",
   },
   {
     icon: "shopping-cart-fill",
     label: "购物车-实心",
-    name: "SHOPPING_CART_FILL"
+    name: "SHOPPING_CART_FILL",
   },
   {
     icon: "shopping-cart-add",
     label: "添加购物车",
-    name: "SHOPPING_CART_ADD"
+    name: "SHOPPING_CART_ADD",
   },
   {
     icon: "shopping-bag",
     label: "购物袋",
-    name: "SHOPPING_BAG"
+    name: "SHOPPING_BAG",
   },
   {
     icon: "refresh",
     label: "刷新",
-    name: "REFRESH"
+    name: "REFRESH",
   },
   {
     icon: "task",
     label: "任务",
-    name: "TASK"
+    name: "TASK",
   },
   {
     icon: "tag",
     label: "标签",
-    name: "TAG"
+    name: "TAG",
   },
   {
     icon: "left",
     label: "左",
-    name: "LEFT"
+    name: "LEFT",
   },
   {
     icon: "right",
     label: "右",
-    name: "RIGHT"
+    name: "RIGHT",
   },
   {
     icon: "up",
     label: "上",
-    name: "UP"
+    name: "UP",
   },
   {
     icon: "down",
     label: "下",
-    name: "DOWN"
+    name: "DOWN",
   },
   {
     icon: "arrow-up-fill",
     label: "向上-实心",
-    name: "ARROW_UP_FILL"
+    name: "ARROW_UP_FILL",
   },
   {
     icon: "arrow-down-fill",
     label: "向下-实心",
-    name: "ARROW_DOWN_FILL"
+    name: "ARROW_DOWN_FILL",
   },
   {
     icon: "arrow-left-fill",
     label: "向左-实心",
-    name: "ARROW_LEFT_FILL"
+    name: "ARROW_LEFT_FILL",
   },
   {
     icon: "arrow-right-fill",
     label: "向右-实心",
-    name: "ARROW_RIGHT_FILL"
+    name: "ARROW_RIGHT_FILL",
   },
   {
     icon: "arrow-double-left",
     label: "向左双箭头",
-    name: "ARROW_DOUBLE_LEFT"
+    name: "ARROW_DOUBLE_LEFT",
   },
   {
     icon: "arrow-double-right",
     label: "向右双箭头",
-    name: "ARROW_DOUBLE_RIGHT"
+    name: "ARROW_DOUBLE_RIGHT",
   },
   {
     icon: "arrow-leftward",
     label: "箭头向左",
-    name: "ARROW_LEFTWARD"
+    name: "ARROW_LEFTWARD",
   },
   {
     icon: "arrow-rightward",
     label: "箭头向右",
-    name: "ARROW_RIGHTWARD"
+    name: "ARROW_RIGHTWARD",
   },
   {
     icon: "history",
     label: "历史",
-    name: "HISTORY"
+    name: "HISTORY",
   },
   {
     icon: "time",
     label: "时间",
-    name: "TIME"
+    name: "TIME",
   },
   {
     icon: "network",
     label: "网络",
-    name: "NETWORK"
+    name: "NETWORK",
   },
   {
     icon: "list-dot",
     label: "列表",
-    name: "LIST_DOT"
+    name: "LIST_DOT",
   },
   {
     icon: "menu",
     label: "菜单",
-    name: "MENU"
+    name: "MENU",
   },
   {
     icon: "search",
     label: "搜索",
-    name: "SEARCH"
+    name: "SEARCH",
   },
   {
     icon: "plus",
     label: "加",
-    name: "PLUS"
+    name: "PLUS",
   },
   {
     icon: "minus",
     label: "减",
-    name: "MINUS"
+    name: "MINUS",
   },
   {
     icon: "remind",
     label: "提醒",
-    name: "REMIND"
+    name: "REMIND",
+  },
+  {
+    icon: "remind-fill",
+    label: "提醒-实体",
+    name: "REMIND_FILL",
   },
   {
     icon: "warning",
     label: "警告",
-    name: "WARNING"
+    name: "WARNING",
   },
   {
     icon: "warning-fill",
     label: "警告-实心",
-    name: "WARNING_FILL"
+    name: "WARNING_FILL",
   },
   {
     icon: "delete",
     label: "删除",
-    name: "DELETE"
+    name: "DELETE",
   },
   {
     icon: "delete-fill",
     label: "删除-实心",
-    name: "DELETE_FILL"
+    name: "DELETE_FILL",
   },
   {
     icon: "screen",
     label: "筛选",
-    name: "SCREEN"
+    name: "SCREEN",
   },
   {
     icon: "class",
     label: "分类",
-    name: "CLASS"
+    name: "CLASS",
   },
   {
     icon: "class-fill",
     label: "应用",
-    name: "CLASS_FILL"
+    name: "CLASS_FILL",
   },
   {
     icon: "home",
     label: "首页",
-    name: "HOME"
+    name: "HOME",
   },
   {
     icon: "home-fill",
     label: "首页-实心",
-    name: "HOME_FILL"
+    name: "HOME_FILL",
   },
   {
     icon: "mine",
     label: "我的",
-    name: "MINE"
+    name: "MINE",
   },
   {
     icon: "mine-fill",
     label: "我的-实心",
-    name: "MINE_FILL"
+    name: "MINE_FILL",
   },
   {
     icon: "setting",
     label: "设置",
-    name: "SETTING"
+    name: "SETTING",
+  },
+  {
+    icon: "setting-fill",
+    label: "设置-实体",
+    name: "SETTING_FILL",
   },
   {
     icon: "close-circle",
     label: "关闭圆圈",
-    name: "CLOSE_CIRCLE"
+    name: "CLOSE_CIRCLE",
   },
   {
     icon: "close-circle-fill",
     label: "关闭圆圈-实心",
-    name: "CLOSE_CIRCLE_FILL"
+    name: "CLOSE_CIRCLE_FILL",
   },
   {
     icon: "notice",
     label: "注意",
-    name: "NOTICE"
+    name: "NOTICE",
   },
   {
     icon: "notice-fill",
     label: "注意-实心",
-    name: "NOTICE_FILL"
+    name: "NOTICE_FILL",
   },
   {
     icon: "success",
     label: "成功",
-    name: "SUCCESS"
+    name: "SUCCESS",
   },
   {
     icon: "success-fill",
     label: "成功-实心",
-    name: "SUCCESS_FILL"
+    name: "SUCCESS_FILL",
   },
   {
     icon: "help",
     label: "帮助",
-    name: "HELP"
+    name: "HELP",
   },
   {
     icon: "help-fill",
     label: "帮助-实心",
-    name: "HELP_FILL"
+    name: "HELP_FILL",
   },
   {
     icon: "upload",
     label: "上传",
-    name: "UPLOAD"
+    name: "UPLOAD",
   },
   {
     icon: "switch",
     label: "转换",
-    name: "SWITCH"
+    name: "SWITCH",
   },
   {
     icon: "download",
     label: "下载",
-    name: "DOWNLOAD"
+    name: "DOWNLOAD",
   },
   {
     icon: "security",
     label: "保护",
-    name: "SECURITY"
+    name: "SECURITY",
   },
   {
     icon: "scan",
     label: "扫码",
-    name: "SCAN"
+    name: "SCAN",
   },
   {
     icon: "save",
     label: "保存",
-    name: "SAVE"
+    name: "SAVE",
   },
   {
     icon: "picture",
     label: "图片",
-    name: "PHOTO"
+    name: "PHOTO",
+  },
+  {
+    icon: "picture-fill",
+    label: "图片-实体",
+    name: "PHOTO_FILL",
   },
   {
     icon: "pdf",
     label: "pdf",
-    name: "PDF"
+    name: "PDF",
   },
   {
     icon: "navigation",
     label: "导航",
-    name: "NAVIGATION"
+    name: "NAVIGATION",
   },
   {
     icon: "print",
     label: "打印",
-    name: "PRINT"
+    name: "PRINT",
   },
   {
     icon: "layers",
     label: "layers",
-    name: "LAYERS"
+    name: "LAYERS",
   },
   {
     icon: "link",
     label: "链接",
-    name: "LINK"
+    name: "LINK",
   },
   {
     icon: "export",
     label: "导出",
-    name: "EXPORT"
+    name: "EXPORT",
   },
   {
     icon: "ellipsis",
     label: "省略号",
-    name: "ELLIPSIS"
+    name: "ELLIPSIS",
   },
   {
     icon: "customer-service",
     label: "客服",
-    name: "CUSTOMER_SERVICE"
+    name: "CUSTOMER_SERVICE",
   },
   {
     icon: "comment",
     label: "信息",
-    name: "COMMENT"
+    name: "COMMENT",
   },
   {
     icon: "message",
     label: "消息",
-    name: "MESSAGE"
+    name: "MESSAGE",
   },
   {
     icon: "message-fill",
     label: "消息-实心",
-    name: "MESSAGE_FILL"
+    name: "MESSAGE_FILL",
   },
   {
     icon: "systemprompt_fill",
     label: "通知-实心",
-    name: "NOTIFICATION_FILL"
+    name: "NOTIFICATION_FILL",
   },
   {
     icon: "attachment",
     label: "附件",
-    name: "ATTACHMENT"
+    name: "ATTACHMENT",
   },
   {
     icon: "camera",
     label: "相机",
-    name: "CAMERA"
+    name: "CAMERA",
   },
   {
     icon: "eye",
     label: "眼睛",
-    name: "EYE"
+    name: "EYE",
+  },
+  {
+    icon: "eye-close",
+    label: "眼睛-关闭",
+    name: "EYE_CLOSE",
+  },
+  {
+    icon: "hide",
+    label: "隐藏",
+    name: "HIDE",
   },
   {
     icon: "calendar",
     label: "日历",
-    name: "CALENDAR"
+    name: "CALENDAR",
   },
   {
     icon: "copy",
     label: "复制",
-    name: "COPY"
+    name: "COPY",
   },
   {
     icon: "order",
     label: "订单",
-    name: "ORDER"
+    name: "ORDER",
   },
   {
     icon: "share",
     label: "分享",
-    name: "SHARE"
+    name: "SHARE",
   },
   {
     icon: "share-fill",
     label: "分享-实心",
-    name: "SHARE_FILL"
+    name: "SHARE_FILL",
   },
   {
     icon: "send",
     label: "发送",
-    name: "SEND"
-  }
-])
+    name: "SEND",
+  },
+  {
+    icon: "telephone-out",
+    label: "打出电话",
+    name: "TELEPHONE_OUT",
+  },
+  {
+    icon: "telephone",
+    label: "电话",
+    name: "TELEPHONE",
+  },
+  {
+    icon: "telephone-fill",
+    label: "电话-实心",
+    name: "TELEPHONE_FILL",
+  },
+  {
+    icon: "mic",
+    label: "话筒",
+    name: "MIC",
+  },
+]);
 
 // 复制icon值
 const copyIconValFn = async (value: string) => {
   await navigator.clipboard.writeText(value);
-  notification.success( {
-    message: `“${value}”已复制到剪贴板！`
-  })
-}
-
+  notification.success({
+    message: `“${value}”已复制到剪贴板！`,
+  });
+};
 </script>
 
 <style lang="scss" scoped>
-@import "https://at.alicdn.com/t/c/font_4305932_ldk8742h9z7.css";
+@import "https://at.alicdn.com/t/c/font_4305932_vv9jfh6hbj.css";
 .container {
   display: flex;
   flex-wrap: wrap;
