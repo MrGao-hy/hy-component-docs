@@ -18,24 +18,28 @@
 ## 基本使用
 
 ```ts
-import Http from "hy-app";
+import Http from 'hy-app';
+import type { HttpRequestConfig } from 'hy-app';
+import type {HttpResponse} from "hy-app/typing";
 
 const http = new Http();
+
 http.config = {
-    baseUrl: "http://127.0.0.1:8080",
-}
+    baseURL: 'http://60.168.129.9:2010',
+};
 
 // 请求拦截
-http.interceptor.request((conf) => {
+http.interceptor.request((conf: HttpRequestConfig) => {
     return conf;
-})
+});
 
 // 响应拦截
-http.interceptor.response((response) => {
-    if(response.code === 200) {
-        return response.data
+http.interceptor.response((response: HttpResponse) => {
+    if (response.statusCode === 200) {
+        return response.data;
     }
     // 错误走
     return Promise.reject(response);
-})
+});
+
 ```
