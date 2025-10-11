@@ -46,8 +46,7 @@ const props = withDefaults(defineProps<IProps>(), {
   url: "/",
   prefix: "/web/#"
 })
-const baseUrl = ref("https://gxh151.top/hy-ui/#/");
-// const baseUrl = ref("https://hy-components.vercel.app/#/");
+const baseUrl = ref("https://hy-design-uni.top/#/");
 const href = computed(() => {
   return props.url.indexOf('http') === 0 ? props.url : `${baseUrl.value}${props.url}`;
 })
