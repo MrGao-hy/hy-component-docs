@@ -11,8 +11,8 @@ const generateId = (path) => {
 
 export default function createGitalk(path: string) {
   const gitalk = new Gitalk({
-    clientID: "Ov23liVepKSFp8TKOvti",
-    clientSecret: "b0be04ba295eada2d57ec84d7b08d370330756ad",
+    clientID: "Ov23li1JymIgZsMJLzYd",
+    clientSecret: "d4ce3062526a85fe2cd94be52601c06c7d9b47fe",
     repo: "hy-component-docs",
     owner: "gaoxianhua",
     admin: ["gaoxianhua"],

@@ -70,6 +70,7 @@ export default defineConfig({
             { text: "快速开始", link: "/components/start" },
             { text: "配置主题", link: "/components/theme" },
             { text: "内置样式", link: "/components/style" },
+            { text: "注意事项", link: "/components/announcements" },
           ],
         },
         {
