@@ -19,6 +19,18 @@
 <hy-checkbox v-model="value" :columns="columns"></hy-checkbox>
 <!-- 单个组件引入 -->
 <HyCheckobox v-model="value" :columns="columns"></HyCheckobox>
+
+<!-- 分开式组件 -->
+<hy-checkbox-group v-model="value2">
+    <hy-checkbox-item
+            value="f"
+            label="法拉利"
+            :checked="true"
+    ></hy-checkbox-item>
+    <hy-checkbox-item value="l" label="兰博基尼"></hy-checkbox-item>
+    <hy-checkbox-item value="b" label="布加迪"></hy-checkbox-item>
+    <hy-checkbox-item value="a" label="阿斯顿马丁"></hy-checkbox-item>
+</hy-checkbox-group>
 ```
 ```ts
 import { HyCheckobox } from "hy-app";
@@ -35,6 +47,7 @@ const columns = [
     }
 ];
 const value = ref(["apply"]);
+const value2 = ref([""]);
 ```
 
 ## 自定义columns键
@@ -162,11 +175,33 @@ const value = ref(["apply"]);
 
 ## API
 
+### Checkbox Props
+
+| 参数            | 说明              | 类型                                              | 默认值                                                  |
+|---------------|-----------------|-------------------------------------------------|------------------------------------------------------|
+| v-model       | 双向绑定值，数组类型      | `(string\|number)[]` \|`boolean`                | -                                                    |
+| columns       | 接收数组值           | `array`                                         | -                                                    |
+| fieldNames    | 自定义接收columns的键  | `object`                                        | \{label: "label",value: "value",checked: "checked"\} |
+| shape         | 复选框形状[^1]       | `circle`\|`square`                              | square                                               |
+| size          | 复选框大小[^2]       | `small`\|`medium`\|`large` \|`string`\|`number` | medium                                               |
+| disabled      | 是否禁用            | `boolean`                                       | false                                                |
+| activeColor   | 选中状态下的颜色        | `string`                                        | -                                                    |
+| inactiveColor | 未选中的颜色          | `string`                                        | #c8c9cc                                              |
+| iconSize      | 图标的大小，单位px      | `string`\|`number`                              | 20                                                   |
+| iconColor     | 图标颜色            | `string`                                        | -                                                    |
+| labelSize     | label的字体大小，px单位 | `string`\|`number`                              | -                                                    |
+| labelColor    | label的颜色        | `string`                                        | -                                                    |
+| iconPlacement | 勾选图标的对齐方式       | `left`\|`right`                                 | left                                                 |
+| borderBottom  | 竖向配列时，是否显示下划线   | `boolean`                                       | false                                                |
+| labelDisabled | 是否禁止点击提示语选中复选框  | `boolean`                                       | false                                                |
+| placement     | 布局方式[^3]        | `row`\|`column`                                 | row                                                  |
+| customStyle   | 定义需要用到的外部样式     | `CSSProperties`                                 | -                                                    |
+
+### CheckboxGroup Props
+
 | 参数            | 说明              | 类型                                             | 默认值                                                  |
 |---------------|-----------------|------------------------------------------------|------------------------------------------------------|
 | v-model       | 双向绑定值，数组类型      | `(string\|number)[]`\|`boolean`                | -                                                    |
-| columns       | 接收数组值           | `array`                                        | -                                                    |
-| fieldNames    | 自定义接收columns的键  | `object`                                       | \{label: "label",value: "value",checked: "checked"\} |
 | shape         | 复选框形状[^1]       | `circle`\|`square`                             | square                                               |
 | size          | 复选框大小[^2]       | `small`\|`medium`\|`large`\|`string`\|`number` | medium                                               |
 | disabled      | 是否禁用            | `boolean`                                      | false                                                |
@@ -181,6 +216,15 @@ const value = ref(["apply"]);
 | labelDisabled | 是否禁止点击提示语选中复选框  | `boolean`                                      | false                                                |
 | placement     | 布局方式[^3]        | `row`\|`column`                                | row                                                  |
 | customStyle   | 定义需要用到的外部样式     | `CSSProperties`                                | -                                                    |
+
+### CheckboxItem Props
+
+| 参数        | 说明        | 类型        | 默认值   |
+|-----------|-----------|-----------|-------|
+| value     | 绑定值       | `string`  | -     |
+| label     | label提示文字 | `string`  | -     |
+| checked   | 是否默认选中    | `boolean` | false |
+| disabled	 | 是否禁用      | `boolean` | false |
 
 ## columns
 | 参数       | 说明     | 类型        | 默认值 |

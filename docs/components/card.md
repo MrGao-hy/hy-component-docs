@@ -103,15 +103,15 @@ import { HyCard } from "hy-app"
 | sub-title          | 头部右边的副标题                                  | `boolean`             | -         |
 | sub-title-color    | 副标题颜色                                     | `string`              | #909399   |
 | sub-title-size     | 副标题字体大小                                   | `string` \| `number`  | 13        |
-| border             | 是否显示边框                                    | `boolean`             | true      |
+| border             | 是否显示边框                                    | `boolean`             | false     |
 | index              | 用于标识点击了第几个卡片                              | `string` \| `number`  | -         |
 | margin             | 卡片与屏幕两边和上下元素的间距，需带单位，如"30rpx 20rpx"，见上方说明 | `string`              | 0 0 20rpx |
 | border-radius      | 卡片整体的圆角值，单位px                             | `string` \| `number`  | 8px       |
 | head-style         | 头部自定义样式，对象形式                              | `CSSProperties`       | -         |
 | body-style         | 主体自定义样式，对象形式                              | `CSSProperties`       | -         |
 | foot-style         | 底部自定义样式，对象形式                              | `CSSProperties`       | -         |
-| head-border-bottom | 是否显示头部的下边框                                | `boolean`             | true      |
-| foot-border-top    | 是否显示底部的上边框                                | `boolean`             | true      |
+| head-border-bottom | 是否显示头部的下边框                                | `boolean`             | false     |
+| foot-border-top    | 是否显示底部的上边框                                | `boolean`             | false     |
 | thumb              | 缩略图路径，如设置将显示在标题的左边，不建议使用相对路径              | `string`              | -         |
 | thumb-width        | 缩略图的宽度，高等于宽，单位px                          | `string` \| `number`  | 30px      |
 | thumb-circle       | 缩略图是否为圆形                                  | `string`              | false     |
