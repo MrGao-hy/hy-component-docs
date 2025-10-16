@@ -14,8 +14,8 @@ export default function createGitalk(path: string) {
     clientID: "Ov23li1JymIgZsMJLzYd",
     clientSecret: "d4ce3062526a85fe2cd94be52601c06c7d9b47fe",
     repo: "hy-component-docs",
-    owner: "gaoxianhua",
-    admin: ["gaoxianhua"],
+    owner: "MrGao-hy",
+    admin: ["MrGao-hy"],
     id: generateId(path), // 确保唯一性和长度小于 50
     distractionFreeMode: false, // 类似 Facebook 的无干扰模式
   });
