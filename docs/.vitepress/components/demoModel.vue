@@ -20,7 +20,7 @@
 
       <!--  主体  -->
       <div class="model-content">
-        <iframe id="demo-modal" :src="href" class="iframe" frameborder="0" scrolling="auto"></iframe>
+        <iframe id="demo-modal" ref="h5Iframe" :src="href" class="iframe" frameborder="0" scrolling="auto"></iframe>
       </div>
       <!--  主体  -->
 
@@ -35,7 +35,7 @@
 </template>
 
 <script setup lang="ts">
-import {computed, ref, watch} from "vue";
+import {computed, nextTick, onMounted, ref, watch} from "vue";
 import logoDark from "/images/hy_logo_dark.png";
 import logoLight from "/images/hy_logo_light.png";
 import batteryDark from "/images/battery_dark.png";
@@ -51,10 +51,12 @@ const props = withDefaults(defineProps<IProps>(), {
   url: "/",
   prefix: "/web/#"
 })
+const { isDark } = useData()
 const baseUrl = ref("https://hy-design-uni.top/#/");
 const href = computed(() => {
   return props.url.indexOf('http') === 0 ? props.url : `${baseUrl.value}${props.url}`;
 })
+const h5Iframe = ref(null);
 const nowTime = computed(() => {
   const now = new Date();
   const hours = now.getHours();
@@ -64,7 +66,25 @@ const nowTime = computed(() => {
   return `${formattedHours}:${formattedMinutes}`;
 })
 
-const { isDark } = useData()
+// 传递是否暗黑主题值
+watch(
+    () => isDark.value,
+    (newValue, oldValue, onCleanup) => {
+      if(h5Iframe.value) {
+        h5Iframe.value.contentWindow.postMessage(newValue, "*")
+      }
+    }
+)
+
+onMounted(() => {
+  nextTick(() => {
+    if(h5Iframe.value) {
+      h5Iframe.value.onload = () => {
+        h5Iframe.value.contentWindow.postMessage(isDark.value, "*")
+      }
+    }
+  })
+})
 
 </script>
 
