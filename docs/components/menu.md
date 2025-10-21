@@ -99,7 +99,7 @@ const list = [
 import { computed, onMounted, ref } from "vue";
 import { useThemeStore } from "@/store";
 import { data } from "./data";
-import { IconConfig } from "hy-app";
+import { IconConfig, debounce } from "hy-app";
 
 // 组件
 import HyMenu from "@/package/components/hy-menu/hy-menu.vue";
@@ -145,15 +145,16 @@ onMounted(() => {
 
 function onScroll(e: any) {
     const { scrollTop } = e.detail;
-    const threshold = 50; // 下一个标题与顶部的距离
-    if (scrollTop < threshold) {
-        // active.value = 0;
+    // 防止执行chang事件的时候改变当前值
+    if (execute.value) {
+        debounce(() => (execute.value = false));
         return;
     }
+
     const res = itemScrollTop.value
         .sort((a, b) => b.top - a.top)
         .find((item) => scrollTop >= item.top);
-    current.value = res?.id || 0;
+    current.value = res?.id || 1;
 }
 
 const onChange = (temp: MenusType) => {
@@ -509,6 +510,7 @@ export const data = [
 | 参数          | 说明                            | 类型                 | 默认值 |
 |-------------|-------------------------------|--------------------|-----|
 | list        | 菜单数据集                         | `array`            | -   |
+| id          | 绑定的唯一键                        | `string`           | id  |
 | color       | 选中颜色                          | `string`           | -   |
 | width       | 侧边菜单栏宽度                       | `number`\|`string` | 120 |
 | icon        | 图标集合，详见[图标Api](./icon#api)    | `HyIconProps`      | -   |

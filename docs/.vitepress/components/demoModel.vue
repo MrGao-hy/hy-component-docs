@@ -11,8 +11,8 @@
           <div class="status-bar__left--time">{{ nowTime }}</div>
         </div>
         <div class="status-bar__right">
-          <img :width="24" src="/images/hy_logo_light.png"></img>
-          <img :width="18" src="/images/battery_level.png"></img>
+          <img :width="24" :src="isDark ? logoDark : logoLight"></img>
+          <img :width="18" :src="isDark ? batteryDark: batteryLight"></img>
         </div>
       </div>
       <!--  头部  -->
@@ -35,7 +35,12 @@
 </template>
 
 <script setup lang="ts">
-import {computed, ref} from "vue";
+import {computed, ref, watch} from "vue";
+import logoDark from "/images/hy_logo_dark.png";
+import logoLight from "/images/hy_logo_light.png";
+import batteryDark from "/images/battery_dark.png";
+import batteryLight from "/images/battery_light.png";
+import { useData } from 'vitepress'
 
 interface IProps {
   url: string;
@@ -59,6 +64,8 @@ const nowTime = computed(() => {
   return `${formattedHours}:${formattedMinutes}`;
 })
 
+const { isDark } = useData()
+
 </script>
 
 <style scoped lang="scss">
@@ -72,7 +79,7 @@ const nowTime = computed(() => {
 
 .littleHelper{
   font-size: 42px;
-  background-color: #fff;
+  background-color: var(--vp-sidebar-bg-color);
   border-radius: 50%;
   margin: 2px;
   //box-shadow: 0 0 10px 5px #0000000d;
@@ -85,7 +92,7 @@ const nowTime = computed(() => {
 }
 .demo-model {
   font-size: 16px;
-  background-color: #fff;
+  background-color: var(--vp-sidebar-bg-color);
   width: 390px;
   position: fixed;
   z-index: 10;
@@ -105,7 +112,7 @@ const nowTime = computed(() => {
   .status-bar {
     width: 100%;
     height: 27px;
-    background-color: #fff;
+    background-color: var(--vp-sidebar-bg-color);
     position: absolute;
     z-index: 1;
     padding-top: 3px;
@@ -134,7 +141,7 @@ const nowTime = computed(() => {
     width: 50%;
     height: 27px;
     border-radius: 0 0 20px 20px;
-    background-color: #e9e5f3;
+    background-color: var(--vp-sidebar-bg-color);
     position: absolute;
     left: 50%;
     transform: translate(-50%);

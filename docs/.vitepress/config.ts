@@ -278,6 +278,10 @@ export default defineConfig({
       { icon: "csdn", link: "https://blog.csdn.net/weixin_68340504?type=blog" },
       { icon: "qq", link: "https://d.4rxb.com/s/0zydgj" },
     ],
+    footer: {
+      message: '',
+      copyright: '华玥组件库 © 2025-present'
+    }
   },
   head: [["link", { rel: "icon", href: "/images/hy_logo_light.png" }]],
   markdown: {

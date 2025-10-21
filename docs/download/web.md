@@ -5,6 +5,7 @@
 | 名称                                                                                 | 简介                         |
 |------------------------------------------------------------------------------------|----------------------------|
 | [微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html) | 小程序调试、预览与发布                |
+| [支付宝开发者工具](https://opendocs.alipay.com/mini/ide/download)                          | 小程序调试、预览与发布                |
 | [VS Code](https://code.visualstudio.com/Download)                                  | 轻量级跨平台编辑器                  |
 | [WebStorm](https://www.jetbrains.com/webstorm/)                                    | JetBrains 全家桶之专业前端 IDE（付费） |
 | [HBuilderX](https://www.dcloud.io/hbuilderx.html)                                  | uni-app 官方推荐 IDE           |
