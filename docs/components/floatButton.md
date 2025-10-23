@@ -83,7 +83,7 @@ import { HyFloatButton } from "hy-app"
 - 通过设置`direction`设置悬浮按钮打开展示不同方向
   - `column`向上展示
   - `row`横向展示
-::: tips 注意
+::: tip 注意
 横向展示默认向右展开
 如果left值大于一半屏幕，横向展示会向左展开
 :::
