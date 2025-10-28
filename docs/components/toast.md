@@ -19,29 +19,41 @@
 
 ```html
 <!-- 全局使用 -->
-<hy-toast ref="hyToastRef"></hy-toast>
+<hy-toast></hy-toast>
 <!-- 单个组件引入 -->
-<HyToast ref="hyToastRef"></HyToast>
+<HyToast></HyToast>
 ```
 
 ```ts
-import {HyToast} from "hy-app"
+import { useToast } from "hy-app"
 import {onMounted, ref} from "vue";
-
-const hyToastRef = ref();
+const toast = useToast();
 
 onMounted(() => {
-    hyToastRef.value.show({
-      message: "我是默认提示信息",
-      type: "primary",
-      icon: true,
-      duration: 1000,
-      position: "bottom",
-    });
+    toast.success("成功");
 }) 
 ```
 
-## API（params）{#params}
+## 使用几种方法
+:::tip 注意
+在使用`toast.loading()`的时候后必须在执行`toast.close()`手动关闭，否则toast不会自动关闭
+:::
+```ts
+// 默认不显示任何图标，字体白色
+toast.show("默认显示");
+toast.success("成功提示");
+toast.primary("信息提示");
+toast.error("错误提示");
+toast.warning("警告提示");
+toast.info("默认提示");
+
+// 打开弹窗(默认不关闭加载内容，需要手动关闭)
+toast.loading();
+// 关闭所以toast提示
+toast.close();
+```
+
+## API（options）{#options}
 
 | 参数       | 说明                    | 类型                                               | 默认值    |
 |----------|-----------------------|--------------------------------------------------|--------|
@@ -57,9 +69,10 @@ onMounted(() => {
 
 ## Methods
 
-| 事件名  | 说明                                      | 参数                       |
-|------|-----------------------------------------|--------------------------|
-| show | 显示toast，如需一进入页面就显示toast，请在onReady生命周期调用 | params: [见上方说明](#params) |
+| 事件名  | 说明                                      | 参数                         |
+|------|-----------------------------------------|----------------------------|
+| show | 显示toast，如需一进入页面就显示toast，请在onReady生命周期调用 | options: [见上方说明](#options) |
+| hide | 隐藏toast                                 | -                          |
 
 
 

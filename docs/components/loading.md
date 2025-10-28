@@ -16,9 +16,9 @@
 
 ```html
 <!-- 全局使用 -->
-<hy-loading text="月落"></hy-loading>
+<hy-loading></hy-loading>
 <!-- 单个组件引入 -->
-<HyLoading type="primary">按钮</HyLoading>
+<HyLoading type="primary"></HyLoading>
 ```
 ```ts
 import { HyLoading } from "hy-app"
@@ -35,9 +35,9 @@ import { HyLoading } from "hy-app"
 
 ## 模式类型
 - 通过配置`mode`可以指定模式
-  - `spinner`配置花瓣（默认）
-  - `circle`配置圆形
-  - `semicircle`配置半圆
+  - `spinner` 配置花瓣（默认）
+  - `circle` 配置圆形
+  - `semicircle` 配置半圆
 ```html
 <template>
     <hy-loading mode="spinner"></hy-loading>
@@ -47,10 +47,13 @@ import { HyLoading } from "hy-app"
 ```
 
 ## 排列类型
-- 通过配置`vertical`可以指定文字和图标是否垂直排列
+- 通过配置`direction`可以指定文字和图标是否垂直排列
+  - `row` 加载图标和文字横向排列
+  - `column` 加载图标和文字竖立排列
 ```html
 <template>
-    <hy-loading></hy-loading>
+    <hy-loading text="加载中" direction="row"></hy-loading>
+    <hy-loading text="加载中" direction="column"></hy-loading>
 </template>
 ```
 
@@ -95,7 +98,7 @@ import { HyLoading } from "hy-app"
 | show           | 是否显示动画                                                          | `boolean`                                               | true        |
 | color          | 图标颜色                                                            | `string`                                                | #909399     |
 | textColor      | 提示文本颜色                                                          | `string`                                                | #909399     |
-| vertical       | 图标和文字是否垂直排列                                                     | `boolean`                                               | false       |
+| direction      | 图标和文字是否垂直排列                                                     | `column`\|`row`                                         | row         |
 | mode           | 模式选择[^1]                                                        | `spinner`\|`circle`\|`semicircle`                       | spinner     |
 | size           | 加载图标的大小，单位px                                                    | `string` \| `number`                                    | 24          |
 | textSize       | 加载文字的大小，单位px                                                    | `string` \| `number`                                    | 15          |

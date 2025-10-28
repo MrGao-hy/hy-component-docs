@@ -249,10 +249,10 @@ const queryData = () => {
 
 ## Events
 
-| 事件名          | 说明      | 回调参数         |
-|--------------|---------|--------------|
-| click        | 点击行执行函数 | item: 单条数据内容 |
-| scrollButton | 滚动底部触底  | -            |
+| 事件名           | 说明      | 回调参数         |
+|---------------|---------|--------------|
+| click         | 点击行执行函数 | item: 单条数据内容 |
+| scrollToLower | 滚动底部触底  | -            |
 
 ## Slots
 
@@ -264,5 +264,6 @@ const queryData = () => {
 | left-list  | 左边列表插槽（两列）            | record: 列表数据    |
 | right      | 右边单个容器插槽（适用h5/app，两列） | record: 单条数据    |
 | right-list | 右边列表插槽（两列）            | record: 列表数据    |
+| footer     | 底部插槽                  | -               |
 
 <demo-model url="pages/components/list/list"></demo-model>
