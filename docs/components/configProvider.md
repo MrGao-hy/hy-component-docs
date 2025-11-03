@@ -1,5 +1,16 @@
 # ConfigProvider 全局配置
 
+::: tip 温馨提示
+本项目参考了 Wot-UI 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。目前该组件仍处于测试阶段。<br>
+感谢 Wot-UI 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考Wot-UI的 [watermark组件](https://wot-ui.cn/component/config-provider.html) 的代码实现。
+:::
+
+## 平台差异说明
+
+| APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
+|----------|----|-------|--------|
+| ✔        | ✔  | ✔     | ✔      |
+
 ## 深色模式
 > 将 ConfigProvider 组件的 theme 属性设置为 dark，可以开启深色模式。 深色模式会全局生效，使页面上的所有 Wot 组件变为深色风格。
 ::: tip 提示

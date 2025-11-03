@@ -6,6 +6,7 @@
 |------------------------------------------------------------------------------------|----------------------------|
 | [微信开发者工具](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html) | 小程序调试、预览与发布                |
 | [支付宝开发者工具](https://opendocs.alipay.com/mini/ide/download)                          | 小程序调试、预览与发布                |
+| [抖音开发者工具](https://developer.open-douyin.com/docs-page)                           | 小程序调试、预览与发布                |
 | [VS Code](https://code.visualstudio.com/Download)                                  | 轻量级跨平台编辑器                  |
 | [WebStorm](https://www.jetbrains.com/webstorm/)                                    | JetBrains 全家桶之专业前端 IDE（付费） |
 | [HBuilderX](https://www.dcloud.io/hbuilderx.html)                                  | uni-app 官方推荐 IDE           |
@@ -21,6 +22,7 @@
 - [JSON 格式化](https://www.json.cn/)
 - [字数统计](https://tools.manmankan.com/zishutongji/)
 - [图片批量压缩](https://yasuo.xunjiepdf.com/img/)
+- [视频转换gif图片](https://ezgif.com/)
 - [大小写转换](https://app.xunjiepdf.com/yinwen)
 - [时间戳互转](http://shijianchuo.wiicha.com/)
 - [Canvas 在线运行](https://www.runoob.com/try/try.php?filename=tryhtml5_canvas_quadraticcurveto)
