@@ -309,4 +309,6 @@ export default defineConfig({
       }
     }
   },
+    // 构建输出目录
+    outDir: '../dist',
 });
