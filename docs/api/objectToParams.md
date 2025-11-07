@@ -2,7 +2,7 @@
 
 ## 对象转换地址栏参数
 ### objectToUrlParams(params)
-- `params` \<Object> 需要通过地址传的对象参数
+- `params` \<Object\> 需要通过地址传的对象参数
 ```ts
 import { objectToUrlParams } from "hy-app";
 
@@ -12,7 +12,7 @@ console.log(params); // 打印出：name=加密对象&age=10
 
 ## 地址栏参数转换对象 
 urlParamsToObject(paramStr);
-- paramStr <String> 地址栏参数字符串
+- paramStr \<String\> 地址栏参数字符串
 ```ts
 import { objectToUrlParams } from "hy-app";
 
