@@ -9,7 +9,7 @@ import llmstxt from "vitepress-plugin-llms";
 // refer https://vitepress.dev/reference/site-config for details
 export default defineConfig({
   lang: "zh-CN",
-  title: "华玥组件库",
+  title: "组件库",
   description:
     "华玥UI-是作者打造的开发者全成长周期开源平台，围绕效率、成就、变现三大用户价值布局平台能力，全力服务开发者，旨在成为开发者的好朋友。华玥历经多轮打磨雕刻，集海量高品质华玥模板、实时在线预览、多元化场景模板、轻便好学、易上手等多重优势于一身的开发神器，更自带免费开源可商用属性，为企业集团、公司团队、前端后端开发者、运营大佬、社交达人、学生小白提供了一个零成本的在线开发平台和资源库。",
   ignoreDeadLinks: true,
@@ -220,12 +220,11 @@ export default defineConfig({
             { text: "全局唯一标识符", link: "/api/guid" },
             { text: "颜色转换", link: "/api/colorSwitch" },
             { text: "获取元素节点信息", link: "/api/getRect" },
-            { text: "对象参数转换地址栏参数", link: "/api/objectToParams" },
-            { text: "数组互相转换单位", link: "/api/unitSwitch" },
+            { text: "对象互转地址栏参数", link: "/api/objectToParams" },
+            { text: "数据互相转换单位", link: "/api/unitSwitch" },
             { text: "随机数值", link: "/api/random" },
-            { text: "校验判断", link: "/api/estimate" },
-            { text: "小程序分享", link: "/api/share" },
             { text: "校验规则", link: "/api/inspect" },
+            { text: "hooks方法", link: "/api/hooks" }
           ],
         },
       ],
@@ -309,6 +308,6 @@ export default defineConfig({
       }
     }
   },
-    // 构建输出目录
-    outDir: '../dist',
+  // 构建输出目录
+  outDir: '../dist',
 });

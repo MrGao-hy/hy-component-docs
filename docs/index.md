@@ -1,10 +1,13 @@
 ---
 layout: home
 
+title: 华玥组件库
+titleTemplate: 一个基于 Vue 3 和 TypeScript 开发的移动端现代化组件库，融合前沿设计，提供开箱即用的实用组件。
+
 hero:
   name: 华玥组件库
-  text: 这是个聚集多方功能的、丰富的UI组件库。
-  tagline: 酷炫、快捷、方便且高可用，适用于vue3+ts项目
+  text: 多生态、丰富的移动端 UI 组件库。
+  tagline: 开箱即用 · 类型安全 · 高度可定制
   actions:
     - theme: brand
       text: 开始使用

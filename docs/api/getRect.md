@@ -1,7 +1,8 @@
 # getRect 节点布局信息
 > 此方法封装自uni的nodesRef.boundingClientRect (opens new window)，它极大简化了 使用复杂度，内部使用Promise，可以让用户同步获取节点信息。
 
-## getRect(selector, all = false, ins)
+## 获取节点信息
+**getRect(selector, all = false, ins)**
 
 - `selector` \<String\> 此参数为元素节点，可以是id或者class，比如"#user-name"，".box"
 - `all` \<Boolean\> 是否返回全部节点信息，当页面有多个相同selector的元素时，all为true，会以数组形式返回所有节点的信息(结果为数组，数组元素为对象)，否则只返回第一个节点的信息(结果为一个对象)
@@ -12,7 +13,9 @@
 :::
 
 ::: warning 注意
-由于`onLoad`生命周期元素尚未创建完成，请勿在此生命周期使用此方法，如果是页面或组件内应该在`mounted`生命周期调用。 如果要查询的目标，是通过服务端获取数据后才渲染的，那么应该在获取数据后，通过`nextTick`调用此方法。
+- 由于`onLoad`生命周期元素尚未创建完成，请勿在此生命周期使用此方法，如果是页面或组件内应该在`mounted`生命周期调用。 如果要查询的目标，是通过服务端获取数据后才渲染的，那么应该在获取数据后，通过`nextTick`调用此方法。
+- 在微信小程序端必须要引入`getCurrentInstance()`;写法如下`getRect(".dom", false, instance)`
+- 在支付宝小程序里，如果获取多个相同元素的dom，需要把const instance = getCurrentInstance();写在获取dom的同级，否则会类名相同，高宽不同，最终获取到相同的高宽
 :::
 
 ### 异步使用方法
