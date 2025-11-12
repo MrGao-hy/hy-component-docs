@@ -13,95 +13,137 @@
 | ✔        | ✔  | ✔     | ✔      |
 
 ## 基本使用示例
+::: tip 注意
+`index`是必填的，他是索引
+:::
+```html
+<hy-folding-panel v-model="activeIndex">
+    <hy-folding-panel-item title="水果" index="fruits"></hy-folding-panel-item>
+    <hy-folding-panel-item title="饮品" index="beverage"></hy-folding-panel-item>
+</hy-config-provider>
+```
+
+## 禁用面板
+- 通过设置`hy-folding-panel`的`disabled`禁用所以面板
+- 通过设置`hy-folding-panel-item`的`disabled`禁用单个面板
+```html
+<hy-folding-panel v-model="activeIndex" :disabled="true">
+    <hy-folding-panel-item title="水果" index="fruits"></hy-folding-panel-item>
+    <hy-folding-panel-item title="饮品" index="beverage"></hy-folding-panel-item>
+</hy-config-provider>
+```
+
+## 显示边框
+- 通过`border`设置边框
+```html
+<hy-folding-panel v-model="activeIndex" :border="true">
+    <hy-folding-panel-item title="水果" index="fruits"></hy-folding-panel-item>
+    <hy-folding-panel-item title="饮品" index="beverage"></hy-folding-panel-item>
+</hy-config-provider>
+```
+
+## 设置面板大小
+- 通过设置`size`设置面板大小
+  - `small`-小面板
+  - `medium`-中面板（默认）
+  - `large`-大面板
+```html
+<hy-folding-panel v-model="activeIndex" size="small">
+    <hy-folding-panel-item title="水果" index="fruits"></hy-folding-panel-item>
+    <hy-folding-panel-item title="饮品" index="beverage"></hy-folding-panel-item>
+</hy-config-provider>
+```
+
+## 自定义面板头部
 
 ```html
-<!-- 全局使用 -->
-<hy-folding-panel :list="columns" title="水果摊" :border="false">
-    <template #default="{ record }">
-        <view style="padding: 20px">
-            {{ record }}
-        </view>
+<hy-folding-panel v-model="activeIndex" :disabled="true">
+    <hy-folding-panel-item index="fruits">
+        <template #header>
+            <view class="hy-folding-panel-item__title">自定义头部</view>
+        </template>
     </template>
-</hy-folding-panel>
-<!-- 单个组件引入 -->
-<HyFoldingPanel type="primary"></HyFoldingPanel>
-```
-```ts
-import { HyFoldingPanel } from "hy-app";
-
-const columns = [
-    {
-        title: "苹果",
-        desc: "apply",
-        content: "我是内容"
-    },
-    {
-        title: "香蕉",
-        desc: "banana"
-    },
-    {
-        title: "橙汁",
-        desc: "org",
-        error: true
-    }
-];
-```
-
-## 基本使用示例
-
-```html
-<template>
-    <hy-button text="月落"></hy-button>
-</template>
+    </hy-folding-panel-item>
+    <hy-folding-panel-item index="beverage">
+        <template #title>
+            <view class="hy-folding-panel-item__title">自定义标题</view>
+        </template>
+    </hy-folding-panel-item>
+</hy-config-provider>
 ```
 
 ## API
 
-| 参数            | 说明          | 类型                         | 默认值    |
-|---------------|-------------|----------------------------|--------|
-| list          | 列表数据集       | `array`                    | -      |
-| accordion     | 是否手风琴模式     | `boolean`                  | false  |
-| title         | 头部标题        | `string`                   | -      |
-| titleBorder   | 是否显示头部底部边框  | `boolean`                  | false  |
-| border        | 是否显示cell下边框 | `boolean`                  | true   |
-| verticalColor | 标题前缀竖线颜色    | `string`                   | -      |
-| showVertical  | 是否显示标题前缀竖线  | `boolean`                  | true   |
-| disabled      | 是否禁用        | `boolean`                  | false  |
-| size          | 单元的大小       | `small`\|`medium`\|`large` | medium |
-| contentHeight | 内容面板高度      | `string` \| `number`       | 120    |
-| customStyle   | 定义需要用到的外部样式 | `CSSProperties`            | -      |
+### FoldingPanel Props
+
+| 参数         | 说明                  | 类型                         | 默认值    |
+|------------|---------------------|----------------------------|--------|
+| modelValue | 当前激活的面板索引，支持v-model | `number`\|`string`         | -1     |
+| accordion  | 是否手风琴模式             | `boolean`                  | false  |
+| disabled   | 是否禁用整个折叠面板组         | `boolean`                  | false  |
+| border     | 是否显示边框              | `boolean`                  | true   |
+| size       | 面板头部大小              | `large`\|`medium`\|`small` | medium |
 
 
-## list
-
-| 参数             | 说明         | 类型                   | 默认值  |
-|----------------|------------|----------------------|------|
-| spread         | 是否展示       | `boolean`            | -    |
-| icon           | 单元格左图标     | `string`             | -    |
-| title          | 单元格标题      | `string`             | -    |
-| sub            | 单元格副标题     | `string`             | -    |
-| disabled       | 是否禁用单元格    | `boolean`            | -    |
-| rightIcon      | 单元格右图标     | `string`             | -    |
-| value          | 单元格值       | `string`             | -    |
-| url            | 跳转页面地址     | `string`             | -    |
-| arrowDirection | 单元格右侧箭头的方向 | `left`\|`up`\|`down` | left |
-| content        | 展示面板里值     | `string`             | -    |
+### FoldingPanelItem Props
+| 参数            | 说明             | 类型                 | 默认值   |
+|---------------|----------------|--------------------|-------|
+| index         | 面板索引（由父组件自动设置） | `number`\|`string` | -1    |
+| title         | 面板标题           | `string`           | -     |
+| value         | 右侧显示的值         | `string`           | -     |
+| icon          | 左侧图标           | `string`           | -     |
+| iconColor     | 左侧图标颜色         | `string`           | -     |
+| iconSize      | 左侧图标大小         | `string`\|`numner` | -     |
+| content       | 面板内容           | `string`           | -     |
+| contentHeight | 内容区域最大高度       | `string`\|`numner` | 150   |
+| disabled      | 是否禁用当个面板       | `boolean`          | false |
+| defaultOpen   | 默认是否展开         | `boolean`          | false |
+| customStyle   | 自定义需要用到的外部样式   | `CSSProperties`    | -     |
 
 ## Events
 
-| 事件名    | 说明       | 回调参数                    |
-|--------|----------|-------------------------|
-| change | 改成面板开关状态 | temp：list单条数据, index：索引 |
-| open   | 打开面板     | temp：list单条数据, index：索引 |
-| close  | 关闭面板     | temp：list单条数据, index：索引 |
+### FoldingPanel Emits
+
+| 事件名         | 说明         | 回调参数                      |
+|-------------|------------|---------------------------|
+| change      | 面板状态改变时触发  | expanded：内部展开状态, index：索引 |
+| open        | 面板打开时触发    | index：索引                  |
+| close       | 面板关闭时触发    | index：索引                  |
+
+### FoldingPanelItem Emits
+
+| 事件名         | 说明         | 回调参数                      |
+|-------------|------------|---------------------------|
+| click       | 改成面板开关状态   | index：索引                  |
+| change      | 面板状态改变时触发  | expanded：内部展开状态, index：索引 |
+| open        | 面板打开时触发    | index：索引                  |
+| close       | 面板关闭时触发    | index：索引                  |
+| child-click | 子项点击时通知父组件 | index：索引                  |
+
+## Methods
+
+### FoldingPanel Expose
+| 事件名      | 说明          | 参数                    |
+|----------|-------------|-----------------------|
+| open     | 打开指定索引的面板   | index: number\|string |
+| close    | 关闭指定索引的面板   | index: number\|string |
+| toggle   | 切换指定索引面板的状态 | index: number\|string |
+| closeAll | 关闭所有面板      | -                     |
+
+### FoldingPanelItem Expose
+| 事件名         | 说明       | 参数 |
+|-------------|----------|----|
+| open        | 打开面板     | -  |
+| close       | 关闭面板     | -  |
+| toggle      | 切换面板状态   | -  |
+| getExpanded | 获取当前展开状态 | -  |
 
 ## Slots
 
-| 插槽名     | 说明         | 接收值    |
-|---------|------------|--------|
-| default | 主体部分的内容    | record |
-| icon    | 单元格图标      | icon   |
-| title   | 单元格标题内容    | title  |
-| value   | 单元格右侧value | record |
+| 插槽名     | 说明         | 接收值 |
+|---------|------------|-----|
+| default | 主体部分的内容    | -   |
+| header  | 面板头部       | -   |
+| title   | 面板头部左边内容   | -   |
 
 <demo-model url="pages/components/foldingPanel/foldingPanel"></demo-model>

@@ -187,14 +187,13 @@ onMounted(() => {
 | clear   | 清空签名时触发 | -                       |
 
 ## Methods
-
-| 事件名     | 说明     |
-|---------|--------|
-| init    | 初始化签名板 |
-| confirm | 确认签名   |
-| clear   | 清空签名   |
-| restore | 恢复上一步  |
-| revoke  | 撤销上一步  |
+| 事件名     | 说明     | 参数                    |
+|---------|--------|-----------------------|
+| init    | 初始化签名板 | forceUpdate?: boolean |
+| confirm | 确认签名   | -                     |
+| clear   | 清空签名   | -                     |
+| restore | 恢复上一步  | -                     |
+| revoke  | 撤销上一步  | -                     |
 
 ## Slots
 

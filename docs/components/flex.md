@@ -50,17 +50,17 @@
 
 ## API
 
-| 参数          | 说明                                       | 类型                                                                                  | 默认值  |
-|-------------|------------------------------------------|-------------------------------------------------------------------------------------|------|
-| vertical    | flex 主轴的方向是否垂直，使用 flex-direction: column | `boolean`                                                                           | flex |
-| wrap        | 设置元素单行显示还是多行显示                           | `boolean`                                                                           | -    |
-| justify     | 设置元素在主轴方向上的对齐方式                          | `flex-start`\|`center`\|`flex-end`\|`space-between`\|`space-around`\|`space-evenly` | -    |
-| align       | 设置元素在交叉轴方向上的对齐方式                         | `flex-start`\|`center`\|`flex-end`\|`stretch`\|`baseline`                           | -    |
-| flex        | flex CSS 简写属性                            | `initial\|none\|0`                                                                  | -    |
-| gap         | 设置网格之间的间隙                                | `string \| number \| (number\|string)[]`                                            | 0    |
-| show        | 是否显示空状态                                  | `boolean`                                                                           | -    |
-| customStyle | 自定义需要用到的外部样式                             | `CSSProperties`                                                                     | -    |
-| customClass | 自定义外部类名                                  | `string`                                                                            | -    |
+| 参数          | 说明                                       | 类型                                                                                  | 默认值        |
+|-------------|------------------------------------------|-------------------------------------------------------------------------------------|------------|
+| vertical    | flex 主轴的方向是否垂直，使用 flex-direction: column | `boolean`                                                                           | false      |
+| wrap        | 设置元素单行显示还是多行显示                           | `boolean`                                                                           | nowrap     |
+| justify     | 设置元素在主轴方向上的对齐方式                          | `flex-start`\|`center`\|`flex-end`\|`space-between`\|`space-around`\|`space-evenly` | flex-start |
+| align       | 设置元素在交叉轴方向上的对齐方式                         | `flex-start`\|`center`\|`flex-end`\|`stretch`\|`baseline`                           | flex-start |
+| flex        | flex CSS 简写属性                            | `string`                                                                            | initial    |
+| gap         | 设置网格之间的间隙                                | `string \| number \| (number\|string)[]`                                            | 0          |
+| basis       | 控制子元素主轴方向初始尺寸                            | `string`                                                                            | auto       |
+| customStyle | 自定义需要用到的外部样式                             | `CSSProperties`                                                                     | -          |
+| customClass | 自定义外部类名                                  | `string`                                                                            | -          |
 
 
 <demo-model url="pages/components/flex/flex"></demo-model>

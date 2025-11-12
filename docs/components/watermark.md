@@ -103,6 +103,7 @@ import { HyWatermark } from "hy-app"
 
 | 参数          | 说明                    | 类型                            | 默认值         |
 |-------------|-----------------------|-------------------------------|-------------|
+| title       | 标题                    | `string`                      | -           |
 | content     | 显示内容                  | `string`                      | -           |
 | image       | 显示图片的地址，支持网络图片和base64 | `string`                      | -           |
 | imageHeight | 图片高度                  | `number`                      | 50          |
@@ -112,6 +113,8 @@ import { HyWatermark } from "hy-app"
 | width       | canvas画布宽度，单位px       | `number`                      | 100         |
 | height      | canvas画布高度，单位px       | `number`                      | 100         |
 | fullScreen  | 是否为全屏水印               | `boolean`                     | true        |
+| titleSize   | 是否为全屏水印               | `boolean`                     | true        |
+| titleColor  | 是否为全屏水印               | `boolean`                     | true        |
 | color       | 水印字体颜色                | `string`                      | #8c8c8c     |
 | size        | 水印字体大小，单位px           | `number`                      | 14          |
 | fontStyle   | 水印字体样式（仅微信、支付宝和h5支持）  | `normal`\|`italic`\|`oblique` | normal      |
