@@ -118,10 +118,10 @@ const menus = reactive([
 
 ## Events
 
-| 事件名       | 说明     | 回调参数        |
-|-----------|--------|-------------|
-| click     | 点击按钮   | index: 点击索引 |
-| menuClick | 点击左边图标 | index: 点击索引 |
+| 事件名       | 说明     | 回调参数                                    |
+|-----------|--------|-----------------------------------------|
+| click     | 点击按钮   | index: number                           |
+| menuClick | 点击左边图标 | temp: SubmitBarIconMenus, index: number |
 
 ## Slots
 

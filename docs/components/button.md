@@ -113,7 +113,7 @@ import { HyButton } from "hy-app"
 | icon                 | 按钮图标集合，详见[图标Api](./icon#api)                                                                | `HyIconProps`                                     | -       |
 | color                | 按钮颜色，支持传入linear-gradient渐变色                                                                 | `string`                                          | -       |
 | stop                 | 阻止事件冒泡                                                                                      | `boolean`                                         | false   |
-| customStyle          | 定义需要用到的外部样式                                                                                 | `CSSProperties`                                   | -       |
+| border               | 是否显示按钮边框                                                                                    | `boolean`                                         | true    |
 | hairline             | 是否显示按钮的细边框                                                                                  | `boolean`                                         | true    |
 | type                 | 按钮的样式类型                                                                                     | `error`\|`warning`\| `success`\|`primary`\|`info` | info    |
 | size                 | 按钮的大小                                                                                       | `small`\|`medium`\|`large`\|`mini`                | medium  |

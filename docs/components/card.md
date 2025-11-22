@@ -99,9 +99,9 @@ import { HyCard } from "hy-app"
 | full               | 卡片与屏幕两侧是否留空隙                           | `boolean`             | false     |
 | title              | 头部左边的标题                                | `string`              | -         |
 | title-color        | 标题颜色                                   | `string`              | -         |
-| title-size         | 标题字体大小，单位px                            | `string` \| `number`  | 18        |
+| title-size         | 标题字体大小，单位px                            | `string` \| `number`  | -         |
 | sub-title          | 副标题                                    | `string`              | -         |
-| sub-title-size     | 副标题字体大小                                | `string` \| `number`  | 13        |
+| sub-title-size     | 副标题字体大小                                | `string` \| `number`  | -         |
 | sub-title-color    | 副标题字体颜色                                | `string`              | -         |
 | border             | 是否显示边框                                 | `boolean`             | false     |
 | index              | 用于标识点击了第几个卡片                           | `string` \| `number`  | -         |

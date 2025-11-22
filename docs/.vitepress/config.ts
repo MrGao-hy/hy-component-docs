@@ -109,7 +109,7 @@ export default defineConfig({
             { text: "Form 表单", link: "/components/form" },
             { text: "FormGroup 表单组", link: "/components/formGroup" },
             { text: "Input 输入框", link: "/components/input" },
-            { text: "NumberBox 步进器", link: "/components/numberBox" },
+            { text: "NumberStep 步进器", link: "/components/numberStep" },
             { text: "Picker 选择器", link: "/components/picker" },
             { text: "Radio 单选框", link: "/components/radio" },
             { text: "Rate 评分", link: "/components/rate" },
@@ -188,7 +188,7 @@ export default defineConfig({
         {
           text: "业务组件",
           items: [
-            { text: "Login 登录", link: "/components/login" },
+            { text: "Coupon 优惠券", link: "/components/coupon" },
             { text: "Price 金额", link: "/components/price" },
             { text: "SubmitBar 提交订单", link: "/components/submitBar" },
           ],

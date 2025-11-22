@@ -179,19 +179,19 @@ const handleSubmit = () => {
 ::: code-group
 ```vue
 <template>
-    <HyForm
+    <hy-form
             ref="formRef"
             :columns="columns"
             :form-data="formData"
             labelWidth="90"
     >
         <template #custom="{ record, errorStyle }">
-            <HyInput
+            <hy-input
                 v-model="formData[record.field]"
                 :custom-style="errorStyle"
-            ></HyInput>
+            ></hy-input>
         </template>
-    </HyForm>
+    </hy-form>
 </template>
 ```
 
@@ -217,42 +217,44 @@ const columns: FormColumnsType[] = reactive([
 
 ## API
 
-| 参数            | 说明            | 类型                           | 默认值      |
-|---------------|---------------|------------------------------|----------|
-| labelPosition | 表单域提示文字的位置    | `left` \| `top`              | left     |
-| labelWidth    | label 宽度      | `string` \| `number`         | auto     |
-| right         | 输入值是否右对齐      | `boolean`                    | false    |
-| labelAlign    | label 字体的对齐方式 | `string`                     | left     |
-| symbol        | 显示label后冒号符号  | `boolean`                    | false    |
-| borderBottom  | 显示表单单行底部下划线   | `boolean`                    | false    |
-| disabled      | 是否全部禁用[^1]    | `boolean`                    | left     |
-| shape         | 输入框形状         | `circle` \| `square`         | square   |
-| border        | 输入框边框         | `surround`\|`bottom`\|`none` | surround |
-| columns       | 表单字段配置        | `array`                      | -        |
-| formData      | 表单值           | `object`                     | -        |
+| 参数            | 说明                               | 类型                        | 默认值   |
+|---------------|----------------------------------|---------------------------|-------|
+| columns       | 表单字段配置                           | `array`                   | -     |
+| formData      | 表单值                              | `object`                  | -     |
+| labelPosition | 表单label的位置                       | `left`\|`top`             | left  |
+| labelWidth    | label 宽度                         | `string`\|`number`        | auto  |
+| right         | 输入值是否右对齐                         | `boolean`                 | false |
+| labelAlign    | label 字体的对齐方式                    | `left`\|`center`\|`right` | left  |
+| border        | 显示表单单行底部下划线                      | `boolean`                 | false |
+| disabled      | 禁用表单[^1]                         | `boolean`                 | false |
+| input         | [输入框属性api](./input#api)集合        | `HyInputProps`            | -     |
+| textarea      | [文本域属性api](./textarea#api)集合     | `HyTextareaProps`         | -     |
+| picker        | [选择器属性api](./picker#api)集合       | `HyPickerProps`           | -     |
+| switchItem    | [开关属性api](./switch#api)集合        | `HySwitchProps`           | -     |
+| radio         | [单选属性api](./radio#api)集合         | `HyRadioProps`            | -     |
+| checkButton   | [选择按钮属性api](./checkButton#api)集合 | `HyCheckButtonProps`      | -     |
 
 ### columns
 
-| 参数          | 说明                            | 类型                                          | 默认值 |
-|-------------|-------------------------------|---------------------------------------------|-----|
-| label       | 文字描述                          | `string`                                    | -   |
-| field       | 字段名                           | `string`                                    | -   |
-| required    | 是否需要校验，只显示红星，需要和 formRules 搭配 | `boolean`                                   | -   |
-| right       | 内容右固定                         | `boolean`                                   | -   |
-| type        | 表单类型(见下面枚举出来字段)。              | `enum`                                      | -   |
-| maxCount    | 文件上传最大数（type 为 upload 时候）     | `number`                                    | -   |
-| disabled    | 是否禁用                          | `boolean`                                   | -   |
-| placeholder | 输入框为空时的占位符                    | `string`                                    | -   |
-| clearable   | 显示清除输入框 icon                  | `boolean`                                   | -   |
-| readonly    | 是否只读                          | `boolean`                                   | -   |
-| select      | 选择器配置数据集合[^2]                 | `string[][]`\|`{text:string;id:string}[][]` | -   |
-| actions     | 单选框配置数据集合[^3]                 | `string`                                    | -   |
-| shape       | 输入框形状                         | `circle`\|`square`                          | -   |
-| border      | 边框类型                          | `surround`\|`bottom`\|`none`                | -   |
-| mode        | 日期展示的格式（type 等于 date 选填）      | `enum`                                      | -   |
-| rules       | 校验规则                          | `object`\|`array`                           | -   |
+| 参数          | 说明                                   | 类型                                          | 默认值 |
+|-------------|--------------------------------------|---------------------------------------------|-----|
+| label       | 文字描述                                 | `string`                                    | -   |
+| field       | 字段名                                  | `string`                                    | -   |
+| right       | 内容右固定                                | `boolean`                                   | -   |
+| type        | [表单类型](./formGroup#type)(见下面枚举出来字段)。 | `enum`                                      | -   |
+| maxCount    | 文件上传最大数（type 为 upload 时候）            | `number`                                    | -   |
+| select      | 选择器配置数据集合[^2]                        | `string[][]`\|`{text:string;id:string}[][]` | -   |
+| actions     | 单选框配置数据集合[^3]                        | `string`                                    | -   |
+| mode        | 日期展示的格式（type 等于 date 选填）             | `enum`                                      | -   |
+| rules       | 校验规则                                 | `object`\|`array`                           | -   |
+| input       | [输入框属性api](./input#api)集合            | `HyInputProps`                              | -   |
+| textarea    | [文本域属性api](./textarea#api)集合         | `HyTextareaProps`                           | -   |
+| picker      | [选择器属性api](./picker#api)集合           | `HyPickerProps`                             | -   |
+| switchItem  | [开关属性api](./switch#api)集合            | `HySwitchProps`                             | -   |
+| radio       | [单选属性api](./radio#api)集合             | `HyRadioProps`                              | -   |
+| checkButton | [选择按钮属性api](./checkButton#api)集合     | `HyCheckButtonProps`                        | -   |
 
-## actions
+### actions
 
 | 参数       | 说明     | 类型                 | 默认值 |
 |----------|--------|--------------------|-----|
@@ -262,7 +264,7 @@ const columns: FormColumnsType[] = reactive([
 | disabled | 是否禁用   | `boolean`          | -   |
 
 
-## rules
+### rules
 
 | 参数        | 说明                | 类型                           | 默认值 |
 |-----------|-------------------|------------------------------|-----|
@@ -298,6 +300,16 @@ const columns: FormColumnsType[] = reactive([
 - `MONTH_DAY` MM-dd
 - `HOUR_MINUTE` HH:mm
 - `MINUTE_SECOND` mm:SS
+
+
+## Methods
+
+| 方法名           | 说明   | 参数                    |
+|---------------|------|-----------------------|
+| validate      | 验证表单 | -                     |
+| resetFields   | 重置表单 | -                     |
+| clearValidate | 清除验证 | `(fields?: string[])` |
+| submit        | 提交表单 | -                     |
 
 [^1]: 这个禁用优先级高于columns里面的disabled
 [^2]: type = select 时候必填(参考 [HyPicker](./picker.md) 组件)

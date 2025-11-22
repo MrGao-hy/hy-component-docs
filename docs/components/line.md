@@ -70,15 +70,15 @@ import { HyLine } from "hy-app"
 
 ## API
 
-| 参数          | 说明                                               | 类型                   | 默认值   |
-|-------------|--------------------------------------------------|----------------------|-------|
-| color       | 线条的颜色                                            | `string`             | -     |
-| length      | 长度，竖向时表现为高度，横向时表现为长度，可以为百分比，带rpx单位的值等            | `string` \| `number` | 100%  |
-| direction   | 线条的方向，row-横向，col-竖向                              | `row` \| 'column'    | row   |
-| hairline    | 是否显示空状态                                          | `boolean`            | true  |
-| margin      | 线条与上下左右元素的间距，字符串形式，如"30rpx"、"20rpx 30rpx"，默认单位px | `string`             | 0     |
-| dashed      | 是否虚线，false-实线，true-虚线                            | `boolean`            | false |
-| customStyle | 自定义需要用到的外部样式                                     | `CSSProperties`      | -     |
-| customClass | 自定义外部类名                                          | `string`             | -     |
+| 参数          | 说明                                               | 类型                 | 默认值   |
+|-------------|--------------------------------------------------|--------------------|-------|
+| color       | 线条的颜色                                            | `string`           | -     |
+| length      | 长度，竖向时表现为高度，横向时表现为长度，可以为百分比，带rpx单位的值等            | `string`\|`number` | 100%  |
+| direction   | 线条的方向，row-横向，column-竖向                           | `row`\|`column`    | row   |
+| hairline    | 是否显示细线条                                          | `boolean`          | true  |
+| margin      | 线条与上下左右元素的间距，字符串形式，如"30rpx"、"20rpx 30rpx"，默认单位px | `string`           | 0     |
+| dashed      | 是否虚线，false-实线，true-虚线                            | `boolean`          | false |
+| customStyle | 自定义需要用到的外部样式                                     | `CSSProperties`    | -     |
+| customClass | 自定义外部类名                                          | `string`           | -     |
 
 <demo-model url="pages/components/line/line"></demo-model>

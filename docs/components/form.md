@@ -329,8 +329,9 @@ const handleReset = () => {
 ```
 :::
 
+## API
 
-## hy-form Props
+### hy-form Props
 
 | 参数            | 说明     | 类型                            | 默认值      |
 |---------------|--------|-------------------------------|----------|
@@ -340,6 +341,15 @@ const handleReset = () => {
 | labelWidth    | 标签宽度   | `string` \| `number`          | `'auto'` |
 | labelPosition | 标签位置   | `left` \| `top`               | `'left'` |
 | labelAlign    | 标签对齐方式 | `left` \| `center` \| `right` | `'left'` |
+
+### hy-form-item Props
+
+| 参数       | 说明    | 类型        | 默认值     |
+|----------|-------|-----------|---------|
+| label    | 标签文本  | `string`  | -       |
+| prop     | 表单字段名 | `string`  | -       |
+| required | 是否必填  | `boolean` | `false` |
+| rules    | 验证规则  | `any`     | `{}`    |
 
 ### FormItemRule
 > rules类型`{[key: string]: FormItemRule | FormItemRule[]}`
@@ -354,14 +364,25 @@ const handleReset = () => {
 | trigger   | 触发验证的时机    | `(blur \| change)[]`             | -   |
 | validator | 自定义验证函数    | `Function`                       | -   |
 
-## hy-form Events
+## Events
+
+### hy-form Events
 
 | 事件名      | 说明      | 回调参数                                               |
 |----------|---------|----------------------------------------------------|
 | submit   | 表单提交时触发 | `(data: Record<string, any>)`                      |
 | validate | 表单验证时触发 | `(valid: boolean, errors: Record<string, string>)` |
 
-## hy-form Methods
+### hy-form-item Events
+
+| 事件名    | 说明     | 回调参数           |
+|--------|--------|----------------|
+| change | 值变化时触发 | `(value: any)` |
+| blur   | 失焦时触发  | `(value: any)` |
+
+## Methods
+
+### hy-form Methods
 
 | 方法名           | 说明   | 参数                    |
 |---------------|------|-----------------------|
@@ -370,23 +391,7 @@ const handleReset = () => {
 | clearValidate | 清除验证 | `(fields?: string[])` |
 | submit        | 提交表单 | -                     |
 
-## hy-form-item Props
-
-| 参数       | 说明    | 类型        | 默认值     |
-|----------|-------|-----------|---------|
-| label    | 标签文本  | `string`  | -       |
-| prop     | 表单字段名 | `string`  | -       |
-| required | 是否必填  | `boolean` | `false` |
-| rules    | 验证规则  | `any`     | `{}`    |
-
-## hy-form-item Events
-
-| 事件名    | 说明     | 回调参数           |
-|--------|--------|----------------|
-| change | 值变化时触发 | `(value: any)` |
-| blur   | 失焦时触发  | `(value: any)` |
-
-## hy-form-item Methods
+### hy-form-item Methods
 
 | 方法名           | 说明   | 参数                               |
 |---------------|------|----------------------------------|

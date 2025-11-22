@@ -107,6 +107,7 @@ import { HyLoading } from "hy-app"
 | duration       | 动画执行周期时间，单位ms                                                   | `number`                                                | 1200        |
 | inactiveColor  | 图标的暗边颜色, mode为circle 模式有效                                       | `string`                                                | -           |
 | customStyle    | 定义需要用到的外部样式                                                     | `string`                                                | -           |
+| customClass    | 自定义外部类名                                                         | `string`                                                | -           |
 
 
 [^1]: `spinner`：花瓣形状；`circle`：圆形； `small`：小尺寸；`semicircle`：半圆
