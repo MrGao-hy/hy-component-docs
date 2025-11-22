@@ -1,123 +1,204 @@
 # Coupon 优惠券组件
-> 该组件一般用于优惠券领取使用场景
 
-::: tip 温馨提示
-优惠券用于大部分场景中，可以随意自定义
-:::
+> Coupon 组件用于展示和管理优惠券信息，支持多种类型的优惠券展示，包括满减券、折扣券和无门槛券等，提供灵活的自定义选项以满足不同业务场景需求。
 
 ## 平台差异说明
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
-|----------|----|-------|--------|
-| ✔        | ✔  | ✔     | ✔      |
+|----------|----|------------|--------------|
+| ✔        | ✔  | ✔          | ✔            |
 
-## 基本使用示例
-```html
-<hy-coupon
-        title="新品优惠券"
-        amount="10"
-        description="这是用于新品测试用的"
-        date-desc="长期有效"
-        type="moneyOff"
-        status="unused"
-        :btnMode="btnMode"
-        :disabled-status="['used', 'expired', 'redeemed']"
-        @used="onUse"
-/>
+## 组件特性
+
+- **多类型支持**：支持满减券、折扣券和无门槛券等多种优惠券类型展示
+- **灵活自定义**：提供丰富的自定义选项，包括背景色、按钮样式、状态管理等
+- **状态管理**：内置支持多种优惠券状态，如未使用、已使用、已过期、已兑换等
+- **视觉效果**：支持自定义样式、阴影和特殊的凹孔效果设计
+- **事件回调**：提供完善的事件回调机制，方便处理优惠券的点击和使用操作
+
+## 使用场景
+
+- **会员中心**：展示用户已获得和可领取的优惠券列表
+- **商品详情页**：展示当前商品可用的优惠券
+- **订单结算页**：选择和应用优惠券的界面
+- **营销活动页**：新用户注册或特定活动的优惠券领取场景
+
+## 基本使用
+
+:::code-group
+```vue [模板]
+<template>
+  <hy-coupon
+    title="新品优惠券"
+    amount="10"
+    description="这是用于新品测试用的"
+    date-desc="长期有效"
+    type="moneyOff"
+    status="unused"
+    :btnMode="btnMode"
+    :disabled-status="['used', 'expired', 'redeemed']"
+    @used="onUse"
+  />
+</template>
 ```
+```ts [脚本]
+import { ref } from 'vue';
 
-## 设置背景色
-- 通过设置`bg-color`来设置不同背景色
-::: tip 注意
-如果像设置和我一样中间凹进去的部分，你需要背景色这样写
+const btnMode = ref('button');
 
-**其中15rpx设置孔的大小，如果中间有条缝需要把60px设置更大些**
-```css
-{
-    background:
-            radial-gradient(circle at 180rpx top, transparent 15rpx, #00c6ff 0) top / 100% 60px
-            no-repeat,
-            radial-gradient(circle at 180rpx bottom, transparent 15rpx, #00c6ff 0) bottom / 100%
-            51px no-repeat;
-}
+const onUse = () => {
+  // 使用优惠券的逻辑
+};
 ```
 :::
-```html
-<hy-coupon
-        title="新品优惠券"
-        amount="10"
-        description="这是用于新品测试用的"
-        date-desc="长期有效"
-        type="moneyOff"
-        status="unused"
-        :btnMode="btnMode"
-        :disabled-status="['used', 'expired', 'redeemed']"
-        bg-color="linear-gradient(135deg, #7b61ff 0%, #4134c1 100%)"
-        @used="onUse"
-/>
-```
 
-## 优惠券三种类型
+## 自定义背景色
+
+通过设置`bg-color`属性可以自定义优惠券的背景色，支持纯色、渐变色或复杂的CSS背景样式。
+
+### 使用渐变背景
 
 ```vue
 <template>
-  <template v-for="item in list" :key="item.id">
-    <hy-coupon
-        :title="item.name"
-        :amount="item.value"
-        :description="item.description"
-        :startDate="item.validFrom"
-        :endDate="item.validTo"
-        :type="item.type"
-        :status="item.status"
-        :btnMode="btnMode"
-        :disabled-status="['used', 'expired', 'redeemed']"
-        :boxShadow="boxShadow"
-        :custom-style="{ marginBottom: '20px' }"
-        @used="onUse"
-    />
-  </template>
+  <hy-coupon
+    title="新品优惠券"
+    amount="10"
+    description="这是用于新品测试用的"
+    date-desc="长期有效"
+    type="moneyOff"
+    status="unused"
+    :disabled-status="['used', 'expired', 'redeemed']"
+    bg-color="linear-gradient(135deg, #7b61ff 0%, #4134c1 100%)"
+    @used="onUse"
+  />
 </template>
-
-<script setup lang="ts">
-  import { ref } from 'vue'
-  const list = ref([
-    {
-      id: '1',
-      name: '新人专享满减券',
-      type: 'moneyOff',
-      status: 'unused',
-      description: '满100元减20元，全场通用',
-      minSpend: 100,
-      value: 20,
-      validFrom: '2024-01-01T00:00:00',
-      validTo: '2024-12-31T23:59:59'
-    },
-    {
-      id: '2',
-      name: '生鲜8折优惠券',
-      type: 'discount',
-      status: 'unused',
-      description: '仅限生鲜品类使用，最高优惠50元',
-      minSpend: 50,
-      value: 8, // 80 代表 8折
-      maxDiscount: 50,
-      validFrom: '2024-01-01T00:00:00',
-      validTo: '2024-12-31T23:59:59',
-      applicableCategories: ['fresh']
-    },
-    {
-      id: '3',
-      name: '无门槛10元券',
-      type: 'fixedAmount',
-      status: 'unused',
-      description: '无最低消费限制，全场通用',
-      value: 100,
-      validFrom: '2023-01-01T00:00:00',
-      validTo: '2023-12-31T23:59:59'
-    }
-  ])
-</script>
 ```
+
+### 使用自定义样式创建中间凹孔效果
+
+如果需要创建中间凹孔效果，可以使用复杂的CSS背景样式：
+
+:::code-group
+```vue [模板]
+<template>
+  <hy-coupon
+    title="新品优惠券"
+    amount="10"
+    description="这是用于新品测试用的"
+    date-desc="长期有效"
+    type="moneyOff"
+    status="unused"
+    :disabled-status="['used', 'expired', 'redeemed']"
+    :bgColor="bgColor"
+    @used="onUse"
+  />
+</template>
+```
+```ts [脚本]
+import { ref } from 'vue';
+
+const bgColor = {
+  background: `
+    radial-gradient(circle at 180rpx top, transparent 15rpx, #00c6ff 0) top / 100% 60px no-repeat,
+    radial-gradient(circle at 180rpx bottom, transparent 15rpx, #00c6ff 0) bottom / 100% 51px no-repeat
+  `
+};
+
+const onUse = () => {
+  // 使用优惠券的逻辑
+};
+```
+:::
+
+:::tip 提示
+- 15rpx 控制凹孔的大小
+- 60px 和 51px 控制上下两部分的高度，可根据需要调整以避免出现缝隙
+:::
+
+## 优惠券类型
+
+Coupon 组件支持三种主要类型的优惠券展示，下面展示了如何同时展示不同类型的优惠券：
+
+### 支持的优惠券类型
+
+| 类型 | 说明 | 示例 |
+|------|------|------|
+| moneyOff | 满减券 | 满100元减20元 |
+| discount | 折扣券 | 全场8折 |
+| fixedAmount | 无门槛券 | 无门槛立减10元 |
+
+### 多类型优惠券展示示例
+
+:::code-group
+```vue [模板]
+<template>
+  <div class="coupon-list">
+    <hy-coupon
+      v-for="item in list"
+      :key="item.id"
+      :title="item.name"
+      :amount="item.value"
+      :description="item.description"
+      :startDate="item.validFrom"
+      :endDate="item.validTo"
+      :type="item.type"
+      :status="item.status"
+      :btnMode="btnMode"
+      :disabled-status="['used', 'expired', 'redeemed']"
+      :boxShadow="boxShadow"
+      :custom-style="{ marginBottom: '20px' }"
+      @used="onUse"
+    />
+  </div>
+</template>
+```
+```ts [脚本]
+import { ref } from 'vue';
+import type { ICoupon } from '@hy/components';
+
+const btnMode = ref('button');
+const boxShadow = ref(true);
+
+const list = ref<ICoupon[]>([
+  {
+    id: '1',
+    name: '新人专享满减券',
+    type: 'moneyOff',
+    status: 'unused',
+    description: '满100元减20元，全场通用',
+    minSpend: 100,
+    value: 20,
+    validFrom: '2024-01-01T00:00:00',
+    validTo: '2024-12-31T23:59:59'
+  },
+  {
+    id: '2',
+    name: '生鲜8折优惠券',
+    type: 'discount',
+    status: 'unused',
+    description: '仅限生鲜品类使用，最高优惠50元',
+    minSpend: 50,
+    value: 8, // 代表8折
+    maxDiscount: 50,
+    validFrom: '2024-01-01T00:00:00',
+    validTo: '2024-12-31T23:59:59'
+  },
+  {
+    id: '3',
+    name: '无门槛10元券',
+    type: 'fixedAmount',
+    status: 'unused',
+    description: '无最低消费限制，全场通用',
+    value: 10,
+    validFrom: '2023-01-01T00:00:00',
+    validTo: '2023-12-31T23:59:59'
+  }
+]);
+
+const onUse = (item: ICoupon) => {
+  console.log('使用优惠券:', item);
+};
+```
+:::
 
 
 ## API

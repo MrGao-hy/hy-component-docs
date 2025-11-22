@@ -1,10 +1,17 @@
 # ActionSheet 操作菜单组件
-> 本组件用于从底部弹出一个操作菜单，供用户选择并返回结果。
+> ActionSheet 组件用于从屏幕底部弹出操作菜单，提供清晰的选项列表供用户选择并返回结果。
 
 ::: tip 温馨提示
 本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。目前该组件仍处于测试阶段。<br>
 感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [actionSheet组件](https://uiadmin.net/uview-plus/components/actionSheet.html) 的代码实现。
 :::
+
+## 适用场景
+
+- 底部弹出式菜单选择（如分享、删除、操作选项等）
+- 需要从多个选项中选择一个执行特定操作的场景
+- 自定义操作面板（如分享到不同平台）
+- 表单操作的快捷选项（如选择支付方式、配送方式等）
 
 ## 平台差异说明
 
@@ -76,7 +83,7 @@ const actions = ref<IActionSheetAction[]>([
 ## 自定义面板
 - 通过`panels`自定义分享页面
 :::tip 提示
-panels支持一位数组和二维数组
+panels支持一维数组和二维数组
 :::
 :::code-group
 ```vue [vue]

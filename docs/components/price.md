@@ -1,9 +1,5 @@
 # Price 金额组件
-> 业务组件,突出金额小数点前大，小数点后小
-
-::: tip
-
-:::
+> 用于展示价格金额的业务组件，支持差异化展示小数点前后的数字大小，提升金额的视觉效果和可读性。
 
 ## 平台差异说明
 
@@ -11,78 +7,128 @@
 |----------|----|-------|--------|
 | ✔        | ✔  | ✔     | ✔      |
 
+## 组件特性
 
-## 基本使用示例
-```html
+- **差异化展示**：自动区分小数点前后数字大小，提升视觉层次
+- **灵活配置**：支持自定义颜色、大小、粗细、倾斜等样式属性
+- **多单位支持**：可自定义金额符号，适应不同货币需求
+- **格式化控制**：支持设置保留小数位数，精确控制金额展示
+- **响应式设计**：适配多平台，保持一致的视觉效果
+
+## 使用场景
+
+- **商品价格展示**：在商品列表和详情页中突出显示价格
+- **订单金额展示**：在订单页面清晰展示各项金额信息
+- **促销价格对比**：展示原价和折扣价，突出优惠力度
+- **价格标签**：在营销活动页面作为价格标签使用
+
+## 基本使用
+:::code-group
+```vue [模板]
 <!-- 全局使用 -->
 <hy-price :text="price"></hy-price>
 <!-- 单个组件引入 -->
 <HyPrice :text="price"></HyPrice>
 ```
-```ts
+
+```ts [脚本]
 import { HyPrice } from "hy-app"
 
 const price = 10
 ```
+:::
 
 ## 设置颜色
-- 通过设置`color`制定文本颜色
-```html
-<template>
-    <hy-price :text="price" color="#9CC53D"></hy-price>
-</template>
+:::code-group
+```vue [模板]
+<hy-price :text="price" color="#9CC53D"></hy-price>
 ```
+
+```ts [脚本]
+import { HyPrice } from "hy-app"
+
+const price = 10
+```
+:::
 
 ## 设置大小
-- 通过设置`size`制定文本大小
-```html
-<template>
-    <hy-price :text="price" :size="20"></hy-price>
-</template>
+:::code-group
+```vue [模板]
+<hy-price :text="price" :size="20"></hy-price>
 ```
 
-## 保留6位小数
-- 通过设置`num`设置小数点后几位
-```html
-<template>
-    <hy-price :text="price" :num="6"></hy-price>
-</template>
+```ts [脚本]
+import { HyPrice } from "hy-app"
+
+const price = 10
 ```
+:::
+
+## 保留小数位
+:::code-group
+```vue [模板]
+<hy-price :text="price" :num="6"></hy-price>
+```
+
+```ts [脚本]
+import { HyPrice } from "hy-app"
+
+const price = 10
+```
+:::
 
 ## 设置前缀单位
-- 通过设置`symbol`制定金额前缀单位
-```html
-<template>
-    <hy-price :text="price" symbol="$"></hy-price>
-</template>
+:::code-group
+```vue [模板]
+<hy-price :text="price" symbol="$"></hy-price>
 ```
+
+```ts [脚本]
+import { HyPrice } from "hy-app"
+
+const price = 10
+```
+:::
 
 ## 设置粗细
-- 通过设置`weight`制定文本粗细
-```html
-<template>
-    <hy-price :text="price" :weight="900"></hy-price>
-</template>
+:::code-group
+```vue [模板]
+<hy-price :text="price" :weight="900"></hy-price>
 ```
+
+```ts [脚本]
+import { HyPrice } from "hy-app"
+
+const price = 10
+```
+:::
 
 ## 设置倾斜
-- 通过设置`slant`制定文本是否倾斜
-```html
-<template>
-    <hy-price :text="price" :slant="true"></hy-price>
-</template>
+:::code-group
+```vue [模板]
+<hy-price :text="price" :slant="true"></hy-price>
 ```
 
-## 设置比例1、1.2、1.6
-- 通过设置`ratio`设置中间文字突出大小
-```html
-<template>
-    <hy-price text="10.22" :ratio="1"></hy-price>
-    <hy-price text="10.22" :ratio="1.2"></hy-price>
-    <hy-price text="10.22"></hy-price>
-    <hy-price text="10.22" :ratio="1.6"></hy-price>
-</template>
+```ts [脚本]
+import { HyPrice } from "hy-app"
+
+const price = 10
 ```
+:::
+
+## 设置比例
+:::code-group
+```vue [模板]
+<hy-price text="10.22" :ratio="1"></hy-price>
+<hy-price text="10.22" :ratio="1.2"></hy-price>
+<hy-price text="10.22"></hy-price>
+<hy-price text="10.22" :ratio="1.6"></hy-price>
+```
+
+```ts [脚本]
+import { HyPrice } from "hy-app"
+```
+:::
 
 ## API
 
