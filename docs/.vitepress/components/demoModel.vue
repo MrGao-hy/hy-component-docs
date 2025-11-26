@@ -20,7 +20,7 @@
 
       <!--  主体  -->
       <div class="model-content">
-        <iframe id="demo-modal" ref="h5Iframe" :src="href" class="iframe" frameborder="0" scrolling="auto"></iframe>
+        <iframe id="demo-modal" ref="h5Iframe" :src="href" class="iframe" frameborder="0" scrolling="auto" style="touch-action: none; overflow: auto;"></iframe>
       </div>
       <!--  主体  -->
 
@@ -53,6 +53,7 @@ const props = withDefaults(defineProps<IProps>(), {
 })
 const { isDark } = useData()
 const baseUrl = ref("https://hy-design-uni.top/#/");
+// const baseUrl = ref("http://localhost:5173/#/");
 const href = computed(() => {
   return props.url.indexOf('http') === 0 ? props.url : `${baseUrl.value}${props.url}`;
 })
@@ -69,7 +70,7 @@ const nowTime = computed(() => {
 // 传递是否暗黑主题值
 watch(
     () => isDark.value,
-    (newValue, oldValue, onCleanup) => {
+    (newValue) => {
       if(h5Iframe.value) {
         h5Iframe.value.contentWindow.postMessage(newValue, "*")
       }
@@ -81,7 +82,34 @@ onMounted(() => {
     if(h5Iframe.value) {
       h5Iframe.value.onload = () => {
         h5Iframe.value.contentWindow.postMessage(isDark.value, "*")
+
+
       }
+
+      // 监听 PC 端 pointerdown
+      window.addEventListener("pointerdown", (e) => {
+        debugger;
+        // 只处理 iframe 区域
+        const rect = h5Iframe.value.getBoundingClientRect();
+        if (e.clientX < rect.left || e.clientX > rect.right ||
+            e.clientY < rect.top || e.clientY > rect.bottom) {
+          return;
+        }
+
+        // 计算 iframe 内部坐标
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        // 发送伪造 touch 事件到 iframe
+        h5Iframe.value.contentWindow?.postMessage({
+          type: "SIMULATED_TOUCH",
+          event: {
+            type: "touchstart",
+            clientX: x,
+            clientY: y
+          }
+        }, "*");
+    })
     }
   })
 })

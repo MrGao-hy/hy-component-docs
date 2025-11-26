@@ -170,7 +170,7 @@ const menus = reactive([
 | warn           | 按钮点击节流时长(单位：ms) | `number`           | 300       |
 | customStyle    | 定义需要用到的外部样式     | `CSSProperties`    | -         |
 
-## Menus
+#### Menus
 | 参数    | 说明                               | 类型           | 默认值 |
 |-------|----------------------------------|--------------|-----|
 | icon  | 图标名称                           | `string`     | -   |
