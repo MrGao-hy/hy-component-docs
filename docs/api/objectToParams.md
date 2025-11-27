@@ -14,14 +14,14 @@ console.log(params); // 打印出：name=加密对象&age=10
 urlParamsToObject(paramStr);
 - paramStr \<String\> 地址栏参数字符串
 ```ts
-import { objectToUrlParams } from "hy-app";
+import { urlParamsToObject } from "hy-app";
 
 const paramStr = `?name=hyy&age=18`
-const params = objectToUrlParams(paramStr);
+const params = urlParamsToObject(paramStr);
 console.log(params); // 打印出：{name: "hyy", age: 18}
 
 // 兼容复杂情况
 const paramStr2 = `?code=sign=123&type=key`
-const params2 = objectToUrlParams(paramStr);
+const params2 = urlParamsToObject(paramStr);
 console.log(params2); // 打印出：{code: "sign=123", type: "key"}
 ```

@@ -164,7 +164,7 @@ const columns: FormColumnsType[] = reactive([
 ]);
 
 const handleSubmit = () => {
-    formRef.value.handleSubmit().then((res) => {
+    formRef.value.submit().then((res) => {
         console.log(res);
     });
 };
