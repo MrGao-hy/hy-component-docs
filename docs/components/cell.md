@@ -13,47 +13,55 @@
 | ✔        | ✔  | ✔     | ✔      |
 
 ## 基本使用示例
-
+::: tip 注意
+如何你想在`hy-cell`上使用点击事件，必须给每个`hy-cell-item`设置`name`唯一值，用来区分哪个子元素点击
+:::
 ```html
 <!-- 全局使用 -->
-<hy-cell :list="list"></hy-cell>
-<!-- 单个组件引入 -->
-<HyCell :list="list"></HyCell>
+<hy-cell
+        @click="onClick"
+>
+    <hy-cell-item
+            title="工具箱"
+            name="tools"
+            :icon="{ name: IconConfig.SETTING, color: 'red' }"
+    ></hy-cell-item>
+    <hy-cell-item
+            title="我的"
+            name="my"
+            sub="我是一个神奇的小箱子"
+            value="返回"
+    ></hy-cell-item>
+    <hy-cell-item title="禁用" name="disabled" disabled></hy-cell-item>
+</hy-cell>
 ```
 ```ts
-import { HyCell } from "hy-app";
-import { ref } from "vue";
-
-const list = ref([
-    {title: "西施", subhead: "沉鱼"},
-    {title: "王昭君", subhead: "落雁"},
-    {title: "貂蝉", subhead: "闭月"},
-    {title: "杨玉环", subhead: "羞花"}
-])
+const onClick = (name: string | number) => {
+    uni.showToast({ title: `点击执行了：${name}`, icon: 'none' })
+}
 ```
 
-## 自定义icon内容
-```html
+## 设置icon内容
+```vue
 <template>
-  <hy-cell :list="list">
-      <template #icon="{icon}">
-          <hy-icon :name="icon"></hy-icon>
+  <hy-cell >
+    <hy-cell-item
+        title="工具箱"
+        :icon="{ name: IconConfig.SETTING, color: 'red' }"
+    ></hy-cell-item>
+  </hy-cell>
+
+  <!-- 自定义图标 -->
+  <hy-cell >
+    <hy-cell-item
+        title="工具箱"
+    >
+      <template #icon>
+        <hy-icon name="tools" />
       </template>
-      <template #right-icon="{icon}">
-          {{icon}}
-      </template>
+    </hy-cell-item>
   </hy-cell>
 </template>
-
-<script setup>
-    import { IconConfig } from "hy-app";
-    const list = ref([
-        {title: "西施", subhead: "沉鱼", icon: {name: IconConfig.HOME_FILL, color: 'red'}},
-        {title: "王昭君", subhead: "落雁"},
-        {title: "貂蝉", subhead: "闭月"},
-        {title: "杨玉环", subhead: "羞花"}
-    ])
-</script>
 ```
 
 ## 右侧内容定位
@@ -63,94 +71,105 @@ const list = ref([
   - `right`：右边
 ```html
 <template>
-    <hy-cell :list="list" arrange="left"></hy-cell>
-    <hy-cell :list="list" arrange="center"></hy-cell>
-    <hy-cell :list="list" arrange="right"></hy-cell>
+    <hy-cell arrange="left"></hy-cell>
+    <hy-cell arrange="center"></hy-cell>
+    <hy-cell arrange="right"></hy-cell>
 </template>
 ```
 
 ## cell大小
+- 通过设置`size`设置单元格大小
+    - `small`：小
+    - `medium`：默认
+    - `large`：大
 ```html
 <template>
-    <hy-cell :list="list" size="small"></hy-cell>
-    <hy-cell :list="list" size="medium"></hy-cell>
-    <hy-cell :list="list" size="large"></hy-cell>
+    <hy-cell size="small"></hy-cell>
+    <hy-cell size="medium"></hy-cell>
+    <hy-cell size="large"></hy-cell>
 </template>
 ```
 
 ## 右侧箭头上下左转动
+- 通过设置`arrow-direction`设置单元格大小
+    - `up`：向上
+    - `right`：向右
+    - `down`：向下
+    - `left`：向左
 ```html
 <template>
-    <hy-cell :list="list" arrow-direction="up"></hy-cell>
-    <hy-cell :list="list" arrow-direction="right"></hy-cell>
-    <hy-cell :list="list" arrow-direction="down"></hy-cell>
-    <hy-cell :list="list" arrow-direction="left"></hy-cell>
+    <hy-cell arrow-direction="up"></hy-cell>
+    <hy-cell arrow-direction="right"></hy-cell>
+    <hy-cell arrow-direction="down"></hy-cell>
+    <hy-cell arrow-direction="left"></hy-cell>
 </template>
 ```
 
 ## 跳转页面
 ```html
 <template>
-    <hy-cell :list="list"></hy-cell>
+    <hy-cell>
+        <hy-cell-item url="/page/index/tools"></hy-cell-item>
+    </hy-cell>
 </template>
-
-<script setup>
-    const list = ref([
-        {title: "西施", subhead: "沉鱼", url: "/pages/componentsB/tag/tag"},
-        {title: "王昭君", url: "/pages/componentsB/tag/tag"},
-        {title: "貂蝉", subhead: "闭月"},
-        {title: "杨玉环", subhead: "羞花"}
-    ])
-</script>
 ```
 
 ## API
 
-| 参数             | 说明                          | 类型                             | 默认值    |
-|----------------|-----------------------------|--------------------------------|--------|
-| list           | cell列表数据                    | `array`                        | -      |
-| title          | 头部标题                        | `string`                       | -      |
-| showVertical   | 是否显示标题前缀竖线                  | `boolean`                      | true   |
-| border         | 是否显示cell下边框                 | `boolean`                      | true   |
-| borderRadius   | 容器圆角                        | `string`\|`number`             | 5px    |
-| disabled       | 是否禁用cell                    | `boolean`                      | false  |
-| clickable      | 是否开启点击反馈(表现为点击时加上灰色背景)      | `boolean`                      | false  |
-| size           | 单元的大小                       | `small` \| `medium` \| `large` | medium |
-| value          | 右侧的内容                       | `string`                       | -      |
-| center         | 内容是否垂直居中(主要是针对右侧的value部分)   | `boolean`                      | false  |
-| rightIcon      | 右侧的图标,详见[图标Api](./icon#api) | `HyIconProps`                  | -      |
-| arrowDirection | 右侧箭头的方向                     | `left` \| `up` \| `down`       | left   |
-| customStyle    | 自定义需要用到的外部样式                | `CSSProperties`                | -      |
-| customClass    | 自定义外部类名                     | `string`                       | -      |
+### Cell Props
+| 参数             | 说明                        | 类型                 | 默认值      |
+|----------------|---------------------------|--------------------|----------|
+| border         | 是否显示cell下边框               | `boolean`          | true     |
+| disabled       | 是否禁用cell                  | `boolean`          | false    |
+| clickable      | 是否开启点击反馈(表现为点击时加上灰色背景)    | `boolean`          | false    |
+| size           | 单元的大小                     | `string`\|`number` | 'medium' |
+| arrange        | 内容是否垂直居中(主要是针对右侧的value部分) | `string`           | 'right'  |
+| isRightIcon    | 是否展示右侧图标                  | `boolean`          | true     |
+| arrowDirection | 右侧箭头的方向                   | `string`           | 'right'  |
+| customStyle    | 定义需要用到的外部样式               | `CSSProperties`    | -        |
+| customClass    | 自定义外部类名                   | `string`           | -        |
 
-### list集合
+### CellItem Props
+| 参数             | 说明                     | 类型                 | 默认值          |
+|----------------|------------------------|--------------------|--------------|
+| title          | 头部标题                   | `string`           | -            |
+| sub            | 标题下面小提示                | `string`           | -            |
+| disabled       | 是否禁用cell               | `boolean`          | false        |
+| value          | 右侧的内容                  | `string`           | -            |
+| icon           | 左边图标，[图标Api](icon#api) | `HyIconProps`      | -            |
+| rightIcon      | 右边图标，[图标Api](icon#api) | `HyIconProps`      | -            |
+| arrowDirection | 右侧箭头的方向                | `string`           | 'right'      |
+| url            | 点击后跳转的URL地址            | `string`           | -            |
+| linkType       | 链接跳转的方式                | `string`           | 'navigateTo' |
+| stop           | 点击cell是否阻止事件传播         | `boolean`          | true         |
+| name           | 标识符，用于在click事件中进行返回    | `string`\|`number` | -            |
+| customStyle    | 定义需要用到的外部样式            | `CSSProperties`    | -            |
+| customClass    | 自定义外部类名                | `string`           | -            |
 
-| 参数             | 说明                         | 类型                   | 默认值 |
-|----------------|----------------------------|----------------------|-----|
-| icon           | 左边图标，详见[图标Api](./icon#api) | `HyIconProps`        | -   |
-| title          | 标题                         | `string`             | -   |
-| subhead        | 副标题                        | `string`             | -   |
-| disabled       | 是否禁用                       | `boolean`            | -   |
-| rightIcon      | 右边图标，详见[图标Api](./icon#api) | `HyIconProps`        | -   |
-| value          | cell中间的值                   | `string`             | -   |
-| url            | 跳转页面地址                     | `string`             | -   |
-| arrowDirection | 单个右侧箭头的方向                  | `left`\|`up`\|`down` | -   |
 
 ## Events
 
-| 事件名   | 说明          | 回调参数                           |
-|-------|-------------|--------------------------------|
-| click | 点击cell列表时触发 | temp: cell列表当行值, index: cell索引 |
+### Cell Emits
+
+| 事件名   | 说明          | 回调参数       |
+|-------|-------------|------------|
+| click | 点击cell列表时触发 | name: 唯一标识 |
+
+### CellItem Emits
+
+| 事件名   | 说明          | 回调参数       |
+|-------|-------------|------------|
+| click | 点击cell列表时触发 | name: 唯一标识 |
 
 
 ## Slots
 
+### CellItem Slots
+
 | 插槽名        | 说明           | 接收值    |
 |------------|--------------|--------|
-| title      | 自定义主标题部分的内容  | title  |
-| default    | 自定义整个单元列表内容  | -      |
+| title      | 自定义cell标题的内容 | title  |
 | icon       | 自定义左侧的图标     | icon   |
-| cell-title | 自定义cell标题的内容 | title  |
 | sub        | 自定义小标题内容     | sub    |
 | value      | 自定义右侧值的内容    | record |
 | right-icon | 自定义右侧图标内容    | icon   |
