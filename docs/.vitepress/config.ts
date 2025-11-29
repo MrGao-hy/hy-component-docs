@@ -136,6 +136,7 @@ export default defineConfig({
             { text: "Line 线条", link: "/components/line" },
             { text: "Overlay 遮罩层", link: "/components/overlay" },
             { text: "ScrollList 横向滚动列表", link: "/components/scrollList" },
+            { text: "Sticky 吸顶", link: "/components/sticky" },
             { text: "Waterfall 瀑布流", link: "/components/waterfall" },
             { text: "Watermark 水印", link: "/components/watermark" },
           ],
