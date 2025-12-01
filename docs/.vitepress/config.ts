@@ -182,6 +182,7 @@ export default defineConfig({
             { text: "Parse 富文本", link: "/components/parse" },
             { text: "Qrcode 二维码", link: "/components/qrcode" },
             { text: "ReadMore 展开阅读更多", link: "/components/readMore" },
+            { text: "RollingNum 滚动数字", link: "/components/rollingNum" },
             { text: "Signature 签名", link: "/components/signature" },
             { text: "Transition 动画", link: "/components/transition" },
           ],
