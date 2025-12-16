@@ -218,8 +218,8 @@ const columns = reactive([
 ## Events
 
 | 事件名   | 说明 | 回调参数 |
-|-------|----|------|
-| click | -  | -    |
+|-------|---|------|
+| change | 选择触发  | -    |
 
 ## Slots
 

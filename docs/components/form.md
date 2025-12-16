@@ -170,12 +170,12 @@ const formData = reactive({
 
 const rules = {
   username: [
-    { required: true, message: '请输入用户名' },
-    { min: 2, max: 20, message: '用户名长度在 2 到 20 个字符' }
+    { required: true, message: '请输入用户名', trigger: ['blur', 'change'] },
+    { min: 2, max: 20, message: '用户名长度在 2 到 20 个字符', trigger: ['blur', 'change'] }
   ],
   phone: [
-    { required: true, message: '请输入手机号' },
-    { type: 'phone', message: '请输入正确的手机号' }
+    { required: true, message: '请输入手机号', trigger: ['blur', 'change'] },
+    { type: 'phone', message: '请输入正确的手机号', trigger: ['blur', 'change'] }
   ]
 }
 
@@ -193,14 +193,14 @@ const handleSubmit = (data: any) => {
 const rules = {
   // 基础验证
   username: [
-    { required: true, message: '请输入用户名' },
-    { min: 2, max: 20, message: '用户名长度在 2 到 20 个字符' }
+    { required: true, message: '请输入用户名', trigger: ['blur', 'change'] },
+    { min: 2, max: 20, message: '用户名长度在 2 到 20 个字符', trigger: ['blur', 'change'] }
   ],
   
   // 类型验证
   phone: [
-    { required: true, message: '请输入手机号' },
-    { type: 'phone', message: '请输入正确的手机号' }
+    { required: true, message: '请输入手机号', trigger: ['blur', 'change'] },
+    { type: 'phone', message: '请输入正确的手机号', trigger: ['blur', 'change'] }
   ],
   
   // 自定义验证

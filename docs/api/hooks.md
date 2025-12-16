@@ -43,6 +43,8 @@ export function createApp() {
 }
 ```
 
+### 单个页面配置（如配置标题，参数）
+
 ## 全局提示消息
 
 **useToast()**

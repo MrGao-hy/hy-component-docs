@@ -29,7 +29,7 @@
 
 <script setup lang="ts[throttle.md](throttle.md)">
   import { throttle } from "hy-app";
-  const throttleFn = throttle(() => {
+  const throttleFn = () => throttle(() => {
       console.log("执行了")
   }, 2000)
 </script>
@@ -49,7 +49,7 @@
 
 <script setup lang="ts">
 	import { debounce } from 'hy-app';
-    const debounceFn = debounce(() => {
+    const debounceFn = () => debounce(() => {
       console.log("执行了")
     }, 2000)
 </script>

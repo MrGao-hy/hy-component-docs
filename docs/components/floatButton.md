@@ -15,7 +15,7 @@
 
 ```html
 <!-- 全局使用 -->
-<hy-float-buttton></hy-float-buttton>
+<hy-float-button></hy-float-button>
 <!-- 单个组件引入 -->
 <HyFloatButton></HyFloatButton>
 ```
@@ -26,19 +26,19 @@ import { HyFloatButton } from "hy-app"
 ## 悬浮按钮默认按钮
 ```html
 <template>
-    <hy-float-buttton
+    <hy-float-button
         text="客服"
         :icon="IconConfig.CUSTOMER_SERVICE"
         iconSize="25"
-    ></hy-float-buttton>
+    ></hy-float-button>
 </template>
 ```
 
 ## 悬浮按钮显示菜单栏
 ```html
 <template>
-    <hy-float-buttton :menus="menus_1"></hy-float-buttton>
-    <hy-float-buttton :menus="menus_2"></hy-float-buttton>
+    <hy-float-button :menus="menus_1"></hy-float-button>
+    <hy-float-button :menus="menus_2"></hy-float-button>
 </template>
 
 <script setup>
@@ -59,7 +59,7 @@ import { HyFloatButton } from "hy-app"
   - 输入数字或数字单位自定义按钮大小
 ```html
 <template>
-    <hy-float-buttton size="small"></hy-float-buttton>
+    <hy-float-button size="small"></hy-float-button>
     <hy-float-buttton size="medium"></hy-float-buttton>
     <hy-float-buttton size="large"></hy-float-buttton>
     <hy-float-buttton :size="20"></hy-float-buttton>
@@ -74,7 +74,7 @@ import { HyFloatButton } from "hy-app"
   - `square`方形
 ```html
 <template>
-    <hy-float-buttton shape="circle"></hy-float-buttton>
+    <hy-float-button shape="circle"></hy-float-button>
     <hy-float-buttton shape="square"></hy-float-buttton>
 </template>
 ```
@@ -89,9 +89,9 @@ import { HyFloatButton } from "hy-app"
 :::
 ```html
 <template>
-    <hy-float-buttton :menus="menus" direction="column"></hy-float-buttton>
-    <hy-float-buttton :menus="menus" direction="row"></hy-float-buttton>
-    <hy-float-buttton :menus="menus" left="80vw" direction="row"></hy-float-buttton>
+    <hy-float-button :menus="menus" direction="column"></hy-float-button>
+    <hy-float-button :menus="menus" direction="row"></hy-float-button>
+    <hy-float-button :menus="menus" left="80vw" direction="row"></hy-float-button>
 </template>
 
 <script setup>
@@ -103,7 +103,7 @@ import { HyFloatButton } from "hy-app"
 - 通过设置`float`设置悬浮按钮是否浮动
 ```html
 <template>
-    <hy-float-buttton :float="true"></hy-float-buttton>
+    <hy-float-button :float="true"></hy-float-button>
 </template>
 ```
 
@@ -111,7 +111,7 @@ import { HyFloatButton } from "hy-app"
 - 通过设置`shadow`设置悬浮按钮是否显示阴影
 ```html
 <template>
-    <hy-float-buttton :shadow="true"></hy-float-buttton>
+    <hy-float-button :shadow="true"></hy-float-button>
 </template>
 ```
 
@@ -119,7 +119,7 @@ import { HyFloatButton } from "hy-app"
 - 通过设置`opacity`设置悬浮按钮是否浮动
 ```html
 <template>
-    <hy-float-buttton :opacity="0.1"></hy-float-buttton>
+    <hy-float-button :opacity="0.1"></hy-float-button>
 </template>
 ```
 

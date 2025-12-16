@@ -117,11 +117,11 @@ const show = ref(true);
 const columns = reactive([
   [
     {
-        text: '雪月夜', 
+        label: '雪月夜', 
         value: 2021
     },
     {
-        text: '冷夜雨',
+        label: '冷夜雨',
         value: 804
     }
   ]
@@ -145,12 +145,12 @@ const columns = reactive([
   [
     {
       label: '雪月夜',
-      id: 2021
+      value: 2021
       // ...
     },
     {
       label: '冷夜雨',
-      id: 804
+      value: 804
     }
   ]
 ]);
@@ -175,13 +175,23 @@ const columns = reactive([
 | cancelColor         | 取消按钮的颜色                                           | `string`                                   | -      |
 | confirmColor        | 确认按钮的颜色                                           | `string`                                   | -      |
 | visibleItemCount    | 每列中可见选项的数量                                        | `number`                                   | 5      |
-| keyName             | 选项对象中，需要展示的属性键名                                   | `string`                                   | text   |
+| labelKey            | 选项对象中，value对应的 key                                | `string`                                   | label  |
+| valueKey            | 选项对象中，展示的文本对应的 key                                | `string`                                   | value  |
 | closeOnClickOverlay | 是否允许点击遮罩关闭选择器                                     | `boolean`                                  | false  |
 | defaultIndex        | 各列的默认索引                                           | `array`                                    | -      |
 | immediateChange     | 是否在手指松开时立即触发change事件                              | `boolean`                                  | true   |
 | zIndex              | 最高层级                                              | `number`                                   | 10076  |
 | hasInput            | 是否显示输入框                                           | `boolean`                                  | false  |
 | input               | 输入框集合属性,hasInput为true可以配置，详见[输入框Api](./input#api) | `HyInputProps`                             | -      |
+
+### columns
+
+
+| 参数    | 说明      | 类型                   | 默认值 |
+|-------|---------|----------------------|-----|
+| label | 显示值     | `string`             | -   |
+| value | 选中需要传的值 | `string` \| `number` | -   |
+
 
 ## Events
 

@@ -43,3 +43,38 @@ http.interceptor.response((response: HttpResponse) => {
 });
 
 ```
+
+## 动态设置“协议域名端口”
+:::tip 提示
+baseURL不要填写，否则会拼接导致访问不了，直接在请求拦截里面拼接
+:::
+```ts
+import Http from 'hy-app';
+import type { HttpRequestConfig } from 'hy-app';
+import type {HttpResponse} from "hy-app/typing";
+
+const http = new Http();
+
+http.config = {
+    baseURL: '',
+};
+
+// 请求拦截
+http.interceptor.request((conf: HttpRequestConfig) => {
+    if (uni.getStorageSync('zcSetting')) {
+        const zcParam = JSON.parse(uni.getStorageSync('zcSetting'));
+        conf.baseURL = `${zcParam.scheme}://${zcParam.host}:${zcParam.port}`;
+    }
+    return conf;
+});
+
+// 响应拦截
+http.interceptor.response((response: HttpResponse) => {
+    if (response.statusCode === 200) {
+        return response.data;
+    }
+    // 错误走
+    return Promise.reject(response);
+});
+
+```
