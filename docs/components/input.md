@@ -128,7 +128,7 @@ const value = ref('');
 | disabledColor         | 禁用状态时的背景色                                               | `string`                                         | -                 |
 | clearable             | 是否显示清除控件                                                | `boolean`                                        | false             |
 | password              | 是否密码类型                                                  | `boolean`                                        | false             |
-| maxlength             | 最大输入长度，设置为 -1 的时候不限制最大长度                                | `number`                                         | 140               |
+| maxlength             | 最大输入长度，设置为 -1 的时候不限制最大长度(注：支付宝不支持-1，需要设置其他任意值)          | `number`                                         | 140               |
 | placeholder           | 输入框为空时的占位符                                              | `string`                                         | -                 |
 | placeholderClass      | 指定placeholder的样式类，注意页面或组件的style中写了scoped时，需要在类名前写/deep/ | `string`                                         | input-placeholder |
 | placeholderStyle      | 指定placeholder的样式                                        | `CSSProperties`                                  | -                 |

@@ -125,6 +125,7 @@ import { HyButton } from "hy-app"
 | loadingMode          | 加载状态图标类型                                                                                    | `string`                                          | spinner |
 | loadingSize          | 加载图标大小                                                                                      | `string` \| `number`                              | 13      |
 | openType             | 开放能力，具体请看uniapp稳定关于button组件部分说明                                                             | `string`                                          | -       |
+| scope                | 支付宝小程序使用，当 open-type 为 getAuthorize 时有效。                                                    | `phoneNumber`\|`userInfo`                         | -       |
 | formType             | 用于 `<form>` 组件，点击分别会触发 `<form>` 组件的 submit/reset 事件                                         | `string`                                          | -       |
 | appParameter         | 打开 APP 时，向 APP 传递的参数，open-type=launchApp时有效 （注：只微信小程序、QQ小程序有效）                              | `string`                                          | -       |
 | hoverStopPropagation | 指定是否阻止本节点的祖先节点出现点击态，微信小程序有效（默认 true）	                                                       | `boolean`                                         | true    |
@@ -144,14 +145,14 @@ import { HyButton } from "hy-app"
 
 ## Events
 
-| 事件名            | 说明                                                      | 回调参数 | 平台    |
-|----------------|---------------------------------------------------------|------|-------|
-| click          | 按钮点击，请勿使用@tap点击事件，微信小程序无效，返回值为点击事件及参数                   | -    | -     |
-| getphonenumber | open-type="getPhoneNumber"时有效                           | -    | 微信小程序 |
-| getuserinfo    | 用户点击该按钮时，会返回获取到的用户信息，从返回参数的detail中获取到的值同uni.getUserInfo | -    | 微信小程序 |
-| error          | 当使用开放能力时，发生错误的回调                                        | -    | 微信小程序 |
-| opensetting    | 在打开授权设置页并关闭后回调	                                         | -    | 微信小程序 |
-| launchapp      | 打开 APP 成功的回调                                            | -    | 微信小程序 |
+| 事件名            | 说明                                                      | 回调参数 | 平台           |
+|----------------|---------------------------------------------------------|------|--------------|
+| click          | 按钮点击，请勿使用@tap点击事件，微信小程序无效，返回值为点击事件及参数                   | -    | -            |
+| getphonenumber | open-type="getPhoneNumber"时有效                           | -    | 微信小程序，支付宝小程序 |
+| getuserinfo    | 用户点击该按钮时，会返回获取到的用户信息，从返回参数的detail中获取到的值同uni.getUserInfo | -    | 微信小程序，支付宝小程序 |
+| error          | 当使用开放能力时，发生错误的回调                                        | -    | 微信小程序        |
+| opensetting    | 在打开授权设置页并关闭后回调	                                         | -    | 微信小程序        |
+| launchapp      | 打开 APP 成功的回调                                            | -    | 微信小程序        |
 
 ## Slots
 

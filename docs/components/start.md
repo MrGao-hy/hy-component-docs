@@ -1,6 +1,7 @@
 # 华玥组件库
 ::: info 温馨提示
 node(推荐) >= 16.14.0
+sass(推荐) 1.53.0<=sass<=1.78.0
 :::
 
 ## 下载scss(没有的话需要安装)
@@ -9,19 +10,19 @@ node(推荐) >= 16.14.0
 :::
 ::: code-group
 ```shell [npm]
-$ npm install sass -D
+$ npm install -D sass@1.53.0
 ```
 
 ```shell [pnpm]
-$ pnpm add sass -D
+$ pnpm add -D sass@1.53.0
 ```
 
 ```shell [cnpm]
-$ cnpm install sass -D
+$ cnpm install -D sass@1.53.0
 ```
 
 ```shell [yarn]
-$ yarn add sass -D
+$ yarn add -D sass@1.53.0
 ```
 :::
 
@@ -66,38 +67,16 @@ $ yarn install hy-app
 ```
 :::
 
-## 按需引入组件
-
-```html
-<yk-input></yk-input>
+### 导入scss文件
+> 在uni.scss最顶部引入这些文件
+```scss [./uni.scss]
+@use "hy-app/libs/css/theme.scss" as *;
+@use "hy-app/libs/css/common.scss" as *;
+@use "hy-app/libs/css/mixin.scss" as *;
 ```
 
-```javascript
-import { ykInput } from 'hy-app'
-```
 
-## 如何全局引入组件
-
-###### 1. 如果你只想在h5使用，你可以这么引入
-::: tip 温馨提示
-这种会增加主包体积，不推荐微信小程序使用
-:::
-
-```ts [./src/main.ts]
-import { createSSRApp } from "vue";
-import App from "./App.vue";
-import { install } from "hy-app";
-
-export function createApp() {
-    const app = createSSRApp(App);
-    app.use(install);
-    return {
-        app
-    };
-}
-```
-
-###### 2. 如果你想按需加载。你可以这个全局定义（推荐）
+### 1. 如果你想按需加载。你可以这个全局定义（推荐）
 ```html
 <!-- 然后在所需页面直接使用 -->
 <hy-input></hy-input>
