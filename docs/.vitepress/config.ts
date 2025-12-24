@@ -184,6 +184,7 @@ export default defineConfig({
             { text: "ReadMore 展开阅读更多", link: "/components/readMore" },
             { text: "RollingNum 滚动数字", link: "/components/rollingNum" },
             { text: "Signature 签名", link: "/components/signature" },
+            { text: "Table 表格", link: "/components/table" },
             { text: "Transition 动画", link: "/components/transition" },
           ],
         },

@@ -329,18 +329,333 @@ const handleReset = () => {
 ```
 :::
 
+## 封装表单组件
+
+:::details 点我查看完整示例
+```vue
+<script setup lang="ts">
+import { computed, ref } from 'vue';
+import { type FormColumnsType, FormTypeEnum, type RulesVo } from 'hy-app';
+
+interface IColumns extends FormColumnsType {
+    /**
+     * 是否需要单个校验
+     * */
+    valid?: boolean;
+}
+
+interface IProps {
+    columns: IColumns[];
+    formData: AnyObject;
+    rules?: RulesVo | RulesVo[];
+    labelWidth?: number | string;
+    border?: 'none' | 'round' | 'bottom';
+}
+
+const props = withDefaults(defineProps<IProps>(), {});
+const formRef = ref();
+const itemRef = ref();
+const showPassword = ref(false);
+const isInput = computed(() => {
+    return (temp: string) => {
+        return [
+            FormTypeEnum.TEXT,
+            FormTypeEnum.PASSWORD,
+            FormTypeEnum.NUMBER,
+            'digit',
+        ].includes(temp);
+    };
+});
+
+/**
+ * 验证表单
+ * */
+const validate = () => {
+    return new Promise((resolve, reject) => {
+        formRef.value
+            .validate()
+            .then((isValid: boolean) => resolve(isValid))
+            .catch((allErrors: AnyObject) => reject(allErrors));
+    });
+};
+
+defineExpose({
+    validate,
+    formRef,
+    itemRef,
+});
+</script>
+
+<template>
+    <hy-form
+        ref="formRef"
+        :model="formData"
+        :label-width="labelWidth"
+        :rules="rules"
+    >
+        <hy-form-item
+            v-for="item in columns"
+            :key="item.field"
+            :label="item.label"
+            :prop="item.field"
+            ref="itemRef"
+        >
+            <template v-if="isInput(item.type)">
+                <hy-input
+                    v-model="formData[item.field]"
+                    :prefix-icon="item.input.prefixIcon"
+                    :suffix-icon="item.input.suffixIcon"
+                    type="text"
+                    :placeholder="item.input.placeholder"
+                    :border="border"
+                    clearable
+                    :password="item.type === 'password' && !showPassword"
+                    :custom-style="item.input.customStyle"
+                    :custom-class="item.input.customClass"
+                ></hy-input>
+            </template>
+
+            <template v-if="item.type === 'textarea'">
+                <hy-textarea
+                    v-model="formData[item.field]"
+                    :placeholder="item.textarea.placeholder"
+                    :border="border"
+                    clearable
+                >
+                </hy-textarea>
+            </template>
+
+            <template v-if="item.type === FormTypeEnum.RADIO">
+                <hy-radio
+                    v-model="formData[item.field]"
+                    :columns="item.actions"
+                    size="small"
+                ></hy-radio>
+            </template>
+
+            <template v-if="item.type === FormTypeEnum.SELECT">
+                <hy-picker
+                    v-model="formData[item.field]"
+                    has-input
+                    :columns="item.select"
+                    closeOnClickOverlay
+                    :input="item.input"
+                ></hy-picker>
+            </template>
+
+            <template v-if="item.type === FormTypeEnum.DETAIL">
+                <text>{{ formData[item.field] }}</text>
+            </template>
+
+            <template v-if="item.type === FormTypeEnum.CUSTOM">
+                <slot name="custom"></slot>
+            </template>
+        </hy-form-item>
+    </hy-form>
+</template>
+
+<style lang="scss" scoped></style>
+
+```
+:::
+### 使用示例
+:::code-group
+```vue [.vue]
+<template>
+  <!-- 表单区域 -->
+  <the-form
+      ref="registerRef"
+      :columns="registerFormColumns"
+      :form-data="formData"
+      :rules="registerFormRules"
+  >
+    <template #custom>
+      <hy-input
+          v-model="formData.code"
+          type="number"
+          placeholder="请输入验证码"
+          :maxlength="6"
+          :custom-style="{ height: '80rpx', flex: 1 }"
+      >
+        <template #suffix>
+          <hy-button
+              class="code-button"
+              type="success"
+              :disabled="countdown > 0"
+              @click="getVerificationCode"
+          >
+            {{ codeText }}
+          </hy-button>
+        </template>
+      </hy-input>
+    </template>
+  </the-form>
+</template>
+```
+
+```ts [.ts]
+// 表单数据
+const formData = reactive({
+    companyName: '',
+    creditCode: '',
+    producingArea: '',
+    invoice: '',
+    contactName: '',
+    contactUnit: '',
+    contactPhone: '',
+    code: '',
+});
+const registerFormColumns = reactive([
+    {
+        field: 'companyName',
+        type: FormTypeEnum.TEXT,
+        input: {
+            placeholder: '请输入企业名称',
+            prefixIcon: { name: 'qiye', customPrefix: 'icon' },
+            customStyle: { height: '80rpx' },
+        },
+    },
+    {
+        field: 'creditCode',
+        type: FormTypeEnum.NUMBER,
+        input: {
+            placeholder: '请输入统一社会信用代码（18位）',
+            prefixIcon: { name: 'xinyongdaima', customPrefix: 'icon' },
+            customStyle: { height: '80rpx' },
+        },
+    },
+    {
+        field: 'producingArea',
+        type: FormTypeEnum.SELECT,
+        select: [
+            [
+                { label: '无基地', value: '无基地' },
+                { label: '种植基地', value: '种植基地' },
+                { label: 'GAP基地', value: 'GAP基地' },
+                { label: '趁鲜加工', value: '趁鲜加工' },
+                { label: '养殖基地', value: '养殖基地' },
+            ],
+        ],
+        input: {
+            placeholder: '请选择产地信息',
+            prefixIcon: { name: 'chandiguanli_icox', customPrefix: 'icon' },
+            customStyle: { height: '80rpx' },
+        },
+    },
+    {
+        field: 'invoice',
+        label: '发票信息：',
+        type: FormTypeEnum.RADIO,
+        actions: [
+            {
+                label: '普通发票',
+                value: 'apply',
+            },
+            {
+                label: '增值税发票',
+                value: 'banana',
+            },
+        ],
+    },
+    {
+        field: 'contactName',
+        type: FormTypeEnum.TEXT,
+        input: {
+            placeholder: '请输入联系人姓名',
+            prefixIcon: { name: IconConfig.MINE },
+            customStyle: { height: '80rpx' },
+        },
+    },
+    {
+        field: 'contactUnit',
+        type: FormTypeEnum.TEXT,
+        input: {
+            placeholder: '请输入联系人职务',
+            prefixIcon: { name: 'zhiwu', customPrefix: 'icon' },
+            customStyle: { height: '80rpx' },
+        },
+    },
+    {
+        field: 'contactPhone',
+        type: FormTypeEnum.NUMBER,
+        input: {
+            placeholder: '请输入联系人手机号',
+            prefixIcon: { name: IconConfig.TELEPHONE },
+            customStyle: { height: '80rpx' },
+        },
+        valid: true,
+    },
+    {
+        field: 'custom',
+        type: FormTypeEnum.CUSTOM,
+    },
+]);
+const registerFormRules = reactive({
+    companyName: [
+        {
+            required: true,
+            message: '请输入企业名称',
+            trigger: ['blur', 'change'],
+        },
+    ],
+    creditCode: [
+        {
+            required: true,
+            message: '请输入信用代码',
+            trigger: ['blur', 'change'],
+        },
+    ],
+    producingArea: {
+        required: true,
+        message: '请选择产地信息',
+    },
+    invoice: {
+        required: true,
+        message: '请选择发票类型',
+    },
+    contactName: [
+        {
+            required: true,
+            message: '请输入联系人姓名',
+            trigger: ['blur', 'change'],
+        },
+    ],
+    contactUnit: [
+        {
+            required: true,
+            message: '请输入联系人的职务',
+            trigger: ['blur', 'change'],
+        },
+    ],
+    contactPhone: [
+        {
+            required: true,
+            message: '请输入联系人的手机号',
+            trigger: ['blur', 'change'],
+        },
+        {
+            type: 'phone',
+            message: '请输入正确的手机号',
+            trigger: ['blur', 'change'],
+        },
+    ],
+});
+```
+:::
+
+
 ## API
 
 ### hy-form Props
 
-| 参数            | 说明     | 类型                            | 默认值      |
-|---------------|--------|-------------------------------|----------|
-| model         | 表单数据对象 | `Record<string, any>`         | -        |
-| rules         | 验证规则   | `FormItemRule`                | -        |
-| border        | 表单底部边框 | `boolean`                     | false    |
-| labelWidth    | 标签宽度   | `string` \| `number`          | `'auto'` |
-| labelPosition | 标签位置   | `left` \| `top`               | `'left'` |
-| labelAlign    | 标签对齐方式 | `left` \| `center` \| `right` | `'left'` |
+| 参数            | 说明     | 类型                               | 默认值      |
+|---------------|--------|----------------------------------|----------|
+| model         | 表单数据对象 | `Record<string, any>`            | -        |
+| rules         | 验证规则   | `FormItemRule`\|`FormItemRule[]` | -        |
+| border        | 表单底部边框 | `boolean`                        | false    |
+| labelWidth    | 标签宽度   | `string` \| `number`             | `'auto'` |
+| labelPosition | 标签位置   | `left` \| `top`                  | `'left'` |
+| labelAlign    | 标签对齐方式 | `left` \| `center` \| `right`    | `'left'` |
 
 ### hy-form-item Props
 

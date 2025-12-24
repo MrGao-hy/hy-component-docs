@@ -140,7 +140,6 @@ const onClick = (name: string | number) => {
 | rightIcon      | 右边图标，[图标Api](icon#api) | `HyIconProps`      | -            |
 | arrowDirection | 右侧箭头的方向                | `string`           | 'right'      |
 | url            | 点击后跳转的URL地址            | `string`           | -            |
-| linkType       | 链接跳转的方式                | `string`           | 'navigateTo' |
 | stop           | 点击cell是否阻止事件传播         | `boolean`          | true         |
 | name           | 标识符，用于在click事件中进行返回    | `string`\|`number` | -            |
 | customStyle    | 定义需要用到的外部样式            | `CSSProperties`    | -            |

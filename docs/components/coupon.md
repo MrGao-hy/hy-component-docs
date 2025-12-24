@@ -4,8 +4,8 @@
 
 ## 平台差异说明
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
-|----------|----|------------|--------------|
-| ✔        | ✔  | ✔          | ✔            |
+|----------|----|-------|--------|
+| ✔        | ✔  | ✔     | ✔      |
 
 ## 组件特性
 
@@ -203,27 +203,28 @@ const onUse = (item: ICoupon) => {
 
 ## API
 
-| 参数             | 说明                                               | 类型                                    | 默认值          |
-|----------------|--------------------------------------------------|---------------------------------------|--------------|
-| title          | 优惠券标题                                            | `string`                              | ''           |
-| type           | 优惠券类型：moneyOff：满减券，discount：折扣券，fixedAmount：无门槛券 | `moneyOff`\|`discount`\|`fixedAmount` | ''           |
-| typeText       | 金额底部优惠券类型文字描述                                    | `string`                              | ''           |
-| status         | 优惠券状态                                            | `string`                              | ''           |
-| disabledStatus | 优惠券禁用状态                                          | `array`                               | ''           |
-| description    | 优惠券描述                                            | `string`                              | ''           |
-| amount         | 优惠券金额                                            | `string`\|`number`                    | ''           |
-| unit           | 优惠券单位，没有就用默认值                                    | `string`                              | ''           |
-| startDate      | 优惠券开始时间                                          | `string`                              | ''           |
-| endDate        | 优惠券结束时间                                          | `string`                              | ''           |
-| format         | 时间格式                                             | `string`                              | 'yyyy-MM-dd' |
-| dateDesc       | 日期描述，没有日期描述就用开始时间到结束时间                           | `string`                              | ''           |
-| bgColor        | 背景色                                              | `string`                              | ''           |
-| boxShadow      | 是否显示阴影                                           | `boolean`                             | false        |
-| btnMode        | 按钮类型                                             | `text`\|`button`                      | 'button'     |
-| btnText        | 按钮文字                                             | `string`                              | '立即领取'       |
-| buttonProp     | [按钮属性api](./button#API)                          | `HyButtonProps`                       | \{\}         |
-| customStyle    | 定义需要用到的外部样式                                      | `CSSProperties`                       | ''           |
-| customClass    | 自定义外部类名                                          | `string`                              | ''           |
+| 参数             | 说明                                               | 类型                                    | 默认值        |
+|----------------|--------------------------------------------------|---------------------------------------|------------|
+| title          | 优惠券标题                                            | `string`                              | -          |
+| type           | 优惠券类型：moneyOff：满减券，discount：折扣券，fixedAmount：无门槛券 | `moneyOff`\|`discount`\|`fixedAmount` | -          |
+| typeText       | 金额底部优惠券类型文字描述                                    | `string`                              | -          |
+| status         | 优惠券状态                                            | `string`                              | -          |
+| disabledStatus | 优惠券禁用状态                                          | `array`                               | -          |
+| description    | 优惠券描述                                            | `string`                              | -          |
+| desEllipsis    | 描述省略行数，none不省略，数字代表几行开始省略                        | `string`\|`number`                    | none       |
+| amount         | 优惠券金额                                            | `string`\|`number`                    | -          |
+| unit           | 优惠券单位，没有就用默认值                                    | `string`                              | -          |
+| startDate      | 优惠券开始时间                                          | `string`                              | -          |
+| endDate        | 优惠券结束时间                                          | `string`                              | -          |
+| format         | 时间格式                                             | `string`                              | yyyy-MM-dd |
+| dateDesc       | 日期描述，没有日期描述就用开始时间到结束时间                           | `string`                              | -          |
+| bgColor        | 背景色                                              | `string`                              | -          |
+| boxShadow      | 是否显示阴影                                           | `boolean`                             | false      |
+| btnMode        | 按钮类型                                             | `text`\|`button`\|`none`              | button     |
+| btnText        | 按钮文字                                             | `string`                              | 立即领取       |
+| buttonProp     | [按钮属性api](./button#API)                          | `HyButtonProps`                       | -          |
+| customStyle    | 定义需要用到的外部样式                                      | `CSSProperties`                       | -          |
+| customClass    | 自定义外部类名                                          | `string`                              | -          |
 
 ## Events
 
