@@ -6,13 +6,13 @@
 感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [cell组件](https://uiadmin.net/uview-plus/components/cell.html) 的代码实现。
 :::
 
-## 平台差异说明
+## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
 |----------|----|-------|--------|
 | ✔        | ✔  | ✔     | ✔      |
 
-## 基本使用示例
+## :japanese_castle:基本使用示例
 ::: tip 注意
 如何你想在`hy-cell`上使用点击事件，必须给每个`hy-cell-item`设置`name`唯一值，用来区分哪个子元素点击
 :::
@@ -117,33 +117,33 @@ const onClick = (name: string | number) => {
 ## API
 
 ### Cell Props
-| 参数             | 说明                        | 类型                 | 默认值      |
-|----------------|---------------------------|--------------------|----------|
-| border         | 是否显示cell下边框               | `boolean`          | true     |
-| disabled       | 是否禁用cell                  | `boolean`          | false    |
-| clickable      | 是否开启点击反馈(表现为点击时加上灰色背景)    | `boolean`          | false    |
-| size           | 单元的大小                     | `string`\|`number` | 'medium' |
-| arrange        | 内容是否垂直居中(主要是针对右侧的value部分) | `string`           | 'right'  |
-| isRightIcon    | 是否展示右侧图标                  | `boolean`          | true     |
-| arrowDirection | 右侧箭头的方向                   | `string`           | 'right'  |
-| customStyle    | 定义需要用到的外部样式               | `CSSProperties`    | -        |
-| customClass    | 自定义外部类名                   | `string`           | -        |
+| 参数             | 说明                        | 类型                 | 默认值    |
+|----------------|---------------------------|--------------------|--------|
+| border         | 是否显示cell下边框               | `boolean`          | true   |
+| disabled       | 是否禁用cell                  | `boolean`          | false  |
+| clickable      | 是否开启点击反馈(表现为点击时加上灰色背景)    | `boolean`          | false  |
+| size           | 单元的大小                     | `string`\|`number` | medium |
+| arrange        | 内容是否垂直居中(主要是针对右侧的value部分) | `string`           | right  |
+| isRightIcon    | 是否展示右侧图标                  | `boolean`          | true   |
+| arrowDirection | 右侧箭头的方向                   | `string`           | right  |
+| customStyle    | 定义需要用到的外部样式               | `CSSProperties`    | -      |
+| customClass    | 自定义外部类名                   | `string`           | -      |
 
 ### CellItem Props
-| 参数             | 说明                     | 类型                 | 默认值          |
-|----------------|------------------------|--------------------|--------------|
-| title          | 头部标题                   | `string`           | -            |
-| sub            | 标题下面小提示                | `string`           | -            |
-| disabled       | 是否禁用cell               | `boolean`          | false        |
-| value          | 右侧的内容                  | `string`           | -            |
-| icon           | 左边图标，[图标Api](icon#api) | `HyIconProps`      | -            |
-| rightIcon      | 右边图标，[图标Api](icon#api) | `HyIconProps`      | -            |
-| arrowDirection | 右侧箭头的方向                | `string`           | 'right'      |
-| url            | 点击后跳转的URL地址            | `string`           | -            |
-| stop           | 点击cell是否阻止事件传播         | `boolean`          | true         |
-| name           | 标识符，用于在click事件中进行返回    | `string`\|`number` | -            |
-| customStyle    | 定义需要用到的外部样式            | `CSSProperties`    | -            |
-| customClass    | 自定义外部类名                | `string`           | -            |
+| 参数             | 说明                     | 类型                 | 默认值        |
+|----------------|------------------------|--------------------|------------|
+| title          | 头部标题                   | `string`           | -          |
+| sub            | 标题下面小提示                | `string`           | -          |
+| disabled       | 是否禁用cell               | `boolean`          | false      |
+| value          | 右侧的内容                  | `string`           | -          |
+| icon           | 左边图标，[图标Api](icon#api) | `HyIconProps`      | -          |
+| rightIcon      | 右边图标，[图标Api](icon#api) | `HyIconProps`      | -          |
+| arrowDirection | 右侧箭头的方向                | `string`           | right      |
+| url            | 点击后跳转的URL地址            | `string`           | -          |
+| stop           | 点击cell是否阻止事件传播         | `boolean`          | true       |
+| name           | 标识符，用于在click事件中进行返回    | `string`\|`number` | -          |
+| customStyle    | 定义需要用到的外部样式            | `CSSProperties`    | -          |
+| customClass    | 自定义外部类名                | `string`           | -          |
 
 
 ## Events

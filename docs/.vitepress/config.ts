@@ -163,6 +163,7 @@ export default defineConfig({
             { text: "BackTop 返回顶部", link: "/components/backTop" },
             { text: "Dropdown 下拉菜单", link: "/components/dropdown" },
             { text: "Empty 空状态", link: "/components/empty" },
+            { text: "IndexBar 索引栏", link: "/components/indexBar" },
             { text: "Menu 侧边菜单栏", link: "/components/menu" },
             { text: "Navbar 自定义导航栏", link: "/components/navbar" },
             { text: "Pagination 分页", link: "/components/pagination" },

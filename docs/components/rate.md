@@ -6,13 +6,13 @@
 感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [rate组件](https://uiadmin.net/uview-plus/components/rate.html) 的代码实现。
 :::
 
-## 平台差异说明
+## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
 |----------|----|-------|--------|
 | ✔        | ✔  | ✔     | ✔      |
 
-## 基本使用示例
+## :japanese_castle:基本使用示例
 
 ```html
 <!-- 全局使用 -->
@@ -75,22 +75,22 @@ import { IconConfig } from "hy-app";
 
 ## API
 
-| 参数            | 说明             | 类型                   | 默认值                  |
-|---------------|----------------|----------------------|----------------------|
-| v-model       | 双向绑定选择星星的数量    | `number`             | 1                    |
-| count         | 最多可选的星星数量      | `number`             | 5                    |
-| disabled      | 是否禁止用户操作       | `boolean`            | false                |
-| readonly      | 是否只读           | `boolean`            | false                |
-| size          | 星星的大小，单位rpx    | `number` \| `string` | 18                   |
-| inactiveColor | 未选中星星的颜色       | `string`             | #b2b2b2              |
-| activeColor   | 选中的星星颜色        | `string`             | #FFF00D              |
-| gutter        | 星星之间的距离        | `number`             | 4                    |
-| minCount      | 最少选中星星的个数      | `number`             | 1                    |
-| allowHalf     | 是否允许半星选择       | `boolean`            | false                |
-| activeIcon    | 选中时的图标名        | `string`             | IconConfig.STAR_FILL |
-| inactiveIcon  | 未选中时的图标名       | `string`             | IconConfig.STAR      |
-| touchable     | 是否可以通过滑动手势选择评分 | `boolean`            | true                 |
-| customStyle   | 自定义样式          | `CSSProperties`      | -                    |
+| 参数            | 说明             | 类型                 | 默认值       |
+|---------------|----------------|--------------------|-----------|
+| v-model       | 双向绑定选择星星的数量    | `number`           | 1         |
+| count         | 最多可选的星星数量      | `number`           | 5         |
+| disabled      | 是否禁止用户操作       | `boolean`          | false     |
+| readonly      | 是否只读           | `boolean`          | false     |
+| size          | 星星的大小，单位rpx    | `number`\|`string` | 18        |
+| inactiveColor | 未选中星星的颜色       | `string`           | #b2b2b2   |
+| activeColor   | 选中的星星颜色        | `string`           | #FFF00D   |
+| gutter        | 星星之间的距离        | `number`           | 4         |
+| minCount      | 最少选中星星的个数      | `number`           | 1         |
+| allowHalf     | 是否允许半星选择       | `boolean`          | false     |
+| activeIcon    | 选中时的图标名        | `string`           | STAR_FILL |
+| inactiveIcon  | 未选中时的图标名       | `string`           | STAR      |
+| touchable     | 是否可以通过滑动手势选择评分 | `boolean`          | true      |
+| customStyle   | 自定义样式          | `CSSProperties`    | -         |
 
 ## Events
 

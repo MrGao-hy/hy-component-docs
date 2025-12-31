@@ -5,6 +5,8 @@ import TheIconList from '../components/TheIconList.vue';
 import Colors from '../components/colors.vue';
 import PreviewDome from "../components/previewDome.vue";
 import 'virtual:group-icons.css'
+import '../styles/scss/theme.scss'
+import '../styles/scss/color.scss'
 
 
 export default {

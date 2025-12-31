@@ -49,8 +49,3 @@ onMounted(() => {
   );
 });
 </script>
-
-<style>
-@import "../lib/styles/custom.css";
-@import "../lib/styles/theme.scss";
-</style>

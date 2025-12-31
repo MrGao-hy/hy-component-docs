@@ -6,13 +6,13 @@
 感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [avatar组件](https://uiadmin.net/uview-plus/components/avatar.html) 的代码实现。
 :::
 
-## 平台差异说明
+## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
 |----------|----|-------|--------|
 | ✔        | ✔  | ✔     | ✔      |
 
-## 基本使用示例
+## :japanese_castle:基本使用示例
 
 ```html
 <!-- 全局使用 -->
@@ -78,24 +78,24 @@ import { HyAvatar } from "hy-app"
 
 ## API
 
-| 参数              | 说明                                                                          | 类型                                   | 默认值         |
-|-----------------|-----------------------------------------------------------------------------|--------------------------------------|-------------|
-| src             | 头像路径，如加载失败，将会显示默认头像(不能为相对路径)                                                | `string`                             | -           |
-| shape           | 头像形状                                                                        | `circle`\|`square`                   | circle      |
-| size            | 头像尺寸，可以为指定字符串(large, default, mini)，或者数值                                    | `small`\|`medium`\|`large`\|`number` | 40          |
-| mode            | 头像图片的裁剪类型,[uniapp的image](https://uniapp.dcloud.net.cn/component/image.html) | `string`                             | scaleToFill |
-| text            | 用文字替代图片，级别优先于src                                                            | `string`                             | -           |
-| bg-color        | 背景颜色，一般显示文字时用                                                               | `string`                             | #c0c4cc     |
-| color           | 文字颜色                                                                        | `string`                             | #ffffff     |
-| font-size       | 文字大小                                                                        | `string`\|`number`                   | 18          |
-| icon            | 显示的图标                                                                       | `string`                             | -           |
-| mp-avatar       | 显示小程序头像，只对百度，微信，QQ小程序有效                                                     | `boolean`                            | false       |
-| random-bg-color | 是否使用随机背景色                                                                   | `boolean`                            | false       |
-| default-url     | 加载失败的默认头像(组件有内置默认图片)                                                        | `string`                             | -           |
-| color-index     | 如果配置了randomBgColor为true，且配置了此值，则从默认的背景色数组中取出对应索引的颜色值，取值0-19之间               | `number`                             | -           |
-| name            | 组件标识符                                                                       | `string`                             | level       |
-| customStyle     | 自定义需要用到的外部样式                                                                | `CSSProperties`                      | -           |
-| customClass     | 自定义外部类名                                                                     | `string`                             | -           |
+| 参数              | 说明                                                                          | 类型                 | 默认值         |
+|-----------------|-----------------------------------------------------------------------------|--------------------|-------------|
+| src             | 头像路径，如加载失败，将会显示默认头像(不能为相对路径)                                                | `string`           | -           |
+| shape           | 头像形状                                                                        | `circle`\|`square` | circle      |
+| size            | 头像尺寸，可以为指定字符串(large, default, mini)，或者数值                                    | `string`\|`number` | 40          |
+| mode            | 头像图片的裁剪类型,[uniapp的image](https://uniapp.dcloud.net.cn/component/image.html) | `string`           | scaleToFill |
+| text            | 用文字替代图片，级别优先于src                                                            | `string`           | -           |
+| bg-color        | 背景颜色，一般显示文字时用                                                               | `string`           | #c0c4cc     |
+| color           | 文字颜色                                                                        | `string`           | #ffffff     |
+| font-size       | 文字大小                                                                        | `string`\|`number` | 18          |
+| icon            | 显示的图标                                                                       | `string`           | -           |
+| mp-avatar       | 显示小程序头像，只对百度，微信，QQ小程序有效                                                     | `boolean`          | false       |
+| random-bg-color | 是否使用随机背景色                                                                   | `boolean`          | false       |
+| default-url     | 加载失败的默认头像(组件有内置默认图片)                                                        | `string`           | -           |
+| color-index     | 如果配置了randomBgColor为true，且配置了此值，则从默认的背景色数组中取出对应索引的颜色值，取值0-19之间               | `number`           | -           |
+| name            | 组件标识符                                                                       | `string`           | level       |
+| customStyle     | 自定义需要用到的外部样式                                                                | `CSSProperties`    | -           |
+| customClass     | 自定义外部类名                                                                     | `string`           | -           |
 
 ## Events
 

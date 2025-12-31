@@ -144,16 +144,17 @@ onMounted(() => {
   width: 390px;
   position: fixed;
   z-index: 10;
-  margin: 0;
   /* top: calc(3.6em + 3px); */
   top: calc((100vh - 560px - 3.6rem) / 2 + 3.6rem);
+  right: 10px;
   box-sizing: border-box;
   overflow-y: auto;
   /* background-image: url(/iPhone_model.png); */
   /*background-image: url(/common/iPhone.png);*/
   background-repeat: no-repeat;
   background-size: 100%;
-  box-shadow: 0 4px 25px 0 rgba(4, 40, 60, 0.18);
+  //box-shadow: 0 4px 25px 0 rgba(4, 40, 60, 0.18);
+  box-shadow: var(--vp-shadow-5);
   border-radius: 30px;
 
   /* 头部样式 */
@@ -248,8 +249,8 @@ onMounted(() => {
   }
 
   .demo-model {
-    top: calc((100vh - 110px * 143.6 / 70.9 - 3.6rem) / 2 + 3.6rem);
-    right: 0;
+    top: calc(50vh - 330px);
+    right: 15px;
     margin-right: 0;
   }
 }
@@ -257,8 +258,8 @@ onMounted(() => {
 @media (width<1280px) {
   .demo-model {
     height: calc(310px * 143.6 / 70.9);
-    top: calc((100vh - 110px * 143.6 / 70.9 - 3.6rem) / 2 + 3.6rem);
-    right: 0;
+    top: calc(50vh - 270px);
+    right: 15px;
     margin-right: 0;
   }
 }
@@ -282,20 +283,20 @@ onMounted(() => {
 
 @media screen and (min-width: 1366px) {
   .demo-model {
-    width: 300px;
+    width: 340px;
     height: calc(300px * 2 + 60px);
     top: calc(50vh - 300px);
-    right: 0;
+    right: 15px;
     margin-right: 5px;
   }
 }
 
 @media screen and (min-width: 1500px) {
   .demo-model {
-    width: 310px;
+    width: 340px;
     height: calc(310px * 2 + 100px);
     top: calc((100vh - 310px * 143.6 / 70.9 - 3.6rem) / 2 + 3.6rem);
-    right: 0;
+    right: 15px;
     margin-right: 66px;
   }
 }

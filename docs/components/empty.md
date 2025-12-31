@@ -6,13 +6,13 @@
 感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [empty组件](https://uiadmin.net/uview-plus/components/empty.html) 的代码实现。
 :::
 
-## 平台差异说明
+## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
 |----------|----|-------|--------|
 | ✔        | ✔  | ✔     | ✔      |
 
-## 基本使用示例
+## :japanese_castle:基本使用示例
 
 ```html
 <!-- 全局使用 -->
@@ -59,35 +59,35 @@ import { HyEmpty } from "hy-app"
 
 ## API
 
-| 参数          | 说明                                        | 类型                                                                                                                 | 默认值     |
-|-------------|-------------------------------------------|--------------------------------------------------------------------------------------------------------------------|---------|
-| show        | 是否显示组件                                    | `boolean`                                                                                                          | true    |
-| mode        | 缺省页内容                                     | `content`\|`search`\|`address`\|`network`\|`order`\|`coupon`\|`favor`\|`history`\|`message`\|`comment`\|`integral` | content |
-| imageUrl    | 空状态icon图片                                 | `string`                                                                                                           | -       |
-| zIndex      | 组件层级                                      | `number`                                                                                                           | 889     |
-| width       | 图片宽度                                      | `string`\|`number`                                                                                                 | 240px   |
-| height      | 图片高度                                      | `string`\|`number`                                                                                                 | 240px   |
-| description | 提示信息                                      | `string`                                                                                                           | 暂无数据    |
-| desSize     | 提示信息大小                                    | `string`\|`number`                                                                                                 | 15      |
-| desColor    | 提示信息颜色                                    | `string`                                                                                                           | -       |
-| imgMargin   | icon图片margin                              | `string`                                                                                                           | -       |
-| button      | 按钮属性集合，text有值时候显示，详见[按钮Api](./button#api) | `HyButtonProps`                                                                                                    | -       |
-| navigateUrl | 跳转地址                                      | `string`                                                                                                           | -       |
-| customStyle | 自定义输入框外部样式                                | `CSSProperties`                                                                                                    | -       |
-| customClass | 自定义外部类名                                   | `string`                                                                                                           | -       |
+| 参数          | 说明                                        | 类型                 | 默认值     |
+|-------------|-------------------------------------------|--------------------|---------|
+| show        | 是否显示组件                                    | `boolean`          | true    |
+| mode        | 缺省页内容                                     | `string`           | content |
+| imageUrl    | 空状态icon图片                                 | `string`           | -       |
+| zIndex      | 组件层级                                      | `number`           | 889     |
+| width       | 图片宽度                                      | `string`\|`number` | 240px   |
+| height      | 图片高度                                      | `string`\|`number` | 240px   |
+| description | 提示信息                                      | `string`           | 暂无数据    |
+| desSize     | 提示信息大小                                    | `string`\|`number` | 15      |
+| desColor    | 提示信息颜色                                    | `string`           | -       |
+| imgMargin   | icon图片margin                              | `string`           | -       |
+| button      | 按钮属性集合，text有值时候显示，详见[按钮Api](./button#api) | `HyButtonProps`    | -       |
+| navigateUrl | 跳转地址                                      | `string`           | -       |
+| customStyle | 自定义输入框外部样式                                | `CSSProperties`    | -       |
+| customClass | 自定义外部类名                                   | `string`           | -       |
 
 ## Events
 
-| 事件名   | 说明 | 回调参数 |
-|-------|----|------|
-| click | -  | -    |
+| 事件名   | 说明       | 回调参数 |
+|-------|----------|------|
+| click | 点击按钮执行函数 | -    |
 
 ## Slots
 
-| 插槽名         | 说明 | 接收值 |
-|-------------|----|-----|
-| default     | -  | -   |
-| description | -  | -   |
+| 插槽名         | 说明      | 接收值 |
+|-------------|---------|-----|
+| default     | 默认插槽    | -   |
+| description | 自定义底部描述 | -   |
 
 [^1]: `normal`：默认尺寸；`large`：大尺寸； `small`：小尺寸；`mini`：迷你尺寸
 [^2]: `error`：#fa3534；`warning`：#ff9900；`success`：#19be6b；`primary`：#2979ff； `info`：#909399；

@@ -6,13 +6,13 @@
 感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [swipeAction组件](https://uiadmin.net/uview-plus/components/swipeAction.html) 的代码实现。
 :::
 
-## 平台差异说明
+## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
 |----------|----|-------|--------|
 | ✔        | ✔  | ✔     | ✔      |
 
-## 基本使用示例
+## :japanese_castle:基本使用示例
 
 ```html
 <!-- 全局使用 -->
@@ -62,14 +62,14 @@
 
 ## API
 
-| 参数           | 说明           | 类型                        | 默认值   |
-|--------------|--------------|---------------------------|-------|
-| v-model      | 滑动按钮的状态      | `left`\|`close `\|`right` | close |
-| disabled     | 是否禁用滑动操作     | `boolean`                 | false |
-| borderBottom     | 显示底部边框     | `boolean`                 | false |
-| options     | 是否禁用滑动操作     | `boolean`                 | false |
-| duration     | 动画过渡时间，单位ms     | `number`                  | 300 |
-| before-close | 关闭滑动按钮前的钩子函数 | `function`                | -     |
+| 参数           | 说明           | 类型                       | 默认值   |
+|--------------|--------------|--------------------------|-------|
+| v-model      | 滑动按钮的状态      | `left`\|`close`\|`right` | close |
+| disabled     | 是否禁用滑动操作     | `boolean`                | false |
+| borderBottom | 显示底部边框       | `boolean`                | false |
+| options      | 是否禁用滑动操作     | `boolean`                | false |
+| duration     | 动画过渡时间，单位ms  | `number`                 | 300   |
+| before-close | 关闭滑动按钮前的钩子函数 | `function`               | -     |
 
 ## Events
 

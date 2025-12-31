@@ -2,13 +2,13 @@
 > Flex 为块级元素提供间距，其本身不会添加包裹元素。适用于垂直或水平方向上的子元素布局，并提供了更多的灵活性和控制能力。
 
 
-## 平台差异说明
+## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
 |----------|----|-------|--------|
 | ✔        | ✔  | ✔     | ✔      |
 
-## 基本使用示例
+## :japanese_castle:基本使用示例
 
 ```html
 <!-- 全局使用 -->
@@ -50,17 +50,20 @@
 
 ## API
 
-| 参数          | 说明                                       | 类型                                                                                  | 默认值        |
-|-------------|------------------------------------------|-------------------------------------------------------------------------------------|------------|
-| vertical    | flex 主轴的方向是否垂直，使用 flex-direction: column | `boolean`                                                                           | false      |
-| wrap        | 设置元素单行显示还是多行显示                           | `boolean`                                                                           | nowrap     |
-| justify     | 设置元素在主轴方向上的对齐方式                          | `flex-start`\|`center`\|`flex-end`\|`space-between`\|`space-around`\|`space-evenly` | flex-start |
-| align       | 设置元素在交叉轴方向上的对齐方式                         | `flex-start`\|`center`\|`flex-end`\|`stretch`\|`baseline`                           | flex-start |
-| flex        | flex CSS 简写属性                            | `string`                                                                            | initial    |
-| gap         | 设置网格之间的间隙                                | `string \| number \| (number\|string)[]`                                            | 0          |
-| basis       | 控制子元素主轴方向初始尺寸                            | `string`                                                                            | auto       |
-| customStyle | 自定义需要用到的外部样式                             | `CSSProperties`                                                                     | -          |
-| customClass | 自定义外部类名                                  | `string`                                                                            | -          |
+| 参数          | 说明                                       | 类型                             | 默认值        |
+|-------------|------------------------------------------|--------------------------------|------------|
+| vertical    | flex 主轴的方向是否垂直，使用 flex-direction: column | `boolean`                      | false      |
+| wrap        | 设置元素单行显示还是多行显示                           | `boolean`                      | nowrap     |
+| justify     | 设置元素在主轴方向上的对齐方式[^1]                      | `string`                       | flex-start |
+| align       | 设置元素在交叉轴方向上的对齐方式[^2]                     | `string`                       | flex-start |
+| flex        | flex CSS 简写属性                            | `string`                       | initial    |
+| gap         | 设置网格之间的间隙                                | `string`\|`number`\|`number[]` | 0          |
+| basis       | 控制子元素主轴方向初始尺寸                            | `string`                       | auto       |
+| customStyle | 自定义需要用到的外部样式                             | `CSSProperties`                | -          |
+| customClass | 自定义外部类名                                  | `string`                       | -          |
 
 
 <demo-model url="pages/components/flex/flex"></demo-model>
+
+[^1]: flex-start：左对齐；center：居中对齐；flex-end：右对齐；space-between：两端对齐，项目之间间隔相等；space-around：每个项目两侧的间隔相等，项目之间的间隔是项目与边框间隔的两倍；space-evenly：所有间隔完全相等；
+[^2]: flex-start：顶部对齐；center：居中对齐；flex-end：底部对齐；stretch：拉伸填满容器；baseline：基线对齐；

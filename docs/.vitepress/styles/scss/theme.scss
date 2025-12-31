@@ -1,0 +1,137 @@
+:root {
+  /* 图标背景 */
+  /* 设置线性渐变 */
+  --vp-home-hero-image-background-image: linear-gradient(-45deg, #bd34fe 50%, #47caff 50%);
+  /* 设置模糊度 */
+  --vp-home-hero-image-filter: blur(80px);
+}
+
+
+// 组件配置
+$hy-form-item-height: 70rpx;
+
+
+// 主颜色
+$hy-main-color: #01BEFF;
+$hy-main-orange: #FBBD12;
+$hy-embellished-green: #00FFC6;
+$hy-embellished-yellow: #FFF00D;
+$hy-auxiliary-powder: #FF71D2;
+$hy-auxiliary-blue: #82B2FF;
+$hy-bg-color: #FFFFFF;
+$hy-space-color: #F8F7F8;
+
+// 边框颜色
+$hy-border-solid-color: rgba(0, 0, 0, 0.1);
+$hy-border-solids-color: #eee;
+$hy-border-dashed-color: #ddd;
+
+// 阴影颜色
+$hy-shadow-color: rgba(0, 0, 0, 0.1);
+$hy-box-shadow-color: rgba(0, 0, 0, 0.2);
+
+// 字体颜色
+$hy-font-color: #080808;
+$hy-font-sub-color: #AAAAAA;
+$hy-content-color: #838383;
+$hy-font-holder-color: #E6E6E6;
+
+$hy-mask-bg-color: rgba(0, 0, 0, 0.4);
+
+$hy-progress-bg-color: #f0f0f0;
+
+
+$hy-color-red: #E83A30;
+$hy-color-red-dark: #BA2E26;
+$hy-color-red-disabled: #F39C97;
+$hy-color-red-light: #FAD8D6;
+
+$hy-color-purplered: #E72F8C;
+$hy-color-purplered-dark: #B9276F;
+$hy-color-purplered-disabled: #F397C5;
+$hy-color-purplered-light: #FAD5E8;
+
+$hy-color-purple: #892FE8;
+$hy-color-purple-dark: #6E27BA;
+$hy-color-purple-disabled: #C497F3;
+$hy-color-purple-light: #E7D5FA;
+
+$hy-color-bluepurple: #5F4FD9;
+$hy-color-bluepurple-dark: #4C3FAE;
+$hy-color-bluepurple-disabled: #AFA7EC;
+$hy-color-bluepurple-light: #DFDCF7;
+
+$hy-color-aquablue: #3646FF;
+$hy-color-aquablue-dark: #2B38CC;
+$hy-color-aquablue-disabled: #9AA2FF;
+$hy-color-aquablue-light: #D7DAFF;
+
+$hy-color-blue: #3D7EFF;
+$hy-color-blue-dark: #3465CC;
+$hy-color-blue-disabled: #9EBEFF;
+$hy-color-blue-light: #D8E5FF;
+
+$hy-color-indigo: #31C9E8;
+$hy-color-indigo-dark: #28A1BA;
+$hy-color-indigo-disabled: #98E4F3;
+$hy-color-indigo-light: #D6F4FA;
+
+$hy-color-cyan: #2DE88D;
+$hy-color-cyan-dark: #24BA97;
+$hy-color-cyan-disabled: #96F3DE;
+$hy-color-cyan-light: #D5FAF2;
+
+$hy-color-teal: #24F083;
+$hy-color-teal-dark: #1DC069;
+$hy-color-teal-disabled: #91F7C1;
+$hy-color-teal-light: #D3FCE6;
+
+$hy-color-green: #31E749;
+$hy-color-green-dark: #28B93D;
+$hy-color-green-disabled: #98F3A4;
+$hy-color-green-light: #D6FADB;
+
+$hy-color-yellowgreen: #A4E82F;
+$hy-color-yellowgreen-dark: #82BA27;
+$hy-color-yellowgreen-disabled: #D1F397;
+$hy-color-yellowgreen-light: #EDFAD5;
+
+$hy-color-lime: #D5EB00;
+$hy-color-lime-dark: #AABC00;
+$hy-color-lime-disabled: #E9F57F;
+$hy-color-lime-light: #F7FBCC;
+
+$hy-color-yellow: #FFF420;
+$hy-color-yellow-dark: #CCC21A;
+$hy-color-yellow-disabled: #FFF88F;
+$hy-color-yellow-light: #FFFDD2;
+
+$hy-color-orangeyellow: #FFCA28;
+$hy-color-orangeyellow-dark: #CCA220;
+$hy-color-orangeyellow-disabled: #FFE493;
+$hy-color-orangeyellow-light: #FFF4D4;
+
+$hy-color-orange: #FFA726;
+$hy-color-orange-dark: #CC851E;
+$hy-color-orange-disabled: #FFD392;
+$hy-color-orange-light: #FFEDD4 ;
+
+$hy-color-orangered: #FF7043;
+$hy-color-orangered-dark: #CC5A36;
+$hy-color-orangered-disabled: #FFB7A1;
+$hy-color-orangered-light: #FFE2D9;
+
+$hy-color-brown: #914F2C;
+$hy-color-brown-dark: #743F23;
+$hy-color-brown-disabled: #C8A795;
+$hy-color-brown-light: #E9DCD5;
+
+$hy-color-grey: #78909C;
+$hy-color-grey-dark: #5F7E8B;
+$hy-color-grey-disabled: #C6D1D8;
+$hy-color-grey-light: #E4E9EC;
+
+$hy-color-gray: #AAAAAA;
+$hy-color-gray-dark: #838383;
+$hy-color-gray-disabled: #E6E6E6;
+$hy-color-gray-light: #F8F7F8;

@@ -6,13 +6,13 @@
 感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [picker组件](https://uiadmin.net/uview-plus/components/picker.html) 的代码实现。
 :::
 
-## 平台差异说明
+## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
 |----------|----|-------|--------|
 | ✔        | ✔  | ✔     | ✔      |
 
-## 基本使用示例
+## :japanese_castle:基本使用示例
 
 ```html
 <!-- 全局使用 -->
@@ -159,30 +159,30 @@ const columns = reactive([
 
 ## API
 
-| 参数                  | 说明                                                | 类型                                         | 默认值    |
-|---------------------|---------------------------------------------------|--------------------------------------------|--------|
-| modelValue          | 回显到输入框值（hasInput为true必须设置）                        | `string` \| `array`                        | -      |
-| show                | 是否显示选择器（hasInput为true不用设置）                        | `boolean`                                  | true   |
-| popupMode           | 弹窗弹出模式                                            | `bottom`\|`center`\|`left`\|`right`\|`top` | bottom |
-| separator           | 多列分隔符                                             | `string`                                   | \      |
-| showToolbar         | 是否显示顶部的操作栏                                        | `boolean`                                  | true   |
-| title               | 顶部标题                                              | `string`                                   | -      |
-| columns             | 设置每一列的数据，见上方说明                                    | `array`                                    | -      |
-| loading             | 是否显示加载中状态                                         | `boolean`                                  | false  |
-| itemHeight          | 各列中，单个选项的高度                                       | `number`                                   | 44     |
-| cancelText          | 取消按钮的文字                                           | `string`                                   | 取消     |
-| confirmText         | 确认按钮的文字                                           | `string`                                   | 确定     |
-| cancelColor         | 取消按钮的颜色                                           | `string`                                   | -      |
-| confirmColor        | 确认按钮的颜色                                           | `string`                                   | -      |
-| visibleItemCount    | 每列中可见选项的数量                                        | `number`                                   | 5      |
-| labelKey            | 选项对象中，value对应的 key                                | `string`                                   | label  |
-| valueKey            | 选项对象中，展示的文本对应的 key                                | `string`                                   | value  |
-| closeOnClickOverlay | 是否允许点击遮罩关闭选择器                                     | `boolean`                                  | false  |
-| defaultIndex        | 各列的默认索引                                           | `array`                                    | -      |
-| immediateChange     | 是否在手指松开时立即触发change事件                              | `boolean`                                  | true   |
-| zIndex              | 最高层级                                              | `number`                                   | 10076  |
-| hasInput            | 是否显示输入框                                           | `boolean`                                  | false  |
-| input               | 输入框集合属性,hasInput为true可以配置，详见[输入框Api](./input#api) | `HyInputProps`                             | -      |
+| 参数                  | 说明                                                | 类型                | 默认值    |
+|---------------------|---------------------------------------------------|-------------------|--------|
+| modelValue          | 回显到输入框值（hasInput为true必须设置）                        | `string`\|`array` | -      |
+| show                | 是否显示选择器（hasInput为true不用设置）                        | `boolean`         | true   |
+| popupMode           | 弹窗弹出模式[^1]                                        | `string`          | bottom |
+| separator           | 多列分隔符                                             | `string`          | \      |
+| showToolbar         | 是否显示顶部的操作栏                                        | `boolean`         | true   |
+| title               | 顶部标题                                              | `string`          | -      |
+| columns             | 设置每一列的数据，见上方说明                                    | `array`           | -      |
+| loading             | 是否显示加载中状态                                         | `boolean`         | false  |
+| itemHeight          | 各列中，单个选项的高度                                       | `number`          | 44     |
+| cancelText          | 取消按钮的文字                                           | `string`          | 取消     |
+| confirmText         | 确认按钮的文字                                           | `string`          | 确定     |
+| cancelColor         | 取消按钮的颜色                                           | `string`          | -      |
+| confirmColor        | 确认按钮的颜色                                           | `string`          | -      |
+| visibleItemCount    | 每列中可见选项的数量                                        | `number`          | 5      |
+| labelKey            | 选项对象中，value对应的 key                                | `string`          | label  |
+| valueKey            | 选项对象中，展示的文本对应的 key                                | `string`          | value  |
+| closeOnClickOverlay | 是否允许点击遮罩关闭选择器                                     | `boolean`         | false  |
+| defaultIndex        | 各列的默认索引                                           | `array`           | -      |
+| immediateChange     | 是否在手指松开时立即触发change事件                              | `boolean`         | true   |
+| zIndex              | 最高层级                                              | `number`          | 10076  |
+| hasInput            | 是否显示输入框                                           | `boolean`         | false  |
+| input               | 输入框集合属性,hasInput为true可以配置，详见[输入框Api](./input#api) | `HyInputProps`    | -      |
 
 ### columns
 
@@ -210,3 +210,5 @@ const columns = reactive([
 | toolbar-bottom | 输入框下方自定义区域                                                  | -    |
 
 <demo-model url="pages/components/picker/picker"></demo-model>
+
+[^1]: bottom：底部；center：中间；left：左边；right：右边；top：上班；

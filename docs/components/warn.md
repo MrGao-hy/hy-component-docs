@@ -6,13 +6,13 @@
 感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [alert组件](https://uiadmin.net/uview-plus/components/alert.html) 的代码实现。
 :::
 
-## 平台差异说明
+## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
 |----------|----|-------|--------|
 | ✔        | ✔  | ✔     | ✔      |
 
-## 基本使用示例
+## :japanese_castle:基本使用示例
 
 ```html
 <!-- 全局使用 -->
@@ -59,23 +59,23 @@ import { HyWarn } from "hy-app"
 
 ## API
 
-| 参数          | 说明                          | 类型                                               | 默认值     |
-|-------------|-----------------------------|--------------------------------------------------|---------|
-| title       | 显示的文字                       | `string`                                         | -       |
-| type        | 使用预设的颜色                     | `error`\|`warning`\|`success`\|`primary`\|`info` | warning |
-| description | 辅助性文字，颜色比title浅一点，字号也小一点，可选 | `string`                                         | -       |
-| closable    | 关闭按钮(默认为叉号icon图标)           | `boolean`                                        | false   |
-| showIcon    | 是否显示左边的辅助图标                 | `boolean`                                        | false   |
-| theme       | 显示的暗色或者亮色                   | `light` \| `dark`                                | dark    |
-| center      | 文字是否居中                      | `boolean`                                        | false   |
-| fontSize    | 字体大小                        | `string` \| `number`                             | 14      |
+| 参数          | 说明                          | 类型                                                | 默认值     |
+|-------------|-----------------------------|---------------------------------------------------|---------|
+| title       | 显示的文字                       | `string`                                          | -       |
+| type        | 使用预设的颜色                     | `error`\|`warning`\|`success` \|`primary`\|`info` | warning |
+| description | 辅助性文字，颜色比title浅一点，字号也小一点，可选 | `string`                                          | -       |
+| closable    | 关闭按钮(默认为叉号icon图标)           | `boolean`                                         | false   |
+| showIcon    | 是否显示左边的辅助图标                 | `boolean`                                         | false   |
+| theme       | 显示的暗色或者亮色                   | `light` \| `dark`                                 | dark    |
+| center      | 文字是否居中                      | `boolean`                                         | false   |
+| fontSize    | 字体大小                        | `string` \| `number`                              | 14      |
 
 ## Events
 
 | 事件名   | 说明      | 回调参数 |
 |-------|---------|------|
 | click | 点击组件时触发 | -    |
-| close | 点击组件时触发 | -    |
+| close | 关闭组件时触发 | -    |
 
 
 <demo-model url="pages/components/warn/warn"></demo-model>

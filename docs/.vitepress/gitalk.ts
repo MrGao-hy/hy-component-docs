@@ -1,6 +1,6 @@
 import Gitalk from "gitalk";
 import "gitalk/dist/gitalk.css";
-import "./lib/styles/gitalk.scss";
+import "./styles/scss/gitalk.scss";
 
 const generateId = (path) => {
   return path

@@ -6,13 +6,13 @@
 感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [checkbox组件](https://uiadmin.net/uview-plus/components/radio.html) 的代码实现。
 :::
 
-## 平台差异说明
+## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
 |----------|----|-------|--------|
 | ✔        | ✔  | ✔     | ✔      |
 
-## 基本使用示例
+## :japanese_castle:基本使用示例
 
 ```html
 <!-- 全局使用 -->
@@ -143,26 +143,26 @@ const value = ref("apply");
 
 ## API
 
-| 参数            | 说明              | 类型                                             | 默认值                                                  |
-|---------------|-----------------|------------------------------------------------|------------------------------------------------------|
-| v-model       | 双向绑定值，数组类型      | `string`\|`number`                             | -                                                    |
-| columns       | 接收数组值           | `array`                                        | -                                                    |
-| fieldNames    | 自定义接收columns的键  | `object`                                       | \{label: "label",value: "value",checked: "checked"\} |
-| shape         | 复选框形状[^1]       | `circle`\|`square`                             | circle                                               |
-| size          | 复选框大小[^2]       | `small`\|`medium`\|`large`\|`string`\|`number` | medium                                               |
-| disabled      | 是否禁用            | `boolean`                                      | false                                                |
-| activeColor   | 选中状态下的颜色        | `string`                                       | -                                                    |
-| inactiveColor | 未选中的颜色          | `string`                                       | #c8c9cc                                              |
-| iconSize      | 图标的大小，单位px      | `string`\|`number`                             | 20                                                   |
-| iconColor     | 图标颜色            | `string`                                       | -                                                    |
-| label         | label提示文字       | `string`                                       | -                                                    |
-| labelSize     | label的字体大小，px单位 | `string`\|`number`                             | -                                                    |
-| labelColor    | label的颜色        | `string`                                       | -                                                    |
-| iconPlacement | 勾选图标的对齐方式       | `left`\|`right`                                | left                                                 |
-| borderBottom  | 竖向配列时，是否显示下划线   | `boolean`                                      | false                                                |
-| labelDisabled | 是否禁止点击提示语选中复选框  | `boolean`                                      | false                                                |
-| placement     | 布局方式[^3]        | `row`\|`column`                                | row                                                  |
-| customStyle   | 定义需要用到的外部样式     | `CSSProperties`                                | -                                                    |
+| 参数            | 说明              | 类型                 | 默认值                                                  |
+|---------------|-----------------|--------------------|------------------------------------------------------|
+| v-model       | 双向绑定值，数组类型      | `string`\|`number` | -                                                    |
+| columns       | 接收数组值           | `array`            | -                                                    |
+| fieldNames    | 自定义接收columns的键  | `object`           | \{label: "label",value: "value",checked: "checked"\} |
+| shape         | 复选框形状[^1]       | `circle`\|`square` | circle                                               |
+| size          | 复选框大小[^2]       | `string`\|`number` | medium                                               |
+| disabled      | 是否禁用            | `boolean`          | false                                                |
+| activeColor   | 选中状态下的颜色        | `string`           | -                                                    |
+| inactiveColor | 未选中的颜色          | `string`           | #c8c9cc                                              |
+| iconSize      | 图标的大小，单位px      | `string`\|`number` | 20                                                   |
+| iconColor     | 图标颜色            | `string`           | -                                                    |
+| label         | label提示文字       | `string`           | -                                                    |
+| labelSize     | label的字体大小，px单位 | `string`\|`number` | -                                                    |
+| labelColor    | label的颜色        | `string`           | -                                                    |
+| iconPlacement | 勾选图标的对齐方式       | `left`\|`right`    | left                                                 |
+| borderBottom  | 竖向配列时，是否显示下划线   | `boolean`          | false                                                |
+| labelDisabled | 是否禁止点击提示语选中复选框  | `boolean`          | false                                                |
+| placement     | 布局方式[^3]        | `row`\|`column`    | row                                                  |
+| customStyle   | 定义需要用到的外部样式     | `CSSProperties`    | -                                                    |
 
 ## columns
 | 参数       | 说明     | 类型        | 默认值 |

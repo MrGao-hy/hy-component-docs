@@ -6,13 +6,13 @@
 感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [card组件](https://uiadmin.net/uview-plus/components/card.html) 的代码实现。
 :::
 
-## 平台差异说明
+## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
 |----------|----|-------|--------|
 | ✔        | ✔  | ✔     | ✔      |
 
-## 基本使用示例
+## :japanese_castle:基本使用示例
 
 ```html
 <!-- 全局使用 -->
@@ -94,39 +94,39 @@ import { HyCard } from "hy-app"
 
 ## API
 
-| 参数                 | 说明                                     | 类型                    | 默认值       |
-|--------------------|----------------------------------------|-----------------------|-----------|
-| full               | 卡片与屏幕两侧是否留空隙                           | `boolean`             | false     |
-| title              | 头部左边的标题                                | `string`              | -         |
-| title-color        | 标题颜色                                   | `string`              | -         |
-| title-size         | 标题字体大小，单位px                            | `string` \| `number`  | -         |
-| sub-title          | 副标题                                    | `string`              | -         |
-| sub-title-size     | 副标题字体大小                                | `string` \| `number`  | -         |
-| sub-title-color    | 副标题字体颜色                                | `string`              | -         |
-| border             | 是否显示边框                                 | `boolean`             | false     |
-| index              | 用于标识点击了第几个卡片                           | `string` \| `number`  | -         |
-| margin             | 卡片与屏幕两边和上下元素的间距，需带单位，如"30rpx 20rpx"    | `string`              | 0 0 20rpx |
-| border-radius      | 卡片整体的圆角值，单位px                          | `string` \| `number`  | 8px       |
-| head-style         | 头部自定义样式，对象形式                           | `CSSProperties`       | -         |
-| body-style         | 主体自定义样式，对象形式                           | `CSSProperties`       | -         |
-| foot-style         | 底部自定义样式，对象形式                           | `CSSProperties`       | -         |
-| head-border-bottom | 是否显示头部的下边框                             | `boolean`             | false     |
-| foot-border-top    | 是否显示底部的上边框                             | `boolean`             | false     |
-| thumb              | 缩略图路径，如设置将显示在标题的左边，不建议使用相对路径(支持组件库的图标) | `string`              | -         |
-| thumb-width        | 缩略图的宽度，高等于宽，单位px                       | `string` \| `number`  | 30px      |
-| thumb-circle       | 缩略图是否为圆形                               | `boolean`             | false     |
-| rightText          | 右边内容                                   | `string`              | -         |
-| right-text-color   | 右边内容颜色                                 | `string`              | -         |
-| right-text-size    | 右边内容字体大小                               | `string` \| `number`  | -         |
-| padding            | 给head，body，foot部的内边距，见上方说明，单位rpx       | `string` \| `number`  | 10px      |
-| paddingHead        | 头部内边距                                  | `string` \| `number`  | -         |
-| paddingBody        | 中部内边距                                  | `string` \| `number`  | -         |
-| paddingFoot        | 尾部内边距                                  | `string` \| `number`  | -         |
-| show-head          | 是否显示头部                                 | `boolean`             | true      |
-| show-foot          | 是否显示尾部                                 | `boolean`             | true      |
-| box-shadow         | 卡片外围阴影，字符串形式                           | `string` \| `boolean` | true      |
-| customStyle        | 自定义需要用到的外部样式                           | `CSSProperties`       | -         |
-| customClass        | 自定义外部类名                                | `string`              | -         |
+| 参数                 | 说明                                     | 类型                  | 默认值       |
+|--------------------|----------------------------------------|---------------------|-----------|
+| full               | 卡片与屏幕两侧是否留空隙                           | `boolean`           | false     |
+| title              | 头部左边的标题                                | `string`            | -         |
+| title-color        | 标题颜色                                   | `string`            | -         |
+| title-size         | 标题字体大小，单位px                            | `string`\|`number`  | -         |
+| sub-title          | 副标题                                    | `string`            | -         |
+| sub-title-size     | 副标题字体大小                                | `string`\|`number`  | -         |
+| sub-title-color    | 副标题字体颜色                                | `string`            | -         |
+| border             | 是否显示边框                                 | `boolean`           | false     |
+| index              | 用于标识点击了第几个卡片                           | `string`\|`number`  | -         |
+| margin             | 卡片与屏幕两边和上下元素的间距，需带单位，如"30rpx 20rpx"    | `string`            | 0 0 20rpx |
+| border-radius      | 卡片整体的圆角值，单位px                          | `string`\|`number`  | 8px       |
+| head-style         | 头部自定义样式，对象形式                           | `CSSProperties`     | -         |
+| body-style         | 主体自定义样式，对象形式                           | `CSSProperties`     | -         |
+| foot-style         | 底部自定义样式，对象形式                           | `CSSProperties`     | -         |
+| head-border-bottom | 是否显示头部的下边框                             | `boolean`           | false     |
+| foot-border-top    | 是否显示底部的上边框                             | `boolean`           | false     |
+| thumb              | 缩略图路径，如设置将显示在标题的左边，不建议使用相对路径(支持组件库的图标) | `string`            | -         |
+| thumb-width        | 缩略图的宽度，高等于宽，单位px                       | `string`\|`number`  | 30px      |
+| thumb-circle       | 缩略图是否为圆形                               | `boolean`           | false     |
+| rightText          | 右边内容                                   | `string`            | -         |
+| right-text-color   | 右边内容颜色                                 | `string`            | -         |
+| right-text-size    | 右边内容字体大小                               | `string`\|`number`  | -         |
+| padding            | 给head，body，foot部的内边距，见上方说明，单位rpx       | `string`\|`number`  | 10px      |
+| paddingHead        | 头部内边距                                  | `string`\|`number`  | -         |
+| paddingBody        | 中部内边距                                  | `string`\|`number`  | -         |
+| paddingFoot        | 尾部内边距                                  | `string`\|`number`  | -         |
+| show-head          | 是否显示头部                                 | `boolean`           | true      |
+| show-foot          | 是否显示尾部                                 | `boolean`           | true      |
+| box-shadow         | 卡片外围阴影，字符串形式                           | `string`\|`boolean` | true      |
+| customStyle        | 自定义需要用到的外部样式                           | `CSSProperties`     | -         |
+| customClass        | 自定义外部类名                                | `string`            | -         |
 
 ## Events
 

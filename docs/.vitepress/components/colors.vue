@@ -232,8 +232,6 @@ const colorList = ref([{
 </script>
 
 <style lang="scss" scoped>
-@import '/public/scss/theme.scss';
-@import '/public/scss/color.scss';
 
 .tn-color__wrap {
   display: flex;

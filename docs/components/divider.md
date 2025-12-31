@@ -6,13 +6,13 @@
 感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [divider组件](https://uiadmin.net/uview-plus/components/divider.html) 的代码实现。
 :::
 
-## 平台差异说明
+## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
 |----------|----|-------|--------|
 | ✔        | ✔  | ✔     | ✔      |
 
-## 基本使用示例
+## :japanese_castle:基本使用示例
 
 ```html
 <!-- 全局使用 -->
@@ -73,24 +73,24 @@ import { HyDivider } from "hy-app"
 
 ## API
 
-| 参数           | 说明                    | 类型                                         | 默认值                |
-|--------------|-----------------------|--------------------------------------------|--------------------|
-| text         | 文本内容                  | `string`\|`loadMore`\| `loading`\|`noMore` | -                  |
-| dashed       | 是否虚线                  | `boolean`                                  | false              |
-| hairline     | 是否细线                  | `boolean`                                  | true               |
-| dot          | 是否以点替代文字，优先于text字段起作用 | `boolean`                                  | false              |
-| textPosition | 内容文本的位置               | `center`\|`left`\|`right`                  | center             |
-| textSize     | 文本大小                  | `string` \| `number`                       | 14                 |
-| textColor    | 文本颜色                  | `string`                                   | #909399            |
-| lineColor    | 线条颜色                  | `string`                                   | #dcdfe6            |
-| loadingIcon  | 加载中状态的图标              | `string`                                   | IconConfig.LOADING |
-| loadMoreText | 加载前的提示语               | `string`                                   | 加载更多               |
-| loadingText  | 加载中提示语                | `string`                                   | 正在加载...            |
-| noMoreText   | 没有更多的提示语              | `string`                                   | 没有更多了              |
-| marginTop    | 与前一个元素的距离，单位px        | `string` \| `number`                       | 0                  |
-| marginBottom | 与后一个元素的距离，单位px        | `string` \| `number`                       | 0                  |
-| customStyle  | 自定义需要用到的外部样式          | `CSSProperties`                            | -                  |
-| customClass  | 自定义外部类名               | `string`                                   | -                  |
+| 参数           | 说明                    | 类型                                         | 默认值               |
+|--------------|-----------------------|--------------------------------------------|-------------------|
+| text         | 文本内容                  | `string`\|`loadMore`\| `loading`\|`noMore` | -                 |
+| dashed       | 是否虚线                  | `boolean`                                  | false             |
+| hairline     | 是否细线                  | `boolean`                                  | true              |
+| dot          | 是否以点替代文字，优先于text字段起作用 | `boolean`                                  | false             |
+| textPosition | 内容文本的位置               | `center`\|`left`\|`right`                  | center            |
+| textSize     | 文本大小                  | `string` \| `number`                       | 14                |
+| textColor    | 文本颜色                  | `string`                                   | #909399           |
+| lineColor    | 线条颜色                  | `string`                                   | #dcdfe6           |
+| loadingIcon  | 加载中状态的图标              | `string`                                   | LOADING |
+| loadMoreText | 加载前的提示语               | `string`                                   | 加载更多              |
+| loadingText  | 加载中提示语                | `string`                                   | 正在加载...           |
+| noMoreText   | 没有更多的提示语              | `string`                                   | 没有更多了             |
+| marginTop    | 与前一个元素的距离，单位px        | `string` \| `number`                       | 0                 |
+| marginBottom | 与后一个元素的距离，单位px        | `string` \| `number`                       | 0                 |
+| customStyle  | 自定义需要用到的外部样式          | `CSSProperties`                            | -                 |
+| customClass  | 自定义外部类名               | `string`                                   | -                 |
 
 ## Events
 

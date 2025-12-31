@@ -6,13 +6,13 @@
 感谢 Wot-UI 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考Wot-UI的 [popover组件](https://wot-design-uni.cn/component/popover.html) 的代码实现。
 :::
 
-## 平台差异说明
+## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
 |----------|----|-------|--------|
 | ✔        | ✔  | ✔     | ✔      |
 
-## 基本使用示例
+## :japanese_castle:基本使用示例
 :::warning 注意
 目前气泡容器是给的固定宽度，无法自适应宽度，因为自适应宽度无法超出父容器宽度
 :::
@@ -149,14 +149,14 @@ const { closeOutside } = useQueue()
 
 ## API
 
-| 参数        | 说明                | 类型                                                                                                                                                                 | 默认值    |
-|-----------|-------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------|
-| v-model   | 手动状态是否可见          | `boolean`                                                                                                                                                          | false  |
-| content   | 显示的内容             | `string` \| `Array`                                                                                                                                                | -      |
-| mode      | 当前显示的模式，决定内容的展现形式 | `normal` \| `menu`                                                                                                                                                 | normal |
-| placement | popover 的出现位置     | `top` \| `top-start` \| `top-end` \| `bottom` \| `bottom-start` \| `bottom-end` \| `left` \| `left-start` \| `left-end` \| `right` \| `right-start` \| `right-end` | bottom |
-| disabled  | popover 是否可用      | `boolean`                                                                                                                                                          | false  |
-| offset    | 出现位置的偏移量          | `number`                                                                                                                                                           | 0      |
+| 参数        | 说明                | 类型                  | 默认值    |
+|-----------|-------------------|---------------------|--------|
+| v-model   | 手动状态是否可见          | `boolean`           | false  |
+| content   | 显示的内容             | `string` \| `Array` | -      |
+| mode      | 当前显示的模式，决定内容的展现形式 | `normal` \| `menu`  | normal |
+| placement | popover 的出现位置[^1] | `string`            | bottom |
+| disabled  | popover 是否可用      | `boolean`           | false  |
+| offset    | 出现位置的偏移量          | `number`            | 0      |
 
 ## Methods
 
@@ -173,3 +173,5 @@ const { closeOutside } = useQueue()
 | content | 自定义气泡里面内容 | -   |
 
 <demo-model url="pages/components/popover/popover"></demo-model>
+
+[^1]: `left-top`：左上；`left-bottom`：左下；`right-top`：右上；`right-bottom`：右下；`left-center`：左中；`right-center`：右中；`top-center`：上中；`bottom-center`：下中；

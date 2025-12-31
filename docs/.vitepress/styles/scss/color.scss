@@ -1,0 +1,86 @@
+@use "theme" as *;
+
+@mixin getBackgroundColor($color: #FFFFFF, $light-color: #FFFFFF, $dark-color: #FFFFFF, $disabled-color: #FFFFFF) {
+  background-color: $color !important;
+  @if $color != #FFFFFF and $color != #000000 {
+    color: $hy-font-color;
+    &--light {
+      background-color: $light-color !important;
+    }
+    &--dark {
+      background-color: $dark-color !important;
+    }
+    &--disabled {
+      background-color: $disabled-color !important;
+    }
+  }
+  @else {
+    color: $hy-font-color;
+  }
+}
+
+/* 背景颜色 start */
+.tn-bg-red {
+  @include getBackgroundColor($hy-color-red, $hy-color-red-light, $hy-color-red-dark, $hy-color-red-disabled);
+}
+.tn-bg-purplered {
+  @include getBackgroundColor($hy-color-purplered, $hy-color-purplered-light, $hy-color-purplered-dark, $hy-color-purplered-disabled);
+}
+.tn-bg-purple {
+  @include getBackgroundColor($hy-color-purple, $hy-color-purple-light, $hy-color-purple-dark, $hy-color-purple-disabled);
+}
+.tn-bg-bluepurple {
+  @include getBackgroundColor($hy-color-bluepurple, $hy-color-bluepurple-light, $hy-color-bluepurple-dark, $hy-color-bluepurple-disabled);
+}
+.tn-bg-aquablue {
+  @include getBackgroundColor($hy-color-aquablue, $hy-color-aquablue-light, $hy-color-aquablue-dark, $hy-color-aquablue-disabled);
+}
+.tn-bg-blue {
+  @include getBackgroundColor($hy-color-blue, $hy-color-blue-light, $hy-color-blue-dark, $hy-color-blue-disabled);
+}
+.tn-bg-indigo {
+  @include getBackgroundColor($hy-color-indigo, $hy-color-indigo-light, $hy-color-indigo-dark, $hy-color-indigo-disabled);
+}
+.tn-bg-cyan {
+  @include getBackgroundColor($hy-color-cyan, $hy-color-cyan-light, $hy-color-cyan-dark, $hy-color-cyan-disabled);
+}
+.tn-bg-teal {
+  @include getBackgroundColor($hy-color-teal, $hy-color-teal-light, $hy-color-teal-dark, $hy-color-teal-disabled);
+}
+.tn-bg-green {
+  @include getBackgroundColor($hy-color-green, $hy-color-green-light, $hy-color-green-dark, $hy-color-green-disabled);
+}
+.tn-bg-yellowgreen {
+  @include getBackgroundColor($hy-color-yellowgreen, $hy-color-yellowgreen-light, $hy-color-yellowgreen-dark, $hy-color-yellowgreen-disabled);
+}
+.tn-bg-lime {
+  @include getBackgroundColor($hy-color-lime, $hy-color-lime-light, $hy-color-lime-dark, $hy-color-lime-disabled);
+}
+.tn-bg-yellow {
+  @include getBackgroundColor($hy-color-yellow, $hy-color-yellow-light, $hy-color-yellow-dark, $hy-color-yellow-disabled);
+}
+.tn-bg-orangeyellow {
+  @include getBackgroundColor($hy-color-orangeyellow, $hy-color-orangeyellow-light, $hy-color-orangeyellow-dark, $hy-color-orangeyellow-disabled);
+}
+.tn-bg-orange {
+  @include getBackgroundColor($hy-color-orange, $hy-color-orange-light, $hy-color-orange-dark, $hy-color-orange-disabled);
+}
+.tn-bg-orangered {
+  @include getBackgroundColor($hy-color-orangered, $hy-color-orangered-light, $hy-color-orangered-dark, $hy-color-orangered-disabled);
+}
+.tn-bg-brown {
+  @include getBackgroundColor($hy-color-brown, $hy-color-brown-light, $hy-color-brown-dark, $hy-color-brown-disabled);
+}
+.tn-bg-grey {
+  @include getBackgroundColor($hy-color-grey, $hy-color-grey-light, $hy-color-grey-dark, $hy-color-grey-disabled);
+}
+.tn-bg-gray {
+  @include getBackgroundColor($hy-color-gray, $hy-color-gray-light, $hy-color-gray-dark, $hy-color-gray-disabled);
+}
+.tn-bg-white {
+  @include getBackgroundColor();
+}
+.tn-bg-black {
+  @include getBackgroundColor(#000000);
+}
+/* 背景颜色 end */
