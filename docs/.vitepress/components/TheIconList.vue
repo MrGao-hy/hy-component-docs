@@ -186,6 +186,16 @@ const icon = reactive([
     name: "ARROW_RIGHTWARD",
   },
   {
+    icon: 'arrow-upward',
+    label: '箭头向上',
+    name: 'ARROW_UPWARD'
+  },
+  {
+    icon: 'arrow-downward',
+    label: '箭头向下',
+    name: 'ARROW_DOWNWARD'
+  },
+  {
     icon: "history",
     label: "历史",
     name: "HISTORY",
@@ -316,6 +326,11 @@ const icon = reactive([
     name: "NOTICE",
   },
   {
+    icon: "notice-circle",
+    label: "注意-圆形",
+    name: "NOTICE_CIRCLE",
+  },
+  {
     icon: "notice-fill",
     label: "注意-实心",
     name: "NOTICE_FILL",
@@ -331,7 +346,12 @@ const icon = reactive([
     name: "SUCCESS_FILL",
   },
   {
-    icon: "help",
+    icon: "query",
+    label: "问号",
+    name: "QUERY",
+  },
+  {
+    icon: "help-circle",
     label: "帮助",
     name: "HELP",
   },
@@ -515,6 +535,16 @@ const icon = reactive([
     label: "话筒",
     name: "MIC",
   },
+  {
+    icon: 'pie-chart',
+    label: '数据占比',
+    name: 'PIE_CHART'
+  },
+  {
+    icon: 'bar-chart',
+    label: '数据视图',
+    name: 'BAR_CHART'
+  }
 ]);
 
 // 复制icon值
@@ -527,7 +557,7 @@ const copyIconValFn = async (value: string) => {
 </script>
 
 <style lang="scss" scoped>
-@import "https://at.alicdn.com/t/c/font_4305932_vv9jfh6hbj.css";
+@import "https://at.alicdn.com/t/c/font_4305932_qhqacvg5ep.css";
 .container {
   display: flex;
   flex-wrap: wrap;

@@ -2,7 +2,7 @@
 > 复选框组件一般用于需要多个选择的场景，该组件功能完整，使用方便
 
 ::: tip 温馨提示
-本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。目前该组件仍处于测试阶段。<br>
+本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
 感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [checkbox组件](https://uiadmin.net/uview-plus/components/radio.html) 的代码实现。
 :::
 

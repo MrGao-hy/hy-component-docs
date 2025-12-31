@@ -2,7 +2,7 @@
 > 本组件一般用于展示头像的地方，如个人中心，或者评论列表页的用户头像展示等场所。
 
 ::: tip 温馨提示
-本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。目前该组件仍处于测试阶段。<br>
+本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
 感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [avatar组件](https://uiadmin.net/uview-plus/components/avatar.html) 的代码实现。
 :::
 
