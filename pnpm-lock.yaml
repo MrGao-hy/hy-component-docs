@@ -36,9 +36,6 @@ importers:
       components-helper:
         specifier: ^2.2.0
         version: 2.2.0
-      sass:
-        specifier: ^1.63.6
-        version: 1.63.6
       sass-embedded:
         specifier: ^1.85.1
         version: 1.85.1
@@ -3295,6 +3292,7 @@ snapshots:
     dependencies:
       normalize-path: 3.0.0
       picomatch: 2.3.1
+    optional: true
 
   argparse@1.0.10:
     dependencies:
@@ -3349,7 +3347,8 @@ snapshots:
 
   balanced-match@1.0.2: {}
 
-  binary-extensions@2.3.0: {}
+  binary-extensions@2.3.0:
+    optional: true
 
   birpc@0.2.19: {}
 
@@ -3407,6 +3406,7 @@ snapshots:
       readdirp: 3.6.0
     optionalDependencies:
       fsevents: 2.3.3
+    optional: true
 
   cli-cursor@3.1.0:
     dependencies:
@@ -3944,7 +3944,8 @@ snapshots:
     dependencies:
       invariant: 2.2.4
 
-  immutable@4.3.7: {}
+  immutable@4.3.7:
+    optional: true
 
   immutable@5.0.3: {}
 
@@ -3979,6 +3980,7 @@ snapshots:
   is-binary-path@2.1.0:
     dependencies:
       binary-extensions: 2.3.0
+    optional: true
 
   is-boolean-object@1.2.2:
     dependencies:
@@ -4441,7 +4443,8 @@ snapshots:
       string.prototype.trim: 1.2.10
       warning: 3.0.0
 
-  normalize-path@3.0.0: {}
+  normalize-path@3.0.0:
+    optional: true
 
   npm-run-path@4.0.1:
     dependencies:
@@ -4589,6 +4592,7 @@ snapshots:
   readdirp@3.6.0:
     dependencies:
       picomatch: 2.3.1
+    optional: true
 
   reflect.getprototypeof@1.0.10:
     dependencies:
@@ -4822,6 +4826,7 @@ snapshots:
       chokidar: 3.6.0
       immutable: 4.3.7
       source-map-js: 1.2.1
+    optional: true
 
   sax@1.4.1:
     optional: true

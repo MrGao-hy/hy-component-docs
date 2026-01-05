@@ -11,7 +11,6 @@
   "devDependencies": {
     "@documate/documate": "^0.2.1",
     "components-helper": "^2.2.0",
-    "sass": "^1.63.6",
     "sass-embedded": "^1.85.1",
     "tsx": "^4.20.3",
     "vitepress": "latest",
