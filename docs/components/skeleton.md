@@ -111,7 +111,7 @@ setTimeout(() => {
 | theme       | 骨架图风格，可选值：`text`、`avatar`、`paragraph`、`image` | `string`                                                         | text |
 | rowCol      | 用于设置行列数量、宽度高度、间距等                             | `Array<number \| SkeletonRowColObj \| Array<SkeletonRowColObj>>` | -    |
 | loading     | 是否为加载状态，为 `true` 时显示骨架屏，为 `false` 时显示实际内容     | `boolean`                                                        | true |
-| animation   | 动画效果，可选值：`gradient`（渐变）、`flashed`（闪烁），为空则无动画  | `string`                                                         | ''   |
+| animation   | 动画效果，可选值：`gradient`（渐变）、`flashed`（闪烁），为空则无动画  | `string`                                                         | -    |
 | customStyle | 定义需要用到的外部样式                                   | `CSSProperties`                                                  | -    |
 | customClass | 自定义外部类名                                       | `string`                                                         | -    |
 

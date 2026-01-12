@@ -139,7 +139,7 @@ const list = [{ name: "全部" }, { name: "未核销" }, { name: "已核销" }];
 
 | 插槽名     | 说明             | 接收值                       |
 |---------|----------------|---------------------------|
-| default | 轮播图自定义content值 | record: item里的content内容   |
+| default | 轮播图自定义content值 | record: item内容, index: 索引 |
 | left    | 整体左侧插槽         | -                         |
 | icon    | tabs的图标        | record: item内容, index: 索引 |
 | content | tabs的内容        | record: item内容, index: 索引 |
