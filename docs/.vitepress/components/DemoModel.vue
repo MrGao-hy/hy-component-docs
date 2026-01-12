@@ -52,8 +52,8 @@ const props = withDefaults(defineProps<IProps>(), {
   prefix: "/web/#"
 })
 const { isDark } = useData()
-const baseUrl = ref("https://hy-design-uni.top/#/");
-// const baseUrl = ref("http://localhost:5173/#/");
+console.log(import.meta.env.DEV)
+const baseUrl = ref(import.meta.env.DEV ? 'http://localhost:5173/#/' : 'https://hy-design-uni.top/#/');
 const href = computed(() => {
   return props.url.indexOf('http') === 0 ? props.url : `${baseUrl.value}${props.url}`;
 })

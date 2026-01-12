@@ -7,6 +7,10 @@
     <template #nav-bar-content-before>
       <Documate/>
     </template>
+    <template #layout-top>
+      <MouseFollower />
+      <MouseClick />
+    </template>
   </Layout>
 </template>
 
