@@ -6,14 +6,14 @@ titleTemplate: 一个基于 Vue 3 和 TypeScript 开发的移动端现代化组�
 
 hero:
   name: 华玥组件库
-  text: 多生态、丰富的移动端 UI 组件库。
+  text: 多生态、丰富的移动端UI 组件库。
   tagline: 开箱即用 · 类型安全 · 高度可定制
   actions:
     - theme: brand
-      text: 开始使用
+      text: 开始使用 🚀
       link: /components/intro
     - theme: alt
-      text: 演示
+      text: 📱 演示
       link: /components/intro#演示模板
   image:
     src: /images/home.png

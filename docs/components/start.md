@@ -88,7 +88,5 @@ $ yarn install hy-app
 ## :chicken: 导入scss文件
 > 在uni.scss最顶部引入这些文件
 ```scss [./uni.scss]
-@use "hy-app/libs/css/theme.scss" as *;
-@use "hy-app/libs/css/common.scss" as *;
-@use "hy-app/libs/css/mixin.scss" as *;
+@use "hy-app/index.scss" as *;
 ```

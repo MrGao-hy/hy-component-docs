@@ -1,4 +1,4 @@
-# 介绍
+## :book: 介绍
 我们是一支把产品思维、UI 美学和前端魔法揉进同一杯咖啡的小团队。<br>
 白天，我们在「好用」与「好看」之间反复拉扯；深夜，仍把像素和灵感一起熬成星光。
 
@@ -16,7 +16,7 @@
 因为您在，这条探索之路，<br>
 从一行孤独的代码，变成了一片闪烁的银河。
 
-## 免费内容-开源协议
+## :loudspeaker: 免费内容-开源协议
 
 华玥UI开源组件遵循[MIT](https://zh.wikipedia.org/wiki/MIT%E8%A8%B1%E5%8F%AF%E8%AD%89#%E5%A4%96%E9%83%A8%E9%93%BE%E6%8E%A5)协议，开发者可以自由的享受和参与开源。
 
@@ -26,5 +26,5 @@
 You may not use HuaYue UI for any illegal purposes, including but not limited to pornography, gambling, violence, fraud, or any other unlawful activities. Any disputes or legal liabilities arising from such use shall be borne solely by the user; HuaYue UI assumes no responsibility.
 :::
 
-## 演示模板
+## :iphone: 演示模板
 <PreviewDome/>
