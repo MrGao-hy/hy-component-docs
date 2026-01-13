@@ -422,4 +422,4 @@ onMounted(async () => {
 | --- | --- |
 | empty | 自定义空状态 |
 
-<demo-model url="pages/components/table/table"></demo-model>
+<demo-model url="pages-design/table/table"></demo-model>

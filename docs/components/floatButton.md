@@ -179,4 +179,4 @@ import { HyFloatButton } from "hy-app"
 [^3]: `normal`：默认尺寸；`large`：大尺寸； `small`：小尺寸, `number`：任意大小;
 [^4]: `left-top`：左上；`left-bottom`：左下；`right-top`：右上；`right-bottom`：右下；`left-center`：左中；`right-center`：右中；`top-center`：上中；`bottom-center`：下中；
 
-<demo-model url="pages/components/floatButton/floatButton"></demo-model>
+<demo-model url="pages-design/floatButton/floatButton"></demo-model>

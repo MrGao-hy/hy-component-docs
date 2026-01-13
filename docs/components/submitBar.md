@@ -192,4 +192,4 @@ const menus = reactive([
 | right | 右侧自定义内容 | -   |
 
 
-<demo-model url="pages/components/submitBar/submitBar"></demo-model>
+<demo-model url="pages-design/submitBar/submitBar"></demo-model>

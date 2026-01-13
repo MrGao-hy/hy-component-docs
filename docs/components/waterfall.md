@@ -349,4 +349,4 @@ export default [
 | left  | 左边内容插槽 | -   |
 | right | 右边内容插槽 | -   |
 
-<demo-model url="pages/components/waterfall/waterfall"></demo-model>
+<demo-model url="pages-design/waterfall/waterfall"></demo-model>

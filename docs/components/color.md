@@ -20,4 +20,4 @@
 
 ## 颜色集合
 
-<colors type="2" />
+<the-colors />

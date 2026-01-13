@@ -186,4 +186,4 @@ const reset = () => {
 
 [^1] `DD`-日，`HH`-时，`mm`-分，`ss`-秒，`SSS`-毫秒
 
-<demo-model url="pages/components/countDown/countDown"></demo-model>
+<demo-model url="pages-design/countDown/countDown"></demo-model>

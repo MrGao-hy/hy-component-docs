@@ -539,4 +539,4 @@ export const data = [
 | default | 自定义title | -   |
 | icon    | 图标自定义    | -   |
 
-<demo-model url="pages/components/menu/menu"></demo-model>
+<demo-model url="pages-design/menu/menu"></demo-model>

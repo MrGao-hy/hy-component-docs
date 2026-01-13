@@ -103,4 +103,4 @@ import { HyImage } from "hy-app"
 
 [^1]: `circle`：两边为半圆；`square`：方形
 
-<demo-model url="pages/components/image/image"></demo-model>
+<demo-model url="pages-design/image/image"></demo-model>

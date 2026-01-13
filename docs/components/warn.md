@@ -78,4 +78,4 @@ import { HyWarn } from "hy-app"
 | close | 关闭组件时触发 | -    |
 
 
-<demo-model url="pages/components/warn/warn"></demo-model>
+<demo-model url="pages-design/warn/warn"></demo-model>

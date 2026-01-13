@@ -191,4 +191,4 @@ const showMore = () => {
 |---------|----|-----|
 | default | -  | -   |
 
-<demo-model url="pages/components/scrollList/scrollList"></demo-model>
+<demo-model url="pages-design/scrollList/scrollList"></demo-model>

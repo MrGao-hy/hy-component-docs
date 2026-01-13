@@ -181,4 +181,4 @@ const value = ref('');
 [^2]: `surround`：四周边框；`bottom`：底部有边框；`none`：无边框
 [^3]: `circle`：两边为半圆；`square`：方形带圆角
 
-<demo-model url="pages/components/input/input"></demo-model>
+<demo-model url="pages-design/input/input"></demo-model>

@@ -228,7 +228,7 @@ export default `<title>富文本示例</title>
     <div style="font-size: 12px; color: gray; margin-top: 5px;">外部链接，将复制链接</div>
   </section>
   <section style="margin-top: 1.5em; text-align: center;">
-    <a href="/pages/components/icon/icon">内部链接</a>
+    <a href="/pages-design/icon/icon">内部链接</a>
     <div style="font-size: 12px; color: gray; margin-top: 5px;">内部链接，将跳转页面</div>
   </section>
   <section style="text-align: center; margin: 0px auto; margin-top: 2em">
@@ -283,4 +283,4 @@ export default `<title>富文本示例</title>
 | imgTap  | 图片被点击时触发    | 返回一个 object，其中 src 是图片链接，ignore 是一个函数，在事件中调用将不进行预览；可用于阻挡 onShow 的调用              |
 | linkTap | 在链接被点击时触发   | 返回一个 object，其中包含了被点击的 a 标签的所有属性，ignore 是一个函数，在事件中调用后将不自动跳转/复制；可在该事件中进行下载文档等进一步操作 |
 
-<demo-model url="pages/components/parse/parse"></demo-model>
+<demo-model url="pages-design/parse/parse"></demo-model>

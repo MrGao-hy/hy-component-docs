@@ -93,4 +93,4 @@ const show = ref(true);
 | default | -  | -   |
 
 
-<demo-model url="pages/components/transition/transition"></demo-model>
+<demo-model url="pages-design/transition/transition"></demo-model>

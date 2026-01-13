@@ -76,4 +76,4 @@ toast.close();
 
 
 
-<demo-model url="pages/components/toast/toast"></demo-model>
+<demo-model url="pages-design/toast/toast"></demo-model>

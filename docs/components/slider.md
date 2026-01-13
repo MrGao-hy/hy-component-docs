@@ -178,4 +178,4 @@ const sliderValue = ref(4);
 | start    | 开始滑动        | value：当前值 |
 
 
-<demo-model url="pages/components/slider/slider"></demo-model>
+<demo-model url="pages-design/slider/slider"></demo-model>

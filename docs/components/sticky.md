@@ -178,4 +178,4 @@ const loadDynamicContent = async () => {
 |---------|------|-----|
 | default | 吸顶内容 | -   |
 
-<demo-model url="pages/components/sticky/sticky"></demo-model>
+<demo-model url="pages-design/sticky/sticky"></demo-model>

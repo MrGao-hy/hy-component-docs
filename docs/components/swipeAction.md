@@ -85,4 +85,4 @@
 | default | 自定义内容  | -   |
 | right   | 自定义右按钮 | -   |
 
-<demo-model url="pages/components/swipeAction/swipeAction"></demo-model>
+<demo-model url="pages-design/swipeAction/swipeAction"></demo-model>

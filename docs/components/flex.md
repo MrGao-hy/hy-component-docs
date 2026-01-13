@@ -63,7 +63,7 @@
 | customClass | 自定义外部类名                                  | `string`                       | -          |
 
 
-<demo-model url="pages/components/flex/flex"></demo-model>
+<demo-model url="pages-design/flex/flex"></demo-model>
 
 [^1]: flex-start：左对齐；center：居中对齐；flex-end：右对齐；space-between：两端对齐，项目之间间隔相等；space-around：每个项目两侧的间隔相等，项目之间的间隔是项目与边框间隔的两倍；space-evenly：所有间隔完全相等；
 [^2]: flex-start：顶部对齐；center：居中对齐；flex-end：底部对齐；stretch：拉伸填满容器；baseline：基线对齐；

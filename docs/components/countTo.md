@@ -144,4 +144,4 @@ const resume = () => {
 
 [^1] `DD`-日，`HH`-时，`mm`-分，`ss`-秒，`SSS`-毫秒
 
-<demo-model url="pages/components/countTo/countTo"></demo-model>
+<demo-model url="pages-design/countTo/countTo"></demo-model>

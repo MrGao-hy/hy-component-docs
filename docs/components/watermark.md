@@ -126,4 +126,4 @@ import { HyWatermark } from "hy-app"
 | customStyle | 定义需要用到的外部样式           | `CSSProperties`               | -           |
 
 
-<demo-model url="pages/components/watermark/watermark"></demo-model>
+<demo-model url="pages-design/watermark/watermark"></demo-model>

@@ -226,4 +226,4 @@ const panels = ref([
 | default | 面板默认插槽 | -   |
 
 
-<demo-model url="pages/components/actionSheet/actionSheet"></demo-model>
+<demo-model url="pages-design/actionSheet/actionSheet"></demo-model>

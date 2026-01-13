@@ -146,4 +146,4 @@ const list = [{ name: "全部" }, { name: "未核销" }, { name: "已核销" }];
 | right   | 整体右侧插槽         | -                         |
 | main    | 自定义掉底部轮播图      | -                         |
 
-<demo-model url="pages/components/tabs/tabs"></demo-model>
+<demo-model url="pages-design/tabs/tabs"></demo-model>

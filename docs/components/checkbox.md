@@ -258,4 +258,4 @@ const value = ref(["apply"]);
 [^2]: `normal`：默认尺寸；`large`：大尺寸； `small`：小尺寸；
 [^3]: `row`: 横向；`column`：纵向
 
-<demo-model url="pages/components/checkbox/checkbox"></demo-model>
+<demo-model url="pages-design/checkbox/checkbox"></demo-model>

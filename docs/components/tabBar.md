@@ -187,4 +187,4 @@ tabbar图标插槽在小程序是没有效果
 |------|------|-----|
 | icon | 图标插槽 | -   |
 
-<demo-model url="pages/components/tabBar/tabBar"></demo-model>
+<demo-model url="pages-design/tabBar/tabBar"></demo-model>

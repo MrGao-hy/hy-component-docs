@@ -35,9 +35,14 @@
   </div>
 </template>
 <script lang="ts" setup>
-import {defineComponent, ref} from "vue";
+import {ref} from "vue";
 
-const props = defineProps(['type'])
+const props = defineProps({
+  type: {
+    type: Number,
+    default: 2
+  }
+})
 const colorList = ref([{
   name: '红色',
   color: 'red',

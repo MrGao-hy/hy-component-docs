@@ -160,4 +160,4 @@ import { HyButton } from "hy-app"
 |---------|------|----|
 | default | 默认插槽 | -  |
 
-<demo-model url="pages/components/button/button"></demo-model>
+<demo-model url="pages-design/button/button"></demo-model>

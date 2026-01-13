@@ -83,4 +83,4 @@ const value = ref<number>(1)
 | change | 值修改事件 | value: value为当前数 |
 
 
-<demo-model url="pages/components/pagination/pagination"></demo-model>
+<demo-model url="pages-design/pagination/pagination"></demo-model>

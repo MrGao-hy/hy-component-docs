@@ -103,4 +103,4 @@ import { HyAvatar } from "hy-app"
 |-------|--------|-----------------|
 | click | 头像被点击	 | index: 用户传递的标识符 |
 
-<demo-model url="pages/components/avatar/avatar"></demo-model>
+<demo-model url="pages-design/avatar/avatar"></demo-model>

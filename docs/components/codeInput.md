@@ -117,4 +117,4 @@ uview-plus有键盘组件，如果您想结合键盘组件进行自定义的输�
 | change | 输入内容发生改变时触发，具体见上方说明 | value：当前输入的值   |
 | finish | 输入字符个数达maxlength值时触发，见上方说明 | value：当前输入的值   |
 
-<demo-model url="pages/components/codeInput/codeInput"></demo-model>
+<demo-model url="pages-design/codeInput/codeInput"></demo-model>

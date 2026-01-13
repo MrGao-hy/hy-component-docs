@@ -242,4 +242,4 @@ const onUse = (item: ICoupon) => {
 | button | 自定义按钮插槽   | -   |
 
 
-<demo-model url="pages/components/coupon/coupon"></demo-model>
+<demo-model url="pages-design/coupon/coupon"></demo-model>

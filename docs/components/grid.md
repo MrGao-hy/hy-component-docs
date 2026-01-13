@@ -111,4 +111,4 @@ const list = ref([
 |---------|------|--------|
 | default | 默认插槽 | record |
 
-<demo-model url="pages/components/grid/grid"></demo-model>
+<demo-model url="pages-design/grid/grid"></demo-model>

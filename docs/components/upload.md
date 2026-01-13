@@ -192,6 +192,6 @@ const afterRead = (event: any) => {
 | default | -  | -   |
 | trigger | -  | -   |
 
-<demo-model url="pages/components/upload/upload"></demo-model>
+<demo-model url="pages-design/upload/upload"></demo-model>
 
 [^1]: all：全部类型；media：媒体；image：图片类型；file：文件类型；video：视频类型；

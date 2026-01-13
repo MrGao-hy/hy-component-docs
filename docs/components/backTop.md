@@ -79,4 +79,4 @@ onPageScroll((e) => {
 | default | 自定义内容 | -   |
 
 
-<demo-model url="pages/components/backTop/backTop"></demo-model>
+<demo-model url="pages-design/backTop/backTop"></demo-model>

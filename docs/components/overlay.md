@@ -95,4 +95,4 @@ const show = ref(true);
 |---------|-------------------|-----|
 | default | 默认插槽，用于在遮罩层上方嵌入内容 | -   |
 
-<demo-model url="pages/components/overlay/overlay"></demo-model>
+<demo-model url="pages-design/overlay/overlay"></demo-model>

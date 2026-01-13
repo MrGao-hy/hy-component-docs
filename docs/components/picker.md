@@ -209,6 +209,6 @@ const columns = reactive([
 | toolbar-right  | 工具栏右侧内容，自定义右侧内容，因为微信小程序限制，需要同时设置:toolbarRightSlot="true"生效。 | -    |
 | toolbar-bottom | 输入框下方自定义区域                                                  | -    |
 
-<demo-model url="pages/components/picker/picker"></demo-model>
+<demo-model url="pages-design/picker/picker"></demo-model>
 
 [^1]: bottom：底部；center：中间；left：左边；right：右边；top：上班；

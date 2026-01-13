@@ -353,5 +353,5 @@ const scrollToSection = async (i: string) => {
 | scroll | 滑动索引栏时触发 | index: string - 当前滑动到的索引值                       |
 
 
-<demo-model url="pages/components/indexBar/indexBar"></demo-model>
+<demo-model url="pages-design/indexBar/indexBar"></demo-model>
 

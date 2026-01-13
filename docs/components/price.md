@@ -151,4 +151,4 @@ import { HyPrice } from "hy-app"
 |-----------|------|-----------|
 | click     | 点击金额 | text: 金额值 |
 
-<demo-model url="pages/components/price/price"></demo-model>
+<demo-model url="pages-design/price/price"></demo-model>

@@ -105,4 +105,4 @@ import { IconConfig, HyIcon } from "hy-app";
 ## 图标集
 <TheIconList />
 
-<demo-model url="pages/components/icon/icon"></demo-model>
+<demo-model url="pages-design/icon/icon"></demo-model>

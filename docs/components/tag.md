@@ -179,4 +179,4 @@ import { HyTag } from "hy-app"
 | close | closable为true时，点击标签关闭按钮触发 | text：文本内容                    |
 
 
-<demo-model url="pages/components/tag/tag"></demo-model>
+<demo-model url="pages-design/tag/tag"></demo-model>

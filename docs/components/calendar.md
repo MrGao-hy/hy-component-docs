@@ -185,4 +185,4 @@ import { HyCalendar } from "hy-app"
 
 [^1]: `spinner`：花瓣形状；`circle`：圆形； `small`：小尺寸；`semicircle`：半圆
 
-<demo-model url="pages/components/calendar/calendar"></demo-model>
+<demo-model url="pages-design/calendar/calendar"></demo-model>

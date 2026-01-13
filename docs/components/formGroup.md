@@ -315,6 +315,6 @@ const columns: FormColumnsType[] = reactive([
 [^2]: type = select 时候必填(参考 [HyPicker](./picker.md) 组件)
 [^3]: type = radio 时候必填(参考 [HyRadio](./radio.md) 组件)
 
-<demo-model url="pages/components/formGroup/formGroup"></demo-model>
+<demo-model url="pages-design/formGroup/formGroup"></demo-model>
 
 

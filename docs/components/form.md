@@ -714,4 +714,4 @@ const registerFormRules = reactive({
 | resetField    | 重置字段 | -                                |
 | clearValidate | 清除验证 | -                                |
 
-<demo-model url="pages/components/form/form"></demo-model>
+<demo-model url="pages-design/form/form"></demo-model>

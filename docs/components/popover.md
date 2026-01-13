@@ -172,6 +172,6 @@ const { closeOutside } = useQueue()
 | default | 默认插槽      | -   |
 | content | 自定义气泡里面内容 | -   |
 
-<demo-model url="pages/components/popover/popover"></demo-model>
+<demo-model url="pages-design/popover/popover"></demo-model>
 
 [^1]: `left-top`：左上；`left-bottom`：左下；`right-top`：右上；`right-bottom`：右下；`left-center`：左中；`right-center`：右中；`top-center`：上中；`bottom-center`：下中；

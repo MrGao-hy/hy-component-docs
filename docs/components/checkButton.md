@@ -233,4 +233,4 @@ const columns = reactive([
 [^4]: `normal`：默认尺寸；`large`：大尺寸； `small`：小尺寸；
 [^5]: `circle`：两边半圆形； `square`：方形，带圆角
 
-<demo-model url="pages/components/checkButton/checkButton"></demo-model>
+<demo-model url="pages-design/checkButton/checkButton"></demo-model>

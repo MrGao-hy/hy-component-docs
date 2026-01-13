@@ -68,4 +68,4 @@ import { HyButton } from "hy-app"
 [^3]: `circle`：两边为半圆；`square`：方形带圆角
 [^4]: `row`：横向；`column`：纵向
 
-<demo-model url="pages/components/avatar/avatar"></demo-model>
+<demo-model url="pages-design/avatar/avatar"></demo-model>

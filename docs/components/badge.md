@@ -135,4 +135,4 @@ import { HyBadge } from "hy-app"
 | customClass | 自定义外部类名                                                             | `string`                                                   | -        |
 
 
-<demo-model url="pages/components/badge/badge"></demo-model>
+<demo-model url="pages-design/badge/badge"></demo-model>

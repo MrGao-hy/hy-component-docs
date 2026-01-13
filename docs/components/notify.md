@@ -66,4 +66,4 @@ const show = ref(true);
 |------|--------|-----|
 | icon | 通知内容图标 | -   |
 
-<demo-model url="pages/components/notify/notify"></demo-model>
+<demo-model url="pages-design/notify/notify"></demo-model>

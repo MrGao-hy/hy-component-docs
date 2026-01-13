@@ -98,4 +98,4 @@ import { HyDivider } from "hy-app"
 |-------|------|------|
 | click | 点击事件 | -    |
 
-<demo-model url="pages/components/divider/divider"></demo-model>
+<demo-model url="pages-design/divider/divider"></demo-model>

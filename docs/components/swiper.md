@@ -263,4 +263,4 @@ const list = ref([
 | default   | -  | record:对象值, index: 索引 |
 | indicator | -  | -                     |
 
-<demo-model url="pages/components/swiper/swiper"></demo-model>
+<demo-model url="pages-design/swiper/swiper"></demo-model>

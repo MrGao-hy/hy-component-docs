@@ -92,4 +92,4 @@ import { HyPopup } from "hy-app"
 |---------|----|-----|
 | default | -  | -   |
 
-<demo-model url="pages/components/popup/popup"></demo-model>
+<demo-model url="pages-design/popup/popup"></demo-model>

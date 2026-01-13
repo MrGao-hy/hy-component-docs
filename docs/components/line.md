@@ -81,4 +81,4 @@ import { HyLine } from "hy-app"
 | customStyle | 自定义需要用到的外部样式                                     | `CSSProperties`    | -     |
 | customClass | 自定义外部类名                                          | `string`           | -     |
 
-<demo-model url="pages/components/line/line"></demo-model>
+<demo-model url="pages-design/line/line"></demo-model>

@@ -165,4 +165,4 @@ import { HyText } from "hy-app"
 [^1]: `text`-普通文本，`price`-价格，`phone`-手机号，`name`-姓名，`date`-日期，`link`-超链接
 [^2]:  当`mode`等于`phone`或`name`时候`format`设置为`encrypt`表示隐藏中间内容
 
-<demo-model url="pages/components/text/text"></demo-model>
+<demo-model url="pages-design/text/text"></demo-model>

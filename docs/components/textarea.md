@@ -133,4 +133,4 @@ onMounted(() => {
 [^3]: 如需兼容微信小程序，则只能通过setFormatter方法
 
 
-<demo-model url="pages/components/textarea/textarea"></demo-model>
+<demo-model url="pages-design/textarea/textarea"></demo-model>

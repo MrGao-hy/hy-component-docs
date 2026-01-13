@@ -173,4 +173,4 @@ const onClick = (name: string | number) => {
 | value      | 自定义右侧值的内容    | record |
 | right-icon | 自定义右侧图标内容    | icon   |
 
-<demo-model url="pages/components/cell/cell"></demo-model>
+<demo-model url="pages-design/cell/cell"></demo-model>

@@ -47,7 +47,7 @@ import { HyNoticeBar } from "hy-app"
 :::
 ```html
 <template>
-    <hy-notice-bar text="欢迎使用华悦组件库" url="/pages/components/tag/tag" mode="line"></hy-notice-bar>
+    <hy-notice-bar text="欢迎使用华悦组件库" url="/pages-design/tag/tag" mode="line"></hy-notice-bar>
 </template>
 ```
 
@@ -89,4 +89,4 @@ import { HyNoticeBar } from "hy-app"
 | click | 点击通告文字触发   | index: 点击的text的索引 |
 | close | 点击右侧关闭图标触发 | -                 |
 
-<demo-model url="pages/components/noticeBar/noticeBar"></demo-model>
+<demo-model url="pages-design/noticeBar/noticeBar"></demo-model>

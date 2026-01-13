@@ -147,4 +147,4 @@ const options_3 = ref([
 | default | Dropdown-item组件插槽内容 | -   |
 
 
-<demo-model url="pages/components/dropdown/dropdown"></demo-model>
+<demo-model url="pages-design/dropdown/dropdown"></demo-model>

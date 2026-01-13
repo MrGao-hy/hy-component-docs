@@ -36,11 +36,16 @@
 ### 通过 CSS 覆盖
 这些变量的默认值被定义在 page 节点上，如果要转 H5，默认值被定义在 :root 节点上
 ```scss
-:root,
-page {
-  --hy-success: red;
-  --hy-warning: yellow;
+/* 亮色 */
+page .hy-theme--light {
+  --hy-text-color: #000000;
+  --hy-background: #f8f8f8;
+}
+/* 暗色 */
+page .hy-theme--dark {
+  --hy-text-color: #ffffff;
+  --hy-background: #1b1b1f;
 }
 ```
 
-<demo-model url="pages/components/configProvider/configProvider"></demo-model>
+<demo-model url="pages-design/configProvider/configProvider"></demo-model>

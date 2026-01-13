@@ -217,4 +217,4 @@ const value = ref(1);
 | input | 输入框  | record |
 | plus  | 增加按钮 | -      |
 
-<demo-model url="pages/components/numberBox/numberBox"></demo-model>
+<demo-model url="pages-design/numberBox/numberBox"></demo-model>

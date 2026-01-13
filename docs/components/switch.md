@@ -192,4 +192,4 @@ const change = (e) => {
 |---------|------|-----|
 | default | 默认插槽 | -   |
 
-<demo-model url="pages/components/switch/switch"></demo-model>
+<demo-model url="pages-design/switch/switch"></demo-model>

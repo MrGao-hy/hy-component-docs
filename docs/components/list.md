@@ -266,4 +266,4 @@ const queryData = () => {
 | right-list | 右边列表插槽（两列）            | record: 列表数据    |
 | footer     | 底部插槽                  | -               |
 
-<demo-model url="pages/components/list/list"></demo-model>
+<demo-model url="pages-design/list/list"></demo-model>

@@ -201,4 +201,4 @@ onMounted(() => {
 |--------|---------|-----------------------------------------------------------|
 | footer | 自定义底部按钮 | clear, confirm, restore, revoke, currentStep, historyList |
 
-<demo-model url="pages/components/signature/signature"></demo-model>
+<demo-model url="pages-design/signature/signature"></demo-model>

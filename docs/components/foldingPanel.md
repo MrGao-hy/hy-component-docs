@@ -146,4 +146,4 @@
 | header  | 面板头部       | -   |
 | title   | 面板头部左边内容   | -   |
 
-<demo-model url="pages/components/foldingPanel/foldingPanel"></demo-model>
+<demo-model url="pages-design/foldingPanel/foldingPanel"></demo-model>

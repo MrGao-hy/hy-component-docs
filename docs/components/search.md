@@ -120,4 +120,4 @@ import { HySearch } from "hy-app"
 | clickIcon | 左侧icon点击时候时触发                       | -           |
 
 
-<demo-model url="pages/components/search/search"></demo-model>
+<demo-model url="pages-design/search/search"></demo-model>

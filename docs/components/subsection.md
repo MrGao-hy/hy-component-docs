@@ -94,4 +94,4 @@ const list_1 = ref([{ name: "全部"}, { name: "未核销" }, { name: "已核销
 |--------|--------------|-------------------|
 | change | 分段器选项发生改变时触发 | index：选项的index索引值 |
 
-<demo-model url="pages/components/subsection/subsection"></demo-model>
+<demo-model url="pages-design/subsection/subsection"></demo-model>

@@ -71,4 +71,4 @@ import { HyTooltip } from "hy-app"
 | click | 点击触发事件 | index：被点击按钮的索引 |
 
 [^1]: 枚举类型： top,top-start,top-end,bottom,bottom-start,bottom-end,left,left-start,left-end,right,right-start,right-end
-<demo-model url="pages/components/tooltip/tooltip"></demo-model>
+<demo-model url="pages-design/tooltip/tooltip"></demo-model>

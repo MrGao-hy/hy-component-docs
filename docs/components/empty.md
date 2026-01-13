@@ -93,4 +93,4 @@ import { HyEmpty } from "hy-app"
 [^2]: `error`：#fa3534；`warning`：#ff9900；`success`：#19be6b；`primary`：#2979ff； `info`：#909399；
 [^3]: `circle`：两边为半圆；`square`：方形带圆角
 
-<demo-model url="pages/components/empty/empty"></demo-model>
+<demo-model url="pages-design/empty/empty"></demo-model>

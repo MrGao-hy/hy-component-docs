@@ -138,5 +138,5 @@ setTimeout(() => {
 |---------|------------|-----|
 | default | 加载完成时显示的内容 | -   |
 
-<demo-model url="pages/components/skeleton/skeleton"></demo-model>
+<demo-model url="pages-design/skeleton/skeleton"></demo-model>
 

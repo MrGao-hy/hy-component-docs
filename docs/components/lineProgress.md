@@ -98,4 +98,4 @@ import { HyLineProgress } from "hy-app"
 |---------|--------------------------|-----|
 | default | 传入自定义的显示内容，将会覆盖默认显示的百分比值 | -   |
 
-<demo-model url="pages/components/lineProgress/lineProgress"></demo-model>
+<demo-model url="pages-design/lineProgress/lineProgress"></demo-model>

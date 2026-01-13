@@ -126,4 +126,4 @@ A: 非数字字符（如小数点、货币符号等）会直接显示，不会�
 | customStyle     | 定义需要用到的外部样式      | `CSSProperties`    | -      |
 | customClass     | 自定义外部类名          | `string`           | -      |
 
-<demo-model url="pages/components/rollingNum/rollingNum"></demo-model>
+<demo-model url="pages-design/rollingNum/rollingNum"></demo-model>
