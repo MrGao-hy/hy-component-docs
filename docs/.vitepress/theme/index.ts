@@ -8,6 +8,7 @@ import BackTop from "../components/BackTop.vue";
 import MouseClick from "../components/MouseClick.vue";
 import MouseFollower from "../components/MouseFollower.vue";
 import DocVersion from "../components/DocVersion.vue";
+import AdvertisingPosition from "../components/AdvertisingPosition.vue";
 import 'virtual:group-icons.css'
 import '../styles/scss/theme.scss'
 import '../styles/scss/color.scss'
@@ -25,5 +26,6 @@ export default {
         app.component('MouseClick', MouseClick)
         app.component('MouseFollower', MouseFollower)
         app.component('DocVersion', DocVersion)
+        app.component('AdvertisingPosition', AdvertisingPosition)
     }
 };

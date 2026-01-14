@@ -1,12 +1,20 @@
 <template>
   <Layout>
+    <!-- 文档下面的评论 -->
     <template #doc-after>
       <div id="gitalk-container"></div>
     </template>
-    <Analytics />
+    <!-- 侧边导航栏，用来放广告位的 -->
+    <template #sidebar-nav-before>
+      <AdvertisingPosition />
+    </template>
+
+<!--    <Analytics />-->
+    <!-- 头部logo的后面插槽 -->
     <template #nav-bar-title-after>
       <DocVersion/>
     </template>
+    <!-- 头部导航栏内容左侧 -->
     <template #nav-bar-content-before>
       <Documate/>
     </template>
