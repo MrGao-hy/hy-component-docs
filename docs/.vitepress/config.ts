@@ -35,10 +35,15 @@ export default defineConfig({
     nav: [
       {
         text: "组件库",
-        link: "/components/intro",
         items: [
-          { text: "空状态", link: "/start" },
-          { text: "空状态", link: "/empty" },
+          { text: "开发指南", link: "/components/intro" },
+          { text: "基础组件", link: "/components/badge" },
+          { text: "表单组件", link: "/components/addressPicker" },
+          { text: "布局组件", link: "/components/card" },
+          { text: "反馈组件", link: "/components/actionSheet" },
+          { text: "导航组件", link: "/components/backTop" },
+          { text: "其他组件", link: "/components/avatar" },
+          { text: "业务组件", link: "/components/coupon" },
         ],
       },
       {
@@ -46,8 +51,12 @@ export default defineConfig({
         link: "/api/intro",
       },
       {
-        text: "学习文档",
+        text: "📖 学习文档",
         link: "/download/web",
+      },
+      {
+        text: "关于作者 ↗️",
+        link: "/document/my",
       },
 
       // {
@@ -65,6 +74,7 @@ export default defineConfig({
       "/components/": [
         {
           text: "开发指南",
+          collapsed: false,
           items: [
             { text: "介绍", link: "/components/intro" },
             { text: "快速开始", link: "/components/start" },
@@ -75,6 +85,7 @@ export default defineConfig({
         },
         {
           text: "基础组件",
+          collapsed: false,
           items: [
             { text: "Badge 徽标", link: "/components/badge" },
             { text: "Button 按钮", link: "/components/button" },
@@ -94,6 +105,7 @@ export default defineConfig({
         },
         {
           text: "表单组件",
+          collapsed: false,
           items: [
             {
               text: "AddressPicker 地址选择器",
@@ -122,6 +134,7 @@ export default defineConfig({
         },
         {
           text: "布局组件",
+          collapsed: false,
           items: [
             { text: "Card 卡片", link: "/components/card" },
             { text: "Divider 分割线", link: "/components/divider" },
@@ -144,6 +157,7 @@ export default defineConfig({
         },
         {
           text: "反馈组件",
+          collapsed: false,
           items: [
             { text: "ActionSheet 操作菜单", link: "/components/actionSheet" },
             { text: "FoldingPanel 折叠面板", link: "/components/foldingPanel" },
@@ -160,6 +174,7 @@ export default defineConfig({
         },
         {
           text: "导航组件",
+          collapsed: false,
           items: [
             { text: "BackTop 返回顶部", link: "/components/backTop" },
             { text: "Dropdown 下拉菜单", link: "/components/dropdown" },
@@ -176,6 +191,7 @@ export default defineConfig({
         },
         {
           text: "其他组件",
+          collapsed: false,
           items: [
             { text: "Avatar 头像", link: "/components/avatar" },
             { text: "CodeInput 验证码输入", link: "/components/codeInput" },
@@ -192,6 +208,7 @@ export default defineConfig({
         },
         {
           text: "业务组件",
+          collapsed: false,
           items: [
             { text: "Coupon 优惠券", link: "/components/coupon" },
             { text: "Price 金额", link: "/components/price" },
@@ -258,7 +275,7 @@ export default defineConfig({
             footer: {
               selectText: "选择",
               closeText: "关闭",
-              navigateText: "导航到结果",
+              navigateText: "切换"
             },
           },
         },
@@ -285,7 +302,11 @@ export default defineConfig({
     footer: {
       message: '',
       copyright: '华玥组件库 © 2025-present'
-    }
+    },
+      outline: {
+          level: [2, 3],
+          label: '当前页大纲'
+      },
   },
   head: [["link", { rel: "icon", href: "/images/hy_logo_light.png" }]],
   markdown: {
