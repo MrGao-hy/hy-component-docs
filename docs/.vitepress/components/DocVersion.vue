@@ -1,5 +1,5 @@
 <template>
-  <div class="tag">{{version}}</div>
+  <div class="tag" v-if="version">{{version}}</div>
 </template>
 
 <script setup lang="ts">

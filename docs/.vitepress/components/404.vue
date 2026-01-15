@@ -196,8 +196,8 @@ $text-color: #ffffff;
     }
 
     .content-card {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(15px);
+      background: rgba(255, 255, 255, 0.01);
+      backdrop-filter: blur(4px);
       -webkit-backdrop-filter: blur(15px);
       border: 1px solid rgba(255, 255, 255, 0.1);
       padding: 40px 60px;
@@ -215,7 +215,7 @@ $text-color: #ffffff;
 
       p {
         font-size: 1.1rem;
-        color: rgba(255, 255, 255, 0.7);
+        color: var(--vp-c-text-2);
         margin-bottom: 30px;
         line-height: 1.6;
       }
@@ -250,12 +250,12 @@ $text-color: #ffffff;
 
           &-outline {
             background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
+            border: 1px solid var(--vp-c-border);
+            color: var(--vp-c-text-1);
 
             &:hover {
               background: rgba(255, 255, 255, 0.1);
-              border-color: white;
+              border-color: var(--vp-c-brand-1);
             }
           }
         }
