@@ -1,9 +1,19 @@
 <template>
-  <div class="tag">0.5.20</div>
+  <div class="tag">{{version}}</div>
 </template>
 
 <script setup lang="ts">
-import { Tag } from "ant-design-vue";
+import {ref} from "vue";
+
+const getLatestVer = async pkg =>
+    fetch(`https://registry.npmjs.org/${pkg}/latest`)
+        .then(r => r.json())
+        .then(d => d.version);
+const version = ref("");
+
+getLatestVer('hy-app').then(res => {
+  version.value = res;
+});
 </script>
 
 <style lang="scss" scoped>

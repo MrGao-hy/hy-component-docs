@@ -301,7 +301,7 @@ export default defineConfig({
     ],
     footer: {
       message: '',
-      copyright: '华玥组件库 © 2025-present'
+      copyright: '华玥组件库 © 2025-present 备案号：<a href="https://beian.miit.gov.cn/" target="_blank">赣ICP备2024048852号-2</a>'
     },
       outline: {
           level: [2, 3],
