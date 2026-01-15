@@ -25,6 +25,9 @@
     <template #doc-footer-before>
       <BackTop />
     </template>
+    <template #not-found>
+      <NoPage />
+    </template>
   </Layout>
 </template>
 
@@ -40,8 +43,6 @@ import { watch, nextTick, onMounted } from "vue";
 import "gitalk/dist/gitalk.css";
 import { useRouter } from "vitepress";
 import createGitalk from "../gitalk";
-import BackTop from "../components/BackTop.vue";
-import DocVersion from "../components/DocVersion.vue";
 
 const { route } = useRouter();
 // 使用@vercel/analytics监听完整访客量
