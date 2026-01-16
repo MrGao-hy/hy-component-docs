@@ -308,7 +308,10 @@ export default defineConfig({
           label: '当前页大纲'
       },
   },
-  head: [["link", { rel: "icon", href: "/images/hy_logo_light.png" }]],
+  head: [
+      ["link", { rel: "icon", href: "/images/hy_logo_light.png" }],
+      ['meta', { name: 'algolia-site-verification', content: '375FCD1927B1F391' }]
+  ],
   markdown: {
     config: (md) => {
       md.use(footnote);
