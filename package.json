@@ -13,7 +13,7 @@
     "components-helper": "^2.2.0",
     "sass-embedded": "^1.85.1",
     "tsx": "^4.20.3",
-    "vitepress": "latest",
+    "vitepress": "2.0.0-alpha.15",
     "vitepress-plugin-group-icons": "^1.5.2",
     "vitepress-plugin-llms": "^1.5.1"
   },
