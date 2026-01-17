@@ -267,7 +267,7 @@ export default defineConfig({
         appId: 'V9DGA3FXG2',
         apiKey: 'ed4fa620b5ad0f03c1b4b5cc4070db81',
         indexName: 'hy-design-uni',
-        askAi: '3gH3VPPLRzTb',
+        askAi: 'Y7gDNX5nDOtI',
           placeholder: '搜索文档',
           translations: {
               button: { buttonText: '搜索文档', buttonAriaLabel: '搜索文档' },

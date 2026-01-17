@@ -87,7 +87,6 @@ onMounted(() => {
 
       // 监听 PC 端 pointerdown
       window.addEventListener("pointerdown", (e) => {
-        debugger;
         // 只处理 iframe 区域
         const rect = h5Iframe.value.getBoundingClientRect();
         if (e.clientX < rect.left || e.clientX > rect.right ||
