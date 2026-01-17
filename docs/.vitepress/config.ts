@@ -264,9 +264,9 @@ export default defineConfig({
     search: {
       provider: 'algolia',
       options: {
-        appId: 'J0OERQR6R3',
-        apiKey: '1bd2094712cea982c8a38101bcab132e',
-        indexName: 'docsearch',
+        appId: 'V9DGA3FXG2',
+        apiKey: 'ed4fa620b5ad0f03c1b4b5cc4070db81',
+        indexName: 'hy-design-uni',
         askAi: '3gH3VPPLRzTb',
           placeholder: '搜索文档',
           translations: {
