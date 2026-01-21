@@ -5,7 +5,7 @@
     "dev": "vitepress dev docs --port 8099",
     "build": "vitepress build docs",
     "docs:preview": "vitepress preview docs",
-    "clean": "rimraf node_modules && npm cache verify --force",
+    "clean": "rimraf node_modules && rimraf pnpm-lock.yaml && npm cache verify --force",
     "documate:upload": "documate upload"
   },
   "devDependencies": {
