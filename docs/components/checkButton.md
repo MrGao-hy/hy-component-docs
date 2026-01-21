@@ -186,18 +186,18 @@ const columns = reactive([
 
 ## API
 
-| 参数         | 说明             | 类型                                                | 默认值                                                  |
-|------------|----------------|---------------------------------------------------|------------------------------------------------------|
-| v-model    | 选中得值[^1]       | `string`\|`number`\| `(string\|number)[]`         | -                                                    |
-| columns    | 列表数据           | `array`                                           | -                                                    |
-| fieldNames | 自定义columns对应得键 | `object`                                          | \{label: "label",value: "value",checked: "checked"\} |
-| selectType | 单选还是多选[^2]     | `checkbox`\|`radio`                               | checkbox                                             |
-| disabled   | 禁用             | `boolean`                                         | false                                                |
-| col        | 每行几列，每列等宽      | `string`                                          | repeat(3, 1fr)                                       |
-| gap        | 设置每行间距,需要加单位   | `string`\| `number`                               | 10px                                                 |
-| type       | 标签类型[^3]       | `error`\|`warning`\|`success` \|`primary`\|`info` | primary                                              |
-| size       | 标签的大小[^4]      | `small`\|`medium`\|`large`                        | medium                                               |
-| shape      | tag的形状[^5]     | `circle`\|`square`                                | square                                               |
+| 参数         | 说明                                     | 类型                                                | 默认值                                                  |
+|------------|----------------------------------------|---------------------------------------------------|------------------------------------------------------|
+| v-model    | 选中得值[^1]                               | `string`\|`number`\| `(string\|number)[]`         | -                                                    |
+| columns    | 列表数据                                   | `array`                                           | -                                                    |
+| fieldNames | 自定义columns对应得键                         | `object`                                          | \{label: "label",value: "value",checked: "checked"\} |
+| selectType | 单选还是多选[^2]                             | `checkbox`\|`radio`                               | checkbox                                             |
+| disabled   | 禁用                                     | `boolean`                                         | false                                                |
+| col        | 设置子元素列排序，参考css属性值grid-template-columns | `string`                                          | repeat(3, 1fr)                                       |
+| gap        | 设置每行间距,需要加单位                           | `string`\| `number`                               | 10px                                                 |
+| type       | 标签类型[^3]                               | `error`\|`warning`\|`success` \|`primary`\|`info` | primary                                              |
+| size       | 标签的大小[^4]                              | `small`\|`medium`\|`large`                        | medium                                               |
+| shape      | tag的形状[^5]                             | `circle`\|`square`                                | square                                               |
 
 ## columns
 | 参数       | 说明     | 类型        | 默认值 |

@@ -80,6 +80,8 @@ export default defineConfig({
             { text: "快速开始", link: "/components/start" },
             { text: "配置主题", link: "/components/theme" },
             { text: "内置样式", link: "/components/style" },
+            { text: "国际化", link: "/components/locale" },
+            { text: "更新日志", link: "/components/changelog" },
             { text: "注意事项", link: "/components/announcements" },
           ],
         },
@@ -267,7 +269,9 @@ export default defineConfig({
         appId: 'V9DGA3FXG2',
         apiKey: 'ed4fa620b5ad0f03c1b4b5cc4070db81',
         indexName: 'hy-design-uni',
-        askAi: 'Y7gDNX5nDOtI',
+        askAi: {
+            assistantId: 'Y7gDNX5nDOtI',
+        },
           placeholder: '搜索文档',
           translations: {
               button: { buttonText: '搜索文档', buttonAriaLabel: '搜索文档' },
@@ -278,7 +282,7 @@ export default defineConfig({
                       closeButtonText: '关闭',
                       closeButtonAriaLabel: '关闭',
                       placeholderText: '搜索文档',
-                      placeholderTextAskAi: '向 AI 提问：',
+                      placeholderTextAskAi: '没有找到？试试问问玥玥AI小助手：',
                       placeholderTextAskAiStreaming: '回答中...',
                       searchInputLabel: '搜索',
                       backToKeywordSearchButtonText: '返回关键字搜索',
@@ -304,7 +308,7 @@ export default defineConfig({
                       reportMissingResultsText: '你认为该查询应该有结果？',
                       reportMissingResultsLinkText: '点击反馈'
                   },
-                  resultsScreen: { askAiPlaceholder: '向 AI 提问： ' },
+                  resultsScreen: { askAiPlaceholder: '没有找到？试试问问玥玥AI小助手：' },
                   askAiScreen: {
                       disclaimerText: '答案由 AI 生成，可能不准确，请自行验证。',
                       relatedSourcesText: '相关来源',
@@ -317,7 +321,8 @@ export default defineConfig({
                       thanksForFeedbackText: '感谢你的反馈！',
                       preToolCallText: '搜索中...',
                       duringToolCallText: '搜索 ',
-                      afterToolCallText: '已搜索'
+                      afterToolCallText: '已搜索',
+                      aggregatedToolCallText: '111'
                   },
                   footer: {
                       selectText: '选择',

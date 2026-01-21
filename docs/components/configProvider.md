@@ -48,4 +48,33 @@ page .hy-theme--dark {
 }
 ```
 
+## hy-config-provider 高度配置说明
+hy-config-provider 组件默认会设置固定高度，以适配不同设备的安全区域，但该设置可能导致页面滚动事件 onPageScroll 无法触发。以下是详细的配置方式：
+### 1. 组件默认高度（系统预设）
+组件内置的高度计算逻辑如下，会自动适配顶部状态栏和底部安全区域：
+```scss
+.hy-config-provider {
+  // 基础高度计算：视口高度 - 顶部状态栏高度
+  height: calc(100vh - var(--window-top));
+  // 兼容 iOS 旧版本安全区域（constant 已逐步废弃）
+  height: calc(100vh - var(--window-top) - constant(safe-area-inset-bottom));
+  // 兼容 iOS 新版本安全区域
+  height: calc(100vh - var(--window-top) - env(safe-area-inset-bottom));
+}
+```
+### 2. 自定义高度
+若需要调整组件高度，直接通过组件的 height 属性覆盖默认值即可，示例：
+```vue
+<!-- 自定义固定高度 -->
+<hy-config-provider height="800px">...</hy-config-provider>
+
+<!-- 自定义百分比高度 -->
+<hy-config-provider height="90%">...</hy-config-provider>
+```
+### 3. 解决 onPageScroll 事件不触发问题
+由于组件默认的固定高度会限制页面滚动区域，导致 onPageScroll 滚动事件无法触发。如需恢复滚动事件，只需将高度设置为 auto，让组件高度自适应内容：
+```vue
+<hy-config-provider height="auto">...</hy-config-provider>
+```
+
 <demo-model url="pages-design/configProvider/configProvider"></demo-model>

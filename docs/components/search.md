@@ -82,7 +82,7 @@ import { HySearch } from "hy-app"
 | v-model          | 双向绑定输入框搜索值                     | `string`                               | -           |
 | shape            | 搜索框形状，round-圆形，square-方形       | `circle`\|`square`                     | circle      |
 | bgColor          | 搜索框背景颜色	                       | `string`                               | -           |
-| placeholder      | 占位文字内容	                        | `string`                               | 请输入关键字      |
+| placeholder      | 占位文字内容	                        | `string`                               | 搜索内容        |
 | confirmType      | 设置键盘右下角按钮的文字	                  | `send`\|`search`\|`next`\|`go`\|`done` | search      |
 | clearable        | 是否启用清除控件	                      | `boolean`                              | true        |
 | autoFocus        | 是否自动获得焦点	                      | `boolean`                              | false       |

@@ -15,9 +15,6 @@
       <DocVersion/>
     </template>
     <!-- 头部导航栏内容左侧 -->
-    <template #nav-bar-content-before>
-      <Documate/>
-    </template>
     <template #layout-top>
       <MouseFollower />
       <MouseClick />
@@ -34,9 +31,6 @@
 <script lang="ts" setup>
 import DefaultTheme from "vitepress/theme";
 import { inject  } from '@vercel/analytics';
-// ai模型
-import Documate from '@documate/vue';
-import '@documate/vue/dist/style.css';
 
 const {Layout} = DefaultTheme
 import { watch, nextTick, onMounted } from "vue";

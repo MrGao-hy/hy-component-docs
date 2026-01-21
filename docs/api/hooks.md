@@ -125,14 +125,18 @@ toast.close(); // 关闭所以提示
 - 提供响应式的弹窗状态管理
 
 ```ts
-toast.show("默认提示"); // 默认提示（无图标）
-toast.info("信息提示"); // 信息提示
-toast.success("成功提示"); // 成功提示
-toast.error("错误提示"); // 错误提示
-toast.warning("警告提示"); // 警告提示
-toast.primary("主题提示"); // 主题提示
-toast.loading(); // 加载中
-toast.close(); // 关闭所以提示
+message.alert("默认提示"); // 默认提示（无图标）
+message.confirm("信息提示"); // 信息提示
+message.confirm({
+    title: '删除确认',
+    content: '确定要删除这条数据吗？此操作不可恢复。',
+    confirm: async () => {
+        // 执行确认操作
+    },
+    cancel: async () => {
+        // 执行取消操作
+    }
+})
 ```
 
 
