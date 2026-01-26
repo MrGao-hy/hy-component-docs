@@ -1,4 +1,4 @@
-# 国际化 <Badge type="tip" text="^0.6.0" />
+# 国际化 <Badge type="tip">^0.6.0</Badge>
 
 :::warning 注意
 目前组件库发布到 npm 上的包是未经编译的vue与ts，而 Vite 会将预构建的依赖项缓存到 node_modules/.vite，组件库的国际化的实现是基于reactive实现的数据共享，在dev阶段就会出现页面使用预构建产物中的国际化数据，而组件库使用组件库内部的国际化数据，所以在非uni_modules模式引入时，需要在vite.config.ts中增加以下配置:
