@@ -68,6 +68,26 @@ import { IconConfig, HyIcon } from "hy-app";
 ```html
 <hy-icon label="uview-plus" size="40" name="search" customPrefix="custom-icon"></hy-icon>
 ```
+:::tip 注意
+下下来默认类名为`.iconfont`,需要手动把`.iconfont`替换成`.custom-icon`
+:::
+```scss
+@font-face {
+  font-family: "custom-icon";
+  src: url('iconfont.woff2?t=1764230155023') format('woff2'),
+  url('iconfont.woff?t=1764230155023') format('woff'),
+  url('iconfont.ttf?t=1764230155023') format('truetype');
+}
+
+.iconfont { // [!code --]
+.custom-icon { // [!code ++]
+  font-family: "custom-icon";
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+```
 
 
 ## API
