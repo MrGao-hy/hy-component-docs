@@ -17,7 +17,7 @@ import '../styles/scss/common.scss'
 
 
 export default {
-    ...DefaultTheme,
+    extends: DefaultTheme,
     Layout,
     enhanceApp({ app }) {
         app.component('NoPage', NoPage)
