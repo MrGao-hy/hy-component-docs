@@ -1,4 +1,4 @@
-# 华玥组件库
+# 华玥组件库 hy-app 使用教程
 ::: info 温馨提示
 node(推荐) >= 16.14.0
 sass(推荐) 1.53.0<=sass<=1.78.0
@@ -48,7 +48,7 @@ $ yarn add dayjs
 ```
 :::
 
-## :cactus: 安装组件
+## :cactus: 安装hy-app
 ::: code-group
 ```shell [npm]
 $ npm install hy-app
@@ -67,14 +67,8 @@ $ yarn install hy-app
 ```
 :::
 
-
-## :deciduous_tree: 导入使用组件
-```html
-<!-- 然后在所需页面直接使用 -->
-<hy-input></hy-input>
-```
-
-> 在pages.json文件引入全局组件库
+## 配置全局组件自动引入
+修改项目根目录下的 ./src/pages.json 文件，添加如下 easycom 配置：
 ```json [./src/pages.json]
 {
   "easycom": {
@@ -85,8 +79,16 @@ $ yarn install hy-app
 }
 ```
 
-## :chicken: 导入scss文件
-> 在uni.scss最顶部引入这些文件
+## :chicken: 全局导入组件库样式（修改 uni.scss）
+> 华玥组件库的全局样式、主题变量、组件基础样式需统一导入，否则组件会丢失样式效果。
 ```scss [./uni.scss]
 @use "hy-app/index.scss" as *;
+```
+
+## :deciduous_tree: 页面上使用组件
+```html
+<template>
+    <!-- 然后在所需页面直接使用 -->
+    <hy-input></hy-input>
+</template>
 ```
