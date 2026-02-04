@@ -271,6 +271,16 @@ export default defineConfig({
         indexName: 'hy-design-uni',
         askAi: {
             assistantId: 'Y7gDNX5nDOtI',
+            sidePanel: {
+                // 镜像 @docsearch/sidepanel-js SidepanelProps API
+                panel: {
+                    variant: 'floating', // 或 'inline'
+                    side: 'right',
+                    width: '360px',
+                    expandedWidth: '580px',
+                    suggestedQuestions: true
+                }
+            }
         },
           placeholder: '搜索文档',
           translations: {
