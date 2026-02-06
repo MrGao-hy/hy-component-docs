@@ -99,31 +99,39 @@ import { HyWatermark } from "hy-app"
 </template>
 ```
 
+## 防删除 <Badge>^0.6.4</Badge>
+- 通过设置`isAntiTheft`,防止水印图片被删除被篡改。
+```html
+<template>
+    <hy-watermark text="华玥组件库" :isAntiTheft="true"></hy-watermark>
+</template>
+```
+
 ## API
 
-| 参数          | 说明                    | 类型                            | 默认值         |
-|-------------|-----------------------|-------------------------------|-------------|
-| title       | 标题                    | `string`                      | -           |
-| content     | 显示内容                  | `string`                      | -           |
-| image       | 显示图片的地址，支持网络图片和base64 | `string`                      | -           |
-| imageHeight | 图片高度                  | `number`                      | 50          |
-| imageWidth  | 图片宽度                  | `number`                      | 70          |
-| gutterX     | X轴间距，单位px             | `number`                      | 0           |
-| gutterY     | Y轴间距，单位px             | `number`                      | 0           |
-| width       | canvas画布宽度，单位px       | `number`                      | 100         |
-| height      | canvas画布高度，单位px       | `number`                      | 100         |
-| fullScreen  | 是否为全屏水印               | `boolean`                     | true        |
-| titleSize   | 是否为全屏水印               | `boolean`                     | true        |
-| titleColor  | 是否为全屏水印               | `boolean`                     | true        |
-| color       | 水印字体颜色                | `string`                      | #8c8c8c     |
-| size        | 水印字体大小，单位px           | `number`                      | 14          |
-| fontStyle   | 水印字体样式（仅微信、支付宝和h5支持）  | `normal`\|`italic`\|`oblique` | normal      |
-| fontWeight  | 水印字体的粗细（仅微信、支付宝和h5支持） | `normal`\|`bold`\|`bolder`    | normal      |
-| fontFamily  | 水印字体系列（仅微信、支付宝和h5支持）  | `string`                      | PingFang SC |
-| rotate      | 水印旋转角度                | `number`                      | -25         |
-| zIndex      | 自定义层级                 | `number`                      | 10086       |
-| opacity     | 自定义透明度，取值 0~1         | `number`                      | 0.5         |
-| customStyle | 定义需要用到的外部样式           | `CSSProperties`               | -           |
+| 参数                  | 说明                    | 类型                            | 默认值         |
+|---------------------|-----------------------|-------------------------------|-------------|
+| title               | 标题                    | `string`                      | -           |
+| content             | 显示内容                  | `string`                      | -           |
+| image               | 显示图片的地址，支持网络图片和base64 | `string`                      | -           |
+| imageHeight         | 图片高度                  | `number`                      | 50          |
+| imageWidth          | 图片宽度                  | `number`                      | 70          |
+| gutterX             | X轴间距，单位px             | `number`                      | 0           |
+| gutterY             | Y轴间距，单位px             | `number`                      | 0           |
+| width               | canvas画布宽度，单位px       | `number`                      | 100         |
+| height              | canvas画布高度，单位px       | `number`                      | 100         |
+| fullScreen          | 是否为全屏水印               | `boolean`                     | true        |
+| titleSize           | 是否为全屏水印               | `boolean`                     | true        |
+| titleColor          | 是否为全屏水印               | `boolean`                     | true        |
+| color               | 水印字体颜色                | `string`                      | #8c8c8c     |
+| size                | 水印字体大小，单位px           | `number`                      | 14          |
+| fontStyle           | 水印字体样式（仅微信、支付宝和h5支持）  | `normal`\|`italic`\|`oblique` | normal      |
+| fontWeight          | 水印字体的粗细（仅微信、支付宝和h5支持） | `normal`\|`bold`\|`bolder`    | normal      |
+| fontFamily          | 水印字体系列（仅微信、支付宝和h5支持）  | `string`                      | PingFang SC |
+| rotate              | 水印旋转角度                | `number`                      | -25         |
+| zIndex              | 自定义层级                 | `number`                      | 10086       |
+| opacity             | 自定义透明度，取值 0~1         | `number`                      | 0.5         |
+| isAntiTheft`v0.6.4` | 防删除、防修改样式功能(在h5有效)    | `boolean`                     | false       |
 
 
 <demo-model url="pages-design/watermark/watermark"></demo-model>
