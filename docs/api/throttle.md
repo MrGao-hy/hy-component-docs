@@ -27,7 +27,7 @@
   </view>
 </template>
 
-<script setup lang="ts[throttle.md](throttle.md)">
+<script setup lang="ts">
   import { throttle } from "hy-app";
   const throttleFn = () => throttle(() => {
       console.log("执行了")
