@@ -10,16 +10,25 @@ import MouseClick from "../components/MouseClick.vue";
 import MouseFollower from "../components/MouseFollower.vue";
 import DocVersion from "../components/DocVersion.vue";
 import AdvertisingPosition from "../components/AdvertisingPosition.vue";
+import PageView from "../components/PageView.vue";
 import 'virtual:group-icons.css'
 import '../styles/scss/theme.scss'
 import '../styles/scss/color.scss'
 import '../styles/scss/common.scss'
 
+import { inBrowser } from 'vitepress'
+import busuanzi from 'busuanzi.pure.js'
+
 
 export default {
     extends: DefaultTheme,
     Layout,
-    enhanceApp({ app }) {
+    enhanceApp({ app, router }) {
+        if (inBrowser) {
+            router.onAfterRouteChanged = () => {
+                busuanzi.fetch()
+            }
+        }
         app.component('NoPage', NoPage)
         app.component('DemoModel', DemoModel)
         app.component('TheIconList', TheIconList)
@@ -30,5 +39,6 @@ export default {
         app.component('MouseFollower', MouseFollower)
         app.component('DocVersion', DocVersion)
         app.component('AdvertisingPosition', AdvertisingPosition)
+        app.component('PageView', PageView)
     }
 };

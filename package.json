@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@documate/documate": "^0.2.1",
+    "busuanzi.pure.js": "^1.0.3",
     "components-helper": "^2.2.0",
     "sass-embedded": "^1.85.1",
     "tsx": "^4.20.3",
