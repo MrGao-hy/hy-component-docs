@@ -46,7 +46,7 @@ const list = ref([
 - 如果数组里包含对象，对象里面的键`url`想改完`image`，则需要把`keyName`设置为`image`
 - `title`轮播图展示的文字内容，必须先把轮播图属性`showTitle`设置为`true`
 - `poster`地址内容为视频url时候填写
-- `type`为video展示视频，`type`为image展示图片，默认展示图片
+- `type`为`video`展示视频，`type`为`image`展示图片，默认展示图片
 :::
 ```html
 <template>

@@ -1,5 +1,22 @@
 # 📝 更新日志 (CHANGELOG)
 
+## 🚀 v0.6.6 (2026-04-30)
+### 📦 其他
+- 版本更新0.6.6 ([11f680a](https://github.com/MrGao-hy/hy-design-uni/commit/11f680a))
+
+### 🐞 修复问题
+- 轮播图指示器插槽新增`current``length` ([1fcda14](https://github.com/MrGao-hy/hy-design-uni/commit/1fcda14))
+- 日历组件新增跟新show状态 ([82d5a86](https://github.com/MrGao-hy/hy-design-uni/commit/82d5a86))
+- 修改tabs组件轮播组件，新增显示轮播组件属性 ([dd277af](https://github.com/MrGao-hy/hy-design-uni/commit/dd277af))
+- 修改时间选择器首值无法选中问题 ([8315e53](https://github.com/MrGao-hy/hy-design-uni/commit/8315e53))
+
+### 💄 样式调整
+- 轮播图组件指示器点不显示问题 ([a7db3b8](https://github.com/MrGao-hy/hy-design-uni/commit/a7db3b8))
+
+## 🚀 v0.6.5 (2026-03-30)
+### ✨ 新功能
+- 添加按钮的contact和chooseavatar回调事件 ([3df814f](https://github.com/MrGao-hy/hy-design-uni/commit/3df814f))
+
 ## 🚀 v0.6.3 (2026-02-09)
 ### 💄 样式调整
 - 不影响项目的修改 ([d62665f](https://github.com/MrGao-hy/hy-design-uni/commit/d62665f))
