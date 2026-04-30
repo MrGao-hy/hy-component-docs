@@ -40,17 +40,18 @@ const list = ref([
 ]);
 ```
 
-## 数据为对象数组
+## 对象使用说明
 ::: warning 温馨提示
-- 如果是数组里面包含字符串地址，直接展示图片
 - 如果是数组里包含对象，图片取键为`url`的图片地址，
-- 如果数组里包含对象，但是图片地址链接键为`image`，需要把`keyName`设置为`image`
+- 如果数组里包含对象，对象里面的键`url`想改完`image`，则需要把`keyName`设置为`image`
+- `title`轮播图展示的文字内容，必须先把轮播图属性`showTitle`设置为`true`
+- `poster`地址内容为视频url时候填写
+- `type`为video展示视频，`type`为image展示图片，默认展示图片
 :::
 ```html
 <template>
     <hy-swiper
         :list="list"
-        keyName="image"
         showTitle
         :autoplay="false"
         circular
@@ -63,15 +64,16 @@ const list = ref([
     // 使用 reactive 创建响应式对象数组  
     const list = reactive([
         {
-            image: 'https://cdn.uviewui.com/uview/swiper/swiper2.png',
+            url: 'https://media.w3.org/2010/05/sintel/trailer.mp4',
             title: '昨夜星辰昨夜风，画楼西畔桂堂东',
+            type: "video"
         },
         {
-            image: 'https://cdn.uviewui.com/uview/swiper/swiper1.png',
+            url: 'https://cdn.uviewui.com/uview/swiper/swiper1.png',
             title: '身无彩凤双飞翼，心有灵犀一点通',
         },
         {
-            image: 'https://cdn.uviewui.com/uview/swiper/swiper3.png',
+            url: 'https://cdn.uviewui.com/uview/swiper/swiper3.png',
             title: '谁念西风独自凉，萧萧黄叶闭疏窗，沉思往事立残阳',
         },
     ]);
@@ -89,62 +91,25 @@ const list = ref([
 ## 自定义指示器
 - 如您需要以指示点或数字形式来自定义指示器，请参考如下案例：
 ::: details 点击查看完整代码
-```html
+```vue
 <template>
-    <view class="u-demo-block">
-        <text class="u-demo-block__title">自定义指示器</text>
-        <up-swiper
-                :list="list5"
-                @change="e => current = e.current"
-                :autoplay="false"
-        >
-            <template #indicator>
-                <view
-                        class="indicator"
-                >
-                    <view
-                            class="indicator__dot"
-                            v-for="(item, index) in list5"
-                            :key="index"
-                            :class="[index === current && 'indicator__dot--active']"
-                    >
-                    </view>
-                </view>
-            </template>
-        </up-swiper>
-        <up-gap
-                bgColor="transparent"
-                height="15"
-        ></up-gap>
-        <up-swiper
-                :list="list6"
-                @change="e => currentNum = e.current"
-                :autoplay="false"
-                indicatorStyle="right: 20px"
-        >
-            <template #indicator>
-                <view
-                        class="indicator-num"
-                >
-                    <text class="indicator-num__text">{{ currentNum + 1 }}/{{ list6.length }}</text>
-                </view>
-            </template>
-        </up-swiper>
-    </view>
+    <hy-swiper :list="list">
+      <template #indicator="{ current, length }">
+        <view class="indicator">
+          <text>{{ current }}</text>
+          <text>/</text>
+          <text>{{ length }}</text>
+        </view>
+      </template>
+    </hy-swiper>
 </template>
 
 <script setup>
     import { reactive } from 'vue';
 
-    const list5 = reactive([
+    const list = reactive([
         'https://cdn.uviewui.com/uview/swiper/swiper3.png',
         'https://cdn.uviewui.com/uview/swiper/swiper2.png',
-        'https://cdn.uviewui.com/uview/swiper/swiper1.png',
-    ]);
-
-    const list6 = reactive([
-        'https://cdn.uviewui.com/uview/swiper/swiper2.png',
-        'https://cdn.uviewui.com/uview/swiper/swiper3.png',
         'https://cdn.uviewui.com/uview/swiper/swiper1.png',
     ]);
 </script>
@@ -154,33 +119,11 @@ const list = ref([
         display: flex;
         flex-direction: row;
         justify-content: center;
-
-        &__dot {
-            height: 6px;
-            width: 6px;
-            border-radius: 100px;
-            background-color: rgba(255, 255, 255, 0.35);
-            margin: 0 5px;
-            transition: background-color 0.3s;
-
-            &--active {
-                background-color: #ffffff;
-            }
-        }
-    }
-
-    .indicator-num {
-        padding: 2px 0;
-        background-color: rgba(0, 0, 0, 0.35);
-        border-radius: 100px;
-        width: 35px;
-        display: flex;
-        justify-content: center;
-
-        &__text {
-            color: #FFFFFF;
-            font-size: 12px;
-        }
+        width: 90rpx;
+        height: 40rpx;
+        background: rgba(128, 128, 128, 0.7);
+        border-radius: $hy-border-radius-semicircle;
+        color: #fff;
     }
 </style>
 ```
@@ -203,7 +146,7 @@ const list = ref([
                 :autoplay="false"
                 radius="5"
                 bgColor="#ffffff"
-        ></-swiper>
+        ></hy-swiper>
     </view>
     <!-- #endif -->
 </template>
@@ -224,7 +167,7 @@ const list = ref([
 
 | 参数                     | 说明                                                                            | 类型                                                                    | 默认值                       |
 |------------------------|-------------------------------------------------------------------------------|-----------------------------------------------------------------------|---------------------------|
-| list                   | 轮播图数据，见上方"基本使用"说明                                                             | `array`                                                               | -                         |
+| list                   | 可以字符串数组或者对象数组，对象见上方"[对象使用说明](#对象使用说明)"说明                                           | `array`                                                               | -                         |
 | indicator              | 是否显示面板指示器                                                                     | `boolean`                                                             | false                     |
 | indicatorActiveColor   | 指示器激活的颜色                                                                      | `string`                                                              | #FFFFFF                   |
 | indicatorInactiveColor | 指示器非激活颜色                                                                      | `string`                                                              | rgba(255, 255, 255, 0.35) |
@@ -241,7 +184,7 @@ const list = ref([
 | acceleration           | 当开启时，会根据滑动速度，连续滑动多屏，支付宝不支持                                                    | `boolean`                                                             | false                     |
 | displayMultipleItems   | 同时显示的滑块数量，nvue、支付宝小程序不支持                                                      | `number`                                                              | 1                         |
 | easingFunction         | 指定swiper切换缓动动画类型， 只对微信小程序有效                                                   | `default`\|`linear`\|`easeInCubic` \|`easeOutCubic`\|`easeInOutCubic` | default                   |
-| keyName                | list数组中指定对象的目标属性名                                                             | `string`                                                              | url                       |
+| keyName                | list数组中指定url的属性键名                                                             | `string`                                                              | url                       |
 | imgMode                | 图片的裁剪模式,见uniapp基础组件[image](https://uniapp.dcloud.net.cn/component/image.html) | `string`                                                              | aspectFill                |
 | height                 | 组件高度                                                                          | `string` \| `number`                                                  | 130                       |
 | bgColor                | 背景颜色                                                                          | `string`                                                              | -                         |
