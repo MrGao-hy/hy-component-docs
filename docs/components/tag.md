@@ -101,11 +101,13 @@ import { HyTag } from "hy-app"
 ## 标签形状
 - 通过设置`shape`设置标签形状
   - `circle`: 半圆形
-  - `square`: 方块
+  - `square`: 方形
+  - `opposite`: 对角圆角
 ```html
 <template>
   <hy-tag text="圆形" shape="circle"></hy-tag>
   <hy-tag text="方形" shape="square"></hy-tag>
+  <hy-tag text="对角圆角" shape="opposite"></hy-tag>
 </template>
 ```
 
@@ -128,6 +130,7 @@ import { HyTag } from "hy-app"
   - `large`: 大标签
   - `medium`: 中标签
   - `small`: 小标签
+  - `mini`: 迷你版
 ```html
 <template>
   <hy-tag text="标签" size="large"></hy-tag>
