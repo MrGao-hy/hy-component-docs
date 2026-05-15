@@ -83,6 +83,7 @@ export default defineConfig({
             { text: "国际化", link: "/components/locale" },
             { text: "更新日志", link: "/components/changelog" },
             { text: "注意事项", link: "/components/announcements" },
+            { text: "LLMs.txt", link: "/components/LLMs" },
           ],
         },
         {
