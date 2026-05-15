@@ -135,7 +135,7 @@ const onClick = (name: string | number) => {
 | title          | 头部标题                   | `string`           | -          |
 | sub            | 标题下面小提示                | `string`           | -          |
 | disabled       | 是否禁用cell               | `boolean`          | false      |
-| value          | 右侧的内容                  | `string`           | -          |
+| value          | 右侧的内容                  | `string`\|`number` | -          |
 | icon           | 左边图标，[图标Api](icon#api) | `HyIconProps`      | -          |
 | rightIcon      | 右边图标，[图标Api](icon#api) | `HyIconProps`      | -          |
 | arrowDirection | 右侧箭头的方向                | `string`           | right      |

@@ -17,8 +17,6 @@
 ```html
 <!-- 全局使用 -->
 <hy-notice-bar text="欢迎使用华悦组件库"></hy-notice-bar>
-<!-- 单个组件引入 -->
-<HyNoticeBar text="欢迎使用华悦组件库"></HyNoticeBar>
 ```
 ```ts
 import { HyNoticeBar } from "hy-app"
@@ -27,16 +25,26 @@ import { HyNoticeBar } from "hy-app"
 ## 可关闭
 ```html
 <template>
-    <hy-notice-bar text="欢迎使用华悦组件库"></hy-notice-bar>
+    <hy-notice-bar :text="text"></hy-notice-bar>
 </template>
+
+<script setup>
+    import { reactive } from 'vue'
+    const text = reactive(['唧唧复唧唧，', '木兰当户织。', '不闻机杼声，', '唯闻女叹息。'])
+</script>
 ```
 
 ## 滚动速度
 - `speed`可配置横向滚动速度
 ```html
 <template>
-    <hy-notice-bar text="欢迎使用华悦组件库" speed="250"></hy-notice-bar>
+    <hy-notice-bar :text="text" speed="250"></hy-notice-bar>
 </template>
+
+<script setup>
+    import { reactive } from 'vue'
+    const text = reactive(['唧唧复唧唧，', '木兰当户织。', '不闻机杼声，', '唯闻女叹息。'])
+</script>
 ```
 
 ## 跳转页面
@@ -47,7 +55,7 @@ import { HyNoticeBar } from "hy-app"
 :::
 ```html
 <template>
-    <hy-notice-bar text="欢迎使用华悦组件库" url="/pages-design/tag/tag" mode="line"></hy-notice-bar>
+    <hy-notice-bar :text="['查看详情']" url="/pages-design/tag/tag" mode="line"></hy-notice-bar>
 </template>
 ```
 
@@ -55,12 +63,17 @@ import { HyNoticeBar } from "hy-app"
 ```html
 <template>
     <!--横向-->
-    <hy-notice-bar text="欢迎使用华悦组件库" direction="row"></hy-notice-bar>
+    <hy-notice-bar :text="text" direction="row"></hy-notice-bar>
     <!--横向轮播模式-->
-    <hy-notice-bar text="欢迎使用华悦组件库" direction="row" step></hy-notice-bar>
+    <hy-notice-bar :text="text" direction="row" step></hy-notice-bar>
     <!--纵向-->
-    <hy-notice-bar text="欢迎使用华悦组件库" direction="columns"></hy-notice-bar>
+    <hy-notice-bar :text="text" direction="columns"></hy-notice-bar>
 </template>
+
+<script setup>
+    import { reactive } from 'vue'
+    const text = reactive(['唧唧复唧唧，', '木兰当户织。', '不闻机杼声，', '唯闻女叹息。'])
+</script>
 ```
 
 ## API
