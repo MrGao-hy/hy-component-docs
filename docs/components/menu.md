@@ -105,7 +105,7 @@ import { IconConfig, debounce } from "hy-app";
 import HyMenu from "@/package/components/hy-menu/hy-menu.vue";
 import HyGrid from "@/package/components/hy-grid/hy-grid.vue";
 import HyConfigProvider from "@/package/components/hy-config-provider/hy-config-provider.vue";
-import type { MenusType } from "@/package/components/hy-menu/typing";
+import type { MenuParamsType } from "@/package/components/hy-menu/typing";
 import { getRect } from "@/package";
 
 const themeStore = useThemeStore();
