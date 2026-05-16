@@ -157,7 +157,7 @@ function onScroll(e: any) {
     current.value = res?.id || 1;
 }
 
-const onChange = (temp: MenusType) => {
+const onChange = (temp: MenuParamsType) => {
     const res: ItemTopVo | undefined = itemScrollTop.value.find(
         (item) => item.id === temp.id,
     );
@@ -528,9 +528,9 @@ export const data = [
 
 ## Events
 
-| 事件名    | 说明      | 回调参数         |
-|--------|---------|--------------|
-| change | 选项切换时触发 | temp: list的值 |
+| 事件名    | 说明      | 回调参数                                  |
+|--------|---------|---------------------------------------|
+| change | 选项切换时触发 | (temp: MenuParamsType, index: number) |
 
 ## Slots
 
@@ -538,5 +538,39 @@ export const data = [
 |---------|----------|-----|
 | default | 自定义title | -   |
 | icon    | 图标自定义    | -   |
+
+## Typings
+
+:::details 显示类型声明
+```ts
+type MenuParamsType = {
+    /**
+     *  唯一id
+     * */
+    id: string | number
+    /**
+     *  标题下·
+     * */
+    title: string
+    /**
+     *  是否禁用
+     * */
+    disabled?: boolean
+    /**
+     *  icon
+     * */
+    icon?: string
+    /**
+     *  徽标值
+     * */
+    badge?: number
+    /**
+     *  键值
+     * */
+    [key: string]: string | number
+}
+```
+:::
+
 
 <demo-model url="pages-design/menu/menu"></demo-model>
