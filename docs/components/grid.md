@@ -17,8 +17,6 @@
 ```html
 <!-- 全局使用 -->
 <hy-gird :list="list"></hy-gird>
-<!-- 单个组件引入 -->
-<HyGrid :list="list"></HyGrid>
 ```
 ```ts
 import { HyGrid, IconConfig } from "hy-app"
@@ -41,14 +39,27 @@ const list = ref([
 ]);  
 ```
 
+## 设置间距
+
+```html
+<!-- 全局使用 -->
+<hy-gird :list="list" gap="10px"></hy-gird>
+```
+
+## 设置宫格列数
+```html
+<!-- 全局使用 -->
+<hy-gird :list="list" col="5"></hy-gird>
+```
+
 ## 自定义插槽
 
 ```html
 <template>
     <hy-grid :list="list">
         <template #default="{record}">
-            {{record.url}}
-            {{record.title}}
+            <hy-image :src="record.url" width="80" height="80"></hy-image>
+            <text>record.title</text>
         </template>
     </hy-grid>
 </template>
@@ -77,18 +88,19 @@ const list = ref([
 
 ## API
 
-| 参数          | 说明                              | 类型                        | 默认值         |
-|-------------|---------------------------------|---------------------------|-------------|
-| list        | 数据集                             | `array`                   | -           |
-| col         | 宫格的列数                           | `number`                  | 4           |
-| border      | 是否显示宫格的边框                       | `boolean`                 | false       |
-| itemHeight  | 单个宫格高度                          | `string` \| `number`      | 100px       |
-| align       | 格对齐方式，表现为数量少的时候，靠左，居中，还是靠右      | `center`\|`left`\|`right` | left        |
-| gap         | 间隔                              | `string` \| `number`      | 0px         |
-| bgColor     | 宫格的背景颜色                         | `string`                  | transparent |
-| iconConfig  | 图标属性api配置，详见[图标Api](./icon#api) | `HyIconProps`             | -           |
-| customStyle | 自定义需要用到的外部样式                    | `CSSProperties`           | -           |
-| customClass | 自定义外部类名                         | `string`                  | -           |
+| 参数          | 说明                              | 类型                         | 默认值                           |
+|-------------|---------------------------------|----------------------------|-------------------------------|
+| list        | 数据集                             | `(GridItemVo \| string)[]` | -                             |
+| col         | 宫格的列数                           | `number`                   | 4                             |
+| customKeys  | 自定义键值                           | `CustomKeysVo`             | \{name: 'name',icon: 'icon'\} |
+| border      | 是否显示宫格的边框                       | `boolean`                  | false                         |
+| itemHeight  | 单个宫格高度                          | `string` \| `number`       | 100px                         |
+| align       | 格对齐方式，表现为数量少的时候，靠左，居中，还是靠右      | `center`\|`left`\|`right`  | left                          |
+| gap         | 间隔                              | `string` \| `number`       | 0                             |
+| bgColor     | 宫格的背景颜色                         | `string`                   | transparent                   |
+| iconConfig  | 图标属性api配置，详见[图标Api](./icon#api) | `HyIconProps`              | -                             |
+| customStyle | 自定义需要用到的外部样式                    | `CSSProperties`            | -                             |
+| customClass | 自定义外部类名                         | `string`                   | -                             |
 
 ## list
 > 或者自定义添加其他键，通过插槽自定义内容
@@ -101,14 +113,49 @@ const list = ref([
 
 ## Events
 
-| 事件名   | 说明 | 回调参数 |
-|-------|---|------|
-| click | 点击宫格触发  | item |
+| 事件名   | 说明     | 回调参数     |
+|-------|--------|----------|
+| click | 点击宫格触发 | (item: GridItemVo \| string) |
 
 ## Slots
 
-| 插槽名     | 说明   | 接收值    |
-|---------|------|--------|
-| default | 默认插槽 | record |
+| 插槽名     | 说明   | 接收值                          |
+|---------|------|------------------------------|
+| default | 默认插槽 | record: GridItemVo \| string |
+
+## typings
+:::details 类型说明
+```ts
+type GridItemVo = {
+    /**
+     * 图标名称或图片地址
+     * */
+    icon?: string
+    /**
+     * 名称
+     * */
+    name?: string
+    /**
+     * 图标属性api配置
+     * */
+    iconConfig?: Partial<HyIconProps>
+    /**
+     * 自定义内容键值对
+     * */
+    [key: string]: any
+}
+
+type CustomKeysVo = {
+    /**
+     * 自定义标题键名
+     * */
+    name: string
+    /**
+     * 自定义icon键名
+     * */
+    icon: string
+}
+```
+:::
 
 <demo-model url="pages-design/grid/grid"></demo-model>

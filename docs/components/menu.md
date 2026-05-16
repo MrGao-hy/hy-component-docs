@@ -105,7 +105,7 @@ import { IconConfig, debounce } from "hy-app";
 import HyMenu from "@/package/components/hy-menu/hy-menu.vue";
 import HyGrid from "@/package/components/hy-grid/hy-grid.vue";
 import HyConfigProvider from "@/package/components/hy-config-provider/hy-config-provider.vue";
-import type { MenuParamsType } from "@/package/components/hy-menu/typing";
+import type { MenuParamsVo } from "@/package/components/hy-menu/typing";
 import { getRect } from "@/package";
 
 const themeStore = useThemeStore();
@@ -157,7 +157,7 @@ function onScroll(e: any) {
     current.value = res?.id || 1;
 }
 
-const onChange = (temp: MenuParamsType) => {
+const onChange = (temp: MenuParamsVo) => {
     const res: ItemTopVo | undefined = itemScrollTop.value.find(
         (item) => item.id === temp.id,
     );
@@ -530,7 +530,7 @@ export const data = [
 
 | 事件名    | 说明      | 回调参数                                  |
 |--------|---------|---------------------------------------|
-| change | 选项切换时触发 | (temp: MenuParamsType, index: number) |
+| change | 选项切换时触发 | (temp: MenuParamsVo, index: number) |
 
 ## Slots
 
@@ -543,7 +543,7 @@ export const data = [
 
 :::details 显示类型声明
 ```ts
-type MenuParamsType = {
+type MenuParamsVo = {
     /**
      *  唯一id
      * */
