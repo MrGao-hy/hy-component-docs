@@ -67,7 +67,6 @@ page .hy-theme--dark {
 ```
 
 ### `lineEllipsis` - 单行超出隐藏
-
 ```scss
 @include lineEllipsis;
 // 等同于
@@ -77,7 +76,9 @@ page .hy-theme--dark {
 ```
 
 ### `multiEllipsis($lineNumber)` - 多行超出隐藏
-
+:::tip 提示
+**生效必备条件**：使用该混合宏的元素，必须设置 width 或 max-width，否则截断、省略号完全不生效！
+:::
 ```scss
 @include multiEllipsis(3);
 // 限制显示 3 行，超出显示省略号
