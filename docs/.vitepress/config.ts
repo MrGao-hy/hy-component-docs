@@ -115,6 +115,7 @@ export default defineConfig({
               link: "/components/addressPicker",
             },
             { text: "Calendar 日历", link: "/components/calendar" },
+              { text: "Cascader 级联选择器", link: "/components/cascader" },
             { text: "Checkbox 复选框", link: "/components/checkbox" },
             { text: "CheckButton 复选框按钮", link: "/components/checkButton" },
             {
