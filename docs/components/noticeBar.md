@@ -16,7 +16,7 @@
 
 ```html
 <!-- 全局使用 -->
-<hy-notice-bar text="欢迎使用华悦组件库"></hy-notice-bar>
+<hy-notice-bar :text="[欢迎使用华悦组件库]"></hy-notice-bar>
 ```
 ```ts
 import { HyNoticeBar } from "hy-app"
@@ -49,13 +49,13 @@ import { HyNoticeBar } from "hy-app"
 
 ## 跳转页面
 - 通过配置`url`跳转到指定页面
-- 通过配置`mode`为`line`右边出现向右箭头
+- 通过配置`mode`为`link`右边出现向右箭头
 :::tips 注意
 必须`url`和`mode`都设置了才能跳转
 :::
 ```html
 <template>
-    <hy-notice-bar :text="['查看详情']" url="/pages-design/tag/tag" mode="line"></hy-notice-bar>
+    <hy-notice-bar :text="['查看详情']" url="/pages-design/tag/tag" mode="link"></hy-notice-bar>
 </template>
 ```
 
@@ -67,7 +67,7 @@ import { HyNoticeBar } from "hy-app"
     <!--横向轮播模式-->
     <hy-notice-bar :text="text" direction="row" step></hy-notice-bar>
     <!--纵向-->
-    <hy-notice-bar :text="text" direction="columns"></hy-notice-bar>
+    <hy-notice-bar :text="text" direction="column"></hy-notice-bar>
 </template>
 
 <script setup>
@@ -83,7 +83,7 @@ import { HyNoticeBar } from "hy-app"
 | text           | 显示的内容，direction为column时要求为数组                       | `array` \| `string`                | -                 |
 | direction      | 通告滚动模式，row-横向滚动，column-竖向滚动                        | `row` \| `column`                  | row               |
 | step           | direction = row时，是否使用步进形式滚动                        | `boolean`                          | false             |
-| icon           | 是否显示左侧的音量图标                                        | `string`                           | NOTIFICATION_FILL |
+| icon           | 是否显示左侧的音量图标，接受图标props值                             | `string` \| `HyIconProps`          | NOTIFICATION_FILL |
 | mode           | 通告模式，link-显示右箭头，closable-显示右侧关闭图标                  | `link` \| `closable`               | -                 |
 | color          | 文字颜色                                               | `string`                           | -                 |
 | bgColor        | 背景颜色                                               | `string`                           | -                 |
