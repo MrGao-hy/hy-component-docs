@@ -1,11 +1,6 @@
 # Badge 徽标数组件
 > 该组件一般用于图标右上角显示未读的消息数量，提示用户点击，有圆点和圆包含文字两种形式。
 
-::: tip 温馨提示
-本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [badge组件](https://uiadmin.net/uview-plus/components/badge.html) 的代码实现。
-:::
-
 ## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
@@ -17,11 +12,6 @@
 ```html
 <!-- 全局使用 -->
 <hy-badge :value="10"></hy-badge>
-<!-- 单个组件引入 -->
-<HyBadge :value="10"></HyBadge>
-```
-```ts
-import { HyBadge } from "hy-app"
 ```
 
 ## 设置徽标的类型为一个圆点
