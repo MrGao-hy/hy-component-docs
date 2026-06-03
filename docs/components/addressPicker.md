@@ -26,7 +26,7 @@
 import { HyAddressPicker } from "hy-app"
 ```
 
-## 通过外部按钮打开
+### 通过外部按钮打开
 
 ```html
 <template>
@@ -45,7 +45,7 @@ import { HyAddressPicker } from "hy-app"
 </script>
 ```
 
-## 通过内部输入框打开
+### 通过内部输入框打开
 
 ```html
 <template>
@@ -66,6 +66,7 @@ import { HyAddressPicker } from "hy-app"
 
 
 ## API
+### AddressPicker Props
 
 | 参数                  | 说明                                              | 类型                                         | 默认值     |
 |---------------------|-------------------------------------------------|--------------------------------------------|---------|
@@ -89,7 +90,7 @@ import { HyAddressPicker } from "hy-app"
 | toolbarRightSlot    | 是否右边插槽                                          | `boolean`                                  | false   |
 | customStyle         | 自定义输入框外部样式                                      | `CSSProperties`                            | -       |
 
-## Events
+### Events
 
 | 事件名     | 说明              | 回调参数                 |
 |---------|-----------------|----------------------|
@@ -98,14 +99,14 @@ import { HyAddressPicker } from "hy-app"
 | change  | 当选择值变化时触发       | Array: 见上方"回调参数"部分说明 |
 | cancel  | 点击取消按钮	         | -                    |
 
-## Slots
+### Slots
 | 插槽名            | 说明                                                          | 接收值   |
 |----------------|-------------------------------------------------------------|-------|
 | trigger        | 自定义输入框                                                      | value |
 | toolbar-right  | 工具栏右侧内容，自定义右侧内容，因为微信小程序限制，需要同时设置:toolbarRightSlot="true"生效。 | -     |
 | toolbar-bottom | 工具栏下面内容，自定义底部内容                                             | -     |
 
-## Methods
+### Methods
 | 方法名          | 说明                     |
 |--------------|------------------------|
 | setFormatter | 为兼容微信小程序而暴露的内部方法，见上方说明 |
