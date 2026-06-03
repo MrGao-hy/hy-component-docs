@@ -115,7 +115,7 @@ export default defineConfig({
               link: "/components/addressPicker",
             },
             { text: "Calendar 日历", link: "/components/calendar" },
-              { text: "Cascader 级联选择器", link: "/components/cascader" },
+            { text: "Cascader 级联选择器", link: "/components/cascader" },
             { text: "Checkbox 复选框", link: "/components/checkbox" },
             { text: "CheckButton 复选框按钮", link: "/components/checkButton" },
             {
@@ -125,6 +125,7 @@ export default defineConfig({
             { text: "Form 表单", link: "/components/form" },
             { text: "FormGroup 表单组", link: "/components/formGroup" },
             { text: "Input 输入框", link: "/components/input" },
+            { text: "Keyboard 键盘", link: "/components/keyboard" },
             { text: "NumberStep 步进器", link: "/components/numberStep" },
             { text: "Picker 选择器", link: "/components/picker" },
             { text: "Radio 单选框", link: "/components/radio" },
@@ -425,6 +426,7 @@ export default defineConfig({
       ['meta', { name: 'algolia-site-verification', content: '375FCD1927B1F391' }]
   ],
   markdown: {
+      lineNumbers: true,
     config: (md) => {
       md.use(footnote);
       md.use(groupIconMdPlugin);

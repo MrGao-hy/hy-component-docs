@@ -1,10 +1,6 @@
 # FloatButton 悬浮按钮组件
 > 悬浮动作按钮组件，按下可显示一组动作按钮。
 
-::: tip 温馨提示
-组件是华悦作者独自开发
-:::
-
 ## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
@@ -23,7 +19,7 @@
 import { HyFloatButton } from "hy-app"
 ```
 
-## 悬浮按钮默认按钮
+### 悬浮按钮默认按钮
 ```html
 <template>
     <hy-float-button
@@ -34,7 +30,7 @@ import { HyFloatButton } from "hy-app"
 </template>
 ```
 
-## 悬浮按钮显示菜单栏
+### 悬浮按钮显示菜单栏
 ```html
 <template>
     <hy-float-button :menus="menus_1"></hy-float-button>
@@ -51,7 +47,7 @@ import { HyFloatButton } from "hy-app"
 </script>
 ```
 
-## 悬浮按钮大小
+### 悬浮按钮大小
 - 通过设置`size`实现悬浮按钮大小
   - `small`小按钮
   - `medium`中按钮
@@ -68,7 +64,7 @@ import { HyFloatButton } from "hy-app"
 ```
 
 
-## 悬浮按钮形状
+### 悬浮按钮形状
 - 通过设置`shape`设置悬浮按钮不同形状
   - `circle`圆形
   - `square`方形
@@ -79,7 +75,7 @@ import { HyFloatButton } from "hy-app"
 </template>
 ```
 
-## 悬浮按钮打开方向
+### 悬浮按钮打开方向
 - 通过设置`direction`设置悬浮按钮打开展示不同方向
   - `column`向上展示
   - `row`横向展示
@@ -99,7 +95,7 @@ import { HyFloatButton } from "hy-app"
 </script>
 ```
 
-## 是否浮动
+### 是否浮动
 - 通过设置`float`设置悬浮按钮是否浮动
 ```html
 <template>
@@ -107,7 +103,7 @@ import { HyFloatButton } from "hy-app"
 </template>
 ```
 
-## 显示阴影
+### 显示阴影
 - 通过设置`shadow`设置悬浮按钮是否显示阴影
 ```html
 <template>
@@ -115,7 +111,7 @@ import { HyFloatButton } from "hy-app"
 </template>
 ```
 
-## 设置透明度
+### 设置透明度
 - 通过设置`opacity`设置悬浮按钮是否浮动
 ```html
 <template>
@@ -124,6 +120,7 @@ import { HyFloatButton } from "hy-app"
 ```
 
 ## API
+### FloatButton Props
 
 | 参数          | 说明             | 类型                      | 默认值                                            |
 |-------------|----------------|-------------------------|------------------------------------------------|
@@ -150,7 +147,7 @@ import { HyFloatButton } from "hy-app"
 | customStyle | 自定义需要用到的外部样式   | `CSSProperties`         | -                                              |
 | customClass | 自定义外部类名        | `string`                | -                                              |
 
-## gap
+### gap
 
 | 参数     | 说明       | 类型       | 默认值 |
 |--------|----------|----------|-----|
@@ -160,14 +157,14 @@ import { HyFloatButton } from "hy-app"
 | bottom | 距离底部最小距离 | `number` | 40  |
 
 
-## Events
+### Events
 
 | 事件名       | 说明    | 回调参数                 |
 |-----------|-------|----------------------|
 | click     | 点击按钮  | -                    |
 | clickItem | 点击菜单栏 | temp：菜单栏数据，index: 索引 |
 
-## Slots
+### Slots
 
 | 插槽名     | 说明   | 接收值 |
 |---------|------|-----|

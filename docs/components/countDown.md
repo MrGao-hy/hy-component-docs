@@ -1,11 +1,6 @@
 # CountDown 倒计时组件
 > 该组件一般使用于某个活动的截止时间上，通过数字的变化，给用户明确的时间感受，提示用户进行某一个行为操作。
 
-::: tip 温馨提示
-本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [countDown组件](https://uiadmin.net/uview-plus/components/countDown.html) 的代码实现。
-:::
-
 ## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
@@ -24,7 +19,7 @@
 import { HyCountDown } from "hy-app"
 ```
 
-## 自定义格式
+### 自定义格式
 - 通过设置`format`来自定义格式
 ```html
 <template>
@@ -35,7 +30,7 @@ import { HyCountDown } from "hy-app"
 </template>
 ```
 
-## 毫秒级渲染
+### 毫秒级渲染
 - 通过设置`millisecond`来自定义格式
 - `format`这个值必须设置毫秒级
 ```html
@@ -44,7 +39,7 @@ import { HyCountDown } from "hy-app"
 </template>
 ```
 
-## 自定义样式
+### 自定义样式
 :::code-group 
 ```html [vue]
 <hy-count-down :time="30 * 60 * 60 * 1000" autoStart>
@@ -107,7 +102,7 @@ import { HyCountDown } from "hy-app"
 ```
 :::
 
-## 手动控制
+### 手动控制
 :::code-group
 ```html [vue]
 <hy-count-down
@@ -161,6 +156,7 @@ const reset = () => {
 
 
 ## API
+### CountDown Props
 
 | 参数          | 说明         | 类型        | 默认值      |
 |-------------|------------|-----------|----------|
@@ -169,14 +165,14 @@ const reset = () => {
 | autoStart   | 是否自动开始倒计时  | `boolean` | true     |
 | millisecond | 是否展示毫秒倒计时  | `boolean` | false    |
 
-## Events
+### Events
 
 | 事件名    | 说明           | 回调参数        |
 |--------|--------------|-------------|
 | change | 过程中，倒计时变化时触发 | time: 剩余的时间 |
 | finish | 倒计时结束        | -           |
 
-## Methods
+### Methods
 
 | 事件名   | 说明    |
 |-------|-------|

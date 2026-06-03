@@ -1,11 +1,6 @@
 # Checkbox 复选框组件
 > 复选框组件一般用于需要多个选择的场景，该组件功能完整，使用方便
 
-::: tip 温馨提示
-本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [checkbox组件](https://uiadmin.net/uview-plus/components/checkbox.html) 的代码实现。
-:::
-
 ## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
@@ -50,7 +45,7 @@ const value = ref(["apply"]);
 const value2 = ref([""]);
 ```
 
-## 自定义columns键
+### 自定义columns键
 ```html
 <hy-checkbox v-model="value" :columns="columns" :fieldNames="fieldNames"></hy-checkbox>
 ```
@@ -76,7 +71,7 @@ const fieldNames = ref({
 })
 ```
 
-## 单独一个
+### 单独一个
 ```html
 <template>
     <hy-checkbox v-model="value" :columns="columns"></hy-checkbox>
@@ -95,33 +90,33 @@ const fieldNames = ref({
 </script>
 ```
 
-## 自定义形状
+### 自定义形状
 可以通过设置`shape`为`square`或者`circle`，将复选框设置为方形或者圆形
 ```html
 <hy-checkbox v-model="value" :columns="columns" shape="square" ></hy-checkbox>
 <hy-checkbox v-model="value" :columns="columns" shape="circle" ></hy-checkbox>
 ```
 
-## 自定义颜色
+### 自定义颜色
 ```html
 <hy-checkbox v-model="value" :columns="columns" activeColor="red" ></hy-checkbox>
 ```
 
-## 排列形式
+### 排列形式
 可以通过设置`placement`为`row`或者`column`，将复选框设置为横向排列或者竖向排列
 ```html
 <hy-checkbox v-model="value" :columns="columns" placement="row" ></hy-checkbox>
 <hy-checkbox v-model="value" :columns="columns" placement="column" ></hy-checkbox>
 ```
 
-## 横向两端排列形式
+### 横向两端排列形式
 可以通过设置iconPlacement为left或者right，将复选框勾选图标的对齐设置为左对齐或者右对齐
 ```html
 <hy-checkbox v-model="value" :columns="columns" iconPlacement="right" placement="row" ></hy-checkbox>
 <hy-checkbox v-model="value" :columns="columns" iconPlacement="left" placement="row" ></hy-checkbox>
 ```
 
-## 禁用
+### 禁用
 ```html
 <!-- 全部禁用 -->
 <hy-checkbox v-model="value" :columns="columns" disabled ></hy-checkbox>
@@ -143,7 +138,7 @@ const columns = [
 const value = ref(["apply"]);
 ```
 
-## 插槽
+### 插槽
 - `label`：自定义label文本,传值为`label`
 - `icon`：自定义选项框里icon,传值为`iconColor`和`iconSize`
 ```html

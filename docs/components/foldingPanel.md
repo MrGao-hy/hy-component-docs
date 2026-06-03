@@ -100,9 +100,9 @@
 | defaultOpen   | 默认是否展开         | `boolean`          | false |
 | customStyle   | 自定义需要用到的外部样式   | `CSSProperties`    | -     |
 
-## Events
+### Events
 
-### FoldingPanel Emits
+#### FoldingPanel Emits
 
 | 事件名         | 说明         | 回调参数                      |
 |-------------|------------|---------------------------|
@@ -110,7 +110,7 @@
 | open        | 面板打开时触发    | index：索引                  |
 | close       | 面板关闭时触发    | index：索引                  |
 
-### FoldingPanelItem Emits
+#### FoldingPanelItem Emits
 
 | 事件名         | 说明         | 回调参数                      |
 |-------------|------------|---------------------------|
@@ -120,9 +120,9 @@
 | close       | 面板关闭时触发    | index：索引                  |
 | child-click | 子项点击时通知父组件 | index：索引                  |
 
-## Methods
+### Methods
 
-### FoldingPanel Expose
+#### FoldingPanel Expose
 | 事件名      | 说明          | 参数                    |
 |----------|-------------|-----------------------|
 | open     | 打开指定索引的面板   | index: number\|string |
@@ -130,7 +130,7 @@
 | toggle   | 切换指定索引面板的状态 | index: number\|string |
 | closeAll | 关闭所有面板      | -                     |
 
-### FoldingPanelItem Expose
+#### FoldingPanelItem Expose
 | 事件名         | 说明       | 参数 |
 |-------------|----------|----|
 | open        | 打开面板     | -  |
@@ -138,7 +138,7 @@
 | toggle      | 切换面板状态   | -  |
 | getExpanded | 获取当前展开状态 | -  |
 
-## Slots
+### Slots
 
 | 插槽名     | 说明         | 接收值 |
 |---------|------------|-----|

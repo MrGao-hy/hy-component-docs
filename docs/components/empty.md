@@ -1,11 +1,6 @@
 # Empty 内容为空组件
 > 该组件用于需要加载内容，但是加载的第一页数据就为空，提示一个"没有内容"的场景， 我们精心挑选了十几个场景的图标，方便您使用。
 
-::: tip 温馨提示
-本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [empty组件](https://uiadmin.net/uview-plus/components/empty.html) 的代码实现。
-:::
-
 ## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
@@ -17,14 +12,9 @@
 ```html
 <!-- 全局使用 -->
 <hy-empty></hy-empty>
-<!-- 单个组件引入 -->
-<HyEmpty></HyEmpty>
-```
-```ts
-import { HyEmpty } from "hy-app"
 ```
 
-## 显示、配置按钮
+### 显示、配置按钮
 - `btnText` 显示按钮文本
 - `btnSize` 按钮大小
 - `btnShape` 按钮形状
@@ -36,7 +26,7 @@ import { HyEmpty } from "hy-app"
 </template>
 ```
 
-## 配置提示文字
+### 配置提示文字
 - `desSize` 提示文本大小
 - `desColor` 提示文本颜色
 ```html
@@ -45,19 +35,26 @@ import { HyEmpty } from "hy-app"
 </template>
 ```
 
-## 插槽
+### 自定义插槽
 
 ```html
 <template>
     <hy-empty>
         <template #description>
-            自定义内容
+            自定义描述内容
+        </template>
+    </hy-empty>
+
+    <hy-empty>
+        <template>
+            自定义默认插槽
         </template>
     </hy-empty>
 </template>
 ```
 
 ## API
+### Empty Props
 
 | 参数          | 说明                                        | 类型                 | 默认值     |
 |-------------|-------------------------------------------|--------------------|---------|
@@ -76,13 +73,13 @@ import { HyEmpty } from "hy-app"
 | customStyle | 自定义输入框外部样式                                | `CSSProperties`    | -       |
 | customClass | 自定义外部类名                                   | `string`           | -       |
 
-## Events
+### Events
 
 | 事件名   | 说明       | 回调参数 |
 |-------|----------|------|
 | click | 点击按钮执行函数 | -    |
 
-## Slots
+### Slots
 
 | 插槽名         | 说明      | 接收值 |
 |-------------|---------|-----|

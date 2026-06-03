@@ -56,7 +56,7 @@ const onConfirm = (params) => {
 </script>
 ```
 
-## 带输入框
+### 带输入框
 
 ```html
 <hy-cascader
@@ -68,7 +68,7 @@ const onConfirm = (params) => {
 ></hy-cascader>
 ```
 
-## 自定义键名
+### 自定义键名
 
 ```html
 <hy-cascader
@@ -92,7 +92,7 @@ const options = ref([
 ])
 ```
 
-## 异步加载
+### 异步加载
 
 ```html
 <hy-cascader
@@ -117,6 +117,7 @@ const lazyLoad = (option: any, tabIndex: number, resolve: (children: any[]) => v
 ```
 
 ## API
+### Cascader Props
 
 | 参数                  | 说明                        | 类型                 | 默认值                        |
 |---------------------|---------------------------|--------------------|----------------------------|
@@ -137,24 +138,24 @@ const lazyLoad = (option: any, tabIndex: number, resolve: (children: any[]) => v
 | lazyLoad            | 异步加载子节点的回调函数，提供后将启用异步加载模式 | `CascaderLazyLoad` | -                          |
 | isLeafKey           | 选项对象中，标识叶子节点的 key         | `string`           | isLeaf                     |
 
-## Events
+### Events
 
-| 事件名           | 说明               | 回调参数                 |
-|----------------|------------------|----------------------|
-| close          | 弹窗关闭时触发         | -                    |
-| cancel         | 取消选择时触发         | -                    |
-| confirm        | 确认选择时触发         | `CascaderEmitValue`  |
-| change         | 值改变时触发          | `CascaderEmitValue`  |
-| update:show    | 弹窗显示状态改变时触发     | `boolean`            |
-| update:modelValue | 值改变时触发        | `CascaderValue`      |
+| 事件名               | 说明          | 回调参数                |
+|-------------------|-------------|---------------------|
+| close             | 弹窗关闭时触发     | -                   |
+| cancel            | 取消选择时触发     | -                   |
+| confirm           | 确认选择时触发     | `CascaderEmitValue` |
+| change            | 值改变时触发      | `CascaderEmitValue` |
+| update:show       | 弹窗显示状态改变时触发 | `boolean`           |
+| update:modelValue | 值改变时触发      | `CascaderValue`     |
 
-## Slots
+### Slots
 
 | 插槽名     | 说明   | 接收值                          |
 |---------|------|------------------------------|
 | default | 默认插槽，自定义输入框内容 | -                            |
 
-## typings
+### typings
 :::details 类型说明
 ```ts
 export interface CascaderOption {

@@ -1,11 +1,6 @@
 # Card 卡片组件
 > 卡片组件一般用于多个列表条目，且风格统一的场景。
 
-::: tip 温馨提示
-本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [card组件](https://uiadmin.net/uview-plus/components/card.html) 的代码实现。
-:::
-
 ## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
@@ -15,84 +10,118 @@
 ## :japanese_castle:基本使用示例
 
 ```html
-<!-- 全局使用 -->
-<hy-card title="标题"></hy-card>
-<!-- 单个组件引入 -->
-<HyCard title="标题"></HyCard>
-```
-```ts
-import { HyCard } from "hy-app"
-```
-
-## 卡片阴影
-
-```html
 <template>
-    <hy-card box-shadow="0 0 10rpx 10rpx rgba(0, 0, 0, 0.5)"></hy-card>
+    <hy-card title="标题"></hy-card>
 </template>
 ```
 
-
-## 使用自定义插槽
+### 带缩略图和副标题的卡片
 
 ```html
 <template>
-    <hy-card :title="title" :sub-title="subTitle" :thumb="thumb">
+    <hy-card
+        title="刘德华"
+        sub-title="简介描述文字"
+        right-text="2020-05-15"
+        thumb="https://example.com/avatar.jpg"
+        thumb-width="40"
+        thumbCircle
+        full
+    ></hy-card>
+</template>
+```
+
+### 自定义阴影
+
+```html
+<template>
+    <hy-card 
+        title="自定义阴影"
+        box-shadow="0 0 10rpx 10rpx rgba(0, 0, 0, 0.5)"
+    ></hy-card>
+</template>
+```
+
+### 使用自定义插槽
+
+```html
+<template>
+    <hy-card 
+        title="素胚勾勒出青花，笔锋浓转淡"
+        sub-title="2020-05-15"
+        thumb="http://pic2.sc.chinaz.com/Files/pic/pic9/202002/hpic2119_s.jpg"
+        full
+    >
         <template #body>
-            <view class="" slot="body">
-                <view class="u-body-item u-flex u-border-bottom u-col-between u-p-t-0">
-                    <view class="u-body-item-title u-line-2">瓶身描绘的牡丹一如你初妆，冉冉檀香透过窗心事我了然，宣纸上走笔至此搁一半</view>
-                    <image src="https://img11.360buyimg.com/n7/jfs/t1/94448/29/2734/524808/5dd4cc16E990dfb6b/59c256f85a8c3757.jpg" mode="aspectFill"></image>
-                </view>
-                <view class="u-body-item u-flex u-row-between u-p-b-0">
-                    <view class="u-body-item-title u-line-2">釉色渲染仕女图韵味被私藏，而你嫣然的一笑如含苞待放</view>
-                    <image src="https://img12.360buyimg.com/n7/jfs/t1/102191/19/9072/330688/5e0af7cfE17698872/c91c00d713bf729a.jpg" mode="aspectFill"></image>
-                </view>
+            <view class="u-body-item">
+                <view class="u-body-item-title">瓶身描绘的牡丹一如你初妆，冉冉檀香透过窗心事我了然，宣纸上走笔至此搁一半</view>
+                <image 
+                    src="https://img11.360buyimg.com/n7/jfs/t1/94448/29/2734/524808/5dd4cc16E990dfb6b/59c256f85a8c3757.jpg" 
+                    mode="aspectFill"
+                ></image>
             </view>
         </template>
         <template #footer>
-            <view>
-                <hy-icon name="chat-fill" size="34" color="" label="30评论"></hy-icon>
-            </view>
+            <hy-icon name="chat-fill" size="25" label="30评论"></hy-icon>
         </template>
-    </-card>
+    </hy-card>
 </template>
 
-<script>
-    export default {
-        data() {
-            return {
-                title: '素胚勾勒出青花，笔锋浓转淡',
-                subTitle: '2020-05-15',
-                thumb: 'http://pic2.sc.chinaz.com/Files/pic/pic9/202002/hpic2119_s.jpg',
-            };
-        }
-    };
-</script>
-
 <style scoped lang="scss">
-    .u-card-wrap {
-        background-color: #F8F8F8;
-        padding: 1px;
-    }
+.u-body-item {
+    font-size: 32rpx;
+    padding: 20rpx 10rpx;
+    display: flex;
+    justify-content: space-between;
+}
 
-    .u-body-item {
-        font-size: 32rpx;
-        color: #333;
-        padding: 20rpx 10rpx;
-    }
-
-    .u-body-item image {
-        width: 120rpx;
-        flex: 0 0 120rpx;
-        height: 120rpx;
-        border-radius: 8rpx;
-        margin-left: 12rpx;
-    }
+.u-body-item image {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 8rpx;
+    margin-left: 12rpx;
+}
 </style>
 ```
 
+### 控制头部和尾部显示
+
+```html
+<template>
+    <view>
+        <hy-card 
+            title="只显示头部"
+            :showFoot="false"
+        ></hy-card>
+        
+        <hy-card 
+            title="只显示主体"
+            :showHead="false"
+            :showFoot="false"
+        >
+            <template #body>
+                <view>这是卡片主体内容</view>
+            </template>
+        </hy-card>
+    </view>
+</template>
+```
+
+### 自定义内边距
+
+```html
+<template>
+    <hy-card 
+        title="自定义内边距"
+        :paddingHead="20"
+        :paddingBody="30"
+        :paddingFoot="10"
+    ></hy-card>
+</template>
+```
+
 ## API
+### Card Props
 
 | 参数                 | 说明                                     | 类型                  | 默认值       |
 |--------------------|----------------------------------------|---------------------|-----------|
@@ -128,7 +157,7 @@ import { HyCard } from "hy-app"
 | customStyle        | 自定义需要用到的外部样式                           | `CSSProperties`     | -         |
 | customClass        | 自定义外部类名                                | `string`            | -         |
 
-## Events
+### Events
 
 | 事件名        | 说明             | 回调参数            |
 |------------|----------------|-----------------|
@@ -137,7 +166,7 @@ import { HyCard } from "hy-app"
 | body-click | 卡片主体部分被点击时触发   | index: 用户传递的标识符 |
 | foot-click | 卡片底部部分被点击时触发   | index: 用户传递的标识符 |
 
-## Slots
+### Slots
 
 | 插槽名    | 说明          | 接收值 |
 |--------|-------------|-----|

@@ -1,11 +1,6 @@
 # CountTo 数字滚动组件
 > 该组件一般用于需要滚动数字到某一个值的场景，目标要求是一个递增的值。
 
-::: tip 温馨提示
-本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [countTo组件](https://uiadmin.net/uview-plus/components/countTo.html) 的代码实现。
-:::
-
 ## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
@@ -24,7 +19,7 @@
 import { HyCountTo } from "hy-app"
 ```
 
-## 显示小数点
+### 显示小数点
 - 通过设置`decimals`来设置几位小数点
 ```html
 <template>
@@ -32,7 +27,7 @@ import { HyCountTo } from "hy-app"
 </template>
 ```
 
-## 千分位分隔符
+### 千分位分隔符
 - 通过设置`separator`来设置千分位分隔符
 ```html
 <template>
@@ -41,7 +36,7 @@ import { HyCountTo } from "hy-app"
 ```
 
 
-## 设置滚动时间
+### 设置滚动时间
 - 通过设置`duration`来设置滚动时长
 ```html
 <template>
@@ -50,7 +45,7 @@ import { HyCountTo } from "hy-app"
 ```
 
 
-## 设置字体
+### 设置字体
 - 通过设置`bold`把字体变粗
 - 通过设置`fontSize`设置字体大小
 - 通过设置`color`设置字体颜色
@@ -60,7 +55,7 @@ import { HyCountTo } from "hy-app"
 </template>
 ```
 
-## 手动控制
+### 手动控制
 :::code-group
 ```html [vue]
 <hy-count-to
@@ -112,6 +107,7 @@ const resume = () => {
 
 
 ## API
+### CountTo
 
 | 参数        | 说明                 | 类型                 | 默认值     |
 |-----------|--------------------|--------------------|---------|
@@ -127,13 +123,13 @@ const resume = () => {
 | bold      | 字体是否加粗             | `boolean`          | false   |
 | separator | 千位分隔符，见上方说明        | `string`           | -       |
 
-## Events
+### Events
 
 | 事件名 | 说明          | 回调参数 |
 |-----|-------------|------|
 | end | 数值滚动到目标值时触发 | -    |
 
-## Methods
+### Methods
 
 | 事件名     | 说明                      |
 |---------|-------------------------|

@@ -2,14 +2,8 @@
 > 此选择器用于时间日期选择
 
 ::: danger 注意
-注意： 请先执行npm i dayjs安装依赖。
+注意：请先执行 `npm i dayjs` 安装依赖。
 :::
-
-::: tip 温馨提示
-本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [datetimePicker组件](https://uiadmin.net/uview-plus/components/datetimePicker.html) 的代码实现。
-:::
-
 
 ## :pushpin:平台差异说明
 
@@ -17,59 +11,53 @@
 |----------|----|-------|--------|
 | ✔        | ✔  | ✔     | ✔      |
 
+## :warning:注意事项
+
+- `minDate` 和 `maxDate` 参数需要传入时间戳（毫秒），而非日期字符串
+- 微信小程序不支持通过props传递函数参数，`formatter` 需要通过 `setFormatter` 方法设置
+- `hasInput` 设置为 `true` 时，组件会自带输入框，点击输入框可打开选择器
+- `mode` 支持多种格式，详见下方说明
+- `minHour`、`maxHour`、`minMinute`、`maxMinute` 仅在 `mode=time` 时有效
+
 ## :japanese_castle:基本使用示例
 
-```html
-<!-- 全局使用 -->
-<hy-datetime-picker hasInput></hy-datetime-picker>
-<!-- 单个组件引入 -->
-<HyDatetimePicker hasInput></HyButton>
-```
-```ts
-import { HyDatetimePicker } from "hy-app"
-```
-
-## 通过外部按钮打开
+### 通过内部输入框打开
 
 ```html
 <template>
-    <view>
-        <hy-datetime-picker
-            :show="show"
-            mode="datetime"
-        ></hy-datetime-picker>
-        <hy-button @click="show = true">打开</hy-button>
-    </view>
+    <hy-datetime-picker v-model="value" has-input></hy-datetime-picker>
 </template>
 
 <script setup>
-    import { ref } from 'vue';
+    import { ref } from 'vue'
 
-    const show = ref(false);
+    const value = ref('')
 </script>
 ```
 
-## 通过内部输入框打开
+### 通过外部按钮打开
 
 ```html
 <template>
     <view>
+        <hy-button @click="showPicker = true" :text="value || '选择日期'"></hy-button>
         <hy-datetime-picker
-            hasInput
             v-model="value"
-            mode="datetime"
+            v-model:show="showPicker"
+            mode="date"
         ></hy-datetime-picker>
     </view>
 </template>
 
 <script setup>
-    import { ref } from 'vue';
-    
-    const value = ref(Date.now());
+    import { ref } from 'vue'
+
+    const value = ref('')
+    const showPicker = ref(false)
 </script>
 ```
 
-## 时间模式
+### 各种时间模式
 - `datetime`: 选择日期格式YYYY-MM-DD HH:mm:ss
 - `date`: 选择日期格式YYYY-MM-DD
 - `time`: 选择日期格式HH:mm
@@ -80,144 +68,225 @@ import { HyDatetimePicker } from "hy-app"
 ```html
 <template>
     <view>
-        <hy-datetime-picker hasInput v-model="value" mode="datetime"></hy-datetime-picker>
-        <hy-datetime-picker hasInput v-model="value" mode="date"></hy-datetime-picker>
-        <hy-datetime-picker hasInput v-model="value" mode="time"></hy-datetime-picker>
-        <hy-datetime-picker hasInput v-model="value" mode="year-month"></hy-datetime-picker>
-        <hy-datetime-picker hasInput v-model="value" mode="month-day"></hy-datetime-picker>
-        <hy-datetime-picker hasInput v-model="value" mode="hour-minute"></hy-datetime-picker>
-        <hy-datetime-picker hasInput v-model="value" mode="minute-second"></hy-datetime-picker>
+        <!-- 完整时间 -->
+        <hy-datetime-picker v-model="value1" has-input></hy-datetime-picker>
+
+        <!-- 年月日 -->
+        <hy-datetime-picker v-model="value2" has-input mode="date"></hy-datetime-picker>
+
+        <!-- 年月 -->
+        <hy-datetime-picker v-model="value3" has-input mode="year-month"></hy-datetime-picker>
+
+        <!-- 月日 -->
+        <hy-datetime-picker v-model="value4" has-input mode="month-day"></hy-datetime-picker>
+
+        <!-- 时间(时分秒) -->
+        <hy-datetime-picker v-model="value5" has-input mode="time"></hy-datetime-picker>
+
+        <!-- 小时/分 -->
+        <hy-datetime-picker v-model="value6" has-input mode="hour-minute"></hy-datetime-picker>
+
+        <!-- 分/秒 -->
+        <hy-datetime-picker v-model="value7" has-input mode="minute-second"></hy-datetime-picker>
     </view>
 </template>
 
 <script setup>
-    import { ref } from 'vue';
-    
-    const value = ref(Date.now());
+    import { ref } from 'vue'
+
+    const value1 = ref('')
+    const value2 = ref('')
+    const value3 = ref('')
+    const value4 = ref('')
+    const value5 = ref('')
+    const value6 = ref('')
+    const value7 = ref('')
 </script>
 ```
 
-## 时间自定义格式化
-如有需要，可以通过`formatter`参数编写自定义格式化规则。
-::: warning 注意
-微信小程序不支持通过props传递函数参数，所以组件内部暴露了一个setFormatter方法用于设置格式化方法，注意在页面的onMounted生命周期获取ref再操作。
-:::
+### 设置最大值最小值
+
 ```html
 <template>
     <view>
-        <up-datetime-picker
-			ref="datetimePickerRef"
-			:show="show"
-            v-model="value1"
-			mode="datetime"
-			:formatter="formatter"
-        ></up-datetime-picker>
-        <up-button @click="show = true">打开</up-button>
-    </view>
-</template>
-
-<script setup>
-import { ref, onMounted } from 'vue';
-
-const show = ref(false);
-const value1 = ref(Date.now());
-const datetimePickerRef = ref(null);
-
-const formatter = (type, value) => {
-  if (type === 'year') {
-    return `${value}年`;
-  }
-  if (type === 'month') {
-    return `${value}月`;
-  }
-  if (type === 'day') {
-    return `${value}日`;
-  }
-  return value;
-};
-
-onMounted(() => {
-  // 微信小程序需要用此写法
-  datetimePickerRef.value.setFormatter(formatter);
-});
-</script>
-```
-
-## 限制最大最小值
-参数`minDate`和`maxData`可以设置最大值和最小值（传入时间戳）。
-```html
-<template>
-    <view>
-        <hy-datetime-picker 
+        <hy-datetime-picker
             has-input
-            :show="show"
-            v-model="value1"
-            :minDate="1587524800000"
-            :maxDate="1786778555000"
+            v-model="value"
+            :minDate="minDate"
+            :maxDate="maxDate"
             mode="datetime"
         ></hy-datetime-picker>
     </view>
 </template>
 
 <script setup>
-import { ref } from 'vue';
+    import { ref, computed } from 'vue'
 
-const value1 = ref(Date.now());
+    const value = ref(Date.now())
+    // 设置可选范围为过去一年到未来一年
+    const minDate = computed(() => {
+        return new Date(new Date().getFullYear() - 1, 0, 1).getTime()
+    })
+    const maxDate = computed(() => {
+        return new Date(new Date().getFullYear() + 1, 11, 31).getTime()
+    })
+</script>
+```
+
+### 时间自定义格式化
+
+```html
+<template>
+    <view>
+        <hy-datetime-picker
+            ref="datetimePickerRef"
+            :show="show"
+            v-model="value"
+            mode="datetime"
+            :formatter="formatter"
+        ></hy-datetime-picker>
+        <hy-button @click="show = true">打开</hy-button>
+    </view>
+</template>
+
+<script setup>
+    import { ref, onMounted } from 'vue'
+
+    const show = ref(false)
+    const value = ref(Date.now())
+    const datetimePickerRef = ref(null)
+
+    const formatter = (type, value) => {
+        if (type === 'year') {
+            return `${value}年`
+        }
+        if (type === 'month') {
+            return `${value}月`
+        }
+        if (type === 'day') {
+            return `${value}日`
+        }
+        return value
+    }
+
+    onMounted(() => {
+        // 微信小程序需要用此写法
+        // datetimePickerRef.value.setFormatter(formatter);
+    })
+</script>
+```
+
+### 自定义按钮文字和颜色
+
+```html
+<template>
+    <hy-datetime-picker
+        has-input
+        v-model="value"
+        cancelText="取消选择"
+        confirmText="确认选择"
+        cancelColor="#999999"
+        confirmColor="#f56c6c"
+    ></hy-datetime-picker>
+</template>
+
+<script setup>
+    import { ref } from 'vue'
+
+    const value = ref('')
+</script>
+```
+
+### 自定义输入框样式
+
+```html
+<template>
+    <hy-datetime-picker
+        has-input
+        v-model="value"
+        :input="{ placeholder: '请选择日期时间', border: true }"
+        customStyle="{ marginTop: '20rpx' }"
+    ></hy-datetime-picker>
+</template>
+
+<script setup>
+    import { ref } from 'vue'
+
+    const value = ref('')
 </script>
 ```
 
 ## API
+### DatetimePicker Props
 
-| 参数                  | 说明                                              | 类型                                                                                         | 默认值                |
-|---------------------|-------------------------------------------------|--------------------------------------------------------------------------------------------|--------------------|
-| hasInput            | 是否自带input输入框                                    | `boolean`                                                                                  | false              |
-| input               | 输入框属性集合，hasInput为true可填，详见[输入框Api](./input#api) | `HyInputProps`                                                                             | -                  |
-| format              | 输入框显示日期格式                                       | `string`                                                                                   | 'YYYY-MM-DD HH:mm' |
-| show                | 用于控制选择器的弹出与收起                                   | `boolean`                                                                                  | false              |
-| popupMode           | 用于控制选择器的弹出方向                                    | `bottom`\|`center`\|`left`\|`right`\|`top`                                                 | bottom             |
-| showToolbar         | 是否显示顶部的操作栏                                      | `boolean`                                                                                  | true               |
-| v-model             | 绑定值                                             | `string` \| `number` \| `Date`                                                             | -                  |
-| title               | 顶部标题                                            | `string`                                                                                   | -                  |
-| mode                | 展示格式                                            | `date`\|`datetime`\|`time`\|`year-month`<br/>\|`month-day`\|`hour-minute`\|`minute-second` | datetime           |
-| maxDate             | 可选的最大时间（时间戳毫秒）                                  | `number`                                                                                   | 最大默认值为后10年         |
-| minDate             | 可选的最小时间（时间戳毫秒）                                  | `number`                                                                                   | 最小默认值为前10年         |
-| minHour             | 可选的最小小时，仅mode=time有效                            | `number`                                                                                   | 23                 |
-| maxHour             | 可选的最大小时，仅mode=time有效                            | `number`                                                                                   | 0                  |
-| minMinute           | 可选的最小分钟，仅mode=time有效                            | `number`                                                                                   | 0                  |
-| maxMinute           | 可选的最大分钟，仅mode=time有效                            | `number`                                                                                   | 59                 |
-| filter              | 选项过滤函数                                          | `null` \| `function`                                                                       | null               |
-| formatter           | 输入过滤或格式化函数                                      | `null` \| `function`                                                                       | null               |
-| loading             | 是否显示加载中状态                                       | `boolean`                                                                                  | false              |
-| itemHeight          | 各列中，单个选项的高度                                     | `number`                                                                                   | 44                 |
-| cancelText          | 取消按钮的文字                                         | `string`                                                                                   | 取消                 |
-| confirmText         | 确认按钮的文字                                         | `string`                                                                                   | 确认                 |
-| cancelColor         | 取消按钮的颜色                                         | `string`                                                                                   | #909193            |
-| confirmColor        | 确认按钮的颜色                                         | `string`                                                                                   | -                  |
-| visibleItemCount    | 每列中可见选项的数量                                      | `number`                                                                                   | 5                  |
-| closeOnClickOverlay | 是否允许点击遮罩关闭选择器                                   | `boolean`                                                                                  | false              |
-| defaultIndex        | 各列的默认索引                                         | `array`                                                                                    | -                  |
-| toolbarRightSlot    | 是否右边插槽                                          | `boolean`                                                                                  | false              |
-| customStyle         | 自定义输入框外部样式                                      | `CSSProperties`                                                                            | -                  |
+| 参数                  | 说明                                              | 类型                                                                                                | 默认值                |
+|---------------------|-------------------------------------------------|---------------------------------------------------------------------------------------------------|--------------------|
+| show                | 用于控制选择器的弹出与收起                                   | `boolean`                                                                                         | false              |
+| v-model             | 绑定值                                             | `string` \| `number` \| `Date`                                                                    | -                  |
+| mode                | 展示格式                                            | `date` \| `datetime` \| `time` \| `year-month` \| `month-day` \| `hour-minute` \| `minute-second` | datetime           |
+| hasInput            | 是否自带input输入框                                    | `boolean`                                                                                         | false              |
+| input               | 输入框属性集合，hasInput为true可填，详见[输入框Api](./input#api) | `HyInputProps`                                                                                    | -                  |
+| format              | 输入框显示日期格式                                       | `string`                                                                                          | 'YYYY-MM-DD HH:mm' |
+| popupMode           | 用于控制选择器的弹出方向                                    | `bottom` \| `center` \| `left` \| `right` \| `top`                                                | bottom             |
+| showToolbar         | 是否显示顶部的操作栏                                      | `boolean`                                                                                         | true               |
+| title               | 顶部标题                                            | `string`                                                                                          | -                  |
+| maxDate             | 可选的最大时间（时间戳毫秒）                                  | `number`                                                                                          | 后10年               |
+| minDate             | 可选的最小时间（时间戳毫秒）                                  | `number`                                                                                          | 前10年               |
+| minHour             | 可选的最小小时，仅mode=time有效                            | `number`                                                                                          | 0                  |
+| maxHour             | 可选的最大小时，仅mode=time有效                            | `number`                                                                                          | 23                 |
+| minMinute           | 可选的最小分钟，仅mode=time有效                            | `number`                                                                                          | 0                  |
+| maxMinute           | 可选的最大分钟，仅mode=time有效                            | `number`                                                                                          | 59                 |
+| filter              | 选项过滤函数                                          | `function`                                                                                        | null               |
+| formatter           | 选项格式化函数                                         | `function`                                                                                        | null               |
+| loading             | 是否显示加载中状态                                       | `boolean`                                                                                         | false              |
+| itemHeight          | 各列中，单个选项的高度                                     | `number`                                                                                          | 44                 |
+| cancelText          | 取消按钮的文字                                         | `string`                                                                                          | 取消                 |
+| confirmText         | 确认按钮的文字                                         | `string`                                                                                          | 确认                 |
+| cancelColor         | 取消按钮的颜色                                         | `string`                                                                                          | #909193            |
+| confirmColor        | 确认按钮的颜色                                         | `string`                                                                                          | #3c9cff            |
+| visibleItemCount    | 每列中可见选项的数量                                      | `number`                                                                                          | 5                  |
+| closeOnClickOverlay | 是否允许点击遮罩关闭选择器                                   | `boolean`                                                                                         | false              |
+| defaultIndex        | 各列的默认索引                                         | `array`                                                                                           | -                  |
+| toolbarRightSlot    | 是否右边插槽                                          | `boolean`                                                                                         | false              |
+| customStyle         | 自定义输入框外部样式                                      | `CSSProperties`                                                                                   | -                  |
+| customClass         | 自定义外部类名                                         | `string`                                                                                          | -                  |
 
-## Events
+### Events
 
-| 事件名     | 说明              | 回调参数                 |
-|---------|-----------------|----------------------|
-| close   | 关闭选择器时触发        | -                    |
-| confirm | 点击确定按钮，返回当前选择的值 | Array: 见上方"回调参数"部分说明 |
-| change  | 当选择值变化时触发       | Array: 见上方"回调参数"部分说明 |
-| cancel  | 点击取消按钮	         | -                    |
+| 事件名     | 说明              | 回调参数              |
+|---------|-----------------|-------------------|
+| close   | 关闭选择器时触发        | -                 |
+| confirm | 点击确定按钮，返回当前选择的值 | `{ value, mode }` |
+| change  | 当选择值变化时触发       | `{ value, mode }` |
+| cancel  | 点击取消按钮          | -                 |
 
-## Slots
-| 插槽名            | 说明                                                          | 接收值 |
-|----------------|-------------------------------------------------------------|-----|
-| toolbar-right  | 工具栏右侧内容，自定义右侧内容，因为微信小程序限制，需要同时设置:toolbarRightSlot="true"生效。 | -   |
-| toolbar-bottom | 输入框下方自定义区域                                                  | -   |
+### Slots
 
-## Methods
-| 方法名          | 说明                     |
-|--------------|------------------------|
-| setFormatter | 为兼容微信小程序而暴露的内部方法，见上方说明 |
+| 插槽名            | 说明                                                            |
+|----------------|---------------------------------------------------------------|
+| toolbar-right  | 工具栏右侧内容，自定义右侧内容，因为微信小程序限制，需要同时设置 `toolbarRightSlot="true"` 生效 |
+| toolbar-bottom | 输入框下方自定义区域                                                    |
+
+### Methods
+
+| 方法名          | 说明                         |
+|--------------|----------------------------|
+| setFormatter | 为兼容微信小程序而暴露的内部方法，用于设置格式化函数 |
+
+### typings
+
+:::details 类型说明
+
+```ts
+
+type IParam = {
+    /** 值 */
+    value: string | number
+    /** 时间模型 */
+    mode: HyApp.DateModeEnum
+}
+```
+
+:::
 
 <demo-model url="pages-design/dateTimePicker/dateTimePicker"></demo-model>
-

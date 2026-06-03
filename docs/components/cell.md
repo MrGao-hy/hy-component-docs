@@ -1,11 +1,6 @@
 # Cell 单元格组件
 > cell单元格一般用于一组列表的情况，比如个人中心页，设置页等。
 
-::: tip 温馨提示
-本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [cell组件](https://uiadmin.net/uview-plus/components/cell.html) 的代码实现。
-:::
-
 ## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
@@ -41,7 +36,7 @@ const onClick = (name: string | number) => {
 }
 ```
 
-## 设置icon内容
+### 设置icon内容
 ```vue
 <template>
   <hy-cell >
@@ -64,7 +59,7 @@ const onClick = (name: string | number) => {
 </template>
 ```
 
-## 右侧内容定位
+### 右侧内容定位
 - 通过设置`arrange`设置改变value的位置
   - `left`：左边
   - `center`：中间
@@ -77,7 +72,7 @@ const onClick = (name: string | number) => {
 </template>
 ```
 
-## cell大小
+### cell大小
 - 通过设置`size`设置单元格大小
     - `small`：小
     - `medium`：默认
@@ -90,7 +85,7 @@ const onClick = (name: string | number) => {
 </template>
 ```
 
-## 右侧箭头上下左转动
+### 右侧箭头上下左转动
 - 通过设置`arrow-direction`设置单元格大小
     - `up`：向上
     - `right`：向右
@@ -105,7 +100,7 @@ const onClick = (name: string | number) => {
 </template>
 ```
 
-## 跳转页面
+### 跳转页面
 ```html
 <template>
     <hy-cell>
@@ -161,9 +156,7 @@ const onClick = (name: string | number) => {
 | click | 点击cell列表时触发 | name: 唯一标识 |
 
 
-## Slots
-
-### CellItem Slots
+### Slots
 
 | 插槽名        | 说明           | 接收值    |
 |------------|--------------|--------|
