@@ -1,11 +1,6 @@
 # BackTop 返回顶部组件
 > 该组件一个用于长页面，滑动一定距离后，出现返回顶部按钮，方便快速返回顶部的场景。
 
-::: tip 温馨提示
-本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [backTop组件](https://uiadmin.net/uview-plus/components/backTop.html) 的代码实现。
-:::
-
 ## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
@@ -17,11 +12,8 @@
 ```html
 <!-- 全局使用 -->
 <hy-back-top :scroll-top="scrollTop"></hy-back-top>
-<!-- 单个组件引入 -->
-<HyBackTop :scroll-top="scrollTop"></HyBackTop>
 ```
 ```ts
-import { HyBackTop } from "hy-app";
 import { onPageScroll } from '@dcloudio/uni-app';
 
 // 创建响应式数据 scrollTop  
