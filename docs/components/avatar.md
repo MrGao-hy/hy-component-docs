@@ -69,8 +69,6 @@
 
 ## :japanese_castle:基本使用示例
 
-### 基础使用
-
 ```html
 <template>
     <!-- 图片头像 -->
@@ -242,14 +240,15 @@ const onClick = ({ name, url }) => {
 | color-index     | 如果配置了randomBgColor为true，且配置了此值，则从默认的背景色数组中取出对应索引的颜色值，取值0-19之间               | `number`           | 0           |
 | name            | 组件标识符                                                                       | `string`           | -           |
 | customStyle     | 自定义需要用到的外部样式                                                                | `CSSProperties`    | -           |
+| customClass     | 自定义外部类名                                                                     | `string`           | -           |
 
-## Events
+### Events
 
-| 事件名   | 说明     | 回调参数            |
-|-------|--------|-----------------|
+| 事件名   | 说明    | 回调参数                                    |
+|-------|-------|-----------------------------------------|
 | click | 头像被点击 | config: IAvatarClickConfig, event: 事件对象 |
 
-## typings
+### typings
 
 :::details 类型说明
 
