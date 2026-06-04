@@ -1,10 +1,6 @@
 # ScrollList 横向滚动列表组件
 > 该组件一般用于同时展示多个商品、分类的场景，也可以完成左右滑动的列表。
 
-::: tip 温馨提示
-本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [scrollList组件](https://uiadmin.net/uview-plus/components/scroll.html) 的代码实现。
-:::
 
 ## :pushpin:平台差异说明
 
@@ -21,15 +17,8 @@
         <image :src="item"></image>
     </view>
 </hy-scroll-list>
-<!-- 单个组件引入 -->
-<HyScrollList>
-    <view v-for="(item, index) in list" :key="index">
-        <image :src="item"></image>
-    </view>
-</HyScrollList>
 ```
 ```ts
-import { HyScrollList } from "hy-app";
 
 const list = ref<any[]>([
     "https://img0.baidu.com/it/u=1913990970,584854398&fm=253&id=1",
@@ -43,7 +32,7 @@ const list = ref<any[]>([
 ]);
 ```
 
-## 业务实现代码
+### 业务实现代码
 
 :::code-group
 ```html [vue]
@@ -168,6 +157,7 @@ const showMore = () => {
 :::
 
 ## API
+### ScrollList Props
 
 | 参数                   | 说明                             | 类型              | 默认值  |
 |----------------------|--------------------------------|-----------------|------|
@@ -178,14 +168,14 @@ const showMore = () => {
 | indicatorActiveColor | 指示器滑块颜色                        | `string`        | -    |
 | indicatorStyle       | 指示器样式，可通过bottom，left，right进行定位 | `CSSProperties` | -    |
 
-## Events
+### Events
 
 | 事件名         | 说明       | 回调参数 |
 |-------------|----------|------|
 | scrollLeft  | 滑动到左边时触发 | -    |
 | scrollRight | 滑动到右边时触发 | -    |
 
-## Slots
+### Slots
 
 | 插槽名     | 说明 | 接收值 |
 |---------|----|-----|

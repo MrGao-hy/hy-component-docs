@@ -1,5 +1,6 @@
 # Dropdown 下拉菜单组件
-> 该组件内部实现以uni-app的基础button组件为基础，进行二次封装
+
+> 下拉菜单组件，用于展示筛选条件或选择操作，支持多级菜单选择。
 
 ## :pushpin:平台差异说明
 
@@ -7,139 +8,262 @@
 |----------|----|-------|--------|
 | ✔        | ✔  | ✔     | ✔      |
 
+## :warning:注意事项
+
+:::warning
+- 该组件必须结合 `hy-dropdown` 和 `hy-dropdown-item` 一起使用
+- `hy-dropdown-item` 必须嵌套在 `hy-dropdown` 内部使用
+- 通过 `v-model` 双向绑定选中项的 `value` 值
+- `menus` 属性传入的数组项必须包含 `label` 和 `value` 字段
+- 点击某个菜单项会自动关闭其他已展开的菜单
+  :::
+
 ## :japanese_castle:基本使用示例
-- 该组件必须结合up-dropdown和up-dropdown-item一起使用，展开的内容由up-dropdown-item通过传递参数或者slot提供
-- 组件的菜单栏标题由up-dropdown-item通过title参数提供
-- up-dropdown-item带有默认的单选展示功能，通过options(见下方说明)配置，传入slot则会覆盖默认功能，通过v-model双向绑定options选中项的value值
-:::code-group
-```html [vue]
-<!-- 全局使用 -->
-<hy-dropdown>
-    <hy-dropdown-item
+
+### 基础用法
+
+```html
+<template>
+    <hy-dropdown>
+        <hy-dropdown-item
             title="全部"
             :menus="options1"
             v-model="value1"
             @change="handleChange"
-    ></hy-dropdown-item>
-    <hy-dropdown-item
+        ></hy-dropdown-item>
+        <hy-dropdown-item
             title="国漫"
             :menus="options_2"
             v-model="value_2"
             @change="handleChange"
-    ></hy-dropdown-item>
-    <hy-dropdown-item
+        ></hy-dropdown-item>
+        <hy-dropdown-item
             title="国家"
             :menus="options_3"
             v-model="value_3"
             @change="handleChange"
-    ></hy-dropdown-item>
-</hy-dropdown>
-<!-- 单个组件引入 -->
-<HyButton type="primary">按钮</HyButton>
-```
+        ></hy-dropdown-item>
+    </hy-dropdown>
+</template>
 
-```ts [.ts]
-import HyDropdownItem from "hy-app/components/hy-dropdown-item/hy-dropdown-item.vue";
-import HyDropdown from "hy-app/components/hy-dropdown/hy-dropdown.vue";
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const value1 = ref()
+const value_2 = ref()
+const value_3 = ref()
 
 const options1 = ref([
-    {
-        label: "全部商品",
-        value: 1,
-    },
-    {
-        label: "折扣商品",
-        value: 2,
-    },
-    {
-        label: "团购商品",
-        value: 3,
-    },
-]);
-const options_2 = ref([
-    {
-        label: "西行记",
-        value: 1,
-    },
-    {
-        label: "斗破苍穹",
-        value: 2,
-    },
-    {
-        label: "吞噬星空",
-        value: 3,
-    },
-    {
-        label: "斗罗大陆",
-        value: 4,
-    },
-    {
-        label: "偷心九月天",
-        value: 5,
-    },
-]);
-const options_3 = ref([
-    {
-        label: "中国",
-        value: 1,
-    },
-    {
-        label: "日本",
-        value: 2,
-    },
-    {
-        label: "韩国",
-        value: 3,
-    },
-    {
-        label: "美国",
-        value: 4,
-    },
-]);
-```
-:::
+    { label: '全部商品', value: 1 },
+    { label: '折扣商品', value: 2 },
+    { label: '团购商品', value: 3 }
+])
 
-## 基本使用示例
+const options_2 = ref([
+    { label: '西行记', value: 1 },
+    { label: '斗破苍穹', value: 2 },
+    { label: '吞噬星空', value: 3 },
+    { label: '斗罗大陆', value: 4 },
+    { label: '偷心九月天', value: 5 }
+])
+
+const options_3 = ref([
+    { label: '中国', value: 1 },
+    { label: '日本', value: 2 },
+    { label: '韩国', value: 3 },
+    { label: '美国', value: 4 }
+])
+
+const handleChange = (item, index) => {
+    console.log('选中:', item.label, '索引:', index)
+}
+</script>
+```
+
+### 自定义颜色
 
 ```html
 <template>
-    <hy-button text="月落"></hy-button>
+    <hy-dropdown activeColor="#4F8EF7" inactiveColor="#999999">
+        <hy-dropdown-item
+            title="分类"
+            :menus="options"
+            v-model="value"
+        ></hy-dropdown-item>
+    </hy-dropdown>
 </template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const value = ref()
+const options = ref([
+    { label: '选项1', value: 1 },
+    { label: '选项2', value: 2 }
+])
+</script>
+```
+
+### 自定义菜单高度和字体大小
+
+```html
+<template>
+    <hy-dropdown :height="50" titleSize="18">
+        <hy-dropdown-item
+            title="菜单"
+            :menus="options"
+            v-model="value"
+        ></hy-dropdown-item>
+    </hy-dropdown>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const value = ref()
+const options = ref([
+    { label: '选项1', value: 1 },
+    { label: '选项2', value: 2 }
+])
+</script>
+```
+
+### 禁用某一项
+
+```html
+<template>
+    <hy-dropdown>
+        <hy-dropdown-item
+            title="可选菜单"
+            :menus="options"
+            v-model="value"
+        ></hy-dropdown-item>
+        <hy-dropdown-item
+            title="禁用菜单"
+            :menus="options"
+            v-model="disabledValue"
+            disabled
+        ></hy-dropdown-item>
+    </hy-dropdown>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const value = ref()
+const disabledValue = ref()
+const options = ref([
+    { label: '选项1', value: 1 },
+    { label: '选项2', value: 2 }
+])
+</script>
+```
+
+### 显示下边框
+
+```html
+<template>
+    <hy-dropdown borderBottom>
+        <hy-dropdown-item
+            title="菜单"
+            :menus="options"
+            v-model="value"
+        ></hy-dropdown-item>
+    </hy-dropdown>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const value = ref()
+const options = ref([
+    { label: '选项1', value: 1 },
+    { label: '选项2', value: 2 }
+])
+</script>
+```
+
+### 自定义图标
+
+```html
+<template>
+    <hy-dropdown menuIcon="arrow-up" :menuIconSize="16">
+        <hy-dropdown-item
+            title="菜单"
+            :menus="options"
+            v-model="value"
+        ></hy-dropdown-item>
+    </hy-dropdown>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const value = ref()
+const options = ref([
+    { label: '选项1', value: 1 },
+    { label: '选项2', value: 2 }
+])
+</script>
 ```
 
 ## API
-#### Dropdown Props
-| 参数                  | 说明                          | 类型                 | 默认值             |
-|---------------------|-----------------------------|--------------------|-----------------|
-| active-color        | 标题和选项卡选中的颜色                 | `string`           | -               |
-| inactive-color      | 标题和选项卡未选中的颜色                | `string`           | #606266         |
-| close-on-click-mask | 点击遮罩是否关闭菜单                  | `boolean`          | true            |
-| height              | 标题菜单的高度，单位任意，数值默认为px单位      | `string`\|`number` | 40              |
-| border-bottom       | 标题菜单是否显示下边框                 | `boolean`          | false           |
-| title-size          | 标题的字体大小，单位任意，数值默认为px单位      | `string`\|`number` | 16              |
-| border-radius       | 菜单展开内容下方的圆角值，单位px           | `string`\|`number` | 0               |
-| menu-icon           | 标题菜单右侧的图标                   | `boolean`          | ARROW_DOWN_FILL |
-| menu-icon-size      | 标题菜单右侧的图标的大小，单位任意，数值默认为px单位 | `string`\|`number` | 14              |
 
-#### Dropdown-item Props
-| 参数       | 说明         | 类型                 | 默认值   |
-|----------|------------|--------------------|-------|
-| v-model  | 双向绑定选项卡选择值 | `string`\|`number` | -     |
-| title    | 菜单项标题      | `string`           | -     |
-| menus    | 选项数据       | `array`            | -     |
-| disabled | 是否显示空状态    | `boolean`          | false |
+### Dropdown Props
 
-## Events
+| 参数           | 说明                                    | 类型                 | 默认值             |
+|--------------|---------------------------------------|--------------------|-----------------|
+| height       | 标题菜单的高度，单位px                          | `string`\|`number` | 40              |
+| borderBottom | 标题菜单是否显示下边框                           | `boolean`          | false           |
+| sticky       | 是否固定定位                                 | `boolean`          | true            |
+| activeColor  | 标题和选项卡选中的颜色                           | `string`           | -               |
+| inactiveColor| 标题和选项卡未选中的颜色                          | `string`           | #606266         |
+| menuIcon     | 标题菜单右侧的图标名称                           | `string`           | ARROW_DOWN_FILL |
+| menuIconSize | 标题菜单右侧图标的大小，单位px                      | `string`\|`number` | 14              |
+| customStyle  | 自定义需要用到的外部样式                          | `CSSProperties`    | -               |
 
-| 事件名    | 说明                                      | 回调参数                    |
-|--------|-----------------------------------------|-------------------------|
-| change | 每个dropdown-item组件均有此回调，点击某个options选项时触发 | value: - 点击项绑定的value属性值 |
+### DropdownItem Props
+
+| 参数       | 说明           | 类型                 | 默认值   |
+|----------|--------------|--------------------|-------|
+| v-model  | 双向绑定选中项的value值 | `string`\|`number` | -     |
+| title    | 菜单项标题        | `string`           | -     |
+| menus    | 选项数据         | `array`            | []    |
+| disabled | 是否禁用点击       | `boolean`          | false |
+
+### Events
+
+| 事件名    | 说明                      | 回调参数                              |
+|--------|-------------------------|-----------------------------------|
+| change | 点击某个选项时触发             | `item: DropdownMenuItem`, `index: number` |
 
 ## Slots
 
-| 插槽名     | 说明                  | 接收值 |
-|---------|---------------------|-----|
-| default | Dropdown-item组件插槽内容 | -   |
+### Dropdown Slots
 
+| 插槽名     | 说明           | 接收值 |
+|---------|--------------|-----|
+| default | 下拉菜单项内容     | -   |
+
+### DropdownItem Slots
+
+| 插槽名     | 说明           | 接收值 |
+|---------|--------------|-----|
+| default | 自定义菜单项内容   | -   |
+
+## Typings
+
+:::details 类型说明
+
+```ts
+export interface DropdownMenuItem {
+    /** 展示标题 */
+    label: string
+    /** 值 */
+    value: string | number
+}
+```
+
+:::
 
 <demo-model url="pages-design/dropdown/dropdown"></demo-model>

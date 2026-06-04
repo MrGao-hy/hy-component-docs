@@ -51,7 +51,7 @@
 </style>
 ```
 
-## 自定义吸顶偏移
+### 自定义吸顶偏移
 ```vue
 <hy-sticky :offset-top="100">
   <view class="sticky-header">
@@ -60,7 +60,7 @@
 </hy-sticky>
 ```
 
-## 在 scroll-view 中使用
+### 在 scroll-view 中使用
 
 ```vue
 <template>
@@ -78,7 +78,7 @@
 </template>
 ```
 
-## 监听吸顶状态变化
+### 监听吸顶状态变化
 
 ```vue
 <template>
@@ -101,7 +101,7 @@ const handleChange = (fixed) => {
 </script>
 ```
 
-## 常见问题
+### 常见问题
 
 ::: tip 注意事项
 1. 当页面内容动态变化导致吸顶元素高度改变时，请调用 `refresh` 方法重新计算
@@ -110,7 +110,7 @@ const handleChange = (fixed) => {
 4. 如需在 H5 端使用，确保浏览器支持 IntersectionObserver 或使用 polyfill
 :::
 
-### 1. 在自定义滚动容器中不生效？
+#### 1. 在自定义滚动容器中不生效？
 
 请确保正确设置 `scrollSelector` 属性，指定滚动容器的类名（不含点）。
 
@@ -122,7 +122,7 @@ const handleChange = (fixed) => {
 </scroll-view>
 ```
 
-### 2. 吸顶后页面布局抖动？
+#### 2. 吸顶后页面布局抖动？
 
 组件内部会自动创建占位元素来避免页面抖动。如果仍有抖动问题，请尝试手动调用 `refresh` 方法重新计算高度。
 
@@ -152,6 +152,7 @@ const loadDynamicContent = async () => {
 ```
 
 ## API
+### Sticky Props
 
 | 参数             | 说明                                             | 类型                 | 默认值  |
 |----------------|------------------------------------------------|--------------------|------|
@@ -160,19 +161,19 @@ const loadDynamicContent = async () => {
 | enable         | 是否启用吸顶功能                                       | `boolean`          | true |
 | scrollSelector | 在 `scroll-view` 内使用时，指定 `scroll-view` 的类名（不含点） | `string`           | -    |
 
-## Events
+### Events
 
 | 事件名    | 说明        | 回调参数                          |
 |--------|-----------|-------------------------------|
 | change | 吸顶状态变化时触发 | isFixed: Boolean - 当前是否处于吸顶状态 |
 
-## Methods
+### Methods
 
 | 事件名     | 说明                 | 参数 |
 |---------|--------------------|----|
 | refresh | 刷新组件状态，通常用于内容高度变化后 | -  |
 
-## Slots
+### Slots
 
 | 插槽名     | 说明   | 接收值 |
 |---------|------|-----|

@@ -18,25 +18,15 @@
 - **图标与徽标**：支持左侧菜单图标配置，并可添加徽标提示新消息或商品数量
 - **灵活布局**：支持显示/隐藏左右按钮，以及通过插槽自定义内容展示
 
-## 使用场景
-
-- **商品详情页**：底部固定展示价格和购买按钮，方便用户快速下单
-- **购物车页面**：底部汇总显示总价和结算按钮，提升购物流程转化率
-- **订单确认页**：展示订单总览和提交按钮，引导用户完成交易
-- **多商品比较页**：固定底部提供批量操作或购买入口
-
 ## :japanese_castle:基本使用示例
 
 ::: code-group
 ```html [模板]
 <!-- 全局使用 -->
 <hy-submit-bar :menus="menus"></hy-submit-bar>
-<!-- 单个组件引入 -->
-<HySubmitBar :menus="menus"></HySubmitBar>
 ```
 
 ```ts [脚本]
-import { HySubmitBar } from "hy-app"
 import { reactive } from "vue"
 import { IconConfig } from "hy-app" // 导入图标配置
 
@@ -52,7 +42,7 @@ const menus = reactive([
 ```
 :::
 
-## 隐藏按钮
+### 隐藏按钮
 - 通过设置`show-left-btn`隐藏左边按钮
 - 通过设置`show-right-btn`隐藏右边按钮
 
@@ -77,7 +67,7 @@ const menus = reactive([
 ```
 :::
 
-## 定义按钮形式
+### 定义按钮形式
 - 通过设置`textColor`按钮文字颜色
 - 通过设置`leftBtnText`左边按钮文本
 - 通过设置`rightBtnText`右边按钮文本
@@ -111,7 +101,7 @@ const menus = reactive([
 ```
 :::
 
-## 右边icon内容设置
+### 右边icon内容设置
 - 通过设置`menus`里的内容值定义icon图标、文字和徽标值（样式）
   - `icon`库里图标
   - `text`文本内容
@@ -149,47 +139,62 @@ const menus = reactive([
 
 
 ## API
+### SubmitBar Props
 
-| 参数             | 说明              | 类型                 | 默认值       |
-|----------------|-----------------|--------------------|-----------|
-| menus          | 左侧菜单栏           | `array`            | -         |
-| fixed          | 是否固定在底部            | `boolean`          | true      |
-| border         | 是否显示顶部边框          | `boolean`          | true      |
-| leftLoading    | 加载左侧按钮loading   | `boolean`          | false     |
-| rightLoading   | 加载右侧按钮loading   | `boolean`          | false     |
-| iconColor      | 左侧icon的颜色       | `string`           | -         |
-| iconLabelColor | 左侧文字的颜色         | `string`           | #909193FF |
-| textColor      | 右侧按钮文字颜色        | `string`           | -         |
-| showLeftBtn    | 是否显示左边按钮          | `boolean`          | true      |
-| showRightBtn   | 是否显示右边按钮          | `boolean`          | true      |
-| leftBtnText    | 左侧按钮文字          | `string`           | 加入购物车     |
-| rightBtnText   | 右侧按钮文字          | `string`           | 立即购买      |
-| leftBtnColor   | 左侧按钮颜色，支持渐变色    | `string`           | #ed3f14   |
-| rightBtnColor  | 有侧按钮颜色，支持渐变色    | `string`           | #ff7900   |
-| shape          | 按钮的形状           | `circle`\|`square` | circle    |
-| warn           | 按钮点击节流时长(单位：ms) | `number`           | 300       |
-| customStyle    | 定义需要用到的外部样式     | `CSSProperties`    | -         |
+| 参数             | 说明              | 类型                     | 默认值       |
+|----------------|-----------------|------------------------|-----------|
+| menus          | 左侧菜单栏           | `SubmitBarIconMenus[]` | -         |
+| fixed          | 是否固定在底部         | `boolean`              | true      |
+| border         | 是否显示顶部边框        | `boolean`              | true      |
+| leftLoading    | 加载左侧按钮loading   | `boolean`              | false     |
+| rightLoading   | 加载右侧按钮loading   | `boolean`              | false     |
+| iconColor      | 左侧icon的颜色       | `string`               | -         |
+| iconLabelColor | 左侧文字的颜色         | `string`               | #909193FF |
+| textColor      | 右侧按钮文字颜色        | `string`               | -         |
+| showLeftBtn    | 是否显示左边按钮        | `boolean`              | true      |
+| showRightBtn   | 是否显示右边按钮        | `boolean`              | true      |
+| leftBtnText    | 左侧按钮文字          | `string`               | 加入购物车     |
+| rightBtnText   | 右侧按钮文字          | `string`               | 立即购买      |
+| leftBtnColor   | 左侧按钮颜色，支持渐变色    | `string`               | #ed3f14   |
+| rightBtnColor  | 有侧按钮颜色，支持渐变色    | `string`               | #ff7900   |
+| shape          | 按钮的形状           | `circle`\|`square`     | circle    |
+| warn           | 按钮点击节流时长(单位：ms) | `number`               | 300       |
+| customStyle    | 定义需要用到的外部样式     | `CSSProperties`        | -         |
 
-#### Menus
-| 参数    | 说明                               | 类型           | 默认值 |
-|-------|----------------------------------|--------------|-----|
-| icon  | 图标名称                           | `string`     | -   |
-| text  | 菜单项文本                               | `string`     | -   |
-| badge | 徽标属性，详情查看[徽标数API](./badge.md#api) | `BadgeProps` | -   |
 
-## Events
+### Events
 
-| 事件名       | 说明     | 回调参数                                    |
-|-----------|--------|-----------------------------------------|
-| click     | 点击按钮时触发   | index: number                           |
+| 事件名       | 说明         | 回调参数                                    |
+|-----------|------------|-----------------------------------------|
+| click     | 点击按钮时触发    | index: number                           |
 | menuClick | 点击左侧菜单项时触发 | temp: SubmitBarIconMenus, index: number |
 
-## Slots
+### Slots
 
 | 插槽名   | 说明      | 接收值 |
 |-------|---------|-----|
 | left  | 左侧自定义内容 | -   |
 | right | 右侧自定义内容 | -   |
 
+### Typings
+:::details
+```ts
+export interface SubmitBarIconMenus {
+  /**
+   * icon图标
+   * */
+  icon: string
+  /**
+   * 文本
+   * */
+  text: string
+  /**
+   * 徽标值
+   * */
+  badge?: BadgeProps['badge']
+  [key: string]: any
+}
+```
+:::
 
 <demo-model url="pages-design/submitBar/submitBar"></demo-model>

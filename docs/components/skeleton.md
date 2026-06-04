@@ -1,23 +1,19 @@
 # hy-skeleton 骨架屏
 > 用于等待加载内容所展示的占位图形组合，有动态效果加载效果，减少用户等待焦虑。
 
-::: tip 温馨提示
-本项目参考了 Wot-UI 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 Wot-UI 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考Wot-UI的 [skeleton组件](https://wot-ui.cn/component/sticky.html) 的代码实现。
-:::
-
-::: warning 注意事项
-1. `loading` 属性为 `undefined` 或 `true` 时显示骨架屏，为 `false` 时显示插槽内容
-2. `rowCol` 属性优先级高于 `theme` 属性，如果设置了 `rowCol`，将忽略 `theme` 的配置
-3. 动画效果会增加一定的性能开销，在性能敏感的场景建议关闭动画
-4. 组件支持虚拟化 host 和全局样式，可以方便地集成到现有项目中
-:::
-
 ## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
 |----------|----|-------|--------|
 | ✔        | ✔  | ✔     | ✔      |
+
+## :warning:注意事项
+::: warning 注意事项
+- `loading` 属性为 `undefined` 或 `true` 时显示骨架屏，为 `false` 时显示插槽内容
+- `rowCol` 属性优先级高于 `theme` 属性，如果设置了 `rowCol`，将忽略 `theme` 的配置
+- 动画效果会增加一定的性能开销，在性能敏感的场景建议关闭动画
+- 组件支持虚拟化 host 和全局样式，可以方便地集成到现有项目中
+:::
 
 ## :japanese_castle:基本使用示例
 
@@ -26,7 +22,7 @@
 <hy-skeleton />
 ```
 
-## 不同主题
+### 不同主题
 支持四种主题：`text`、`avatar`、`paragraph`、`image`。
 ::: tip 提示
 - **text**: 文本主题，默认显示单行文本
@@ -41,7 +37,7 @@
 <hy-skeleton theme="image" />
 ```
 
-## 加载状态
+### 加载状态
 通过 `loading` 属性控制骨架屏的显示与隐藏，`loading` 为 `true` 时显示骨架屏，为 `false` 时显示实际内容。
 ```html
 <hy-skeleton :loading="loading">
@@ -49,14 +45,14 @@
 </hy-skeleton>
 ```
 
-## 动画效果
+### 动画效果
 支持两种动画效果：`gradient`（渐变加载动画）和 `flashed`（闪烁加载动画）。
 ```html
 <hy-skeleton animation="gradient" />
 <hy-skeleton animation="flashed" />
 ```
 
-## 自定义行列
+### 自定义行列
 通过 `rowCol` 属性可以自定义骨架屏的行列数量、宽度、高度、间距等。
 ```html
 <!-- 示例一：三行骨架图，第一行一列，第二行一列，第三行两列 -->
@@ -69,7 +65,7 @@
 <hy-skeleton :rowCol="[1, 2, [{ width: '100px', height: '20px' }, { width: '200px', height: '20px', marginLeft: '10px' }]]" />
 ```
 
-## 完整示例
+### 完整示例
 
 ```html
 <template>
@@ -104,7 +100,7 @@ setTimeout(() => {
 
 ## API
 
-### Props
+### Skeleton Props
 
 | 参数          | 说明                                            | 类型                                                               | 默认值  |
 |-------------|-----------------------------------------------|------------------------------------------------------------------|------|
@@ -115,28 +111,43 @@ setTimeout(() => {
 | customStyle | 定义需要用到的外部样式                                   | `CSSProperties`                                                  | -    |
 | customClass | 自定义外部类名                                       | `string`                                                         | -    |
 
-### SkeletonRowColObj 类型
-
-`rowCol` 数组中的对象类型，支持以下属性：
-
-| 属性              | 说明                                          | 类型                 |
-|-----------------|---------------------------------------------|--------------------|
-| type            | 形状类型，可选值：`rect`（矩形）、`circle`（圆形）、`text`（文本） | `string`           |
-| size            | 尺寸（同时设置宽高）                                  | `string`\|`number` |
-| width           | 宽度                                          | `string`\|`number` |
-| height          | 高度                                          | `string`\|`number` |
-| margin          | 外边距                                         | `string`\|`number` |
-| marginLeft      | 左外边距                                        | `string`\|`number` |
-| marginRight     | 右外边距                                        | `string`\|`number` |
-| borderRadius    | 圆角                                          | `string`\|`number` |
-| background      | 背景色                                         | `string`           |
-| backgroundColor | 背景色                                         | `string`           |
-
-## Slots
+### Slots
 
 | 插槽名     | 说明         | 接收值 |
 |---------|------------|-----|
 | default | 加载完成时显示的内容 | -   |
+
+### Typings
+:::detail 类型说明
+```ts
+export type SkeletonTheme = 'text' | 'avatar' | 'paragraph' | 'image'
+export type SkeletonAnimation = 'gradient' | 'flashed'
+export type SkeletonRowColObj = {
+    [key: string]: any
+    type?: 'rect' | 'circle' | 'text'
+    size?: string | number
+    width?: string | number
+    height?: string | number
+    margin?: string | number
+    background?: string
+    marginLeft?: string | number
+    marginRight?: string | number
+    borderRadius?: string | number
+    backgroundColor?: string
+}
+export type SkeletonRowCol = number | SkeletonRowColObj | Array<SkeletonRowColObj>
+export type SkeletonThemeVars = {
+    notifyPadding?: string
+    notifyFontSize?: string
+    notifyTextColor?: string
+    notifyLineHeight?: number | string
+    notifyDangerBackground?: string
+    notifyPrimaryBackground?: string
+    notifySuccessBackground?: string
+    notifyWarningBackground?: string
+}
+```
+:::
 
 <demo-model url="pages-design/skeleton/skeleton"></demo-model>
 

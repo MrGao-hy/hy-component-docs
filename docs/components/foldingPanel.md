@@ -1,11 +1,6 @@
 # FoldingPanel 折叠面板组件
 > 通过折叠面板收纳内容区域。
 
-::: tip 温馨提示
-本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [collapse组件](https://uiadmin.net/uview-plus/components/collapse.html) 的代码实现。
-:::
-
 ## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
@@ -23,7 +18,7 @@
 </hy-config-provider>
 ```
 
-## 禁用面板
+### 禁用面板
 - 通过设置`hy-folding-panel`的`disabled`禁用所以面板
 - 通过设置`hy-folding-panel-item`的`disabled`禁用单个面板
 ```html
@@ -33,7 +28,7 @@
 </hy-config-provider>
 ```
 
-## 显示边框
+### 显示边框
 - 通过`border`设置边框
 ```html
 <hy-folding-panel v-model="activeIndex" :border="true">
@@ -42,7 +37,7 @@
 </hy-config-provider>
 ```
 
-## 设置面板大小
+### 设置面板大小
 - 通过设置`size`设置面板大小
   - `small`-小面板
   - `medium`-中面板（默认）
@@ -54,7 +49,7 @@
 </hy-config-provider>
 ```
 
-## 自定义面板头部
+### 自定义面板头部
 
 ```html
 <hy-folding-panel v-model="activeIndex" :disabled="true">

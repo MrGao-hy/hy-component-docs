@@ -155,7 +155,7 @@ const lazyLoad = (option: any, tabIndex: number, resolve: (children: any[]) => v
 |---------|------|------------------------------|
 | default | 默认插槽，自定义输入框内容 | -                            |
 
-### typings
+### Typings
 :::details 类型说明
 ```ts
 export interface CascaderOption {

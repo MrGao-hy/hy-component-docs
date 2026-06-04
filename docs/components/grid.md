@@ -34,20 +34,20 @@ const list = ref([
 ]);  
 ```
 
-## 设置间距
+### 设置间距
 
 ```html
 <!-- 全局使用 -->
 <hy-gird :list="list" gap="10px"></hy-gird>
 ```
 
-## 设置宫格列数
+### 设置宫格列数
 ```html
 <!-- 全局使用 -->
 <hy-gird :list="list" col="5"></hy-gird>
 ```
 
-## 自定义插槽
+### 自定义插槽
 
 ```html
 <template>
@@ -82,6 +82,7 @@ const list = ref([
 ```
 
 ## API
+### Grid Props
 
 | 参数          | 说明                              | 类型                         | 默认值                           |
 |-------------|---------------------------------|----------------------------|-------------------------------|
@@ -97,28 +98,19 @@ const list = ref([
 | customStyle | 自定义需要用到的外部样式                    | `CSSProperties`            | -                             |
 | customClass | 自定义外部类名                         | `string`                   | -                             |
 
-## list
-> 或者自定义添加其他键，通过插槽自定义内容
-
-| 参数         | 说明                              | 类型            | 默认值 |
-|------------|---------------------------------|---------------|-----|
-| icon       | 图片或者icon                        | `string`      | -   |
-| name       | 名称                              | `string`      | -   |
-| iconConfig | 图标属性api配置，详见[图标Api](./icon#api) | `HyIconProps` | -   |
-
-## Events
+### Events
 
 | 事件名   | 说明     | 回调参数     |
 |-------|--------|----------|
 | click | 点击宫格触发 | (item: GridItemVo \| string) |
 
-## Slots
+### Slots
 
 | 插槽名     | 说明   | 接收值                          |
 |---------|------|------------------------------|
 | default | 默认插槽 | record: GridItemVo \| string |
 
-## typings
+### Typings
 :::details 类型说明
 ```ts
 type GridItemVo = {

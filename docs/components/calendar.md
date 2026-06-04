@@ -333,7 +333,7 @@ const forbidDays = ref(['2025-05-01', '2025-05-02', '2025-05-03'])
 | confirm | 日期选择完成后触发，若show-confirm为true，则点击确认按钮后触发 | 选择日期数组 `string[]` |
 | close   | 日历关闭时触发                                 | -                 |
 
-### typings
+### Typings
 
 :::details 类型说明
 

@@ -248,7 +248,7 @@ const onClick = ({ name, url }) => {
 |-------|-------|-----------------------------------------|
 | click | 头像被点击 | config: IAvatarClickConfig, event: 事件对象 |
 
-### typings
+### Typings
 
 :::details 类型说明
 

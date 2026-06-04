@@ -1,11 +1,6 @@
 # Rate 评分组件
 > 该组件一般用于满意度调查，星型评分的场景。
 
-::: tip 温馨提示
-本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [rate组件](https://uiadmin.net/uview-plus/components/rate.html) 的代码实现。
-:::
-
 ## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
@@ -17,17 +12,14 @@
 ```html
 <!-- 全局使用 -->
 <hy-rate v-model="value"></hy-rate>
-<!-- 单个组件引入 -->
-<HyRate v-model="value"></HyRate>
 ```
 ```ts
-import { HyRate } from "hy-app";
 import { ref } from "vue";
 
 const value = ref(2);
 ```
 
-## 自定义样式
+### 自定义样式
 - 通过`active-color`设置选中的星星的颜色
 - 通过`inactive-color`设置未选中时星星的颜色
 - 通过`gutter`设置星星的间距，左右内边距各占gutter的一半
@@ -35,7 +27,7 @@ const value = ref(2);
 <hy-rate active-color="#FA3534" inactive-color="#b2b2b2" gutter="20"></hy-rate>
 ```
 
-## 自定义图标
+### 自定义图标
 - 通过`active-icon`设置激活的图标
 - 通过`inactive-icon`设置未激活的图标
 ```html
@@ -48,32 +40,33 @@ const value = ref(2);
 import { IconConfig } from "hy-app";
 ```
 
-## 最多评分数
+### 最多评分数
 ```html
 <hy-rate :count="10"></hy-rate>
 ```
 
-## 最少可以选中的数量
+### 最少可以选中的数量
 ```html
 <hy-rate :minCount="5"></hy-rate>
 ```
 
-## 允许半星
+### 允许半星
 ```html
 <hy-rate :value="2.5" allowHalf></hy-rate>
 ```
 
-## 禁用状态
+### 禁用状态
 ```html
 <hy-rate :value="2" disabled></hy-rate>
 ```
 
-## 只读状态
+### 只读状态
 ```html
 <hy-rate :value="2" readonly></hy-rate>
 ```
 
 ## API
+### Rate Props
 
 | 参数            | 说明             | 类型                 | 默认值       |
 |---------------|----------------|--------------------|-----------|
@@ -92,7 +85,7 @@ import { IconConfig } from "hy-app";
 | touchable     | 是否可以通过滑动手势选择评分 | `boolean`          | true      |
 | customStyle   | 自定义样式          | `CSSProperties`    | -         |
 
-## Events
+### Events
 
 | 事件名    | 说明           | 回调参数                                       |
 |--------|--------------|--------------------------------------------|

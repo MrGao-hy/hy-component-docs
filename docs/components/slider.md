@@ -1,11 +1,6 @@
 # Slider 滑动选择器组件
 > 该组件一般用于表单中，手动选择一个区间范围的场景。
 
-::: tip 温馨提示
-本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [slider组件](https://uiadmin.net/uview-plus/components/slider.html) 的代码实现。
-:::
-
 ## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
@@ -17,17 +12,14 @@
 ```html
 <!-- 全局使用 -->
 <hy-slider v-model="value"></hy-slider>
-<!-- 单个组件引入 -->
-<HySlider v-model="value">按钮</HySlider>
 ```
 ```ts
-import { HySlider } from "hy-app"
 import { ref } from 'vue';
 
 const value = ref(30);  
 ```
 
-## 设置最大和最小值
+### 设置最大和最小值
 通过`min`和`max`，可以设置滑块所能选择的最大和最小值
 ```html
 <template>
@@ -41,7 +33,7 @@ const value = ref(30);
 </script>
 ```
 
-## 设置步进值
+### 设置步进值
 ::: warning 提示
 需要注意的是，这个step必须要被max值整除，否则会出现无法无法滑动到最大值的情况
 :::
@@ -57,7 +49,7 @@ const value = ref(30);
 </script>
 ```
 
-## 在弹窗等初始化不显示的容器中使用
+### 在弹窗等初始化不显示的容器中使用
 ::: warning 提示
 需要注意的是，在此场景中使用要注意给slider同时一个v-if让它随着弹窗的显示再渲染，这样才能计算出滑块的正确尺寸。
 :::
@@ -78,7 +70,7 @@ const sliderValue = ref(4);
 </script>
 ```
 
-## 禁用状态
+### 禁用状态
 ```html
 <template>
     <hy-slider v-model="value" disabled></hy-slider>
@@ -91,7 +83,7 @@ const sliderValue = ref(4);
 </script>
 ```
 
-## 自定义滑块
+### 自定义滑块
 ```html
 <template>
     <hy-slider v-model="value">
@@ -110,7 +102,7 @@ const sliderValue = ref(4);
 </script>
 ```
 
-## 区间选择
+### 区间选择
 ```html
 <template>
     <hy-slider
@@ -127,7 +119,7 @@ const sliderValue = ref(4);
 </script>
 ```
 
-## 自定义滑动选择器整体的样式
+### 自定义滑动选择器整体的样式
 - 通过inactive-color配置底部滑动条背景颜色
 - 通过active-color配置底部选择部分的背景颜色
 - 通过block-width配置滑块宽度(高等于宽)
@@ -150,6 +142,7 @@ const sliderValue = ref(4);
 ```
 
 ## API
+### Slider Props
 
 | 参数            | 说明                | 类型                   | 默认值    |
 |---------------|-------------------|----------------------|--------|
@@ -169,7 +162,7 @@ const sliderValue = ref(4);
 | rangeValue    | 双滑快双向绑定值，数组形式     | `array`              | [0, 0] |
 | customStyle   | 定义需要用到的外部样式       | `CSSProperties`      | -      |
 
-## Events
+### Events
 
 | 事件名      | 说明          | 回调参数      |
 |----------|-------------|-----------|

@@ -10,16 +10,14 @@
 ## :japanese_castle:基本使用示例
 
 ::: code-group
-```vue [模板]
-<template>
-    <hy-tabbar-group v-model="current" @change="onChange">
-        <hy-tabbar-item title="首页" icon="home"></hy-tabbar-item>
-        <hy-tabbar-item title="分类" icon="class"></hy-tabbar-item>
-        <hy-tabbar-item title="我的" icon="mine"></hy-tabbar-item>
-    </hy-tabbar-group>
-</template>
+```html [模板]
+<hy-tabbar-group v-model="current" @change="onChange">
+    <hy-tabbar-item title="首页" icon="home"></hy-tabbar-item>
+    <hy-tabbar-item title="分类" icon="class"></hy-tabbar-item>
+    <hy-tabbar-item title="我的" icon="mine"></hy-tabbar-item>
+</hy-tabbar-group>
 
-<!-- 底部固定的tabbar测试 -->
+<!-- 封装后的组件模板 -->
 <hy-tabbar v-model="fixedCurrent" :list="list" activeColor="red"></hy-tabbar>
 ```
 
@@ -48,7 +46,7 @@ const list = [
 ];
 ```
 
-## 徽标提示
+### 徽标提示
 - `badgeProp`: 接收badge参数
 
 ::: tip 注意
@@ -73,7 +71,7 @@ const list = [
 </hy-tabbar-group>
 ```
 
-## 圆角导航栏
+### 圆角导航栏
 ```html
 <hy-tabbar-group v-model="current" @change="onChange" shape="circle">
     <hy-tabbar-item title="首页" icon="home"></hy-tabbar-item>
@@ -82,7 +80,7 @@ const list = [
 </hy-tabbar-group>
 ```
 
-## 圆角导航栏
+### 圆角导航栏
 ```html
 <hy-tabbar-group
         v-model="current"
@@ -96,7 +94,7 @@ const list = [
 </hy-tabbar-group>
 ```
 
-## icon插槽
+### icon插槽
 ```html
 <hy-tabbar-group v-model="current" @change="onChange">
     <hy-tabbar-item title="首页" icon="home">
@@ -110,21 +108,21 @@ const list = [
 ```
 
 ## API
+### TabBar Props
 
-### Tabbar Props
-| 参数          | 说明                     | 类型              | 默认值   |
-|-------------|------------------------|-----------------|-------|
-| modelValue  | 选中项的索引值                | `number`        | 0     |
-| list        | 导航栏数据集合                | `array`         | []    |
-| fixed       | 是否固定在底部                | `boolean`       | true  |
-| placeholder | 是否显示占位元素               | `boolean`       | false |
-| color       | 图标和字体颜色                | `string`        | -     |
-| baseBgColor | 轨道颜色                   | `string`        | -     |
-| bgColor     | 背景颜色                   | `string`        | -     |
-| activeColor | 激活圆形背景颜色               | `string`        | -     |
-| badgeProps  | 徽标[API属性](./badge#api) | `HyBadgeProps`  | -     |
-| customStyle | 定义需要用到的外部样式            | `CSSProperties` | -     |
-| customClass | 自定义外部类名                | `string`        | -     |
+| 参数          | 说明                     | 类型               | 默认值   |
+|-------------|------------------------|------------------|-------|
+| modelValue  | 选中项的索引值                | `number`         | 0     |
+| list        | 导航栏数据集合                | `TabBarListVo[]` | []    |
+| fixed       | 是否固定在底部                | `boolean`        | true  |
+| placeholder | 是否显示占位元素               | `boolean`        | false |
+| color       | 图标和字体颜色                | `string`         | -     |
+| baseBgColor | 轨道颜色                   | `string`         | -     |
+| bgColor     | 背景颜色                   | `string`         | -     |
+| activeColor | 激活圆形背景颜色               | `string`         | -     |
+| badgeProps  | 徽标[API属性](./badge#api) | `HyBadgeProps`   | -     |
+| customStyle | 定义需要用到的外部样式            | `CSSProperties`  | -     |
+| customClass | 自定义外部类名                | `string`         | -     |
 
 #### list
 | 参数    | 说明         | 类型     | 默认值 |
@@ -133,7 +131,7 @@ const list = [
 | icon  | icon图标或者图片 | string | -   |
 | badge | 徽标值        | number | -   |
 
-### TabbarGroup Props
+### TabBarGroup Props
 | 参数                  | 说明                           | 类型                 | 默认值      |
 |---------------------|------------------------------|--------------------|----------|
 | modelValue          | 选中项的索引值                      | `number`           | 0        |
@@ -152,7 +150,7 @@ const list = [
 | customStyle         | 定义需要用到的外部样式                  | `CSSProperties`    | -        |
 | customClass         | 自定义外部类名                      | `string`           | -        |
 
-### TabbarItem Props
+### TabBarItem Props
 | 参数    | 说明                                | 类型                            | 默认值 |
 |-------|-----------------------------------|-------------------------------|-----|
 | icon  | 图标                                | `string`                      | -   |
@@ -162,29 +160,51 @@ const list = [
 
 ## Events
 
-### Tabbar Emits
+### TabBar Emits
 | 事件名    | 说明     | 回调参数          |
 |--------|--------|---------------|
 | change | 更新选中索引 | value: number |
 
-### TabbarGroup Emits
+### TabBarGroup Emits
 | 事件名    | 说明     | 回调参数                        |
 |--------|--------|-----------------------------|
 | change | 更新选中索引 | \{value: string  \| number} |
 
 ## Slots
 
-### Tabbar Slots
+### TabBar Slots
 ::: tip 注意
-tabbar图标插槽在小程序是没有效果
+tabBar图标插槽在小程序是没有效果
 :::
 | 插槽名  | 说明   | 接收值 |
 |------|------|-----|
 | icon | 图标插槽 | -   |
 
-### TabbarItem Slots
+### TabBarItem Slots
 | 插槽名  | 说明   | 接收值 |
 |------|------|-----|
 | icon | 图标插槽 | -   |
+
+### Typings
+
+:::details 类型说明
+
+```ts
+export interface TabBarItem {
+    /**
+     * 标题
+     * */
+    name: string
+    /**
+     * icon 图标或者图片
+     * */
+    icon: string
+    /**
+     * 徽标值
+     * */
+    badge?: number
+}
+```
+:::
 
 <demo-model url="pages-design/tabBar/tabBar"></demo-model>

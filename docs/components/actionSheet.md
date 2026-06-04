@@ -422,7 +422,7 @@ const onClick = (temp: any) => {
 | customClass         | 自定义外部类名                                 | `string`                                          | -      |
 | customHeaderClass   | 自定义标题类名                                 | `string`                                          | -      |
 
-### typings
+### Typings
 
 :::details 类型说明
 

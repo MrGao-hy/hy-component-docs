@@ -6,6 +6,16 @@
 |----------|----|-------|--------|
 | ✔        | ✔  | ✔     | ✔      |
 
+## :warning:注意事项
+
+:::warning 注意事项
+1. 表格高度(height)和行高(rowHeight)建议使用数字，组件会自动添加单位px
+2. 固定列必须指定width属性，否则可能导致布局异常
+3. 对于大量数据(>1000条)，建议使用虚拟滚动或分页加载以提高性能
+4. formatter函数应尽量简洁，避免复杂计算影响渲染性能
+5. 表格内容中的长文本建议开启ellipsis属性，避免布局错乱
+:::
+
 ## 主要特性
 
 - 支持左右固定列
@@ -51,12 +61,12 @@ const columns = ref([
 ```
 :::
 
-## 固定列/插槽
+### 固定列/插槽
 ::: tip 说明
 因为在微信小程序无法使用动态插槽，所以实现这种插槽方法，把所以内容都插槽一遍
 :::
 ::: code-group
-```vue [模板]
+```html [模板]
 <hy-table
   :data="tableData"
   :columns="columns"
@@ -270,7 +280,7 @@ import { reactive } from 'vue'
 
 ### 排序功能
 
-```vue
+```html
 <hy-table
   :data="tableData"
   :columns="columns"
@@ -294,9 +304,9 @@ const handleSort = (field: string, order: string) => {
 </script>
 ```
 
-## 自定义空状态
+### 自定义空状态
 
-```vue
+```html
 <hy-table
   :data="emptyData"
   :columns="columns"
@@ -312,9 +322,9 @@ const handleSort = (field: string, order: string) => {
 </hy-table>
 ```
 
-## 加载状态
+### 加载状态
 
-```vue
+```html
 <hy-table
   :data="tableData"
   :columns="columns"
@@ -338,9 +348,9 @@ onMounted(async () => {
 </script>
 ```
 
-## 样式定制
+### 样式定制
 
-### 自定义主题
+#### 自定义主题
 
 可以通过覆盖CSS变量来定制表格样式：
 
@@ -353,73 +363,82 @@ onMounted(async () => {
 }
 ```
 
-## 注意事项
-
-1. 表格高度(height)和行高(rowHeight)建议使用数字，组件会自动添加单位px
-2. 固定列必须指定width属性，否则可能导致布局异常
-3. 对于大量数据(>1000条)，建议使用虚拟滚动或分页加载以提高性能
-4. formatter函数应尽量简洁，避免复杂计算影响渲染性能
-5. 表格内容中的长文本建议开启ellipsis属性，避免布局错乱
-
 ## API
+### Table Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| data | 表格数据源 | Array | [] |
-| columns | 列配置信息 | Array | [] |
-| height | 表格高度，支持数字或带单位字符串 | String/Number | 400 |
-| rowHeight | 行高，支持数字或带单位字符串 | String/Number | 50 |
-| stripe | 是否显示斑马纹 | Boolean | false |
-| border | 是否显示横向边框 | Boolean | true |
-| loading | 是否显示加载状态 | Boolean | false |
-| rowKey | 行数据的唯一键名 | String | 'id' |
-| showHeader | 是否显示表头 | Boolean | true |
-| emptyUrl | 空状态的图片URL | String | '' |
-| emptyDes | 空状态的描述文本 | String | '' |
+| 参数         | 说明               | 类型                 | 默认值   |
+|------------|------------------|--------------------|-------|
+| data       | 表格数据源            | `Array`            | -     |
+| columns    | 列配置信息            | `ITableColumn[]`   | -     |
+| height     | 表格高度，支持数字或带单位字符串 | `string`\|`number` | 400   |
+| rowHeight  | 行高，支持数字或带单位字符串   | `string`\|`number` | 50    |
+| stripe     | 是否显示斑马纹          | `boolean`          | false |
+| border     | 是否显示横向边框         | `boolean`          | true  |
+| loading    | 是否显示加载状态         | `boolean`          | false |
+| rowKey     | 行数据的唯一键名         | `string`           | id    |
+| showHeader | 是否显示表头           | `boolean`          | true  |
+| emptyUrl   | 空状态的图片URL        | `string`           | -     |
+| emptyDes   | 空状态的描述文本         | `string`           | -     |
 
-### columns 列配置项
+### Events
 
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| title | 列标题 | String | - |
-| key | 对应数据字段名 | String | - |
-| width | 列宽，单位px | Number | - |
-| align | 对齐方式，可选值：left, center, right | String | 'left' |
-| sortable | 是否开启排序 | Boolean | false |
-| ellipsis | 是否开启文本超长省略 | Boolean | false |
-| tooltip | 开启省略后，是否显示完整内容的Tooltip | Boolean | false |
-| fixed | 是否固定列，可选值：left, right | String | - |
-| formatter | 数据格式化函数，参数：(value, row) | Function | - |
+| 事件名         | 说明        | 回调参数                                   |
+|-------------|-----------|----------------------------------------|
+| sort-change | 排序条件变化时触发 | sortField: String, sortOrder: SortType |
+| row-click   | 点击行时触发    | row: Object, index: Number             |
 
-## Events
+### Slots
 
-| 事件名 | 说明 | 回调参数 |
-| --- | --- | --- |
-| sort-change | 排序条件变化时触发 | sortField: String, sortOrder: String |
-| row-click | 点击行时触发 | row: Object, index: Number |
+#### 列头插槽
 
-## Slots
-
-### 列头插槽
-
-| 插槽名 | 说明 | 参数 |
-| --- | --- | --- |
-| left-head | 左侧固定列的表头插槽 | col: 列配置对象 |
-| head | 中间滚动列的表头插槽 | col: 列配置对象 |
+| 插槽名        | 说明         | 参数         |
+|------------|------------|------------|
+| left-head  | 左侧固定列的表头插槽 | col: 列配置对象 |
+| head       | 中间滚动列的表头插槽 | col: 列配置对象 |
 | right-head | 右侧固定列的表头插槽 | col: 列配置对象 |
 
-### 内容插槽
+#### 内容插槽
 
-| 插槽名 | 说明 | 参数 |
-| --- | --- | --- |
-| left | 左侧固定列的内容插槽 | row: 行数据, col: 列配置, index: 行索引 |
+| 插槽名     | 说明         | 参数                             |
+|---------|------------|--------------------------------|
+| left    | 左侧固定列的内容插槽 | row: 行数据, col: 列配置, index: 行索引 |
 | default | 中间滚动列的内容插槽 | row: 行数据, col: 列配置, index: 行索引 |
-| right | 右侧固定列的内容插槽 | row: 行数据, col: 列配置, index: 行索引 |
+| right   | 右侧固定列的内容插槽 | row: 行数据, col: 列配置, index: 行索引 |
 
 ### 其他插槽
 
-| 插槽名 | 说明 |
-| --- | --- |
+| 插槽名   | 说明     |
+|-------|--------|
 | empty | 自定义空状态 |
+
+### Typings
+
+:::details 类型说明
+
+```ts
+export interface ITableColumn {
+    /** 列标题 */
+    title: string
+    /** 对应数据字段名 */
+    key: string
+    /** 列宽 (数字默认 px) */
+    width: number
+    /** 对齐方式 */
+    align?: HyApp.RowCenterType
+    /** 是否开启排序 */
+    sortable?: boolean
+    /** 是否开启文本超长省略 */
+    ellipsis?: boolean
+    /** 开启省略后，是否开启点击显示完整内容(Tooltip) */
+    tooltip?: boolean
+    /** 是否固定 ('left' | 'right') */
+    fixed?: 'left' | 'right'
+    /** 处理数据函数 */
+    formatter?: (value: any, row: any) => string
+}
+
+export type SortType = 'asc' | 'desc' | 'normal'
+```
+:::
 
 <demo-model url="pages-design/table/table"></demo-model>

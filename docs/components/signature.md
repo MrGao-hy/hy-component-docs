@@ -1,32 +1,23 @@
 # Signature 签名组件
 > 用于签名场景，基于 Canvas 实现的签名组件。提供了基础签名、历史记录、笔锋效果等功能。
 
-::: tip 温馨提示
-本项目参考了 Wot-UI 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 Wot-UI 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考Wot-UI的 [signature组件](https://wot-ui.cn/component/signature.html) 的代码实现。
-:::
-
 ## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
 |----------|----|-------|--------|
 | ✔        | ✔  | ✔     | ✔      |
 
+## :warning:注意事项
+
+- 如果遇到导出图片不清晰，可以将 exportScale 设置为 2 以上。
+
 ## :japanese_castle:基本使用示例
-::: tip 提示
-如果遇到导出图片不清晰，可以将 exportScale 设置为 2 以上。
-:::
 ```html
 <!-- 全局使用 -->
 <hy-signature></hy-signature>
-<!-- 单个组件引入 -->
-<HySignature></HySignature>
-```
-```ts
-import { HySignature } from "hy-app"
 ```
 
-## 自定义画笔
+### 自定义画笔
 - 通过设置`lineWidth`，设置字体宽度
 - 通过设置`pen-color`，设置字体颜色
 ```html
@@ -35,7 +26,7 @@ import { HySignature } from "hy-app"
 </template>
 ```
 
-## 历史记录操作
+### 历史记录操作
 - 通过设置`enableHistory`，是否可以操作历史记录
 ```html
 <template>
@@ -43,7 +34,7 @@ import { HySignature } from "hy-app"
 </template>
 ```
 
-## 自定义笔锋参数
+### 自定义笔锋参数
 - 通过`pressure`开启笔锋模式，模拟真实书写效果。笔锋模式下笔画粗细会随书写速度变化。
 - `min-width`：最小笔画宽度，快速书写时的线条粗细
 - `max-width`：最大笔画宽度，慢速书写时的线条粗细
@@ -54,7 +45,7 @@ import { HySignature } from "hy-app"
 </template>
 ```
 
-## 自定义按钮
+### 自定义按钮
 - 通过`footer`插槽自定义底部按钮。
 ```html
 <template>
@@ -72,7 +63,7 @@ import { HySignature } from "hy-app"
 </template>
 ```
 
-## 横屏签名页面
+### 横屏签名页面
 可以通过配置页面的 `pageOrientation` 来实现横屏签名页面
 :::code-group
 ```vue [vue]
@@ -154,6 +145,7 @@ onMounted(() => {
 :::
 
 ## API
+### Signature Props
 
 | 参数               | 说明          | 类型        | 默认值     |
 |------------------|-------------|-----------|---------|
@@ -176,7 +168,7 @@ onMounted(() => {
 | max-width        | 笔锋模式最大宽度    | `number`  | 6       |
 | min-speed        | 笔锋模式速度阈值    | `number`  | 1.5     |
 
-## Events
+### Events
 
 | 事件名     | 说明      | 回调参数                    |
 |---------|---------|-------------------------|
@@ -186,7 +178,7 @@ onMounted(() => {
 | confirm | 确认签名时触发 | result: SignatureResult |
 | clear   | 清空签名时触发 | -                       |
 
-## Methods
+### Methods
 | 事件名     | 说明     | 参数                    |
 |---------|--------|-----------------------|
 | init    | 初始化签名板 | forceUpdate?: boolean |
@@ -195,7 +187,7 @@ onMounted(() => {
 | restore | 恢复上一步  | -                     |
 | revoke  | 撤销上一步  | -                     |
 
-## Slots
+### Slots
 
 | 插槽名    | 说明      | 接收值                                                       |
 |--------|---------|-----------------------------------------------------------|
