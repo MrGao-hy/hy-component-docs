@@ -1,11 +1,6 @@
 # Loading 加载动画组件
 > 此组件为一个小动画，目前用在华玥的loadMore加载更多等组件的正在加载状态场景。
 
-::: tip 温馨提示
-本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [loadingIcon](https://uiadmin.net/uview-plus/components/loadingIcon.html) 的代码实现。
-:::
-
 ## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
@@ -17,14 +12,9 @@
 ```html
 <!-- 全局使用 -->
 <hy-loading></hy-loading>
-<!-- 单个组件引入 -->
-<HyLoading type="primary"></HyLoading>
-```
-```ts
-import { HyLoading } from "hy-app"
 ```
 
-## 动画文字
+### 动画文字
 - 通过配置`text`可以指定文字内容
 - 通过配置`textSize`可以指定文字大小
 ```html
@@ -33,7 +23,7 @@ import { HyLoading } from "hy-app"
 </template>
 ```
 
-## 模式类型
+### 模式类型
 - 通过配置`mode`可以指定模式
   - `spinner` 配置花瓣（默认）
   - `circle` 配置圆形
@@ -46,7 +36,7 @@ import { HyLoading } from "hy-app"
 </template>
 ```
 
-## 排列类型
+### 排列类型
 - 通过配置`direction`可以指定文字和图标是否垂直排列
   - `row` 加载图标和文字横向排列
   - `column` 加载图标和文字竖立排列
@@ -57,7 +47,7 @@ import { HyLoading } from "hy-app"
 </template>
 ```
 
-## 动画模式
+### 动画模式
 - `timing-function`可以指定`mode`为`semicircle`或`circle`时动画里css中`animation-timing-function`的属性，默认为`ease-in-out`
 ```html
 <template>
@@ -65,7 +55,7 @@ import { HyLoading } from "hy-app"
 </template>
 ```
 
-## 动画运行时间
+### 动画运行时间
 - 通过配置`duration`可以指定动画的运行周期时间
 ```html
 <template>
@@ -73,7 +63,7 @@ import { HyLoading } from "hy-app"
 </template>
 ```
 
-## 图标颜色
+### 图标颜色
 - 通过配置`color`可以指定动画活动区域的颜色。
 - 通过配置`inactive-color`可以制定mode为circle时的暗边颜色
 ```html
@@ -83,7 +73,7 @@ import { HyLoading } from "hy-app"
 </template>
 ```
 
-## 图标尺寸
+### 图标尺寸
 - 通过配置`size`设定尺寸，单位px，组件内把size值体现为组件的宽和高
 ```html
 <template>
@@ -92,6 +82,7 @@ import { HyLoading } from "hy-app"
 ```
 
 ## API
+### Loading Props
 
 | 参数             | 说明                                                              | 类型                                                      | 默认值         |
 |----------------|-----------------------------------------------------------------|---------------------------------------------------------|-------------|

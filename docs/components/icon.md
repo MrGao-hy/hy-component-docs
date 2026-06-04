@@ -1,11 +1,6 @@
 # Icon 图标组件
 > 基于字体的图标集，包含了大多数常见场景的图标，使用简单，开箱即用，无需自己再写每个图标的样式，直接简单配置即可。支持自定义图标。
 
-::: tip 温馨提示
-本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [icon组件](https://uiadmin.net/uview-plus/components/icon.html) 的代码实现。
-:::
-
 ## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
@@ -20,21 +15,16 @@
 ```html
 <!-- 全局导入 -->
 <hy-icon :name="IconConfig.Loading"></hy-icon>
-<!-- 单个组件导入 -->
-<HyIcon :name="IconConfig.Loading"></HyIcon>
-```
-```js
-import { IconConfig, HyIcon } from "hy-app";
 ```
 
-## 修改图标的样式
+### 修改图标的样式
 - 通过`color`参数修改图标的颜色
 - 通过`size`参数修改图标的大小，单位为px
 ```html
 <hy-icon name="photo" color="#2979ff" size="28"></hy-icon>
 ```
 
-## 图片图标(带圆角)
+### 图片图标(带圆角)
 ```html
 <view class="hy-flex">
   <hy-icon
@@ -45,7 +35,7 @@ import { IconConfig, HyIcon } from "hy-app";
 </view>
 ```
 
-## 图标文字位置
+### 图标文字位置
 ```html
 <view class="hy-flex">
   <hy-icon :name="IconConfig.LOCK" label="横向" label-pos="right" />
@@ -53,7 +43,7 @@ import { IconConfig, HyIcon } from "hy-app";
 </view>
 ```
 
-## 图标旋转
+### 图标旋转
 ```html
 <view class="hy-flex">
   <hy-icon :name="IconConfig.LOCK" is-rotate />
@@ -61,7 +51,7 @@ import { IconConfig, HyIcon } from "hy-app";
 ```
 
 
-## 自定义icon
+### 自定义icon
 - 直接在阿里矢量图标库下载, 
   - `name`为图标名称, 
   - `customPrefix`为你项目设置中的FontClass/Symbol前缀
@@ -91,6 +81,7 @@ import { IconConfig, HyIcon } from "hy-app";
 
 
 ## API
+### Icon Props
 
 | 参数           | 说明                                                                                                        | 类型                               | 默认值     |
 |--------------|-----------------------------------------------------------------------------------------------------------|----------------------------------|---------|
@@ -116,7 +107,7 @@ import { IconConfig, HyIcon } from "hy-app";
 | customStyle  | 自定义需要用到的外部样式                                                                                              | `CSSProperties`                  | -       |
 | customClass  | 自定义外部类名                                                                                                   | `string`                         | -       |
 
-## Events
+### Events
 | 事件名   | 说明      | 回调参数                          |
 |-------|---------|-------------------------------|
 | click | 点击图标时触发 | `index`: 通过`props`传递的`index`值 |

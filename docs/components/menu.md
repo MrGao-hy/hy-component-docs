@@ -1,10 +1,6 @@
 # Menu 侧边导航组件
 > 垂直展示的导航栏，用于在不同的内容区域之间进行切换。
 
-::: tip 温馨提示
-非常感悟为华玥组件贡献的小伙伴
-:::
-
 ## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
@@ -16,11 +12,8 @@
 ```html
 <!-- 全局使用 -->
 <hy-menu :list="list"></hy-menu>
-<!-- 单个组件引入 -->
-<HyMenu :list="list"></HyMenu>
 ```
 ```ts
-import { HyMenu } from "hy-app"
 
 const list = [
     { title: "盖浇饭", icon: IconConfig.PHOTO },
@@ -506,10 +499,11 @@ export const data = [
 :::
 
 ## API
+### Menu Props
 
 | 参数          | 说明                            | 类型                 | 默认值 |
 |-------------|-------------------------------|--------------------|-----|
-| list        | 菜单数据集                         | `array`            | -   |
+| list        | 菜单数据集                         | `MenuParamsVo[]`   | -   |
 | id          | 绑定的唯一键                        | `string`           | id  |
 | color       | 选中颜色                          | `string`           | -   |
 | width       | 侧边菜单栏宽度                       | `number`\|`string` | 120 |
@@ -518,21 +512,14 @@ export const data = [
 | customStyle | 自定义需要用到的外部样式                  | `CSSProperties`    | -   |
 | customClass | 自定义外部类名                       | `string`           | -   |
 
-## list
-| 参数       | 说明    | 类型        | 默认值 |
-|----------|-------|-----------|-----|
-| title    | 标题    | `string`  | -   |
-| icon     | 图标    | `string`  | -   |
-| badge    | 徽标显示值 | `number`  | -   |
-| disabled | 是否禁用  | `boolean` | -   |
 
-## Events
+### Events
 
 | 事件名    | 说明      | 回调参数                                  |
 |--------|---------|---------------------------------------|
 | change | 选项切换时触发 | (temp: MenuParamsVo, index: number) |
 
-## Slots
+### Slots
 
 | 插槽名     | 说明       | 接收值 |
 |---------|----------|-----|

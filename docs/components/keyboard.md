@@ -1,4 +1,4 @@
-# Keyboard 键盘组件
+# Keyboard 键盘组件 <Badge type="tip">^0.7.0</Badge>
 > 虚拟键盘组件，支持数字键盘、车牌号键盘、身份证键盘等多种模式，可自定义头部和按键。
 
 ## :pushpin:平台差异说明
@@ -333,221 +333,7 @@ const handleDelete = () => {
 }
 ```
 
-## :test_tube:完整示例页面
-
-:::details 打开示例页面
-```vue
-<template>
-    <the-root-page>
-        <!-- 组件类型 -->
-        <view class="hy-title">组件类型</view>
-        <view class="hy-subtitle">键盘类型</view>
-        <hy-cell>
-            <hy-cell-item
-                title="默认键盘"
-                clickable
-                @click="showDefaultKeyboard = true"
-            ></hy-cell-item>
-            <hy-cell-item
-                title="带右侧栏的键盘"
-                clickable
-                @click="showSidebarKeyboard = true"
-            ></hy-cell-item>
-            <hy-cell-item
-                title="身份证键盘"
-                clickable
-                @click="showIdcardKeyboard = true"
-            ></hy-cell-item>
-            <hy-cell-item
-                title="车牌号键盘(非受控)"
-                clickable
-                @click="showCarUncontrolledKeyboard = true"
-            ></hy-cell-item>
-            <hy-cell-item
-                title="车牌号键盘(受控)"
-                clickable
-                @click="showCarControlledKeyboard = true"
-            ></hy-cell-item>
-        </hy-cell>
-
-        <!-- 组件变体 -->
-        <view class="hy-title">组件变体</view>
-        <view class="hy-subtitle">标题与额外按键</view>
-        <hy-cell>
-            <hy-cell-item
-                title="带标题的键盘"
-                clickable
-                @click="showTitleKeyboard = true"
-            ></hy-cell-item>
-            <hy-cell-item
-                title="slot自定义标题"
-                clickable
-                @click="showSlotTitleKeyboard = true"
-            ></hy-cell-item>
-            <hy-cell-item
-                title="多个额外按键"
-                clickable
-                @click="showMultipleExtraKeyboard = true"
-            ></hy-cell-item>
-            <hy-cell-item
-                title="随机数字键盘"
-                clickable
-                @click="showRandomKeyboard = true"
-            ></hy-cell-item>
-        </hy-cell>
-
-        <!-- 自定义配置 -->
-        <view class="hy-title">自定义配置</view>
-        <view class="hy-subtitle">小数点与按键控制</view>
-        <hy-cell>
-            <hy-cell-item
-                title="不显示小数点"
-                clickable
-                @click="showNoDotKeyboard = true"
-            ></hy-cell-item>
-            <hy-cell-item
-                title="自定义额外按键"
-                clickable
-                @click="showCustomExtraKeyboard = true"
-            ></hy-cell-item>
-        </hy-cell>
-
-        <!-- 键盘组件 -->
-        <hy-keyboard
-            v-model:show="showDefaultKeyboard"
-            mode="default"
-            v-model="defaultValue"
-            close-text="完成"
-        ></hy-keyboard>
-
-        <hy-keyboard
-            v-model:show="showSidebarKeyboard"
-            v-model="sidebarValue"
-            mode="custom"
-            close-text="完成"
-        ></hy-keyboard>
-
-        <hy-keyboard
-            v-model:show="showIdcardKeyboard"
-            mode="idcard"
-            v-model="idcardValue"
-        ></hy-keyboard>
-
-        <hy-keyboard
-            v-model:show="showCarUncontrolledKeyboard"
-            mode="car"
-            auto-switch-lang="true"
-            v-model="carUncontrolledValue"
-        ></hy-keyboard>
-
-        <hy-keyboard
-            v-model:show="showCarControlledKeyboard"
-            mode="car"
-            v-model="carControlledValue"
-            v-model:car-lang="carLang"
-        ></hy-keyboard>
-
-        <hy-keyboard
-            v-model:show="showTitleKeyboard"
-            mode="default"
-            v-model="titleValue"
-            title="标题"
-            close-text="完成"
-        ></hy-keyboard>
-
-        <hy-keyboard
-            v-model:show="showSlotTitleKeyboard"
-            mode="default"
-            v-model="slotTitleValue"
-            close-text="完成"
-        >
-            <template #title>
-                <view class="custom-title">
-                    <text class="custom-title-text">自定义标题</text>
-                </view>
-            </template>
-        </hy-keyboard>
-
-        <hy-keyboard
-            v-model:show="showMultipleExtraKeyboard"
-            mode="custom"
-            v-model="multipleExtraValue"
-            :extra-key="['00', '.']"
-            close-text="完成"
-        ></hy-keyboard>
-
-        <hy-keyboard
-            v-model:show="showRandomKeyboard"
-            mode="default"
-            v-model="randomValue"
-            :random-key-order="true"
-            close-text="完成"
-        ></hy-keyboard>
-
-        <hy-keyboard
-            v-model:show="showNoDotKeyboard"
-            mode="default"
-            v-model="noDotValue"
-            :show-dot-key="false"
-            close-text="完成"
-        ></hy-keyboard>
-
-        <hy-keyboard
-            v-model:show="showCustomExtraKeyboard"
-            mode="default"
-            v-model="customExtraValue"
-            extra-key="+"
-            close-text="完成"
-        ></hy-keyboard>
-    </the-root-page>
-</template>
-
-<script setup lang="ts">
-import { ref } from 'vue'
-import type { CarKeyboardLang } from '@/package/components/hy-keyboard/typing'
-
-// 组件类型
-const showDefaultKeyboard = ref(false)
-const defaultValue = ref('')
-
-const showSidebarKeyboard = ref(false)
-const sidebarValue = ref('')
-
-const showIdcardKeyboard = ref(false)
-const idcardValue = ref('')
-
-const showCarUncontrolledKeyboard = ref(false)
-const carUncontrolledValue = ref('')
-
-const showCarControlledKeyboard = ref(false)
-const carControlledValue = ref('')
-const carLang = ref<CarKeyboardLang>('zh')
-
-// 组件变体
-const showTitleKeyboard = ref(false)
-const titleValue = ref('')
-
-const showSlotTitleKeyboard = ref(false)
-const slotTitleValue = ref('')
-
-const showMultipleExtraKeyboard = ref(false)
-const multipleExtraValue = ref('')
-
-const showRandomKeyboard = ref(false)
-const randomValue = ref('')
-
-// 自定义配置
-const showNoDotKeyboard = ref(false)
-const noDotValue = ref('')
-
-const showCustomExtraKeyboard = ref(false)
-const customExtraValue = ref('')
-</script>
-```
-:::
-
 ## API
-
 ### Keyboard Props
 
 | 参数                  | 说明                                                            | 类型                     | 默认值      |
@@ -576,20 +362,20 @@ const customExtraValue = ref('')
 
 ### Keyboard Events
 
-| 事件名       | 说明               | 回调参数                          |
-|-------------|--------------------|-----------------------------------|
-| input       | 输入内容时触发     | text: 输入的字符                  |
-| delete      | 删除内容时触发     | -                                 |
-| close       | 关闭键盘时触发     | -                                 |
-| update:show      | 可见状态改变时触发 | show: 当前可见状态              |
-| update:modelValue | 值改变时触发      | value: 当前值                     |
-| update:carLang    | 车牌语言改变时触发 | lang: 当前语言('zh'或'en')        |
+| 事件名               | 说明        | 回调参数                  |
+|-------------------|-----------|-----------------------|
+| input             | 输入内容时触发   | text: 输入的字符           |
+| delete            | 删除内容时触发   | -                     |
+| close             | 关闭键盘时触发   | -                     |
+| update:show       | 可见状态改变时触发 | show: 当前可见状态          |
+| update:modelValue | 值改变时触发    | value: 当前值            |
+| update:carLang    | 车牌语言改变时触发 | lang: 当前语言('zh'或'en') |
 
 ### Keyboard Slots
 
-| 插槽名    | 说明           | 接收值 |
-|-----------|----------------|--------|
-| title     | 自定义标题内容 | -      |
+| 插槽名   | 说明      | 接收值 |
+|-------|---------|-----|
+| title | 自定义标题内容 | -   |
 
 
 <demo-model url="pages-design/keyboard/keyboard"></demo-model>

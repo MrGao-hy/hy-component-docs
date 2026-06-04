@@ -1,11 +1,6 @@
 # NumberStep 步进器组件
 > 该组件一般用于商城购物选择物品数量的场景
 
-::: tip 温馨提示
-本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [numberBox组件](https://uiadmin.net/uview-plus/components/numberBox.html) 的代码实现。
-:::
-
 ::: danger 注意
 注意：该输入框只能输入大于或等于0的整数
 :::
@@ -21,17 +16,14 @@
 ```html
 <!-- 全局使用 -->
 <hy-number-step  v-model="value"></hy-number-step>
-<!-- 单个组件引入 -->
-<HyNumberStep  v-model="value"></HyNumberStep>
 ```
 ```ts
-import { HyNumberStep } from "hy-app"
 import { vue } from "vue";
 
 const value = ref(12);
 ```
 
-## 步长设置
+### 步长设置
 - 通过`step`属性设置每次点击增加或减少按钮时变化的值，默认为1，下面示例每次都会加2或者减2
 ```html
 <template>
@@ -39,7 +31,7 @@ const value = ref(12);
 </template>
 ```
 
-## 限制输入范围
+### 限制输入范围
 - `min`-最小值
 - `max`-最大值
 ```html
@@ -48,7 +40,7 @@ const value = ref(12);
 </template>
 ```
 
-## 限制只能输入整数
+### 限制只能输入整数
 - 通过`integer`限制输入类型
 ```html
 <template>
@@ -56,7 +48,7 @@ const value = ref(12);
 </template>
 ```
 
-## 禁用
+### 禁用
 - 通过`disabled`禁用步进器，禁用状态下无法点击加减按钮或修改输入框的值
 - 通过`disabledInput`禁用输入框
 - 通过`disablePlus`禁用增加按钮
@@ -79,7 +71,7 @@ const value = ref(12);
 <hy-number-step :longPress="false"></hy-number-step>
 ```
 
-## 颜色和大小
+### 颜色和大小
 - 通过`button-size`参数设置按钮大小
 - 通过`icon-style`参数设置加减按钮图标的样式
 ```html
@@ -94,7 +86,7 @@ const value = ref(12);
 </template>
 ```
 
-## 自定义插槽
+### 自定义插槽
 ::: code-group
 ```html [vue]
 <template>
@@ -167,6 +159,7 @@ const value = ref(1);
 :::
 
 ## API
+### NumberStep Props
 
 | 参数            | 说明                               | 类型                 | 默认值                     |
 |---------------|----------------------------------|--------------------|-------------------------|
@@ -198,7 +191,7 @@ const value = ref(1);
 | customStyle   | 自定义需要用到的外部样式                     | `CSSProperties`    | -                       |
 | customClass   | 自定义外部类名                          | `string`           | -                       |
 
-## Events
+### Events
 
 | 事件名       | 说明           | 回调参数                  |
 |-----------|--------------|-----------------------|
@@ -209,7 +202,7 @@ const value = ref(1);
 | plus      | 点击增加按钮触发     | value: 数值             |
 | minus     | 点击减少按钮触发     | value: 数值             |
 
-## Slots
+### Slots
 
 | 插槽名   | 说明   | 接收值    |
 |-------|------|--------|

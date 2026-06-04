@@ -1,11 +1,6 @@
 # Input 输入框组件
 > 此组件为一个输入框，利用它可以快速实现表单验证，输入内容，下拉选择等功能。
 
-::: tip 温馨提示
-本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [input组件](https://uiadmin.net/uview-plus/components/input.html) 的代码实现。
-:::
-
 ## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
@@ -27,23 +22,20 @@
     v-model="value"
     @change="change"
 ></hy-input>
-<!-- 单个组件引入 -->
-<HyInput type="primary"  v-model="value"></HyInput>
 ```
 ```ts
-import { HyInput } from "hy-app";
 import { ref } from 'vue';
 
 const value = ref('');
 ```
 
-## 可清空字符
+### 可清空字符
 将`clearable`设置为`true`，会在输入框后方增加一个清空按钮。
 ```html
 <hy-input clearable></hy-input>
 ```
 
-## 输入框的类型
+### 输入框的类型
 - `text`-文本输入键盘。
 - `number`-数字输入键盘，app-vue下可以输入浮点数，app-nvue和小程序平台下只能输入整数。
 - `idcard`-身份证输入键盘，微信、支付宝、百度、QQ小程序。
@@ -57,7 +49,7 @@ const value = ref('');
 <hy-input type="password"></hy-input>
 ```
 
-## 输入框形状
+### 输入框形状
 - 将`shape`设置为`circle`，会得到两边半圆输入框。
 - 将`shape`设置为`square`，会得到方形输入框。
 ```html
@@ -65,7 +57,7 @@ const value = ref('');
 <hy-input shape="square"></hy-input>
 ```
 
-## 输入框边框
+### 输入框边框
 - 通过设置属性`border`为`surround`即可四周边框
 - 通过设置属性`border`为`none`无边框
 - 通过设置属性`border`为`bottom`即可变成一个下划线
@@ -75,7 +67,7 @@ const value = ref('');
 <hy-input border="bottom"></hy-input>
 ```
 
-## 前后图标
+### 前后图标
 - 通过设置`prefixIcon`配置前缀图标可自由设置样式信息。
 - 通过设置`suffixIcon`配置后缀图标可自由设置样式信息。
 ```html
@@ -94,7 +86,7 @@ const value = ref('');
 ></hy-input>
 ```
 
-## 前后插槽
+### 前后插槽
 通过设置`slot`为`prefix`或`suffix`来指定前后插槽,自定义内容或者图标
 ```html
 <template>
@@ -119,6 +111,7 @@ const value = ref('');
 ```
 
 ## API
+### Input Props
 
 | 参数                    | 说明                                                      | 类型                                               | 默认值               |
 |-----------------------|---------------------------------------------------------|--------------------------------------------------|-------------------|
@@ -157,7 +150,7 @@ const value = ref('');
 | customClass           | 自定义外部类名                                                 | `string`                                         | -                 |
 
 
-## Events
+### Events
 | 事件名                  | 说明               | 回调参数      |
 |----------------------|------------------|-----------|
 | blur                 | 输入框失去焦点时触发       | value：内容值 |
@@ -171,7 +164,7 @@ const value = ref('');
 | onSuffix             | 点击后缀触发           | -         |
 
 
-## Slots
+### Slots
 | 插槽名    | 说明      |
 |--------|---------|
 | prefix | 输入框前置内容 |

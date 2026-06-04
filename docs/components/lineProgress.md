@@ -1,11 +1,6 @@
 # LineProgress 线形进度条组件
 > 展示操作或任务的当前进度，比如上传文件，是一个线形的进度条。
 
-::: tip 温馨提示
-本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [lineProgress组件](https://uiadmin.net/uview-plus/components/lineProgress.html) 的代码实现。
-:::
-
 ## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
@@ -24,7 +19,7 @@
 import { HyLineProgress } from "hy-app"
 ```
 
-## 不显示百分比
+### 不显示百分比
 - `show-text`参数配置是否显示进度条内百分值
 ```html
 <template>
@@ -32,7 +27,7 @@ import { HyLineProgress } from "hy-app"
 </template>
 ```
 
-## 自定义高度
+### 自定义高度
 - `height`进度条高度
 ```html
 <template>
@@ -40,7 +35,7 @@ import { HyLineProgress } from "hy-app"
 </template>
 ```
 
-## 自定义样式
+### 自定义样式
 
 ```html
 <template>
@@ -48,7 +43,7 @@ import { HyLineProgress } from "hy-app"
 </template>
 ```
 
-## 手动加减
+### 手动加减
 - 通过控制`percentage`参数数值达到增减
 
 ```html
@@ -79,6 +74,7 @@ import { HyLineProgress } from "hy-app"
 ```
 
 ## API
+### LineProgress Props
 
 | 参数            | 说明              | 类型                   | 默认值  |
 |---------------|-----------------|----------------------|------|
@@ -92,7 +88,7 @@ import { HyLineProgress } from "hy-app"
 | customClass   | 自定义外部类名         | `string`             | -    |
 
 
-## Slots
+### Slots
 
 | 插槽名     | 说明                       | 接收值 |
 |---------|--------------------------|-----|

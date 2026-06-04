@@ -1,11 +1,6 @@
 # Popover 气泡组件
 > 常用于展示提示信息。
 
-::: tip 温馨提示
-本项目参考了 Wot-UI 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 Wot-UI 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考Wot-UI的 [popover组件](https://wot-design-uni.cn/component/popover.html) 的代码实现。
-:::
-
 ## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
@@ -21,16 +16,9 @@
 <hy-popover content="我是提示信息">
     <hy-button type="primary" :stop="false">按钮</hy-button>
 </hy-popover>
-<!-- 单个组件引入 -->
-<HyPopover content="我是提示信息">
-    <HyButton type="primary" :stop="false">按钮</HyButton>
-</HyPopover>
-```
-```ts
-import { HyButton, HyPopover } from "hy-app"
 ```
 
-## popover 的出现位置
+### popover 的出现位置
 - 通过设置`placement`来实现气泡位置
   - `top`气泡在上面中间位置
   - `top-start`气泡在上面左边位置
@@ -52,7 +40,7 @@ import { HyButton, HyPopover } from "hy-app"
 </template>
 ```
 
-## 设置模式
+### 设置模式
 :::tip 提示
 普通模式的时候`content`必须设置为字符串，菜单模式时候`content`必须设置为数组形式
 :::
@@ -91,7 +79,7 @@ import { HyButton, HyPopover } from "hy-app"
 </script>
 ```
 
-## 气泡位置
+### 气泡位置
 - 通过设置`offset`来控制位置
 ```html
 <template>
@@ -101,7 +89,7 @@ import { HyButton, HyPopover } from "hy-app"
 </template>
 ```
 
-## 插槽
+### 插槽
 ::: warn 提示
 在使用自定义插槽内容时候,需要给最外层元素加上`width`和`background`和`z-index`和`position`属性，
 防止有角标样式问题
@@ -131,7 +119,7 @@ import { HyButton, HyPopover } from "hy-app"
 }
 ```
 
-## 页面上关闭气泡弹窗
+### 页面上关闭气泡弹窗
 ```html
 <template>
     <view style="height: 800px; width: 300px" @tap="closeOutside">
@@ -148,6 +136,7 @@ const { closeOutside } = useQueue()
 ```
 
 ## API
+### Popover Props
 
 | 参数        | 说明                | 类型                  | 默认值    |
 |-----------|-------------------|---------------------|--------|
@@ -158,14 +147,14 @@ const { closeOutside } = useQueue()
 | disabled  | popover 是否可用      | `boolean`           | false  |
 | offset    | 出现位置的偏移量          | `number`            | 0      |
 
-## Methods
+### Methods
 
 | 事件名   | 说明         | 回调参数 |
 |-------|------------|------|
 | open  | 打开文字提示弹框事件 | -    |
 | close | 关闭文字提示弹框事件 | -    |
 
-## Slots
+### Slots
 
 | 插槽名     | 说明        | 接收值 |
 |---------|-----------|-----|

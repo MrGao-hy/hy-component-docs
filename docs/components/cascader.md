@@ -1,4 +1,4 @@
-# Cascader 级联选择器
+# Cascader 级联选择器 <Badge type="tip">^0.7.0</Badge>
 > 级联选择器用于多层级数据的选择，支持静态数据和异步加载两种模式。
 
 ## :pushpin:平台差异说明

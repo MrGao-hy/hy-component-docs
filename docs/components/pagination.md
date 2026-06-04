@@ -1,11 +1,6 @@
 # Pagination 分页组件
 > 当数据量过多时，使用分页分解数据。
 
-::: tip 温馨提示
-本项目参考了 Wot-UI 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 Wot-UI 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考Wot-UI的 [pagination组件](https://wot-design-uni.cn/component/pagination.html) 的代码实现。
-:::
-
 ## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
@@ -17,17 +12,14 @@
 ```html
 <!-- 全局使用 -->
 <hy-pagination v-model="value" :total="999"></hy-pagination>
-<!-- 单个组件引入 -->
-<HyPagination v-model="value" :total="999"></HyPagination>
 ```
 ```ts
-import { HyPagination } from "hy-app";
 import { ref } from "vue";
 
 const value = ref<number>(1)
 ```
 
-## 显示图标
+### 显示图标
 - 通过设置`show-icon`，将分页导航展示为Icon图标
 ```html
 <template>
@@ -35,7 +27,7 @@ const value = ref<number>(1)
 </template>
 ```
 
-## 文字提示
+### 文字提示
 - 通过设置`show-message`，展示文字提示
 ```html
 <template>
@@ -43,7 +35,7 @@ const value = ref<number>(1)
 </template>
 ```
 
-## 一页展示数
+### 一页展示数
 - 通过设置`pageSize`，显示一页展示数量
 ```html
 <template>
@@ -51,7 +43,7 @@ const value = ref<number>(1)
 </template>
 ```
 
-## 设置展示文字
+### 设置展示文字
 - 通过设置`prevText`，显示上一页按钮文本
 - 通过设置`nextText`，显示下一页按钮文本
 ```html
@@ -61,6 +53,7 @@ const value = ref<number>(1)
 ```
 
 ## API
+### Pagination Props
 
 | 参数            | 说明                          | 类型              | 默认值   |
 |---------------|-----------------------------|-----------------|-------|
@@ -76,7 +69,7 @@ const value = ref<number>(1)
 | customStyle   | 自定义需要用到的外部样式                | `CSSProperties` | -     |
 | customClass   | 自定义外部类名                     | `string`        | -     |
 
-## Events
+### Events
 
 | 事件名    | 说明    | 回调参数             |
 |--------|-------|------------------|

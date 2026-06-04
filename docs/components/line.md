@@ -1,11 +1,6 @@
 # Line 线条组件
 > 此组件一般用于显示一根线条，用于分隔内容块，有横向和竖向两种模式，且能设置0.5px线条，使用也很简单。
 
-::: tip 温馨提示
-本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [line组件](https://uiadmin.net/uview-plus/components/line.html) 的代码实现。
-:::
-
 ## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
@@ -17,21 +12,16 @@
 ```html
 <!-- 全局使用 -->
 <hy-line></hy-line>
-<!-- 单个组件引入 -->
-<HyLine></HyLine>
-```
-```ts
-import { HyLine } from "hy-app"
 ```
 
-## 自定义颜色
+### 自定义颜色
 ```html
 <template>
     <hy-line color="#2979ff"></hy-line>
 </template>
 ```
 
-## 自定义线条方向
+### 自定义线条方向
 ::: tip 温馨提示
 在设置线为竖直时候要么父元素有固定宽度，否则需要给length设置值，解决不显示问题
 :::
@@ -44,21 +34,21 @@ import { HyLine } from "hy-app"
 </template>
 ```
 
-## 自定义线条长度
+### 自定义线条长度
 ```html
 <template>
     <hy-line length="50%"></hy-line>
 </template>
 ```
 
-## 虚线
+### 虚线
 ```html
 <template>
     <hy-line dashed color="red"></hy-line>
 </template>
 ```
 
-## 线的粗细
+### 线的粗细
 ```html
 <template>
     <!--细线-->
@@ -69,6 +59,7 @@ import { HyLine } from "hy-app"
 ```
 
 ## API
+### Line Props
 
 | 参数          | 说明                                               | 类型                 | 默认值   |
 |-------------|--------------------------------------------------|--------------------|-------|

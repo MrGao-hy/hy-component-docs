@@ -97,7 +97,7 @@ const handleScroll = (index) => {
 </style>
 ```
 
-## 隐藏提示框
+### 隐藏提示框
 
 ```html
 <hy-index-bar 
@@ -107,7 +107,7 @@ const handleScroll = (index) => {
 />
 ```
 
-## 自定义样式
+### 自定义样式
 
 ```html
 <hy-index-bar 
@@ -124,7 +124,7 @@ const handleScroll = (index) => {
 />
 ```
 
-## 索引列表数据格式
+### 索引列表数据格式
 
 支持两种数据格式：
 
@@ -144,7 +144,7 @@ const indexList = ref([
 ])
 ```
 
-## 完整代码
+### 完整代码
 
 :::code-group
 ```vue [vue]
@@ -328,6 +328,7 @@ const scrollToSection = async (i: string) => {
 :::
 
 ## API
+### IndexBar Props
 
 | 参数                 | 说明                       | 类型                                 | 默认值         |
 |--------------------|--------------------------|------------------------------------|-------------|
@@ -345,7 +346,7 @@ const scrollToSection = async (i: string) => {
 | customStyle        | 自定义需要用到的外部样式             | `CSSProperties`                    | -           |
 | customClass        | 自定义外部类名                  | `string`                           | -           |
 
-## Events
+### Events
 
 | 事件名    | 说明       | 回调参数                                            |
 |--------|----------|-------------------------------------------------|
