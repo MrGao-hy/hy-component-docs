@@ -1,11 +1,6 @@
 # Warn 警告提示组件
 > 警告提示，展现需要关注的信息。
 
-::: tip 温馨提示
-本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [alert组件](https://uiadmin.net/uview-plus/components/alert.html) 的代码实现。
-:::
-
 ## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
@@ -16,15 +11,10 @@
 
 ```html
 <!-- 全局使用 -->
-<hy-warn text="月落"></hy-warn>
-<!-- 单个组件引入 -->
-<HyWarn type="primary">按钮</HyWarn>
-```
-```ts
-import { HyWarn } from "hy-app"
+<hy-warn text="月落乌啼霜满天"></hy-warn>
 ```
 
-## 基本使用示例
+### 主题配置
 - 通过`showIcon`设置是否显示图标，作用是让信息类型更加醒目。
 ::: tip 注意 
 当前版本图标为华悦内置图标，根据`type`参数显示不同的图标，无法自定义。
@@ -38,7 +28,7 @@ import { HyWarn } from "hy-app"
 </template>
 ```
 
-## 可关闭的警告提示
+### 可关闭的警告提示
 - `closable`参数配置是否可关闭
 ```html
 <template>
@@ -46,7 +36,7 @@ import { HyWarn } from "hy-app"
 </template>
 ```
 
-## 背景色深色或者浅色
+### 背景色深色或者浅色
 
 ```html
 <template>
@@ -58,6 +48,7 @@ import { HyWarn } from "hy-app"
 ```
 
 ## API
+### Warn Props
 
 | 参数          | 说明                          | 类型                                                | 默认值     |
 |-------------|-----------------------------|---------------------------------------------------|---------|
@@ -70,7 +61,7 @@ import { HyWarn } from "hy-app"
 | center      | 文字是否居中                      | `boolean`                                         | false   |
 | fontSize    | 字体大小                        | `string` \| `number`                              | 14      |
 
-## Events
+### Events
 
 | 事件名   | 说明      | 回调参数 |
 |-------|---------|------|

@@ -1,11 +1,6 @@
 # Text 文本组件
 > 此组件集成了文本类在项目中的常用功能，包括状态，拨打电话，格式化日期，*替换，超链接...等功能。 您大可不必在使用特殊文本时自己定义，text组件几乎涵盖您能使用的大部分场景。
 
-::: tip 温馨提示
-本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [text组件](https://uiadmin.net/uview-plus/components/text.html) 的代码实现。
-:::
-
 ## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
@@ -17,14 +12,9 @@
 ```html
 <!-- 全局使用 -->
 <hy-text text="我用十年青春,赴你最后之约"></hy-text>
-<!-- 单个组件引入 -->
-<HyText text="我用十年青春,赴你最后之约"></HyText>
-```
-```ts
-import { HyText } from "hy-app"
 ```
 
-## 主题色
+### 主题色
 - 通过设置`type`来设置文本主题色
   - `primary`默认
   - `error`失败
@@ -43,7 +33,7 @@ import { HyText } from "hy-app"
 </template>
 ```
 
-## 手机号
+### 手机号
 - 通过设置`mode`为`phone`设置手机号，可以点击拨打电话
 - 通过设置`format`为`encrypt`中间四位设置星号
 - 通过设置`call`来设置点击拨打电话号码
@@ -54,7 +44,7 @@ import { HyText } from "hy-app"
 </template>
 ```
 
-## 日期格式化
+### 日期格式化
 - 通过设置`mode`为`date`设置日期格式化
 ```html
 <template>
@@ -62,7 +52,7 @@ import { HyText } from "hy-app"
 </template>
 ```
 
-## 姓名脱敏
+### 姓名脱敏
 - 通过设置`mode`为`name`设置名称
 - 通过设置`format`为`encrypt`中间文字会变成星号
 ```html
@@ -73,7 +63,7 @@ import { HyText } from "hy-app"
 </template>
 ```
 
-## 超链接
+### 超链接
 - 通过设置`mode`为`link`设置超链接，点击可以跳转
 ```html
 <template>
@@ -81,7 +71,7 @@ import { HyText } from "hy-app"
 </template>
 ```
 
-## 显示金额
+### 显示金额
 - 通过设置`mode`为`price`设置金额
 ```html
 <template>
@@ -89,7 +79,7 @@ import { HyText } from "hy-app"
 </template>
 ```
 
-## 显示图标
+### 显示图标
 - 通过设置`prefixIcon`设置文本前缀图标
 - 通过设置`suffixIcon`设置文本后缀图标
 ```html
@@ -103,7 +93,7 @@ import { HyText } from "hy-app"
 </template>
 ```
 
-## 超出两行隐藏
+### 超出两行隐藏
 - 通过设置`lines`为几，文本超出几行就会出现省略号
 ```html
 <template>
@@ -114,7 +104,7 @@ import { HyText } from "hy-app"
 </template>
 ```
 
-## 小程序开放能力
+### 小程序开放能力
 - 通过设置`openType`设置微信小程序分享功能
 ```html
 <template>
@@ -128,6 +118,7 @@ import { HyText } from "hy-app"
 ```
 
 ## API
+### Text Props
 
 | 参数          | 说明                         | 类型                                                | 默认值                  |
 |-------------|----------------------------|---------------------------------------------------|----------------------|
@@ -155,7 +146,7 @@ import { HyText } from "hy-app"
 | flex        | 是否占满剩余空间                   | `boolean`                                         | true                 |
 | customStyle | 定义需要用到的外部样式                | `CSSProperties`                                   | -                    |
 
-## Events
+### Events
 
 | 事件名   | 说明     | 回调参数 |
 |-------|--------|------|

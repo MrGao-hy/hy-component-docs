@@ -2,10 +2,6 @@
 > 这是一个瀑布流形式的组件，内容分为左右两列，结合uview的懒加载组件效果更佳。
 > 相较于某些只是奇偶数左右分别，或者没有利用vue作用域插槽的做法，uView的瀑布流实现了真正的 组件化，搭配LazyLoad 懒加载和loadMore 加载更多组件，让您开箱即用，眼前一亮。
 
-::: tip 温馨提示
-本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [waterfall组件](https://uiadmin.net/uview-plus/components/waterfall.html) 的代码实现。
-:::
 ::: warning 提示
 由于右侧的演示是通过iframe标签引入的，缺少了手机端运行的相关API，或者因为演示区域太小，或者电脑分别率不够高 ，导致演示可能会有问题，手机端有不会这些问题，请在右上角的"演示"中用手机扫码查看对应的效果。
 :::
@@ -21,16 +17,14 @@
 ```html
 <!-- 全局使用 -->
 <hy-waterfall v-model="flowList"></hy-waterfall>
-<!-- 单个组件引入 -->
-<HyWaterfall v-model="flowList"></HyWaterfall>
 ```
 ```ts
-import { HyWaterfall } from "hy-app"
+const flowList = [...]
 ```
 
-## 完整应用示例
+### 完整应用示例
 :::code-group
-```vue
+```html
 <template>
   <view class="waterfall">
     <hy-waterfall v-model="flowList" ref="waterfallRef">
@@ -328,6 +322,7 @@ export default [
 
 
 ## API
+### Waterfall Props
 
 | 参数      | 说明                  | 类型       | 默认值 |
 |---------|---------------------|----------|-----|
@@ -335,14 +330,14 @@ export default [
 | addTime | 单条数据添加到队列的时间间隔，单位ms | `number` | 200 |
 | idKey   | 数据的唯一值的键名           | `string` | id  |
 
-## Methods
+### Methods
 
 | 事件名    | 说明     | 传参                |
 |--------|--------|-------------------|
 | clear  | 清空列表数据 | -                 |
 | remove | 删除某条数据 | id:唯一值，需要和idKey一致 |
 
-## Slots
+### Slots
 
 | 插槽名   | 说明     | 接收值 |
 |-------|--------|-----|

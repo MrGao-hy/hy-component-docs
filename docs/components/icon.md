@@ -28,9 +28,9 @@
 ```html
 <view class="hy-flex">
   <hy-icon
-          name="https://q9.itc.cn/q_70/images03/20250211/6ee1b8e0f4704083ba715986c8c3795f.jpeg"
-          size="80"
-          round="5px"
+    name="https://q9.itc.cn/q_70/images03/20250211/6ee1b8e0f4704083ba715986c8c3795f.jpeg"
+    size="80"
+    round="5px"
   />
 </view>
 ```

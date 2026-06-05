@@ -1,11 +1,6 @@
 # Watermark 水印组件
 > 在页面或组件上添加指定的图片或文字，可用于版权保护、品牌宣传等场景。
 
-::: tip 温馨提示
-本项目参考了 Wot-UI 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 Wot-UI 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考Wot-UI的 [watermark组件](https://wot-design-uni.cn/component/watermark.html) 的代码实现。
-:::
-
 ## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
@@ -17,14 +12,9 @@
 ```html
 <!-- 全局使用 -->
 <hy-watermark content="华玥组件库"></hy-watermark>
-<!-- 单个组件引入 -->
-<HyWatermark content="华玥组件库"></HyWatermark>
-```
-```ts
-import { HyWatermark } from "hy-app"
 ```
 
-## 图片水印
+### 图片水印
 - 通过设置`image`,设置网络图片地址或Base64图片
 - `image-width`：水印图片宽度
 - `image-height`：水印图片高度
@@ -37,7 +27,7 @@ import { HyWatermark } from "hy-app"
 </template>
 ```
 
-## 局部水印
+### 局部水印
 - 通过设置`full-screen`,设置是否为全屏水印(`full-screen`为false则局部水印)。
 ```html
 <template>
@@ -45,7 +35,7 @@ import { HyWatermark } from "hy-app"
 </template>
 ```
 
-## 自定义层级和透明度
+### 自定义层级和透明度
 - 通过设置`image`,设置网络图片地址或Base64图片, 通过image-width和image-height字段设置水印图片的宽高。
 ```html
 <template>
@@ -53,7 +43,7 @@ import { HyWatermark } from "hy-app"
 </template>
 ```
 
-## 水印的间隔距离
+### 水印的间隔距离
 - 通过设置`gutterX`,设置x轴间隔距离。
 - 通过设置`gutterY`,设置y轴间隔距离。
 ```html
@@ -62,7 +52,7 @@ import { HyWatermark } from "hy-app"
 </template>
 ```
 
-## 画布宽度
+### 画布宽度
 - 通过设置`width`,设置单个水印画布宽度。
 - 通过设置`height`,设置单个水印画布高度。
 ```html
@@ -71,7 +61,7 @@ import { HyWatermark } from "hy-app"
 </template>
 ```
 
-## 水印字体设置
+### 水印字体设置
 - 通过设置`color`,设置水印字体颜色。
 - 通过设置`size`,设置水印字体大小。
 - 通过设置`fontStyle`,设置水印字体样式。
@@ -83,7 +73,7 @@ import { HyWatermark } from "hy-app"
 </template>
 ```
 
-## 水印旋转角度
+### 水印旋转角度
 - 通过设置`rotate`,设置水印旋转角度。
 ```html
 <template>
@@ -91,7 +81,7 @@ import { HyWatermark } from "hy-app"
 </template>
 ```
 
-## 水印透明度
+### 水印透明度
 - 通过设置`opacity`,设置水印旋转角度。
 ```html
 <template>
@@ -99,7 +89,7 @@ import { HyWatermark } from "hy-app"
 </template>
 ```
 
-## 防删除 <Badge>^0.6.4</Badge>
+### 防删除 <Badge>^0.6.4</Badge>
 - 通过设置`isAntiTheft`,防止水印图片被删除被篡改。
 ```html
 <template>
@@ -108,6 +98,7 @@ import { HyWatermark } from "hy-app"
 ```
 
 ## API
+### Watermark Props
 
 | 参数                  | 说明                    | 类型                            | 默认值         |
 |---------------------|-----------------------|-------------------------------|-------------|

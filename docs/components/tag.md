@@ -1,11 +1,6 @@
 # Tag 标签组件
 > tag组件一般用于标记和选择，我们提供了更加丰富的表现形式，能够较全面的涵盖您的使用场景
 
-::: tip 温馨提示
-本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [button组件](https://uiadmin.net/uview-plus/components/button.html) 的代码实现。
-:::
-
 ## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
@@ -17,14 +12,9 @@
 ```html
 <!-- 全局使用 -->
 <hy-tag text="标签"></hy-tag>
-<!-- 单个组件引入 -->
-<HyTag text="标签"></HyTag>
-```
-```ts
-import { HyTag } from "hy-app"
 ```
 
-## 主题色
+### 主题色
 - 通过设置`type`配置主题色
   - `primary`：信息标签（默认）
   - `success`：主要标签
@@ -46,7 +36,7 @@ import { HyTag } from "hy-app"
 </template>
 ```
 
-## 镂空标签
+### 镂空标签
 - 通过设置`plain`设置镂空背景色
 ```html
 <template>
@@ -62,7 +52,7 @@ import { HyTag } from "hy-app"
 </template>
 ```
 
-## 镂空带背景色
+### 镂空带背景色
 - 通过设置`plainFill`给背景色半透明
 ```html
 <template>
@@ -78,7 +68,7 @@ import { HyTag } from "hy-app"
 </template>
 ```
 
-## 镂空带背景色不带边框
+### 镂空带背景色不带边框
 - 通过`borderColor`属性设置边框颜色
 ```html
 <template>
@@ -98,7 +88,7 @@ import { HyTag } from "hy-app"
 ```
 
 
-## 标签形状
+### 标签形状
 - 通过设置`shape`设置标签形状
   - `circle`: 半圆形
   - `square`: 方形
@@ -111,7 +101,7 @@ import { HyTag } from "hy-app"
 </template>
 ```
 
-## 可关闭标签
+### 可关闭标签
 - 通过配置`closable`在右上角提供了删除标签的图标
 ```html
 <template>
@@ -125,7 +115,7 @@ import { HyTag } from "hy-app"
 </script>
 ```
 
-## 标签大小设置
+### 标签大小设置
 - `size`属性为您提供了三种规格的标签大小，默认中等。
   - `large`: 大标签
   - `medium`: 中标签
@@ -140,7 +130,7 @@ import { HyTag } from "hy-app"
 </template>
 ```
 
-## 标签前缀图标
+### 标签前缀图标
 ```html
 <template>
     <hy-tag text="地址" :icon="IconConfig.MAP"></hy-tag>
@@ -153,6 +143,7 @@ import { HyTag } from "hy-app"
 ```
 
 ## API
+### Tag Props
 
 | 参数          | 说明                          | 类型                                               | 默认值     |
 |-------------|-----------------------------|--------------------------------------------------|---------|
@@ -174,7 +165,7 @@ import { HyTag } from "hy-app"
 | customStyle | 定义需要用到的外部样式                 | `CSSProperties`                                  | -       |
 | customClass | 自定义外部类名                     | `CSSProperties`                                  | -       |
 
-## Events
+### Events
 
 | 事件名   | 说明                        | 回调参数                         |
 |-------|---------------------------|------------------------------|

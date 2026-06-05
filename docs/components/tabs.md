@@ -1,11 +1,6 @@
 # Tabs 标签组件
 > 该组件，是一个tabs标签组件，在标签多的时候，可以配置为左右滑动，标签少的时候，可以禁止滑动。 该组件的一个特点是配置为滚动模式时，激活的tab会自动移动到组件的中间位置。
 
-::: tip 温馨提示
-本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [tabs组件](https://uiadmin.net/uview-plus/components/tabs.html) 的代码实现。
-:::
-
 ## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
@@ -17,16 +12,13 @@
 ```html
 <!-- 全局使用 -->
 <hy-tabs :list="list"></hy-tabs>
-<!-- 单个组件引入 -->
-<HyTabs :list="list"></HyTabs>
 ```
 ```ts
-import { HyTabs } from "hy-app"
 
 const list = [{ name: "全部" }, { name: "未核销" }, { name: "已核销" }];
 ```
 
-## 显示徽标
+### 显示徽标
 - 通过`badge`设置徽标属性，可以直接参考[hy-badge](./badge.md)组件属性配置
 ```html
 <template>
@@ -37,7 +29,7 @@ const list = [{ name: "全部" }, { name: "未核销" }, { name: "已核销" }];
 </script>
 ```
 
-## 自定义读取键
+### 自定义读取键
 - 通过`keyName`自定义需要显示的值
 ```html
 <template>
@@ -48,7 +40,7 @@ const list = [{ name: "全部" }, { name: "未核销" }, { name: "已核销" }];
 </script>
 ```
 
-## 轮播图插槽自定义内容
+### 轮播图插槽自定义内容
 
 ```html
 <template>
@@ -72,7 +64,7 @@ const list = [{ name: "全部" }, { name: "未核销" }, { name: "已核销" }];
 </script>
 ```
 
-## 自定义轮播图
+### 自定义轮播图
 
 ```html
 <template>
@@ -97,11 +89,12 @@ const list = [{ name: "全部" }, { name: "未核销" }, { name: "已核销" }];
 ```
 
 ## API
+### Tabs Props
 
 | 参数            | 说明                                          | 类型                 | 默认值               |
 |---------------|---------------------------------------------|--------------------|-------------------|
 | current       | 当前选中标签的索引                                   | `number`           | 0                 |
-| list          | 选项卡数组                                       | `array`            | -                 |
+| list          | 选项卡数组                                       | `TabsItemVo[]`     | -                 |
 | keyName       | 从list元素对象中读取的键名                             | `string`           | name              |
 | duration      | 滑块移动一次所需的时间，单位 ms                           | `number`           | 300               |
 | scrollable    | 菜单是否可滚动                                     | `boolean`          | false             |
@@ -119,33 +112,49 @@ const list = [{ name: "全部" }, { name: "未核销" }, { name: "已核销" }];
 | customStyle   | 定义需要用到的外部样式                                 | `CSSProperties`    | -                 |
 | customClass   | 自定义外部类名                                     | `string`           | -                 |
 
-## list
 
-| 参数       | 说明                   | 类型           | 默认值 |
-|----------|----------------------|--------------|-----|
-| name     | tab名称,可通过keyName自定义掉 | `string`     | -   |
-| badge    | 徽标接收的props           | `BadgeProps` | -   |
-| disabled | 是否禁用                 | `boolean`    | -   |
-| content  | swiper内容值（任意类型）      | `any`        | -   |
+### Events
 
+| 事件名       | 说明        | 回调参数                           |
+|-----------|-----------|--------------------------------|
+| click     | 点击标签时触发   | item: TabsItemVo, index: 标签索引值 |
+| longPress | 长按标签时触发   | item: TabsItemVo, index: 标签索引值 |
+| change    | 标签索引改变时触发 | item: TabsItemVo, index: 标签索引值 |
 
-## Events
+### Slots
 
-| 事件名       | 说明        | 回调参数                       |
-|-----------|-----------|----------------------------|
-| click     | 点击标签时触发   | item: 传入的其他值, index: 标签索引值 |
-| longPress | 长按标签时触发   | item: 传入的其他值, index: 标签索引值 |
-| change    | 标签索引改变时触发 | item: 传入的其他值, index: 标签索引值 |
+| 插槽名     | 说明             | 接收值                           |
+|---------|----------------|-------------------------------|
+| default | 轮播图自定义content值 | record: TabsItemVo, index: 索引 |
+| left    | 整体左侧插槽         | -                             |
+| icon    | tabs的图标        | record: TabsItemVo, index: 索引 |
+| content | tabs的内容        | record: TabsItemVo, index: 索引 |
+| right   | 整体右侧插槽         | -                             |
+| main    | 自定义掉底部轮播图      | -                             |
 
-## Slots
-
-| 插槽名     | 说明             | 接收值                       |
-|---------|----------------|---------------------------|
-| default | 轮播图自定义content值 | record: item内容, index: 索引 |
-| left    | 整体左侧插槽         | -                         |
-| icon    | tabs的图标        | record: item内容, index: 索引 |
-| content | tabs的内容        | record: item内容, index: 索引 |
-| right   | 整体右侧插槽         | -                         |
-| main    | 自定义掉底部轮播图      | -                         |
+### Typings
+:::details
+```ts
+export interface TabsItemVo {
+    /**
+     * tab名称
+     * */
+    name: string
+    /**
+     * 徽标接收的props
+     * */
+    badge?: HyBadgeProps
+    /**
+     * 是否禁用
+     * */
+    disabled?: boolean
+    /**
+     * swiper内容值
+     * */
+    content?: any
+    [key: string]: any
+}
+```
+:::
 
 <demo-model url="pages-design/tabs/tabs"></demo-model>
