@@ -10,7 +10,7 @@
 
 ## :warning:注意事项
 
-:::warning
+:::warning 注意事项
 - `list` 属性支持三种形式：字符串数组、数字数组、对象数组
 - 对象数组项默认使用 `name` 和 `value` 字段，可通过 `customKeys` 自定义
 - `mode` 为 `button` 时背景颜色 `bgColor` 有效，`mode` 为 `subsection` 时无效

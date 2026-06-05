@@ -10,9 +10,11 @@
 
 ## :warning:注意事项
 
+:::warning 注意事项
 - `duration` 为 0 时，消息提示不会自动消失，需要手动调用 `close` 方法关闭
 - H5 端默认会自动留出导航栏高度（44px），其他平台不受影响
 - `safeAreaInsetTop` 设置为 true 时会自动留出顶部状态栏高度
+:::
 
 ## :japanese_castle:基本使用示例
 

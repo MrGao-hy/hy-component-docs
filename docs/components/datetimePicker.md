@@ -13,11 +13,13 @@
 
 ## :warning:注意事项
 
+:::warning 注意事项
 - `minDate` 和 `maxDate` 参数需要传入时间戳（毫秒），而非日期字符串
 - 微信小程序不支持通过props传递函数参数，`formatter` 需要通过 `setFormatter` 方法设置
 - `hasInput` 设置为 `true` 时，组件会自带输入框，点击输入框可打开选择器
 - `mode` 支持多种格式，详见下方说明
 - `minHour`、`maxHour`、`minMinute`、`maxMinute` 仅在 `mode=time` 时有效
+:::
 
 ## :japanese_castle:基本使用示例
 

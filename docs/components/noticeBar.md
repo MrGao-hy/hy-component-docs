@@ -10,10 +10,12 @@
 
 ## :warning:注意事项
 
+:::warning 注意事项
 - `text` 参数支持字符串或数组形式，轮播滚动时建议使用数组
 - `url` 和 `mode="link"` 必须同时设置才能实现页面跳转
 - `step` 属性仅在 `direction="row"` 时生效，启用步进形式滚动
 - `disableTouch` 属性目前仅支持 App 2.5.5+、H5 2.5.5+、支付宝小程序、字节跳动小程序
+:::
 
 ## :japanese_castle:基本使用示例
 

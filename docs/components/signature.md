@@ -9,7 +9,9 @@
 
 ## :warning:注意事项
 
+:::warning 注意事项
 - 如果遇到导出图片不清晰，可以将 exportScale 设置为 2 以上。
+:::
 
 ## :japanese_castle:基本使用示例
 ```html

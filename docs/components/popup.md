@@ -10,11 +10,13 @@
 
 ## :warning:注意事项
 
+:::warning 注意事项
 - 组件只提供弹出层容器，内部内容需要用户自定义
 - `mode="center"` 时，默认开启缩放动画，可以通过 `zoom` 属性关闭
 - `round` 属性仅对 `mode="top"`、`mode="bottom"`、`mode="center"` 生效
 - `closeOnClickOverlay` 设置为 `true` 时，点击遮罩只会触发 `close` 事件，不会自动隐藏弹窗，需要在事件回调中手动处理
 - `closeIconPos` 目前仅支持 `top-left` 和 `top-right` 两个位置
+:::
 
 ## :japanese_castle:基本使用示例
 

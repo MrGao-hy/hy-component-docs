@@ -9,9 +9,11 @@
 
 ## :warning:注意事项
 
+:::warning 注意事项
 - `closeOnClickOverlay` 开启后，点击遮罩只会触发 `close` 事件，不会自动关闭模态框，需要自行处理关闭逻辑
 - `asyncClose` 和 `asyncCancelClose` 属性在当前实现中已通过 `loading` 和 `autoClose` 属性替代
 - 当传入自定义插槽时，`content` 属性将失效
+:::
 
 ## :japanese_castle:基本使用示例
 

@@ -10,8 +10,10 @@
 
 ## :warning:注意事项
 
+:::warning 注意事项
 - `showAction` 为 `true` 时显示右侧控件，点击触发 `confirm` 事件而非 `search` 事件
 - `searchIcon` 支持传入 `false` 隐藏图标，或传入图标配置对象
+:::
 
 ## :japanese_castle:基本使用示例
 

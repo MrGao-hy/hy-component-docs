@@ -9,10 +9,12 @@
 
 ## :warning:注意事项
 
+:::warning 注意事项
 - `disabledKeyboard` 设置为 `true` 时，点击输入框不会唤起系统键盘，适合配合自定义键盘使用
 - `dot` 参数设置为 `true` 时，输入内容会用圆点替代显示，但事件回调会返回真实值
 - `mode` 支持 `box`（盒子模式）和 `line`（底部横线模式）两种模式
 - `disabledDot` 参数控制是否禁止输入小数点，默认为 `true`（禁止输入）
+:::
 
 ## :japanese_castle:基本使用示例
 

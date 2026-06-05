@@ -8,7 +8,7 @@
 | ✔        | ✔  | ✔     | ✔      |
 
 ## :warning:注意事项
-::: warning 注意事项
+:::warning 注意事项
 - `loading` 属性为 `undefined` 或 `true` 时显示骨架屏，为 `false` 时显示插槽内容
 - `rowCol` 属性优先级高于 `theme` 属性，如果设置了 `rowCol`，将忽略 `theme` 的配置
 - 动画效果会增加一定的性能开销，在性能敏感的场景建议关闭动画

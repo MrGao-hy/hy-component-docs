@@ -10,11 +10,13 @@
 
 ## :warning:注意事项
 
+:::warning 注意事项
 - `hasInput` 为 `true` 时，通过点击输入框打开选择器，无需设置 `show` 属性
 - `modelValue` 在单列模式下为字符串或数字，多列模式下为数组
 - 多列联动需要在 `change` 事件中调用 `setColumnValues` 方法更新后续列数据
 - `columns` 参数支持一维数组（单列）或二维数组（多列）
 - `popupMode` 目前仅支持 `bottom` 和 `top` 两种模式
+:::
 
 ## :japanese_castle:基本使用示例
 

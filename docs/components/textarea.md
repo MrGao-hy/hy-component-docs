@@ -9,14 +9,14 @@
 
 ## :warning:注意事项
 
-:::warning
+:::warning 注意事项
 - `modelValue` 用于双向绑定输入框内容
 - `focus` 属性设置自动获取焦点，nvue 不支持，H5 取决于浏览器的实现
 - `formatter` 属性用于输入内容格式化，但微信小程序不支持通过 props 传递函数，需使用 `setFormatter` 方法
 - `border` 属性支持三种类型：`surround`（四周边框）、`bottom`（底部边框）、`none`（无边框）
 - `maxlength` 设置为 `-1` 时不限制最大长度
 - 组件支持 `hy-form` 表单验证，通过 `form-item` 使用
-  :::
+:::
 
 ## :japanese_castle:基本使用示例
 

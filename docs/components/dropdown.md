@@ -10,13 +10,13 @@
 
 ## :warning:注意事项
 
-:::warning
+:::warning 注意事项
 - 该组件必须结合 `hy-dropdown` 和 `hy-dropdown-item` 一起使用
 - `hy-dropdown-item` 必须嵌套在 `hy-dropdown` 内部使用
 - 通过 `v-model` 双向绑定选中项的 `value` 值
 - `menus` 属性传入的数组项必须包含 `label` 和 `value` 字段
 - 点击某个菜单项会自动关闭其他已展开的菜单
-  :::
+:::
 
 ## :japanese_castle:基本使用示例
 

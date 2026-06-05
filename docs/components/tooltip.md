@@ -10,8 +10,7 @@
 
 ## :warning:注意事项
 
-:::warning
-
+:::warning 注意事项
 - 默认使用长按触发（`longpress`），可通过 `triggerMode` 属性设置为点击触发（`click`）
 - 复制功能依赖 `uni.setClipboardData`，需要用户授权剪贴板权限
 - 扩展按钮通过 `buttons` 数组配置，点击后触发 `click` 事件
