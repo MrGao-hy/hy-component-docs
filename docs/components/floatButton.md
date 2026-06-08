@@ -12,11 +12,6 @@
 ```html
 <!-- 全局使用 -->
 <hy-float-button></hy-float-button>
-<!-- 单个组件引入 -->
-<HyFloatButton></HyFloatButton>
-```
-```ts
-import { HyFloatButton } from "hy-app"
 ```
 
 ### 悬浮按钮默认按钮
