@@ -12,11 +12,6 @@
 ```html
 <!-- 全局使用 -->
 <hy-count-to time="3600 * 30 * 1000"></hy-count-to>
-<!-- 单个组件引入 -->
-<HyCountTo  time="3600 * 30 * 1000"></HyButton>
-```
-```ts
-import { HyCountTo } from "hy-app"
 ```
 
 ### 显示小数点
