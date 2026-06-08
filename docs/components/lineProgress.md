@@ -12,11 +12,6 @@
 ```html
 <!-- 全局使用 -->
 <hy-line-progress :percentage="30"></hy-line-progress>
-<!-- 单个组件引入 -->
-<HyLineProgress :percentage="30"></HyLineProgress>
-```
-```ts
-import { HyLineProgress } from "hy-app"
 ```
 
 ### 不显示百分比
