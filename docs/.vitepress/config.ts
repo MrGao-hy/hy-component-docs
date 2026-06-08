@@ -416,10 +416,14 @@ export default defineConfig({
       message: '',
       copyright: '华玥组件库 © 2025-present 备案号：<a href="https://beian.miit.gov.cn/" target="_blank">赣ICP备2024048852号-2</a>'
     },
-      outline: {
-          level: [2, 3],
-          label: '当前页大纲'
-      },
+    outline: {
+      level: [2, 3],
+      label: '当前页大纲'
+    },
+    editLink: {
+      pattern: 'https://github.com/MrGao-hy/hy-component-docs/edit/master/docs/:path',
+      text: '在GitHub编辑当前页'
+    }
   },
   head: [
       ["link", { rel: "icon", href: "/images/hy_logo_light.png" }],
