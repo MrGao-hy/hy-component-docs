@@ -12,8 +12,6 @@
 ```html
 <!-- 全局使用 -->
 <hy-checkbox v-model="value" :columns="columns"></hy-checkbox>
-<!-- 单个组件引入 -->
-<HyCheckobox v-model="value" :columns="columns"></HyCheckobox>
 
 <!-- 分开式组件 -->
 <hy-checkbox-group v-model="value2">
@@ -28,7 +26,6 @@
 </hy-checkbox-group>
 ```
 ```ts
-import { HyCheckobox } from "hy-app";
 import { ref } from "vue";
 
 const columns = [
@@ -50,7 +47,6 @@ const value2 = ref([""]);
 <hy-checkbox v-model="value" :columns="columns" :fieldNames="fieldNames"></hy-checkbox>
 ```
 ```ts
-import { HyCheckobox } from "hy-app";
 import { ref } from "vue";
 
 const columns = [
