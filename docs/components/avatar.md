@@ -61,6 +61,7 @@
 ```html
 <hy-avatar src="xxx" default-url="https://xxx.png"></hy-avatar>
 ```
+:::
 
 ## :japanese_castle:基本使用示例
 
