@@ -1,11 +1,6 @@
 # Avatar 头像组件
 > 本组件一般用于展示头像的地方，如个人中心，或者评论列表页的用户头像展示等场所。
 
-::: tip 温馨提示
-本项目参考了 uView-Plus 开源项目的组件开发方式，基于 Vue 3 和 TypeScript 实现了自定义组件。<br>
-感谢 uView-Plus 开源项目及其团队成员的贡献，他们的组件开发思路为本项目提供了宝贵地参考。如果需要了解更多组件开发细节，可以参考uView-Plus的 [avatar组件](https://uiadmin.net/uview-plus/components/avatar.html) 的代码实现。
-:::
-
 ## :pushpin:平台差异说明
 
 | APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
@@ -13,8 +8,8 @@
 | ✔        | ✔  | ✔     | ✔      |
 
 ## :warning: 注意事项
-
-### 1. 优先级顺序
+:::warning 注意事项
+1. 优先级顺序
 
 头像内容按以下优先级显示：
 
@@ -22,7 +17,7 @@
 插槽 > mpAvatar(小程序头像) > icon(图标) > text(文字) > src(图片)
 ```
 
-### 2. size 参数
+2. size 参数
 
 `size` 支持字符串和数字类型：
 
@@ -37,7 +32,7 @@
 <hy-avatar :size="60"></hy-avatar>
 ```
 
-### 3. randomBgColor 使用
+3. randomBgColor 使用
 
 开启随机背景色后，头像会从预设的20种颜色中随机选择：
 
@@ -51,7 +46,7 @@
 <hy-avatar text="高" random-bg-color :color-index="5"></hy-avatar>
 ```
 
-### 4. 小程序头像
+4. 小程序头像
 
 `mpAvatar` 仅对微信、QQ、百度小程序有效，会自动获取用户头像：
 
@@ -59,7 +54,7 @@
 <hy-avatar mp-avatar></hy-avatar>
 ```
 
-### 5. 默认头像
+5. 默认头像
 
 当 `src` 加载失败时，会显示内置的默认头像（base64 格式），也可通过 `defaultUrl` 自定义：
 

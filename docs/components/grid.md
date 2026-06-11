@@ -14,7 +14,7 @@
 <hy-gird :list="list"></hy-gird>
 ```
 ```ts
-import { HyGrid, IconConfig } from "hy-app"
+import { IconConfig } from "hy-app"
 import { ref } from 'vue';
 
 // 创建响应式数据  

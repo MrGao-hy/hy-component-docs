@@ -16,8 +16,8 @@
 | ✔        | ✔   | ✔          | ✔            |
 
 ## :warning: 注意事项
-
-### 1. v-model 绑定
+:::warning 注意事项
+1. v-model 绑定
 
 组件使用 `v-model` 控制显示/隐藏状态：
 
@@ -29,7 +29,7 @@
 const show = ref(false)
 ```
 
-### 2. actions 与 panels 的区别
+2. actions 与 panels 的区别
 
 | 属性    | 用途         | 显示效果                                       |
 | ------- | ------------ | ---------------------------------------------- |
@@ -38,7 +38,7 @@ const show = ref(false)
 
 **注意：** `actions` 和 `panels` 不能同时使用，优先使用 `actions`。
 
-### 3. panels 数据格式
+3. panels 数据格式
 
 `panels` 支持一维数组和二维数组：
 
@@ -62,7 +62,7 @@ const panels2 = ref([
 ])
 ```
 
-### 4. closeOnClickAction 属性
+4. closeOnClickAction 属性
 
 点击选项后是否自动关闭弹窗，默认 `true`：
 
@@ -71,7 +71,7 @@ const panels2 = ref([
 <hy-action-sheet :actions="actions" :close-on-click-action="false"></hy-action-sheet>
 ```
 
-### 5. select 事件参数
+5. select 事件参数
 
 根据使用 `actions` 或 `panels`，select 事件返回的参数不同：
 
@@ -108,7 +108,7 @@ list = {
 }
 ```
 
-### 6. 样式自定义
+6. 样式自定义
 
 组件支持通过 `customStyle` 和 `customClass` 自定义样式：
 
@@ -120,6 +120,7 @@ list = {
     :custom-style="{ background: '#f5f5f5' }"
 ></hy-action-sheet>
 ```
+:::
 
 ## :japanese_castle:基本使用示例
 

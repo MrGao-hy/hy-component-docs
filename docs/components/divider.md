@@ -11,12 +11,7 @@
 
 ```html
 <!-- 全局使用 -->
-<hy-divider text="月落"></hy-divider>
-<!-- 单个组件引入 -->
-<HyDivider text="月落"></HyDivider>
-```
-```ts
-import { HyDivider } from "hy-app"
+<hy-divider text="分割"></hy-divider>
 ```
 
 ### 设置虚线

@@ -12,11 +12,6 @@
 ```html
 <!-- 全局使用 -->
 <hy-count-down time="3600 * 30 * 1000"></hy-count-down>
-<!-- 单个组件引入 -->
-<HyCountDown  time="3600 * 30 * 1000"></HyButton>
-```
-```ts
-import { HyCountDown } from "hy-app"
 ```
 
 ### 自定义格式

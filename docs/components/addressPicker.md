@@ -19,11 +19,6 @@
 ```html
 <!-- 全局使用 -->
 <hy-address-picker hasInput></hy-address-picker>
-<!-- 单个组件引入 -->
-<HyAddressPicker hasInput></HyButton>
-```
-```ts
-import { HyAddressPicker } from "hy-app"
 ```
 
 ### 通过外部按钮打开

@@ -12,12 +12,9 @@
 ```html
 <!-- 全局使用 -->
 <hy-check-button v-model="value" :columns="columns"></hy-check-button>
-<!-- 单个组件引入 -->
-<HyCheckButton v-model="value" :columns="columns"></HyCheckButton>
 ```
 ```ts
 import { reactive, ref } from "vue";
-import { HyCheckButton } from "hy-app";
 
 const value = ref("");
 const columns = reactive([
