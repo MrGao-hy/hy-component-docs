@@ -57,14 +57,13 @@
         <template #header>
             <view class="hy-folding-panel-item__title">自定义头部</view>
         </template>
-    </template>
     </hy-folding-panel-item>
     <hy-folding-panel-item index="beverage">
         <template #title>
             <view class="hy-folding-panel-item__title">自定义标题</view>
         </template>
     </hy-folding-panel-item>
-</hy-config-provider>
+</hy-folding-panel>
 ```
 
 ## API

@@ -86,6 +86,30 @@ const value = ref(12);
 </template>
 ```
 
+### 隐藏减号
+```html
+<hy-number-step
+        v-model="item.quantity"
+        :min="0"
+        :miniMode="true"
+        input-bg-color="transparent"
+        :plusIcon="{ color: '#ffffff' }"
+        button-radius="50%"
+></hy-number-step>
+```
+```scss
+.hidden {
+  :deep(.hy-number-box__plus) {
+    background-color: red;
+  }
+
+  :deep(.hy-number-box__minus) {
+    border: $hy-border-line;
+    background-color: transparent;
+  }
+}
+```
+
 ### 自定义插槽
 ::: code-group
 ```html [vue]
