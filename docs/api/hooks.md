@@ -1,5 +1,3 @@
-# hooks全局方法
-
 ## useShare 小程序全局配置分享
 
 **useShare()**
@@ -22,25 +20,47 @@
 |----------|----|-------|--------|
 | ❌        | ❌  | ✔     | ✔      |
 
-### 配置小程序分享功能：
-```ts [main.ts]
-import {useShare} from 'hy-app';
-import { createSSRApp } from "vue";
-import App from "./App.vue";
+### 基础用法
 
-export function createApp() {
-    const app = createSSRApp(App);
-    
-    app.mixin(
-        useShare({
-            title: "华玥组件库",
-        }),
-    );
-    
-    return {
-        app,
-    };
+```vue
+<script setup lang="ts">
+import { useShare } from 'hy-app'
+
+const { onShareAppMessage, onShareTimeline } = useShare({
+    title: '华玥组件库',
+    path: '/pages/index/index',
+    friendImageUrl: '/static/share friend.png',
+    timelineImageUrl: '/static/share_timeline.png'
+})
+
+// 在小程序页面中暴露方法
+defineExpose({
+    onShareAppMessage,
+    onShareTimeline
+})
+</script>
+```
+
+### 动态配置
+
+```vue
+<script setup lang="ts">
+import { useShare } from 'hy-app'
+
+const shareConfig = {
+    title: '推荐一个好用的组件库',
+    path: '/pages/goods/detail',
+    friendImageUrl: 'https://example.com/friend.jpg',
+    timelineImageUrl: 'https://example.com/timeline.jpg'
 }
+
+const { onShareAppMessage, onShareTimeline } = useShare(shareConfig)
+
+defineExpose({
+    onShareAppMessage,
+    onShareTimeline
+})
+</script>
 ```
 
 ## useToast 全局提示消息
@@ -69,24 +89,81 @@ toast.loading(); // 加载中
 toast.close(); // 关闭所以提示
 ```
 
-
-### 基础使用
+### 基础用法
 
 ```vue
-
 <template>
-  <hy-toast/>
+    <hy-toast></hy-toast>
+    <hy-button @click="handleSuccess">成功提示</hy-button>
+    <hy-button @click="handleError">错误提示</hy-button>
+    <hy-button @click="handleLoading">加载提示</hy-button>
 </template>
 
 <script setup lang="ts">
-  import {useToast} from "hy-app";
-  import {onMounted} from "vue";
+import { useToast } from 'hy-app'
 
-  const toast = useToast();
+const toast = useToast()
 
-  onMounted(() => {
-    toast.show("消息提示")
-  });
+const handleSuccess = () => {
+    toast.success('操作成功！')
+}
+
+const handleError = () => {
+    toast.error('操作失败，请重试')
+}
+
+const handleLoading = () => {
+    toast.loading('加载中...')
+    // 模拟异步操作
+    setTimeout(() => {
+        toast.close()
+    }, 2000)
+}
+</script>
+```
+
+### 完整示例
+
+```vue
+<template>
+    <hy-toast></hy-toast>
+    <hy-button @click="handleClick">点击提示</hy-button>
+</template>
+
+<script setup lang="ts">
+import { useToast } from 'hy-app'
+
+const toast = useToast()
+
+const handleClick = async () => {
+    try {
+        // 显示加载
+        toast.loading('正在提交...')
+        
+        // 模拟请求
+        await new Promise(resolve => setTimeout(resolve, 1500))
+        
+        // 关闭加载，显示成功
+        toast.close()
+        toast.success('提交成功！')
+    } catch (error) {
+        toast.close()
+        toast.error('提交失败')
+    }
+}
+</script>
+```
+
+### 关闭所有提示
+
+```vue
+<script setup lang="ts">
+  import { useToast } from 'hy-app'
+
+  const toast = useToast()
+
+  // 关闭所有 toast
+  toast.close(true)
 </script>
 ```
 
@@ -140,7 +217,7 @@ message.confirm({
 ```
 
 
-### 基础使用
+### 基础用法
 
 ```vue
 
@@ -354,3 +431,287 @@ const touchEnd = () => {
 }
 </style>
 ```
+
+## useShakeService 摇一摇传感器组合式 API
+
+### 功能介绍
+
+`useShakeService` 是一个基于 Vue 3 Composition API 的摇一摇传感器钩子，用于监听设备加速度传感器实现摇一摇功能。
+
+- 支持启动和停止摇一摇监听
+- 支持自定义摇一摇阈值
+- 基于设备加速度传感器实现
+- 兼容 uni-app 的加速度传感器 API
+
+### 基础用法
+
+```vue
+<template>
+    <view>
+        <hy-button @click="startShake">开始摇一摇</hy-button>
+        <hy-button @click="stopShake">停止摇一摇</hy-button>
+        <view>摇一摇次数: {{ shakeCount }}</view>
+    </view>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+import { useShakeService } from 'hy-app'
+
+const shakeCount = ref(0)
+const { startShakeListener, stopShakeListener } = useShakeService()
+
+const handleShake = () => {
+    shakeCount.value++
+    uni.vibrateShort()
+    uni.showToast({
+        title: '摇一摇成功',
+        icon: 'none'
+    })
+}
+
+const startShake = () => {
+    startShakeListener(handleShake)
+}
+
+const stopShake = () => {
+    stopShakeListener()
+}
+
+// 组件销毁时停止监听
+onUnmounted(() => {
+    stopShakeListener()
+})
+</script>
+```
+
+### 自定义阈值
+
+```vue
+<script setup lang="ts">
+import { useShakeService } from '@/package/libs/composables/useShakeService'
+
+// 阈值越大，需要摇动的幅度越大
+const { startShakeListener, stopShakeListener } = useShakeService(50)
+
+startShakeListener(() => {
+    console.log('剧烈摇动')
+})
+</script>
+```
+
+### 实现摇一摇抽奖
+
+```vue
+<script setup lang="ts">
+import { useShakeService } from '@/package/libs/composables/useShakeService'
+
+const { startShakeListener, stopShakeListener } = useShakeService()
+
+const startLottery = () => {
+    startShakeListener(async () => {
+        // 震动反馈
+        uni.vibrateShort()
+        
+        // 停止监听
+        stopShakeListener()
+        
+        // 执行抽奖逻辑
+        await performLottery()
+    })
+}
+
+const performLottery = async () => {
+    uni.showLoading({ title: '抽奖中...' })
+    // 模拟抽奖请求
+    await new Promise(resolve => setTimeout(resolve, 1500))
+    uni.hideLoading()
+    uni.showModal({
+        title: '恭喜您',
+        content: '抽中一等奖！',
+        showCancel: false
+    })
+}
+</script>
+```
+
+### 注意事项
+
+1. 该功能依赖设备的加速度传感器，部分设备可能不支持
+2. 使用前请确保已在 manifest.json 中配置传感器权限
+3. `stopShakeListener` 应在组件销毁时调用，避免内存泄漏
+4. 摇一摇回调函数有 500ms 的防抖处理
+
+## useTranslate 国际化翻译组合式 API
+
+### 功能介绍
+
+`useTranslate` 是一个基于 Vue 3 Composition API 的国际化翻译钩子，用于在组件或页面中实现多语言切换。
+
+- 支持按模块划分语言包
+- 支持参数替换
+- 支持函数类型翻译值
+- 基于 Vue 3 响应式系统
+
+### 语言包格式
+
+语言包是一个对象，键为翻译 key，值为翻译文本或函数：
+
+```typescript
+// zh-CN.ts
+export default {
+    hello: '你好',
+    welcome: '欢迎 {name}',
+    count: (count: number) => `共 ${count} 条记录`
+}
+
+// en-US.ts
+export default {
+    hello: 'Hello',
+    welcome: 'Welcome {name}',
+    count: (count: number) => `Total ${count} items`
+}
+```
+
+### 基础用法
+
+```vue
+<template>
+    <view>
+        <text>{{ t('hello') }}</text>
+        <text>{{ t('welcome', '华玥') }}</text>
+    </view>
+</template>
+
+<script setup lang="ts">
+import { useTranslate } from 'hy-app'
+
+const { t } = useTranslate('common')
+</script>
+```
+
+### 配合 Locale 使用
+
+```typescript
+// 初始化语言包
+import { Locale } from 'hy-app'
+import zhCN from './lang/zh-CN'
+import enUS from './lang/en-US'
+
+// 设置默认语言
+Locale.use('zh-CN', zhCN)
+
+// 切换语言
+const switchLanguage = (lang: string) => {
+    if (lang === 'en-US') {
+        Locale.use('en-US', enUS)
+    } else {
+        Locale.use('zh-CN', zhCN)
+    }
+}
+```
+
+### 动态参数
+
+```vue
+<script setup lang="ts">
+import { useTranslate } from 'hy-app'
+
+const { t } = useTranslate('user')
+
+// 输出: 欢迎，张三
+console.log(t('welcome', '张三'))
+
+// 输出: 共 10 条记录
+console.log(t('count', 10))
+</script>
+```
+
+### 注意事项
+
+1. `useTranslate` 需要配合 `Locale` 语言包管理器使用
+2. 语言包需要先通过 `Locale.use()` 或 `Locale.add()` 注册
+3. 翻译函数支持参数替换，使用 `{0}`, `{1}` 或命名参数 `{name}`
+4. 如果翻译值是函数，会自动调用并传入参数
+
+
+## useQueue 队列管理组合式 API
+
+## 功能介绍
+
+`useQueue` 是一个基于 Vue 3 Composition API 的队列管理钩子，用于管理组件的显示顺序和互斥关闭逻辑。
+
+- 支持组件队列管理
+- 支持关闭其他组件
+- 支持关闭外部所有组件
+- 基于 Vue 3 Provide/Inject 机制
+
+### 基础用法
+
+```vue
+<script setup lang="ts">
+import { useQueue } from 'hy-app'
+
+// 关闭除当前组件外的所有组件
+const handleOpen = (comp: any) => {
+    closeOther(comp)
+}
+
+// 关闭所有组件
+const handleCloseAll = () => {
+    closeOutside()
+}
+</script>
+```
+
+### 配合 Popup 使用
+
+```vue
+<template>
+    <view>
+        <hy-popup ref="popupRef" @click="handleClick">内容</hy-popup>
+        <hy-popup ref="popupRef2">内容2</hy-popup>
+    </view>
+</template>
+
+<script setup lang="ts">
+import { ref, onMounted, onUnmounted } from 'vue'
+import { useQueue } from 'hy-app'
+
+const popupRef = ref()
+const popupRef2 = ref()
+
+const { pushToQueue, removeFromQueue, closeOther } = useQueue()
+
+onMounted(() => {
+    if (popupRef.value) {
+        pushToQueue(popupRef.value)
+    }
+    if (popupRef2.value) {
+        pushToQueue(popupRef2.value)
+    }
+})
+
+onUnmounted(() => {
+    if (popupRef.value) {
+        removeFromQueue(popupRef.value)
+    }
+})
+
+const handleClick = () => {
+    // 关闭其他弹窗
+    if (popupRef.value) {
+        closeOther(popupRef.value)
+    }
+}
+</script>
+```
+
+### 注意事项
+
+1. 组件必须实现 `close()` 方法才能被正确关闭
+2. `pushToQueue` 通常在 `onMounted` 中调用
+3. `removeFromQueue` 通常在 `onUnmounted` 中调用
+4. 使用 Provide/Inject 机制，需确保在正确的组件树上下文中调用
+
+
