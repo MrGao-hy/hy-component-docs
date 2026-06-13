@@ -80,6 +80,16 @@ $ yarn install hy-app
 }
 ```
 
+## 让 Volar/VS Code 识别组件
+> VS Code和trae 能提供组件的属性提示、类型检查、自动补全
+```json tsconfig.json
+{
+  "compilerOptions": {
+    "types": ["hy-app/global"]
+  }
+}
+```
+
 ## :chicken: 全局导入组件库样式（修改 uni.scss）
 > 华玥组件库的全局样式、主题变量、组件基础样式需统一导入，否则组件会丢失样式效果。
 ```scss [./uni.scss]
