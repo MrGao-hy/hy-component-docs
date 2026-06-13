@@ -148,7 +148,7 @@ onMounted(() => {
   width: 390px;
   position: fixed;
   z-index: 10086;
-  right: 10px;}
+  right: 10px;
   box-sizing: border-box;
   overflow-y: auto;
   background-repeat: no-repeat;
