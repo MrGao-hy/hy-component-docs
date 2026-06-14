@@ -1,8 +1,6 @@
 # appInit app版本更新
 
-## 概述
-
-`appInit` 是一个用于 UniApp 应用版本更新管理的工具类，提供版本检查、下载更新包、安装更新等功能。
+> `appInit` 是一个用于 UniApp 应用版本更新管理的工具类，提供版本检查、下载更新包、安装更新等功能。
 
 ## 接口定义
 
@@ -34,11 +32,8 @@
 | totalBytesWritten         | `number` | 已下载字节数         |
 | totalBytesExpectedToWrite | `number` | 预期总字节数         |
 
-## API 方法
-
-### 1. updateVersion(options)
-
-检查并执行版本更新。
+## 检查并执行版本更新。
+### updateVersion(options)
 
 **参数**：
 - `options`: `UpdateVersionOptions` - 更新配置选项
@@ -51,33 +46,6 @@
 3. 如果服务端版本更高，弹出更新提示弹窗
 4. 用户确认后根据平台进行更新（iOS 跳转 App Store，Android 下载安装包）
 
-### 2. compareVersion(serverVersion, localVersion)
-
-版本号比较方法。
-
-**参数**：
-- `serverVersion`: `string` - 服务端版本号
-- `localVersion`: `string` - 本地版本号
-
-**返回值**：`number`
-- `1`: 服务端版本更高
-- `0`: 版本相同
-- `-1`: 本地版本更高
-
-### 3. downloadApp(downloadUrl, callbacks)
-
-下载更新包（内部方法）。
-
-**参数**：
-- `downloadUrl`: `string` - 下载地址
-- `callbacks`: `{ onProgress?, onSuccess?, onFail? }` - 回调函数
-
-**支持的文件格式**：
-- `.wgt`: UniApp 热更新包
-- `.apk`: Android 安装包
-
-## 使用示例
-
 ### 基础用法
 
 ```typescript
@@ -86,12 +54,12 @@ import { appInit } from 'hy-app'
 appInit.updateVersion({
     version: '1.0.1',
     description: '1. 修复了已知bug\n2. 优化了性能\n3. 新增功能',
-    url: 'https://example.com/app.apk',
-    iosStoreUrl: 'https://apps.apple.com/cn/app/xxx/id1234567890'
+    url: 'https://example.com/app.apk'
 })
 ```
 
-### 完整用法（含所有回调）
+
+### 进阶用法
 
 ```typescript
 import { appInit } from 'hy-app'
@@ -136,7 +104,21 @@ appInit.updateVersion({
 })
 ```
 
-### 单独使用版本比较
+
+## 版本号比较方法。
+### compareVersion(serverVersion, localVersion)
+
+
+**参数**：
+- `serverVersion`: `string` - 服务端版本号
+- `localVersion`: `string` - 本地版本号
+
+**返回值**：`number`
+- `1`: 服务端版本更高
+- `0`: 版本相同
+- `-1`: 本地版本更高
+
+### 基本用法
 
 ```typescript
 import { appInit } from 'hy-app'
@@ -153,6 +135,16 @@ if (result === 1) {
 }
 ```
 
+## 下载更新包（内部方法）。
+### downloadApp(downloadUrl, callbacks)
+
+**参数**：
+- `downloadUrl`: `string` - 下载地址
+- `callbacks`: `{ onProgress?, onSuccess?, onFail? }` - 回调函数
+
+**支持的文件格式**：
+- `.wgt`: UniApp 热更新包
+- `.apk`: Android 安装包
 ## 平台差异处理
 
 ### iOS 平台
