@@ -147,7 +147,7 @@ onMounted(() => {
   background-color: var(--vp-sidebar-bg-color);
   width: 390px;
   position: fixed;
-  z-index: 10086;
+  z-index: 100;
   right: 10px;
   box-sizing: border-box;
   overflow-y: auto;

@@ -9,71 +9,18 @@
 - `sleep` - 延迟执行（Promise 形式）
 - `guid` - 生成全局唯一标识符
 
-## 引入方式
+## bem(name, props, fixed, change?)
+> 生成 BEM 规范类名。
 
+### 入参参数
+- `name` 组件名称
+- `props` 组件属性对象
+- `fixed` 固定存在的类名数组
+- `change` 可变类名数组
+- 
+### 使用示例
 ```typescript
-import { bem, error, sleep, guid } from '@/package/libs/utils/inside'
-```
-
-## API 文档
-
-### bem(name, props, fixed, change?)
-
-生成 BEM 规范类名。
-
-**参数**：
-
-| 参数 | 类型 | 说明 |
-| --- | --- | --- |
-| name | `string` | 组件名称 |
-| props | `Record<string, any>` | 组件属性对象 |
-| fixed | `string[]` | 固定存在的类名数组 |
-| change | `string[]` | 可变类名数组 |
-
-**返回值**：`string | string[]` 类名字符串或数组
-
-### error(err)
-
-开发环境错误提示。
-
-**参数**：
-
-| 参数 | 类型 | 说明 |
-| --- | --- | --- |
-| err | `string` | 错误内容 |
-
-### sleep(value?)
-
-延迟执行。
-
-**参数**：
-
-| 参数 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
-| value | `number` | `100` | 延迟毫秒数 |
-
-**返回值**：`Promise<void>`
-
-### guid(len?, firstU?, radix?)
-
-生成 UUID。
-
-**参数**：
-
-| 参数 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
-| len | `number` | `32` | UUID 长度 |
-| firstU | `boolean` | `true` | 是否以 'hy' 开头 |
-| radix | `number \| null` | `null` | 基数（2-36），null 则使用默认字符集 |
-
-**返回值**：`string` UUID 字符串
-
-## 使用示例
-
-### bem 用法
-
-```typescript
-import { bem } from '@/package/libs/utils/inside'
+import { bem } from 'hy-app'
 
 const props = {
     type: 'primary',
@@ -88,20 +35,28 @@ console.log(result)
 // 'hy-button--primary hy-button--size hy-button--type__plain'
 ```
 
-### error 用法
-
+## error(err)
+> 开发环境错误提示。
+### 入参参数
+- err 错误内容
+### 使用示例
 ```typescript
-import { error } from '@/package/libs/utils/inside'
+import { error } from 'hy-app'
 
 // 仅在开发环境显示错误
 error('这是一个错误提示')
 // 华玥组件提示：这是一个错误提示
 ```
 
-### sleep 用法
+
+## sleep(value?)
+> 延迟执行。
+### 入参参数
+- `value` 延迟毫秒数
+### 使用示例
 
 ```typescript
-import { sleep } from '@/package/libs/utils/inside'
+import { sleep } from 'hy-app'
 
 // 延迟 1 秒
 await sleep(1000)
@@ -110,27 +65,6 @@ console.log('1 秒后执行')
 // 默认延迟 100ms
 await sleep()
 console.log('100ms 后执行')
-```
-
-### guid 用法
-
-```typescript
-import { guid } from '@/package/libs/utils/inside'
-
-// 默认生成 32 位以 hy 开头的 UUID
-const id1 = guid()
-console.log(id1) // 'hy7f8a2b1c3d4e5f6...'
-
-// 生成 16 位 UUID
-const id2 = guid(16)
-console.log(id2) // 'hy7f8a2b1c3d4'
-
-// 不以 hy 开头
-const id3 = guid(16, false)
-console.log(id3) // '7f8a2b1c3d4e5f6'
-
-// 使用 36 进制（可选字符更多）
-const id4 = guid(32, true, 36)
 ```
 
 ## 注意事项
