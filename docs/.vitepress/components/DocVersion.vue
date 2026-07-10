@@ -5,7 +5,7 @@
 <script setup lang="ts">
 import {ref} from "vue";
 
-const getLatestVer = async pkg =>
+const getLatestVer = async (pkg: string) =>
     fetch(`https://registry.npmjs.org/${pkg}/latest`)
         .then(r => r.json())
         .then(d => d.version);

@@ -211,31 +211,33 @@ const options = ref([
 
 ### Dropdown Props
 
-| 参数           | 说明                                    | 类型                 | 默认值             |
-|--------------|---------------------------------------|--------------------|-----------------|
-| height       | 标题菜单的高度，单位px                          | `string`\|`number` | 40              |
-| borderBottom | 标题菜单是否显示下边框                           | `boolean`          | false           |
-| sticky       | 是否固定定位                                 | `boolean`          | true            |
-| activeColor  | 标题和选项卡选中的颜色                           | `string`           | -               |
-| inactiveColor| 标题和选项卡未选中的颜色                          | `string`           | #606266         |
-| menuIcon     | 标题菜单右侧的图标名称                           | `string`           | ARROW_DOWN_FILL |
-| menuIconSize | 标题菜单右侧图标的大小，单位px                      | `string`\|`number` | 14              |
-| customStyle  | 自定义需要用到的外部样式                          | `CSSProperties`    | -               |
+| 参数               | 说明               | 类型                 | 默认值             |
+|------------------|------------------|--------------------|-----------------|
+| height           | 标题菜单的高度，单位px     | `string`\|`number` | 40              |
+| borderBottom     | 标题菜单是否显示下边框      | `boolean`          | false           |
+| sticky           | 是否固定定位           | `boolean`          | true            |
+| activeColor      | 标题和选项卡选中的颜色      | `string`           | -               |
+| inactiveColor    | 标题和选项卡未选中的颜色     | `string`           | #606266         |
+| titleSize        | 标题和选项卡选中的字体大小    | `string`\|`number` | -               |
+| closeOnClickMask | 点击遮罩层关闭弹窗        | `boolean`          | true            |
+| menuIcon         | 标题菜单右侧的图标名称      | `string`           | ARROW_DOWN_FILL |
+| menuIconSize     | 标题菜单右侧图标的大小，单位px | `string`\|`number` | 14              |
+| customStyle      | 自定义需要用到的外部样式     | `CSSProperties`    | -               |
 
 ### DropdownItem Props
 
-| 参数       | 说明           | 类型                 | 默认值   |
-|----------|--------------|--------------------|-------|
+| 参数       | 说明             | 类型                 | 默认值   |
+|----------|----------------|--------------------|-------|
 | v-model  | 双向绑定选中项的value值 | `string`\|`number` | -     |
-| title    | 菜单项标题        | `string`           | -     |
-| menus    | 选项数据         | `array`            | []    |
-| disabled | 是否禁用点击       | `boolean`          | false |
+| title    | 菜单项标题          | `string`           | -     |
+| menus    | 选项数据           | `array`            | []    |
+| disabled | 是否禁用点击         | `boolean`          | false |
 
 ### Events
 
-| 事件名    | 说明                      | 回调参数                              |
-|--------|-------------------------|-----------------------------------|
-| change | 点击某个选项时触发             | `item: DropdownMenuItem`, `index: number` |
+| 事件名    | 说明        | 回调参数                                      |
+|--------|-----------|-------------------------------------------|
+| change | 点击某个选项时触发 | `item: DropdownMenuItem`, `index: number` |
 
 ## Slots
 
