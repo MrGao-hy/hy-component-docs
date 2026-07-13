@@ -49,7 +49,7 @@
 ### 基础用法
 
 ```typescript
-import { appInit } from 'hy-app'
+import { appInit } from '@hy-app/ui'
 
 appInit.updateVersion({
     version: '1.0.1',
@@ -62,7 +62,7 @@ appInit.updateVersion({
 ### 进阶用法
 
 ```typescript
-import { appInit } from 'hy-app'
+import { appInit } from '@hy-app/ui'
 
 appInit.updateVersion({
     version: '2.0.0',
@@ -121,7 +121,7 @@ appInit.updateVersion({
 ### 基本用法
 
 ```typescript
-import { appInit } from 'hy-app'
+import { appInit } from '@hy-app/ui'
 
 const result = appInit.compareVersion('1.2.0', '1.1.9')
 // result === 1 表示服务端版本更高

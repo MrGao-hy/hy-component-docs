@@ -16,7 +16,7 @@
 ### 基础用法
 
 ```typescript
-import { colorGradient } from 'hy-app'
+import { colorGradient } from '@hy-app/ui'
 
 // 获取 10 步渐变色
 const colors = colorGradient('#000000', '#ffffff', 10)
@@ -51,7 +51,7 @@ const gradientStyle = {
 ### 基本用法
 
 ```typescript
-import { hexToRgb } from 'hy-app'
+import { hexToRgb } from '@hy-app/ui'
 
 // HEX 转 RGB
 const rgb = hexToRgb('#2979ff')
@@ -69,7 +69,7 @@ console.log(rgbArray) // [41, 121, 255]
 ### 颜色格式转换
 
 ```typescript
-import { rgbToHex } from 'hy-app'
+import { rgbToHex } from '@hy-app/ui'
 
 // RGB 转 HEX
 const hex = rgbToHex('rgb(41, 121, 255)')

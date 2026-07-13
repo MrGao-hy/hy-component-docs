@@ -4,7 +4,7 @@
 **isNumber()**
 - `text` \<String> | \<Number> 需要判断的值
 ```ts
-import { isNumber } from "hy-app";
+import { isNumber } from "@hy-app/ui";
 console.log(isNumber(123)) // true;
 console.log(isNumber("123")) // true;
 console.log(isNumber("admin")) // false;
@@ -16,7 +16,7 @@ console.log(isNumber("admin")) // false;
 **isNumericString()**
 - `text` \<String> | \<Number> 需要判断的值
 ```ts
-import { isNumericString } from "hy-app";
+import { isNumericString } from "@hy-app/ui";
 console.log(isArray(123)) // false;
 console.log(isArray("123")) // true;
 console.log(isArray("kiss")) // false;
@@ -28,7 +28,7 @@ console.log(isArray("kiss")) // false;
 **isArray()**
 - `arr` \<Any> 需要判断的值 
 ```ts
-import { isArray } from "hy-app";
+import { isArray } from "@hy-app/ui";
 console.log(isArray([1, 2, 3])) // true;
 console.log(isArray({})) // false;
 ```
@@ -39,7 +39,7 @@ console.log(isArray({})) // false;
 **isObject()**
 - `obj` \<Any> 需要判断的值
 ```ts
-import { isObject } from "hy-app";
+import { isObject } from "@hy-app/ui";
 console.log(isObject([])) // false;
 console.log(isObject({name: '乌沙奇'})) // true;
 ```
@@ -50,7 +50,7 @@ console.log(isObject({name: '乌沙奇'})) // true;
 **isImage()**
 - `text` \<String> 需要判断的值
 ```ts
-import { isImage } from "hy-app";
+import { isImage } from "@hy-app/ui";
 console.log(isImage("https://pic1.imgdb.cn/item/67f8dc6288c538a9b5cadf4e.png")) // true;
 ```
 
@@ -60,7 +60,7 @@ console.log(isImage("https://pic1.imgdb.cn/item/67f8dc6288c538a9b5cadf4e.png")) 
 **isBase64Image()**
 - `text` \<String> 需要判断的值
 ```ts
-import { isBase64Image } from "hy-app";
+import { isBase64Image } from "@hy-app/ui";
 console.log(isBase64Image("data:image...")) // true;
 ```
 
@@ -70,7 +70,7 @@ console.log(isBase64Image("data:image...")) // true;
 **isVideo()**
 - `text` \<String> 需要判断的值
 ```ts
-import { isVideo } from "hy-app";
+import { isVideo } from "@hy-app/ui";
 console.log(isVideo('http://91/2025-10-10.mp4')) // true;
 ```
 
@@ -80,7 +80,7 @@ console.log(isVideo('http://91/2025-10-10.mp4')) // true;
 **isDate()**
 - `text` \<String | Number> 需要判断的值
 ```ts
-import { isDate } from "hy-app";
+import { isDate } from "@hy-app/ui";
 console.log(isDate('2024-10-10')) // true;
 console.log(isDate(1754032899)) // true;
 ```
@@ -91,7 +91,7 @@ console.log(isDate(1754032899)) // true;
 **isPhone()**
 - `text` \<unknown> 需要判断的值
 ```ts
-import { isPhone } from "hy-app";
+import { isPhone } from "@hy-app/ui";
 console.log(isPhone(19701012929)) // true;
 ```
 
@@ -101,7 +101,7 @@ console.log(isPhone(19701012929)) // true;
 **isIdCard()**
 - `text` \<unknown> 需要判断的值
 ```ts
-import { isIdCard } from "hy-app";
+import { isIdCard } from "@hy-app/ui";
 console.log(isIdCard('360322201207022918')) // true;
 ```
 
@@ -111,7 +111,7 @@ console.log(isIdCard('360322201207022918')) // true;
 **isChinese()**
 - `text` \<String> 需要判断的值
 ```ts
-import { isChinese } from "hy-app";
+import { isChinese } from "@hy-app/ui";
 console.log(isChinese('皇帝')) // true;
 console.log(isChinese('3ed皇帝')) // false;
 ```
@@ -121,6 +121,6 @@ console.log(isChinese('3ed皇帝')) // false;
 
 **isH5()**
 ```ts
-import { isH5 } from "hy-app";
+import { isH5 } from "@hy-app/ui";
 console.log(isH5()) // true;
 ```

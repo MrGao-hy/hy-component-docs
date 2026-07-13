@@ -20,7 +20,7 @@
 - 
 ### 使用示例
 ```typescript
-import { bem } from 'hy-app'
+import { bem } from '@hy-app/ui'
 
 const props = {
     type: 'primary',
@@ -41,7 +41,7 @@ console.log(result)
 - err 错误内容
 ### 使用示例
 ```typescript
-import { error } from 'hy-app'
+import { error } from '@hy-app/ui'
 
 // 仅在开发环境显示错误
 error('这是一个错误提示')
@@ -56,7 +56,7 @@ error('这是一个错误提示')
 ### 使用示例
 
 ```typescript
-import { sleep } from 'hy-app'
+import { sleep } from '@hy-app/ui'
 
 // 延迟 1 秒
 await sleep(1000)

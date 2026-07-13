@@ -5,7 +5,7 @@
 - `min` \<String | Number> 最小值
 - `max` \<String | Number> 最大值
 ```javascript
-import { random } from "hy-app";
+import { random } from "@hy-app/ui";
 
 const val = random(1, 10);
 console.log(val) // 随机数

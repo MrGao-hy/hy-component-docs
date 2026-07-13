@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-	import { guid } from 'hy-app';
+	import { guid } from '@hy-app/ui';
     const elId = guid(20);
     const elClass = guid();
 </script>

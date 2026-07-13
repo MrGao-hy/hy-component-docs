@@ -4,7 +4,7 @@
 ### bytesToSize(bytes)
 - `bytes` \<Number> 字节大小
 ```javascript
-import { bytesToSize } from "hy-app";
+import { bytesToSize } from "@hy-app/ui";
 
 const num = bytesToSize(1024);
 console.log(num); // 打印出：1MB

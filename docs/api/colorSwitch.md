@@ -5,7 +5,7 @@
 该函数可以将一个RGB颜色值转换成一个Hex的十六进制颜色值
 - `rgb` \<String\> RGB颜色值，如`rgb(230, 231, 233)`
 ```ts
-import { rgbToHex } from "hy-app";
+import { rgbToHex } from "@hy-app/ui";
 
 const rgb = 'rgb(13, 145, 20)'
 console.log(rgbToHex(rgb)) // #0D9114
@@ -16,7 +16,7 @@ console.log(rgbToHex(rgb)) // #0D9114
 该函数可以将一个Hex的十六进制颜色值转换成一个RGB颜色值
 - `hex` \<String\> HEx颜色值，如`#0afdce`
 ```ts
-import { hexToRgb } from "hy-app";
+import { hexToRgb } from "@hy-app/ui";
 
 const hex = '#0afdce'
 console.log(rgbToHex(hex)) // RGB(10,253,206)
@@ -30,7 +30,7 @@ console.log(rgbToHex(hex)) // RGB(10,253,206)
 - `endColor` \<String\> 结束颜色值，可以是HEX或者RGB颜色值，如`#0afdce`或者`rgb(120, 130, 150)`
 - `step` \<Number\> 均分值，把开始值和结束值平均分成多少份
 ```ts
-import { colorGradient } from "hy-app";
+import { colorGradient } from "@hy-app/ui";
 
 console.log(colorGradient('rgb(250,250,250)', 'rgb(252,252,252)', 3)); // 结果为：["#fafafa", "#fafafa", "#fbfbfb"]
 ```
@@ -42,7 +42,7 @@ console.log(colorGradient('rgb(250,250,250)', 'rgb(252,252,252)', 3)); // 结果
 - `color` \<String> 颜色值，只能`hex`或者`rgba`格式
 - `opacity` \<Number> 不透明度值，取值为0-1之间
 ```ts
-import { colorToRgba } from "hy-app";
+import { colorToRgba } from "@hy-app/ui";
 
 colorToRgba('#000000', 0.35);// 结果为 rgba(0, 0, 0, 0.35)
 colorToRgba('rgb(255, 180, 0)', 0.4);// 结果为 rgba(255, 180, 0, 0.4)

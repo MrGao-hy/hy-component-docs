@@ -4,7 +4,7 @@
 ### imageToBase64(timestamp, fmt)
 - `path` \<String> 本地上传图片路径
 ```javascript
-import { imageToBase64 } from "hy-app";
+import { imageToBase64 } from "@hy-app/ui";
 
 // 时间格式转换
 const base64 = imageToBase64();

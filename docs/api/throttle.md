@@ -28,7 +28,7 @@
 </template>
 
 <script setup lang="ts">
-  import { throttle } from "hy-app";
+  import { throttle } from "@hy-app/ui";
   const throttleFn = () => throttle(() => {
       console.log("执行了")
   }, 2000)
@@ -48,7 +48,7 @@
 </template>
 
 <script setup lang="ts">
-	import { debounce } from 'hy-app';
+	import { debounce } from '@hy-app/ui';
     const debounceFn = () => debounce(() => {
       console.log("执行了")
     }, 2000)

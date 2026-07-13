@@ -24,7 +24,7 @@
 
 ```vue
 <script setup lang="ts">
-import { useShare } from 'hy-app'
+import { useShare } from '@hy-app/ui'
 
 const { onShareAppMessage, onShareTimeline } = useShare({
     title: '华玥组件库',
@@ -45,7 +45,7 @@ defineExpose({
 
 ```vue
 <script setup lang="ts">
-import { useShare } from 'hy-app'
+import { useShare } from '@hy-app/ui'
 
 const shareConfig = {
     title: '推荐一个好用的组件库',
@@ -100,7 +100,7 @@ toast.close(); // 关闭所以提示
 </template>
 
 <script setup lang="ts">
-import { useToast } from 'hy-app'
+import { useToast } from '@hy-app/ui'
 
 const toast = useToast()
 
@@ -131,7 +131,7 @@ const handleLoading = () => {
 </template>
 
 <script setup lang="ts">
-import { useToast } from 'hy-app'
+import { useToast } from '@hy-app/ui'
 
 const toast = useToast()
 
@@ -158,7 +158,7 @@ const handleClick = async () => {
 
 ```vue
 <script setup lang="ts">
-  import { useToast } from 'hy-app'
+  import { useToast } from '@hy-app/ui'
 
   const toast = useToast()
 
@@ -228,7 +228,7 @@ message.confirm({
 </template>
 
 <script setup lang="ts">
-  import {useMessage} from "hy-app";
+  import {useMessage} from "@hy-app/ui";
 
   const message = useMessage();
 
@@ -262,7 +262,7 @@ message.confirm({
 </template>
 
 <script setup lang="ts">
-import { useMessage } from 'hy-app'
+import { useMessage } from '@hy-app/ui'
 
 const message = useMessage()
 
@@ -321,7 +321,7 @@ const showAdvancedConfirm = async () => {
 </template>
 
 <script setup lang="ts">
-import { useTouch } from 'hy-app'
+import { useTouch } from '@hy-app/ui'
 
 const {
   touchStart,
@@ -456,7 +456,7 @@ const touchEnd = () => {
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useShakeService } from 'hy-app'
+import { useShakeService } from '@hy-app/ui'
 
 const shakeCount = ref(0)
 const { startShakeListener, stopShakeListener } = useShakeService()
@@ -584,7 +584,7 @@ export default {
 </template>
 
 <script setup lang="ts">
-import { useTranslate } from 'hy-app'
+import { useTranslate } from '@hy-app/ui'
 
 const { t } = useTranslate('common')
 </script>
@@ -594,7 +594,7 @@ const { t } = useTranslate('common')
 
 ```typescript
 // 初始化语言包
-import { Locale } from 'hy-app'
+import { Locale } from '@hy-app/ui'
 import zhCN from './lang/zh-CN'
 import enUS from './lang/en-US'
 
@@ -615,7 +615,7 @@ const switchLanguage = (lang: string) => {
 
 ```vue
 <script setup lang="ts">
-import { useTranslate } from 'hy-app'
+import { useTranslate } from '@hy-app/ui'
 
 const { t } = useTranslate('user')
 
@@ -650,7 +650,7 @@ console.log(t('count', 10))
 
 ```vue
 <script setup lang="ts">
-import { useQueue } from 'hy-app'
+import { useQueue } from '@hy-app/ui'
 
 // 关闭除当前组件外的所有组件
 const handleOpen = (comp: any) => {
@@ -676,7 +676,7 @@ const handleCloseAll = () => {
 
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
-import { useQueue } from 'hy-app'
+import { useQueue } from '@hy-app/ui'
 
 const popupRef = ref()
 const popupRef2 = ref()

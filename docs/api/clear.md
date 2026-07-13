@@ -4,7 +4,7 @@
 ### clearVal(obj)
 - `obj` \<Object | String | Number | Undefined| Boolean> 需要清空数值
 ```javascript
-import { clearVal } from "hy-app";
+import { clearVal } from "@hy-app/ui";
 const obj = {
     name: "我有值",
     is: true,

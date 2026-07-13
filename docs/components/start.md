@@ -50,21 +50,24 @@ $ yarn add dayjs
 :::
 
 ## :cactus: 安装hy-app
+::: warning
+`hy-app`最后版本v0.7.4，后续不在进行迭代更新，请下载新的版本`@hy-app/ui`
+:::
 ::: code-group
 ```shell [npm]
-$ npm install hy-app
+$ npm install @hy-app/ui
 ```
 
 ```shell [pnpm]
-$ pnpm add hy-app
+$ pnpm add @hy-app/ui
 ```
 
 ```shell [cnpm]
-$ cnpm install hy-app
+$ cnpm install @hy-app/ui
 ```
 
 ```shell [yarn]
-$ yarn install hy-app
+$ yarn install @hy-app/ui
 ```
 :::
 
@@ -74,7 +77,7 @@ $ yarn install hy-app
 {
   "easycom": {
     "custom": {
-      "^hy-(.*)": "hy-app/components/hy-$1/hy-$1.vue" // [!code focus]
+      "^hy-(.*)": "@hy-app/ui/components/hy-$1/hy-$1.vue" // [!code focus]
     }
   }
 }
@@ -85,7 +88,7 @@ $ yarn install hy-app
 ```json tsconfig.json
 {
   "compilerOptions": {
-    "types": ["hy-app/global"]
+    "types": ["@hy-app/ui/global"]
   }
 }
 ```
@@ -93,7 +96,7 @@ $ yarn install hy-app
 ## :chicken: 全局导入组件库样式（修改 uni.scss）
 > 华玥组件库的全局样式、主题变量、组件基础样式需统一导入，否则组件会丢失样式效果。
 ```scss [./uni.scss]
-@use "hy-app/index.scss" as *;
+@use "@hy-app/ui/index.scss" as *;
 ```
 
 ## :deciduous_tree: 页面上使用组件

@@ -5,7 +5,7 @@
 - `timestamp` \<String | Number> 时间戳
 - `fmt` \<String> 时间格式，默认值：yyyy-MM-dd
 ```javascript
-import { formatTime } from "hy-app";
+import { formatTime } from "@hy-app/ui";
 
 // 时间格式转换
 const day = formatTime(new Date())
@@ -19,7 +19,7 @@ const time = formatTime(1702051200000, "HH:mm:ss")
 - `timestamp` \<string | number> 时间戳/时间格式
 - `format` \<String> 时间格式，默认值：yyyy-MM-dd
 ```javascript
-import { formatTimeToString } from "hy-app";
+import { formatTimeToString } from "@hy-app/ui";
 
 // 时间格式转换
 const day = formatTimeToString("2020-10-10 09:00:00")
@@ -32,7 +32,7 @@ const time = formatTimeToString(1702051200000, false)
 ### padZero(value)
 - `value` \<String | Number> 数值
 ```javascript
-import { padZero } from "hy-app";
+import { padZero } from "@hy-app/ui";
 
 // 时间格式转换
 const num = padZero(2)

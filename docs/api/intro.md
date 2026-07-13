@@ -7,7 +7,7 @@
 此方法是华玥框架提供的功能之一，需要通过 JavaScript 调用，而不是以组件的形式使用。调用方式如下：  
 - 如果是在js中，需要通过import形式调用，如调用时间格式化的`formatTime`方法：
 ```ts
-import { formatTime } from 'hy-app';
+import { formatTime } from '@hy-app/ui';
 console.log(formatTime(new Date())); // 当前时间
 ```
 
@@ -21,7 +21,7 @@ console.log(formatTime(new Date())); // 当前时间
 </template>
 
 <script setup lang="ts">
-	import { formatTime } from 'hy-app';
+	import { formatTime } from '@hy-app/ui';
     const newDate = new Date();
 	
 </script>

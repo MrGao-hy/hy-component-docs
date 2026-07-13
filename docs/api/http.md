@@ -18,9 +18,9 @@
 ## 基本使用
 
 ```ts
-import Http from 'hy-app';
-import type { HttpRequestConfig } from 'hy-app';
-import type {HttpResponse} from "hy-app/typing";
+import Http from '@hy-app/ui';
+import type { HttpRequestConfig } from '@hy-app/ui';
+import type {HttpResponse} from "@hy-app/ui/typing";
 
 const http = new Http();
 
@@ -49,9 +49,9 @@ http.interceptor.response((response: HttpResponse) => {
 baseURL不要填写，否则会拼接导致访问不了，直接在请求拦截里面拼接
 :::
 ```ts
-import Http from 'hy-app';
-import type { HttpRequestConfig } from 'hy-app';
-import type {HttpResponse} from "hy-app/typing";
+import Http from '@hy-app/ui';
+import type { HttpRequestConfig } from '@hy-app/ui';
+import type {HttpResponse} from "@hy-app/ui/typing";
 
 const http = new Http();
 

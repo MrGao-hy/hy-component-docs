@@ -26,7 +26,7 @@
 </template>
 
 <script setup lang="ts">
-  import { getRect } from "hy-app";
+  import { getRect } from "@hy-app/ui";
   const getElInfo = () => {
     getRect('.elClass').then(res => {
       console.log(res);
@@ -43,7 +43,7 @@
 </template>
 
 <script setup lang="ts">
-  import { getRect } from "hy-app";
+  import { getRect } from "@hy-app/ui";
   const getElInfo = async () => {
     const rectInfo = await getRect('.elClass');
     console.log(rectInfo);
@@ -63,7 +63,7 @@
 </template>
 
 <script setup lang="ts">
-	import { http, getRect } from 'hy-app';
+	import { http, getRect } from '@hy-app/ui';
     import { ref, nextTick } from "vue";
     const userName = ref("");
     const getElInfo = () => {
@@ -105,7 +105,7 @@
 <script setup lang="ts">
   import { ref } from "vue";
   import { onPageScroll } from "@dcloudio/uni-app";
-  import { getRect } from "hy-app";
+  import { getRect } from "@hy-app/ui";
 
   const scrollTop = ref(0);
   

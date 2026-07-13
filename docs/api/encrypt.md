@@ -9,7 +9,7 @@
 ### encryptData(data)
 - `data` \<Object | string> 加密对象或者字符串
 ```javascript
-import { encryptData } from "hy-app";
+import { encryptData } from "@hy-app/ui";
 const encryptObj = encryptData({name: "加密对象"});
 const encryptStr = encryptData("加密字符串");
 ```
@@ -18,6 +18,6 @@ const encryptStr = encryptData("加密字符串");
 ### decryptData(encryptedVal)
 - `encryptedVal` \<String> 需要解密的加密数据
 ```javascript
-import { decryptData } from "hy-app";
+import { decryptData } from "@hy-app/ui";
 const decryptVal = decryptData("DSSFFGfh234nr");
 ```

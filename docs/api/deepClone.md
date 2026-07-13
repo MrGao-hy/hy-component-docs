@@ -9,7 +9,7 @@
 ### deepClone(source)
 - `source` \<Object> 对象或数组
 ```javascript
-import { deepClone } from "hy-app";
+import { deepClone } from "@hy-app/ui";
 
 const oldObj = {
     name: "旧数据"
