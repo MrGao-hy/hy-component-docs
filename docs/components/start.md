@@ -50,8 +50,8 @@ $ yarn add dayjs
 :::
 
 ## :cactus: 安装hy-app
-::: warning
-`hy-app`最后版本v0.7.4，后续不在进行迭代更新，请下载新的版本`@hy-app/ui`
+::: warning 重要通知 2026-07-13
+`hy-app` 已于 `v0.7.4` 停止后续迭代更新，不再新增功能与修复问题，请大家下载迁移全新版本 `@hy-app/ui`。
 :::
 ::: code-group
 ```shell [npm]
