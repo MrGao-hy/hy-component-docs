@@ -84,20 +84,20 @@ const list = ref([
 ## API
 ### Grid Props
 
-| 参数          | 说明                              | 类型                         | 默认值                           |
-|-------------|---------------------------------|----------------------------|-------------------------------|
-| list        | 数据集                             | `(GridItemVo \| string)[]` | -                             |
-| col         | 宫格的列数                           | `number`                   | 4                             |
-| size        | 图标大小                            | `number`\|`string`         | 4                             |
-| customKeys  | 自定义键值                           | `CustomKeysVo`             | \{name: 'name',icon: 'icon'\} |
-| border      | 是否显示宫格的边框                       | `boolean`                  | false                         |
-| itemHeight  | 单个宫格高度                          | `string` \| `number`       | 100px                         |
-| align       | 格对齐方式，表现为数量少的时候，靠左，居中，还是靠右      | `center`\|`left`\|`right`  | left                          |
-| gap         | 间隔                              | `string` \| `number`       | 0                             |
-| bgColor     | 宫格的背景颜色                         | `string`                   | transparent                   |
-| iconProps   | 图标属性api配置，详见[图标Api](./icon#api) | `HyIconProps`              | -                             |
-| customStyle | 自定义需要用到的外部样式                    | `CSSProperties`            | -                             |
-| customClass | 自定义外部类名                         | `string`                   | -                             |
+| 参数          | 说明                              | 类型                        | 默认值                           |
+|-------------|---------------------------------|---------------------------|-------------------------------|
+| list        | 数据集                             | `GridItemVo[]`            | -                             |
+| col         | 宫格的列数                           | `number`                  | 4                             |
+| size        | 图标大小                            | `number`\|`string`        | 4                             |
+| customKeys  | 自定义键值                           | `CustomKeysVo`            | \{name: 'name',icon: 'icon'\} |
+| border      | 是否显示宫格的边框                       | `boolean`                 | false                         |
+| itemHeight  | 单个宫格高度                          | `string` \| `number`      | 100px                         |
+| align       | 格对齐方式，表现为数量少的时候，靠左，居中，还是靠右      | `center`\|`left`\|`right` | left                          |
+| gap         | 间隔                              | `string` \| `number`      | 0                             |
+| bgColor     | 宫格的背景颜色                         | `string`                  | transparent                   |
+| iconProps   | 图标属性api配置，详见[图标Api](./icon#api) | `HyIconProps`             | -                             |
+| customStyle | 自定义需要用到的外部样式                    | `CSSProperties`           | -                             |
+| customClass | 自定义外部类名                         | `string`                  | -                             |
 
 ### Events
 

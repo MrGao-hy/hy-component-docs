@@ -176,7 +176,7 @@ const rules = {
 | modelValue            | 输入框的内容                                                    | `string`                     | -                    |
 | placeholder           | 输入框为空时占位符                                                 | `string`                     | -                    |
 | placeholderClass      | 指定 placeholder 的样式类[^1]                                   | `string`                     | textarea-placeholder |
-| placeholderStyle      | 指定 placeholder 的样式，对象形式                                   | `CSSProperties`              | -                    |
+| placeholderStyle      | 指定 placeholder 的样式，对象形式                                   | `string`                     | -                    |
 | height                | 输入框高度                                                     | `string \| number`           | 70                   |
 | confirmType           | 设置键盘右下角按钮的文字，仅微信小程序、App-vue 和 H5 有效                       | `string`                     | done                 |
 | disabled              | 是否禁用                                                      | `boolean`                    | false                |
@@ -185,7 +185,7 @@ const rules = {
 | autoHeight            | 是否自动增加高度                                                  | `boolean`                    | false                |
 | fixed                 | 如果 textarea 是在一个 position:fixed 的区域，需要显示指定属性 fixed 为 true | `boolean`                    | false                |
 | cursorSpacing         | 指定光标与键盘的距离                                                | `number`                     | 0                    |
-| cursor                | 指定 focus 时的光标位置                                           | `string \| number`           | -                    |
+| cursor                | 指定 focus 时的光标位置                                           | `number`                     | -                    |
 | showConfirmBar        | 是否显示键盘上方带有"完成"按钮那一栏                                       | `boolean`                    | true                 |
 | selectionStart        | 光标起始位置，自动聚焦时有效，需与 selection-end 搭配使用                      | `number`                     | -1                   |
 | selectionEnd          | 光标结束位置，自动聚焦时有效，需与 selection-start 搭配使用                    | `number`                     | -1                   |

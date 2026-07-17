@@ -156,7 +156,7 @@
 | color       | 标签字体颜色，默认为空字符串，即不处理         | `string`                                         | -       |
 | borderColor | 标签的边框颜色                     | `string`                                         | -       |
 | closeColor  | 关闭按钮图标的颜色                   | `string`                                         | -       |
-| name        | 点击时返回的索引值，用于区分例遍的数组哪个元素被点击了 | `string`                                         | -       |
+| name        | 点击时返回的索引值，用于区分例遍的数组哪个元素被点击了 | `string`\|`number`\|`boolean`                    | -       |
 | plainFill   | 镂空时是否填充背景色                  | `boolean`                                        | false   |
 | plain       | 是否镂空                        | `boolean`                                        | false   |
 | closable    | 是否可关闭，设置为true，文字右边会出现一个关闭图标 | `boolean`                                        | false   |

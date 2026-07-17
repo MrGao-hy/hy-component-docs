@@ -2,7 +2,7 @@
 > 校验是否是数字，返回true或者false。
 
 **isNumber()**
-- `text` \<String> | \<Number> 需要判断的值
+- `text` \<Unknown> 需要判断的值
 ```ts
 import { isNumber } from "@hy-app/ui";
 console.log(isNumber(123)) // true;
@@ -11,22 +11,47 @@ console.log(isNumber("admin")) // false;
 ```
 
 ## 判断字符串是否是数字
-> 校验是否是数字，返回true或者false。
+> 校验字符串是否是数字，返回true或者false。
 
 **isNumericString()**
 - `text` \<String> | \<Number> 需要判断的值
 ```ts
 import { isNumericString } from "@hy-app/ui";
-console.log(isArray(123)) // false;
-console.log(isArray("123")) // true;
-console.log(isArray("kiss")) // false;
+console.log(isNumericString(123)) // false;
+console.log(isNumericString("123")) // true;
+```
+
+## 判断是否是字符串
+> 校验是否是数字，返回true或者false。
+
+**isString()**
+- `text` \<Unknown> 需要判断的值
+```ts
+import { isString } from "@hy-app/ui";
+console.log(isString(123)) // false;
+console.log(isString(true)) // false;
+console.log(isString({name: 111})) // true;
+console.log(isString("kiss")) // true;
+```
+
+## 判断是否是布尔值
+> 校验是否是数字，返回true或者false。
+
+**isBoolean()**
+- `text` \<Unknown> 需要判断的值
+```ts
+import { isBoolean } from "@hy-app/ui";
+console.log(isBoolean(123)) // false;
+console.log(isBoolean("123")) // false;
+console.log(isBoolean("true")) // false;
+console.log(isBoolean(false)) // true;
 ```
 
 ## 判断是否数组
 > 校验是否数组，返回true或者false。
 
 **isArray()**
-- `arr` \<Any> 需要判断的值 
+- `arr` \<Unknown> 需要判断的值 
 ```ts
 import { isArray } from "@hy-app/ui";
 console.log(isArray([1, 2, 3])) // true;
@@ -37,7 +62,7 @@ console.log(isArray({})) // false;
 > 校验是否对象，返回true或者false。
  
 **isObject()**
-- `obj` \<Any> 需要判断的值
+- `obj` \<Unknown> 需要判断的值
 ```ts
 import { isObject } from "@hy-app/ui";
 console.log(isObject([])) // false;

@@ -115,7 +115,7 @@ const value = ref('');
 
 | 参数                    | 说明                                                      | 类型                                               | 默认值               |
 |-----------------------|---------------------------------------------------------|--------------------------------------------------|-------------------|
-| modelValue            | 输入的值                                                    | `string` \| `number`                             | -                 |
+| modelValue            | 输入的值                                                    | `string`                                         | -                 |
 | type                  | 输入框类型[^1]                                               | `number`\|`idcard`\|`digit`\| `password`\|`text` | text              |
 | disabled              | 是否禁用输入框                                                 | `boolean`                                        | false             |
 | disabledColor         | 禁用状态时的背景色                                               | `string`                                         | -                 |
