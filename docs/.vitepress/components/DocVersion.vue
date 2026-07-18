@@ -11,7 +11,7 @@ const getLatestVer = async (pkg: string) =>
         .then(d => d.version);
 const version = ref("");
 
-getLatestVer('hy-app').then(res => {
+getLatestVer('@hy-app/ui').then(res => {
   version.value = res;
 });
 </script>
