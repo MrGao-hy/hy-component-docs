@@ -32,7 +32,7 @@
 ```
 
 ```typescript
-import { useToast } from 'hy-app'
+import { useToast } from '@hy-app/ui'
 import { onMounted } from 'vue'
 
 const toast = useToast()
@@ -127,7 +127,7 @@ toast.success('操作成功', {
 </template>
 
 <script setup lang="ts">
-    import { useToast } from 'hy-app'
+    import { useToast } from '@hy-app/ui'
 
     const toast = useToast()
 

@@ -34,7 +34,7 @@ const price = 10
 ```
 
 ```ts [脚本]
-import { HyPrice } from "hy-app"
+import { HyPrice } from "@hy-app/ui"
 
 const price = 10
 ```
@@ -47,7 +47,7 @@ const price = 10
 ```
 
 ```ts [脚本]
-import { HyPrice } from "hy-app"
+import { HyPrice } from "@hy-app/ui"
 
 const price = 10
 ```
@@ -60,7 +60,7 @@ const price = 10
 ```
 
 ```ts [脚本]
-import { HyPrice } from "hy-app"
+import { HyPrice } from "@hy-app/ui"
 
 const price = 10
 ```
@@ -73,7 +73,7 @@ const price = 10
 ```
 
 ```ts [脚本]
-import { HyPrice } from "hy-app"
+import { HyPrice } from "@hy-app/ui"
 
 const price = 10
 ```
@@ -86,7 +86,7 @@ const price = 10
 ```
 
 ```ts [脚本]
-import { HyPrice } from "hy-app"
+import { HyPrice } from "@hy-app/ui"
 
 const price = 10
 ```
@@ -99,7 +99,7 @@ const price = 10
 ```
 
 ```ts [脚本]
-import { HyPrice } from "hy-app"
+import { HyPrice } from "@hy-app/ui"
 
 const price = 10
 ```

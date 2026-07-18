@@ -106,7 +106,7 @@ const change = (e) => {
 </template>
 <script setup>
     import { ref } from "vue";
-    import { IconConfig } from "hy-app";
+    import { IconConfig } from "@hy-app/ui";
 
     const value = ref(true);
 </script>

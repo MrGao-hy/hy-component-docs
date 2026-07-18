@@ -20,7 +20,7 @@
 <HyParse :content="content"></HyParse>
 ```
 ```ts
-import { HyParse } from "hy-app"
+import { HyParse } from "@hy-app/ui"
 
 const content = `<p>露从今夜白，月是故乡明</p>
 <img src="https://cdn.uviewui.com/uview/swiper/2.jpg" alt="Image Description" />`

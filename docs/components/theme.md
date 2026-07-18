@@ -6,7 +6,7 @@
 
 ```scss [uni.scss]
 /* 这是全部展开引入,可以在全局引入 */
-@use "hy-app/index.scss" as *;
+@use "@hy-app/ui/index.scss" as *;
 ```
 
 ```scss [使用案例.scss]
@@ -22,7 +22,7 @@
 
 ```scss [index.scss]
 /* 这是别名引入，需要在当下组件引入 */
-@use "hy-app/index.scss" as hy;
+@use "@hy-app/ui/index.scss" as hy;
 
 .custom-style {
   background: hy.$hy-background;

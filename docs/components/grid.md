@@ -14,7 +14,7 @@
 <hy-gird :list="list"></hy-gird>
 ```
 ```ts
-import { IconConfig } from "hy-app"
+import { IconConfig } from "@hy-app/ui"
 import { ref } from 'vue';
 
 // 创建响应式数据  
@@ -60,7 +60,7 @@ const list = ref([
 </template>
 
 <script setup="">
-    import { IconConfig } from "hy-app"
+    import { IconConfig } from "@hy-app/ui"
     import { ref } from 'vue';
 
     // 创建响应式数据  

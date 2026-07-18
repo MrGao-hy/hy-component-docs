@@ -20,7 +20,7 @@
 <HySwiper :list="list"></HySwiper>
 ```
 ```ts
-import { HySwiper } from "hy-app";
+import { HySwiper } from "@hy-app/ui";
 import { ref } from "vue";
 
 const list = ref([

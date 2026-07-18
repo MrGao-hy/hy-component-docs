@@ -185,7 +185,7 @@ const indexList = ref([
 ```ts [index.ts]
 import { ref, reactive, computed, getCurrentInstance, nextTick, onMounted } from 'vue'
 import { storeToRefs } from 'pinia'
-import { getRect, sleep } from 'hy-app'
+import { getRect, sleep } from '@hy-app/ui'
 
 const instance = getCurrentInstance()
 // 索引栏位置

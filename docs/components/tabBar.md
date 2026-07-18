@@ -36,7 +36,7 @@ const list = [
 :::
 
 ```javascript
-import { IconConfig } from "hy-app";
+import { IconConfig } from "@hy-app/ui";
 
 const list = [
     { name: "首页", icon: IconConfig.HOME },

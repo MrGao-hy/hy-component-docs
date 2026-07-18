@@ -96,7 +96,7 @@
 ```
 
 ```ts [.ts]
-import { sleep } from 'hy-app'
+import { sleep } from '@hy-app/ui'
 
 const height = ref(0)
 const width = ref(0)

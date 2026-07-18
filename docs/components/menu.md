@@ -92,7 +92,7 @@ const list = [
 import { computed, onMounted, ref } from "vue";
 import { useThemeStore } from "@/store";
 import { data } from "./data";
-import { IconConfig, debounce } from "hy-app";
+import { IconConfig, debounce } from "@hy-app/ui";
 
 // 组件
 import HyMenu from "@/package/components/hy-menu/hy-menu.vue";
