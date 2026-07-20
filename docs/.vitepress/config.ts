@@ -55,8 +55,8 @@ export default defineConfig({
                 link: "/download/web",
             },
             {
-                text: "关于作者 ↗️",
-                link: "/document/my",
+                text: "关于作者",
+                link: "https://blogs.hy-design-uni.top/",
             },
 
             // {
@@ -378,8 +378,7 @@ export default defineConfig({
                             thanksForFeedbackText: '感谢你的反馈！',
                             preToolCallText: '搜索中...',
                             duringToolCallText: '搜索 ',
-                            afterToolCallText: '已搜索',
-                            aggregatedToolCallText: '111'
+                            afterToolCallText: '已搜索'
                         },
                         footer: {
                             selectText: '选择',
