@@ -34,9 +34,36 @@ export default defineConfig({
         },
         nav: [
             {
+                text: '指南',
+                items: [
+                    {
+                        text: "快速开始",
+                        items: [
+                            { text: "介绍", link: "/guide/intro" },
+                            { text: "快速上手", link: "/guide/start" },
+                            { text: "内置样式", link: "/guide/style" },
+                        ]
+                    },
+                    {
+                        text: "工程化项目",
+                        items: [
+                            { text: "配置主题", link: "/guide/theme" },
+                            { text: "国际化", link: "/guide/locale" },
+                        ]
+                    },
+                    {
+                        text: "AI 工具",
+                        items: [
+                            { text: "LLMs", link: "/guide/LLMs" },
+                            { text: "MCP", link: "/guide/mcp" },
+                            { text: "Skills", link: "/guide/skills" }
+                        ]
+                    },
+                ]
+            },
+            {
                 text: "组件库",
                 items: [
-                    { text: "开发指南", link: "/components/intro" },
                     { text: "基础组件", link: "/components/badge" },
                     { text: "表单组件", link: "/components/addressPicker" },
                     { text: "布局组件", link: "/components/card" },
@@ -71,21 +98,32 @@ export default defineConfig({
             // ...
         ],
         sidebar: {
-            "/components/": [
+            "/guide/": [
                 {
-                    text: "开发指南",
-                    collapsed: false,
+                    text: "快速开始",
                     items: [
-                        { text: "介绍", link: "/components/intro" },
-                        { text: "快速开始", link: "/components/start" },
-                        { text: "配置主题", link: "/components/theme" },
-                        { text: "内置样式", link: "/components/style" },
-                        { text: "国际化", link: "/components/locale" },
-                        { text: "更新日志", link: "/components/changelog" },
-                        { text: "注意事项", link: "/components/announcements" },
-                        { text: "LLMs.txt", link: "/components/LLMs" },
+                        { text: "介绍", link: "/guide/intro" },
+                        { text: "快速上手", link: "/guide/start" },
+                        { text: "内置样式", link: "/guide/style" },
                     ],
                 },
+                {
+                    text: "工程化项目",
+                    items: [
+                        { text: "配置主题", link: "/guide/theme" },
+                        { text: "国际化", link: "/guide/locale" },
+                    ]
+                },
+                {
+                    text: "AI 工具",
+                    items: [
+                        { text: "LLMs", link: "/guide/LLMs" },
+                        { text: "MCP", link: "/guide/mcp" },
+                        { text: "Skills", link: "/guide/skills" }
+                    ]
+                },
+            ],
+            "/components/": [
                 {
                     text: "基础组件",
                     collapsed: false,
