@@ -25,8 +25,8 @@ export default {
     extends: DefaultTheme,
     Layout,
     enhanceApp({ app, router }) {
-        if (inBrowser) {
-            router.onAfterRouteChanged = () => {
+        if(inBrowser) {
+            router.onAfterRouteChange = () => {
                 nextTick().then(() => busuanzi.fetch())
             }
         }
