@@ -31,7 +31,7 @@ onMounted(() => {
           </svg>
           <span class="text">
             本站总访问量
-            <span id="busuanzi_value_site_pv" class="font-bold">--</span>
+            <span id="busuanzi_value_page_pv" class="font-bold">--</span>
             <span class="unit">次</span>
           </span>
         </div>
