@@ -25,8 +25,14 @@ export default {
     Layout,
     enhanceApp({ app, router }) {
         if (inBrowser) {
+            const refreshBusuanzi = () => {
+                setTimeout(() => {
+                    busuanzi.fetch()
+                }, 500)
+            }
+            refreshBusuanzi()
             router.onAfterRouteChanged = () => {
-                busuanzi.fetch()
+                refreshBusuanzi()
             }
         }
         app.component('NoPage', NoPage)
