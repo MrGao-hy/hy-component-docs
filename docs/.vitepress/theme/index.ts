@@ -1,3 +1,4 @@
+import { nextTick } from "vue";
 import DefaultTheme from "vitepress/theme";
 import Layout from "./MyLayout.vue";
 import NoPage from "../components/404.vue";
@@ -26,7 +27,7 @@ export default {
     enhanceApp({ app, router }) {
         if (inBrowser) {
             router.onAfterRouteChanged = () => {
-                busuanzi.fetch()
+                nextTick().then(() => busuanzi.fetch())
             }
         }
         app.component('NoPage', NoPage)
