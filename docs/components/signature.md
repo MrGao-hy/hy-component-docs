@@ -13,6 +13,30 @@
 - 如果遇到导出图片不清晰，可以将 exportScale 设置为 2 以上。
 :::
 
+### 1. 在弹窗无法绘画
+:::warning 原因
+- 在微信小程序的弹窗中使用时，弹窗未打开但组件的 `onMounted` 已执行，会导致初始化失败。需要在弹窗打开后再次调用初始化方法：
+:::
+
+```html
+<template>
+  <hy-button text="打开弹窗" @click="onOpen"></hy-button>
+  <hy-popup v-model:show="show">
+    <hy-signature ref="signatureRef"></hy-signature>
+  </hy-popup>
+</template>
+```
+
+```ts
+const signatureRef = ref<>()
+const show = ref(false)
+
+const onOpen = () => {
+  show.value = true;
+  setTimeout(() => signatureRef.value?.init(), 500)
+}
+```
+
 ## :japanese_castle:基本使用示例
 ```html
 <!-- 全局使用 -->
@@ -149,26 +173,26 @@ onMounted(() => {
 ## API
 ### Signature Props
 
-| 参数               | 说明          | 类型        | 默认值     |
-|------------------|-------------|-----------|---------|
-| pen-color        | 签名笔颜色       | `string`  | #000000 |
-| line-width       | 签名笔宽度       | `number`  | 3       |
-| height           | 画布的高度       | `number`  | 200     |
-| width            | 画布的宽度       | `number`  | 300     |
-| clear-text       | 清空按钮的文本     | `string`  | -       |
-| confirm-text     | 确认按钮的文本     | `string`  | -       |
-| file-type        | 导出图片类型      | `string`  | png     |
-| quality          | 导出图片质量(0-1) | `number`  | 1       |
-| export-scale     | 导出图片的缩放比例   | `number`  | 1       |
-| disabled         | 是否禁用签名板     | `boolean` | false   |
-| background-color | 画板的背景色      | `string`  | -       |
-| disable-scroll   | 是否禁用画布滚动    | `boolean` | true    |
-| enable-history   | 是否开启历史记录    | `boolean` | false   |
-| step             | 历史记录步长      | `number`  | 1       |
-| pressure         | 是否启用笔锋模式    | `boolean` | false   |
-| min-width        | 笔锋模式最小宽度    | `number`  | 2       |
-| max-width        | 笔锋模式最大宽度    | `number`  | 6       |
-| min-speed        | 笔锋模式速度阈值    | `number`  | 1.5     |
+| 参数               | 说明          | 类型                 | 默认值     |
+|------------------|-------------|--------------------|---------|
+| pen-color        | 签名笔颜色       | `string`           | #000000 |
+| line-width       | 签名笔宽度       | `number`           | 3       |
+| height           | 画布的高度       | `number`\|`string` | -       |
+| width            | 画布的宽度       | `number`\|`string` | -       |
+| clear-text       | 清空按钮的文本     | `string`           | -       |
+| confirm-text     | 确认按钮的文本     | `string`           | -       |
+| file-type        | 导出图片类型      | `string`           | png     |
+| quality          | 导出图片质量(0-1) | `number`           | 1       |
+| export-scale     | 导出图片的缩放比例   | `number`           | 1       |
+| disabled         | 是否禁用签名板     | `boolean`          | false   |
+| background-color | 画板的背景色      | `string`           | -       |
+| disable-scroll   | 是否禁用画布滚动    | `boolean`          | true    |
+| enable-history   | 是否开启历史记录    | `boolean`          | false   |
+| step             | 历史记录步长      | `number`           | 1       |
+| pressure         | 是否启用笔锋模式    | `boolean`          | false   |
+| min-width        | 笔锋模式最小宽度    | `number`           | 2       |
+| max-width        | 笔锋模式最大宽度    | `number`           | 6       |
+| min-speed        | 笔锋模式速度阈值    | `number`           | 1.5     |
 
 ### Events
 

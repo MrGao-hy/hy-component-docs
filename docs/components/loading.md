@@ -26,13 +26,17 @@
 ### 模式类型
 - 通过配置`mode`可以指定模式
   - `spinner` 配置花瓣（默认）
-  - `circle` 配置圆形
-  - `semicircle` 配置半圆
+  - `circle` 圆环加载样式
+  - `semicircle` 半圆加载样式
+  - `dots` 跳动圆点加载样式
+  - `bars` 音波柱加载样式
 ```html
 <template>
     <hy-loading mode="spinner"></hy-loading>
     <hy-loading mode="circle"></hy-loading>
     <hy-loading mode="semicircle"></hy-loading>
+    <hy-loading mode="dots"></hy-loading>
+    <hy-loading mode="bars"></hy-loading>
 </template>
 ```
 
@@ -87,10 +91,10 @@
 | 参数             | 说明                                                              | 类型                                                      | 默认值         |
 |----------------|-----------------------------------------------------------------|---------------------------------------------------------|-------------|
 | show           | 是否显示动画                                                          | `boolean`                                               | true        |
-| color          | 图标颜色                                                            | `string`                                                | #909399     |
+| color          | 图标颜色                                                            | `string`                                                | -           |
 | textColor      | 提示文本颜色                                                          | `string`                                                | #909399     |
 | direction      | 图标和文字是否垂直排列                                                     | `column`\|`row`                                         | row         |
-| mode           | 模式选择[^1]                                                        | `spinner`\|`circle`\|`semicircle`                       | spinner     |
+| mode           | 模式选择[^1]                                                        | `spinner`\|`circle`\|`semicircle`\|`dots` \|`bars`      | spinner     |
 | size           | 加载图标的大小，单位px                                                    | `string` \| `number`                                    | 24          |
 | textSize       | 加载文字的大小，单位px                                                    | `string` \| `number`                                    | 15          |
 | text           | 文字内容                                                            | `string`                                                | -           |
