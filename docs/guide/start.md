@@ -2,7 +2,7 @@
 ::: info 温馨提示
 node(推荐) >= 16.14.0
 
-sass(推荐) 1.53.0<=sass<=1.78.0
+sass(推荐) 1.53.0<=sass<=1.101.0
 :::
 
 ## :rocket: 下载scss(没有的话需要安装)
@@ -11,19 +11,19 @@ sass(推荐) 1.53.0<=sass<=1.78.0
 :::
 ::: code-group
 ```shell [npm]
-$ npm install -D sass@1.53.0
+$ npm install -D sass@1.78.0
 ```
 
 ```shell [pnpm]
-$ pnpm add -D sass@1.53.0
+$ pnpm add -D sass@1.78.0
 ```
 
 ```shell [cnpm]
-$ cnpm install -D sass@1.53.0
+$ cnpm install -D sass@1.78.0
 ```
 
 ```shell [yarn]
-$ yarn add -D sass@1.53.0
+$ yarn add -D sass@1.78.0
 ```
 :::
 
