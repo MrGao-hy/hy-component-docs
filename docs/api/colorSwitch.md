@@ -1,49 +1,112 @@
-# colorSwitch 颜色转换
+﻿# colorSwitch 颜色转换工具
 
-## RGB转十六进制Hex
-### rgbToHex(rgb)
-该函数可以将一个RGB颜色值转换成一个Hex的十六进制颜色值
-- `rgb` \<String\> RGB颜色值，如`rgb(230, 231, 233)`
-```ts
+## 函数列表
+
+### rgbToHex(rgb) => string
+
+将 RGB 颜色值转换为 HEX 十六进制颜色值。
+
+**参数**
+
+| 参数名 | 类型   | 必填 | 默认值 | 说明                                |
+| ------ | ------ | ---- | ------ | ----------------------------------- |
+| rgb    | string | 是   | -      | RGB 颜色值，如 `rgb(230, 231, 233)` |
+
+**返回值**
+
+| 类型   | 说明               |
+| ------ | ------------------ |
+| string | HEX 十六进制颜色值 |
+
+**示例**
+
+```typescript
 import { rgbToHex } from "@hy-app/ui";
 
-const rgb = 'rgb(13, 145, 20)'
-console.log(rgbToHex(rgb)) // #0D9114
+const rgb = "rgb(13, 145, 20)";
+console.log(rgbToHex(rgb)); // #0D9114
 ```
 
-## 十六进制Hex转RGB
-### hexToRgb(hex)
-该函数可以将一个Hex的十六进制颜色值转换成一个RGB颜色值
-- `hex` \<String\> HEx颜色值，如`#0afdce`
-```ts
+---
+
+### hexToRgb(hex) => string
+
+将 HEX 十六进制颜色值转换为 RGB 颜色值。
+
+**参数**
+
+| 参数名 | 类型   | 必填 | 默认值 | 说明                     |
+| ------ | ------ | ---- | ------ | ------------------------ |
+| hex    | string | 是   | -      | HEX 颜色值，如 `#0afdce` |
+
+**返回值**
+
+| 类型   | 说明       |
+| ------ | ---------- |
+| string | RGB 颜色值 |
+
+**示例**
+
+```typescript
 import { hexToRgb } from "@hy-app/ui";
 
-const hex = '#0afdce'
-console.log(rgbToHex(hex)) // RGB(10,253,206)
+const hex = "#0afdce";
+console.log(hexToRgb(hex)); // rgb(10, 253, 206)
 ```
 
+---
 
-## 颜色渐变
-### colorGradient(startColor, endColor, step)
-该函数实现两个颜色值之间等分取值，返回一个数组，元素为十六进制形式的颜色值，数组长度为step值。 例如：colorGradient('rgb(250, 250, 250)', 'rgb(252, 252, 252)', 3)，得到的结果为["#fafafa", "#fafafa", "#fbfbfb"]
-- `startColor` \<String\> 开始颜色值，可以是HEX或者RGB颜色值，如`#0afdce`或者`rgb(120, 130, 150)`
-- `endColor` \<String\> 结束颜色值，可以是HEX或者RGB颜色值，如`#0afdce`或者`rgb(120, 130, 150)`
-- `step` \<Number\> 均分值，把开始值和结束值平均分成多少份
-```ts
+### colorGradient(startColor, endColor, step) => string[]
+
+计算两个颜色之间的等分渐变色，返回颜色数组。
+
+**参数**
+
+| 参数名     | 类型   | 必填 | 默认值 | 说明                        |
+| ---------- | ------ | ---- | ------ | --------------------------- |
+| startColor | string | 是   | -      | 开始颜色值，HEX 或 RGB 格式 |
+| endColor   | string | 是   | -      | 结束颜色值，HEX 或 RGB 格式 |
+| step       | number | 是   | -      | 均分值                      |
+
+**返回值**
+
+| 类型     | 说明       |
+| -------- | ---------- |
+| string[] | 渐变色数组 |
+
+**示例**
+
+```typescript
 import { colorGradient } from "@hy-app/ui";
 
-console.log(colorGradient('rgb(250,250,250)', 'rgb(252,252,252)', 3)); // 结果为：["#fafafa", "#fafafa", "#fbfbfb"]
+console.log(colorGradient("rgb(250,250,250)", "rgb(252,252,252)", 3));
+// ["#fafafa", "#fafafa", "#fbfbfb"]
 ```
 
+---
 
-## 颜色透明度
-### colorToRgba(color, opacity = 0.3)
-该函数可以接受一个十六进制或者rgb格式的颜色值(不能接受命名式颜色格式，比如white)，返回此颜色的rgba格式值，如下：
-- `color` \<String> 颜色值，只能`hex`或者`rgba`格式
-- `opacity` \<Number> 不透明度值，取值为0-1之间
-```ts
+### colorToRgba(color, opacity?) => string
+
+将颜色值转换为 RGBA 格式，支持设置透明度。
+
+**参数**
+
+| 参数名  | 类型   | 必填 | 默认值 | 说明                    |
+| ------- | ------ | ---- | ------ | ----------------------- |
+| color   | string | 是   | -      | 颜色值，HEX 或 RGB 格式 |
+| opacity | number | 否   | 0.3    | 不透明度值（0-1）       |
+
+**返回值**
+
+| 类型   | 说明        |
+| ------ | ----------- |
+| string | RGBA 颜色值 |
+
+**示例**
+
+```typescript
 import { colorToRgba } from "@hy-app/ui";
 
-colorToRgba('#000000', 0.35);// 结果为 rgba(0, 0, 0, 0.35)
-colorToRgba('rgb(255, 180, 0)', 0.4);// 结果为 rgba(255, 180, 0, 0.4)
+colorToRgba("#000000", 0.35); // rgba(0, 0, 0, 0.35)
+colorToRgba("rgb(255, 180, 0)", 0.4); // rgba(255, 180, 0, 0.4)
 ```

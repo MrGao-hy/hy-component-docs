@@ -156,7 +156,7 @@ const sliderValue = ref(4);
 | blockColor    | 滑块背景颜色            | `string`             | -      |
 | showValue     | 是否显示当前 value      | `boolean`            | false  |
 | blockStyle    | 滑块按钮自定义样式，对象形式    | `CSSProperties`      | -      |
-| height        | 进度条高度             | `string` \| `number` | 2px    |
+| height        | 进度条高度，数值默认单位px             | `string` \| `number` | 2px    |
 | isRange       | 开始其双滑快模式          | `boolean`            | false  |
 | useNative     | 是否渲染uni-app框架内置组件 | `boolean`            | false  |
 | rangeValue    | 双滑快双向绑定值，数组形式     | `array`              | [0, 0] |

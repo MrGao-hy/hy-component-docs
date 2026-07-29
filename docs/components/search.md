@@ -210,7 +210,7 @@ const onClickIcon = (keyword) => {
 | margin           | 组件与其他元素之间的距离，支持字符串（如 "30px"）或数字                              | `string` \| `number`                   | 0                |
 | animation        | 是否开启动画，见上方说明                                                 | `boolean`                              | false            |
 | maxlength        | 输入框最大能输入的长度，-1 为不限制长度                                        | `number`                               | -1               |
-| height           | 输入框高度，单位 px                                                  | `number`                               | 30               |
+| height           | 输入框高度，数值默认单位px                                                  | `number`                               | 30               |
 | label            | 搜索框左边显示的文本信息                                                 | `string`                               | -                |
 | customStyle      | 自定义需要用到的外部样式                                                 | `CSSProperties`                        | -                |
 | customClass      | 自定义外部类名                                                      | `string`                               | -                |

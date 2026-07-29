@@ -1,28 +1,60 @@
-# addUnit 
+﻿# addUnit & getPx 单位转换工具
 
-## 数值转换单位（添加单位，如果有rpx，upx，%，px等单位结尾或者值为auto，直接返回，否则加上px单位结尾）
-### addUnit(value, unit)
-- `value` \<String> 需要添加单位的值
-- `unit` \<String> 添加的单位名（默认：px）
-```javascript
-import { addUnit } from "hfyk-app";
+## 函数列表
 
-// 添加单位
-const unit_1 = addUnit(20); // 打印出：20px
-const unit_2 = addUnit("20rpx"); // 打印出：20rpx
-const unit_3 = addUnit("10", "rpx"); // 打印出：20rpx
+### addUnit(value, unit?) => string
+
+为数值添加单位，如果值已包含单位则直接返回。
+
+**参数**
+
+| 参数名 | 类型             | 必填 | 默认值 | 说明             |
+| ------ | ---------------- | ---- | ------ | ---------------- |
+| value  | string \| number | 是   | -      | 需要添加单位的值 |
+| unit   | string           | 否   | px     | 添加的单位名     |
+
+**返回值**
+
+| 类型   | 说明               |
+| ------ | ------------------ |
+| string | 添加单位后的字符串 |
+
+**示例**
+
+```typescript
+import { addUnit } from "@hy-app/ui";
+
+const unit_1 = addUnit(20); // 20px
+const unit_2 = addUnit("20rpx"); // 20rpx
+const unit_3 = addUnit("10", "rpx"); // 10rpx
 ```
 
-## rpx或upx的数值转换px的数值
-### getPx(value, unit)
-- `value` \<String> 需要转换的值
-- `unit` \<Boolean> 是否添加`px`单位
-```javascript
-import { addUnit } from "hfyk-app";
+---
 
-// 转换px
-const unit_1 = getPx(20, true); // 打印出：20px
-const unit_2 = getPx("20px"); // 打印出：20
-const unit_3 = getPx("20rpx"); // 打印出：10
-const unit_4 = getPx("20upx", true); // 打印出：10px
+### getPx(value, unit?) => string \| number
+
+将 rpx 或 upx 单位转换为 px 单位。
+
+**参数**
+
+| 参数名 | 类型             | 必填 | 默认值 | 说明             |
+| ------ | ---------------- | ---- | ------ | ---------------- |
+| value  | string \| number | 是   | -      | 需要转换的值     |
+| unit   | boolean          | 否   | false  | 是否添加 px 单位 |
+
+**返回值**
+
+| 类型             | 说明           |
+| ---------------- | -------------- |
+| string \| number | 转换后的 px 值 |
+
+**示例**
+
+```typescript
+import { getPx } from "@hy-app/ui";
+
+const unit_1 = getPx(20, true); // 20px
+const unit_2 = getPx("20px"); // 20
+const unit_3 = getPx("20rpx"); // 10
+const unit_4 = getPx("20upx", true); // 10px
 ```

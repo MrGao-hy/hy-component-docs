@@ -114,7 +114,7 @@ const resume = () => {
 | useEasing | 滚动结束时，是否缓动结尾，见上方说明 | `boolean`          | true    |
 | decimal   | 十进制分割              | `string`           | ,       |
 | color     | 字体颜色               | `string`           | #606266 |
-| fontSize  | 字体大小，单位px          | `string`\|`number` | 22      |
+| fontSize  | 字体大小，数值默认单位px          | `string`\|`number` | 22      |
 | bold      | 字体是否加粗             | `boolean`          | false   |
 | separator | 千位分隔符，见上方说明        | `string`           | -       |
 

@@ -10,19 +10,22 @@
 ## :japanese_castle:基本使用示例
 
 ```html
-<!-- 全局使用 -->
-<hy-back-top :scroll-top="scrollTop"></hy-back-top>
-```
-```ts
-import { onPageScroll } from '@dcloudio/uni-app';
+<template>
+    <!-- 全局使用 -->
+    <hy-back-top :scroll-top="scrollTop"></hy-back-top>
+</template>
 
-// 创建响应式数据 scrollTop  
-const scrollTop = ref(0);
+<script lang="ts" setup="">
+    import { onPageScroll } from '@dcloudio/uni-app';
 
-// onPageScroll 方法来更新 scrollTop 的值  
-onPageScroll((e) => {
-    scrollTop.value = e.scrollTop;
-});
+    // 创建响应式数据 scrollTop  
+    const scrollTop = ref(0);
+
+    // onPageScroll 方法来更新 scrollTop 的值  
+    onPageScroll((e) => {
+        scrollTop.value = e.scrollTop;
+    });
+</script>
 ```
 
 ### 改变返回顶部按钮的出现时机
@@ -52,9 +55,9 @@ onPageScroll((e) => {
 | text        | 返回顶部按钮的提示文字              | `string`           | -                   |
 | duration    | 返回顶部过程中的过渡时间，单位ms        | `number`           | 500                 |
 | scrollTop   | 页面的滚动距离                  | `number`           | 0                   |
-| top         | 滚动条滑动多少距离时显示，单位px        | `number`\|`string` | 400                 |
-| bottom      | 返回按钮位置到屏幕底部的距离，单位px      | `number`\|`string` | 100                 |
-| right       | 返回按钮位置到屏幕右边的距离，单位px      | `number`\|`string` | 20                  |
+| top         | 滚动条滑动多少距离时显示，数值默认单位px        | `number`\|`string` | 400                 |
+| bottom      | 返回按钮位置到屏幕底部的距离，数值默认单位px      | `number`\|`string` | 100                 |
+| right       | 返回按钮位置到屏幕右边的距离，数值默认单位px      | `number`\|`string` | 20                  |
 | z-index     | 返回顶部按钮的层级                | `number`           | 888                 |
 | customStyle | 自定义需要用到的外部样式             | `CSSProperties`    | -                   |
 | customClass | 自定义外部类名                  | `string`           | -                   |

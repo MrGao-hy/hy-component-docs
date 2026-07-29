@@ -177,8 +177,8 @@ onMounted(() => {
 |------------------|-------------|--------------------|---------|
 | pen-color        | 签名笔颜色       | `string`           | #000000 |
 | line-width       | 签名笔宽度       | `number`           | 3       |
-| height           | 画布的高度       | `number`\|`string` | -       |
-| width            | 画布的宽度       | `number`\|`string` | -       |
+| height           | 画布的高度，数值默认单位px       | `number`\|`string` | -       |
+| width            | 画布的宽度，数值默认单位px       | `number`\|`string` | -       |
 | clear-text       | 清空按钮的文本     | `string`           | -       |
 | confirm-text     | 确认按钮的文本     | `string`           | -       |
 | file-type        | 导出图片类型      | `string`           | png     |

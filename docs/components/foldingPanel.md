@@ -87,9 +87,9 @@
 | value         | 右侧显示的值         | `string`           | -     |
 | icon          | 左侧图标           | `string`           | -     |
 | iconColor     | 左侧图标颜色         | `string`           | -     |
-| iconSize      | 左侧图标大小         | `string`\|`numner` | -     |
+| iconSize      | 左侧图标大小，数值默认单位px         | `string`\|`numner` | -     |
 | content       | 面板内容           | `string`           | -     |
-| contentHeight | 内容区域最大高度       | `string`\|`numner` | 150   |
+| contentHeight | 内容区域最大高度，数值默认单位px       | `string`\|`numner` | 150   |
 | disabled      | 是否禁用当个面板       | `boolean`          | false |
 | defaultOpen   | 默认是否展开         | `boolean`          | false |
 | customStyle   | 自定义需要用到的外部样式   | `CSSProperties`    | -     |

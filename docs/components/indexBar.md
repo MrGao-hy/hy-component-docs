@@ -340,9 +340,9 @@ const scrollToSection = async (i: string) => {
 | activeIndexColor   | 激活状态索引项颜色                | `string`                           | -           |
 | indexBgColor       | 索引项背景色                   | `string`                           | transparent |
 | activeIndexBgColor | 激活状态索引项背景色               | `string`                           | -           |
-| indexSize          | 索引项大小（像素）                | `number`\|`string`                 | 12          |
-| height             | 索引栏高度                    | `number`\|`string`                 | 100%        |
-| width              | 索引栏宽度（像素）                | number/string                      | 20          |
+| indexSize          | 索引项大小，数值默认单位px                | `number`\|`string`                 | 12          |
+| height             | 索引栏高度，数值默认单位px                    | `number`\|`string`                 | 100%        |
+| width              | 索引栏宽度，数值默认单位px                | number/string                      | 20          |
 | customStyle        | 自定义需要用到的外部样式             | `CSSProperties`                    | -           |
 | customClass        | 自定义外部类名                  | `string`                           | -           |
 

@@ -1,40 +1,86 @@
-# formatTime 时间戳转换时间格式
+﻿# formatTime 时间处理工具
 
-## 时间戳格式
-### formatTime(timestamp, fmt)
-- `timestamp` \<String | Number> 时间戳
-- `fmt` \<String> 时间格式，默认值：yyyy-MM-dd
-```javascript
+## 函数列表
+
+### formatTime(timestamp, fmt?) => string
+
+将时间戳或日期对象格式化为指定的时间字符串。
+
+**参数**
+
+| 参数名    | 类型             | 必填 | 默认值     | 说明             |
+| --------- | ---------------- | ---- | ---------- | ---------------- |
+| timestamp | string \| number | 是   | -          | 时间戳或日期对象 |
+| fmt       | string           | 否   | yyyy-MM-dd | 时间格式         |
+
+**返回值**
+
+| 类型   | 说明                 |
+| ------ | -------------------- |
+| string | 格式化后的时间字符串 |
+
+**示例**
+
+```typescript
 import { formatTime } from "@hy-app/ui";
 
-// 时间格式转换
-const day = formatTime(new Date())
-// 时间戳转换
-const yearMonth = formatTime(1702051200000, "yyyy-MM-dd")
-const time = formatTime(1702051200000, "HH:mm:ss")
+const day = formatTime(new Date());
+const yearMonth = formatTime(1702051200000, "yyyy-MM-dd");
+const time = formatTime(1702051200000, "HH:mm:ss");
 ```
 
-## 时间戳或年月日格式转为多久之前，或者年月日，当前显示月日
-### formatTimeToString(timestamp, format)
-- `timestamp` \<string | number> 时间戳/时间格式
-- `format` \<String> 时间格式，默认值：yyyy-MM-dd
-```javascript
+---
+
+### formatTimeToString(timestamp, format?) => string
+
+将时间戳或时间格式字符串转换为格式化时间或"多久之前"的相对时间描述。
+
+**参数**
+
+| 参数名    | 类型             | 必填 | 默认值     | 说明                                |
+| --------- | ---------------- | ---- | ---------- | ----------------------------------- |
+| timestamp | string \| number | 是   | -          | 时间戳或时间格式字符串              |
+| format    | string           | 否   | yyyy-MM-dd | 时间格式，传 false 时显示"多久之前" |
+
+**返回值**
+
+| 类型   | 说明                                 |
+| ------ | ------------------------------------ |
+| string | 格式化后的时间字符串或"多久之前"描述 |
+
+**示例**
+
+```typescript
 import { formatTimeToString } from "@hy-app/ui";
 
-// 时间格式转换
-const day = formatTimeToString("2020-10-10 09:00:00")
-// 时间戳转换
-const yearMonth = formatTimeToString(1702051200000, "yyyy-MM-dd")
-const time = formatTimeToString(1702051200000, false)
+const day = formatTimeToString("2020-10-10 09:00:00");
+const yearMonth = formatTimeToString(1702051200000, "yyyy-MM-dd");
+const relativeTime = formatTimeToString(1702051200000, false);
 ```
 
-## 日期的月或日补零操作
-### padZero(value)
-- `value` \<String | Number> 数值
-```javascript
+---
+
+### padZero(value) => string
+
+对数值进行补零操作，小于10的数字前面补0。
+
+**参数**
+
+| 参数名 | 类型             | 必填 | 默认值 | 说明           |
+| ------ | ---------------- | ---- | ------ | -------------- |
+| value  | string \| number | 是   | -      | 需要补零的数值 |
+
+**返回值**
+
+| 类型   | 说明           |
+| ------ | -------------- |
+| string | 补零后的字符串 |
+
+**示例**
+
+```typescript
 import { padZero } from "@hy-app/ui";
 
-// 时间格式转换
-const num = padZero(2)
-console.log(num) // 打印出：02
+const num = padZero(2);
+console.log(num); // 02
 ```

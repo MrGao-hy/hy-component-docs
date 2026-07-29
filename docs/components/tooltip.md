@@ -250,7 +250,7 @@ Tooltip 支持12种弹出位置，通过 `placement` 属性控制：
 |-------------|--------------------------|------------------------------------|-------------|
 | text        | 需要显示的提示文字                | `string`                           | -           |
 | copyText    | 点击复制按钮时，复制的文本，为空则使用text值 | `string`                           | -           |
-| size        | 文本大小                     | `string`\|`number`                 | 14          |
+| size        | 文本大小，数值默认单位px                     | `string`\|`number`                 | 14          |
 | bold        | 文本粗细                     | `boolean`                          | false       |
 | color       | 字体颜色                     | `string`                           | -           |
 | bgColor     | 弹出提示框时，文本的背景色            | `string`                           | transparent |

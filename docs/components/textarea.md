@@ -177,7 +177,7 @@ const rules = {
 | placeholder           | 输入框为空时占位符                                                 | `string`                     | -                    |
 | placeholderClass      | 指定 placeholder 的样式类[^1]                                   | `string`                     | textarea-placeholder |
 | placeholderStyle      | 指定 placeholder 的样式，对象形式                                   | `string`                     | -                    |
-| height                | 输入框高度                                                     | `string \| number`           | 70                   |
+| height                | 输入框高度，数值默认单位px                                                     | `string \| number`           | 70                   |
 | confirmType           | 设置键盘右下角按钮的文字，仅微信小程序、App-vue 和 H5 有效                       | `string`                     | done                 |
 | disabled              | 是否禁用                                                      | `boolean`                    | false                |
 | count                 | 是否显示统计字数                                                  | `boolean`                    | false                |

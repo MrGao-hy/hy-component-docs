@@ -156,7 +156,7 @@ const loadDynamicContent = async () => {
 
 | 参数             | 说明                                             | 类型                 | 默认值  |
 |----------------|------------------------------------------------|--------------------|------|
-| offsetTop      | 吸顶时距离顶部的偏移量（单位：px）                             | `string`\|`number` | 0    |
+| offsetTop      | 吸顶时距离顶部的偏移量，数值默认单位px                             | `string`\|`number` | 0    |
 | zIndex         | 吸顶时的层级                                         | `string`\|`number` | 99   |
 | enable         | 是否启用吸顶功能                                       | `boolean`          | true |
 | scrollSelector | 在 `scroll-view` 内使用时，指定 `scroll-view` 的类名（不含点） | `string`           | -    |

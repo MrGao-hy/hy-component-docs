@@ -62,10 +62,10 @@
 | mode        | 缺省页内容                                     | `string`           | content |
 | imageUrl    | 空状态icon图片                                 | `string`           | -       |
 | zIndex      | 组件层级                                      | `number`           | 889     |
-| width       | 图片宽度                                      | `string`\|`number` | 240px   |
-| height      | 图片高度                                      | `string`\|`number` | 240px   |
+| width       | 图片宽度，数值默认单位px                                      | `string`\|`number` | 240px   |
+| height      | 图片高度，数值默认单位px                                      | `string`\|`number` | 240px   |
 | description | 提示信息                                      | `string`           | 暂无数据    |
-| desSize     | 提示信息大小                                    | `string`\|`number` | 15      |
+| desSize     | 提示信息大小，数值默认单位px                                    | `string`\|`number` | 15      |
 | desColor    | 提示信息颜色                                    | `string`           | -       |
 | imgMargin   | icon图片margin                              | `string`           | -       |
 | button      | 按钮属性集合，text有值时候显示，详见[按钮Api](./button#api) | `HyButtonProps`    | -       |

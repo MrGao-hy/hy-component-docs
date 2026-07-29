@@ -1,13 +1,15 @@
 # NumberStep 步进器组件
+
 > 该组件一般用于商城购物选择物品数量的场景
 
 ## :pushpin:平台差异说明
 
-| APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
-|----------|----|-------|--------|
-| ✔        | ✔  | ✔     | ✔      |
+| APP(vue) | H5  | 微信小程序 | 支付宝小程序 |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
 ## 注意事项
+
 ::: warning 注意事项
 注意：该输入框只能输入大于或等于0的整数
 :::
@@ -16,8 +18,9 @@
 
 ```html
 <!-- 全局使用 -->
-<hy-number-step  v-model="value"></hy-number-step>
+<hy-number-step v-model="value"></hy-number-step>
 ```
+
 ```ts
 import { vue } from "vue";
 
@@ -25,36 +28,44 @@ const value = ref(12);
 ```
 
 ### 步长设置
+
 - 通过`step`属性设置每次点击增加或减少按钮时变化的值，默认为1，下面示例每次都会加2或者减2
+
 ```html
 <template>
-    <hy-number-step v-model="value" :step="2"></hy-number-step>
+  <hy-number-step v-model="value" :step="2"></hy-number-step>
 </template>
 ```
 
 ### 限制输入范围
+
 - `min`-最小值
 - `max`-最大值
+
 ```html
 <template>
-    <hy-number-step v-model="value" :min="1" :max="100"></hy-number-step>
+  <hy-number-step v-model="value" :min="1" :max="100"></hy-number-step>
 </template>
 ```
 
 ### 限制只能输入整数
+
 - 通过`integer`限制输入类型
+
 ```html
 <template>
-    <hy-number-step v-model="value" integer></hy-number-step>
+  <hy-number-step v-model="value" integer></hy-number-step>
 </template>
 ```
 
 ### 禁用
+
 - 通过`disabled`禁用步进器，禁用状态下无法点击加减按钮或修改输入框的值
 - 通过`disabledInput`禁用输入框
 - 通过`disablePlus`禁用增加按钮
 - 通过`disableMinus`禁用减少按钮
 - 通过`longPress`禁用长按事件
+
 ```html
 <!-- 通过设置`disabled`参数来禁用输入框，禁用状态下无法点击加减按钮或修改输入框的值 -->
 <hy-number-step :disabled="true"></hy-number-step>
@@ -73,31 +84,35 @@ const value = ref(12);
 ```
 
 ### 颜色和大小
+
 - 通过`button-size`参数设置按钮大小
 - 通过`icon-style`参数设置加减按钮图标的样式
+
 ```html
 <template>
-    <hy-number-step 
-            v-model="value"
-            button-size="36"
-            color="#ffffff"
-            bgColor="#2979ff"
-            iconStyle="color: #fff"
-    ></hy-number-step>
+  <hy-number-step
+    v-model="value"
+    button-size="36"
+    color="#ffffff"
+    bgColor="#2979ff"
+    iconStyle="color: #fff"
+  ></hy-number-step>
 </template>
 ```
 
 ### 隐藏减号
+
 ```html
 <hy-number-step
-        v-model="item.quantity"
-        :min="0"
-        :miniMode="true"
-        input-bg-color="transparent"
-        :plusIcon="{ color: '#ffffff' }"
-        button-radius="50%"
+  v-model="item.quantity"
+  :min="0"
+  :miniMode="true"
+  input-bg-color="transparent"
+  :plusIcon="{ color: '#ffffff' }"
+  button-radius="50%"
 ></hy-number-step>
 ```
+
 ```scss
 .hidden {
   :deep(.hy-number-box__plus) {
@@ -112,47 +127,36 @@ const value = ref(12);
 ```
 
 ### 自定义插槽
+
 ::: code-group
+
 ```html [vue]
 <template>
-    <hy-number-step v-model="value">
-        <template #minus>
-            <view
-                class="minus"
-            >
-                <up-icon
-                    name="minus"
-                    size="12"
-                ></up-icon>
-            </view>
-        </template>
-        <template #input>
-            <text
-                style="width: 50px;text-align: center;"
-                class="input"
-            >{{value}}</text>
-        </template>
-        <template #plus>
-            <view
-                class="plus"
-            >
-                <up-icon
-                    name="plus"
-                    color="#FFFFFF"
-                    size="12"
-                ></up-icon>
-            </view>
-        </template>
-    </hy-number-step>
+  <hy-number-step v-model="value">
+    <template #minus>
+      <view class="minus">
+        <up-icon name="minus" size="12"></up-icon>
+      </view>
+    </template>
+    <template #input>
+      <text style="width: 50px;text-align: center;" class="input"
+        >{{value}}</text
+      >
+    </template>
+    <template #plus>
+      <view class="plus">
+        <up-icon name="plus" color="#FFFFFF" size="12"></up-icon>
+      </view>
+    </template>
+  </hy-number-step>
 </template>
 ```
 
 ```ts [index.ts]
-import { ref } from 'vue';
+import { ref } from "vue";
 
-// 创建响应式数据  
+// 创建响应式数据
 const value = ref(1);
-
 ```
 
 ```scss [index.scss]
@@ -181,58 +185,60 @@ const value = ref(1);
   align-items: center;
 }
 ```
+
 :::
 
 ## API
+
 ### NumberStep Props
 
-| 参数            | 说明                               | 类型                 | 默认值                     |
-|---------------|----------------------------------|--------------------|-------------------------|
-| v-model       | 用于双向绑定的值，初始化时设置设为默认min值(最小值)     | `number`           | -                       |
-| min           | 用户可输入的最小值                        | `number`           | 1                       |
-| max           | 用户可输入的最大值                        | `number`           | Number.MAX_SAFE_INTEGER |
-| step          | 步长，每次加或减的值， 支持小数值，如需小数           | `number`           | 1                       |
-| integer       | 是否只能输入正整数                        | `boolean`          | false                   |
-| disabled      | 是否禁用操作，包括输入框，加减按钮                | `boolean`          | false                   |
-| disabledInput | 是否禁止输入框                          | `boolean`          | false                   |
-| asyncChange   | 是否开启异步变更，开启后需要手动控制输入值            | `boolean`          | false                   |
-| inputWidth    | 输入框宽度，单位px                       | `string`\|`number` | 35                      | -   |
-| showMinus     | 是否显示减少按钮                         | `boolean`          | true                    |
-| showPlus      | 是否显示增加按钮                         | `boolean`          | true                    |
-| decimalLength | 显示的小数位数                          | `string`\|`number` | -                       |
-| longPress     | 是否允许长按进行加减                       | `boolean`          | true                    |
-| color         | 输入框文字和加减按钮图标的颜色                  | `string`           | -                       |
-| buttonWidth   | 按钮宽度，单位px                        | `string`\|`number` | 30                      |
-| buttonSize    | 按钮高度，单位px，输入框高度和此值保持一致           | `string`\|`number` | 30                      |
-| buttonRadius  | 按钮圆角                             | `string`\|`number` | -                       |
-| bgColor       | 输入框和按钮的背景颜色                      | `string`           | -                       |
-| inputBgColor  | 输入框独立背景颜色                        | `string`           | -                       |
-| cursorSpacing | 指定光标于键盘的距离，避免键盘遮挡输入框，单位px        | `string`\|`number` | 100                     |
-| disablePlus   | 是否禁用增加按钮                         | `boolean`          | false                   |
-| disableMinus  | 是否禁用减少按钮                         | `boolean`          | false                   |
-| minusIcon     | 减号按钮图标属性集合，详见[图标Api](./icon#api) | `HyIconProps`      | -                       |
-| plusIcon      | 加号按钮图标属性集合，详见[图标Api](./icon#api) | `HyIconProps`      | -                       |
-| miniMode      | 迷你模式常用于外卖，值为0时只显示+号按钮            | `boolean`          | false                   |
-| customStyle   | 自定义需要用到的外部样式                     | `CSSProperties`    | -                       |
-| customClass   | 自定义外部类名                          | `string`           | -                       |
+| 参数          | 说明                                                     | 类型               | 默认值                  |
+| ------------- | -------------------------------------------------------- | ------------------ | ----------------------- |
+| v-model       | 用于双向绑定的值，初始化时设置设为默认min值(最小值)      | `number`           | -                       |
+| min           | 用户可输入的最小值                                       | `number`           | 1                       |
+| max           | 用户可输入的最大值                                       | `number`           | Number.MAX_SAFE_INTEGER |
+| step          | 步长，每次加或减的值， 支持小数值，如需小数              | `number`           | 1                       |
+| integer       | 是否只能输入正整数                                       | `boolean`          | false                   |
+| disabled      | 是否禁用操作，包括输入框，加减按钮                       | `boolean`          | false                   |
+| disabledInput | 是否禁止输入框                                           | `boolean`          | false                   |
+| asyncChange   | 是否开启异步变更，开启后需要手动控制输入值               | `boolean`          | false                   |
+| inputWidth    | 输入框宽度，数值默认单位px                               | `string`\|`number` | 35                      |
+| showMinus     | 是否显示减少按钮                                         | `boolean`          | true                    |
+| showPlus      | 是否显示增加按钮                                         | `boolean`          | true                    |
+| decimalLength | 显示的小数位数                                           | `string`\|`number` | -                       |
+| longPress     | 是否允许长按进行加减                                     | `boolean`          | true                    |
+| color         | 输入框文字和加减按钮图标的颜色                           | `string`           | -                       |
+| buttonWidth   | 按钮宽度，数值默认单位px                                 | `string`\|`number` | 30                      |
+| buttonSize    | 按钮高度，数值默认单位px，输入框高度和此值保持一致       | `string`\|`number` | 30                      |
+| buttonRadius  | 按钮圆角，数值默认单位px                                 | `string`\|`number` | -                       |
+| bgColor       | 输入框和按钮的背景颜色                                   | `string`           | -                       |
+| inputBgColor  | 输入框独立背景颜色                                       | `string`           | -                       |
+| cursorSpacing | 指定光标于键盘的距离，避免键盘遮挡输入框，数值默认单位px | `string`\|`number` | 100                     |
+| disablePlus   | 是否禁用增加按钮                                         | `boolean`          | false                   |
+| disableMinus  | 是否禁用减少按钮                                         | `boolean`          | false                   |
+| minusIcon     | 减号按钮图标属性集合，详见[图标Api](./icon#api)          | `HyIconProps`      | -                       |
+| plusIcon      | 加号按钮图标属性集合，详见[图标Api](./icon#api)          | `HyIconProps`      | -                       |
+| miniMode      | 迷你模式常用于外卖，值为0时只显示+号按钮                 | `boolean`          | false                   |
+| customStyle   | 自定义需要用到的外部样式                                 | `CSSProperties`    | -                       |
+| customClass   | 自定义外部类名                                           | `string`           | -                       |
 
 ### Events
 
-| 事件名       | 说明           | 回调参数                  |
-|-----------|--------------|-----------------------|
-| focus     | 输入框得到焦点触发    | value: 数值             |
-| blur      | 输入框失去焦点时触发   | value: 数值             |
-| change    | 输入框内容发生变化时触发 | value: 数值             |
-| overLimit | 超过范围阈值时触发    | type: `minus`\|`plus` |
-| plus      | 点击增加按钮触发     | value: 数值             |
-| minus     | 点击减少按钮触发     | value: 数值             |
+| 事件名    | 说明                     | 回调参数              |
+| --------- | ------------------------ | --------------------- |
+| focus     | 输入框得到焦点触发       | value: 数值           |
+| blur      | 输入框失去焦点时触发     | value: 数值           |
+| change    | 输入框内容发生变化时触发 | value: 数值           |
+| overLimit | 超过范围阈值时触发       | type: `minus`\|`plus` |
+| plus      | 点击增加按钮触发         | value: 数值           |
+| minus     | 点击减少按钮触发         | value: 数值           |
 
 ### Slots
 
-| 插槽名   | 说明   | 接收值    |
-|-------|------|--------|
-| minus | 减少按钮 | -      |
-| input | 输入框  | record |
-| plus  | 增加按钮 | -      |
+| 插槽名 | 说明     | 接收值 |
+| ------ | -------- | ------ |
+| minus  | 减少按钮 | -      |
+| input  | 输入框   | record |
+| plus   | 增加按钮 | -      |
 
 <demo-model url="pages-design/numberBox/numberBox"></demo-model>

@@ -259,7 +259,7 @@ const handleClose = () => {
 | color          | 文字颜色，图标也会使用此颜色                                      | `string`                | #ff9900           |
 | bgColor        | 背景颜色                                                | `string`                | -                 |
 | speed          | 水平滚动时的滚动速度，即每秒滚动多少px，速度越大滚动越快                       | `number`                | 80                |
-| fontSize       | 字体大小，单位px                                           | `string` \| `number`    | 14                |
+| fontSize       | 字体大小，数值默认单位px                                           | `string` \| `number`    | 14                |
 | duration       | 滚动一个周期的时间，单位ms                                      | `number`                | 2000              |
 | disableTouch   | 是否禁止用手滑动切换，仅支持 App 2.5.5+、H5 2.5.5+、支付宝小程序、字节跳动小程序  | `boolean`               | true              |
 | url            | 跳转的页面路径                                             | `string`                | -                 |

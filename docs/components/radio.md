@@ -146,7 +146,7 @@ const value = ref("apply");
 | disabled      | 是否禁用            | `boolean`             | false                                                |
 | activeColor   | 选中状态下的颜色        | `string`              | -                                                    |
 | inactiveColor | 未选中的颜色          | `string`              | #c8c9cc                                              |
-| iconSize      | 图标的大小，单位px      | `string`\|`number`    | 20                                                   |
+| iconSize      | 图标的大小，数值默认单位px      | `string`\|`number`    | 20                                                   |
 | iconColor     | 图标颜色            | `string`              | -                                                    |
 | label         | label提示文字       | `string`              | -                                                    |
 | labelSize     | label的字体大小，px单位 | `string`\|`number`    | -                                                    |

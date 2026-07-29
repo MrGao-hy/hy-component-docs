@@ -1,11 +1,30 @@
-# imageToBase64 本地图片转base64方法（兼容APP、H5、小程序）
+﻿# imageToBase64 图片转 Base64 工具
 
-## 本地图片转base64
-### imageToBase64(timestamp, fmt)
-- `path` \<String> 本地上传图片路径
-```javascript
+兼容 APP、H5、小程序。
+
+## 函数列表
+
+### imageToBase64(path) => Promise&lt;string&gt;
+
+将本地图片转换为 Base64 格式，兼容 APP、H5、小程序。
+
+**参数**
+
+| 参数名 | 类型 | 必填 | 默认值 | 说明 |
+|--------|------|------|--------|------|
+| path | string | 是 | - | 本地上传图片路径 |
+
+**返回值**
+
+| 类型 | 说明 |
+|------|------|
+| Promise\<string\> | Base64 格式图片字符串 |
+
+**示例**
+
+```typescript
 import { imageToBase64 } from "@hy-app/ui";
 
-// 时间格式转换
-const base64 = imageToBase64();
+const base64 = await imageToBase64('/path/to/image.png');
+console.log(base64);
 ```

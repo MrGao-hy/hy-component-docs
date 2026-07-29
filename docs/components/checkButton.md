@@ -10,21 +10,24 @@
 ## :japanese_castle:基本使用示例
 
 ```html
-<!-- 全局使用 -->
-<hy-check-button v-model="value" :columns="columns"></hy-check-button>
-```
-```ts
-import { reactive, ref } from "vue";
+<template>
+  <!-- 全局使用 -->
+  <hy-check-button v-model="value" :columns="columns"></hy-check-button>
+</template>
 
-const value = ref("");
-const columns = reactive([
+<script lang="ts" setup>
+  import { reactive, ref } from "vue";
+
+  const value = ref("");
+  const columns = reactive([
     { label: "老师", value: 0 },
     { label: "护士", value: 1 },
     { label: "空姐", value: 2 },
     { label: "作家", value: 3 },
     { label: "网红", value: 4 },
     { label: "科学家", value: 5 },
-]);
+  ]);
+</script>
 ```
 
 ## 主题色
@@ -186,7 +189,7 @@ const columns = reactive([
 | selectType | 单选还是多选[^2]                             | `checkbox`\|`radio`                               | checkbox                                             |
 | disabled   | 禁用                                     | `boolean`                                         | false                                                |
 | col        | 设置子元素列排序，参考css属性值grid-template-columns | `string`                                          | repeat(3, 1fr)                                       |
-| gap        | 设置每行间距,需要加单位                           | `string`\| `number`                               | 10px                                                 |
+| gap        | 设置每行间距，数值默认单位px                           | `string`\| `number`                               | 10px                                                 |
 | type       | 标签类型[^3]                               | `error`\|`warning`\|`success` \|`primary`\|`info` | primary                                              |
 | size       | 标签的大小[^4]                              | `small`\|`medium`\|`large`                        | medium                                               |
 | shape      | tag的形状[^5]                             | `circle`\|`square`                                | square                                               |

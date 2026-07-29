@@ -137,7 +137,7 @@ const value = ref('');
 | selectionEnd          | 光标结束位置，自动聚集时有效，需与selection-start搭配使用	                   | `number`                                         | -1                |
 | adjustPosition        | 键盘弹起时，是否自动上推页面	                                         | `boolean`                                        | true              |
 | inputAlign            | 输入框内容对齐方式	                                              | `string`                                         | left              |
-| fontSize              | 输入框字体的大小	                                               | `string` \| `number`                             | 15px              |
+| fontSize              | 输入框字体的大小，数值默认单位px	                                               | `string` \| `number`                             | 15px              |
 | color                 | 输入框字体颜色	                                                | `string`                                         | -                 |
 | prefixIcon            | 输入框前置图标,配置详情见[图标Api](./icon#api)	                       | `HyIconProps`                                    | -                 |
 | suffixIcon            | 输入框后置图标,配置详情见[图标Api](./icon#api)                        | `HyIconProps`                                    | -                 |

@@ -77,8 +77,8 @@
 | inactiveColor | 进度条的底色，默认为灰色    | `string`             | -    |
 | percentage    | 进度百分比，数值        | `number`             | 0    |
 | showText      | 是否在进度条内部显示百分比的值 | `boolean`            | true |
-| height        | 进度条的高度，默认单位px	  | `number` \| `string` | 12   |
-| fontSize      | 字体大小，默认单位px	    | `number` \| `string` | -    |
+| height        | 进度条的高度，数值默认单位px	  | `number` \| `string` | 12   |
+| fontSize      | 字体大小，数值默认单位px	    | `number` \| `string` | -    |
 | customStyle   | 自定义需要用到的外部样式    | `CSSProperties`      | -    |
 | customClass   | 自定义外部类名         | `string`             | -    |
 

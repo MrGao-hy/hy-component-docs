@@ -150,7 +150,7 @@ const onLongPress = () => {
 | 参数              | 说明                             | 类型        | 默认值                                     |
 |-----------------|--------------------------------|-----------|-----------------------------------------|
 | cid             | 实例ID字符串（如果有多个二维码组件必须设置不一样的cid） | `string`  | `'hy-qrcode-canvas_' + random(1, 1000)` |
-| size            | 二维码大小（px）                      | `number`  | 200                                     |
+| size            | 二维码大小，数值默认单位px                      | `number`  | 200                                     |
 | text            | 二维码内容                          | `string`  | -                                       |
 | show            | 是否显示二维码                        | `boolean` | true                                    |
 | background      | 二维码背景色                         | `string`  | #ffffff                                 |

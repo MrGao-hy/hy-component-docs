@@ -248,7 +248,7 @@
 | bold             | 字体和输入横线是否加粗      | `boolean`          | false |
 | color            | 字体颜色             | `string`           | -     |
 | fontSize         | 字体大小，单位rpx       | `string`\|`number` | 18    |
-| size             | 输入框的大小，宽等于高      | `string`\|`number` | 35    |
+| size             | 输入框的大小，宽等于高，数值默认单位px      | `string`\|`number` | 35    |
 | disabledKeyboard | 禁止点击输入框唤起系统键盘    | `boolean`          | false |
 | borderColor      | 边框和线条颜色          | `string`           | -     |
 | disabledDot      | 是否禁止输入"."符号      | `boolean`          | true  |

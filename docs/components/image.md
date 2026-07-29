@@ -55,10 +55,10 @@
 |---------------------|---------------------------------------------------------------------|--------------------|------------|
 | src                 | 图片地址，**强烈建议**使用绝对或者网络路径                                             | `string`           | -          |
 | mode                | 裁剪模式，详见[image组件](https://uniapp.dcloud.net.cn/component/image.html) | `string`           | aspectFill |
-| width               | 宽度，单位任意，如果为数值，默认单位px                                                | `string`\|`number` | 200        |
-| height              | 高度，单位任意，如果为数值，默认单位px                                                | `string`\|`number` | 150        |
+| width               | 宽度，数值默认单位px                                                | `string`\|`number` | 200        |
+| height              | 高度，数值默认单位px                                                | `string`\|`number` | 150        |
 | shape               | 图片形状[^1]                                                            | `circle`\|`square` | square     |
-| radius              | 圆角，默认单位px                                                           | `string`\|`number` | 0          |
+| radius              | 圆角，数值默认单位px                                                           | `string`\|`number` | 0          |
 | lazyLoad            | 是否懒加载，仅微信小程序、App、百度小程序、字节跳动小程序有效                                    | `boolean`          | true       |
 | showMenuByLongPress | 是否开启长按图片显示识别小程序码菜单，仅微信小程序有效                                         | `boolean`          | true       |
 | loadingIcon         | 加载中的图标，或者小图片                                                        | `string`           | LOADING    |

@@ -161,8 +161,8 @@ const showMore = () => {
 
 | 参数                   | 说明                             | 类型              | 默认值  |
 |----------------------|--------------------------------|-----------------|------|
-| indicatorWidth       | 指示器的整体宽度                       | `number`        | 50   |
-| indicatorBarWidth    | 滑块的宽度                          | `number`        | 20   |
+| indicatorWidth       | 指示器的整体宽度，数值默认单位px                       | `number`        | 50   |
+| indicatorBarWidth    | 滑块的宽度，数值默认单位px                          | `number`        | 20   |
 | indicator            | 是否显示面板指示器                      | `boolean`       | true |
 | indicatorColor       | 指示器非激活颜色                       | `string`        | -    |
 | indicatorActiveColor | 指示器滑块颜色                        | `string`        | -    |

@@ -197,8 +197,8 @@ page .hy-theme--dark {
 |-------------|--------------|--------------------|-----|
 | theme       | 主题色，暗色或者默认白色 | `dark`\|`light`    | -   |
 | themeColor  | 主题颜色         | `string`           | -   |
-| height      | 页面高度         | `string`\|`number` | -   |
-| padding     | 内边距          | `string`\|`number` | -   |
+| height      | 页面高度，数值默认单位px         | `string`\|`number` | -   |
+| padding     | 内边距，数值默认单位px          | `string`\|`number` | -   |
 | customStyle | 自定义需要用到的外部样式 | `CSSProperties`    | -   |
 | customClass | 自定义外部类名      | `string`           | -   |
 

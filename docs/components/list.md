@@ -342,11 +342,11 @@ for (let i = 0; i < 20; i++) {
 | 参数              | 说明                    | 类型                                  | 默认值         |
 |-----------------|-----------------------|-------------------------------------|-------------|
 | list            | 数据列表                  | `array`                             | []          |
-| containerHeight | 容器高度，必须设置，否则加载全部数据    | `string` \| `number`                | 100%        |
-| itemHeight      | 子容器高度，必须和内容一致，否则计算有问题 | `string` \| `number`                | 40px        |
-| padding         | 子容器内边距                | `string` \| `number`                | 10          |
-| marginBottom    | 子容器底部外边距，会计算到容器内      | `string` \| `number`                | 0           |
-| borderRadius    | 子容器圆角，单位px            | `string` \| `number`                | 3px         |
+| containerHeight | 容器高度，必须设置，否则加载全部数据，数值默认单位px    | `string` \| `number`                | 100%        |
+| itemHeight      | 子容器高度，必须和内容一致，否则计算有问题，数值默认单位px | `string` \| `number`                | 40px        |
+| padding         | 子容器内边距，数值默认单位px                | `string` \| `number`                | 10          |
+| marginBottom    | 子容器底部外边距，会计算到容器内，数值默认单位px      | `string` \| `number`                | 0           |
+| borderRadius    | 子容器圆角，数值默认单位px            | `string` \| `number`                | 3px         |
 | background      | 容器背景色                 | `string`                            | transparent |
 | border          | 是否显示边框                | `boolean`                           | false       |
 | line            | 展示列数（目前支持1列和2列）       | `number`                            | 1           |

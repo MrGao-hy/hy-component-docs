@@ -1,77 +1,89 @@
-## colorGradient 颜色渐变工具
+﻿# colorGradient 颜色渐变工具
 
-> `colorGradient` 提供颜色渐变计算功能，可以计算两个颜色之间的等分渐变值。
+## 函数列表
 
-- 支持 HEX 和 RGB 颜色格式
-- 支持自定义渐变步数
-- 返回渐变颜色数组
+### colorGradient(startColor?, endColor?, step?) => string[]
 
-### API 文档
+计算两个颜色之间的等分渐变色，返回颜色数组。
 
-### colorGradient(startColor?, endColor?, step?)
-- `startColor` 起始颜色
-- `endColor` 结束颜色
-- `step` 渐变步数
+**参数**
 
-### 基础用法
+| 参数名     | 类型   | 必填 | 默认值 | 说明                      |
+| ---------- | ------ | ---- | ------ | ------------------------- |
+| startColor | string | 否   | -      | 起始颜色，HEX 或 RGB 格式 |
+| endColor   | string | 否   | -      | 结束颜色，HEX 或 RGB 格式 |
+| step       | number | 否   | -      | 渐变步数                  |
+
+**返回值**
+
+| 类型     | 说明         |
+| -------- | ------------ |
+| string[] | 渐变颜色数组 |
+
+**示例**
 
 ```typescript
-import { colorGradient } from '@hy-app/ui'
+import { colorGradient } from "@hy-app/ui";
 
-// 获取 10 步渐变色
-const colors = colorGradient('#000000', '#ffffff', 10)
-console.log(colors)
+const colors = colorGradient("#000000", "#ffffff", 10);
+console.log(colors);
 // ['#000000', '#1c1c1c', '#383838', ..., '#ffffff']
 ```
 
-### 制作渐变背景
+---
 
-```vue
-<template>
-    <view class="gradient-bg" :style="gradientStyle"></view>
-</template>
+### hexToRgb(sColor, str?) => string | number[]
 
-<script setup lang="ts">
-import { colorGradient } from '@/package/libs/utils/colorGradient'
+将 HEX 颜色值转换为 RGB 格式，可选择返回字符串或数组。
 
-const colors = colorGradient('#2979ff', '#5ac725', 10)
+**参数**
 
-const gradientStyle = {
-    background: `linear-gradient(to right, ${colors.join(', ')})`
-}
-</script>
-```
+| 参数名    | 类型      | 必填 | 默认值  | 说明      |
+|--------|---------|----|------|---------|
+| sColor | string  | 是  | -    | HEX 颜色值 |
+| str    | boolean | 否  | true | 是否返回字符串 |
 
-## hexToRgb(sColor, str?)
-- `sColor` 起始颜色
-- `str` 是否返回字符串，默认返回字符串
+**返回值**
 
-将 HEX 颜色转换为 RGB 格式。
+| 类型                 | 说明            |
+|--------------------|---------------|
+| string \| number[] | RGB 颜色值字符串或数组 |
 
-### 基本用法
+**示例**
 
 ```typescript
-import { hexToRgb } from '@hy-app/ui'
+import { hexToRgb } from "@hy-app/ui";
 
-// HEX 转 RGB
-const rgb = hexToRgb('#2979ff')
-console.log(rgb) // 'rgb(41, 121, 255)'
+const rgb = hexToRgb("#2979ff");
+console.log(rgb); // 'rgb(41, 121, 255)'
 
-const rgbArray = hexToRgb('#2979ff', false)
-console.log(rgbArray) // [41, 121, 255]
+const rgbArray = hexToRgb("#2979ff", false);
+console.log(rgbArray); // [41, 121, 255]
 ```
 
-## rgbToHex(rgb)
+---
 
-> 将 RGB 颜色转换为 HEX 格式。
+### rgbToHex(rgb) => string
 
+将 RGB 颜色值转换为 HEX 十六进制颜色值。
 
-### 颜色格式转换
+**参数**
+
+| 参数名 | 类型   | 必填 | 默认值 | 说明       |
+| ------ | ------ | ---- | ------ | ---------- |
+| rgb    | string | 是   | -      | RGB 颜色值 |
+
+**返回值**
+
+| 类型   | 说明       |
+| ------ | ---------- |
+| string | HEX 颜色值 |
+
+**示例**
 
 ```typescript
-import { rgbToHex } from '@hy-app/ui'
+import { rgbToHex } from "@hy-app/ui";
 
-// RGB 转 HEX
-const hex = rgbToHex('rgb(41, 121, 255)')
-console.log(hex) // '#2979ff'
+const hex = rgbToHex("rgb(41, 121, 255)");
+console.log(hex); // '#2979ff'
 ```

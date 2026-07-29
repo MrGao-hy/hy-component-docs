@@ -58,7 +58,7 @@
 | justify     | 设置元素在主轴方向上的对齐方式[^1]                      | `string`                       | flex-start |
 | align       | 设置元素在交叉轴方向上的对齐方式[^2]                     | `string`                       | flex-start |
 | flex        | flex CSS 简写属性                            | `string`                       | initial    |
-| gap         | 设置网格之间的间隙                                | `string`\|`number`\|`number[]` | 0          |
+| gap         | 设置网格之间的间隙，数值默认单位px                                | `string`\|`number`\|`number[]` | 0          |
 | basis       | 控制子元素主轴方向初始尺寸                            | `string`                       | auto       |
 | customStyle | 自定义需要用到的外部样式                             | `CSSProperties`                | -          |
 | customClass | 自定义外部类名                                  | `string`                       | -          |

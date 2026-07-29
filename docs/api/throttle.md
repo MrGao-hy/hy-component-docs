@@ -1,56 +1,65 @@
-# throttle & debounce节流防抖
+﻿# throttle & debounce 节流防抖工具
 
+## 概念说明
 
-## 何谓节流和防抖？
-- **节流**<br/>
-  节流的意思是，规定时间内，只触发一次。比如我们设定500ms，
-  在这个时间内，无论点击按钮多少次，它都只会触发一次。具体场景可以是抢购时候，由于有无数人 快速点击按钮，
-  如果每次点击都发送请求，就会给服务器造成巨大的压力，但是我们进行节流后，就会大大减少请求的次数。
-- **防抖**<br/>
-  防抖的意思是，在连续的操作中，无论进行了多长时间，只有某一次的操作后在指定的时间内没有再操作，这一次才被判定有效。具体场景可以搜索框输入关键字过程中实时 请求服务器匹配搜索结果，如果不进行处理，那么就是输入框内容一直变化，导致一直发送请求。如果进行防抖处理，结果就是当我们输入内容完成后，一定时间(比如500ms)没有再 输入内容，这时再触发请求。
+- **节流**：规定时间内，只触发一次。适合抢购等高频点击场景。
+- **防抖**：连续操作中，只有最后一次操作后在指定时间内没有再操作才有效。适合搜索框输入等场景。
 
+## 函数列表
 
-::: tip 提示
-结合以上两种情况，回到我们最实际的场景，比如防止表单提交按钮被多次触发，我们应该选择使用节流而不是防抖方案。
-:::
+### throttle(fn, wait?, immediate?) => void
 
-## 节流
-### throttle(fn, wait = 500, immediate = true)
-- `fn` \<Function> 触发回调执行的函数
-- `wait` \<Number> 时间间隔，单位ms
-- `immediate` \<Boolean> 是否立马执行
+节流函数，规定时间内只触发一次。
 
-```html
-<template>
-  <view class="throttle" @tap="throttleFn">
-    我是节流
-  </view>
-</template>
+**参数**
 
-<script setup lang="ts">
-  import { throttle } from "@hy-app/ui";
-  const throttleFn = () => throttle(() => {
-      console.log("执行了")
-  }, 2000)
-</script>
+| 参数名    | 类型     | 必填 | 默认值 | 说明               |
+| --------- | -------- | ---- | ------ | ------------------ |
+| fn        | function | 是   | -      | 触发回调执行的函数 |
+| wait      | number   | 否   | 500    | 时间间隔，单位 ms  |
+| immediate | boolean  | 否   | true   | 是否立即执行       |
+
+**返回值**
+
+| 类型 | 说明     |
+| ---- | -------- |
+| void | 无返回值 |
+
+**示例**
+
+```typescript
+import { throttle } from "@hy-app/ui";
+
+const throttleFn = throttle(() => {
+  console.log("执行了");
+}, 2000);
 ```
 
-## 防抖
-### debounce(fn, wait = 500)
-在连续的操作中，无论进行了多长时间，只有某一次的操作后在指定的时间内没有再操作，这一次才被判定有效
-- `fn` \<Function> 触发回调执行的函数
-- `wait` \<Number> 时间间隔，单位ms
-```html
-<template>
-  <view class="debounce" @tap="debounceFn">
-    我是防抖
-  </view>
-</template>
+---
 
-<script setup lang="ts">
-	import { debounce } from '@hy-app/ui';
-    const debounceFn = () => debounce(() => {
-      console.log("执行了")
-    }, 2000)
-</script>
+### debounce(fn, wait?) => void
+
+防抖函数，连续操作中只有最后一次操作后指定时间内没有再操作才有效。
+
+**参数**
+
+| 参数名 | 类型     | 必填 | 默认值 | 说明               |
+| ------ | -------- | ---- | ------ | ------------------ |
+| fn     | function | 是   | -      | 触发回调执行的函数 |
+| wait   | number   | 否   | 500    | 时间间隔，单位 ms  |
+
+**返回值**
+
+| 类型 | 说明     |
+| ---- | -------- |
+| void | 无返回值 |
+
+**示例**
+
+```typescript
+import { debounce } from "@hy-app/ui";
+
+const debounceFn = debounce(() => {
+  console.log("执行了");
+}, 2000);
 ```

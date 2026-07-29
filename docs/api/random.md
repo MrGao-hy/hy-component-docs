@@ -1,12 +1,29 @@
-# random 获取随机数
+﻿# random 随机数生成工具
 
-## random(min, max)
-该方法可以返回在"min"和"max"之间的数值，要求"min"和"max"都为数值，且"max"大于或等于"min"，否则返回0.
-- `min` \<String | Number> 最小值
-- `max` \<String | Number> 最大值
-```javascript
+## 函数列表
+
+### random(min, max) => number
+
+生成指定范围内的随机整数。
+
+**参数**
+
+| 参数名 | 类型             | 必填 | 默认值 | 说明   |
+| ------ | ---------------- | ---- | ------ | ------ |
+| min    | string \| number | 是   | -      | 最小值 |
+| max    | string \| number | 是   | -      | 最大值 |
+
+**返回值**
+
+| 类型   | 说明                    |
+| ------ | ----------------------- |
+| number | min 和 max 之间的随机数 |
+
+**示例**
+
+```typescript
 import { random } from "@hy-app/ui";
 
 const val = random(1, 10);
-console.log(val) // 随机数
+console.log(val); // 随机数
 ```

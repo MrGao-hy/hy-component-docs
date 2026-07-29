@@ -95,8 +95,8 @@
 | textColor      | 提示文本颜色                                                          | `string`                                                | #909399     |
 | direction      | 图标和文字是否垂直排列                                                     | `column`\|`row`                                         | row         |
 | mode           | 模式选择[^1]                                                        | `spinner`\|`circle`\|`semicircle`\|`dots` \|`bars`      | spinner     |
-| size           | 加载图标的大小，单位px                                                    | `string` \| `number`                                    | 24          |
-| textSize       | 加载文字的大小，单位px                                                    | `string` \| `number`                                    | 15          |
+| size           | 加载图标的大小，数值默认单位px                                                    | `string` \| `number`                                    | 24          |
+| textSize       | 加载文字的大小，数值默认单位px                                                    | `string` \| `number`                                    | 15          |
 | text           | 文字内容                                                            | `string`                                                | -           |
 | timingFunction | 指定animation-timing-function的css属性，但只支持mode为circle或semicircle才有效 | `ease-in-out`\|`ease-out`\| `ease-in`\|`linear`\|`ease` | ease-in-out |
 | duration       | 动画执行周期时间，单位ms                                                   | `number`                                                | 1200        |

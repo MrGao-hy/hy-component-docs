@@ -120,7 +120,7 @@ const changeValue = (val: number) => {
 | fontWeight      | 字体粗细             | `string`\|`number` | normal |
 | height          | 单个数字的高度          | `string`\|`number` | 40rpx  |
 | duration        | 滚动动画持续时间（秒）      | `number`           | 1.5    |
-| letterSpacing   | 数字间距             | `string`\|`number` | 0      |
+| letterSpacing   | 数字间距，数值默认单位px             | `string`\|`number` | 0      |
 | scrollDirection | 滚动方向：向上、向下或交替    | `string`           | up     |
 | stopOrder       | 滚动停止顺序：从左到右或从右到左 | `string`           | ltr    |
 | delayStep       | 每个数字滚动的延迟时间间隔（秒） | `number`           | 0.1    |

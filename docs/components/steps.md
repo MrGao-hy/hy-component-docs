@@ -370,7 +370,7 @@
 | activeIcon    | 激活状态的图标                 | `string`             | -     |
 | inactiveIcon  | 未激活状态图标                 | `string`             | -     |
 | dot           | 是否显示点状样式                | `boolean`            | false |
-| iconSize      | 图标大小                    | `string` \| `number` | 17    |
+| iconSize      | 图标大小，数值默认单位px                    | `string` \| `number` | 17    |
 
 ### List Item 结构
 

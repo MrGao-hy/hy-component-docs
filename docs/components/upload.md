@@ -371,8 +371,8 @@ const list = ref<FileVo[]>([
 | maxSize          | 选择单个文件的最大大小，单位B(byte)，默认不限制                            | `number`                         | Number.MAX_VALUE           |
 | fileList         | 显示已上传的文件列表                                             | `FileVo[]`                       | []                         |
 | uploadText       | 上传区域的提示文字                                              | `string`                         | ''                         |
-| width            | 内部预览图片区域和选择图片按钮的区域宽度，单位rpx                             | `string \| number`               | 80                         |
-| height           | 内部预览图片区域和选择图片按钮的区域高度，单位rpx                             | `string \| number`               | 80                         |
+| width            | 内部预览图片区域和选择图片按钮的区域宽度，数值默认单位rpx                             | `string \| number`               | 80                         |
+| height           | 内部预览图片区域和选择图片按钮的区域高度，数值默认单位rpx                             | `string \| number`               | 80                         |
 | beforeRead       | 读取前的处理函数                                               | `(file, detail) => void`         | -                          |
 | afterRead        | 读取后的处理函数                                               | `(file, detail) => void`         | -                          |
 | customStyle      | 自定义需要用到的外部样式                                           | `CSSProperties`                  | -                          |

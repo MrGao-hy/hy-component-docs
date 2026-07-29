@@ -393,8 +393,8 @@ const show = ref(false)
 | autoClose           | 点击确认按钮后是否自动关闭                                                          | `boolean`          | true   |
 | loading             | 是否显示loading状态                                                          | `boolean`          | false  |
 | closeOnClickOverlay | 是否允许点击遮罩关闭Modal（注意：关闭事件需要自行处理，只会在开启closeOnClickOverlay后点击遮罩层执行close回调） | `boolean`          | false  |
-| negativeTop         | 往上偏移的值，给一个负的margin-top，往上偏移，避免和键盘重合的情况，单位任意，数值则默认为px单位                 | `number`           | 0      |
-| width               | modal宽度，不支持百分比，可以数值，px，rpx单位                                           | `string`\|`number` | 550rpx |
+| negativeTop         | 往上偏移的值，给一个负的margin-top，往上偏移，避免和键盘重合的情况，数值默认单位px                 | `number`           | 0      |
+| width               | modal宽度，不支持百分比，数值默认单位px，支持rpx单位                                           | `string`\|`number` | 550rpx |
 | confirmButtonShape  | 确认按钮的样式，设置后将不会显示取消按钮，可选值：circle、square                                 | `string`           | -      |
 | contentTextAlign    | 文案对齐方式，可选值：left、center、right                                           | `string`           | left   |
 | customStyle         | 自定义需要用到的外部样式                                                           | `CSSProperties`    | -      |

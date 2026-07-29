@@ -1,151 +1,376 @@
-## 判断是否是数字
-> 校验是否是数字，返回true或者false。
+﻿# inspect 类型检查工具
 
-**isNumber()**
-- `text` \<Unknown> 需要判断的值
-```ts
+## 函数列表
+
+### isNumber(text) => boolean
+
+判断值是否为数字类型，支持数字字符串。
+
+**参数**
+
+| 参数名 | 类型    | 必填 | 默认值 | 说明         |
+| ------ | ------- | ---- | ------ | ------------ |
+| text   | unknown | 是   | -      | 需要判断的值 |
+
+**返回值**
+
+| 类型    | 说明       |
+| ------- | ---------- |
+| boolean | 是否为数字 |
+
+**示例**
+
+```typescript
 import { isNumber } from "@hy-app/ui";
-console.log(isNumber(123)) // true;
-console.log(isNumber("123")) // true;
-console.log(isNumber("admin")) // false;
+
+console.log(isNumber(123)); // true
+console.log(isNumber("123")); // true
+console.log(isNumber("admin")); // false
 ```
 
-## 判断字符串是否是数字
-> 校验字符串是否是数字，返回true或者false。
+---
 
-**isNumericString()**
-- `text` \<String> | \<Number> 需要判断的值
-```ts
+### isNumericString(text) => boolean
+
+判断值是否为数字字符串，严格要求类型为 string。
+
+**参数**
+
+| 参数名 | 类型             | 必填 | 默认值 | 说明         |
+| ------ | ---------------- | ---- | ------ | ------------ |
+| text   | string \| number | 是   | -      | 需要判断的值 |
+
+**返回值**
+
+| 类型    | 说明             |
+| ------- | ---------------- |
+| boolean | 是否为数字字符串 |
+
+**示例**
+
+```typescript
 import { isNumericString } from "@hy-app/ui";
-console.log(isNumericString(123)) // false;
-console.log(isNumericString("123")) // true;
+
+console.log(isNumericString(123)); // false
+console.log(isNumericString("123")); // true
 ```
 
-## 判断是否是字符串
-> 校验是否是数字，返回true或者false。
+---
 
-**isString()**
-- `text` \<Unknown> 需要判断的值
-```ts
+### isString(text) => boolean
+
+判断值是否为字符串类型。
+
+**参数**
+
+| 参数名 | 类型    | 必填 | 默认值 | 说明         |
+| ------ | ------- | ---- | ------ | ------------ |
+| text   | unknown | 是   | -      | 需要判断的值 |
+
+**返回值**
+
+| 类型    | 说明         |
+| ------- | ------------ |
+| boolean | 是否为字符串 |
+
+**示例**
+
+```typescript
 import { isString } from "@hy-app/ui";
-console.log(isString(123)) // false;
-console.log(isString(true)) // false;
-console.log(isString({name: 111})) // true;
-console.log(isString("kiss")) // true;
+
+console.log(isString(123)); // false
+console.log(isString(true)); // false
+console.log(isString({ name: 111 })); // false
+console.log(isString("kiss")); // true
 ```
 
-## 判断是否是布尔值
-> 校验是否是数字，返回true或者false。
+---
 
-**isBoolean()**
-- `text` \<Unknown> 需要判断的值
-```ts
+### isBoolean(text) => boolean
+
+判断值是否为布尔类型。
+
+**参数**
+
+| 参数名 | 类型    | 必填 | 默认值 | 说明         |
+| ------ | ------- | ---- | ------ | ------------ |
+| text   | unknown | 是   | -      | 需要判断的值 |
+
+**返回值**
+
+| 类型    | 说明         |
+| ------- | ------------ |
+| boolean | 是否为布尔值 |
+
+**示例**
+
+```typescript
 import { isBoolean } from "@hy-app/ui";
-console.log(isBoolean(123)) // false;
-console.log(isBoolean("123")) // false;
-console.log(isBoolean("true")) // false;
-console.log(isBoolean(false)) // true;
+
+console.log(isBoolean(123)); // false
+console.log(isBoolean("123")); // false
+console.log(isBoolean("true")); // false
+console.log(isBoolean(false)); // true
 ```
 
-## 判断是否数组
-> 校验是否数组，返回true或者false。
+---
 
-**isArray()**
-- `arr` \<Unknown> 需要判断的值 
-```ts
+### isArray(arr) => boolean
+
+判断值是否为数组类型。
+
+**参数**
+
+| 参数名 | 类型    | 必填 | 默认值 | 说明         |
+| ------ | ------- | ---- | ------ | ------------ |
+| arr    | unknown | 是   | -      | 需要判断的值 |
+
+**返回值**
+
+| 类型    | 说明       |
+| ------- | ---------- |
+| boolean | 是否为数组 |
+
+**示例**
+
+```typescript
 import { isArray } from "@hy-app/ui";
-console.log(isArray([1, 2, 3])) // true;
-console.log(isArray({})) // false;
+
+console.log(isArray([1, 2, 3])); // true
+console.log(isArray({})); // false
 ```
 
-## 判断是否是对象
-> 校验是否对象，返回true或者false。
- 
-**isObject()**
-- `obj` \<Unknown> 需要判断的值
-```ts
+---
+
+### isObject(obj) => boolean
+
+判断值是否为对象类型（排除数组）。
+
+**参数**
+
+| 参数名 | 类型    | 必填 | 默认值 | 说明         |
+| ------ | ------- | ---- | ------ | ------------ |
+| obj    | unknown | 是   | -      | 需要判断的值 |
+
+**返回值**
+
+| 类型    | 说明       |
+| ------- | ---------- |
+| boolean | 是否为对象 |
+
+**示例**
+
+```typescript
 import { isObject } from "@hy-app/ui";
-console.log(isObject([])) // false;
-console.log(isObject({name: '乌沙奇'})) // true;
+
+console.log(isObject([])); // false
+console.log(isObject({ name: "乌沙奇" })); // true
 ```
 
-## 判断是否是图片地址
-> 校验是否图片地址，返回true或者false。
+---
 
-**isImage()**
-- `text` \<String> 需要判断的值
-```ts
+### isImage(text) => boolean
+
+判断字符串是否为图片地址。
+
+**参数**
+
+| 参数名 | 类型   | 必填 | 默认值 | 说明         |
+| ------ | ------ | ---- | ------ | ------------ |
+| text   | string | 是   | -      | 需要判断的值 |
+
+**返回值**
+
+| 类型    | 说明           |
+| ------- | -------------- |
+| boolean | 是否为图片地址 |
+
+**示例**
+
+```typescript
 import { isImage } from "@hy-app/ui";
-console.log(isImage("https://pic1.imgdb.cn/item/67f8dc6288c538a9b5cadf4e.png")) // true;
+
+console.log(isImage("https://example.com/image.png")); // true
 ```
 
-## 判断是否是base64图片
-> 校验是否base64图片，返回true或者false。
+---
 
-**isBase64Image()**
-- `text` \<String> 需要判断的值
-```ts
+### isBase64Image(text) => boolean
+
+判断字符串是否为 base64 编码的图片。
+
+**参数**
+
+| 参数名 | 类型   | 必填 | 默认值 | 说明         |
+| ------ | ------ | ---- | ------ | ------------ |
+| text   | string | 是   | -      | 需要判断的值 |
+
+**返回值**
+
+| 类型    | 说明               |
+| ------- | ------------------ |
+| boolean | 是否为 base64 图片 |
+
+**示例**
+
+```typescript
 import { isBase64Image } from "@hy-app/ui";
-console.log(isBase64Image("data:image...")) // true;
+
+console.log(isBase64Image("data:image...")); // true
 ```
 
-## 判断是否视频格式
-> 校验是否视频格式，返回true或者false。
+---
 
-**isVideo()**
-- `text` \<String> 需要判断的值
-```ts
+### isVideo(text) => boolean
+
+判断字符串是否为视频地址。
+
+**参数**
+
+| 参数名 | 类型   | 必填 | 默认值 | 说明         |
+| ------ | ------ | ---- | ------ | ------------ |
+| text   | string | 是   | -      | 需要判断的值 |
+
+**返回值**
+
+| 类型    | 说明           |
+| ------- | -------------- |
+| boolean | 是否为视频格式 |
+
+**示例**
+
+```typescript
 import { isVideo } from "@hy-app/ui";
-console.log(isVideo('http://91/2025-10-10.mp4')) // true;
+
+console.log(isVideo("http://example.com/video.mp4")); // true
 ```
 
-## 验证是否日期格式
-> 校验是否日期格式，返回true或者false。
+---
 
-**isDate()**
-- `text` \<String | Number> 需要判断的值
-```ts
+### isDate(text) => boolean
+
+判断值是否为日期格式（支持字符串和时间戳）。
+
+**参数**
+
+| 参数名 | 类型             | 必填 | 默认值 | 说明         |
+| ------ | ---------------- | ---- | ------ | ------------ |
+| text   | string \| number | 是   | -      | 需要判断的值 |
+
+**返回值**
+
+| 类型    | 说明           |
+| ------- | -------------- |
+| boolean | 是否为日期格式 |
+
+**示例**
+
+```typescript
 import { isDate } from "@hy-app/ui";
-console.log(isDate('2024-10-10')) // true;
-console.log(isDate(1754032899)) // true;
+
+console.log(isDate("2024-10-10")); // true
+console.log(isDate(1754032899)); // true
 ```
 
-## 验证是否是手机号格式
-> 校验是否手机号格式，返回true或者false。
+---
 
-**isPhone()**
-- `text` \<unknown> 需要判断的值
-```ts
+### isPhone(text) => boolean
+
+判断值是否为手机号格式。
+
+**参数**
+
+| 参数名 | 类型    | 必填 | 默认值 | 说明         |
+| ------ | ------- | ---- | ------ | ------------ |
+| text   | unknown | 是   | -      | 需要判断的值 |
+
+**返回值**
+
+| 类型    | 说明             |
+| ------- | ---------------- |
+| boolean | 是否为手机号格式 |
+
+**示例**
+
+```typescript
 import { isPhone } from "@hy-app/ui";
-console.log(isPhone(19701012929)) // true;
+
+console.log(isPhone(19701012929)); // true
 ```
 
-## 验证是否是身份证号码
-> 校验是否身份证号，返回true或者false。
+---
 
-**isIdCard()**
-- `text` \<unknown> 需要判断的值
-```ts
+### isIdCard(text) => boolean
+
+判断值是否为身份证号码格式。
+
+**参数**
+
+| 参数名 | 类型    | 必填 | 默认值 | 说明         |
+| ------ | ------- | ---- | ------ | ------------ |
+| text   | unknown | 是   | -      | 需要判断的值 |
+
+**返回值**
+
+| 类型    | 说明             |
+| ------- | ---------------- |
+| boolean | 是否为身份证号码 |
+
+**示例**
+
+```typescript
 import { isIdCard } from "@hy-app/ui";
-console.log(isIdCard('360322201207022918')) // true;
+
+console.log(isIdCard("360322201207022918")); // true
 ```
 
-## 验证是否是中文
-> 校验是否中文格式，返回true或者false。
+---
 
-**isChinese()**
-- `text` \<String> 需要判断的值
-```ts
+### isChinese(text) => boolean
+
+判断字符串是否全为中文。
+
+**参数**
+
+| 参数名 | 类型   | 必填 | 默认值 | 说明         |
+| ------ | ------ | ---- | ------ | ------------ |
+| text   | string | 是   | -      | 需要判断的值 |
+
+**返回值**
+
+| 类型    | 说明       |
+| ------- | ---------- |
+| boolean | 是否为中文 |
+
+**示例**
+
+```typescript
 import { isChinese } from "@hy-app/ui";
-console.log(isChinese('皇帝')) // true;
-console.log(isChinese('3ed皇帝')) // false;
+
+console.log(isChinese("皇帝")); // true
+console.log(isChinese("3ed皇帝")); // false
 ```
 
-## 判断环境是否是H5
-> 判断当前环境是否是H5，返回true或者false。
+---
 
-**isH5()**
-```ts
+### isH5() => boolean
+
+判断当前运行环境是否为 H5。
+
+**参数**
+
+无参数
+
+**返回值**
+
+| 类型    | 说明              |
+| ------- | ----------------- |
+| boolean | 当前环境是否为 H5 |
+
+**示例**
+
+```typescript
 import { isH5 } from "@hy-app/ui";
-console.log(isH5()) // true;
+
+console.log(isH5()); // true
 ```

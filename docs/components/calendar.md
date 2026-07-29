@@ -301,7 +301,7 @@ const forbidDays = ref(['2025-05-01', '2025-05-02', '2025-05-03'])
 | maxDate             | 最大可选日期                                                              | `number` \| `string`                 | 0                                   |
 | defaultDate         | 默认选中的日期，mode为multiple或range是必须为数组格式                                 | `string`\|`string[]`\|`Date`\|`null` | null                                |
 | maxCount            | mode=multiple时，最多可选多少个日期                                            | `number`                             | Number.MAX_SAFE_INTEGER             |
-| rowHeight           | 日期行高                                                                | `number`                             | 56                                  |
+| rowHeight           | 日期行高，数值默认单位px                                                                | `number`                             | 56                                  |
 | formatter           | 日期格式化函数(如需兼容微信小程序，则只能通过setFormatter方法)                              | `Function` \| `null`                 | null                                |
 | showLunar           | 是否显示农历                                                              | `boolean`                            | false                               |
 | showMark            | 是否显示月份背景色                                                           | `boolean`                            | true                                |

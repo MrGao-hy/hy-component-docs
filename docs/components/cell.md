@@ -12,10 +12,11 @@
 如何你想在`hy-cell`上使用点击事件，必须给每个`hy-cell-item`设置`name`唯一值，用来区分哪个子元素点击
 :::
 ```html
-<!-- 全局使用 -->
-<hy-cell
-        @click="onClick"
->
+<template>
+  <!-- 全局使用 -->
+  <hy-cell
+          @click="onClick"
+  >
     <hy-cell-item
             title="工具箱"
             name="tools"
@@ -28,12 +29,8 @@
             value="返回"
     ></hy-cell-item>
     <hy-cell-item title="禁用" name="disabled" disabled></hy-cell-item>
-</hy-cell>
-```
-```ts
-const onClick = (name: string | number) => {
-    uni.showToast({ title: `点击执行了：${name}`, icon: 'none' })
-}
+  </hy-cell>
+</template>
 ```
 
 ### 设置icon内容
@@ -117,7 +114,7 @@ const onClick = (name: string | number) => {
 | border         | 是否显示cell下边框               | `boolean`          | true   |
 | disabled       | 是否禁用cell                  | `boolean`          | false  |
 | clickable      | 是否开启点击反馈(表现为点击时加上灰色背景)    | `boolean`          | false  |
-| size           | 单元的大小                     | `string`\|`number` | medium |
+| size           | 单元的大小，数值默认单位px            | `string`\|`number` | medium |
 | arrange        | 内容是否垂直居中(主要是针对右侧的value部分) | `string`           | right  |
 | isRightIcon    | 是否展示右侧图标                  | `boolean`          | true   |
 | arrowDirection | 右侧箭头的方向                   | `string`           | right  |
@@ -155,8 +152,12 @@ const onClick = (name: string | number) => {
 |-------|-------------|------------|
 | click | 点击cell列表时触发 | name: 唯一标识 |
 
+### Cell Slots
+| 插槽名     | 说明             | 接收值    |
+|---------|----------------|--------|
+| default | 默认插入CellItem组件 | title  |
 
-### Slots
+### CellItem Slots
 
 | 插槽名        | 说明           | 接收值    |
 |------------|--------------|--------|
