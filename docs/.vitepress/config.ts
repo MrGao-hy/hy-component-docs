@@ -45,6 +45,8 @@ export default defineConfig({
                             { text: "介绍", link: "/guide/intro" },
                             { text: "快速上手", link: "/guide/start" },
                             { text: "内置样式", link: "/guide/style" },
+                            { text: "开发常见问题", link: "/guide/announcements" },
+                            { text: "更新日志", link: "/guide/changelog" },
                         ]
                     },
                     {
@@ -108,6 +110,8 @@ export default defineConfig({
                         { text: "介绍", link: "/guide/intro" },
                         { text: "快速上手", link: "/guide/start" },
                         { text: "内置样式", link: "/guide/style" },
+                        { text: "开发常见问题", link: "/guide/announcements" },
+                        { text: "更新日志", link: "/guide/changelog" },
                     ],
                 },
                 {

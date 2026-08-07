@@ -52,18 +52,29 @@ defineOptions({
 </script>
 ```
 
-## :bulb: 问题三：Sass抛出大量错误和警告？
-`Dart Sass 3.0.0`废弃了一批API，而组件库目前还未完全兼容，因此请确保你的`sass`版本为`1.78.0`及之前的版本。可以通过以下命令安装指定版本：
-:::code-group
-```shell [npm]
-npm install sass@1.78.0 -D
+## :bulb: 问题三：如果在运行或编译项目时出现如下警告：
+```shell
+Deprecation Warning [legacy-js-api]:
+The legacy JS API is deprecated and will be removed in Dart Sass 2.0.0.
+```
+这是 `Dart Sass 1.79+` 开始新增的弃用提示，并不是项目运行错误。官方已经废弃了旧版 JavaScript API（render / renderSync），未来将在 `Dart Sass 2.0` 中彻底移除。
+
+如果你的项目使用 Vite 5.4+ 或 Vite 6+，建议在 vite.config.ts 中启用 Sass 新版编译器：
+```ts
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // 使用 Sass 新版 Compiler API
+        api: 'modern-compiler',
+      }
+    }
+  }
+})
 ```
 
-```shell [pnpm]
-pnpm install sass@1.78.0 -D
-```
+## 💡 问题四：在 VS Code、Trae、Cursor 等编辑器中，使用 hy-app 主题变量时无法获得自动补全
 
-```shell [yarn]
-yarn install sass@1.78.0 -D
-```
-:::
+这是因为编辑器默认无法识别node_modules的 Sass 变量。请先安装 `Some Sass` 插件，安装完成后重新打开项目，即可获得 hy-app 主题变量的自动补全、悬停提示等功能。
