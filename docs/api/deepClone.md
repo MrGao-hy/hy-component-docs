@@ -21,14 +21,14 @@
 **示例**
 
 ```typescript
-import { deepClone } from "@hy-app/ui";
+import { deepClone } from '@hy-app/ui';
 
 const oldObj = {
-  name: "旧数据",
+    name: '旧数据',
 };
 
 const newObj = deepClone(oldObj);
-newObj.name = "新数据";
+newObj.name = '新数据';
 
 console.log(oldObj); // { name: "旧数据" }
 console.log(newObj); // { name: "新数据" }

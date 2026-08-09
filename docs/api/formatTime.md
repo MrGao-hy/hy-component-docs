@@ -22,11 +22,11 @@
 **示例**
 
 ```typescript
-import { formatTime } from "@hy-app/ui";
+import { formatTime } from '@hy-app/ui';
 
 const day = formatTime(new Date());
-const yearMonth = formatTime(1702051200000, "yyyy-MM-dd");
-const time = formatTime(1702051200000, "HH:mm:ss");
+const yearMonth = formatTime(1702051200000, 'yyyy-MM-dd');
+const time = formatTime(1702051200000, 'HH:mm:ss');
 ```
 
 ---
@@ -51,10 +51,10 @@ const time = formatTime(1702051200000, "HH:mm:ss");
 **示例**
 
 ```typescript
-import { formatTimeToString } from "@hy-app/ui";
+import { formatTimeToString } from '@hy-app/ui';
 
-const day = formatTimeToString("2020-10-10 09:00:00");
-const yearMonth = formatTimeToString(1702051200000, "yyyy-MM-dd");
+const day = formatTimeToString('2020-10-10 09:00:00');
+const yearMonth = formatTimeToString(1702051200000, 'yyyy-MM-dd');
 const relativeTime = formatTimeToString(1702051200000, false);
 ```
 
@@ -79,7 +79,7 @@ const relativeTime = formatTimeToString(1702051200000, false);
 **示例**
 
 ```typescript
-import { padZero } from "@hy-app/ui";
+import { padZero } from '@hy-app/ui';
 
 const num = padZero(2);
 console.log(num); // 02

@@ -1,11 +1,12 @@
 # Keyboard 键盘组件 <Badge type="tip">^0.7.0</Badge>
+
 > 虚拟键盘组件，支持数字键盘、车牌号键盘、身份证键盘等多种模式，可自定义头部和按键。
 
 ## :pushpin:平台差异说明
 
-| APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
-|----------|----|-------|--------|
-| ✔        | ✔  | ✔     | ✔      |
+| APP(vue) | H5  | 微信小程序 | 支付宝小程序 |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
 ### 2. v-model 绑定
 
@@ -23,41 +24,39 @@
 
 车牌号键盘支持两种模式：
 
-| 模式 | 属性 | 说明 | 使用场景 |
-|------|------|------|----------|
-| 非受控模式 | 传 `auto-switch-lang` | 组件内部自动管理语言切换 | 简单场景，开箱即用 |
-| 受控模式 | 传 `v-model:car-lang` | 手动控制语言切换 | 需要在父组件监听或控制语言 |
+| 模式       | 属性                  | 说明                     | 使用场景                   |
+| ---------- | --------------------- | ------------------------ | -------------------------- |
+| 非受控模式 | 传 `auto-switch-lang` | 组件内部自动管理语言切换 | 简单场景，开箱即用         |
+| 受控模式   | 传 `v-model:car-lang` | 手动控制语言切换         | 需要在父组件监听或控制语言 |
 
 **非受控模式示例：**
+
 ```html
 <!-- 设置 auto-switch-lang 自动切换 -->
 <hy-keyboard mode="car" v-model="value" auto-switch-lang></hy-keyboard>
 ```
 
 **受控模式示例：**
+
 ```html
-<hy-keyboard
-    mode="car"
-    v-model="value"
-    v-model:car-lang="carLang"
-></hy-keyboard>
+<hy-keyboard mode="car" v-model="value" v-model:car-lang="carLang"></hy-keyboard>
 ```
 
 ```ts
-const carLang = ref<'zh' | 'en'>('zh')
+const carLang = ref<'zh' | 'en'>('zh');
 
 // 手动控制切换逻辑
 const handleInput = (val: string) => {
     if (val.length === 1) {
-        carLang.value = 'en'
+        carLang.value = 'en';
     }
-}
+};
 
 const handleDelete = () => {
     if (carControlledValue.value.length === 1) {
-        carLang.value = 'zh'
+        carLang.value = 'zh';
     }
-}
+};
 ```
 
 ### 4. custom 模式说明
@@ -69,12 +68,7 @@ const handleDelete = () => {
 
 ```html
 <!-- custom 模式：底部有自定义键，右侧有固定删除和关闭键 -->
-<hy-keyboard
-    mode="custom"
-    v-model="value"
-    :extra-key="['00', '.']"
-    close-text="完成"
-></hy-keyboard>
+<hy-keyboard mode="custom" v-model="value" :extra-key="['00', '.']" close-text="完成"></hy-keyboard>
 ```
 
 ### 5. extraKey 属性
@@ -110,7 +104,9 @@ const handleDelete = () => {
 ```
 
 ::: tip 注意
+
 随机顺序只在键盘**每次显示时**生成一次，键盘打开期间点击按键不会改变其他按键位置。
+
 :::
 
 ### 8. close 事件处理
@@ -118,10 +114,7 @@ const handleDelete = () => {
 点击关闭按钮或蒙层时，会触发 `close` 事件，但**不会自动关闭键盘**，需要手动处理：
 
 ```html
-<hy-keyboard
-    v-model:show="showKeyboard"
-    @close="showKeyboard = false"
-></hy-keyboard>
+<hy-keyboard v-model:show="showKeyboard" @close="showKeyboard = false"></hy-keyboard>
 ```
 
 ### 9. 身份证键盘
@@ -149,21 +142,21 @@ const handleDelete = () => {
 ```
 
 ```ts
-const showKeyboard = ref(false)
-const value = ref('')
+const showKeyboard = ref(false);
+const value = ref('');
 
 const handleInput = (val: string) => {
-    console.log('输入:', val)
-}
+    console.log('输入:', val);
+};
 
 const handleDelete = () => {
-    console.log('删除')
-}
+    console.log('删除');
+};
 
 const handleClose = () => {
-    console.log('关闭')
-    showKeyboard.value = false
-}
+    console.log('关闭');
+    showKeyboard.value = false;
+};
 ```
 
 ### 带右侧栏的键盘
@@ -222,21 +215,21 @@ const handleClose = () => {
 ```
 
 ```ts
-const carLang = ref<'zh' | 'en'>('zh')
+const carLang = ref<'zh' | 'en'>('zh');
 
 const handleInput = (val: string) => {
     if (val.length === 1) {
-        carLang.value = 'en'
+        carLang.value = 'en';
     }
-    console.log('车牌号输入:', val)
-}
+    console.log('车牌号输入:', val);
+};
 
 const handleDelete = () => {
     if (carControlledValue.value.length === 1) {
-        carLang.value = 'zh'
+        carLang.value = 'zh';
     }
-    console.log('车牌号删除:', carControlledValue.value)
-}
+    console.log('车牌号删除:', carControlledValue.value);
+};
 ```
 
 ## :gear:键盘配置
@@ -304,12 +297,7 @@ const handleDelete = () => {
 ### Slot自定义标题
 
 ```html
-<hy-keyboard
-    v-model:show="showKeyboard"
-    mode="default"
-    v-model="value"
-    close-text="完成"
->
+<hy-keyboard v-model:show="showKeyboard" mode="default" v-model="value" close-text="完成">
     <template #title>
         <view class="custom-title">
             <text class="custom-title-text">自定义标题</text>
@@ -334,48 +322,48 @@ const handleDelete = () => {
 ```
 
 ## API
+
 ### Keyboard Props
 
-| 参数                  | 说明                                                            | 类型                     | 默认值      |
-|---------------------|---------------------------------------------------------------|------------------------|----------|
-| show                | 是否显示键盘                                                        | `boolean`              | false    |
-| modelValue          | 绑定的值                                                          | `string`               | -        |
-| title               | 标题                                                            | `string`               | -        |
-| mode                | 键盘模式，可选值：default(数字键盘)、custom(自定义键盘)、car(车牌号键盘)、idcard(身份证键盘) | `string`               | default  |
-| zIndex              | 层级                                                            | `number`               | 100      |
-| maxlength           | 最大输入长度                                                        | `number`               | Infinity |
-| showDeleteKey       | 是否显示删除键                                                       | `boolean`              | true     |
-| showDotKey          | 是否显示小数点键                                                      | `boolean`              | true     |
-| randomKeyOrder      | 是否随机键盘按键顺序                                                    | `boolean`              | false    |
-| closeText           | 确认按钮文本                                                        | `string`               | -        |
-| deleteText          | 删除按钮文本                                                        | `string`               | -        |
-| closeButtonLoading  | 关闭按钮是否显示加载状态                                                  | `boolean`              | false    |
-| modal               | 是否显示蒙层                                                        | `boolean`              | false    |
-| hideOnClickOutside  | 是否在点击外部时收起键盘                                                  | `boolean`              | true     |
-| lockScroll          | 是否锁定滚动                                                        | `boolean`              | true     |
-| safeAreaInsetBottom | 是否在底部安全区域内                                                    | `boolean`              | true     |
-| extraKey            | 额外按键，支持字符串或字符串数组                                              | `string` \| `string[]` | -        |
-| carLang             | 车牌键盘语言模式，可选值：zh(省份)、en(字母)，不传则为非受控模式                          | `string`               | -        |
-| autoSwitchLang      | 车牌键盘是否自动切换语言                                                  | `boolean`              | false    |
-| customStyle         | 定义需要用到的外部样式                                                   | `CSSProperties`        | -        |
-| customClass         | 自定义外部类名                                                       | `string`               | -        |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| show | 是否显示键盘 | `boolean` | false |
+| modelValue | 绑定的值 | `string` | - |
+| title | 标题 | `string` | - |
+| mode | 键盘模式，可选值：default(数字键盘)、custom(自定义键盘)、car(车牌号键盘)、idcard(身份证键盘) | `string` | default |
+| zIndex | 层级 | `number` | 100 |
+| maxlength | 最大输入长度 | `number` | Infinity |
+| showDeleteKey | 是否显示删除键 | `boolean` | true |
+| showDotKey | 是否显示小数点键 | `boolean` | true |
+| randomKeyOrder | 是否随机键盘按键顺序 | `boolean` | false |
+| closeText | 确认按钮文本 | `string` | - |
+| deleteText | 删除按钮文本 | `string` | - |
+| closeButtonLoading | 关闭按钮是否显示加载状态 | `boolean` | false |
+| modal | 是否显示蒙层 | `boolean` | false |
+| hideOnClickOutside | 是否在点击外部时收起键盘 | `boolean` | true |
+| lockScroll | 是否锁定滚动 | `boolean` | true |
+| safeAreaInsetBottom | 是否在底部安全区域内 | `boolean` | true |
+| extraKey | 额外按键，支持字符串或字符串数组 | `string` \| `string[]` | - |
+| carLang | 车牌键盘语言模式，可选值：zh(省份)、en(字母)，不传则为非受控模式 | `string` | - |
+| autoSwitchLang | 车牌键盘是否自动切换语言 | `boolean` | false |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### Keyboard Events
 
-| 事件名               | 说明        | 回调参数                  |
-|-------------------|-----------|-----------------------|
-| input             | 输入内容时触发   | text: 输入的字符           |
-| delete            | 删除内容时触发   | -                     |
-| close             | 关闭键盘时触发   | -                     |
-| update:show       | 可见状态改变时触发 | show: 当前可见状态          |
-| update:modelValue | 值改变时触发    | value: 当前值            |
+| 事件名            | 说明               | 回调参数                   |
+| ----------------- | ------------------ | -------------------------- |
+| input             | 输入内容时触发     | text: 输入的字符           |
+| delete            | 删除内容时触发     | -                          |
+| close             | 关闭键盘时触发     | -                          |
+| update:show       | 可见状态改变时触发 | show: 当前可见状态         |
+| update:modelValue | 值改变时触发       | value: 当前值              |
 | update:carLang    | 车牌语言改变时触发 | lang: 当前语言('zh'或'en') |
 
 ### Keyboard Slots
 
-| 插槽名   | 说明      | 接收值 |
-|-------|---------|-----|
-| title | 自定义标题内容 | -   |
-
+| 插槽名 | 说明           | 接收值 |
+| ------ | -------------- | ------ |
+| title  | 自定义标题内容 | -      |
 
 <demo-model url="pages-design/keyboard/keyboard"></demo-model>

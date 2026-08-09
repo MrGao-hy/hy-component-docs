@@ -26,16 +26,16 @@
 **示例**
 
 ```typescript
-import { bem } from "@hy-app/ui";
+import { bem } from '@hy-app/ui';
 
 const props = {
-  type: "primary",
-  size: "large",
-  plain: true,
+    type: 'primary',
+    size: 'large',
+    plain: true,
 };
 
-const fixed = ["type", "size"];
-const result = bem("button", props, fixed);
+const fixed = ['type', 'size'];
+const result = bem('button', props, fixed);
 console.log(result);
 // 'hy-button--primary hy-button--size hy-button--type__plain'
 ```
@@ -61,9 +61,9 @@ console.log(result);
 **示例**
 
 ```typescript
-import { error } from "@hy-app/ui";
+import { error } from '@hy-app/ui';
 
-error("这是一个错误提示");
+error('这是一个错误提示');
 // 华玥组件提示：这是一个错误提示
 ```
 
@@ -88,13 +88,13 @@ error("这是一个错误提示");
 **示例**
 
 ```typescript
-import { sleep } from "@hy-app/ui";
+import { sleep } from '@hy-app/ui';
 
 await sleep(1000);
-console.log("1 秒后执行");
+console.log('1 秒后执行');
 
 await sleep();
-console.log("100ms 后执行");
+console.log('100ms 后执行');
 ```
 
 ---
@@ -120,7 +120,7 @@ console.log("100ms 后执行");
 **示例**
 
 ```typescript
-import { guid } from "@hy-app/ui";
+import { guid } from '@hy-app/ui';
 
 const id = guid();
 console.log(id);

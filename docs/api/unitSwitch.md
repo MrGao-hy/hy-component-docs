@@ -22,11 +22,11 @@
 **示例**
 
 ```typescript
-import { addUnit } from "@hy-app/ui";
+import { addUnit } from '@hy-app/ui';
 
 const unit_1 = addUnit(20); // 20px
-const unit_2 = addUnit("20rpx"); // 20rpx
-const unit_3 = addUnit("10", "rpx"); // 10rpx
+const unit_2 = addUnit('20rpx'); // 20rpx
+const unit_3 = addUnit('10', 'rpx'); // 10rpx
 ```
 
 ---
@@ -51,10 +51,10 @@ const unit_3 = addUnit("10", "rpx"); // 10rpx
 **示例**
 
 ```typescript
-import { getPx } from "@hy-app/ui";
+import { getPx } from '@hy-app/ui';
 
 const unit_1 = getPx(20, true); // 20px
-const unit_2 = getPx("20px"); // 20
-const unit_3 = getPx("20rpx"); // 10
-const unit_4 = getPx("20upx", true); // 10px
+const unit_2 = getPx('20px'); // 20
+const unit_3 = getPx('20rpx'); // 10
+const unit_4 = getPx('20upx', true); // 10px
 ```

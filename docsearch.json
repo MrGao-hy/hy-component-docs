@@ -1,8 +1,6 @@
 {
     "index_name": "hy-design-uni",
-    "start_urls": [
-        "https://www.hy-design-uni.top/"
-    ],
+    "start_urls": ["https://www.hy-design-uni.top/"],
     "stop_urls": [],
     "selectors": {
         "default": {
@@ -25,9 +23,6 @@
         }
     },
     "custom_settings": {
-        "attributesForFaceting": [
-            "lang",
-            "tags"
-        ]
+        "attributesForFaceting": ["lang", "tags"]
     }
 }

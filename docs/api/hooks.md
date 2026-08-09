@@ -25,18 +25,18 @@
 **示例**
 
 ```typescript
-import { useShare } from "@hy-app/ui";
+import { useShare } from '@hy-app/ui';
 
 const { onShareAppMessage, onShareTimeline } = useShare({
-  title: "华玥组件库",
-  path: "/pages/index/index",
-  friendImageUrl: "/static/share friend.png",
-  timelineImageUrl: "/static/share_timeline.png",
+    title: '华玥组件库',
+    path: '/pages/index/index',
+    friendImageUrl: '/static/share friend.png',
+    timelineImageUrl: '/static/share_timeline.png',
 });
 
 defineExpose({
-  onShareAppMessage,
-  onShareTimeline,
+    onShareAppMessage,
+    onShareTimeline,
 });
 ```
 
@@ -50,8 +50,8 @@ defineExpose({
 
 **返回值**
 
-| 类型          | 说明                                                                               |
-| ------------- | ---------------------------------------------------------------------------------- |
+| 类型 | 说明 |
+| --- | --- |
 | ToastInstance | Toast 实例，包含 show、info、success、error、warning、primary、loading、close 方法 |
 
 **ToastInstance 方法**
@@ -81,13 +81,13 @@ defineExpose({
 **示例**
 
 ```typescript
-import { useToast } from "@hy-app/ui";
+import { useToast } from '@hy-app/ui';
 
 const toast = useToast();
 
-toast.success("操作成功！");
-toast.error("操作失败");
-toast.loading("加载中...");
+toast.success('操作成功！');
+toast.error('操作失败');
+toast.loading('加载中...');
 ```
 
 ---
@@ -129,15 +129,15 @@ toast.loading("加载中...");
 **示例**
 
 ```typescript
-import { useMessage } from "@hy-app/ui";
+import { useMessage } from '@hy-app/ui';
 
 const message = useMessage();
 
 const result = await message.confirm({
-  title: "删除确认",
-  content: "确定要删除吗？",
-  confirmText: "确定",
-  cancelText: "取消",
+    title: '删除确认',
+    content: '确定要删除吗？',
+    confirmText: '确定',
+    cancelText: '取消',
 });
 ```
 
@@ -170,7 +170,7 @@ const result = await message.confirm({
 **示例**
 
 ```typescript
-import { useTouch } from "@hy-app/ui";
+import { useTouch } from '@hy-app/ui';
 
 const { touchStart, touchMove, direction, deltaX, deltaY } = useTouch();
 ```
@@ -198,12 +198,12 @@ const { touchStart, touchMove, direction, deltaX, deltaY } = useTouch();
 **示例**
 
 ```typescript
-import { useShakeService } from "@hy-app/ui";
+import { useShakeService } from '@hy-app/ui';
 
 const { startShakeListener, stopShakeListener } = useShakeService();
 
 startShakeListener(() => {
-  console.log("摇一摇触发");
+    console.log('摇一摇触发');
 });
 ```
 
@@ -230,12 +230,12 @@ startShakeListener(() => {
 **示例**
 
 ```typescript
-import { useTranslate } from "@hy-app/ui";
+import { useTranslate } from '@hy-app/ui';
 
-const { t } = useTranslate("common");
+const { t } = useTranslate('common');
 
-console.log(t("hello"));
-console.log(t("welcome", "华玥"));
+console.log(t('hello'));
+console.log(t('welcome', '华玥'));
 ```
 
 ---
@@ -264,7 +264,7 @@ console.log(t("welcome", "华玥"));
 **示例**
 
 ```typescript
-import { useQueue } from "@hy-app/ui";
+import { useQueue } from '@hy-app/ui';
 
 const { pushToQueue, removeFromQueue, closeOther } = useQueue();
 

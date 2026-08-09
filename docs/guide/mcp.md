@@ -14,16 +14,16 @@ npx @hy-app/mcp
 
 ## 可用工具
 
-| 工具名                        | 说明                              |
-|----------------------------|---------------------------------|
-| `search_components`        | 搜索组件，支持中英文名称模糊匹配                |
-| `get_component_api`        | 获取组件 API（Props/Events/Slots）    |
-| `get_component_examples`   | 获取组件使用示例代码                      |
-| `check_platform_support`   | 查询组件平台兼容性                       |
+| 工具名                     | 说明                                    |
+| -------------------------- | --------------------------------------- |
+| `search_components`        | 搜索组件，支持中英文名称模糊匹配        |
+| `get_component_api`        | 获取组件 API（Props/Events/Slots）      |
+| `get_component_examples`   | 获取组件使用示例代码                    |
+| `check_platform_support`   | 查询组件平台兼容性                      |
 | `get_hook_doc`             | 获取 Hook 文档（useToast、useShare 等） |
-| `get_tool_doc`             | 获取工具函数文档（http、throttle 等）       |
-| `get_guide`                | 获取开发指南（主题、国际化等）                 |
-| `validate_component_usage` | 校验组件用法是否正确                      |
+| `get_tool_doc`             | 获取工具函数文档（http、throttle 等）   |
+| `get_guide`                | 获取开发指南（主题、国际化等）          |
+| `validate_component_usage` | 校验组件用法是否正确                    |
 
 ---
 
@@ -35,12 +35,12 @@ npx @hy-app/mcp
 
 ```json
 {
-  "mcpServers": {
-    "hy-app": {
-      "command": "npx",
-      "args": ["@hy-app/mcp"]
+    "mcpServers": {
+        "hy-app": {
+            "command": "npx",
+            "args": ["@hy-app/mcp"]
+        }
     }
-  }
 }
 ```
 
@@ -48,11 +48,11 @@ npx @hy-app/mcp
 
 ```json
 {
-  "mcpServers": {
-    "hy-app": {
-      "command": "hy-app-mcp"
+    "mcpServers": {
+        "hy-app": {
+            "command": "hy-app-mcp"
+        }
     }
-  }
 }
 ```
 
@@ -60,16 +60,17 @@ npx @hy-app/mcp
 
 ```json
 {
-  "mcpServers": {
-    "hy-app": {
-      "command": "node",
-      "args": ["./node_modules/@hy-app/mcp/dist/index.js"]
+    "mcpServers": {
+        "hy-app": {
+            "command": "node",
+            "args": ["./node_modules/@hy-app/mcp/dist/index.js"]
+        }
     }
-  }
 }
 ```
 
 配置文件位置：
+
 - **Windows**: `%APPDATA%\Cursor\User\globalStorage\saoudrizwan.claude-dev\settings\cline_mcp_settings.json`
 - **macOS**: `~/Library/Application Support/Cursor/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json`
 
@@ -107,11 +108,11 @@ Form 组件支持支付宝小程序吗？
 
 ```json
 {
-  "mcpServers": {
-    "hy-app": {
-      "command": "hy-app-mcp"
+    "mcpServers": {
+        "hy-app": {
+            "command": "hy-app-mcp"
+        }
     }
-  }
 }
 ```
 
@@ -119,12 +120,12 @@ Form 组件支持支付宝小程序吗？
 
 ```json
 {
-  "mcpServers": {
-    "hy-app": {
-      "command": "npx",
-      "args": ["@hy-app/mcp"]
+    "mcpServers": {
+        "hy-app": {
+            "command": "npx",
+            "args": ["@hy-app/mcp"]
+        }
     }
-  }
 }
 ```
 
@@ -160,8 +161,8 @@ Form 组件支持支付宝小程序吗？
 
 ```json
 {
-  "componentName": "搜索关键词",
-  "category": "可选，分类过滤"
+    "componentName": "搜索关键词",
+    "category": "可选，分类过滤"
 }
 ```
 
@@ -171,10 +172,10 @@ Form 组件支持支付宝小程序吗？
 
 ```json
 {
-  "componentName": "button",
-  "section": "可选：props | events | slots | all，默认 all",
-  "detail": "可选：是否返回完整详情，默认 true。设为 false 可减少 token，只返回 name/type/default/enum",
-  "includeExamples": "可选：是否包含示例代码，默认 false"
+    "componentName": "button",
+    "section": "可选：props | events | slots | all，默认 all",
+    "detail": "可选：是否返回完整详情，默认 true。设为 false 可减少 token，只返回 name/type/default/enum",
+    "includeExamples": "可选：是否包含示例代码，默认 false"
 }
 ```
 
@@ -184,9 +185,9 @@ Form 组件支持支付宝小程序吗？
 
 ```json
 {
-  "componentName": "button",
-  "feature": "可选，按功能关键词过滤",
-  "listOnly": "可选，只返回标题列表，默认 false"
+    "componentName": "button",
+    "feature": "可选，按功能关键词过滤",
+    "listOnly": "可选，只返回标题列表，默认 false"
 }
 ```
 
@@ -196,8 +197,8 @@ Form 组件支持支付宝小程序吗？
 
 ```json
 {
-  "componentName": "button",
-  "platform": "可选：app | h5 | weixin | alipay"
+    "componentName": "button",
+    "platform": "可选：app | h5 | weixin | alipay"
 }
 ```
 
@@ -207,8 +208,8 @@ Form 组件支持支付宝小程序吗？
 
 ```json
 {
-  "name": "useToast",
-  "includeExamples": "可选，默认 false"
+    "name": "useToast",
+    "includeExamples": "可选，默认 false"
 }
 ```
 
@@ -218,8 +219,8 @@ Form 组件支持支付宝小程序吗？
 
 ```json
 {
-  "name": "http",
-  "includeExamples": "可选，默认 false"
+    "name": "http",
+    "includeExamples": "可选，默认 false"
 }
 ```
 
@@ -229,8 +230,8 @@ Form 组件支持支付宝小程序吗？
 
 ```json
 {
-  "topic": "theme | locale | style | intro",
-  "query": "可选，搜索特定内容"
+    "topic": "theme | locale | style | intro",
+    "query": "可选，搜索特定内容"
 }
 ```
 
@@ -240,8 +241,8 @@ Form 组件支持支付宝小程序吗？
 
 ```json
 {
-  "componentName": "button",
-  "code": "<hy-button type='error' size='big' @click='handleClick'>"
+    "componentName": "button",
+    "code": "<hy-button type='error' size='big' @click='handleClick'>"
 }
 ```
 

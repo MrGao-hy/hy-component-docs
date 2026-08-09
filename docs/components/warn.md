@@ -1,11 +1,12 @@
 # Warn 警告提示组件
+
 > 警告提示，展现需要关注的信息。
 
 ## :pushpin:平台差异说明
 
-| APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
-|----------|----|-------|--------|
-| ✔        | ✔  | ✔     | ✔      |
+| APP(vue) | H5  | 微信小程序 | 支付宝小程序 |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
 ## :japanese_castle:基本使用示例
 
@@ -15,10 +16,15 @@
 ```
 
 ### 主题配置
+
 - 通过`showIcon`设置是否显示图标，作用是让信息类型更加醒目。
-::: tip 注意 
+
+::: tip 注意
+
 当前版本图标为华悦内置图标，根据`type`参数显示不同的图标，无法自定义。
+
 :::
+
 ```html
 <template>
     <hy-warn text="风萧萧兮易水寒" show-icon type="success"></hy-warn>
@@ -29,7 +35,9 @@
 ```
 
 ### 可关闭的警告提示
+
 - `closable`参数配置是否可关闭
+
 ```html
 <template>
     <hy-warn text="风萧萧兮易水寒" closable></hy-warn>
@@ -48,25 +56,25 @@
 ```
 
 ## API
+
 ### Warn Props
 
-| 参数          | 说明                          | 类型                                                | 默认值     |
-|-------------|-----------------------------|---------------------------------------------------|---------|
-| title       | 显示的文字                       | `string`                                          | -       |
-| type        | 使用预设的颜色                     | `error`\|`warning`\|`success` \|`primary`\|`info` | warning |
-| description | 辅助性文字，颜色比title浅一点，字号也小一点，可选 | `string`                                          | -       |
-| closable    | 关闭按钮(默认为叉号icon图标)           | `boolean`                                         | false   |
-| showIcon    | 是否显示左边的辅助图标                 | `boolean`                                         | false   |
-| theme       | 显示的暗色或者亮色                   | `light` \| `dark`                                 | dark    |
-| center      | 文字是否居中                      | `boolean`                                         | false   |
-| fontSize    | 字体大小                        | `string` \| `number`                              | 14      |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| title | 显示的文字 | `string` | - |
+| type | 使用预设的颜色 | `error`\|`warning`\|`success` \|`primary`\|`info` | warning |
+| description | 辅助性文字，颜色比title浅一点，字号也小一点，可选 | `string` | - |
+| closable | 关闭按钮(默认为叉号icon图标) | `boolean` | false |
+| showIcon | 是否显示左边的辅助图标 | `boolean` | false |
+| theme | 显示的暗色或者亮色 | `light` \| `dark` | dark |
+| center | 文字是否居中 | `boolean` | false |
+| fontSize | 字体大小 | `string` \| `number` | 14 |
 
 ### Events
 
-| 事件名   | 说明      | 回调参数 |
-|-------|---------|------|
-| click | 点击组件时触发 | -    |
-| close | 关闭组件时触发 | -    |
-
+| 事件名 | 说明           | 回调参数 |
+| ------ | -------------- | -------- |
+| click  | 点击组件时触发 | -        |
+| close  | 关闭组件时触发 | -        |
 
 <demo-model url="pages-design/warn/warn"></demo-model>

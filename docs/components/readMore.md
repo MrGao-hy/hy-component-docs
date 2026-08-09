@@ -13,16 +13,15 @@
 ```html
 <!-- 全局使用 -->
 <hy-read-more>
-  <rich-text :nodes="content"></rich-text>
+    <rich-text :nodes="content"></rich-text>
 </hy-read-more>
 ```
 
 ```ts
-import { ref } from "vue";
+import { ref } from 'vue';
 
-const content =
-  ref(`山不在高，有仙则名。水不在深，有龙则灵。斯是陋室，惟吾德馨。  
-苔痕上阶绿，草色入帘青。谈笑有鸿儒，往来无白丁。可以调素琴，阅金经。  
+const content = ref(`山不在高，有仙则名。水不在深，有龙则灵。斯是陋室，惟吾德馨。
+苔痕上阶绿，草色入帘青。谈笑有鸿儒，往来无白丁。可以调素琴，阅金经。
 无丝竹之乱耳，无案牍之劳形。南阳诸葛庐，西蜀子云亭。孔子云：何陋之有？`);
 ```
 
@@ -32,13 +31,14 @@ const content =
 
 ```html
 <hy-read-more showHeight="600">
-  <rich-text :nodes="content"></rich-text>
+    <rich-text :nodes="content"></rich-text>
 </hy-read-more>
 ```
 
 ### 自定义样式
 
 ::: warning 提示
+
 此组件上边部分有一个白色虚化的阴影，用以将点击区域与文字内容进行融合，如果您不想要这个阴影，可以调整shadowStyle对象，此对象内部如下：
 
 ```javascript
@@ -61,68 +61,70 @@ const content =
 
 ```html
 <template>
-  <hy-read-more :shadowStyle="shadowStyle">
-    <rich-text :nodes="content"></rich-text>
-  </hy-read-more>
+    <hy-read-more :shadowStyle="shadowStyle">
+        <rich-text :nodes="content"></rich-text>
+    </hy-read-more>
 </template>
 
 <script setup>
-  import { reactive } from "vue";
+    import { reactive } from 'vue';
 
-  const shadowStyle = reactive({
-    backgroundImage: "none",
-    paddingTop: "0",
-    marginTop: "20rpx",
-  });
+    const shadowStyle = reactive({
+        backgroundImage: 'none',
+        paddingTop: '0',
+        marginTop: '20rpx',
+    });
 </script>
 ```
 
 ### 异步初始化
 
 ::: warning 提示
+
 有时候需要展示的内容是从后端获取的，组件内部的mounted生命周期初始化时，请求尚未回来，会导致 内容的高度在初始化有误差。可以在请求完毕渲染后(指的是this.$nextTick)，通过ref调用组件的init方法，重新初始化。
+
 :::
 
 ```html
 <template>
-  <hy-read-more showHeight="600" ref="uReadMoreRef">
-    <rich-text :nodes="content"></rich-text>
-  </hy-read-more>
+    <hy-read-more showHeight="600" ref="uReadMoreRef">
+        <rich-text :nodes="content"></rich-text>
+    </hy-read-more>
 </template>
 
 <script setup>
-  import { ref, onMounted, nextTick } from "vue";
+    import { ref, onMounted, nextTick } from 'vue';
 
-  // 创建响应式数据
-  const content = ref("");
+    // 创建响应式数据
+    const content = ref('');
 
-  // 创建组件引用
-  const uReadMoreRef = ref(null);
+    // 创建组件引用
+    const uReadMoreRef = ref(null);
 
-  // 模拟后端请求
-  async function fetchData() {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(`山不在高，有仙则名。水不在深，有龙则灵。斯是陋室，惟吾德馨。  
-      苔痕上阶绿，草色入帘青。谈笑有鸿儒，往来无白丁。可以调素琴，阅金经。  
+    // 模拟后端请求
+    async function fetchData() {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(`山不在高，有仙则名。水不在深，有龙则灵。斯是陋室，惟吾德馨。
+      苔痕上阶绿，草色入帘青。谈笑有鸿儒，往来无白丁。可以调素琴，阅金经。
       无丝竹之乱耳，无案牍之劳形。南阳诸葛庐，西蜀子云亭。孔子云：何陋之有？`);
-      }, 2000);
-    });
-  }
-
-  // 在组件挂载后调用
-  onMounted(async () => {
-    await fetchData();
-    content.value = text;
-
-    // 等待 DOM 更新
-    await nextTick();
-
-    // 调用子组件的 init 方法
-    if (uReadMoreRef.value) {
-      uReadMoreRef.value.init();
+            }, 2000);
+        });
     }
-  });
+
+    // 在组件挂载后调用
+    onMounted(async () => {
+        await fetchData();
+        content.value = text;
+
+        // 等待 DOM 更新
+        await nextTick();
+
+        // 调用子组件的 init 方法
+        if (uReadMoreRef.value) {
+            uReadMoreRef.value.init();
+        }
+    });
 </script>
 ```
 
@@ -130,18 +132,18 @@ const content =
 
 ### readMore Props
 
-| 参数        | 说明                                               | 类型               | 默认值       |
-| ----------- | -------------------------------------------------- | ------------------ | ------------ |
-| showHeight  | 内容超出此高度才会显示展开全文按钮，数值默认单位px | `string`\|`number` | 400          |
-| toggle      | 展开后是否显示收起按钮                             | `boolean`          | false        |
-| closeText   | 关闭时的提示文字                                   | `string`           | 展开阅读全文 |
-| openText    | 展开时的提示文字                                   | `string`           | 收起         |
-| color       | 提示文字的颜色                                     | `string`           | -            |
-| fontSize    | 提示文字的大小，数值默认单位px                     | `string`\|`number` | 14           |
-| textIndent  | 段落首行缩进的字符个数                             | `string`           | 2em          |
-| name        | 用于在open和close事件中当作回调参数返回            | `string`           | -            |
-| shadowStyle | 对阴影的自定义处理，对象形式                       | `CSSProperties`    | -            |
-| customStyle | 定义需要用到的外部样式                             | `CSSProperties`    | -            |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| showHeight | 内容超出此高度才会显示展开全文按钮，数值默认单位px | `string`\|`number` | 400 |
+| toggle | 展开后是否显示收起按钮 | `boolean` | false |
+| closeText | 关闭时的提示文字 | `string` | 展开阅读全文 |
+| openText | 展开时的提示文字 | `string` | 收起 |
+| color | 提示文字的颜色 | `string` | - |
+| fontSize | 提示文字的大小，数值默认单位px | `string`\|`number` | 14 |
+| textIndent | 段落首行缩进的字符个数 | `string` | 2em |
+| name | 用于在open和close事件中当作回调参数返回 | `string` | - |
+| shadowStyle | 对阴影的自定义处理，对象形式 | `CSSProperties` | - |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
 
 ### Events
 

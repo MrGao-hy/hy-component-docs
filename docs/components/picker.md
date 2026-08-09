@@ -4,18 +4,20 @@
 
 ## :pushpin:平台差异说明
 
-| APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
-|----------|----|-------|--------|
-| ✔        | ✔  | ✔     | ✔      |
+| APP(vue) | H5  | 微信小程序 | 支付宝小程序 |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
 ## :warning:注意事项
 
-:::warning 注意事项
+::: warning 注意事项
+
 - `hasInput` 为 `true` 时，通过点击输入框打开选择器，无需设置 `show` 属性
 - `modelValue` 在单列模式下为字符串或数字，多列模式下为数组
 - 多列联动需要在 `change` 事件中调用 `setColumnValues` 方法更新后续列数据
 - `columns` 参数支持一维数组（单列）或二维数组（多列）
 - `popupMode` 目前仅支持 `bottom` 和 `top` 两种模式
+
 :::
 
 ## :japanese_castle:基本使用示例
@@ -31,16 +33,16 @@
 </template>
 
 <script setup>
-    import { ref, reactive } from 'vue'
+    import { ref, reactive } from 'vue';
 
-    const show = ref(false)
-    const value = ref('')
-    const columns = reactive([['中国', '美国', '日本', '韩国']])
+    const show = ref(false);
+    const value = ref('');
+    const columns = reactive([['中国', '美国', '日本', '韩国']]);
 
     const onConfirm = (e) => {
-        value.value = e.value.join('')
-        show.value = false
-    }
+        value.value = e.value.join('');
+        show.value = false;
+    };
 </script>
 ```
 
@@ -58,14 +60,14 @@
 </template>
 
 <script setup>
-    import { ref, reactive } from 'vue'
+    import { ref, reactive } from 'vue';
 
-    const value = ref('')
-    const columns = reactive([['中国', '美国', '日本']])
+    const value = ref('');
+    const columns = reactive([['中国', '美国', '日本']]);
 
     const onConfirm = (e) => {
-        console.log('选中:', e.value)
-    }
+        console.log('选中:', e.value);
+    };
 </script>
 ```
 
@@ -83,18 +85,18 @@
 </template>
 
 <script setup>
-    import { ref, reactive } from 'vue'
+    import { ref, reactive } from 'vue';
 
-    const value = ref([])
+    const value = ref([]);
     const columns = reactive([
         ['周一', '周二', '周三', '周四', '周五'],
         ['上午', '下午', '晚上'],
-        ['9:00', '10:00', '11:00', '14:00', '15:00', '16:00']
-    ])
+        ['9:00', '10:00', '11:00', '14:00', '15:00', '16:00'],
+    ]);
 
     const onConfirm = (e) => {
-        console.log('选中:', e.value)
-    }
+        console.log('选中:', e.value);
+    };
 </script>
 ```
 
@@ -113,32 +115,32 @@
 </template>
 
 <script setup>
-    import { ref, reactive } from 'vue'
+    import { ref, reactive } from 'vue';
 
-    const pickerRef = ref(null)
-    const value = ref([])
+    const pickerRef = ref(null);
+    const value = ref([]);
 
     const columns = reactive([
         ['中国', '美国'],
-        ['北京', '上海', '广州']
-    ])
+        ['北京', '上海', '广州'],
+    ]);
 
     const cityData = reactive({
         中国: ['北京', '上海', '广州', '深圳'],
-        美国: ['纽约', '洛杉矶', '芝加哥', '休斯顿']
-    })
+        美国: ['纽约', '洛杉矶', '芝加哥', '休斯顿'],
+    });
 
     const onChange = (e) => {
-        const { columnIndex, value } = e
+        const { columnIndex, value } = e;
         if (columnIndex === 0) {
-            const selectedCountry = value[0]
-            pickerRef.value.setColumnValues(1, cityData[selectedCountry])
+            const selectedCountry = value[0];
+            pickerRef.value.setColumnValues(1, cityData[selectedCountry]);
         }
-    }
+    };
 
     const onConfirm = (e) => {
-        console.log('联动选择:', e.value)
-    }
+        console.log('联动选择:', e.value);
+    };
 </script>
 ```
 
@@ -157,20 +159,20 @@
 </template>
 
 <script setup>
-    import { ref, reactive } from 'vue'
+    import { ref, reactive } from 'vue';
 
-    const value = ref('')
+    const value = ref('');
     const columns = reactive([
         [
             { label: '雪月夜', value: 2021 },
             { label: '冷夜雨', value: 804 },
-            { label: '清风颂', value: 305 }
-        ]
-    ])
+            { label: '清风颂', value: 305 },
+        ],
+    ]);
 
     const onConfirm = (e) => {
-        console.log('选中:', e.value)
-    }
+        console.log('选中:', e.value);
+    };
 </script>
 ```
 
@@ -185,16 +187,16 @@
 </template>
 
 <script setup>
-    import { ref, reactive } from 'vue'
+    import { ref, reactive } from 'vue';
 
-    const show = ref(false)
-    const value = ref('')
-    const columns = reactive([['选项1', '选项2', '选项3']])
+    const show = ref(false);
+    const value = ref('');
+    const columns = reactive([['选项1', '选项2', '选项3']]);
 
     const onConfirm = (e) => {
-        value.value = e.value.join('')
-        show.value = false
-    }
+        value.value = e.value.join('');
+        show.value = false;
+    };
 </script>
 ```
 
@@ -219,20 +221,20 @@
 </template>
 
 <script setup>
-    import { ref, reactive } from 'vue'
+    import { ref, reactive } from 'vue';
 
-    const show = ref(false)
-    const value = ref('')
-    const columns = reactive([['选项A', '选项B', '选项C']])
+    const show = ref(false);
+    const value = ref('');
+    const columns = reactive([['选项A', '选项B', '选项C']]);
 
     const onConfirm = (e) => {
-        value.value = e.value.join('')
-        show.value = false
-    }
+        value.value = e.value.join('');
+        show.value = false;
+    };
 
     const onCancel = () => {
-        show.value = false
-    }
+        show.value = false;
+    };
 </script>
 ```
 
@@ -244,7 +246,7 @@
         v-model="value"
         has-input
         :columns="columns"
-        :input="{ 
+        :input="{
             placeholder: '请选择',
             fontSize: 16,
             prefixIcon: 'calendar',
@@ -254,10 +256,10 @@
 </template>
 
 <script setup>
-    import { ref, reactive } from 'vue'
+    import { ref, reactive } from 'vue';
 
-    const value = ref('')
-    const columns = reactive([['选项1', '选项2', '选项3']])
+    const value = ref('');
+    const columns = reactive([['选项1', '选项2', '选项3']]);
 </script>
 ```
 
@@ -277,19 +279,19 @@
 </template>
 
 <script setup>
-    import { ref, reactive } from 'vue'
+    import { ref, reactive } from 'vue';
 
-    const show = ref(false)
-    const value = ref('')
+    const show = ref(false);
+    const value = ref('');
     const columns = reactive([
         ['A', 'B', 'C', 'D'],
-        ['1', '2', '3', '4']
-    ])
+        ['1', '2', '3', '4'],
+    ]);
 
     const onConfirm = (e) => {
-        value.value = e.value.join(' / ')
-        show.value = false
-    }
+        value.value = e.value.join(' / ');
+        show.value = false;
+    };
 </script>
 ```
 
@@ -310,16 +312,16 @@
 </template>
 
 <script setup>
-    import { ref, reactive } from 'vue'
+    import { ref, reactive } from 'vue';
 
-    const show = ref(false)
-    const value = ref('')
-    const columns = reactive([['选项1', '选项2', '选项3']])
+    const show = ref(false);
+    const value = ref('');
+    const columns = reactive([['选项1', '选项2', '选项3']]);
 
     const onConfirm = (e) => {
-        value.value = e.value.join('')
-        show.value = false
-    }
+        value.value = e.value.join('');
+        show.value = false;
+    };
 </script>
 ```
 
@@ -350,16 +352,16 @@
 </template>
 
 <script setup>
-    import { ref, reactive } from 'vue'
+    import { ref, reactive } from 'vue';
 
-    const pickerRef = ref(null)
-    const value = ref('')
-    const columns = reactive([['选项1', '选项2', '选项3']])
+    const pickerRef = ref(null);
+    const value = ref('');
+    const columns = reactive([['选项1', '选项2', '选项3']]);
 
     const handleSave = () => {
-        console.log('保存:', value.value)
-        pickerRef.value.onConfirm()
-    }
+        console.log('保存:', value.value);
+        pickerRef.value.onConfirm();
+    };
 </script>
 ```
 
@@ -367,31 +369,31 @@
 
 ### Picker Props
 
-| 参数                | 说明                                                               | 类型                        | 默认值  |
-| ------------------- | ------------------------------------------------------------------ | --------------------------- | ------- |
-| modelValue          | 回显到输入框的值（hasInput为true时必须设置）                       | `string`\|`number`\|`array` | -       |
-| show                | 是否显示选择器（hasInput为true时不用设置）                         | `boolean`                   | false   |
-| popupMode           | 弹窗弹出模式[^1]                                                   | `string`                    | bottom  |
-| separator           | 多列分隔符                                                         | `string`                    | /       |
-| showToolbar         | 是否显示顶部操作栏                                                 | `boolean`                   | true    |
-| title               | 顶部标题                                                           | `string`                    | -       |
-| columns             | 设置每一列的数据，支持一维数组（单列）或二维数组（多列）           | `array`                     | []      |
-| loading             | 是否显示加载中状态                                                 | `boolean`                   | false   |
-| itemHeight          | 各列中单个选项的高度（px）                                         | `number`                    | 44      |
-| cancelText          | 取消按钮文字                                                       | `string`                    | 取消    |
-| confirmText         | 确认按钮文字                                                       | `string`                    | 确定    |
-| cancelColor         | 取消按钮颜色                                                       | `string`                    | #909193 |
-| confirmColor        | 确认按钮颜色                                                       | `string`                    | -       |
-| visibleItemCount    | 每列可见选项数量                                                   | `number`                    | 5       |
-| labelKey            | 选项对象中显示文本对应的键名                                       | `string`                    | label   |
-| valueKey            | 选项对象中值对应的键名                                             | `string`                    | value   |
-| closeOnClickOverlay | 是否允许点击遮罩关闭选择器                                         | `boolean`                   | false   |
-| defaultIndex        | 各列默认索引                                                       | `array`                     | []      |
-| immediateChange     | 是否在手指松开时立即触发change事件                                 | `boolean`                   | true    |
-| zIndex              | 弹窗层级                                                           | `number`                    | 10076   |
-| hasInput            | 是否显示输入框                                                     | `boolean`                   | false   |
-| input               | 输入框配置属性，hasInput为true时生效，详见[输入框Api](./input#api) | `HyInputProps`              | {}      |
-| toolbarRightSlot    | 是否启用工具栏右侧插槽（需配合slot="toolbar-right"使用）           | `boolean`                   | false   |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| modelValue | 回显到输入框的值（hasInput为true时必须设置） | `string`\|`number`\|`array` | - |
+| show | 是否显示选择器（hasInput为true时不用设置） | `boolean` | false |
+| popupMode | 弹窗弹出模式[^1] | `string` | bottom |
+| separator | 多列分隔符 | `string` | / |
+| showToolbar | 是否显示顶部操作栏 | `boolean` | true |
+| title | 顶部标题 | `string` | - |
+| columns | 设置每一列的数据，支持一维数组（单列）或二维数组（多列） | `array` | [] |
+| loading | 是否显示加载中状态 | `boolean` | false |
+| itemHeight | 各列中单个选项的高度（px） | `number` | 44 |
+| cancelText | 取消按钮文字 | `string` | 取消 |
+| confirmText | 确认按钮文字 | `string` | 确定 |
+| cancelColor | 取消按钮颜色 | `string` | #909193 |
+| confirmColor | 确认按钮颜色 | `string` | - |
+| visibleItemCount | 每列可见选项数量 | `number` | 5 |
+| labelKey | 选项对象中显示文本对应的键名 | `string` | label |
+| valueKey | 选项对象中值对应的键名 | `string` | value |
+| closeOnClickOverlay | 是否允许点击遮罩关闭选择器 | `boolean` | false |
+| defaultIndex | 各列默认索引 | `array` | [] |
+| immediateChange | 是否在手指松开时立即触发change事件 | `boolean` | true |
+| zIndex | 弹窗层级 | `number` | 10076 |
+| hasInput | 是否显示输入框 | `boolean` | false |
+| input | 输入框配置属性，hasInput为true时生效，详见[输入框Api](./input#api) | `HyInputProps` | {} |
+| toolbarRightSlot | 是否启用工具栏右侧插槽（需配合slot="toolbar-right"使用） | `boolean` | false |
 
 ### Events
 
@@ -432,46 +434,46 @@
 
 ### Slots
 
-| 插槽名         | 说明                                                                            | 回调参数 |
-| -------------- | ------------------------------------------------------------------------------- | -------- |
-| default        | 自定义输入框内容（hasInput为true时生效）                                        | -        |
-| toolbar-right  | 工具栏右侧内容，需同时设置 `toolbarRightSlot="true"` 才能生效（微信小程序限制） | -        |
-| toolbar-bottom | 工具栏下方自定义区域                                                            | -        |
+| 插槽名 | 说明 | 回调参数 |
+| --- | --- | --- |
+| default | 自定义输入框内容（hasInput为true时生效） | - |
+| toolbar-right | 工具栏右侧内容，需同时设置 `toolbarRightSlot="true"` 才能生效（微信小程序限制） | - |
+| toolbar-bottom | 工具栏下方自定义区域 | - |
 
 ## typings
 
-:::details 类型说明
+::: details 类型说明
 
 ```ts
 interface PickerColumnVo {
     /** 值（必填） */
-    value: string | number
+    value: string | number;
     /** 显示文本 */
-    label?: string
+    label?: string;
     /** 自定义属性 */
-    [key: string]: any
+    [key: string]: any;
 }
 
 interface SelectValueVo {
     /** 当前选中的值（数组） */
-    value: string[]
+    value: string[];
     /** 当前列选中的索引 */
-    index?: number
+    index?: number;
     /** 所有列的索引数组 */
-    indexs?: number[]
+    indexs?: number[];
     /** 所有列的数据（二维数组） */
-    values?: Array<any>
+    values?: Array<any>;
     /** 发生变化的列索引 */
-    columnIndex?: number
+    columnIndex?: number;
 }
 
 interface IPickerExpose {
     /** 设置某一列的值 */
-    setColumnValues: (columnIndex: number, values: Array<string | PickerColumnVo>) => void
+    setColumnValues: (columnIndex: number, values: Array<string | PickerColumnVo>) => void;
     /** 手动触发确认选择 */
-    onConfirm: () => void
+    onConfirm: () => void;
     /** 关闭选择器弹窗 */
-    close: () => void
+    close: () => void;
 }
 ```
 

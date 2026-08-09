@@ -4,17 +4,19 @@
 
 ## :pushpin:平台差异说明
 
-| APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
-|----------|----|-------|--------|
-| ✔        | ✔  | ✔     | ✔      |
+| APP(vue) | H5  | 微信小程序 | 支付宝小程序 |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
 ## :warning:注意事项
 
-:::warning 注意事项
+::: warning 注意事项
+
 - `text` 参数支持字符串或数组形式，轮播滚动时建议使用数组
 - `url` 和 `mode="link"` 必须同时设置才能实现页面跳转
 - `step` 属性仅在 `direction="row"` 时生效，启用步进形式滚动
 - `disableTouch` 属性目前仅支持 App 2.5.5+、H5 2.5.5+、支付宝小程序、字节跳动小程序
+
 :::
 
 ## :japanese_castle:基本使用示例
@@ -35,14 +37,9 @@
 </template>
 
 <script setup>
-import { reactive } from 'vue'
+    import { reactive } from 'vue';
 
-const textList = reactive([
-    '唧唧复唧唧，',
-    '木兰当户织。',
-    '不闻机杼声，',
-    '唯闻女叹息。'
-])
+    const textList = reactive(['唧唧复唧唧，', '木兰当户织。', '不闻机杼声，', '唯闻女叹息。']);
 </script>
 ```
 
@@ -54,12 +51,9 @@ const textList = reactive([
 </template>
 
 <script setup>
-import { reactive } from 'vue'
+    import { reactive } from 'vue';
 
-const textList = reactive([
-    '这是一条可关闭的通知',
-    '点击右侧关闭按钮可隐藏通知'
-])
+    const textList = reactive(['这是一条可关闭的通知', '点击右侧关闭按钮可隐藏通知']);
 </script>
 ```
 
@@ -71,12 +65,9 @@ const textList = reactive([
 </template>
 
 <script setup>
-import { reactive } from 'vue'
+    import { reactive } from 'vue';
 
-const textList = reactive([
-    '滚动速度为 150px/s',
-    '速度值越大滚动越快'
-])
+    const textList = reactive(['滚动速度为 150px/s', '速度值越大滚动越快']);
 </script>
 ```
 
@@ -84,11 +75,7 @@ const textList = reactive([
 
 ```html
 <template>
-    <hy-notice-bar 
-        text="点击查看详情" 
-        mode="link"
-        url="/pages/detail/index"
-    ></hy-notice-bar>
+    <hy-notice-bar text="点击查看详情" mode="link" url="/pages/detail/index"></hy-notice-bar>
 </template>
 ```
 
@@ -96,8 +83,8 @@ const textList = reactive([
 
 ```html
 <template>
-    <hy-notice-bar 
-        text="跳转首页" 
+    <hy-notice-bar
+        text="跳转首页"
         mode="link"
         url="/pages/index/index"
         link-type="switchTab"
@@ -113,13 +100,9 @@ const textList = reactive([
 </template>
 
 <script setup>
-import { reactive } from 'vue'
+    import { reactive } from 'vue';
 
-const textList = reactive([
-    '第一条通知',
-    '第二条通知',
-    '第三条通知'
-])
+    const textList = reactive(['第一条通知', '第二条通知', '第三条通知']);
 </script>
 ```
 
@@ -131,13 +114,9 @@ const textList = reactive([
 </template>
 
 <script setup>
-import { reactive } from 'vue'
+    import { reactive } from 'vue';
 
-const textList = reactive([
-    '第一条纵向滚动通知',
-    '第二条纵向滚动通知',
-    '第三条纵向滚动通知'
-])
+    const textList = reactive(['第一条纵向滚动通知', '第二条纵向滚动通知', '第三条纵向滚动通知']);
 </script>
 ```
 
@@ -145,8 +124,8 @@ const textList = reactive([
 
 ```html
 <template>
-    <hy-notice-bar 
-        text="自定义颜色的通知" 
+    <hy-notice-bar
+        text="自定义颜色的通知"
         color="#ff5722"
         bg-color="#fff3e0"
         :font-size="16"
@@ -166,10 +145,7 @@ const textList = reactive([
         }"
     ></hy-notice-bar>
 
-    <hy-notice-bar
-        text="使用自定义图标"
-        :icon="IconConfig.SCAN"
-    ></hy-notice-bar>
+    <hy-notice-bar text="使用自定义图标" :icon="IconConfig.SCAN"></hy-notice-bar>
 </template>
 ```
 
@@ -179,10 +155,10 @@ const textList = reactive([
 <template>
     <!-- 左对齐 -->
     <hy-notice-bar text="左对齐" justify-content="flex-start"></hy-notice-bar>
-    
+
     <!-- 居中对齐 -->
     <hy-notice-bar text="居中对齐" justify-content="center"></hy-notice-bar>
-    
+
     <!-- 右对齐 -->
     <hy-notice-bar text="右对齐" justify-content="flex-end"></hy-notice-bar>
 </template>
@@ -192,20 +168,13 @@ const textList = reactive([
 
 ```html
 <template>
-    <hy-notice-bar 
-        :text="textList" 
-        direction="column"
-        :disable-touch="false"
-    ></hy-notice-bar>
+    <hy-notice-bar :text="textList" direction="column" :disable-touch="false"></hy-notice-bar>
 </template>
 
 <script setup>
-import { reactive } from 'vue'
+    import { reactive } from 'vue';
 
-const textList = reactive([
-    '支持手势滑动切换',
-    '上下滑动可切换通知'
-])
+    const textList = reactive(['支持手势滑动切换', '上下滑动可切换通知']);
 </script>
 ```
 
@@ -213,8 +182,8 @@ const textList = reactive([
 
 ```html
 <template>
-    <hy-notice-bar 
-        :text="textList" 
+    <hy-notice-bar
+        :text="textList"
         mode="closable"
         @click="handleClick"
         @close="handleClose"
@@ -222,26 +191,23 @@ const textList = reactive([
 </template>
 
 <script setup>
-import { reactive } from 'vue'
+    import { reactive } from 'vue';
 
-const textList = reactive([
-    '点击通知可触发事件',
-    '关闭通知也会触发事件'
-])
+    const textList = reactive(['点击通知可触发事件', '关闭通知也会触发事件']);
 
-const handleClick = (index) => {
-    uni.showToast({
-        title: `点击了第${index + 1}条通知`,
-        icon: 'none'
-    })
-}
+    const handleClick = (index) => {
+        uni.showToast({
+            title: `点击了第${index + 1}条通知`,
+            icon: 'none',
+        });
+    };
 
-const handleClose = () => {
-    uni.showToast({
-        title: '通知已关闭',
-        icon: 'none'
-    })
-}
+    const handleClose = () => {
+        uni.showToast({
+            title: '通知已关闭',
+            icon: 'none',
+        });
+    };
 </script>
 ```
 
@@ -249,30 +215,30 @@ const handleClose = () => {
 
 ### NoticeBar Props
 
-| 参数             | 说明                                                  | 类型                      | 默认值               |
-|----------------|-----------------------------------------------------|-------------------------|-------------------|
-| text           | 显示的内容，支持字符串或数组                                      | `string`\|`string[]`    | -                 |
-| direction      | 通告滚动模式，row-横向滚动，column-竖向滚动                         | `row` \| `column`       | row               |
-| step           | direction = row时，是否使用步进形式滚动                         | `boolean`               | false             |
-| icon           | 是否显示左侧图标，接受图标名称或图标配置对象                              | `string`\|`HyIconProps` | NOTIFICATION_FILL |
-| mode           | 通告模式，link-显示右箭头，closable-显示右侧关闭图标                   | `link` \| `closable`    | -                 |
-| color          | 文字颜色，图标也会使用此颜色                                      | `string`                | #ff9900           |
-| bgColor        | 背景颜色                                                | `string`                | -                 |
-| speed          | 水平滚动时的滚动速度，即每秒滚动多少px，速度越大滚动越快                       | `number`                | 80                |
-| fontSize       | 字体大小，数值默认单位px                                           | `string` \| `number`    | 14                |
-| duration       | 滚动一个周期的时间，单位ms                                      | `number`                | 2000              |
-| disableTouch   | 是否禁止用手滑动切换，仅支持 App 2.5.5+、H5 2.5.5+、支付宝小程序、字节跳动小程序  | `boolean`               | true              |
-| url            | 跳转的页面路径                                             | `string`                | -                 |
-| linkType       | 页面跳转类型，可选值：navigateTo、redirectTo、switchTab、reLaunch | `string`                | navigateTo        |
-| justifyContent | 文字水平布局类型，可选值：flex-start、center、flex-end             | `string`                | flex-start        |
-| customStyle    | 自定义外部样式                                             | `CSSProperties`         | -                 |
-| customClass    | 自定义外部类名                                             | `string`                | -                 |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| text | 显示的内容，支持字符串或数组 | `string`\|`string[]` | - |
+| direction | 通告滚动模式，row-横向滚动，column-竖向滚动 | `row` \| `column` | row |
+| step | direction = row时，是否使用步进形式滚动 | `boolean` | false |
+| icon | 是否显示左侧图标，接受图标名称或图标配置对象 | `string`\|`HyIconProps` | NOTIFICATION_FILL |
+| mode | 通告模式，link-显示右箭头，closable-显示右侧关闭图标 | `link` \| `closable` | - |
+| color | 文字颜色，图标也会使用此颜色 | `string` | #ff9900 |
+| bgColor | 背景颜色 | `string` | - |
+| speed | 水平滚动时的滚动速度，即每秒滚动多少px，速度越大滚动越快 | `number` | 80 |
+| fontSize | 字体大小，数值默认单位px | `string` \| `number` | 14 |
+| duration | 滚动一个周期的时间，单位ms | `number` | 2000 |
+| disableTouch | 是否禁止用手滑动切换，仅支持 App 2.5.5+、H5 2.5.5+、支付宝小程序、字节跳动小程序 | `boolean` | true |
+| url | 跳转的页面路径 | `string` | - |
+| linkType | 页面跳转类型，可选值：navigateTo、redirectTo、switchTab、reLaunch | `string` | navigateTo |
+| justifyContent | 文字水平布局类型，可选值：flex-start、center、flex-end | `string` | flex-start |
+| customStyle | 自定义外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### Events
 
-| 事件名   | 说明         | 回调参数               |
-|-------|------------|--------------------|
-| click | 点击通告文字触发   | index: 当前显示的text索引 |
-| close | 点击右侧关闭图标触发 | -                  |
+| 事件名 | 说明                 | 回调参数                  |
+| ------ | -------------------- | ------------------------- |
+| click  | 点击通告文字触发     | index: 当前显示的text索引 |
+| close  | 点击右侧关闭图标触发 | -                         |
 
 <demo-model url="pages-design/noticeBar/noticeBar"></demo-model>

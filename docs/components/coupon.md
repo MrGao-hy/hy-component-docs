@@ -3,9 +3,10 @@
 > Coupon 组件用于展示和管理优惠券信息，支持多种类型的优惠券展示，包括满减券、折扣券和无门槛券等，提供灵活的自定义选项以满足不同业务场景需求。
 
 ## :pushpin:平台差异说明
-| APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
-|----------|----|-------|--------|
-| ✔        | ✔  | ✔     | ✔      |
+
+| APP(vue) | H5  | 微信小程序 | 支付宝小程序 |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
 ## 组件特性
 
@@ -19,17 +20,17 @@
 
 ```html [模板]
 <template>
-  <hy-coupon
-    title="新品优惠券"
-    amount="10"
-    description="这是用于新品测试用的"
-    date-desc="长期有效"
-    type="moneyOff"
-    status="unused"
-    btnMode="button"
-    :disabled-status="['used', 'expired', 'redeemed']"
-    @used="onUse"
-  />
+    <hy-coupon
+        title="新品优惠券"
+        amount="10"
+        description="这是用于新品测试用的"
+        date-desc="长期有效"
+        type="moneyOff"
+        status="unused"
+        btnMode="button"
+        :disabled-status="['used', 'expired', 'redeemed']"
+        @used="onUse"
+    />
 </template>
 ```
 
@@ -41,17 +42,17 @@
 
 ```html
 <template>
-  <hy-coupon
-    title="新品优惠券"
-    amount="10"
-    description="这是用于新品测试用的"
-    date-desc="长期有效"
-    type="moneyOff"
-    status="unused"
-    :disabled-status="['used', 'expired', 'redeemed']"
-    bg-color="linear-gradient(135deg, #7b61ff 0%, #4134c1 100%)"
-    @used="onUse"
-  />
+    <hy-coupon
+        title="新品优惠券"
+        amount="10"
+        description="这是用于新品测试用的"
+        date-desc="长期有效"
+        type="moneyOff"
+        status="unused"
+        :disabled-status="['used', 'expired', 'redeemed']"
+        bg-color="linear-gradient(135deg, #7b61ff 0%, #4134c1 100%)"
+        @used="onUse"
+    />
 </template>
 ```
 
@@ -61,17 +62,17 @@
 
 ```html [模板]
 <template>
-  <hy-coupon
-    title="新品优惠券"
-    amount="10"
-    description="这是用于新品测试用的"
-    date-desc="长期有效"
-    type="moneyOff"
-    status="unused"
-    :disabled-status="['used', 'expired', 'redeemed']"
-    :bgColor="bgColor"
-    @used="onUse"
-  />
+    <hy-coupon
+        title="新品优惠券"
+        amount="10"
+        description="这是用于新品测试用的"
+        date-desc="长期有效"
+        type="moneyOff"
+        status="unused"
+        :disabled-status="['used', 'expired', 'redeemed']"
+        :bgColor="bgColor"
+        @used="onUse"
+    />
 </template>
 
 <script lang="ts" setup>
@@ -81,7 +82,7 @@
         background: `
     radial-gradient(circle at 180rpx top, transparent 15rpx, #00c6ff 0) top / 100% 60px no-repeat,
     radial-gradient(circle at 180rpx bottom, transparent 15rpx, #00c6ff 0) bottom / 100% 51px no-repeat
-  `
+  `,
     };
 
     const onUse = () => {
@@ -90,9 +91,11 @@
 </script>
 ```
 
-:::tip 提示
+::: tip 温馨提示
+
 - 15rpx 控制凹孔的大小
 - 60px 和 51px 控制上下两部分的高度，可根据需要调整以避免出现缝隙
+
 :::
 
 ### 优惠券类型
@@ -101,34 +104,34 @@ Coupon 组件支持三种主要类型的优惠券展示，下面展示了如何�
 
 #### 支持的优惠券类型
 
-| 类型 | 说明 | 示例 |
-|------|------|------|
-| moneyOff | 满减券 | 满100元减20元 |
-| discount | 折扣券 | 全场8折 |
+| 类型        | 说明     | 示例           |
+| ----------- | -------- | -------------- |
+| moneyOff    | 满减券   | 满100元减20元  |
+| discount    | 折扣券   | 全场8折        |
 | fixedAmount | 无门槛券 | 无门槛立减10元 |
 
 #### 多类型优惠券展示示例
 
 ```html
 <template>
-  <div class="coupon-list">
-    <hy-coupon
-      v-for="item in list"
-      :key="item.id"
-      :title="item.name"
-      :amount="item.value"
-      :description="item.description"
-      :startDate="item.validFrom"
-      :endDate="item.validTo"
-      :type="item.type"
-      :status="item.status"
-      :btnMode="btnMode"
-      :disabled-status="['used', 'expired', 'redeemed']"
-      :boxShadow="boxShadow"
-      :custom-style="{ marginBottom: '20px' }"
-      @used="onUse"
-    />
-  </div>
+    <div class="coupon-list">
+        <hy-coupon
+            v-for="item in list"
+            :key="item.id"
+            :title="item.name"
+            :amount="item.value"
+            :description="item.description"
+            :startDate="item.validFrom"
+            :endDate="item.validTo"
+            :type="item.type"
+            :status="item.status"
+            :btnMode="btnMode"
+            :disabled-status="['used', 'expired', 'redeemed']"
+            :boxShadow="boxShadow"
+            :custom-style="{ marginBottom: '20px' }"
+            @used="onUse"
+        />
+    </div>
 </template>
 
 <script lang="ts" setup>
@@ -148,7 +151,7 @@ Coupon 组件支持三种主要类型的优惠券展示，下面展示了如何�
             minSpend: 100,
             value: 20,
             validFrom: '2024-01-01T00:00:00',
-            validTo: '2024-12-31T23:59:59'
+            validTo: '2024-12-31T23:59:59',
         },
         {
             id: '2',
@@ -160,7 +163,7 @@ Coupon 组件支持三种主要类型的优惠券展示，下面展示了如何�
             value: 8, // 代表8折
             maxDiscount: 50,
             validFrom: '2024-01-01T00:00:00',
-            validTo: '2024-12-31T23:59:59'
+            validTo: '2024-12-31T23:59:59',
         },
         {
             id: '3',
@@ -170,8 +173,8 @@ Coupon 组件支持三种主要类型的优惠券展示，下面展示了如何�
             description: '无最低消费限制，全场通用',
             value: 10,
             validFrom: '2023-01-01T00:00:00',
-            validTo: '2023-12-31T23:59:59'
-        }
+            validTo: '2023-12-31T23:59:59',
+        },
     ]);
 
     const onUse = (item: ICoupon) => {
@@ -180,47 +183,46 @@ Coupon 组件支持三种主要类型的优惠券展示，下面展示了如何�
 </script>
 ```
 
-
 ## API
+
 ### Coupon Props
 
-| 参数             | 说明                                               | 类型                                    | 默认值        |
-|----------------|--------------------------------------------------|---------------------------------------|------------|
-| title          | 优惠券标题                                            | `string`                              | -          |
-| type           | 优惠券类型：moneyOff：满减券，discount：折扣券，fixedAmount：无门槛券 | `moneyOff`\|`discount`\|`fixedAmount` | -          |
-| typeText       | 金额底部优惠券类型文字描述                                    | `string`                              | -          |
-| status         | 优惠券状态                                            | `string`                              | -          |
-| disabledStatus | 优惠券禁用状态                                          | `array`                               | -          |
-| description    | 优惠券描述                                            | `string`                              | -          |
-| desEllipsis    | 描述省略行数，none不省略，数字代表几行开始省略                        | `string`\|`number`                    | none       |
-| amount         | 优惠券金额                                            | `string`\|`number`                    | -          |
-| unit           | 优惠券单位，没有就用默认值                                    | `string`                              | -          |
-| startDate      | 优惠券开始时间                                          | `string`                              | -          |
-| endDate        | 优惠券结束时间                                          | `string`                              | -          |
-| format         | 时间格式                                             | `string`                              | yyyy-MM-dd |
-| dateDesc       | 日期描述，没有日期描述就用开始时间到结束时间                           | `string`                              | -          |
-| bgColor        | 背景色                                              | `string`                              | -          |
-| boxShadow      | 是否显示阴影                                           | `boolean`                             | false      |
-| btnMode        | 按钮类型                                             | `text`\|`button`\|`none`              | button     |
-| btnText        | 按钮文字                                             | `string`                              | 立即领取       |
-| buttonProp     | [按钮属性api](./button#API)                          | `HyButtonProps`                       | -          |
-| customStyle    | 定义需要用到的外部样式                                      | `CSSProperties`                       | -          |
-| customClass    | 自定义外部类名                                          | `string`                              | -          |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| title | 优惠券标题 | `string` | - |
+| type | 优惠券类型：moneyOff：满减券，discount：折扣券，fixedAmount：无门槛券 | `moneyOff`\|`discount`\|`fixedAmount` | - |
+| typeText | 金额底部优惠券类型文字描述 | `string` | - |
+| status | 优惠券状态 | `string` | - |
+| disabledStatus | 优惠券禁用状态 | `array` | - |
+| description | 优惠券描述 | `string` | - |
+| desEllipsis | 描述省略行数，none不省略，数字代表几行开始省略 | `string`\|`number` | none |
+| amount | 优惠券金额 | `string`\|`number` | - |
+| unit | 优惠券单位，没有就用默认值 | `string` | - |
+| startDate | 优惠券开始时间 | `string` | - |
+| endDate | 优惠券结束时间 | `string` | - |
+| format | 时间格式 | `string` | yyyy-MM-dd |
+| dateDesc | 日期描述，没有日期描述就用开始时间到结束时间 | `string` | - |
+| bgColor | 背景色 | `string` | - |
+| boxShadow | 是否显示阴影 | `boolean` | false |
+| btnMode | 按钮类型 | `text`\|`button`\|`none` | button |
+| btnText | 按钮文字 | `string` | 立即领取 |
+| buttonProp | [按钮属性api](./button#API) | `HyButtonProps` | - |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### Events
 
-| 事件名   | 说明      | 回调参数 |
-|-------|---------|------|
-| click | 点击优惠券   | -    |
-| used  | 点击使用优惠券 | -    |
+| 事件名 | 说明           | 回调参数 |
+| ------ | -------------- | -------- |
+| click  | 点击优惠券     | -        |
+| used   | 点击使用优惠券 | -        |
 
 ### Slots
 
-| 插槽名    | 说明        | 接收值 |
-|--------|-----------|-----|
-| left   | 自定义金额插槽   | -   |
-| right  | 自定义右边详情插槽 | -   |
-| button | 自定义按钮插槽   | -   |
-
+| 插槽名 | 说明               | 接收值 |
+| ------ | ------------------ | ------ |
+| left   | 自定义金额插槽     | -      |
+| right  | 自定义右边详情插槽 | -      |
+| button | 自定义按钮插槽     | -      |
 
 <demo-model url="pages-design/coupon/coupon"></demo-model>

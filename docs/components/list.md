@@ -4,17 +4,19 @@
 
 ## :pushpin:平台差异说明
 
-| APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
-|----------|----|-------|--------|
-| ✔        | ✔  | ✔     | ✔      |
+| APP(vue) | H5  | 微信小程序 | 支付宝小程序 |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
 ## :warning:注意事项
 
-:::warning 注意事项
+::: warning 注意事项
+
 - `containerHeight` 必须设置，否则会加载全部数据，无法实现虚拟滚动优化
 - `itemHeight` 必须与实际内容高度一致，否则虚拟滚动计算会出现问题
 - 微信小程序端对 `slot` 的使用有一些限制，不能在 `v-for` 中使用具名 `slot` 多次
 - 大数据量场景（如1000+条）建议使用虚拟滚动以获得更好的性能
+
 :::
 
 ## :japanese_castle:基本使用示例
@@ -33,19 +35,19 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+    import { ref } from 'vue'
 
-const list = ref<string[]>([])
-for (let i = 0; i < 2000; i++) {
-    list.value.push(`列表项--${i}`)
-}
+    const list = ref<string[]>([])
+    for (let i = 0; i < 2000; i++) {
+        list.value.push(`列表项--${i}`)
+    }
 </script>
 
 <style scoped>
-.list-item {
-    padding: 20rpx;
-    font-size: 28rpx;
-}
+    .list-item {
+        padding: 20rpx;
+        font-size: 28rpx;
+    }
 </style>
 ```
 
@@ -53,8 +55,8 @@ for (let i = 0; i < 2000; i++) {
 
 ```html
 <template>
-    <hy-list 
-        :list="userList" 
+    <hy-list
+        :list="userList"
         container-height="600rpx"
         item-height="120rpx"
         border
@@ -75,58 +77,58 @@ for (let i = 0; i < 2000; i++) {
 </template>
 
 <script setup>
-import { ref } from 'vue'
+    import { ref } from 'vue';
 
-const userList = ref([
-    { id: 1, name: '张三', desc: '前端工程师', color: '#4F8EF7' },
-    { id: 2, name: '李四', desc: 'UI设计师', color: '#F74F8E' },
-    { id: 3, name: '王五', desc: '产品经理', color: '#8EF74F' },
-    { id: 4, name: '赵六', desc: '后端开发', color: '#F7C54F' }
-])
+    const userList = ref([
+        { id: 1, name: '张三', desc: '前端工程师', color: '#4F8EF7' },
+        { id: 2, name: '李四', desc: 'UI设计师', color: '#F74F8E' },
+        { id: 3, name: '王五', desc: '产品经理', color: '#8EF74F' },
+        { id: 4, name: '赵六', desc: '后端开发', color: '#F7C54F' },
+    ]);
 
-const handleClick = (item) => {
-    uni.showToast({
-        title: `点击了 ${item.name}`,
-        icon: 'none'
-    })
-}
+    const handleClick = (item) => {
+        uni.showToast({
+            title: `点击了 ${item.name}`,
+            icon: 'none',
+        });
+    };
 </script>
 
 <style scoped>
-.user-item {
-    display: flex;
-    align-items: center;
-    padding: 20rpx;
-}
+    .user-item {
+        display: flex;
+        align-items: center;
+        padding: 20rpx;
+    }
 
-.avatar {
-    width: 80rpx;
-    height: 80rpx;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 32rpx;
-    font-weight: 600;
-}
+    .avatar {
+        width: 80rpx;
+        height: 80rpx;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 32rpx;
+        font-weight: 600;
+    }
 
-.user-info {
-    margin-left: 20rpx;
-    flex: 1;
-}
+    .user-info {
+        margin-left: 20rpx;
+        flex: 1;
+    }
 
-.user-name {
-    font-size: 30rpx;
-    font-weight: 600;
-    display: block;
-}
+    .user-name {
+        font-size: 30rpx;
+        font-weight: 600;
+        display: block;
+    }
 
-.user-desc {
-    font-size: 24rpx;
-    color: #999;
-    margin-top: 8rpx;
-}
+    .user-desc {
+        font-size: 24rpx;
+        color: #999;
+        margin-top: 8rpx;
+    }
 </style>
 ```
 
@@ -163,7 +165,7 @@ const handleClick = (item) => {
             </view>
         </template>
         <!-- #endif -->
-        
+
         <!-- #ifndef H5 || APP_PLUS -->
         <template #left-list="{ record }">
             <view class="goods-card" v-for="item in record" :key="item.id">
@@ -188,75 +190,75 @@ const handleClick = (item) => {
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
+    import { ref, onMounted } from 'vue';
 
-const goodsList = ref([])
-const loadStatus = ref('loadMore')
-const page = ref(1)
+    const goodsList = ref([]);
+    const loadStatus = ref('loadMore');
+    const page = ref(1);
 
-onMounted(() => {
-    fetchData()
-})
+    onMounted(() => {
+        fetchData();
+    });
 
-const fetchData = () => {
-    for (let i = 0; i < 20; i++) {
-        goodsList.value.push({
-            id: (page.value - 1) * 20 + i,
-            name: `商品${(page.value - 1) * 20 + i + 1}`,
-            price: (Math.random() * 100).toFixed(2),
-            image: 'https://neeko-copilot.bytedance.net/api/text_to_image?prompt=product%20image%20e-commerce%20item&image_size=square'
-        })
-    }
-}
-
-const loadMore = () => {
-    if (loadStatus.value === 'loading') return
-    loadStatus.value = 'loading'
-    
-    setTimeout(() => {
-        if (page.value >= 5) {
-            loadStatus.value = 'noMore'
-            return
+    const fetchData = () => {
+        for (let i = 0; i < 20; i++) {
+            goodsList.value.push({
+                id: (page.value - 1) * 20 + i,
+                name: `商品${(page.value - 1) * 20 + i + 1}`,
+                price: (Math.random() * 100).toFixed(2),
+                image: 'https://neeko-copilot.bytedance.net/api/text_to_image?prompt=product%20image%20e-commerce%20item&image_size=square',
+            });
         }
-        page.value++
-        fetchData()
-        loadStatus.value = 'loadMore'
-    }, 1000)
-}
+    };
+
+    const loadMore = () => {
+        if (loadStatus.value === 'loading') return;
+        loadStatus.value = 'loading';
+
+        setTimeout(() => {
+            if (page.value >= 5) {
+                loadStatus.value = 'noMore';
+                return;
+            }
+            page.value++;
+            fetchData();
+            loadStatus.value = 'loadMore';
+        }, 1000);
+    };
 </script>
 
 <style scoped>
-.goods-card {
-    height: 100%;
-    border-radius: 10rpx;
-    overflow: hidden;
-    background: white;
-}
+    .goods-card {
+        height: 100%;
+        border-radius: 10rpx;
+        overflow: hidden;
+        background: white;
+    }
 
-.goods-image {
-    width: 100%;
-    height: 280rpx;
-}
+    .goods-image {
+        width: 100%;
+        height: 280rpx;
+    }
 
-.goods-info {
-    padding: 15rpx;
-}
+    .goods-info {
+        padding: 15rpx;
+    }
 
-.goods-name {
-    font-size: 26rpx;
-    display: block;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
+    .goods-name {
+        font-size: 26rpx;
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
 
-.goods-price {
-    font-size: 30rpx;
-    color: #f44336;
-    font-weight: 600;
-    margin-top: 10rpx;
-    display: block;
-}
+    .goods-price {
+        font-size: 30rpx;
+        color: #f44336;
+        font-weight: 600;
+        margin-top: 10rpx;
+        display: block;
+    }
 </style>
 ```
 
@@ -264,12 +266,7 @@ const loadMore = () => {
 
 ```html
 <template>
-    <hy-list
-        :list="list"
-        container-height="80vh"
-        item-height="60rpx"
-        :show-divider="false"
-    >
+    <hy-list :list="list" container-height="80vh" item-height="60rpx" :show-divider="false">
         <template #content="{ record }">
             <text>{{ record }}</text>
         </template>
@@ -282,26 +279,26 @@ const loadMore = () => {
 </template>
 
 <script setup>
-import { ref } from 'vue'
+    import { ref } from 'vue'
 
-const list = ref<string[]>([])
-for (let i = 0; i < 50; i++) {
-    list.value.push(`列表项--${i}`)
-}
+    const list = ref<string[]>([])
+    for (let i = 0; i < 50; i++) {
+        list.value.push(`列表项--${i}`)
+    }
 
-const loadMore = () => {
-    uni.showToast({
-        title: '加载更多',
-        icon: 'none'
-    })
-}
+    const loadMore = () => {
+        uni.showToast({
+            title: '加载更多',
+            icon: 'none'
+        })
+    }
 </script>
 
 <style scoped>
-.custom-footer {
-    padding: 20rpx;
-    text-align: center;
-}
+    .custom-footer {
+        padding: 20rpx;
+        text-align: center;
+    }
 </style>
 ```
 
@@ -326,12 +323,12 @@ const loadMore = () => {
 </template>
 
 <script setup>
-import { ref } from 'vue'
+    import { ref } from 'vue'
 
-const list = ref<string[]>([])
-for (let i = 0; i < 20; i++) {
-    list.value.push(`自定义样式项--${i}`)
-}
+    const list = ref<string[]>([])
+    for (let i = 0; i < 20; i++) {
+        list.value.push(`自定义样式项--${i}`)
+    }
 </script>
 ```
 
@@ -339,38 +336,38 @@ for (let i = 0; i < 20; i++) {
 
 ### List Props
 
-| 参数              | 说明                    | 类型                                  | 默认值         |
-|-----------------|-----------------------|-------------------------------------|-------------|
-| list            | 数据列表                  | `array`                             | []          |
-| containerHeight | 容器高度，必须设置，否则加载全部数据，数值默认单位px    | `string` \| `number`                | 100%        |
-| itemHeight      | 子容器高度，必须和内容一致，否则计算有问题，数值默认单位px | `string` \| `number`                | 40px        |
-| padding         | 子容器内边距，数值默认单位px                | `string` \| `number`                | 10          |
-| marginBottom    | 子容器底部外边距，会计算到容器内，数值默认单位px      | `string` \| `number`                | 0           |
-| borderRadius    | 子容器圆角，数值默认单位px            | `string` \| `number`                | 3px         |
-| background      | 容器背景色                 | `string`                            | transparent |
-| border          | 是否显示边框                | `boolean`                           | false       |
-| line            | 展示列数（目前支持1列和2列）       | `number`                            | 1           |
-| keyField        | 每一项的唯一标识key           | `string`                            | id          |
-| load            | 加载状态                  | `loadMore` \| `loading` \| `noMore` | loadMore    |
-| showDivider     | 是否显示底部加载状态提示          | `boolean`                           | true        |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| list | 数据列表 | `array` | [] |
+| containerHeight | 容器高度，必须设置，否则加载全部数据，数值默认单位px | `string` \| `number` | 100% |
+| itemHeight | 子容器高度，必须和内容一致，否则计算有问题，数值默认单位px | `string` \| `number` | 40px |
+| padding | 子容器内边距，数值默认单位px | `string` \| `number` | 10 |
+| marginBottom | 子容器底部外边距，会计算到容器内，数值默认单位px | `string` \| `number` | 0 |
+| borderRadius | 子容器圆角，数值默认单位px | `string` \| `number` | 3px |
+| background | 容器背景色 | `string` | transparent |
+| border | 是否显示边框 | `boolean` | false |
+| line | 展示列数（目前支持1列和2列） | `number` | 1 |
+| keyField | 每一项的唯一标识key | `string` | id |
+| load | 加载状态 | `loadMore` \| `loading` \| `noMore` | loadMore |
+| showDivider | 是否显示底部加载状态提示 | `boolean` | true |
 
 ### Events
 
-| 事件名           | 说明       | 回调参数         |
-|---------------|----------|--------------|
+| 事件名        | 说明             | 回调参数           |
+| ------------- | ---------------- | ------------------ |
 | click         | 点击列表项时触发 | item: 单条数据内容 |
-| scrollToLower | 滚动到底部时触发 | -            |
+| scrollToLower | 滚动到底部时触发 | -                  |
 
 ### Slots
 
-| 插槽名        | 说明                  | 接收值               |
-|------------|---------------------|-------------------|
-| default    | 自定义列表整体内容           | record: 当前可视区域的数据 |
-| content    | 自定义单列模式下的每项内容       | record: 单条数据      |
-| left       | 两列模式下左边单个容器（H5/APP） | record: 单条数据      |
-| left-list  | 两列模式下左边列表插槽（小程序）    | record: 左边列表数据    |
-| right      | 两列模式下右边单个容器（H5/APP） | record: 单条数据      |
-| right-list | 两列模式下右边列表插槽（小程序）    | record: 右边列表数据    |
-| footer     | 底部插槽，自定义加载更多区域      | -                 |
+| 插槽名     | 说明                             | 接收值                     |
+| ---------- | -------------------------------- | -------------------------- |
+| default    | 自定义列表整体内容               | record: 当前可视区域的数据 |
+| content    | 自定义单列模式下的每项内容       | record: 单条数据           |
+| left       | 两列模式下左边单个容器（H5/APP） | record: 单条数据           |
+| left-list  | 两列模式下左边列表插槽（小程序） | record: 左边列表数据       |
+| right      | 两列模式下右边单个容器（H5/APP） | record: 单条数据           |
+| right-list | 两列模式下右边列表插槽（小程序） | record: 右边列表数据       |
+| footer     | 底部插槽，自定义加载更多区域     | -                          |
 
 <demo-model url="pages-design/list/list"></demo-model>

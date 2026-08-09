@@ -1,7 +1,9 @@
 ﻿# encryptData & decryptData 加密解密工具
 
-::: tip 提示
+::: tip 温馨提示
+
 该加密方式是通过 base64 进行简单加密，如果重要数据需要加密不能使用此方法，该加密方式可被直接破解。重要数据建议使用 md5 加密。
+
 :::
 
 ## 函数列表
@@ -25,10 +27,10 @@
 **示例**
 
 ```typescript
-import { encryptData } from "@hy-app/ui";
+import { encryptData } from '@hy-app/ui';
 
-const encryptObj = encryptData({ name: "加密对象" });
-const encryptStr = encryptData("加密字符串");
+const encryptObj = encryptData({ name: '加密对象' });
+const encryptStr = encryptData('加密字符串');
 ```
 
 ---
@@ -52,7 +54,7 @@ const encryptStr = encryptData("加密字符串");
 **示例**
 
 ```typescript
-import { decryptData } from "@hy-app/ui";
+import { decryptData } from '@hy-app/ui';
 
-const decryptVal = decryptData("DSSFFGfh234nr");
+const decryptVal = decryptData('DSSFFGfh234nr');
 ```

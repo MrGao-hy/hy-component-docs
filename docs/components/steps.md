@@ -4,17 +4,19 @@
 
 ## :pushpin:平台差异说明
 
-| APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
-|----------|----|-------|--------|
-| ✔        | ✔  | ✔     | ✔      |
+| APP(vue) | H5  | 微信小程序 | 支付宝小程序 |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
 ## :warning:注意事项
 
-:::warning 注意事项
+::: warning 注意事项
+
 - `list` 属性是必填项，数组项必须包含 `title` 字段
 - `current` 属性从 0 开始索引
 - `direction` 属性支持 `row`（横向）和 `column`（竖向）两种方向
 - `list` 项中 `error` 为 `true` 时会显示错误状态
+
 :::
 
 ## :japanese_castle:基本使用示例
@@ -27,14 +29,14 @@
 </template>
 
 <script setup lang="ts">
-    import { ref } from 'vue'
+    import { ref } from 'vue';
 
-    const current = ref(1)
+    const current = ref(1);
     const list = ref([
         { title: '已下单', docs: '2024-10-13' },
         { title: '已发货', docs: '2024-10-13' },
-        { title: '发货失败', docs: '2024-10-14', error: true }
-    ])
+        { title: '发货失败', docs: '2024-10-14', error: true },
+    ]);
 </script>
 ```
 
@@ -46,9 +48,9 @@
 </template>
 
 <script setup lang="ts">
-    import { ref } from 'vue'
+    import { ref } from 'vue';
 
-    const list = ref([{ title: '步骤一' }, { title: '步骤二' }, { title: '步骤三' }])
+    const list = ref([{ title: '步骤一' }, { title: '步骤二' }, { title: '步骤三' }]);
 </script>
 ```
 
@@ -60,13 +62,13 @@
 </template>
 
 <script setup lang="ts">
-    import { ref } from 'vue'
+    import { ref } from 'vue';
 
     const list = ref([
         { title: '已下单', docs: '2024-10-13', date: '10:30' },
         { title: '已发货', docs: '快递员正在打包', date: '14:20' },
-        { title: '运输中', docs: '预计明天送达', date: '16:00' }
-    ])
+        { title: '运输中', docs: '预计明天送达', date: '16:00' },
+    ]);
 </script>
 ```
 
@@ -78,9 +80,9 @@
 </template>
 
 <script setup lang="ts">
-    import { ref } from 'vue'
+    import { ref } from 'vue';
 
-    const list = ref([{ title: '步骤一' }, { title: '步骤二' }, { title: '步骤三' }])
+    const list = ref([{ title: '步骤一' }, { title: '步骤二' }, { title: '步骤三' }]);
 </script>
 ```
 
@@ -92,9 +94,9 @@
 </template>
 
 <script setup lang="ts">
-    import { ref } from 'vue'
+    import { ref } from 'vue';
 
-    const list = ref([{ title: '步骤一' }, { title: '步骤二' }, { title: '步骤三' }])
+    const list = ref([{ title: '步骤一' }, { title: '步骤二' }, { title: '步骤三' }]);
 </script>
 ```
 
@@ -111,9 +113,9 @@
 </template>
 
 <script setup lang="ts">
-    import { ref } from 'vue'
+    import { ref } from 'vue';
 
-    const list = ref([{ title: '已完成' }, { title: '进行中' }, { title: '未开始' }])
+    const list = ref([{ title: '已完成' }, { title: '进行中' }, { title: '未开始' }]);
 </script>
 ```
 
@@ -125,15 +127,15 @@
 </template>
 
 <script setup lang="ts">
-    import { ref } from 'vue'
+    import { ref } from 'vue';
 
-    const current = ref(2)
+    const current = ref(2);
     const list = ref([
         { title: '步骤一', docs: '已完成', date: '2024-10-13' },
         { title: '步骤二', docs: '已完成', date: '2024-10-13' },
         { title: '步骤三', docs: '执行失败', date: '2024-10-14', error: true },
-        { title: '步骤四', docs: '未开始', date: '' }
-    ])
+        { title: '步骤四', docs: '未开始', date: '' },
+    ]);
 </script>
 ```
 
@@ -155,10 +157,10 @@
 </template>
 
 <script setup lang="ts">
-    import { ref } from 'vue'
+    import { ref } from 'vue';
 
-    const current = ref(0)
-    const list = ref([{ title: '注册用户' }, { title: '填写基本信息' }, { title: '登录' }])
+    const current = ref(0);
+    const list = ref([{ title: '注册用户' }, { title: '填写基本信息' }, { title: '登录' }]);
 </script>
 ```
 
@@ -178,10 +180,10 @@
 </template>
 
 <script setup lang="ts">
-    import { ref } from 'vue'
+    import { ref } from 'vue';
 
-    const current = ref(1)
-    const list = ref([{ title: '步骤一' }, { title: '步骤二' }, { title: '步骤三' }])
+    const current = ref(1);
+    const list = ref([{ title: '步骤一' }, { title: '步骤二' }, { title: '步骤三' }]);
 </script>
 
 <style lang="scss" scoped>
@@ -230,14 +232,14 @@
 </template>
 
 <script setup lang="ts">
-    import { ref } from 'vue'
+    import { ref } from 'vue';
 
-    const current = ref(1)
+    const current = ref(1);
     const list = ref([
         { title: '订单提交', docs: '订单已成功提交', date: '2024-10-13 10:30' },
         { title: '支付完成', docs: '支付金额：¥199.00', date: '2024-10-13 10:35' },
-        { title: '订单发货', docs: '快递单号：SF1234567890', date: '2024-10-13 14:00' }
-    ])
+        { title: '订单发货', docs: '快递单号：SF1234567890', date: '2024-10-13 14:00' },
+    ]);
 </script>
 
 <style lang="scss" scoped>
@@ -300,14 +302,14 @@
 </template>
 
 <script setup lang="ts">
-    import { ref } from 'vue'
+    import { ref } from 'vue';
 
-    const current = ref(1)
+    const current = ref(1);
     const list = ref([
         { title: '用户注册', docs: '填写手机号并验证' },
         { title: '完善资料', docs: '填写姓名、头像等信息' },
-        { title: '完成', docs: '注册成功' }
-    ])
+        { title: '完成', docs: '注册成功' },
+    ]);
 </script>
 
 <style lang="scss" scoped>
@@ -360,31 +362,31 @@
 
 ### Props
 
-| 参数            | 说明                      | 类型                   | 默认值   |
-|---------------|-------------------------|----------------------|-------|
-| current       | 当前步骤索引（从0开始）            | `number`             | 0     |
-| list          | 步骤条数据集合                 | `StepListVo[]`       | []    |
-| direction     | 方向，`row`-横向，`column`-竖向 | `string`             | row   |
-| activeColor   | 激活状态颜色                  | `string`             | -     |
-| inactiveColor | 未激活状态颜色                 | `string`             | -     |
-| activeIcon    | 激活状态的图标                 | `string`             | -     |
-| inactiveIcon  | 未激活状态图标                 | `string`             | -     |
-| dot           | 是否显示点状样式                | `boolean`            | false |
-| iconSize      | 图标大小，数值默认单位px                    | `string` \| `number` | 17    |
+| 参数          | 说明                            | 类型                 | 默认值 |
+| ------------- | ------------------------------- | -------------------- | ------ |
+| current       | 当前步骤索引（从0开始）         | `number`             | 0      |
+| list          | 步骤条数据集合                  | `StepListVo[]`       | []     |
+| direction     | 方向，`row`-横向，`column`-竖向 | `string`             | row    |
+| activeColor   | 激活状态颜色                    | `string`             | -      |
+| inactiveColor | 未激活状态颜色                  | `string`             | -      |
+| activeIcon    | 激活状态的图标                  | `string`             | -      |
+| inactiveIcon  | 未激活状态图标                  | `string`             | -      |
+| dot           | 是否显示点状样式                | `boolean`            | false  |
+| iconSize      | 图标大小，数值默认单位px        | `string` \| `number` | 17     |
 
 ### List Item 结构
 
-| 参数    | 说明      | 类型        | 默认值 |
-|-------|---------|-----------|-----|
-| title | 标题      | `string`  | -   |
-| docs  | 描述信息    | `string`  | -   |
-| date  | 日期时间    | `string`  | -   |
-| error | 是否为错误状态 | `boolean` | -   |
+| 参数  | 说明           | 类型      | 默认值 |
+| ----- | -------------- | --------- | ------ |
+| title | 标题           | `string`  | -      |
+| docs  | 描述信息       | `string`  | -      |
+| date  | 日期时间       | `string`  | -      |
+| error | 是否为错误状态 | `boolean` | -      |
 
 ### Events
 
-| 事件名            | 说明      | 回调参数            |
-|----------------|---------|-----------------|
+| 事件名         | 说明           | 回调参数        |
+| -------------- | -------------- | --------------- |
 | change         | 步骤改变时触发 | `index: number` |
 | update:current | 步骤改变时触发 | `index: number` |
 
@@ -399,18 +401,18 @@
 
 ## Typings
 
-:::details 类型说明
+::: details 类型说明
 
 ```ts
 export interface StepListVo {
     /** 标题 */
-    title?: string
+    title?: string;
     /** 描述信息 */
-    docs?: string
+    docs?: string;
     /** 日期时间 */
-    date?: string
+    date?: string;
     /** 是否为错误状态 */
-    error?: boolean
+    error?: boolean;
 }
 ```
 

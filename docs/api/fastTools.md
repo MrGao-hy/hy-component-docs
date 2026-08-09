@@ -5,13 +5,13 @@
 ## 全局注入
 
 ```typescript
-import { globalRegister } from "@hy-app/ui";
-import { createSSRApp } from "vue";
+import { globalRegister } from '@hy-app/ui';
+import { createSSRApp } from 'vue';
 
 export function createApp() {
-  const app = createSSRApp(App);
-  app.use(globalRegister);
-  return { app };
+    const app = createSSRApp(App);
+    app.use(globalRegister);
+    return { app };
 }
 ```
 
@@ -38,7 +38,7 @@ export function createApp() {
 
 ```html
 <template>
-  <view :style="{ height: $hy.addUnit(10) }"></view>
+    <view :style="{ height: $hy.addUnit(10) }"></view>
 </template>
 ```
 
@@ -65,7 +65,7 @@ export function createApp() {
 
 ```html
 <template>
-  <view>{{$hy.random(1, 10)}}</view>
+    <view>{{$hy.random(1, 10)}}</view>
 </template>
 ```
 
@@ -92,7 +92,7 @@ export function createApp() {
 
 ```html
 <template>
-  <view>{{$hy.formatTime(1702051200000)}}</view>
+    <view>{{$hy.formatTime(1702051200000)}}</view>
 </template>
 ```
 
@@ -118,6 +118,6 @@ export function createApp() {
 
 ```html
 <template>
-  <view>{{$hy.bytesToSize(10000)}}</view>
+    <view>{{$hy.bytesToSize(10000)}}</view>
 </template>
 ```

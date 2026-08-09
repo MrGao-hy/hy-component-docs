@@ -21,9 +21,9 @@
 **示例**
 
 ```typescript
-import { objectToUrlParams } from "@hy-app/ui";
+import { objectToUrlParams } from '@hy-app/ui';
 
-const params = objectToUrlParams({ name: "加密对象", age: 10 });
+const params = objectToUrlParams({ name: '加密对象', age: 10 });
 console.log(params); // name=加密对象&age=10
 ```
 
@@ -48,7 +48,7 @@ console.log(params); // name=加密对象&age=10
 **示例**
 
 ```typescript
-import { urlParamsToObject } from "@hy-app/ui";
+import { urlParamsToObject } from '@hy-app/ui';
 
 const paramStr = `?name=hyy&age=18`;
 const params = urlParamsToObject(paramStr);

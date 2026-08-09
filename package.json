@@ -1,29 +1,31 @@
 {
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "vitepress dev docs --port 8099",
-    "build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs",
-    "clean": "rimraf node_modules && rimraf pnpm-lock.yaml && npm cache verify --force",
-    "documate:upload": "documate upload"
-  },
-  "devDependencies": {
-    "@documate/documate": "^0.2.1",
-    "busuanzi.pure.js": "^1.0.3",
-    "components-helper": "^2.2.0",
-    "sass-embedded": "^1.85.1",
-    "tsx": "^4.20.3",
-    "vitepress": "2.0.0-alpha.16",
-    "vitepress-plugin-group-icons": "^1.5.2",
-    "vitepress-plugin-llms": "^1.5.1"
-  },
-  "dependencies": {
-    "@vercel/analytics": "^1.5.0",
-    "ant-design-vue": "4.x",
-    "fast-glob": "^3.3.3",
-    "gitalk": "^1.8.0",
-    "markdown-it-footnote": "^4.0.0",
-    "vue": "^3.5.13"
-  }
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vitepress dev docs --port 8099",
+        "build": "vitepress build docs",
+        "docs:preview": "vitepress preview docs",
+        "clean": "rimraf node_modules && rimraf pnpm-lock.yaml && npm cache verify --force",
+        "documate:upload": "documate upload",
+        "format": "prettier --write ."
+    },
+    "devDependencies": {
+        "@documate/documate": "^0.2.1",
+        "busuanzi.pure.js": "^1.0.3",
+        "components-helper": "^2.2.0",
+        "prettier": "^3.9.6",
+        "sass-embedded": "^1.85.1",
+        "tsx": "^4.20.3",
+        "vitepress": "2.0.0-alpha.16",
+        "vitepress-plugin-group-icons": "^1.5.2",
+        "vitepress-plugin-llms": "^1.5.1"
+    },
+    "dependencies": {
+        "@vercel/analytics": "^1.5.0",
+        "ant-design-vue": "4.x",
+        "fast-glob": "^3.3.3",
+        "gitalk": "^1.8.0",
+        "markdown-it-footnote": "^4.0.0",
+        "vue": "^3.5.13"
+    }
 }

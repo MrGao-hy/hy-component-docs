@@ -16,7 +16,7 @@
 ```
 
 ```ts
-const list = [{ name: "全部" }, { name: "未核销" }, { name: "已核销" }];
+const list = [{ name: '全部' }, { name: '未核销' }, { name: '已核销' }];
 ```
 
 ### 显示徽标
@@ -25,14 +25,14 @@ const list = [{ name: "全部" }, { name: "未核销" }, { name: "已核销" }];
 
 ```html
 <template>
-  <hy-tabs :list="list"></hy-tabs>
+    <hy-tabs :list="list"></hy-tabs>
 </template>
 <script setup>
-  const list = [
-    { title: "全部", badge: { isDot: true } },
-    { title: "未核销", badge: { value: 5 } },
-    { title: "已核销" },
-  ];
+    const list = [
+        { title: '全部', badge: { isDot: true } },
+        { title: '未核销', badge: { value: 5 } },
+        { title: '已核销' },
+    ];
 </script>
 ```
 
@@ -42,14 +42,14 @@ const list = [{ name: "全部" }, { name: "未核销" }, { name: "已核销" }];
 
 ```html
 <template>
-  <hy-tabs :list="list" keyName="title"></hy-tabs>
+    <hy-tabs :list="list" keyName="title"></hy-tabs>
 </template>
 <script setup>
-  const list = [
-    { title: "全部", content: { value: 123 } },
-    { title: "未核销" },
-    { title: "已核销" },
-  ];
+    const list = [
+        { title: '全部', content: { value: 123 } },
+        { title: '未核销' },
+        { title: '已核销' },
+    ];
 </script>
 ```
 
@@ -57,21 +57,21 @@ const list = [{ name: "全部" }, { name: "未核销" }, { name: "已核销" }];
 
 ```html
 <template>
-  <hy-tabs :list="statusTabs" @clickTabs="clickTabs" @change="change">
-    <template #default="{record}"> {{record.value}} </template>
-  </hy-tabs>
+    <hy-tabs :list="statusTabs" @clickTabs="clickTabs" @change="change">
+        <template #default="{record}">{{record.value}}</template>
+    </hy-tabs>
 </template>
 
 <script setup>
-  const statusTabs = [
-    { name: "全部", content: { value: 123 } },
-    { name: "未核销" },
-    { name: "已核销" },
-  ];
-  // 点击选项卡执行回调
-  const clickTabs = () => {};
-  // 滑动轮播图执行回调函数
-  const change = () => {};
+    const statusTabs = [
+        { name: '全部', content: { value: 123 } },
+        { name: '未核销' },
+        { name: '已核销' },
+    ];
+    // 点击选项卡执行回调
+    const clickTabs = () => {};
+    // 滑动轮播图执行回调函数
+    const change = () => {};
 </script>
 ```
 
@@ -79,19 +79,19 @@ const list = [{ name: "全部" }, { name: "未核销" }, { name: "已核销" }];
 
 ```html
 <template>
-  <hy-tabs :list="statusTabs" @clickTabs="clickTabs" @change="change">
-    <template #main>
-      <!--自定义内容（没有轮播图）-->
-    </template>
-  </hy-tabs>
+    <hy-tabs :list="statusTabs" @clickTabs="clickTabs" @change="change">
+        <template #main>
+            <!--自定义内容（没有轮播图）-->
+        </template>
+    </hy-tabs>
 </template>
 
 <script setup>
-  const statusTabs = [{ name: "全部" }, { name: "未核销" }, { name: "已核销" }];
-  // 点击选项卡执行回调
-  const clickTabs = () => {};
-  // 滑动轮播图执行回调函数
-  const change = () => {};
+    const statusTabs = [{ name: '全部' }, { name: '未核销' }, { name: '已核销' }];
+    // 点击选项卡执行回调
+    const clickTabs = () => {};
+    // 滑动轮播图执行回调函数
+    const change = () => {};
 </script>
 ```
 
@@ -99,26 +99,26 @@ const list = [{ name: "全部" }, { name: "未核销" }, { name: "已核销" }];
 
 ### Tabs Props
 
-| 参数          | 说明                                                    | 类型               | 默认值            |
-| ------------- | ------------------------------------------------------- | ------------------ | ----------------- |
-| current       | 当前选中标签的索引                                      | `number`           | 0                 |
-| list          | 选项卡数组                                              | `TabsItemVo[]`     | -                 |
-| keyName       | 从list元素对象中读取的键名                              | `string`           | name              |
-| duration      | 滑块移动一次所需的时间，单位 ms                         | `number`           | 300               |
-| scrollable    | 菜单是否可滚动                                          | `boolean`          | false             |
-| lineWidth     | 滑块长度，数值默认单位px                                | `string`\|`number` | 20                |
-| lineHeight    | 滑块高度，数值默认单位px                                | `string`\|`number` | 3                 |
-| lineColor     | 滑块颜色                                                | `string`           | -                 |
-| lineBgSize    | 滑块背景显示大小，当滑块背景设置为图片时使用            | `string`\|`number` | cover             |
-| activeStyle   | 菜单选择中时的样式                                      | `CSSProperties`    | -                 |
-| inactiveStyle | 菜单非选中时的样式                                      | `CSSProperties`    | -                 |
-| itemStyle     | 菜单 item 的样式                                        | `string`           | -                 |
-| badgeProps    | [徽标props](./badge#Api)全局定义(list里的badge优先级高) | `BadgeProps`       | -                 |
-| swiperHeight  | 轮播图高度，数值默认单位px                              | `string`\|`number` | calc(100% - 44px) |
-| isSwiper      | 是否出现内容轮播                                        | `boolean`          | false             |
-| iconStyle     | 标签左侧图标样式自定义                                  | `CSSProperties`    | -                 |
-| customStyle   | 定义需要用到的外部样式                                  | `CSSProperties`    | -                 |
-| customClass   | 自定义外部类名                                          | `string`           | -                 |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| current | 当前选中标签的索引 | `number` | 0 |
+| list | 选项卡数组 | `TabsItemVo[]` | - |
+| keyName | 从list元素对象中读取的键名 | `string` | name |
+| duration | 滑块移动一次所需的时间，单位 ms | `number` | 300 |
+| scrollable | 菜单是否可滚动 | `boolean` | false |
+| lineWidth | 滑块长度，数值默认单位px | `string`\|`number` | 20 |
+| lineHeight | 滑块高度，数值默认单位px | `string`\|`number` | 3 |
+| lineColor | 滑块颜色 | `string` | - |
+| lineBgSize | 滑块背景显示大小，当滑块背景设置为图片时使用 | `string`\|`number` | cover |
+| activeStyle | 菜单选择中时的样式 | `CSSProperties` | - |
+| inactiveStyle | 菜单非选中时的样式 | `CSSProperties` | - |
+| itemStyle | 菜单 item 的样式 | `string` | - |
+| badgeProps | [徽标props](./badge#Api)全局定义(list里的badge优先级高) | `BadgeProps` | - |
+| swiperHeight | 轮播图高度，数值默认单位px | `string`\|`number` | calc(100% - 44px) |
+| isSwiper | 是否出现内容轮播 | `boolean` | false |
+| iconStyle | 标签左侧图标样式自定义 | `CSSProperties` | - |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### Events
 
@@ -141,27 +141,27 @@ const list = [{ name: "全部" }, { name: "未核销" }, { name: "已核销" }];
 
 ### Typings
 
-:::details
+::: details 类型说明
 
 ```ts
 export interface TabsItemVo {
-  /**
-   * tab名称
-   * */
-  name: string;
-  /**
-   * 徽标接收的props
-   * */
-  badge?: HyBadgeProps;
-  /**
-   * 是否禁用
-   * */
-  disabled?: boolean;
-  /**
-   * swiper内容值
-   * */
-  content?: any;
-  [key: string]: any;
+    /**
+     * tab名称
+     * */
+    name: string;
+    /**
+     * 徽标接收的props
+     * */
+    badge?: HyBadgeProps;
+    /**
+     * 是否禁用
+     * */
+    disabled?: boolean;
+    /**
+     * swiper内容值
+     * */
+    content?: any;
+    [key: string]: any;
 }
 ```
 

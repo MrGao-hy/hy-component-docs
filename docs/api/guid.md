@@ -23,7 +23,7 @@
 **示例**
 
 ```typescript
-import { guid } from "@hy-app/ui";
+import { guid } from '@hy-app/ui';
 
 const elId = guid(20);
 const elClass = guid();

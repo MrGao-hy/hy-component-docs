@@ -12,7 +12,7 @@
 
 ```html
 <template>
-  <hy-card title="标题"></hy-card>
+    <hy-card title="标题"></hy-card>
 </template>
 ```
 
@@ -20,15 +20,15 @@
 
 ```html
 <template>
-  <hy-card
-    title="刘德华"
-    sub-title="简介描述文字"
-    right-text="2020-05-15"
-    thumb="https://example.com/avatar.jpg"
-    thumb-width="40"
-    thumbCircle
-    full
-  ></hy-card>
+    <hy-card
+        title="刘德华"
+        sub-title="简介描述文字"
+        right-text="2020-05-15"
+        thumb="https://example.com/avatar.jpg"
+        thumb-width="40"
+        thumbCircle
+        full
+    ></hy-card>
 </template>
 ```
 
@@ -36,10 +36,7 @@
 
 ```html
 <template>
-  <hy-card
-    title="自定义阴影"
-    box-shadow="0 0 10rpx 10rpx rgba(0, 0, 0, 0.5)"
-  ></hy-card>
+    <hy-card title="自定义阴影" box-shadow="0 0 10rpx 10rpx rgba(0, 0, 0, 0.5)"></hy-card>
 </template>
 ```
 
@@ -47,43 +44,43 @@
 
 ```html
 <template>
-  <hy-card
-    title="素胚勾勒出青花，笔锋浓转淡"
-    sub-title="2020-05-15"
-    thumb="http://pic2.sc.chinaz.com/Files/pic/pic9/202002/hpic2119_s.jpg"
-    full
-  >
-    <template #body>
-      <view class="u-body-item">
-        <view class="u-body-item-title"
-          >瓶身描绘的牡丹一如你初妆，冉冉檀香透过窗心事我了然，宣纸上走笔至此搁一半</view
-        >
-        <image
-          src="https://img11.360buyimg.com/n7/jfs/t1/94448/29/2734/524808/5dd4cc16E990dfb6b/59c256f85a8c3757.jpg"
-          mode="aspectFill"
-        ></image>
-      </view>
-    </template>
-    <template #footer>
-      <hy-icon name="chat-fill" size="25" label="30评论"></hy-icon>
-    </template>
-  </hy-card>
+    <hy-card
+        title="素胚勾勒出青花，笔锋浓转淡"
+        sub-title="2020-05-15"
+        thumb="http://pic2.sc.chinaz.com/Files/pic/pic9/202002/hpic2119_s.jpg"
+        full
+    >
+        <template #body>
+            <view class="u-body-item">
+                <view class="u-body-item-title">
+                    瓶身描绘的牡丹一如你初妆，冉冉檀香透过窗心事我了然，宣纸上走笔至此搁一半
+                </view>
+                <image
+                    src="https://img11.360buyimg.com/n7/jfs/t1/94448/29/2734/524808/5dd4cc16E990dfb6b/59c256f85a8c3757.jpg"
+                    mode="aspectFill"
+                ></image>
+            </view>
+        </template>
+        <template #footer>
+            <hy-icon name="chat-fill" size="25" label="30评论"></hy-icon>
+        </template>
+    </hy-card>
 </template>
 
 <style scoped lang="scss">
-  .u-body-item {
-    font-size: 32rpx;
-    padding: 20rpx 10rpx;
-    display: flex;
-    justify-content: space-between;
-  }
+    .u-body-item {
+        font-size: 32rpx;
+        padding: 20rpx 10rpx;
+        display: flex;
+        justify-content: space-between;
+    }
 
-  .u-body-item image {
-    width: 120rpx;
-    height: 120rpx;
-    border-radius: 8rpx;
-    margin-left: 12rpx;
-  }
+    .u-body-item image {
+        width: 120rpx;
+        height: 120rpx;
+        border-radius: 8rpx;
+        margin-left: 12rpx;
+    }
 </style>
 ```
 
@@ -91,15 +88,15 @@
 
 ```html
 <template>
-  <view>
-    <hy-card title="只显示头部" :showFoot="false"></hy-card>
+    <view>
+        <hy-card title="只显示头部" :showFoot="false"></hy-card>
 
-    <hy-card title="只显示主体" :showHead="false" :showFoot="false">
-      <template #body>
-        <view>这是卡片主体内容</view>
-      </template>
-    </hy-card>
-  </view>
+        <hy-card title="只显示主体" :showHead="false" :showFoot="false">
+            <template #body>
+                <view>这是卡片主体内容</view>
+            </template>
+        </hy-card>
+    </view>
 </template>
 ```
 
@@ -107,12 +104,7 @@
 
 ```html
 <template>
-  <hy-card
-    title="自定义内边距"
-    :paddingHead="20"
-    :paddingBody="30"
-    :paddingFoot="10"
-  ></hy-card>
+    <hy-card title="自定义内边距" :paddingHead="20" :paddingBody="30" :paddingFoot="10"></hy-card>
 </template>
 ```
 
@@ -120,39 +112,39 @@
 
 ### Card Props
 
-| 参数               | 说明                                                                       | 类型                | 默认值    |
-| ------------------ | -------------------------------------------------------------------------- | ------------------- | --------- |
-| full               | 卡片与屏幕两侧是否留空隙                                                   | `boolean`           | false     |
-| title              | 头部左边的标题                                                             | `string`            | -         |
-| title-color        | 标题颜色                                                                   | `string`            | -         |
-| title-size         | 标题字体大小，数值默认单位px                                               | `string`\|`number`  | -         |
-| sub-title          | 副标题                                                                     | `string`            | -         |
-| sub-title-size     | 副标题字体大小，数值默认单位px                                             | `string`\|`number`  | -         |
-| sub-title-color    | 副标题字体颜色                                                             | `string`            | -         |
-| border             | 是否显示边框                                                               | `boolean`           | false     |
-| index              | 用于标识点击了第几个卡片                                                   | `string`\|`number`  | -         |
-| margin             | 卡片与屏幕两边和上下元素的间距，需带单位，如"30rpx 20rpx"                  | `string`            | 0 0 20rpx |
-| border-radius      | 卡片整体的圆角值，数值默认单位px                                           | `string`\|`number`  | 8px       |
-| head-style         | 头部自定义样式，对象形式                                                   | `CSSProperties`     | -         |
-| body-style         | 主体自定义样式，对象形式                                                   | `CSSProperties`     | -         |
-| foot-style         | 底部自定义样式，对象形式                                                   | `CSSProperties`     | -         |
-| head-border-bottom | 是否显示头部的下边框                                                       | `boolean`           | false     |
-| foot-border-top    | 是否显示底部的上边框                                                       | `boolean`           | false     |
-| thumb              | 缩略图路径，如设置将显示在标题的左边，不建议使用相对路径(支持组件库的图标) | `string`            | -         |
-| thumb-width        | 缩略图的宽度，高等于宽，数值默认单位px                                     | `string`\|`number`  | 30px      |
-| thumb-circle       | 缩略图是否为圆形                                                           | `boolean`           | false     |
-| rightText          | 右边内容                                                                   | `string`            | -         |
-| right-text-color   | 右边内容颜色                                                               | `string`            | -         |
-| right-text-size    | 右边内容字体大小，数值默认单位px                                           | `string`\|`number`  | -         |
-| padding            | 给head，body，foot部的内边距，见上方说明，单位rpx                          | `string`\|`number`  | 10px      |
-| paddingHead        | 头部内边距，数值默认单位px                                                 | `string`\|`number`  | -         |
-| paddingBody        | 中部内边距，数值默认单位px                                                 | `string`\|`number`  | -         |
-| paddingFoot        | 尾部内边距，数值默认单位px                                                 | `string`\|`number`  | -         |
-| show-head          | 是否显示头部（显示头部必填）                                               | `boolean`           | false     |
-| show-foot          | 是否显示尾部                                                               | `boolean`           | true      |
-| box-shadow         | 卡片外围阴影，字符串形式                                                   | `string`\|`boolean` | true      |
-| customStyle        | 自定义需要用到的外部样式                                                   | `CSSProperties`     | -         |
-| customClass        | 自定义外部类名                                                             | `string`            | -         |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| full | 卡片与屏幕两侧是否留空隙 | `boolean` | false |
+| title | 头部左边的标题 | `string` | - |
+| title-color | 标题颜色 | `string` | - |
+| title-size | 标题字体大小，数值默认单位px | `string`\|`number` | - |
+| sub-title | 副标题 | `string` | - |
+| sub-title-size | 副标题字体大小，数值默认单位px | `string`\|`number` | - |
+| sub-title-color | 副标题字体颜色 | `string` | - |
+| border | 是否显示边框 | `boolean` | false |
+| index | 用于标识点击了第几个卡片 | `string`\|`number` | - |
+| margin | 卡片与屏幕两边和上下元素的间距，需带单位，如"30rpx 20rpx" | `string` | 0 0 20rpx |
+| border-radius | 卡片整体的圆角值，数值默认单位px | `string`\|`number` | 8px |
+| head-style | 头部自定义样式，对象形式 | `CSSProperties` | - |
+| body-style | 主体自定义样式，对象形式 | `CSSProperties` | - |
+| foot-style | 底部自定义样式，对象形式 | `CSSProperties` | - |
+| head-border-bottom | 是否显示头部的下边框 | `boolean` | false |
+| foot-border-top | 是否显示底部的上边框 | `boolean` | false |
+| thumb | 缩略图路径，如设置将显示在标题的左边，不建议使用相对路径(支持组件库的图标) | `string` | - |
+| thumb-width | 缩略图的宽度，高等于宽，数值默认单位px | `string`\|`number` | 30px |
+| thumb-circle | 缩略图是否为圆形 | `boolean` | false |
+| rightText | 右边内容 | `string` | - |
+| right-text-color | 右边内容颜色 | `string` | - |
+| right-text-size | 右边内容字体大小，数值默认单位px | `string`\|`number` | - |
+| padding | 给head，body，foot部的内边距，见上方说明，单位rpx | `string`\|`number` | 10px |
+| paddingHead | 头部内边距，数值默认单位px | `string`\|`number` | - |
+| paddingBody | 中部内边距，数值默认单位px | `string`\|`number` | - |
+| paddingFoot | 尾部内边距，数值默认单位px | `string`\|`number` | - |
+| show-head | 是否显示头部（显示头部必填） | `boolean` | false |
+| show-foot | 是否显示尾部 | `boolean` | true |
+| box-shadow | 卡片外围阴影，字符串形式 | `string`\|`boolean` | true |
+| customStyle | 自定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### Events
 

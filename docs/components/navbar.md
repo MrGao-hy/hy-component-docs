@@ -21,7 +21,7 @@
 
 ```html
 <template>
-  <hy-navbar title="个人中心" placeholder></hy-navbar>
+    <hy-navbar title="个人中心" placeholder></hy-navbar>
 </template>
 ```
 
@@ -29,7 +29,7 @@
 
 ```html
 <template>
-  <hy-navbar title="个人中心" bgColor="#001f3f"></hy-navbar>
+    <hy-navbar title="个人中心" bgColor="#001f3f"></hy-navbar>
 </template>
 ```
 
@@ -39,7 +39,7 @@
 
 ```html
 <template>
-  <hy-navbar title="个人中心" fixed></hy-navbar>
+    <hy-navbar title="个人中心" fixed></hy-navbar>
 </template>
 ```
 
@@ -53,17 +53,17 @@
 
 ```html
 <template>
-  <hy-navbar
-    title="文档"
-    :leftIcon="IconConfig.LEFT"
-    leftText="返回"
-    rightText="地址"
-    :rightIcon="IconConfig.MAP"
-  ></hy-navbar>
+    <hy-navbar
+        title="文档"
+        :leftIcon="IconConfig.LEFT"
+        leftText="返回"
+        rightText="地址"
+        :rightIcon="IconConfig.MAP"
+    ></hy-navbar>
 </template>
 
 <script setup>
-  import { IconConfig } from "hy-app";
+    import { IconConfig } from 'hy-app';
 </script>
 ```
 
@@ -71,58 +71,53 @@
 
 ```html
 <template>
-  <hy-navbar title="自定义插槽" :fixed="false" bg-color="#F8F8F8">
-    <template #left>
-      <view class="u-nav-slot">
-        <hy-icon :name="IconConfig.LEFT" size="16"></hy-icon>
-        <hy-line
-          direction="column"
-          :hairline="false"
-          length="16"
-          margin="0 8px"
-        ></hy-line>
-        <hy-icon name="home" size="15"></hy-icon>
-      </view>
-    </template>
-  </hy-navbar>
+    <hy-navbar title="自定义插槽" :fixed="false" bg-color="#F8F8F8">
+        <template #left>
+            <view class="u-nav-slot">
+                <hy-icon :name="IconConfig.LEFT" size="16"></hy-icon>
+                <hy-line direction="column" :hairline="false" length="16" margin="0 8px"></hy-line>
+                <hy-icon name="home" size="15"></hy-icon>
+            </view>
+        </template>
+    </hy-navbar>
 </template>
 
 <style lang="scss">
-  .u-nav-slot {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 100px;
-    border: 1rpx solid gainsboro;
-    padding: 3px 7px;
-    opacity: 0.8;
-  }
+    .u-nav-slot {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 100px;
+        border: 1rpx solid gainsboro;
+        padding: 3px 7px;
+        opacity: 0.8;
+    }
 </style>
 ```
 
 ## API
 
-| 参数             | 说明                                                           | 类型               | 默认值          |
-| ---------------- | -------------------------------------------------------------- | ------------------ | --------------- |
-| safeAreaInsetTop | 是否开启顶部安全区适配                                         | `boolean`          | true            |
-| placeholder      | 固定在顶部时，是否生成一个等高元素，以防止塌陷                 | `boolean`          | false           |
-| fixed            | 导航栏是否固定在顶部                                           | `boolean`          | true            |
-| border           | 导航栏底部是否显示下边框                                       | `boolean`          | false           |
-| leftIcon         | 左边返回图标的名称                                             | `string`           | IconConfig.LEFT |
-| leftText         | 左边的提示文字                                                 | `string`           | -               |
-| rightText        | 右边的提示文字                                                 | `string`           | -               |
-| rightIcon        | 右边返回图标的名称                                             | `string`           | -               |
-| title            | 导航栏标题，如设置为空字符，将会隐藏标题占位区域               | `string`           | -               |
-| bgColor          | 导航栏背景设置                                                 | `string`           | -               |
-| titleWidth       | 导航栏标题的最大宽度，内容超出会以省略号隐藏，单位rpx          | `string`\|`number` | 400rpx          |
-| height           | 导航栏高度(不包括状态栏高度在内，内部自动加上)，数值默认单位px | `string`\|`number` | 44px            |
-| leftIconSize     | 左侧返回图标的大小，数值默认单位px                             | `string`\|`number` | 20              |
-| leftIconColor    | 左侧返回图标的颜色                                             | `string`           | -               |
-| autoBack         | 点击左侧区域(返回图标)，是否自动返回上一页                     | `boolean`          | false           |
-| titleStyle       | 标题的样式，对象或字符串形式                                   | `CSSProperties`    | -               |
-| customStyle      | 自定义需要用到的外部样式                                       | `CSSProperties`    | -               |
-| customClass      | 自定义外部类名                                                 | `string`           | -               |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| safeAreaInsetTop | 是否开启顶部安全区适配 | `boolean` | true |
+| placeholder | 固定在顶部时，是否生成一个等高元素，以防止塌陷 | `boolean` | false |
+| fixed | 导航栏是否固定在顶部 | `boolean` | true |
+| border | 导航栏底部是否显示下边框 | `boolean` | false |
+| leftIcon | 左边返回图标的名称 | `string` | IconConfig.LEFT |
+| leftText | 左边的提示文字 | `string` | - |
+| rightText | 右边的提示文字 | `string` | - |
+| rightIcon | 右边返回图标的名称 | `string` | - |
+| title | 导航栏标题，如设置为空字符，将会隐藏标题占位区域 | `string` | - |
+| bgColor | 导航栏背景设置 | `string` | - |
+| titleWidth | 导航栏标题的最大宽度，内容超出会以省略号隐藏，单位rpx | `string`\|`number` | 400rpx |
+| height | 导航栏高度(不包括状态栏高度在内，内部自动加上)，数值默认单位px | `string`\|`number` | 44px |
+| leftIconSize | 左侧返回图标的大小，数值默认单位px | `string`\|`number` | 20 |
+| leftIconColor | 左侧返回图标的颜色 | `string` | - |
+| autoBack | 点击左侧区域(返回图标)，是否自动返回上一页 | `boolean` | false |
+| titleStyle | 标题的样式，对象或字符串形式 | `CSSProperties` | - |
+| customStyle | 自定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ## Events
 

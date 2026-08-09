@@ -22,7 +22,7 @@
 **示例**
 
 ```typescript
-import { random } from "@hy-app/ui";
+import { random } from '@hy-app/ui';
 
 const val = random(1, 10);
 console.log(val); // 随机数

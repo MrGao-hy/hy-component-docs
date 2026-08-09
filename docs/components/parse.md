@@ -1,15 +1,18 @@
 # Parse 富文本解析器组件
+
 > 该组件一般用于富文本解析场景，比如解析文章内容，商品详情，带原生HTML标签的各类字符串等，此组件和uni-app官方的rich-text组件功能有重合之处，但是也有不同的地方。
 
 ::: tip 温馨提示
+
 此组件源于开源的优秀作品[mp-html](https://github.com/jin-yufeng/mp-html)，本文档只对重要的功能进行介绍，如果需要更详细的说明，请参考[mp-html官方文档](https://jin-yufeng.github.io/mp-html/#/overview/feature)。
+
 :::
 
 ## :pushpin:平台差异说明
 
-| APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
-|----------|----|-------|--------|
-| ✔        | ✔  | ✔     | ✔      |
+| APP(vue) | H5  | 微信小程序 | 支付宝小程序 |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
 ## :japanese_castle:基本使用示例
 
@@ -19,29 +22,39 @@
 <!-- 单个组件引入 -->
 <HyParse :content="content"></HyParse>
 ```
+
 ```ts
-import { HyParse } from "@hy-app/ui"
+import { HyParse } from '@hy-app/ui';
 
 const content = `<p>露从今夜白，月是故乡明</p>
-<img src="https://cdn.uviewui.com/uview/swiper/2.jpg" alt="Image Description" />`
+<img src="https://cdn.uviewui.com/uview/swiper/2.jpg" alt="Image Description" />`;
 ```
 
 ## 复杂示例
-:::code-group
+
+::: code-group
+
 ```html [vue]
 <template>
-    <hy-parse :content="parseContent" :tag-style="tagStyle" lazy-load scroll-table selectable use-anchor></hy-parse>
+    <hy-parse
+        :content="parseContent"
+        :tag-style="tagStyle"
+        lazy-load
+        scroll-table
+        selectable
+        use-anchor
+    ></hy-parse>
 </template>
 
 <script setup>
-    import parseContent from "./content.js";
+    import parseContent from './content.js';
 
     const tagStyle = {
         table: 'box-sizing: border-box; border-top: 1px solid #dfe2e5; border-left: 1px solid #dfe2e5;',
         th: 'border-right: 1px solid #dfe2e5; border-bottom: 1px solid #dfe2e5;',
         td: 'border-right: 1px solid #dfe2e5; border-bottom: 1px solid #dfe2e5;',
-        li: 'margin: 5px 0;'
-    }
+        li: 'margin: 5px 0;',
+    };
 </script>
 ```
 
@@ -71,7 +84,7 @@ export default `<title>富文本示例</title>
         </tr>
         <tr style="background-color: #f6f8fa;">
           <td align="center">内容 3</td>
-          <td align="center"><a>链接</a></td>    
+          <td align="center"><a>链接</a></td>
         </tr>
         <tr>
           <td align="center">内容 5</td>
@@ -182,7 +195,7 @@ export default `<title>富文本示例</title>
           </li>
         </ul>
       </li>
-    </ul>    
+    </ul>
   </section>
   <section style="text-align: center; margin: 0px auto; margin-top: 2em">
     <section style="border-radius: 4px; border: 1px solid #757576; display: inline-block; padding: 5px 20px;">
@@ -248,39 +261,39 @@ export default `<title>富文本示例</title>
     </svg>
     <div style="font-size: 12px; color: gray; margin-top: 5px;">svg 动画</div>
   </section>
-</div>`
-
+</div>`;
 ```
+
 :::
 
 ## API
 
-| 参数             | 说明                               | 类型              | 默认值   |
-|----------------|----------------------------------|-----------------|-------|
-| content        | 要显示的富文本字符串                       | `string`        | -     |
-| copyLink       | 是否允许外部链接被点击时自动复制                 | `boolean`       | true  |
-| domain         | 主域名，设置后将给链接自动拼接上主域名或协议名          | `string`        | -     |
-| errorImg       | 图片出错时的占位图链接                      | `string`        | -     |
-| lazyLoad       | 是否开启图片懒加载，nvue不支持此属性             | `boolean`       | true  |
-| loadingImg     | 图片加载完成前的占位图，详见 占位图               | `string`        | -     |
-| pauseVideo     | 是否在播放一个视频时自动暂停其它视频               | `boolean`       | true  |
-| previewImg     | 是否开启图片被点击时自动预览                   | `boolean`       | true  |
-| scrollTable    | 是否自动给 table 添加一个滚动层（使表格可以单独横向滚动） | `boolean`       | false |
-| selectable     | 是否开启长按复制内容                       | `boolean`       | false |
-| setTitle       | 是否自动将 title 标签的内容设置到页面标题         | `boolean`       | true  |
-| showImgMenu    | 是否开启图片被长按时显示菜单                   | `boolean`       | true  |
-| useAnchor      | 是否使用页面内锚点                        | `boolean`       | false |
-| tagStyle       | 设置标签的默认样式                        | `CSSProperties` | -     |
-| containerStyle | 样式设置代替bgColor                    | `CSSProperties` | -     |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| content | 要显示的富文本字符串 | `string` | - |
+| copyLink | 是否允许外部链接被点击时自动复制 | `boolean` | true |
+| domain | 主域名，设置后将给链接自动拼接上主域名或协议名 | `string` | - |
+| errorImg | 图片出错时的占位图链接 | `string` | - |
+| lazyLoad | 是否开启图片懒加载，nvue不支持此属性 | `boolean` | true |
+| loadingImg | 图片加载完成前的占位图，详见 占位图 | `string` | - |
+| pauseVideo | 是否在播放一个视频时自动暂停其它视频 | `boolean` | true |
+| previewImg | 是否开启图片被点击时自动预览 | `boolean` | true |
+| scrollTable | 是否自动给 table 添加一个滚动层（使表格可以单独横向滚动） | `boolean` | false |
+| selectable | 是否开启长按复制内容 | `boolean` | false |
+| setTitle | 是否自动将 title 标签的内容设置到页面标题 | `boolean` | true |
+| showImgMenu | 是否开启图片被长按时显示菜单 | `boolean` | true |
+| useAnchor | 是否使用页面内锚点 | `boolean` | false |
+| tagStyle | 设置标签的默认样式 | `CSSProperties` | - |
+| containerStyle | 样式设置代替bgColor | `CSSProperties` | - |
 
 ## Events
 
-| 事件名     | 说明          | 回调参数                                                                             |
-|---------|-------------|----------------------------------------------------------------------------------|
-| load    | dom 加载完成时触发 | 所有节点被添加到节点树中时触发，无返回值，可以调用 api                                                    |
-| ready   | 渲染完成时触发     | 返回 boundingClientRect 的查询结果（包含宽高、位置等信息），所有图片（除懒加载）加载完成时才会触发，图片较大时可能 延时较长         |
-| error   | 出错时触发       | 返回一个 object，其中 source 是错误来源，errMsg 为错误信息，target 包含出错标签的具体信息                      |
-| imgTap  | 图片被点击时触发    | 返回一个 object，其中 src 是图片链接，ignore 是一个函数，在事件中调用将不进行预览；可用于阻挡 onShow 的调用              |
-| linkTap | 在链接被点击时触发   | 返回一个 object，其中包含了被点击的 a 标签的所有属性，ignore 是一个函数，在事件中调用后将不自动跳转/复制；可在该事件中进行下载文档等进一步操作 |
+| 事件名 | 说明 | 回调参数 |
+| --- | --- | --- |
+| load | dom 加载完成时触发 | 所有节点被添加到节点树中时触发，无返回值，可以调用 api |
+| ready | 渲染完成时触发 | 返回 boundingClientRect 的查询结果（包含宽高、位置等信息），所有图片（除懒加载）加载完成时才会触发，图片较大时可能 延时较长 |
+| error | 出错时触发 | 返回一个 object，其中 source 是错误来源，errMsg 为错误信息，target 包含出错标签的具体信息 |
+| imgTap | 图片被点击时触发 | 返回一个 object，其中 src 是图片链接，ignore 是一个函数，在事件中调用将不进行预览；可用于阻挡 onShow 的调用 |
+| linkTap | 在链接被点击时触发 | 返回一个 object，其中包含了被点击的 a 标签的所有属性，ignore 是一个函数，在事件中调用后将不自动跳转/复制；可在该事件中进行下载文档等进一步操作 |
 
 <demo-model url="pages-design/parse/parse"></demo-model>

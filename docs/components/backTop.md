@@ -1,11 +1,12 @@
 # BackTop 返回顶部组件
+
 > 该组件一个用于长页面，滑动一定距离后，出现返回顶部按钮，方便快速返回顶部的场景。
 
 ## :pushpin:平台差异说明
 
-| APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
-|----------|----|-------|--------|
-| ✔        | ✔  | ✔     | ✔      |
+| APP(vue) | H5  | 微信小程序 | 支付宝小程序 |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
 ## :japanese_castle:基本使用示例
 
@@ -18,10 +19,10 @@
 <script lang="ts" setup="">
     import { onPageScroll } from '@dcloudio/uni-app';
 
-    // 创建响应式数据 scrollTop  
+    // 创建响应式数据 scrollTop
     const scrollTop = ref(0);
 
-    // onPageScroll 方法来更新 scrollTop 的值  
+    // onPageScroll 方法来更新 scrollTop 的值
     onPageScroll((e) => {
         scrollTop.value = e.scrollTop;
     });
@@ -29,7 +30,9 @@
 ```
 
 ### 改变返回顶部按钮的出现时机
+
 - 可以通过`top`参数，修改页面滚动多少距离时，出现返回顶部的按钮
+
 ```html
 <template>
     <hy-back-top :scroll-top="scrollTop" top="600"></hy-back-top>
@@ -37,8 +40,10 @@
 ```
 
 ### 自定义返回顶部的图标和提示
+
 - 通过`icon`修改返回顶部按钮的图标，可以是华悦组件内置的图标，或者图片路径
 - 通过`text`参数修改返回顶部按钮的文字提示信息，如果需要修改文字的颜色和大小，可以通过customStyle参数
+
 ```html
 <template>
     <hy-back-top :scroll-top="scrollTop" icon="arrow-up" text="返回"></hy-back-top>
@@ -46,33 +51,33 @@
 ```
 
 ## API
+
 ### BackTop Props
 
-| 参数          | 说明                       | 类型                 | 默认值                 |
-|-------------|--------------------------|--------------------|---------------------|
-| mode        | 按钮形状                     | `circle`\|`square` | circle              |
-| icon        | 图标，详见[图标Api](./icon#api) | `string`           | IconConfig.DOWNLOAD |
-| text        | 返回顶部按钮的提示文字              | `string`           | -                   |
-| duration    | 返回顶部过程中的过渡时间，单位ms        | `number`           | 500                 |
-| scrollTop   | 页面的滚动距离                  | `number`           | 0                   |
-| top         | 滚动条滑动多少距离时显示，数值默认单位px        | `number`\|`string` | 400                 |
-| bottom      | 返回按钮位置到屏幕底部的距离，数值默认单位px      | `number`\|`string` | 100                 |
-| right       | 返回按钮位置到屏幕右边的距离，数值默认单位px      | `number`\|`string` | 20                  |
-| z-index     | 返回顶部按钮的层级                | `number`           | 888                 |
-| customStyle | 自定义需要用到的外部样式             | `CSSProperties`    | -                   |
-| customClass | 自定义外部类名                  | `string`           | -                   |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| mode | 按钮形状 | `circle`\|`square` | circle |
+| icon | 图标，详见[图标Api](./icon#api) | `string` | IconConfig.DOWNLOAD |
+| text | 返回顶部按钮的提示文字 | `string` | - |
+| duration | 返回顶部过程中的过渡时间，单位ms | `number` | 500 |
+| scrollTop | 页面的滚动距离 | `number` | 0 |
+| top | 滚动条滑动多少距离时显示，数值默认单位px | `number`\|`string` | 400 |
+| bottom | 返回按钮位置到屏幕底部的距离，数值默认单位px | `number`\|`string` | 100 |
+| right | 返回按钮位置到屏幕右边的距离，数值默认单位px | `number`\|`string` | 20 |
+| z-index | 返回顶部按钮的层级 | `number` | 888 |
+| customStyle | 自定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### Events
 
-| 事件名   | 说明   | 回调参数 |
-|-------|------|------|
-| click | 点击按钮 | -    |
+| 事件名 | 说明     | 回调参数 |
+| ------ | -------- | -------- |
+| click  | 点击按钮 | -        |
 
 ### Slots
 
-| 插槽名     | 说明    | 接收值 |
-|---------|-------|-----|
-| default | 自定义内容 | -   |
-
+| 插槽名  | 说明       | 接收值 |
+| ------- | ---------- | ------ |
+| default | 自定义内容 | -      |
 
 <demo-model url="pages-design/backTop/backTop"></demo-model>

@@ -1,11 +1,12 @@
 # CountTo 数字滚动组件
+
 > 该组件一般用于需要滚动数字到某一个值的场景，目标要求是一个递增的值。
 
 ## :pushpin:平台差异说明
 
-| APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
-|----------|----|-------|--------|
-| ✔        | ✔  | ✔     | ✔      |
+| APP(vue) | H5  | 微信小程序 | 支付宝小程序 |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
 ## :japanese_castle:基本使用示例
 
@@ -15,7 +16,9 @@
 ```
 
 ### 显示小数点
+
 - 通过设置`decimals`来设置几位小数点
+
 ```html
 <template>
     <hy-count-to :endVal="1542221" :decimals="2"></hy-count-to>
@@ -23,27 +26,31 @@
 ```
 
 ### 千分位分隔符
+
 - 通过设置`separator`来设置千分位分隔符
+
 ```html
 <template>
     <hy-count-to :endVal="1542221" separator=","></hy-count-to>
 </template>
 ```
 
-
 ### 设置滚动时间
+
 - 通过设置`duration`来设置滚动时长
+
 ```html
 <template>
     <hy-count-to :endVal="1542221" :duration="10000"></hy-count-to>
 </template>
 ```
 
-
 ### 设置字体
+
 - 通过设置`bold`把字体变粗
 - 通过设置`fontSize`设置字体大小
 - 通过设置`color`设置字体颜色
+
 ```html
 <template>
     <hy-count-to :endVal="154" bold fontSize="40" color="#31E749"></hy-count-to>
@@ -51,14 +58,11 @@
 ```
 
 ### 手动控制
-:::code-group
+
+::: code-group
+
 ```html [vue]
-<hy-count-to
-        ref="countToRef"
-        :endVal="1542222"
-        :duration="10000"
-        :autoplay="false"
-></hy-count-to>
+<hy-count-to ref="countToRef" :endVal="1542222" :duration="10000" :autoplay="false"></hy-count-to>
 <view class="hy-flex">
     <hy-button text="开始" type="success" @click="start"></hy-button>
     <hy-button text="暂停" type="error" @click="pause"></hy-button>
@@ -67,70 +71,70 @@
 ```
 
 ```ts [.ts]
-import HyCountTo from "hy-app/components/hy-count-to/hy-count-to.vue";
-import { ref } from "vue";
-
+import HyCountTo from 'hy-app/components/hy-count-to/hy-count-to.vue';
+import { ref } from 'vue';
 
 const countToRef = ref<InstanceType<typeof HyCountTo>>();
 
 const start = () => {
-  if (countToRef.value) {
-      countToRef.value.start();
-  }
+    if (countToRef.value) {
+        countToRef.value.start();
+    }
 };
 
 const pause = () => {
-  if (countToRef.value) {
-      countToRef.value.pause();
-  }
+    if (countToRef.value) {
+        countToRef.value.pause();
+    }
 };
 
 const resume = () => {
-  if (countToRef.value) {
-      countToRef.value.resume();
-  }
+    if (countToRef.value) {
+        countToRef.value.resume();
+    }
 };
 ```
 
 ```scss [.scss]
 .hy-flex {
-  display: flex;
-  justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
 }
 ```
+
 :::
 
-
 ## API
+
 ### CountTo
 
-| 参数        | 说明                 | 类型                 | 默认值     |
-|-----------|--------------------|--------------------|---------|
-| startVal  | 开始值                | `number`           | 0       |
-| endVal    | 结束值                | `number`           | 0       |
-| duration  | 滚动过程所需的时间，单位ms     | `number`           | 2000    |
-| autoplay  | 是否自动开始滚动           | `boolean`          | true    |
-| decimals  | 要显示的小数位数，见上方说明     | `number`           | 0       |
+| 参数      | 说明                                 | 类型               | 默认值  |
+| --------- | ------------------------------------ | ------------------ | ------- |
+| startVal  | 开始值                               | `number`           | 0       |
+| endVal    | 结束值                               | `number`           | 0       |
+| duration  | 滚动过程所需的时间，单位ms           | `number`           | 2000    |
+| autoplay  | 是否自动开始滚动                     | `boolean`          | true    |
+| decimals  | 要显示的小数位数，见上方说明         | `number`           | 0       |
 | useEasing | 滚动结束时，是否缓动结尾，见上方说明 | `boolean`          | true    |
-| decimal   | 十进制分割              | `string`           | ,       |
-| color     | 字体颜色               | `string`           | #606266 |
-| fontSize  | 字体大小，数值默认单位px          | `string`\|`number` | 22      |
-| bold      | 字体是否加粗             | `boolean`          | false   |
-| separator | 千位分隔符，见上方说明        | `string`           | -       |
+| decimal   | 十进制分割                           | `string`           | ,       |
+| color     | 字体颜色                             | `string`           | #606266 |
+| fontSize  | 字体大小，数值默认单位px             | `string`\|`number` | 22      |
+| bold      | 字体是否加粗                         | `boolean`          | false   |
+| separator | 千位分隔符，见上方说明               | `string`           | -       |
 
 ### Events
 
-| 事件名 | 说明          | 回调参数 |
-|-----|-------------|------|
-| end | 数值滚动到目标值时触发 | -    |
+| 事件名 | 说明                   | 回调参数 |
+| ------ | ---------------------- | -------- |
+| end    | 数值滚动到目标值时触发 | -        |
 
 ### Methods
 
-| 事件名     | 说明                      |
-|---------|-------------------------|
-| start   | 开始滚动                    |
-| pause   | 暂停滚动                    |
-| resume  | 从暂停时的值开始滚动              |
+| 事件名  | 说明                                           |
+| ------- | ---------------------------------------------- |
+| start   | 开始滚动                                       |
+| pause   | 暂停滚动                                       |
+| resume  | 从暂停时的值开始滚动                           |
 | reStart | 暂定状态，重新再开始滚动；或者滚动状态下，暂停 |
 
 [^1] `DD`-日，`HH`-时，`mm`-分，`ss`-秒，`SSS`-毫秒

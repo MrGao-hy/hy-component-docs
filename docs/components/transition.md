@@ -1,11 +1,12 @@
 # Transition 动画组件
+
 > 该组件用于组件的动画过渡效果。
 
 ## :pushpin:平台差异说明
 
-| APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
-|----------|----|-------|--------|
-| ✔        | ✔  | ✔     | ✔      |
+| APP(vue) | H5  | 微信小程序 | 支付宝小程序 |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
 ## :japanese_castle:基本使用示例
 
@@ -15,6 +16,7 @@
     <view class="transition">我是内容</view>
 </hy-transition>
 ```
+
 ```ts
 import { ref } from 'vue';
 
@@ -22,7 +24,9 @@ const show = ref(true);
 ```
 
 ### 动画模式
+
 > 通过设置`mode`
+>
 > - `fade` 淡入
 > - `fade-up` 上滑淡入
 > - `fade-down` 下滑淡入
@@ -42,7 +46,9 @@ const show = ref(true);
 ```
 
 ### 动画过渡
+
 > 通过设置`timingFunction`
+>
 > - `linear`：过渡效果以相同的速度从开始到结束，相当于 cubic-bezier(0,0,1,1)。
 > - `ease`：过渡效果以慢速开始，然后加速，最后再慢速结束，是默认值，相当于 cubic-bezier(0.25,0.1,0.25,1)。
 > - `ease-in`：过渡效果以慢速开始，然后逐渐加速，相当于 cubic-bezier(0.42,0,1,1)。
@@ -56,32 +62,32 @@ const show = ref(true);
 ```
 
 ## API
+
 ### Transition Props
 
-| 参数             | 说明              | 类型              | 默认值      |
-|----------------|-----------------|-----------------|----------|
-| show           | 是否展示组件          | `boolean`       | false    |
-| mode           | 使用的动画模式，见上方说明   | `string`        | fade     |
-| duration       | 动画的执行时间，单位ms    | `number`        | 300      |
+| 参数           | 说明                           | 类型            | 默认值   |
+| -------------- | ------------------------------ | --------------- | -------- |
+| show           | 是否展示组件                   | `boolean`       | false    |
+| mode           | 使用的动画模式，见上方说明     | `string`        | fade     |
+| duration       | 动画的执行时间，单位ms         | `number`        | 300      |
 | timingFunction | 使用的动画过渡函数，见上方说明 | `string`        | ease-out |
-| customStyle    | 定义需要用到的外部样式     | `CSSProperties` | -        |
+| customStyle    | 定义需要用到的外部样式         | `CSSProperties` | -        |
 
 ### Events
 
-| 事件名         | 说明    | 回调参数 |
-|-------------|-------|------|
-| beforeEnter | 进入前触发 | -    |
-| enter       | 进入中触发 | -    |
-| afterEnter  | 进入后触发 | -    |
-| beforeLeave | 离开前触发 | -    |
-| leave       | 离开中触发 | -    |
-| afterLeave  | 离开后触发 | -    |
+| 事件名      | 说明       | 回调参数 |
+| ----------- | ---------- | -------- |
+| beforeEnter | 进入前触发 | -        |
+| enter       | 进入中触发 | -        |
+| afterEnter  | 进入后触发 | -        |
+| beforeLeave | 离开前触发 | -        |
+| leave       | 离开中触发 | -        |
+| afterLeave  | 离开后触发 | -        |
 
 ### Slots
 
-| 插槽名     | 说明 | 接收值 |
-|---------|----|-----|
-| default | -  | -   |
-
+| 插槽名  | 说明 | 接收值 |
+| ------- | ---- | ------ |
+| default | -    | -      |
 
 <demo-model url="pages-design/transition/transition"></demo-model>

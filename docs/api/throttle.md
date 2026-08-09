@@ -28,10 +28,10 @@
 **示例**
 
 ```typescript
-import { throttle } from "@hy-app/ui";
+import { throttle } from '@hy-app/ui';
 
 const throttleFn = throttle(() => {
-  console.log("执行了");
+    console.log('执行了');
 }, 2000);
 ```
 
@@ -57,9 +57,9 @@ const throttleFn = throttle(() => {
 **示例**
 
 ```typescript
-import { debounce } from "@hy-app/ui";
+import { debounce } from '@hy-app/ui';
 
 const debounceFn = debounce(() => {
-  console.log("执行了");
+    console.log('执行了');
 }, 2000);
 ```

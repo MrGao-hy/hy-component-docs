@@ -20,17 +20,20 @@
 - 通过设置`image`,设置网络图片地址或Base64图片
 - `image-width`：水印图片宽度
 - `image-height`：水印图片高度
-  ::: tip 注意
-  钉钉小程序平台仅支持网络图片
-  :::
+
+::: tip 注意
+
+钉钉小程序平台仅支持网络图片
+
+:::
 
 ```html
 <template>
-  <hy-watermark
-    image="https://pic1.imgdb.cn/item/67f8dfea88c538a9b5caea38.png"
-    :image-width="38"
-    :image-height="38"
-  ></hy-watermark>
+    <hy-watermark
+        image="https://pic1.imgdb.cn/item/67f8dfea88c538a9b5caea38.png"
+        :image-width="38"
+        :image-height="38"
+    ></hy-watermark>
 </template>
 ```
 
@@ -40,10 +43,10 @@
 
 ```html
 <template>
-  <hy-watermark
-    image="https://pic1.imgdb.cn/item/67f8dfea88c538a9b5caea38.png"
-    :full-screen="false"
-  ></hy-watermark>
+    <hy-watermark
+        image="https://pic1.imgdb.cn/item/67f8dfea88c538a9b5caea38.png"
+        :full-screen="false"
+    ></hy-watermark>
 </template>
 ```
 
@@ -53,9 +56,7 @@
 
 ```html
 <template>
-  <hy-watermark
-    image="https://pic1.imgdb.cn/item/67f8dfea88c538a9b5caea38.png"
-  ></hy-watermark>
+    <hy-watermark image="https://pic1.imgdb.cn/item/67f8dfea88c538a9b5caea38.png"></hy-watermark>
 </template>
 ```
 
@@ -66,11 +67,11 @@
 
 ```html
 <template>
-  <hy-watermark
-    image="https://pic1.imgdb.cn/item/67f8dfea88c538a9b5caea38.png"
-    :gutterX="40"
-    :gutterY="40"
-  ></hy-watermark>
+    <hy-watermark
+        image="https://pic1.imgdb.cn/item/67f8dfea88c538a9b5caea38.png"
+        :gutterX="40"
+        :gutterY="40"
+    ></hy-watermark>
 </template>
 ```
 
@@ -81,11 +82,11 @@
 
 ```html
 <template>
-  <hy-watermark
-    image="https://pic1.imgdb.cn/item/67f8dfea88c538a9b5caea38.png"
-    :width="200"
-    :height="200"
-  ></hy-watermark>
+    <hy-watermark
+        image="https://pic1.imgdb.cn/item/67f8dfea88c538a9b5caea38.png"
+        :width="200"
+        :height="200"
+    ></hy-watermark>
 </template>
 ```
 
@@ -99,11 +100,11 @@
 
 ```html
 <template>
-  <hy-watermark
-    image="https://pic1.imgdb.cn/item/67f8dfea88c538a9b5caea38.png"
-    color="red"
-    :size="23"
-  ></hy-watermark>
+    <hy-watermark
+        image="https://pic1.imgdb.cn/item/67f8dfea88c538a9b5caea38.png"
+        color="red"
+        :size="23"
+    ></hy-watermark>
 </template>
 ```
 
@@ -113,10 +114,10 @@
 
 ```html
 <template>
-  <hy-watermark
-    image="https://pic1.imgdb.cn/item/67f8dfea88c538a9b5caea38.png"
-    :rotate="25"
-  ></hy-watermark>
+    <hy-watermark
+        image="https://pic1.imgdb.cn/item/67f8dfea88c538a9b5caea38.png"
+        :rotate="25"
+    ></hy-watermark>
 </template>
 ```
 
@@ -126,10 +127,10 @@
 
 ```html
 <template>
-  <hy-watermark
-    image="https://pic1.imgdb.cn/item/67f8dfea88c538a9b5caea38.png"
-    :opacity="1"
-  ></hy-watermark>
+    <hy-watermark
+        image="https://pic1.imgdb.cn/item/67f8dfea88c538a9b5caea38.png"
+        :opacity="1"
+    ></hy-watermark>
 </template>
 ```
 
@@ -139,7 +140,7 @@
 
 ```html
 <template>
-  <hy-watermark text="华玥组件库" :isAntiTheft="true"></hy-watermark>
+    <hy-watermark text="华玥组件库" :isAntiTheft="true"></hy-watermark>
 </template>
 ```
 
@@ -147,28 +148,28 @@
 
 ### Watermark Props
 
-| 参数                  | 说明                    | 类型                            | 默认值         |
-|---------------------|-----------------------|-------------------------------|-------------|
-| title               | 标题                    | `string`                      | -           |
-| content             | 显示内容                  | `string`                      | -           |
-| image               | 显示图片的地址，支持网络图片和base64 | `string`                      | -           |
-| imageHeight         | 图片高度，数值默认单位px         | `number`                      | 50          |
-| imageWidth          | 图片宽度，数值默认单位px         | `number`                      | 70          |
-| gutterX             | X轴间距，数值默认单位px         | `number`                      | 0           |
-| gutterY             | Y轴间距，数值默认单位px         | `number`                      | 0           |
-| width               | canvas画布宽度，数值默认单位px   | `number`                      | 100         |
-| height              | canvas画布高度，数值默认单位px   | `number`                      | 100         |
-| fullScreen          | 是否为全屏水印               | `boolean`                     | true        |
-| titleSize           | 是否为全屏水印               | `boolean`                     | true        |
-| titleColor          | 是否为全屏水印               | `boolean`                     | true        |
-| color               | 水印字体颜色                | `string`                      | #8c8c8c     |
-| size                | 水印字体大小，数值默认单位px       | `number`                      | 14          |
-| fontStyle           | 水印字体样式（仅微信、支付宝和h5支持）  | `normal`\|`italic`\|`oblique` | normal      |
-| fontWeight          | 水印字体的粗细（仅微信、支付宝和h5支持） | `normal`\|`bold`\|`bolder`    | normal      |
-| fontFamily          | 水印字体系列（仅微信、支付宝和h5支持）  | `string`                      | PingFang SC |
-| rotate              | 水印旋转角度                | `number`                      | -25         |
-| zIndex              | 自定义层级                 | `number`                      | 10086       |
-| opacity             | 自定义透明度，取值 0~1         | `number`                      | 0.5         |
-| isAntiTheft`v0.6.4` | 防删除、防修改样式功能(在h5有效)    | `boolean`                     | false       |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| title | 标题 | `string` | - |
+| content | 显示内容 | `string` | - |
+| image | 显示图片的地址，支持网络图片和base64 | `string` | - |
+| imageHeight | 图片高度，数值默认单位px | `number` | 50 |
+| imageWidth | 图片宽度，数值默认单位px | `number` | 70 |
+| gutterX | X轴间距，数值默认单位px | `number` | 0 |
+| gutterY | Y轴间距，数值默认单位px | `number` | 0 |
+| width | canvas画布宽度，数值默认单位px | `number` | 100 |
+| height | canvas画布高度，数值默认单位px | `number` | 100 |
+| fullScreen | 是否为全屏水印 | `boolean` | true |
+| titleSize | 是否为全屏水印 | `boolean` | true |
+| titleColor | 是否为全屏水印 | `boolean` | true |
+| color | 水印字体颜色 | `string` | #8c8c8c |
+| size | 水印字体大小，数值默认单位px | `number` | 14 |
+| fontStyle | 水印字体样式（仅微信、支付宝和h5支持） | `normal`\|`italic`\|`oblique` | normal |
+| fontWeight | 水印字体的粗细（仅微信、支付宝和h5支持） | `normal`\|`bold`\|`bolder` | normal |
+| fontFamily | 水印字体系列（仅微信、支付宝和h5支持） | `string` | PingFang SC |
+| rotate | 水印旋转角度 | `number` | -25 |
+| zIndex | 自定义层级 | `number` | 10086 |
+| opacity | 自定义透明度，取值 0~1 | `number` | 0.5 |
+| isAntiTheft`v0.6.4` | 防删除、防修改样式功能(在h5有效) | `boolean` | false |
 
 <demo-model url="pages-design/watermark/watermark"></demo-model>

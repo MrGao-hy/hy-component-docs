@@ -1,8 +1,5 @@
 {
-  "root": ".",
-  "include": [
-    "**/*.md",
-    "**/*.mdx"
-  ],
-  "backend": ""
+    "root": ".",
+    "include": ["**/*.md", "**/*.mdx"],
+    "backend": ""
 }

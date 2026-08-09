@@ -1,25 +1,23 @@
 :root {
-  /* 图标背景 */
-  /* 设置线性渐变 */
-  --vp-home-hero-image-background-image: linear-gradient(-45deg, #bd34fe 50%, #47caff 50%);
-  /* 设置模糊度 */
-  --vp-home-hero-image-filter: blur(80px);
+    /* 图标背景 */
+    /* 设置线性渐变 */
+    --vp-home-hero-image-background-image: linear-gradient(-45deg, #bd34fe 50%, #47caff 50%);
+    /* 设置模糊度 */
+    --vp-home-hero-image-filter: blur(80px);
 }
-
 
 // 组件配置
 $hy-form-item-height: 70rpx;
 
-
 // 主颜色
-$hy-main-color: #01BEFF;
-$hy-main-orange: #FBBD12;
-$hy-embellished-green: #00FFC6;
-$hy-embellished-yellow: #FFF00D;
-$hy-auxiliary-powder: #FF71D2;
-$hy-auxiliary-blue: #82B2FF;
-$hy-bg-color: #FFFFFF;
-$hy-space-color: #F8F7F8;
+$hy-main-color: #01beff;
+$hy-main-orange: #fbbd12;
+$hy-embellished-green: #00ffc6;
+$hy-embellished-yellow: #fff00d;
+$hy-auxiliary-powder: #ff71d2;
+$hy-auxiliary-blue: #82b2ff;
+$hy-bg-color: #ffffff;
+$hy-space-color: #f8f7f8;
 
 // 边框颜色
 $hy-border-solid-color: rgba(0, 0, 0, 0.1);
@@ -32,106 +30,105 @@ $hy-box-shadow-color: rgba(0, 0, 0, 0.2);
 
 // 字体颜色
 $hy-font-color: #080808;
-$hy-font-sub-color: #AAAAAA;
+$hy-font-sub-color: #aaaaaa;
 $hy-content-color: #838383;
-$hy-font-holder-color: #E6E6E6;
+$hy-font-holder-color: #e6e6e6;
 
 $hy-mask-bg-color: rgba(0, 0, 0, 0.4);
 
 $hy-progress-bg-color: #f0f0f0;
 
+$hy-color-red: #e83a30;
+$hy-color-red-dark: #ba2e26;
+$hy-color-red-disabled: #f39c97;
+$hy-color-red-light: #fad8d6;
 
-$hy-color-red: #E83A30;
-$hy-color-red-dark: #BA2E26;
-$hy-color-red-disabled: #F39C97;
-$hy-color-red-light: #FAD8D6;
+$hy-color-purplered: #e72f8c;
+$hy-color-purplered-dark: #b9276f;
+$hy-color-purplered-disabled: #f397c5;
+$hy-color-purplered-light: #fad5e8;
 
-$hy-color-purplered: #E72F8C;
-$hy-color-purplered-dark: #B9276F;
-$hy-color-purplered-disabled: #F397C5;
-$hy-color-purplered-light: #FAD5E8;
+$hy-color-purple: #892fe8;
+$hy-color-purple-dark: #6e27ba;
+$hy-color-purple-disabled: #c497f3;
+$hy-color-purple-light: #e7d5fa;
 
-$hy-color-purple: #892FE8;
-$hy-color-purple-dark: #6E27BA;
-$hy-color-purple-disabled: #C497F3;
-$hy-color-purple-light: #E7D5FA;
+$hy-color-bluepurple: #5f4fd9;
+$hy-color-bluepurple-dark: #4c3fae;
+$hy-color-bluepurple-disabled: #afa7ec;
+$hy-color-bluepurple-light: #dfdcf7;
 
-$hy-color-bluepurple: #5F4FD9;
-$hy-color-bluepurple-dark: #4C3FAE;
-$hy-color-bluepurple-disabled: #AFA7EC;
-$hy-color-bluepurple-light: #DFDCF7;
+$hy-color-aquablue: #3646ff;
+$hy-color-aquablue-dark: #2b38cc;
+$hy-color-aquablue-disabled: #9aa2ff;
+$hy-color-aquablue-light: #d7daff;
 
-$hy-color-aquablue: #3646FF;
-$hy-color-aquablue-dark: #2B38CC;
-$hy-color-aquablue-disabled: #9AA2FF;
-$hy-color-aquablue-light: #D7DAFF;
+$hy-color-blue: #3d7eff;
+$hy-color-blue-dark: #3465cc;
+$hy-color-blue-disabled: #9ebeff;
+$hy-color-blue-light: #d8e5ff;
 
-$hy-color-blue: #3D7EFF;
-$hy-color-blue-dark: #3465CC;
-$hy-color-blue-disabled: #9EBEFF;
-$hy-color-blue-light: #D8E5FF;
+$hy-color-indigo: #31c9e8;
+$hy-color-indigo-dark: #28a1ba;
+$hy-color-indigo-disabled: #98e4f3;
+$hy-color-indigo-light: #d6f4fa;
 
-$hy-color-indigo: #31C9E8;
-$hy-color-indigo-dark: #28A1BA;
-$hy-color-indigo-disabled: #98E4F3;
-$hy-color-indigo-light: #D6F4FA;
+$hy-color-cyan: #2de88d;
+$hy-color-cyan-dark: #24ba97;
+$hy-color-cyan-disabled: #96f3de;
+$hy-color-cyan-light: #d5faf2;
 
-$hy-color-cyan: #2DE88D;
-$hy-color-cyan-dark: #24BA97;
-$hy-color-cyan-disabled: #96F3DE;
-$hy-color-cyan-light: #D5FAF2;
+$hy-color-teal: #24f083;
+$hy-color-teal-dark: #1dc069;
+$hy-color-teal-disabled: #91f7c1;
+$hy-color-teal-light: #d3fce6;
 
-$hy-color-teal: #24F083;
-$hy-color-teal-dark: #1DC069;
-$hy-color-teal-disabled: #91F7C1;
-$hy-color-teal-light: #D3FCE6;
+$hy-color-green: #31e749;
+$hy-color-green-dark: #28b93d;
+$hy-color-green-disabled: #98f3a4;
+$hy-color-green-light: #d6fadb;
 
-$hy-color-green: #31E749;
-$hy-color-green-dark: #28B93D;
-$hy-color-green-disabled: #98F3A4;
-$hy-color-green-light: #D6FADB;
+$hy-color-yellowgreen: #a4e82f;
+$hy-color-yellowgreen-dark: #82ba27;
+$hy-color-yellowgreen-disabled: #d1f397;
+$hy-color-yellowgreen-light: #edfad5;
 
-$hy-color-yellowgreen: #A4E82F;
-$hy-color-yellowgreen-dark: #82BA27;
-$hy-color-yellowgreen-disabled: #D1F397;
-$hy-color-yellowgreen-light: #EDFAD5;
+$hy-color-lime: #d5eb00;
+$hy-color-lime-dark: #aabc00;
+$hy-color-lime-disabled: #e9f57f;
+$hy-color-lime-light: #f7fbcc;
 
-$hy-color-lime: #D5EB00;
-$hy-color-lime-dark: #AABC00;
-$hy-color-lime-disabled: #E9F57F;
-$hy-color-lime-light: #F7FBCC;
+$hy-color-yellow: #fff420;
+$hy-color-yellow-dark: #ccc21a;
+$hy-color-yellow-disabled: #fff88f;
+$hy-color-yellow-light: #fffdd2;
 
-$hy-color-yellow: #FFF420;
-$hy-color-yellow-dark: #CCC21A;
-$hy-color-yellow-disabled: #FFF88F;
-$hy-color-yellow-light: #FFFDD2;
+$hy-color-orangeyellow: #ffca28;
+$hy-color-orangeyellow-dark: #cca220;
+$hy-color-orangeyellow-disabled: #ffe493;
+$hy-color-orangeyellow-light: #fff4d4;
 
-$hy-color-orangeyellow: #FFCA28;
-$hy-color-orangeyellow-dark: #CCA220;
-$hy-color-orangeyellow-disabled: #FFE493;
-$hy-color-orangeyellow-light: #FFF4D4;
+$hy-color-orange: #ffa726;
+$hy-color-orange-dark: #cc851e;
+$hy-color-orange-disabled: #ffd392;
+$hy-color-orange-light: #ffedd4;
 
-$hy-color-orange: #FFA726;
-$hy-color-orange-dark: #CC851E;
-$hy-color-orange-disabled: #FFD392;
-$hy-color-orange-light: #FFEDD4 ;
+$hy-color-orangered: #ff7043;
+$hy-color-orangered-dark: #cc5a36;
+$hy-color-orangered-disabled: #ffb7a1;
+$hy-color-orangered-light: #ffe2d9;
 
-$hy-color-orangered: #FF7043;
-$hy-color-orangered-dark: #CC5A36;
-$hy-color-orangered-disabled: #FFB7A1;
-$hy-color-orangered-light: #FFE2D9;
+$hy-color-brown: #914f2c;
+$hy-color-brown-dark: #743f23;
+$hy-color-brown-disabled: #c8a795;
+$hy-color-brown-light: #e9dcd5;
 
-$hy-color-brown: #914F2C;
-$hy-color-brown-dark: #743F23;
-$hy-color-brown-disabled: #C8A795;
-$hy-color-brown-light: #E9DCD5;
+$hy-color-grey: #78909c;
+$hy-color-grey-dark: #5f7e8b;
+$hy-color-grey-disabled: #c6d1d8;
+$hy-color-grey-light: #e4e9ec;
 
-$hy-color-grey: #78909C;
-$hy-color-grey-dark: #5F7E8B;
-$hy-color-grey-disabled: #C6D1D8;
-$hy-color-grey-light: #E4E9EC;
-
-$hy-color-gray: #AAAAAA;
+$hy-color-gray: #aaaaaa;
 $hy-color-gray-dark: #838383;
-$hy-color-gray-disabled: #E6E6E6;
-$hy-color-gray-light: #F8F7F8;
+$hy-color-gray-disabled: #e6e6e6;
+$hy-color-gray-light: #f8f7f8;

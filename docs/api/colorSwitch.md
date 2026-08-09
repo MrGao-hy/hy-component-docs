@@ -21,9 +21,9 @@
 **示例**
 
 ```typescript
-import { rgbToHex } from "@hy-app/ui";
+import { rgbToHex } from '@hy-app/ui';
 
-const rgb = "rgb(13, 145, 20)";
+const rgb = 'rgb(13, 145, 20)';
 console.log(rgbToHex(rgb)); // #0D9114
 ```
 
@@ -48,9 +48,9 @@ console.log(rgbToHex(rgb)); // #0D9114
 **示例**
 
 ```typescript
-import { hexToRgb } from "@hy-app/ui";
+import { hexToRgb } from '@hy-app/ui';
 
-const hex = "#0afdce";
+const hex = '#0afdce';
 console.log(hexToRgb(hex)); // rgb(10, 253, 206)
 ```
 
@@ -77,9 +77,9 @@ console.log(hexToRgb(hex)); // rgb(10, 253, 206)
 **示例**
 
 ```typescript
-import { colorGradient } from "@hy-app/ui";
+import { colorGradient } from '@hy-app/ui';
 
-console.log(colorGradient("rgb(250,250,250)", "rgb(252,252,252)", 3));
+console.log(colorGradient('rgb(250,250,250)', 'rgb(252,252,252)', 3));
 // ["#fafafa", "#fafafa", "#fbfbfb"]
 ```
 
@@ -105,8 +105,8 @@ console.log(colorGradient("rgb(250,250,250)", "rgb(252,252,252)", 3));
 **示例**
 
 ```typescript
-import { colorToRgba } from "@hy-app/ui";
+import { colorToRgba } from '@hy-app/ui';
 
-colorToRgba("#000000", 0.35); // rgba(0, 0, 0, 0.35)
-colorToRgba("rgb(255, 180, 0)", 0.4); // rgba(255, 180, 0, 0.4)
+colorToRgba('#000000', 0.35); // rgba(0, 0, 0, 0.35)
+colorToRgba('rgb(255, 180, 0)', 0.4); // rgba(255, 180, 0, 0.4)
 ```

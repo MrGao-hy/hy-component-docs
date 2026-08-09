@@ -21,11 +21,11 @@
 **示例**
 
 ```typescript
-import { isNumber } from "@hy-app/ui";
+import { isNumber } from '@hy-app/ui';
 
 console.log(isNumber(123)); // true
-console.log(isNumber("123")); // true
-console.log(isNumber("admin")); // false
+console.log(isNumber('123')); // true
+console.log(isNumber('admin')); // false
 ```
 
 ---
@@ -49,10 +49,10 @@ console.log(isNumber("admin")); // false
 **示例**
 
 ```typescript
-import { isNumericString } from "@hy-app/ui";
+import { isNumericString } from '@hy-app/ui';
 
 console.log(isNumericString(123)); // false
-console.log(isNumericString("123")); // true
+console.log(isNumericString('123')); // true
 ```
 
 ---
@@ -76,12 +76,12 @@ console.log(isNumericString("123")); // true
 **示例**
 
 ```typescript
-import { isString } from "@hy-app/ui";
+import { isString } from '@hy-app/ui';
 
 console.log(isString(123)); // false
 console.log(isString(true)); // false
 console.log(isString({ name: 111 })); // false
-console.log(isString("kiss")); // true
+console.log(isString('kiss')); // true
 ```
 
 ---
@@ -105,11 +105,11 @@ console.log(isString("kiss")); // true
 **示例**
 
 ```typescript
-import { isBoolean } from "@hy-app/ui";
+import { isBoolean } from '@hy-app/ui';
 
 console.log(isBoolean(123)); // false
-console.log(isBoolean("123")); // false
-console.log(isBoolean("true")); // false
+console.log(isBoolean('123')); // false
+console.log(isBoolean('true')); // false
 console.log(isBoolean(false)); // true
 ```
 
@@ -134,7 +134,7 @@ console.log(isBoolean(false)); // true
 **示例**
 
 ```typescript
-import { isArray } from "@hy-app/ui";
+import { isArray } from '@hy-app/ui';
 
 console.log(isArray([1, 2, 3])); // true
 console.log(isArray({})); // false
@@ -161,10 +161,10 @@ console.log(isArray({})); // false
 **示例**
 
 ```typescript
-import { isObject } from "@hy-app/ui";
+import { isObject } from '@hy-app/ui';
 
 console.log(isObject([])); // false
-console.log(isObject({ name: "乌沙奇" })); // true
+console.log(isObject({ name: '乌沙奇' })); // true
 ```
 
 ---
@@ -188,9 +188,9 @@ console.log(isObject({ name: "乌沙奇" })); // true
 **示例**
 
 ```typescript
-import { isImage } from "@hy-app/ui";
+import { isImage } from '@hy-app/ui';
 
-console.log(isImage("https://example.com/image.png")); // true
+console.log(isImage('https://example.com/image.png')); // true
 ```
 
 ---
@@ -214,9 +214,9 @@ console.log(isImage("https://example.com/image.png")); // true
 **示例**
 
 ```typescript
-import { isBase64Image } from "@hy-app/ui";
+import { isBase64Image } from '@hy-app/ui';
 
-console.log(isBase64Image("data:image...")); // true
+console.log(isBase64Image('data:image...')); // true
 ```
 
 ---
@@ -240,9 +240,9 @@ console.log(isBase64Image("data:image...")); // true
 **示例**
 
 ```typescript
-import { isVideo } from "@hy-app/ui";
+import { isVideo } from '@hy-app/ui';
 
-console.log(isVideo("http://example.com/video.mp4")); // true
+console.log(isVideo('http://example.com/video.mp4')); // true
 ```
 
 ---
@@ -266,9 +266,9 @@ console.log(isVideo("http://example.com/video.mp4")); // true
 **示例**
 
 ```typescript
-import { isDate } from "@hy-app/ui";
+import { isDate } from '@hy-app/ui';
 
-console.log(isDate("2024-10-10")); // true
+console.log(isDate('2024-10-10')); // true
 console.log(isDate(1754032899)); // true
 ```
 
@@ -293,7 +293,7 @@ console.log(isDate(1754032899)); // true
 **示例**
 
 ```typescript
-import { isPhone } from "@hy-app/ui";
+import { isPhone } from '@hy-app/ui';
 
 console.log(isPhone(19701012929)); // true
 ```
@@ -319,9 +319,9 @@ console.log(isPhone(19701012929)); // true
 **示例**
 
 ```typescript
-import { isIdCard } from "@hy-app/ui";
+import { isIdCard } from '@hy-app/ui';
 
-console.log(isIdCard("360322201207022918")); // true
+console.log(isIdCard('360322201207022918')); // true
 ```
 
 ---
@@ -345,10 +345,10 @@ console.log(isIdCard("360322201207022918")); // true
 **示例**
 
 ```typescript
-import { isChinese } from "@hy-app/ui";
+import { isChinese } from '@hy-app/ui';
 
-console.log(isChinese("皇帝")); // true
-console.log(isChinese("3ed皇帝")); // false
+console.log(isChinese('皇帝')); // true
+console.log(isChinese('3ed皇帝')); // false
 ```
 
 ---
@@ -370,7 +370,7 @@ console.log(isChinese("3ed皇帝")); // false
 **示例**
 
 ```typescript
-import { isH5 } from "@hy-app/ui";
+import { isH5 } from '@hy-app/ui';
 
 console.log(isH5()); // true
 ```

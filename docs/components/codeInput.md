@@ -1,19 +1,22 @@
 # CodeInput 验证码输入组件
+
 > 该组件一般用于验证用户短信验证码的场景，也可以结合华玥的键盘组件使用
 
 ## :pushpin:平台差异说明
 
-| APP(vue) | H5 | 微信小程序 | 支付宝小程序 |
-|----------|----|-------|--------|
-| ✔        | ✔  | ✔     | ✔      |
+| APP(vue) | H5  | 微信小程序 | 支付宝小程序 |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
 ## :warning:注意事项
 
-:::warning 注意事项
+::: warning 注意事项
+
 - `disabledKeyboard` 设置为 `true` 时，点击输入框不会唤起系统键盘，适合配合自定义键盘使用
 - `dot` 参数设置为 `true` 时，输入内容会用圆点替代显示，但事件回调会返回真实值
 - `mode` 支持 `box`（盒子模式）和 `line`（底部横线模式）两种模式
 - `disabledDot` 参数控制是否禁止输入小数点，默认为 `true`（禁止输入）
+
 :::
 
 ## :japanese_castle:基本使用示例
@@ -24,9 +27,9 @@
 </template>
 
 <script setup>
-    import { ref } from 'vue'
+    import { ref } from 'vue';
 
-    const value = ref('')
+    const value = ref('');
 </script>
 ```
 
@@ -38,9 +41,9 @@
 </template>
 
 <script setup>
-    import { ref } from 'vue'
+    import { ref } from 'vue';
 
-    const value = ref('')
+    const value = ref('');
 </script>
 ```
 
@@ -52,9 +55,9 @@
 </template>
 
 <script setup>
-    import { ref } from 'vue'
+    import { ref } from 'vue';
 
-    const value = ref('')
+    const value = ref('');
 </script>
 ```
 
@@ -66,9 +69,9 @@
 </template>
 
 <script setup>
-    import { ref } from 'vue'
+    import { ref } from 'vue';
 
-    const value = ref('')
+    const value = ref('');
 </script>
 ```
 
@@ -80,9 +83,9 @@
 </template>
 
 <script setup>
-    import { ref } from 'vue'
+    import { ref } from 'vue';
 
-    const value = ref('')
+    const value = ref('');
 </script>
 ```
 
@@ -94,9 +97,9 @@
 </template>
 
 <script setup>
-    import { ref } from 'vue'
+    import { ref } from 'vue';
 
-    const value = ref('')
+    const value = ref('');
 </script>
 ```
 
@@ -108,9 +111,9 @@
 </template>
 
 <script setup>
-    import { ref } from 'vue'
+    import { ref } from 'vue';
 
-    const value = ref('')
+    const value = ref('');
 </script>
 ```
 
@@ -122,9 +125,9 @@
 </template>
 
 <script setup>
-    import { ref } from 'vue'
+    import { ref } from 'vue';
 
-    const value = ref('')
+    const value = ref('');
 </script>
 ```
 
@@ -136,9 +139,9 @@
 </template>
 
 <script setup>
-    import { ref } from 'vue'
+    import { ref } from 'vue';
 
-    const value = ref('')
+    const value = ref('');
 </script>
 ```
 
@@ -169,19 +172,19 @@
 </template>
 
 <script setup>
-    import { ref } from 'vue'
+    import { ref } from 'vue';
 
-    const keyboardValue = ref('')
-    const showKeyboard = ref(false)
+    const keyboardValue = ref('');
+    const showKeyboard = ref(false);
 
     const handleFinish = (value) => {
-        console.log('输入完成:', value)
-        showKeyboard.value = false
+        console.log('输入完成:', value);
+        showKeyboard.value = false;
         uni.showToast({
             title: `输入完成: ${value}`,
-            icon: 'none'
-        })
-    }
+            icon: 'none',
+        });
+    };
 </script>
 ```
 
@@ -193,17 +196,17 @@
 </template>
 
 <script setup>
-    import { ref } from 'vue'
+    import { ref } from 'vue';
 
-    const value = ref('')
+    const value = ref('');
 
     const handleChange = (value) => {
-        console.log('输入内容改变:', value)
-    }
+        console.log('输入内容改变:', value);
+    };
 
     const handleFinish = (value) => {
-        console.log('输入完成:', value)
-    }
+        console.log('输入完成:', value);
+    };
 </script>
 ```
 
@@ -215,18 +218,18 @@
 </template>
 
 <script setup>
-    import { ref } from 'vue'
+    import { ref } from 'vue';
 
-    const value = ref('')
+    const value = ref('');
 
     const handleFocus = () => {
-        console.log('输入框获取焦点')
+        console.log('输入框获取焦点');
         // 可以在这里打开自定义键盘
-    }
+    };
 
     const handleBlur = () => {
-        console.log('输入框失去焦点')
-    }
+        console.log('输入框失去焦点');
+    };
 </script>
 ```
 
@@ -234,34 +237,34 @@
 
 ### CodeInput Props
 
-| 参数               | 说明               | 类型                 | 默认值   |
-|------------------|------------------|--------------------|-------|
-| v-model          | 预置值              | `string`\|`number` | -     |
-| adjustPosition   | 键盘弹起时，是否自动上推页面   | `boolean`          | true  |
-| maxlength        | 输入字符个数           | `number`           | 6     |
-| border           | 无边框输入框           | `boolean`          | true  |
-| dot              | 是否用圆点填充          | `boolean`          | true  |
-| mode             | 模式选择，见上方"基本使用"说明 | `box`\|`line`      | box   |
-| hairline         | 是否细边框            | `boolean`          | false |
-| space            | 字符间的距离           | `number`           | 10    |
-| focus            | 是否自动获取焦点         | `boolean`          | false |
-| bold             | 字体和输入横线是否加粗      | `boolean`          | false |
-| color            | 字体颜色             | `string`           | -     |
-| fontSize         | 字体大小，单位rpx       | `string`\|`number` | 18    |
-| size             | 输入框的大小，宽等于高，数值默认单位px      | `string`\|`number` | 35    |
-| disabledKeyboard | 禁止点击输入框唤起系统键盘    | `boolean`          | false |
-| borderColor      | 边框和线条颜色          | `string`           | -     |
-| disabledDot      | 是否禁止输入"."符号      | `boolean`          | true  |
-| customStyle      | 自定义需要用到的外部样式     | `CSSProperties`    | -     |
-| customClass      | 自定义外部类名          | `string`           | -     |
+| 参数             | 说明                                   | 类型               | 默认值 |
+| ---------------- | -------------------------------------- | ------------------ | ------ |
+| v-model          | 预置值                                 | `string`\|`number` | -      |
+| adjustPosition   | 键盘弹起时，是否自动上推页面           | `boolean`          | true   |
+| maxlength        | 输入字符个数                           | `number`           | 6      |
+| border           | 无边框输入框                           | `boolean`          | true   |
+| dot              | 是否用圆点填充                         | `boolean`          | true   |
+| mode             | 模式选择，见上方"基本使用"说明         | `box`\|`line`      | box    |
+| hairline         | 是否细边框                             | `boolean`          | false  |
+| space            | 字符间的距离                           | `number`           | 10     |
+| focus            | 是否自动获取焦点                       | `boolean`          | false  |
+| bold             | 字体和输入横线是否加粗                 | `boolean`          | false  |
+| color            | 字体颜色                               | `string`           | -      |
+| fontSize         | 字体大小，单位rpx                      | `string`\|`number` | 18     |
+| size             | 输入框的大小，宽等于高，数值默认单位px | `string`\|`number` | 35     |
+| disabledKeyboard | 禁止点击输入框唤起系统键盘             | `boolean`          | false  |
+| borderColor      | 边框和线条颜色                         | `string`           | -      |
+| disabledDot      | 是否禁止输入"."符号                    | `boolean`          | true   |
+| customStyle      | 自定义需要用到的外部样式               | `CSSProperties`    | -      |
+| customClass      | 自定义外部类名                         | `string`           | -      |
 
 ### Events
 
-| 事件名    | 说明                         | 回调参数         |
-|--------|----------------------------|--------------|
-| change | 输入内容发生改变时触发，具体见上方说明        | value：当前输入的值 |
+| 事件名 | 说明                                        | 回调参数            |
+| ------ | ------------------------------------------- | ------------------- |
+| change | 输入内容发生改变时触发，具体见上方说明      | value：当前输入的值 |
 | finish | 输入字符个数达maxlength值时触发，见上方说明 | value：当前输入的值 |
-| focus  | 输入框获取焦点时触发                 | -            |
-| blur   | 输入框失去焦点时触发                 | -            |
+| focus  | 输入框获取焦点时触发                        | -                   |
+| blur   | 输入框失去焦点时触发                        | -                   |
 
 <demo-model url="pages-design/codeInput/codeInput"></demo-model>
