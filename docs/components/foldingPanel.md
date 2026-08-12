@@ -20,7 +20,7 @@
 <hy-folding-panel v-model="activeIndex">
     <hy-folding-panel-item title="水果" index="fruits"></hy-folding-panel-item>
     <hy-folding-panel-item title="饮品" index="beverage"></hy-folding-panel-item>
-</hy-config-provider>
+</hy-folding-panel>
 ```
 
 ### 禁用面板
@@ -32,7 +32,7 @@
 <hy-folding-panel v-model="activeIndex" :disabled="true">
     <hy-folding-panel-item title="水果" index="fruits"></hy-folding-panel-item>
     <hy-folding-panel-item title="饮品" index="beverage"></hy-folding-panel-item>
-</hy-config-provider>
+</hy-folding-panel>
 ```
 
 ### 显示边框
@@ -43,7 +43,7 @@
 <hy-folding-panel v-model="activeIndex" :border="true">
     <hy-folding-panel-item title="水果" index="fruits"></hy-folding-panel-item>
     <hy-folding-panel-item title="饮品" index="beverage"></hy-folding-panel-item>
-</hy-config-provider>
+</hy-folding-panel>
 ```
 
 ### 设置面板大小
@@ -57,7 +57,7 @@
 <hy-folding-panel v-model="activeIndex" size="small">
     <hy-folding-panel-item title="水果" index="fruits"></hy-folding-panel-item>
     <hy-folding-panel-item title="饮品" index="beverage"></hy-folding-panel-item>
-</hy-config-provider>
+</hy-folding-panel>
 ```
 
 ### 自定义面板头部
