@@ -69,7 +69,7 @@ error('This is an error prompt');
 
 ---
 
-### sleep(value?) => Promise<void>
+### sleep(value?) => `Promise<void>`
 
 Delays function execution, returns a Promise object, and can be used with `await` for waiting.
 
@@ -83,7 +83,7 @@ Delays function execution, returns a Promise object, and can be used with `await
 
 | Type            | Description                       |
 | --------------- | -------------------------- |
-| Promise<void> | Promise object, usable with await |
+| `Promise<void>` | Promise object, usable with await |
 
 **Example**
 

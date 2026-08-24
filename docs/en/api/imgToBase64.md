@@ -4,21 +4,21 @@ Compatibility with APP, H5, and Mini Programs.
 
 ## Function List
 
-### imageToBase64(path) => Promise<string>
+### imageToBase64(path) => `Promise<string>`
 
 Converts a local image to Base64 format, compatible with APP, H5, and Mini Programs.
 
 **Parameters**
 
-| Parameter Name | Type    | Required | Default Value | Description             |
-| -------------- | ------- | -------- | ------------- | ----------------------- |
-| path           | string  | Yes      | -             | Path to the locally uploaded image |
+| Parameter Name | Type   | Required | Default Value | Description                        |
+| -------------- | ------ | -------- | ------------- | ---------------------------------- |
+| path           | string | Yes      | -             | Path to the locally uploaded image |
 
 **Return Value**
 
-| Type               | Description              |
-| ------------------ | ------------------------ |
-| Promise<string>    | Base64 format image string |
+| Type              | Description                |
+| ----------------- | -------------------------- |
+| `Promise<string>` | Base64 format image string |
 
 **Example**
 

@@ -19,7 +19,7 @@ Due to the limitations of `nodesRef.boundingClientRect`, the `left`, `top`, `rig
 
 ## Function List
 
-### getRect(selector, all?, ins?) => Promise<any | any[]>
+### getRect(selector, all?, ins?) => `Promise<any | any[]>`
 
 Retrieve the layout information of nodes corresponding to the specified selector, wrapped from uni's `nodesRef.boundingClientRect`.
 
