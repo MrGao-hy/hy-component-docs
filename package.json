@@ -17,6 +17,7 @@
         "sass-embedded": "^1.85.1",
         "tsx": "^4.20.3",
         "vitepress": "2.0.0-alpha.16",
+        "vitepress-ai-i18n": "^1.0.1",
         "vitepress-plugin-group-icons": "^1.5.2",
         "vitepress-plugin-llms": "^1.5.1"
     },

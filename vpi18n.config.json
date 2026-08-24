@@ -1,0 +1,9 @@
+{
+    "source": "docs",
+    "target": "en",
+    "glossary": "./glossary.json",
+    "prompt": {
+        "translate": "你是一名前端组件库技术文档翻译专家，将下面的markdown文档翻译成英文。保留所有markdown语法、代码块、mermaid、链接路径、front‑matter，**所有组件名称、包名不允许翻译**。{{glossary}}",
+        "sync": "翻译 vitepress导航菜单文字，只返回标准json结果，不要额外文字"
+    }
+}

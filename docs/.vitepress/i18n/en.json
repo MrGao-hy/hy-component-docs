@@ -1,0 +1,645 @@
+{
+    "nav": [
+        {
+            "text": "Guide",
+            "items": [
+                {
+                    "text": "Quick Start",
+                    "items": [
+                        {
+                            "text": "Introduction",
+                            "link": "/en/guide/intro"
+                        },
+                        {
+                            "text": "Quick Start",
+                            "link": "/en/guide/start"
+                        },
+                        {
+                            "text": "Built-in Styles",
+                            "link": "/en/guide/style"
+                        },
+                        {
+                            "text": "Common Development Issues",
+                            "link": "/en/guide/announcements"
+                        },
+                        {
+                            "text": "Change Log",
+                            "link": "/en/guide/changelog"
+                        }
+                    ]
+                },
+                {
+                    "text": "Engineering Projects",
+                    "items": [
+                        {
+                            "text": "Theme Configuration",
+                            "link": "/en/guide/theme"
+                        },
+                        {
+                            "text": "Internationalization",
+                            "link": "/en/guide/locale"
+                        }
+                    ]
+                },
+                {
+                    "text": "AI Tools",
+                    "items": [
+                        {
+                            "text": "LLMs",
+                            "link": "/en/guide/LLMs"
+                        },
+                        {
+                            "text": "MCP",
+                            "link": "/en/guide/mcp"
+                        },
+                        {
+                            "text": "Skills",
+                            "link": "/en/guide/skills"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "text": "Component",
+            "items": [
+                {
+                    "text": "Basic",
+                    "link": "/en/components/badge"
+                },
+                {
+                    "text": "Form",
+                    "link": "/en/components/addressPicker"
+                },
+                {
+                    "text": "Layout",
+                    "link": "/en/components/card"
+                },
+                {
+                    "text": "Feedback",
+                    "link": "/en/components/actionSheet"
+                },
+                {
+                    "text": "Navigation",
+                    "link": "/en/components/backTop"
+                },
+                {
+                    "text": "Other",
+                    "link": "/en/components/avatar"
+                },
+                {
+                    "text": "Business",
+                    "link": "/en/components/coupon"
+                }
+            ]
+        },
+        {
+            "text": "api",
+            "link": "/en/api/intro"
+        },
+        {
+            "text": "📖 Learning Documents",
+            "link": "/en/download/web"
+        },
+        {
+            "text": "About the Author",
+            "link": "https://blogs.hy-design-uni.top/"
+        }
+    ],
+    "sidebar": {
+        "/en/guide/": [
+            {
+                "text": "Quick Start",
+                "items": [
+                    {
+                        "text": "Introduction",
+                        "link": "/en/guide/intro"
+                    },
+                    {
+                        "text": "Quick Start",
+                        "link": "/en/guide/start"
+                    },
+                    {
+                        "text": "Built-in Styles",
+                        "link": "/en/guide/style"
+                    },
+                    {
+                        "text": "Common Development Issues",
+                        "link": "/en/guide/announcements"
+                    },
+                    {
+                        "text": "Change Log",
+                        "link": "/en/guide/changelog"
+                    }
+                ]
+            },
+            {
+                "text": "Engineering Projects",
+                "items": [
+                    {
+                        "text": "Theme",
+                        "link": "/en/guide/theme"
+                    },
+                    {
+                        "text": "Internationalization",
+                        "link": "/en/guide/locale"
+                    }
+                ]
+            },
+            {
+                "text": "AI Tools",
+                "items": [
+                    {
+                        "text": "LLMs",
+                        "link": "/en/guide/LLMs"
+                    },
+                    {
+                        "text": "MCP",
+                        "link": "/en/guide/mcp"
+                    },
+                    {
+                        "text": "Skills",
+                        "link": "/en/guide/skills"
+                    }
+                ]
+            }
+        ],
+        "/en/components/": [
+            {
+                "text": "Basic",
+                "items": [
+                    {
+                        "text": "Badge",
+                        "link": "/en/components/badge"
+                    },
+                    {
+                        "text": "Button",
+                        "link": "/en/components/button"
+                    },
+                    {
+                        "text": "Cell",
+                        "link": "/en/components/cell"
+                    },
+                    {
+                        "text": "Color",
+                        "link": "/en/components/color"
+                    },
+                    {
+                        "text": "ConfigProvider",
+                        "link": "/en/components/configProvider"
+                    },
+                    {
+                        "text": "Icon",
+                        "link": "/en/components/icon"
+                    },
+                    {
+                        "text": "Image",
+                        "link": "/en/components/image"
+                    },
+                    {
+                        "text": "Loading",
+                        "link": "/en/components/loading"
+                    },
+                    {
+                        "text": "Swiper",
+                        "link": "/en/components/swiper"
+                    },
+                    {
+                        "text": "Tag",
+                        "link": "/en/components/tag"
+                    },
+                    {
+                        "text": "Text",
+                        "link": "/en/components/text"
+                    }
+                ]
+            },
+            {
+                "text": "Form",
+                "items": [
+                    {
+                        "text": "AddressPicker",
+                        "link": "/en/components/addressPicker"
+                    },
+                    {
+                        "text": "Calendar",
+                        "link": "/en/components/calendar"
+                    },
+                    {
+                        "text": "Cascader",
+                        "link": "/en/components/cascader"
+                    },
+                    {
+                        "text": "Checkbox",
+                        "link": "/en/components/checkbox"
+                    },
+                    {
+                        "text": "CheckButton",
+                        "link": "/en/components/checkButton"
+                    },
+                    {
+                        "text": "DatetimePicker",
+                        "link": "/en/components/datetimePicker"
+                    },
+                    {
+                        "text": "Form",
+                        "link": "/en/components/form"
+                    },
+                    {
+                        "text": "FormGroup",
+                        "link": "/en/components/formGroup"
+                    },
+                    {
+                        "text": "Input",
+                        "link": "/en/components/input"
+                    },
+                    {
+                        "text": "Keyboard",
+                        "link": "/en/components/keyboard"
+                    },
+                    {
+                        "text": "NumberStep",
+                        "link": "/en/components/numberStep"
+                    },
+                    {
+                        "text": "Picker",
+                        "link": "/en/components/picker"
+                    },
+                    {
+                        "text": "Radio",
+                        "link": "/en/components/radio"
+                    },
+                    {
+                        "text": "Rate",
+                        "link": "/en/components/rate"
+                    },
+                    {
+                        "text": "Search",
+                        "link": "/en/components/search"
+                    },
+                    {
+                        "text": "Slider",
+                        "link": "/en/components/slider"
+                    },
+                    {
+                        "text": "Switch",
+                        "link": "/en/components/switch"
+                    },
+                    {
+                        "text": "Textarea",
+                        "link": "/en/components/textarea"
+                    },
+                    {
+                        "text": "Upload",
+                        "link": "/en/components/upload"
+                    }
+                ]
+            },
+            {
+                "text": "Layout",
+                "items": [
+                    {
+                        "text": "Card",
+                        "link": "/en/components/card"
+                    },
+                    {
+                        "text": "Divider",
+                        "link": "/en/components/divider"
+                    },
+                    {
+                        "text": "Flex",
+                        "link": "/en/components/flex"
+                    },
+                    {
+                        "text": "FloatButton",
+                        "link": "/en/components/floatButton"
+                    },
+                    {
+                        "text": "Grid",
+                        "link": "/en/components/grid"
+                    },
+                    {
+                        "text": "Virtual List",
+                        "link": "/en/components/list"
+                    },
+                    {
+                        "text": "LineProgress",
+                        "link": "/en/components/lineProgress"
+                    },
+                    {
+                        "text": "Line",
+                        "link": "/en/components/line"
+                    },
+                    {
+                        "text": "Overlay",
+                        "link": "/en/components/overlay"
+                    },
+                    {
+                        "text": "ScrollList",
+                        "link": "/en/components/scrollList"
+                    },
+                    {
+                        "text": "Skeleton",
+                        "link": "/en/components/skeleton"
+                    },
+                    {
+                        "text": "Sticky",
+                        "link": "/en/components/sticky"
+                    },
+                    {
+                        "text": "Waterfall",
+                        "link": "/en/components/waterfall"
+                    },
+                    {
+                        "text": "Watermark",
+                        "link": "/en/components/watermark"
+                    }
+                ]
+            },
+            {
+                "text": "Feedback",
+                "items": [
+                    {
+                        "text": "ActionSheet",
+                        "link": "/en/components/actionSheet"
+                    },
+                    {
+                        "text": "FoldingPanel",
+                        "link": "/en/components/foldingPanel"
+                    },
+                    {
+                        "text": "Modal",
+                        "link": "/en/components/modal"
+                    },
+                    {
+                        "text": "NoticeBar",
+                        "link": "/en/components/noticeBar"
+                    },
+                    {
+                        "text": "Notify",
+                        "link": "/en/components/notify"
+                    },
+                    {
+                        "text": "Popover",
+                        "link": "/en/components/popover"
+                    },
+                    {
+                        "text": "Popup",
+                        "link": "/en/components/popup"
+                    },
+                    {
+                        "text": "SwipeAction",
+                        "link": "/en/components/swipeAction"
+                    },
+                    {
+                        "text": "Toast",
+                        "link": "/en/components/toast"
+                    },
+                    {
+                        "text": "Tooltip",
+                        "link": "/en/components/tooltip"
+                    },
+                    {
+                        "text": "Warn",
+                        "link": "/en/components/warn"
+                    }
+                ]
+            },
+            {
+                "text": "Navigation",
+                "items": [
+                    {
+                        "text": "BackTop",
+                        "link": "/en/components/backTop"
+                    },
+                    {
+                        "text": "Dropdown",
+                        "link": "/en/components/dropdown"
+                    },
+                    {
+                        "text": "Empty",
+                        "link": "/en/components/empty"
+                    },
+                    {
+                        "text": "IndexBar",
+                        "link": "/en/components/indexBar"
+                    },
+                    {
+                        "text": "Menu",
+                        "link": "/en/components/menu"
+                    },
+                    {
+                        "text": "Navbar",
+                        "link": "/en/components/navbar"
+                    },
+                    {
+                        "text": "Pagination",
+                        "link": "/en/components/pagination"
+                    },
+                    {
+                        "text": "Subsection",
+                        "link": "/en/components/subsection"
+                    },
+                    {
+                        "text": "Steps",
+                        "link": "/en/components/steps"
+                    },
+                    {
+                        "text": "Tabs",
+                        "link": "/en/components/tabs"
+                    },
+                    {
+                        "text": "TabBar",
+                        "link": "/en/components/tabBar"
+                    }
+                ]
+            },
+            {
+                "text": "Other",
+                "items": [
+                    {
+                        "text": "Avatar",
+                        "link": "/en/components/avatar"
+                    },
+                    {
+                        "text": "CodeInput",
+                        "link": "/en/components/codeInput"
+                    },
+                    {
+                        "text": "CountTo",
+                        "link": "/en/components/countTo"
+                    },
+                    {
+                        "text": "CountDown",
+                        "link": "/en/components/countDown"
+                    },
+                    {
+                        "text": "Parse",
+                        "link": "/en/components/parse"
+                    },
+                    {
+                        "text": "Qrcode",
+                        "link": "/en/components/qrcode"
+                    },
+                    {
+                        "text": "ReadMore",
+                        "link": "/en/components/readMore"
+                    },
+                    {
+                        "text": "RollingNum",
+                        "link": "/en/components/rollingNum"
+                    },
+                    {
+                        "text": "Signature",
+                        "link": "/en/components/signature"
+                    },
+                    {
+                        "text": "Table",
+                        "link": "/en/components/table"
+                    },
+                    {
+                        "text": "Transition",
+                        "link": "/en/components/transition"
+                    }
+                ]
+            },
+            {
+                "text": "Business",
+                "items": [
+                    {
+                        "text": "Coupon",
+                        "link": "/en/components/coupon"
+                    },
+                    {
+                        "text": "Price",
+                        "link": "/en/components/price"
+                    },
+                    {
+                        "text": "SubmitBar",
+                        "link": "/en/components/submitBar"
+                    }
+                ]
+            }
+        ],
+        "/en/api/": [
+            {
+                "text": "Development Guide",
+                "items": [
+                    {
+                        "text": "Introduction",
+                        "link": "/en/api/intro"
+                    },
+                    {
+                        "text": "Quick Tools",
+                        "link": "/en/api/fastTools"
+                    }
+                ]
+            },
+            {
+                "text": "Network",
+                "items": [
+                    {
+                        "text": "HTTP Request Wrapper",
+                        "link": "/en/api/http"
+                    }
+                ]
+            },
+            {
+                "text": "Utility Library",
+                "items": [
+                    {
+                        "text": "Hooks Methods",
+                        "link": "/en/api/hooks"
+                    },
+                    {
+                        "text": "Throttle and Debounce",
+                        "link": "/en/api/throttle"
+                    },
+                    {
+                        "text": "Base64 Encryption and Decryption",
+                        "link": "/en/api/encrypt"
+                    },
+                    {
+                        "text": "Recursive",
+                        "link": "/en/api/deepClone"
+                    },
+                    {
+                        "text": "Clear Data",
+                        "link": "/en/api/clear"
+                    },
+                    {
+                        "text": "Byte Conversion to Size",
+                        "link": "/en/api/bytesToSize"
+                    },
+                    {
+                        "text": "Time Formatting",
+                        "link": "/en/api/formatTime"
+                    },
+                    {
+                        "text": "Local Image to Base64",
+                        "link": "/en/api/imgToBase64"
+                    },
+                    {
+                        "text": "Global Unique Identifier",
+                        "link": "/en/api/guid"
+                    },
+                    {
+                        "text": "Color Conversion",
+                        "link": "/en/api/colorSwitch"
+                    },
+                    {
+                        "text": "Get Element Node Information",
+                        "link": "/en/api/getRect"
+                    },
+                    {
+                        "text": "Object to URL Parameters",
+                        "link": "/en/api/objectToParams"
+                    },
+                    {
+                        "text": "Data Unit Conversion",
+                        "link": "/en/api/unitSwitch"
+                    },
+                    {
+                        "text": "Random Number",
+                        "link": "/en/api/random"
+                    },
+                    {
+                        "text": "Validation Rules",
+                        "link": "/en/api/inspect"
+                    },
+                    {
+                        "text": "Install APK",
+                        "link": "/en/api/updateVersion"
+                    },
+                    {
+                        "text": "Internal Tools",
+                        "link": "/en/api/inside"
+                    },
+                    {
+                        "text": "Color Gradient Tool",
+                        "link": "/en/api/colorGradient"
+                    }
+                ]
+            }
+        ],
+        "/en/download": [
+            {
+                "text": "Document Collection",
+                "items": [
+                    {
+                        "text": "Front-end Software Collection",
+                        "link": "/en/download/web"
+                    },
+                    {
+                        "text": "Service Software Collection",
+                        "link": "/en/download/service"
+                    },
+                    {
+                        "text": "Back-end Software Collection",
+                        "link": "/en/download/java"
+                    }
+                ]
+            }
+        ]
+    }
+}
