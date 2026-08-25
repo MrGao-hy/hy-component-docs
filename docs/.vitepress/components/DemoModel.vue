@@ -151,15 +151,21 @@
         justify-content: center;
     }
     .demo-model {
-        --phone-aspect-ratio: 19.5 / 9;
         --phone-header-height: 27px;
         --phone-footer-height: 20px;
+        --navbar-height: 64px;
+        --phone-ratio: 852 / 393;
         font-size: 16px;
         background-color: var(--vp-sidebar-bg-color);
-        width: 390px;
+        width: 300px;
+        height: calc(
+            300px * var(--phone-ratio) + var(--phone-header-height) + var(--phone-footer-height)
+        );
+        max-height: calc(100vh - var(--navbar-height) - 20px);
         position: fixed;
         z-index: 100;
         right: 10px;
+        top: calc(var(--navbar-height) + 10px);
         box-sizing: border-box;
         overflow-y: auto;
         background-repeat: no-repeat;
@@ -272,36 +278,18 @@
 
     @media screen and (min-width: 1069px) and (max-width: 1280px) {
         .demo-model {
-            width: 300px;
+            width: 260px;
             height: calc(
-                300px * var(--phone-aspect-ratio) + var(--phone-header-height) +
-                    var(--phone-footer-height)
-            );
-            bottom: calc(
-                50vh - 32px -
-                    (
-                        300px * var(--phone-aspect-ratio) + var(--phone-header-height) +
-                            var(--phone-footer-height)
-                    ) /
-                    2
+                260px * var(--phone-ratio) + var(--phone-header-height) + var(--phone-footer-height)
             );
         }
     }
 
     @media screen and (min-width: 1281px) and (max-width: 1366px) {
         .demo-model {
-            width: 320px;
+            width: 280px;
             height: calc(
-                320px * var(--phone-aspect-ratio) + var(--phone-header-height) +
-                    var(--phone-footer-height)
-            );
-            bottom: calc(
-                50vh - 32px -
-                    (
-                        320px * var(--phone-aspect-ratio) + var(--phone-header-height) +
-                            var(--phone-footer-height)
-                    ) /
-                    2
+                280px * var(--phone-ratio) + var(--phone-header-height) + var(--phone-footer-height)
             );
         }
     }
@@ -310,55 +298,25 @@
         .demo-model {
             width: 300px;
             height: calc(
-                300px * var(--phone-aspect-ratio) + var(--phone-header-height) +
-                    var(--phone-footer-height)
-            );
-            bottom: calc(
-                50vh - 32px -
-                    (
-                        300px * var(--phone-aspect-ratio) + var(--phone-header-height) +
-                            var(--phone-footer-height)
-                    ) /
-                    2
+                300px * var(--phone-ratio) + var(--phone-header-height) + var(--phone-footer-height)
             );
         }
     }
 
     @media screen and (min-width: 1501px) and (max-width: 1920px) {
         .demo-model {
-            width: 280px;
+            width: 320px;
             height: calc(
-                280px * var(--phone-aspect-ratio) + var(--phone-header-height) +
-                    var(--phone-footer-height)
-            );
-            bottom: calc(
-                50vh - 32px -
-                    (
-                        280px * var(--phone-aspect-ratio) + var(--phone-header-height) +
-                            var(--phone-footer-height)
-                    ) /
-                    2
+                320px * var(--phone-ratio) + var(--phone-header-height) + var(--phone-footer-height)
             );
         }
     }
 
     @media screen and (min-width: 1921px) {
         .demo-model {
-            width: 310px;
+            width: 340px;
             height: calc(
-                310px * var(--phone-aspect-ratio) + var(--phone-header-height) +
-                    var(--phone-footer-height)
-            );
-            bottom: calc(
-                (
-                        100vh - 32px -
-                            (
-                                310px * var(--phone-aspect-ratio) + var(--phone-header-height) +
-                                    var(--phone-footer-height)
-                            ) -
-                            3.6rem
-                    ) /
-                    2 + 3.6rem
+                340px * var(--phone-ratio) + var(--phone-header-height) + var(--phone-footer-height)
             );
         }
     }
