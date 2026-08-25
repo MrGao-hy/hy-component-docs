@@ -163,7 +163,7 @@
         );
         max-height: calc(100vh - var(--navbar-height) - 20px);
         position: fixed;
-        z-index: 100;
+        z-index: 29;
         right: 10px;
         top: calc(var(--navbar-height) + 10px);
         box-sizing: border-box;
