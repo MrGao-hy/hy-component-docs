@@ -46,7 +46,7 @@
 
         <!-- 鸿蒙程序 -->
         <a-card hoverable style="width: 210px">
-            <img :src="appQrCode" />
+            <img :src="harmonyQrCode" />
             <template #actions>
                 <div class="platform-name">
                     华玥UI（鸿蒙）
@@ -75,6 +75,7 @@
     const weixinQrCode = '/images/qrcode/weixin_qrcode.png';
     const aliQrCode = '/images/qrcode/ali_qrcode.jpg';
     const appQrCode = '/images/qrcode/app_qrcode.png';
+    const harmonyQrCode = '/images/qrcode/harmonyOS_qrcode.png';
 </script>
 
 <style scoped lang="scss">

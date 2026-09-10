@@ -25,8 +25,8 @@
                     :src="href"
                     class="iframe"
                     frameborder="0"
-                    scrolling="auto"
-                    style="touch-action: none; overflow: auto"
+                    scrolling="no"
+                    style="touch-action: none"
                 ></iframe>
             </div>
             <!--  主体  -->
@@ -59,7 +59,7 @@
     });
     const { isDark } = useData();
     const baseUrl = ref(
-        import.meta.env.DEV ? 'http://localhost:5173/#/' : 'https://h5.hy-design-uni.top/#/'
+        import.meta.env.DEV ? 'http://localhost:8070/#/' : 'https://h5.hy-design-uni.top/#/'
     );
     const href = computed(() => {
         return props.url.indexOf('http') === 0 ? props.url : `${baseUrl.value}${props.url}`;
@@ -234,6 +234,15 @@
             .iframe {
                 height: 100%;
                 width: 100%;
+                overflow: hidden;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+
+                &::-webkit-scrollbar {
+                    display: none;
+                    width: 0;
+                    height: 0;
+                }
             }
         }
 

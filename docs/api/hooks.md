@@ -24,20 +24,36 @@
 
 **示例**
 
-```typescript
+1. 单页面使用
+某个页面想自定义分享内容时，在 `<script setup>` 中配合 `@dcloudio/uni-app` 的钩子注册：
+```typescript [Index.vue]
+<script setup lang="ts">
+import { onShareAppMessage, onShareTimeline } from '@dcloudio/uni-app'
+import { useShare } from '@hy-app/ui'
+
+const share = useShare({
+  title: '页面标题',
+  path: '/pages/index/index',
+  friendImageUrl: '/static/share-friend.png',
+  timelineImageUrl: '/static/share-timeline.png'
+})
+
+// 注册到页面级，优先于全局 mixin 的默认分享
+onShareAppMessage(share.onShareAppMessage)
+onShareTimeline(share.onShareTimeline)
+</script>
+```
+
+2. 全局使用
+> 全局注册后，微信小程序右上角菜单的“转发给朋友/分享到朋友圈”即可用，无需每个页面单独写。
+```typescript [main.ts]
 import { useShare } from '@hy-app/ui';
 
-const { onShareAppMessage, onShareTimeline } = useShare({
-    title: '华玥组件库',
-    path: '/pages/index/index',
-    friendImageUrl: '/static/share friend.png',
-    timelineImageUrl: '/static/share_timeline.png',
-});
-
-defineExpose({
-    onShareAppMessage,
-    onShareTimeline,
-});
+app.mixin(
+  useShare({
+    title: '华玥组件库'
+  })
+)
 ```
 
 ---
