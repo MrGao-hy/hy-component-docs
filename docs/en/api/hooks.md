@@ -1,82 +1,98 @@
-# hooks Combinational API
+# hooks Composition API
 
-## useShare Global Applet Configuration Sharing
+## useShare Mini Program Global Share Configuration
 
 ### useShare(options?) => { onShareAppMessage, onShareTimeline }
 
-Global configuration for applet sharing, returning sharing methods for page exposure.
+Configures sharing globally for the mini program; returns share methods to be exposed on pages.
 
 **Parameters**
 
-| Parameter Name | Type   | Required | Default | Description                 |
-| -------------- | ------ | ---- | ------ | ------------------------ |
-| options        | object | No   | -      | Sharing configuration         |
-| options.title  | string | No   | -      | Title name             |
-| options.path   | string | No   | -      | Applet path           |
-| options.friendImageUrl | string | No   | -      | Cover image for sharing with friends   |
-| options.timelineImageUrl | string | No   | -      | Cover image for sharing to Moments |
+| Parameter Name            | Type   | Required | Default | Description                          |
+| ------------------------ | ------ | ---- | ------ | -------------------- |
+| options                  | object | No   | -      | Share configuration             |
+| options.title            | string | No   | -      | Title name             |
+| options.path             | string | No   | -      | Mini program path           |
+| options.friendImageUrl   | string | No   | -      | Cover image for sharing with friends   |
+| options.timelineImageUrl | string | No   | -      | Cover image for sharing to Moments   |
 
 **Return Value**
 
-| Type   | Description                                           |
-| ------ | ---------------------------------------------- |
-| object | Contains onShareAppMessage and onShareTimeline methods |
+| Type   | Description                                            |
+| ------ | ----------------------------------------------------- |
+| object | Contains the onShareAppMessage and onShareTimeline methods |
 
 **Example**
 
-```typescript
+1. Single page usage
+When a page needs to customize its share content, register it in `<script setup>` together with the hooks from `@dcloudio/uni-app`:
+```typescript [Index.vue]
+<script setup lang="ts">
+import { onShareAppMessage, onShareTimeline } from '@dcloudio/uni-app'
+import { useShare } from '@hy-app/ui'
+
+const share = useShare({
+  title: '页面标题',
+  path: '/pages/index/index',
+  friendImageUrl: '/static/share-friend.png',
+  timelineImageUrl: '/static/share-timeline.png'
+})
+
+// 注册到页面级，优先于全局 mixin 的默认分享
+onShareAppMessage(share.onShareAppMessage)
+onShareTimeline(share.onShareTimeline)
+</script>
+```
+
+2. Global usage
+> After global registration, the "Forward to Friend / Share to Moments" options in the WeChat mini program's top-right menu become available, without needing to write them separately for each page.
+```typescript [main.ts]
 import { useShare } from '@hy-app/ui';
 
-const { onShareAppMessage, onShareTimeline } = useShare({
-    title: 'HuaYuan Component Library',
-    path: '/pages/index/index',
-    friendImageUrl: '/static/share_friend.png',
-    timelineImageUrl: '/static/share_timeline.png',
-});
-
-defineExpose({
-    onShareAppMessage,
-    onShareTimeline,
-});
+app.mixin(
+  useShare({
+    title: '华玥组件库'
+  })
+)
 ```
 
 ---
 
-## useToast Global Prompt Messages
+## useToast Global Toast Messages
 
 ### useToast() => ToastInstance
 
-Global prompt message combinational API, providing various types of message prompts.
+A global toast message composable API that provides multiple types of message prompts.
 
 **Return Value**
 
 | Type | Description |
-| --- | ---------------------------------------------- |
-| ToastInstance | Toast instance, including show, info, success, error, warning, primary, loading, close methods |
+| --- | --- |
+| ToastInstance | Toast instance, containing the show, info, success, error, warning, primary, loading, and close methods |
 
 **ToastInstance Methods**
 
-| Method Name  | Parameter               | Description         |
-| ------- | ------------------ | ------------ |
-| show    | message, options?  | Default prompt     |
-| info    | message, options?  | Information prompt |
-| success | message, options?  | Success prompt     |
-| error   | message, options?  | Error prompt     |
-| warning | message, options?  | Warning prompt     |
-| primary | message, options?  | Theme prompt     |
+| Method  | Parameters         | Description      |
+| ------- | ------------------ | ---------------- |
+| show    | message, options?  | Default toast    |
+| info    | message, options?  | Info toast       |
+| success | message, options?  | Success toast    |
+| error   | message, options?  | Error toast      |
+| warning | message, options?  | Warning toast    |
+| primary | message, options?  | Primary toast    |
 | loading | message?, options? | Loading          |
-| close   | -                  | Close all prompts |
+| close   | -                  | Close all toasts |
 
-**options Parameter**
+**options Parameters**
 
-| Parameter Name   | Type              | Required | Default | Description                                             |
-| -------- | ----------------- | ---- | ------ | ------------------------------------------------ |
-| message  | string            | Yes   | -      | Displayed text information                             |
-| type     | string            | No   | -      | Theme type: primary, success, error, warning, info |
-| position | string            | No   | -      | Toast appearance position: top, center, bottom            |
-| icon     | boolean \| string | No   | -      | Displayed icon                                       |
-| overlay  | boolean           | No   | -      | Prevents touch penetration                             |
-| duration | number            | No   | -      | Time (milliseconds)                                     |
+| Parameter  | Type              | Required | Default | Description                                             |
+| ---------- | ----------------- | -------- | ------ | ------------------------------------------------------- |
+| message    | string            | Yes      | -      | Text message to display                                 |
+| type       | string            | No       | -      | Theme type: primary, success, error, warning, info      |
+| position   | string            | No       | -      | Position where the toast appears: top, center, bottom   |
+| icon       | boolean \| string | No       | -      | Icon to display                                         |
+| overlay    | boolean           | No       | -      | Whether to prevent touch pass-through                   |
+| duration   | number            | No       | -      | Duration (in milliseconds)                              |
 
 **Example**
 
@@ -85,46 +101,46 @@ import { useToast } from '@hy-app/ui';
 
 const toast = useToast();
 
-toast.success('Operation successful!');
-toast.error('Operation failed');
-toast.loading('Loading...');
+toast.success('操作成功！');
+toast.error('操作失败');
+toast.loading('加载中...');
 ```
 
 ---
 
-## useMessage Prompt Message Combination API
+## useMessage Message Dialog Composable API
 
 ### useMessage() => MessageInstance
 
-Prompt message combinational API, providing alert and confirm methods.
+A message dialog composable API that provides alert and confirm methods.
 
 **Return Value**
 
-| Type            | Description                                     |
-| --------------- | ---------------------------------------- |
-| MessageInstance | Message instance, including alert and confirm methods |
+| Type            | Description                                       |
+| --------------- | ------------------------------------------------- |
+| MessageInstance | Message instance, containing the alert and confirm methods |
 
 **MessageInstance Methods**
 
-| Method Name  | Parameter               | Description     |
-| ------- | ------------------ | -------- |
-| alert   | message \| options | Alert dialog |
-| confirm | message \| options | Confirmation dialog |
+| Method  | Parameters         | Description    |
+| ------- | ------------------ | -------------- |
+| alert   | message \| options | Alert dialog   |
+| confirm | message \| options | Confirm dialog |
 
-**options Parameter**
+**options Parameters**
 
-| Parameter Name            | Type     | Required | Default | Description             |
-| ----------------- | -------- | ---- | ------ | ---------------- |
-| title             | string   | No   | -      | Dialog title         |
-| content           | string   | Yes   | -      | Dialog content         |
-| confirmText       | string   | No   | -      | Confirm button text     |
-| cancelText        | string   | No   | -      | Cancel button text     |
-| showConfirmButton | boolean  | No   | -      | Whether to show the confirm button |
-| showCancelButton  | boolean  | No   | -      | Whether to show the cancel button |
-| confirmColor      | string   | No   | -      | Confirm button color     |
-| cancelColor       | string   | No   | -      | Cancel button color     |
-| confirm           | function | No   | -      | Click callback for the confirm button |
-| cancel            | function | No   | -      | Click callback for the cancel button |
+| Parameter         | Type     | Required | Default | Description                    |
+| ----------------- | -------- | -------- | ------ | ------------------------------ |
+| title             | string   | No       | -      | Dialog title                   |
+| content           | string   | Yes      | -      | Dialog content                 |
+| confirmText       | string   | No       | -      | Confirm button text            |
+| cancelText        | string   | No       | -      | Cancel button text             |
+| showConfirmButton | boolean  | No       | -      | Whether to show the confirm button |
+| showCancelButton  | boolean  | No       | -      | Whether to show the cancel button  |
+| confirmColor      | string   | No       | -      | Confirm button color           |
+| cancelColor       | string   | No       | -      | Cancel button color            |
+| confirm           | function | No       | -      | Confirm button click callback  |
+| cancel            | function | No       | -      | Cancel button click callback   |
 
 **Example**
 
@@ -134,38 +150,38 @@ import { useMessage } from '@hy-app/ui';
 const message = useMessage();
 
 const result = await message.confirm({
-    title: 'Delete Confirmation',
-    content: 'Are you sure you want to delete?',
-    confirmText: 'Confirm',
-    cancelText: 'Cancel',
+    title: '删除确认',
+    content: '确定要删除吗？',
+    confirmText: '确定',
+    cancelText: '取消',
 });
 ```
 
 ---
 
-## useTouch Touch Event Combination API
+## useTouch Touch Event Composable API
 
 ### useTouch() => TouchInstance
 
-Touch event combinational API, used to track and analyze user touch operations.
+A touch event composable API used to track and analyze user touch operations.
 
 **Return Value**
 
-| Type          | Description       |
-| ------------- | ----------------- |
+| Type          | Description   |
+| ------------- | ------------- |
 | TouchInstance | Touch instance |
 
 **TouchInstance Properties and Methods**
 
-| Name       | Type     | Description             |
-| ---------- | -------- | ---------------- |
-| touchStart | function | Touch start handling function |
-| touchMove  | function | Touch move handling function |
-| direction  | ref      | Touch direction         |
-| deltaX     | ref      | Horizontal displacement |
-| deltaY     | ref      | Vertical displacement |
-| offsetX    | ref      | Horizontal offset       |
-| offsetY    | ref      | Vertical offset         |
+| Name       | Type     | Description              |
+| ---------- | -------- | ------------------------ |
+| touchStart | function | Touch start handler      |
+| touchMove  | function | Touch move handler       |
+| direction  | ref      | Touch direction          |
+| deltaX     | ref      | Horizontal displacement  |
+| deltaY     | ref      | Vertical displacement    |
+| offsetX    | ref      | Horizontal offset        |
+| offsetY    | ref      | Vertical offset          |
 
 **Example**
 
@@ -177,23 +193,23 @@ const { touchStart, touchMove, direction, deltaX, deltaY } = useTouch();
 
 ---
 
-## useShakeService Shake Sensor Combination API
+## useShakeService Shake Sensor Composable API
 
 ### useShakeService(threshold?) => { startShakeListener, stopShakeListener }
 
-Shake sensor combinational API, to monitor and implement shake feature by device acceleration.
+A shake sensor composable API that implements shake detection by listening to device acceleration.
 
 **Parameters**
 
-| Parameter Name    | Type   | Required | Default | Description       |
-| ----------------- | ------ | ---- | ------ | ---------- |
-| threshold | number | No   | -      | Shake threshold |
+| Parameter | Type   | Required | Default | Description      |
+| --------- | ------ | -------- | ------ | ---------------- |
+| threshold | number | No       | -      | Shake threshold  |
 
 **Return Value**
 
-| Type   | Description                                              |
-| ------ | ------------------------------------------------- |
-| object | Contains startShakeListener and stopShakeListener methods |
+| Type   | Description                                                    |
+| ------ | ------------------------------------------------------------- |
+| object | Contains the startShakeListener and stopShakeListener methods |
 
 **Example**
 
@@ -203,29 +219,29 @@ import { useShakeService } from '@hy-app/ui';
 const { startShakeListener, stopShakeListener } = useShakeService();
 
 startShakeListener(() => {
-    console.log('Shake triggered');
+    console.log('摇一摇触发');
 });
 ```
 
 ---
 
-## useTranslate Internationalization Translation Combination API
+## useTranslate Internationalization Composable API
 
 ### useTranslate(module?) => { t }
 
-Internationalization translation combinational API, for implementing multilingual switching in components or pages.
+An internationalization translation composable API used to implement multi-language switching in components or pages.
 
 **Parameters**
 
-| Parameter Name | Type   | Required | Default | Description         |
-| ------ | ------ | ---- | ------ | ------------ |
-| module | string | No   | -      | Language package module name |
+| Parameter | Type   | Required | Default | Description               |
+| --------- | ------ | -------- | ------ | ------------------------- |
+| module    | string | No       | -      | Language pack module name |
 
 **Return Value**
 
-| Type   | Description            |
-| ------ | --------------- |
-| object | Contains t translation method |
+| Type   | Description                   |
+| ------ | ----------------------------- |
+| object | Contains the t translation method |
 
 **Example**
 
@@ -235,31 +251,31 @@ import { useTranslate } from '@hy-app/ui';
 const { t } = useTranslate('common');
 
 console.log(t('hello'));
-console.log(t('welcome', 'HuaYuan'));
+console.log(t('welcome', '华玥'));
 ```
 
 ---
 
-## useQueue Queue Management Combination API
+## useQueue Queue Management Composable API
 
 ### useQueue() => QueueInstance
 
-Queue management combinational API, for managing component display order and mutual exclusion close logic.
+A queue management composable API used to manage component display order and mutually exclusive closing logic.
 
 **Return Value**
 
-| Type          | Description       |
-| ------------- | ----------------- |
+| Type          | Description    |
+| ------------- | -------------- |
 | QueueInstance | Queue instance |
 
 **QueueInstance Methods**
 
-| Method Name          | Parameter      | Description                       |
-| --------------- | --------- | -------------------------- |
-| pushToQueue     | component | Add component to queue             |
-| removeFromQueue | component | Remove component from queue             |
-| closeOther      | component | Close all components except the current component |
-| closeOutside    | -         | Close all components               |
+| Method          | Parameters | Description                                  |
+| --------------- | ---------- | -------------------------------------------- |
+| pushToQueue     | component  | Add a component to the queue                 |
+| removeFromQueue | component  | Remove a component from the queue            |
+| closeOther      | component  | Close all components except the current one  |
+| closeOutside    | -          | Close all components                         |
 
 **Example**
 

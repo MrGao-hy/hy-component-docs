@@ -11,26 +11,26 @@
 
 ::: tip 温馨提示
 
-华玥组件库使用的是`scss`，所有对于没有使用`scss`插件的需要安装`scss`插件
+华玥组件库使用的是`scss`，所有对于没有使用`scss`插件的需要安装`scss`插件，版本需要高于`1.78.0`
 
 :::
 
 ::: code-group
 
 ```shell [npm]
-$ npm install -D sass@1.78.0
+$ npm install -D sass@1.98.0
 ```
 
 ```shell [pnpm]
-$ pnpm add -D sass@1.78.0
+$ pnpm add -D sass@1.98.0
 ```
 
 ```shell [cnpm]
-$ cnpm install -D sass@1.78.0
+$ cnpm install -D sass@1.98.0
 ```
 
 ```shell [yarn]
-$ yarn add -D sass@1.78.0
+$ yarn add -D sass@1.98.0
 ```
 
 :::
@@ -63,7 +63,7 @@ $ yarn add dayjs
 
 :::
 
-## :cactus: 安装hy-app
+## :cactus: 安装@hy-app/ui
 
 ::: warning 重要通知
 

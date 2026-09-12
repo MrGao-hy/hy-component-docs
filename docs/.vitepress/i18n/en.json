@@ -45,16 +45,16 @@
                     "text": "AI Tools",
                     "items": [
                         {
+                            "text": "Skills",
+                            "link": "/en/guide/skills"
+                        },
+                        {
                             "text": "LLMs",
                             "link": "/en/guide/LLMs"
                         },
                         {
                             "text": "MCP",
                             "link": "/en/guide/mcp"
-                        },
-                        {
-                            "text": "Skills",
-                            "link": "/en/guide/skills"
                         }
                     ]
                 }
@@ -150,16 +150,16 @@
                 "text": "AI Tools",
                 "items": [
                     {
+                        "text": "Skills",
+                        "link": "/en/guide/skills"
+                    },
+                    {
                         "text": "LLMs",
                         "link": "/en/guide/LLMs"
                     },
                     {
                         "text": "MCP",
                         "link": "/en/guide/mcp"
-                    },
-                    {
-                        "text": "Skills",
-                        "link": "/en/guide/skills"
                     }
                 ]
             }

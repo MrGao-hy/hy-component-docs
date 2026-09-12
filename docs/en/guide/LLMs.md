@@ -1,13 +1,13 @@
 # LLMs.txt
 
-::: tip Instructions
+::: tip What is it for
 
-llms.txt is a standard text file for large language models (LLMs), which can be understood as the robots.txt of the AI era, but with a completely different purpose.
+llms.txt is a standard text file designed for Large Language Models (LLMs). You can think of it as the robots.txt of the AI era, but with a completely different purpose.
 
-- **robots.txt:** Used to inform search engines "which pages can be crawled"
-- **llms.txt:** Used to inform AI "what the structure of the website's content is and what the focal points are"
+- **robots.txt:** used to tell search engines "which pages can be crawled"
+- **llms.txt:** used to tell AI "what the content structure of this website is and where the key points are"
 
-Through `llms.txt`, you can provide structured document entry points for AI tools, helping them understand your component library more efficiently, including component descriptions, example code, and best practices.
+Through `llms.txt`, you can provide AI tools with a structured documentation entry point, helping them understand your component library more efficiently, including component descriptions, example code, and best practices.
 
 :::
 
@@ -15,21 +15,25 @@ Through `llms.txt`, you can provide structured document entry points for AI tool
 
 In `Cursor`:
 
-1. Open the `Indexing & Docs` settings.
-2. Add `https://hy-design-uni/llms-full.txt` to Docs.
-3. In the AI input box, type @Docs and then select the document you just created to introduce it into the context.
+Open the `Indexing & Docs` settings
 
-This way, AI will prioritize your component library documentation when generating code or answering questions.
+Add `https://hy-design-uni/llms-full.txt` to Docs
 
-[Learn more about the @Docs feature in Cursor](<>)
+In the AI input box, type @Docs and select the document you just created to bring it into context
+
+This way, when generating code or answering questions, the AI will prioritize referencing your component library documentation.
+
+[Learn more about the @Docs feature in Cursor]()
 
 ## TRAE
 
 In `TRAE`:
 
-1. Click the upper right corner settings to open the **"Context / Document Set"** settings.
-2. Add `https://hy-design-uni/llms-full.txt` to the document set.
-3. In the AI input box, type @Docs and then select the document you just created to introduce it into the context.
+Click the settings icon in the top right corner to open the \*\*"Context / Docs"\*\* settings
+
+Add `https://hy-design-uni/llms-full.txt` to the document set
+
+In the AI input box, type @Docs and select the document you just created to bring it into context
 
 [Learn more about the #Docs feature in TRAE](https://docs.trae.ai/ide/number-sign/)
 
@@ -37,13 +41,12 @@ In `TRAE`:
 
 Any tool that meets the following conditions can be used directly:
 
-- Supports the llms.txt standard
-- Supports importing documents via URL
+Supports the llms.txt standard
+
+Supports importing documents via URL
 
 You can add llms.txt to:
 
-- Docs (Document Set)
-- Rules (Rule Configuration)
-- Knowledge Base
+Docs (Document Sets), Rules (Rule Configuration), Knowledge Base
 
-This allows AI to more accurately understand your component library (such as hy-app).
+This enables AI to understand your component library (such as hy-app) more accurately.

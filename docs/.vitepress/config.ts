@@ -47,9 +47,9 @@ export default defineConfig({
                             {
                                 text: 'AI 工具',
                                 items: [
+                                    { text: 'Skills', link: '/guide/skills' },
                                     { text: 'LLMs', link: '/guide/LLMs' },
                                     { text: 'MCP', link: '/guide/mcp' },
-                                    { text: 'Skills', link: '/guide/skills' },
                                 ],
                             },
                         ],
@@ -101,9 +101,9 @@ export default defineConfig({
                         {
                             text: 'AI 工具',
                             items: [
+                                { text: 'Skills', link: '/guide/skills' },
                                 { text: 'LLMs', link: '/guide/LLMs' },
                                 { text: 'MCP', link: '/guide/mcp' },
-                                { text: 'Skills', link: '/guide/skills' },
                             ],
                         },
                     ],

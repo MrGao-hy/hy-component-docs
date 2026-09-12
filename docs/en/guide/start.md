@@ -1,45 +1,45 @@
-# Huayue Component Library hy-app Usage Guide
+# Hy Component Library hy-app Usage Tutorial
 
-::: info Warm Tips
+::: info Friendly Reminder
 
-- Recommended node (recommended) >= 16.14.0, sass (recommended)
-- 1.53.0 <= sass <= 1.101.0
+- Friendly reminder: node (recommended) >= 16.14.0, sass (recommended)
+- 1.53.0<=sass<=1.101.0
 
 :::
 
 ## :rocket: Download scss (install if not already installed)
 
-::: tip Warm Tips
+::: tip Friendly Reminder
 
-The Huayue Component Library uses `scss`, so for those who haven't installed the `scss` plugin, it is necessary to install it.
+The Hy Component Library uses `scss`, so anyone who doesn't have the `scss` plugin installed needs to install it. The version must be higher than `1.78.0`
 
 :::
 
 ::: code-group
 
 ```shell [npm]
-$ npm install -D sass@1.78.0
+$ npm install -D sass@1.98.0
 ```
 
 ```shell [pnpm]
-$ pnpm add -D sass@1.78.0
+$ pnpm add -D sass@1.98.0
 ```
 
 ```shell [cnpm]
-$ cnpm install -D sass@1.78.0
+$ cnpm install -D sass@1.98.0
 ```
 
 ```shell [yarn]
-$ yarn add -D sass@1.78.0
+$ yarn add -D sass@1.98.0
 ```
 
 :::
 
 ## :rainbow: Download dayjs (install if not already installed)
 
-::: tip Warm Tips
+::: tip Friendly Reminder
 
-Since the time selector uses `dayjs`, it is necessary to download `dayjs` when using it. Otherwise, an error will occur.
+Note: Since the time picker uses `dayjs`, you need to install `dayjs` when using it, otherwise errors will occur
 
 :::
 
@@ -63,11 +63,11 @@ $ yarn add dayjs
 
 :::
 
-## :cactus: Install hy-app
+## :cactus: Install @hy-app/ui
 
 ::: warning Important Notice
 
-As of 2026-07-13, `hy-app` has stopped further iteration updates since version `v0.7.4`. It will no longer add new features or fix issues. Please download and migrate to the new version `@hy-app/ui`.
+2026-07-13 `hy-app` has ceased further iterative updates as of `v0.7.4` and will no longer add features or fix issues. Please download and migrate to the brand-new version `@hy-app/ui`.
 
 :::
 
@@ -91,9 +91,9 @@ $ yarn install @hy-app/ui
 
 :::
 
-## Configure global component auto-import
+## Configure Global Component Auto-Import
 
-Modify the `./src/pages.json` file in the project root directory and add the following easycom configuration:
+Modify the ./src/pages.json file in the project root directory and add the following easycom configuration:
 
 ```json [./src/pages.json]
 {
@@ -105,9 +105,9 @@ Modify the `./src/pages.json` file in the project root directory and add the fol
 }
 ```
 
-## Make Volar/VS Code recognize components
+## Make Volar/VS Code Recognize Components
 
-> VS Code and trae can provide property hints, type checking, and automatic completion for components.
+> VS Code and Trae can provide component property hints, type checking, and auto-completion
 
 ```json tsconfig.json
 {
@@ -117,19 +117,19 @@ Modify the `./src/pages.json` file in the project root directory and add the fol
 }
 ```
 
-## :chicken: Globally import component library styles (modify uni.scss)
+## :chicken: Globally Import Component Library Styles (Modify uni.scss)
 
-> The global styles, theme variables, and basic component styles of the Huayue Component Library need to be imported uniformly; otherwise, the components may lose their style effects.
+> The Hy Component Library's global styles, theme variables, and component base styles must be imported together, otherwise components will lose their styling effects.
 
 ```scss [./uni.scss]
 @use '@hy-app/ui/index.scss' as *;
 ```
 
-## :deciduous_tree: Use components on pages
+## :deciduous_tree: Using Components on Pages
 
 ```html
 <template>
-    <!-- Use the components directly on the required page -->
+    <!-- Then use it directly on any page you need -->
     <hy-input></hy-input>
 </template>
 ```
