@@ -36,8 +36,12 @@ const show = ref(true);
 > - `slide-down` 下滑进入
 > - `slide-left` 左滑进入
 > - `slide-right` 右滑进入
-> - `zoom-in` 缩放
-> - `zoom-out` 缩放
+> - `zoom-in` 放大进入
+> - `zoom-out` 缩小进入
+> - `rotate` 旋转进入
+> - `flip-x` X轴3D翻转进入
+> - `flip-y` Y轴3D翻转进入
+> - `bounce` 弹跳进入
 
 ```html
 <template>
@@ -70,8 +74,10 @@ const show = ref(true);
 | show           | 是否展示组件                   | `boolean`       | false    |
 | mode           | 使用的动画模式，见上方说明     | `string`        | fade     |
 | duration       | 动画的执行时间，单位ms         | `number`        | 300      |
+| shop       | 是否阻止点击事件冒泡         | `boolean`        | false      |
 | timingFunction | 使用的动画过渡函数，见上方说明 | `string`        | ease-out |
 | customStyle    | 定义需要用到的外部样式         | `CSSProperties` | -        |
+| customClass    | 自定义外部类名         | `string` | -        |
 
 ### Events
 

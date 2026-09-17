@@ -339,8 +339,9 @@ const handleDelete = () => {
 | closeText | 确认按钮文本 | `string` | - |
 | deleteText | 删除按钮文本 | `string` | - |
 | closeButtonLoading | 关闭按钮是否显示加载状态 | `boolean` | false |
-| modal | 是否显示蒙层 | `boolean` | false |
-| hideOnClickOutside | 是否在点击外部时收起键盘 | `boolean` | true |
+| overlay | 是否显示蒙层 | `boolean` | false |
+| overlayOpacity | 蒙层透明度 | `boolean` | false |
+| hideOnClickOutside | 是否在点击外部时收起键盘 | `number` | 0 |
 | lockScroll | 是否锁定滚动 | `boolean` | true |
 | safeAreaInsetBottom | 是否在底部安全区域内 | `boolean` | true |
 | extraKey | 额外按键，支持字符串或字符串数组 | `string` \| `string[]` | - |

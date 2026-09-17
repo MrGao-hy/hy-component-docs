@@ -222,7 +222,7 @@
                 <text>{{ title }}</text>
             </view>
         </template>
-        <template #desc="{ docs, date }">
+        <template #docs="{ docs, date }">
             <view class="custom-desc" v-if="docs">
                 <text class="desc-text">{{ docs }}</text>
                 <text class="desc-date" v-if="date">{{ date }}</text>
@@ -397,7 +397,7 @@
 | icon    | 自定义步骤左侧图标     | `index: number`, `error: boolean`               |
 | content | 自定义步骤右侧整体内容 | `item: StepListVo`, `index: number`             |
 | title   | 自定义步骤标题         | `title: string`, `index: number`                |
-| desc    | 自定义步骤描述         | `docs: string`, `date: string`, `index: number` |
+| docs    | 自定义步骤描述         | `docs: string`, `date: string`, `index: number` |
 
 ## Typings
 
