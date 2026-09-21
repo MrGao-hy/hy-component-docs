@@ -2,14 +2,12 @@
     "redirects": [
         {
             "source": "/",
-            "has": [
-                {
-                    "type": "header",
-                    "key": "accept-language",
-                    "value": "^en(?:-|,|;)"
-                }
-            ],
-            "destination": "/en/",
+            "destination": "/zh/",
+            "permanent": false
+        },
+        {
+            "source": "/:path*.html",
+            "destination": "/zh/:path*.html",
             "permanent": false
         }
     ]
