@@ -5,6 +5,8 @@ import llmstxt from 'vitepress-plugin-llms';
 // 导入vpi生成好的英文导航配置
 import enLocale from './i18n/en.json';
 import zhLocale from './i18n/zh.json';
+// 根据浏览器语言自动切换文档语言（脚本逻辑见 lang-redirect.ts）
+import { langRedirectHead } from './lang-redirect';
 
 export default defineConfig({
     lang: 'zh-CN',
@@ -17,7 +19,7 @@ export default defineConfig({
     },
 
     locales: {
-        zh: {
+        root: {
             label: '中文',
             lang: 'zh-CN',
             title: '华玥组件库',
@@ -85,6 +87,8 @@ export default defineConfig({
     head: [
         ['link', { rel: 'icon', href: '/images/hy_logo_light.png' }],
         ['meta', { name: 'algolia-site-verification', content: '375FCD1927B1F391' }],
+        // 首屏语言检测脚本（渲染前执行，避免语言闪烁）
+        langRedirectHead,
     ],
     markdown: {
         lineNumbers: true,
@@ -98,39 +102,7 @@ export default defineConfig({
             host: '0.0.0.0',
             port: 6699,
         },
-        plugins: [
-            groupIconVitePlugin(),
-            llmstxt(),
-            {
-                name: 'zh-redirect',
-                configureServer(server) {
-                    server.middlewares.use((req, res, next) => {
-                        const url = req.url || '';
-
-                        if (
-                            url.startsWith('/zh/') ||
-                            url.startsWith('/en/') ||
-                            url === '/' ||
-                            url.startsWith('/assets/')
-                        ) {
-                            return next();
-                        }
-
-                        if (url.endsWith('.html')) {
-                            const target = `/zh${url}`;
-
-                            res.statusCode = 302;
-                            res.setHeader('Location', target);
-                            res.end();
-
-                            return;
-                        }
-
-                        next();
-                    });
-                },
-            },
-        ],
+        plugins: [groupIconVitePlugin(), llmstxt()],
         assetsInclude: ['**/*.ico'],
         build: {
             rollupOptions: {

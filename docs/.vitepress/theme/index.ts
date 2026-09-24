@@ -19,13 +19,16 @@ import '../styles/scss/common.scss';
 
 import { inBrowser } from 'vitepress';
 import busuanzi from 'busuanzi.pure.js';
+import { trackLocalePreference } from '../lang-redirect';
 
 export default {
     extends: DefaultTheme,
     Layout,
     enhanceApp({ app, router }) {
         if (inBrowser) {
-            router.onAfterRouteChange = () => {
+            router.onAfterRouteChange = (to) => {
+                // 用户手动切换语言后记录偏好，之后不再自动跳转（见 .vitepress/lang-redirect.ts）
+                trackLocalePreference(to);
                 nextTick().then(() => busuanzi.fetch());
             };
         }
