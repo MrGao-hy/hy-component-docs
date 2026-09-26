@@ -41,7 +41,7 @@
 </template>
 
 <script setup lang="ts">
-    import { computed, nextTick, onMounted, ref, watch } from 'vue';
+    import { computed, onMounted, onUnmounted, ref, watch } from 'vue';
     import logoDark from '/images/hy_logo_dark.png';
     import logoLight from '/images/hy_logo_light.png';
     import batteryDark from '/images/battery_dark.png';
@@ -64,7 +64,7 @@
     const href = computed(() => {
         return props.url.indexOf('http') === 0 ? props.url : `${baseUrl.value}${props.url}`;
     });
-    const h5Iframe = ref(null);
+    const h5Iframe = ref<HTMLIFrameElement | null>(null);
     const nowTime = computed(() => {
         const now = new Date();
         const hours = now.getHours();
@@ -74,55 +74,66 @@
         return `${formattedHours}:${formattedMinutes}`;
     });
 
-    // 传递是否暗黑主题值
-    watch(
-        () => isDark.value,
-        (newValue) => {
-            if (h5Iframe.value) {
-                h5Iframe.value.contentWindow.postMessage(newValue, '*');
-            }
+    // iframe 目标源：postMessage 必须限定来源，避免使用 '*' 带来安全风险
+    const targetOrigin = computed(() => {
+        try {
+            return new URL(href.value).origin;
+        } catch {
+            return location.origin;
         }
-    );
+    });
+
+    // 传递是否暗黑主题值
+    const postTheme = () => {
+        h5Iframe.value?.contentWindow?.postMessage(isDark.value, targetOrigin.value);
+    };
+
+    watch(isDark, postTheme);
+
+    const handleIframeLoad = () => postTheme();
+
+    // 监听 PC 端 pointerdown
+    const handlePointerDown = (e: PointerEvent) => {
+        const iframe = h5Iframe.value;
+        if (!iframe) return;
+
+        // 只处理 iframe 区域
+        const rect = iframe.getBoundingClientRect();
+        if (
+            e.clientX < rect.left ||
+            e.clientX > rect.right ||
+            e.clientY < rect.top ||
+            e.clientY > rect.bottom
+        ) {
+            return;
+        }
+
+        // 计算 iframe 内部坐标
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        // 发送伪造 touch 事件到 iframe
+        iframe.contentWindow?.postMessage(
+            {
+                type: 'SIMULATED_TOUCH',
+                event: {
+                    type: 'touchstart',
+                    clientX: x,
+                    clientY: y,
+                },
+            },
+            targetOrigin.value
+        );
+    };
 
     onMounted(() => {
-        nextTick(() => {
-            if (h5Iframe.value) {
-                h5Iframe.value.onload = () => {
-                    h5Iframe.value.contentWindow.postMessage(isDark.value, '*');
-                };
+        h5Iframe.value?.addEventListener('load', handleIframeLoad);
+        window.addEventListener('pointerdown', handlePointerDown);
+    });
 
-                // 监听 PC 端 pointerdown
-                window.addEventListener('pointerdown', (e) => {
-                    // 只处理 iframe 区域
-                    const rect = h5Iframe.value.getBoundingClientRect();
-                    if (
-                        e.clientX < rect.left ||
-                        e.clientX > rect.right ||
-                        e.clientY < rect.top ||
-                        e.clientY > rect.bottom
-                    ) {
-                        return;
-                    }
-
-                    // 计算 iframe 内部坐标
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-
-                    // 发送伪造 touch 事件到 iframe
-                    h5Iframe.value.contentWindow?.postMessage(
-                        {
-                            type: 'SIMULATED_TOUCH',
-                            event: {
-                                type: 'touchstart',
-                                clientX: x,
-                                clientY: y,
-                            },
-                        },
-                        '*'
-                    );
-                });
-            }
-        });
+    onUnmounted(() => {
+        h5Iframe.value?.removeEventListener('load', handleIframeLoad);
+        window.removeEventListener('pointerdown', handlePointerDown);
     });
 </script>
 

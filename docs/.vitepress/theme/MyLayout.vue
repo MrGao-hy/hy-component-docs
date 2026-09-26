@@ -33,8 +33,7 @@
     import { inject } from '@vercel/analytics';
 
     const { Layout } = DefaultTheme;
-    import { watch, nextTick, onMounted } from 'vue';
-    import 'gitalk/dist/gitalk.css';
+    import { watch, nextTick, onMounted, onUnmounted } from 'vue';
     import { useRouter } from 'vitepress';
     import createGitalk from '../gitalk';
 
@@ -42,25 +41,55 @@
     // 使用@vercel/analytics监听完整访客量
     inject();
 
-    const initGitalk = () => {
-        if (typeof window !== 'undefined') {
-            const container = document.getElementById('gitalk-container');
-            if (container) {
-                container.innerHTML = '';
-                createGitalk(route.path);
-            }
+    let observer: IntersectionObserver | null = null;
+
+    const renderGitalk = () => {
+        const container = document.getElementById('gitalk-container');
+        if (container) {
+            container.innerHTML = '';
+            createGitalk(route.path);
         }
+    };
+
+    const initGitalk = () => {
+        if (typeof window === 'undefined') return;
+        const container = document.getElementById('gitalk-container');
+        if (!container) return;
+
+        // 懒加载：评论区接近视口才加载 gitalk（约 100kB+），否则等滚动触发
+        if (container.getBoundingClientRect().top < window.innerHeight + 200) {
+            renderGitalk();
+            return;
+        }
+
+        observer?.disconnect();
+        observer = new IntersectionObserver(
+            (entries) => {
+                if (entries.some((entry) => entry.isIntersecting)) {
+                    observer?.disconnect();
+                    observer = null;
+                    renderGitalk();
+                }
+            },
+            { rootMargin: '200px' }
+        );
+        observer.observe(container);
     };
 
     onMounted(() => {
         initGitalk();
         watch(
             () => route.path,
-            (newPath) => {
+            () => {
                 nextTick(() => {
                     initGitalk();
                 });
             }
         );
+    });
+
+    onUnmounted(() => {
+        observer?.disconnect();
+        observer = null;
     });
 </script>

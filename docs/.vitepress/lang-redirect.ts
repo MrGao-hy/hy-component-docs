@@ -6,9 +6,9 @@ import type { HeadConfig } from 'vitepress';
  * - `langRedirectHead`：注入 head 的首屏内联脚本，页面渲染前根据浏览器语言（默认跟随系统语言）跳转，避免语言闪烁
  * - `trackLocalePreference`：主题路由钩子中调用，用户手动切换语言后记录偏好，之后不再自动跳转
  *
- * 跳转规则（/zh 与 /en 目录页面一一对应，中文首页为根路径 /）：
- * - en 浏览器访问 `/`、`/zh/xxx` 或无前缀旧链接 `/xxx` -> `/en/` 或 `/en/xxx`
- * - zh 浏览器访问 `/en/xxx` -> `/zh/xxx`（首页回 `/`）；无前缀旧链接 `/xxx` -> `/zh/xxx`
+ * 跳转规则（/zh 与 /en 目录页面一一对应）：
+ * - en 浏览器访问 `/` 或 `/zh/xxx` -> `/en/` 或 `/en/xxx`
+ * - zh 浏览器访问 `/en/xxx` -> `/zh/xxx`（首页则回 `/`）
  */
 
 // 用户手动切换语言时写入的 key，首屏脚本检测到后不再自动重定向
@@ -32,23 +32,15 @@ export const langRedirectHead: HeadConfig = [
     if (sessionStorage.getItem('${REDIRECTED_KEY}')) return;
     var lang = ((navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase();
     var path = location.pathname;
-    var isEn = lang.indexOf('en') === 0;
     var inEn = path === '/en' || path.indexOf('/en/') === 0;
-    var inZh = path === '/zh' || path.indexOf('/zh/') === 0;
     var target = '';
-    if (path === '/' || path === '/index.html') {
-      // 首页：中文首页为根路径，英文首页为 /en/
-      target = isEn ? '/en/' : '';
-    } else if (isEn && !inEn) {
-      // /zh/xxx 或无前缀旧链接 /xxx -> /en/xxx
-      target = '/en' + path.replace(/^\/zh(?=\/|$)/, '');
-    } else if (!isEn && inEn) {
-      // /en/xxx -> /zh/xxx（中文首页为根路径）
-      var p = path.replace(/^\/en(?=\/|$)/, '/zh');
+    if (lang.indexOf('en') === 0 && !inEn) {
+      // 首页 / 中文页面 -> 对应英文页面
+      target = path === '/' ? '/en/' : '/en' + path.replace(/^\/zh(?=\/$)/, '');
+    } else if (lang.indexOf('zh') === 0 && inEn) {
+      // 英文页面 -> 对应中文页面
+      var p = path.replace(/^\/en(?=\/$)/, '/zh');
       target = p === '/zh' || p === '/zh/' ? '/' : p;
-    } else if (!isEn && !inEn && !inZh) {
-      // 无语言前缀的旧链接 /xxx -> /zh/xxx
-      target = '/zh' + path;
     }
     if (target && target !== path) {
       sessionStorage.setItem('${REDIRECTED_KEY}', '1');

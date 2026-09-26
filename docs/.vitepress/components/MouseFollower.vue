@@ -132,7 +132,10 @@
     }
 
     function animate() {
-        if (!ctx || !canvas.value) return;
+        if (!ctx || !canvas.value || document.hidden) {
+            animationFrameId = null;
+            return;
+        }
         ctx.clearRect(0, 0, canvas.value.width, canvas.value.height);
 
         updateMousePosition();
@@ -166,25 +169,41 @@
         }
     }
 
-    onMounted(() => {
-        if (typeof globalThis !== 'undefined') {
-            ctx = canvas.value.getContext('2d');
-            handleResize();
-            initParticles();
-
-            globalThis.addEventListener('resize', handleResize);
-            globalThis.addEventListener('mousemove', handleMouseMove);
-
+    function handleVisibilityChange() {
+        if (document.hidden) {
+            if (animationFrameId) {
+                cancelAnimationFrame(animationFrameId);
+                animationFrameId = null;
+            }
+        } else if (!animationFrameId) {
             animate();
         }
+    }
+
+    onMounted(() => {
+        if (typeof globalThis === 'undefined') return;
+        // 触屏设备（手机/平板）不启用鼠标跟随特效，直接跳过动画
+        if (!globalThis.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+        ctx = canvas.value.getContext('2d');
+        handleResize();
+        initParticles();
+
+        globalThis.addEventListener('resize', handleResize);
+        globalThis.addEventListener('mousemove', handleMouseMove);
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+
+        animate();
     });
 
     onUnmounted(() => {
         if (typeof globalThis !== 'undefined') {
             globalThis.removeEventListener('resize', handleResize);
             globalThis.removeEventListener('mousemove', handleMouseMove);
+            document.removeEventListener('visibilitychange', handleVisibilityChange);
             if (animationFrameId) {
                 cancelAnimationFrame(animationFrameId);
+                animationFrameId = null;
             }
         }
     });

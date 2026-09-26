@@ -23,7 +23,7 @@ llms.txt 是一个面向大型语言模型（LLMs）的标准文本文件，可�
 
 这样，AI 在生成代码或回答问题时，会优先参考你的组件库文档。
 
-[详细了解 Cursor 中的 @Docs 功能]()
+[详细了解 Cursor 中的 @Docs 功能](https://cursor.com/cn/docs/agent/tools/search)
 
 ## TRAE
 

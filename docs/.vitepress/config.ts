@@ -1,4 +1,4 @@
-import { defineConfig } from 'vitepress';
+import { defineConfig, type DefaultTheme } from 'vitepress';
 import footnote from 'markdown-it-footnote';
 import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons';
 import llmstxt from 'vitepress-plugin-llms';
@@ -25,7 +25,7 @@ export default defineConfig({
             title: '华玥组件库',
             description: '华玥UI组件库官方文档',
             // ==========中文导航、侧边栏全部移到这里==========
-            themeConfig: zhLocale,
+            themeConfig: zhLocale as unknown as DefaultTheme.Config,
         },
 
         en: {

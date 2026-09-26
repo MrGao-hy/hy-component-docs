@@ -3,16 +3,23 @@
 </template>
 
 <script setup lang="ts">
-    import { ref } from 'vue';
+    import { ref, onMounted } from 'vue';
 
-    const getLatestVer = async (pkg: string) =>
-        fetch(`https://registry.npmjs.org/${pkg}/latest`)
-            .then((r) => r.json())
-            .then((d) => d.version);
     const version = ref('');
 
-    getLatestVer('@hy-app/ui').then((res) => {
-        version.value = res;
+    // 模块级缓存：SPA 路由切换时共享同一次请求结果，避免重复请求
+    let versionPromise: Promise<string> | null = null;
+    const getLatestVer = () => {
+        versionPromise ??= fetch('https://registry.npmjs.org/@hy-app/ui/latest')
+            .then((r) => r.json())
+            .then((d) => d.version as string)
+            .catch(() => ''); // 网络异常时静默降级，不展示版本号
+        return versionPromise;
+    };
+
+    // 仅在客户端请求，避免 SSR 构建期间发起网络请求导致构建失败
+    onMounted(async () => {
+        version.value = await getLatestVer();
     });
 </script>
 

@@ -1,1183 +1,562 @@
 <template>
-    <div class="not-found-body" :class="{ 'is-dark': isDark, 'is-light': !isDark }">
-        <canvas ref="particleCanvas" class="particle-canvas"></canvas>
-
-        <!-- 暗色：星空背景 -->
-        <div v-if="isDark" class="stars-bg"></div>
-
-        <!-- 亮色：云朵装饰 -->
-        <div v-else class="clouds-bg">
-            <div class="cloud cloud-1"></div>
-            <div class="cloud cloud-2"></div>
-            <div class="cloud cloud-3"></div>
-            <div class="cloud cloud-4"></div>
-            <div class="sun"></div>
+    <section ref="scene" class="nf-scene" aria-label="404 页面不存在">
+        <!-- 星空（视差层，客户端生成避免 SSR 水合不一致） -->
+        <div class="nf-stars nf-layer" aria-hidden="true">
+            <span v-for="star in stars" :key="star.id" class="nf-star" :style="star.style"></span>
         </div>
 
-        <div class="container" @mousemove="handleMouseMove">
-            <!-- 暗色：轨道装饰 -->
-            <div v-if="isDark" class="orbit-container">
-                <div class="orbit-ring orbit-ring-1"></div>
-                <div class="orbit-ring orbit-ring-2"></div>
-                <div class="orbit-ring orbit-ring-3"></div>
-                <div class="orbit-planet"></div>
+        <!-- 流星 -->
+        <span class="nf-meteor nf-meteor-1" aria-hidden="true"></span>
+        <span class="nf-meteor nf-meteor-2" aria-hidden="true"></span>
+
+        <!-- 装饰行星（视差层） -->
+        <div class="nf-planet nf-layer" aria-hidden="true">
+            <svg viewBox="0 0 140 110" fill="none">
+                <defs>
+                    <linearGradient id="nf-planet-g" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0" stop-color="#b07cff" />
+                        <stop offset="1" stop-color="#6a5bff" />
+                    </linearGradient>
+                </defs>
+                <!-- 星环（后侧） -->
+                <ellipse
+                    cx="70"
+                    cy="55"
+                    rx="56"
+                    ry="16"
+                    stroke="#7f9bd0"
+                    stroke-width="7"
+                    opacity="0.5"
+                />
+                <circle cx="70" cy="55" r="30" fill="url(#nf-planet-g)" />
+                <!-- 陨石坑 -->
+                <circle cx="59" cy="46" r="6" fill="#5f4bd6" opacity="0.55" />
+                <circle cx="81" cy="64" r="4.5" fill="#5f4bd6" opacity="0.45" />
+                <circle cx="84" cy="41" r="3" fill="#5f4bd6" opacity="0.5" />
+                <!-- 星环（前侧） -->
+                <path
+                    d="M14 55 A56 16 0 0 0 126 55"
+                    stroke="#9fb4e4"
+                    stroke-width="7"
+                    opacity="0.9"
+                />
+            </svg>
+        </div>
+
+        <!-- 主内容 -->
+        <div class="nf-content">
+            <!-- 漂浮的宇航员（视差层） -->
+            <div class="nf-astro-wrap nf-layer" aria-hidden="true">
+                <svg class="nf-astro" viewBox="0 0 240 290" fill="none">
+                    <defs>
+                        <linearGradient id="nf-suit" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#ffffff" />
+                            <stop offset="1" stop-color="#d7e1f0" />
+                        </linearGradient>
+                        <linearGradient id="nf-pack" x1="0" y1="0" x2="0" y2="1">
+                            <stop offset="0" stop-color="#c2d1e6" />
+                            <stop offset="1" stop-color="#a7b9d6" />
+                        </linearGradient>
+                        <radialGradient id="nf-visor" cx="0.35" cy="0.3" r="1">
+                            <stop offset="0" stop-color="#3f5c9e" />
+                            <stop offset="1" stop-color="#101c3f" />
+                        </radialGradient>
+                    </defs>
+
+                    <!-- 背包天线 -->
+                    <line
+                        x1="76"
+                        y1="128"
+                        x2="60"
+                        y2="96"
+                        stroke="#a7b9d6"
+                        stroke-width="5"
+                        stroke-linecap="round"
+                    />
+                    <circle cx="59" cy="93" r="6" fill="#ff71d2" />
+                    <!-- 背包 -->
+                    <rect x="60" y="128" width="120" height="64" rx="20" fill="url(#nf-pack)" />
+
+                    <!-- 腿 -->
+                    <g class="nf-leg nf-leg-l">
+                        <rect x="93" y="214" width="26" height="58" rx="13" fill="#e7edf6" />
+                        <rect x="90" y="260" width="32" height="18" rx="9" fill="#c2d1e6" />
+                    </g>
+                    <g class="nf-leg nf-leg-r">
+                        <rect x="121" y="214" width="26" height="58" rx="13" fill="#e7edf6" />
+                        <rect x="118" y="260" width="32" height="18" rx="9" fill="#c2d1e6" />
+                    </g>
+
+                    <!-- 左臂（自然下垂摆动） -->
+                    <g class="nf-arm-l">
+                        <rect x="58" y="142" width="26" height="62" rx="13" fill="#dde6f2" />
+                        <circle cx="71" cy="202" r="13" fill="#f4f8fc" />
+                    </g>
+
+                    <!-- 身体 -->
+                    <rect x="80" y="130" width="80" height="92" rx="30" fill="url(#nf-suit)" />
+                    <!-- 腰带 -->
+                    <rect x="80" y="198" width="80" height="13" rx="6.5" fill="#c2d1e6" />
+                    <rect x="112" y="200" width="16" height="9" rx="3" fill="#8fa5c6" />
+                    <!-- 胸前控制面板 -->
+                    <rect x="100" y="150" width="40" height="30" rx="8" fill="#182a55" />
+                    <circle cx="111" cy="161" r="4" fill="#00ffc6" />
+                    <circle cx="129" cy="161" r="4" fill="#fbbd12" />
+                    <rect x="105" y="170" width="30" height="4" rx="2" fill="#4a6ab0" />
+
+                    <!-- 右臂（挥手） -->
+                    <g class="nf-arm-r">
+                        <rect x="149" y="86" width="26" height="68" rx="13" fill="url(#nf-suit)" />
+                        <circle cx="162" cy="82" r="14" fill="#f4f8fc" />
+                    </g>
+
+                    <!-- 头盔 -->
+                    <rect x="102" y="118" width="36" height="16" rx="8" fill="#c2d1e6" />
+                    <circle cx="120" cy="82" r="50" fill="url(#nf-suit)" />
+                    <ellipse cx="120" cy="86" rx="36" ry="31" fill="url(#nf-visor)" />
+                    <!-- 面罩高光 -->
+                    <ellipse
+                        cx="106"
+                        cy="72"
+                        rx="11"
+                        ry="6.5"
+                        transform="rotate(-22 106 72)"
+                        fill="#eaf6ff"
+                        opacity="0.85"
+                    />
+                    <circle cx="133" cy="99" r="3" fill="#7fb6ff" opacity="0.5" />
+                    <path
+                        d="M78 64 A50 50 0 0 1 106 36"
+                        stroke="#ffffff"
+                        stroke-opacity="0.75"
+                        stroke-width="5"
+                        stroke-linecap="round"
+                    />
+                </svg>
             </div>
 
-            <!-- 亮色：纸张飞机装饰 -->
-            <div v-else class="paper-plane-container">
-                <div class="paper-plane">
+            <h1 class="nf-code" :aria-label="isEn ? '404 page not found' : '404 页面未找到'">
+                <span v-for="(digit, i) in '404'" :key="i" aria-hidden="true">{{ digit }}</span>
+            </h1>
+            <p class="nf-title">{{ t.title }}</p>
+            <p class="nf-desc">{{ t.desc }}</p>
+
+            <div class="nf-actions">
+                <a class="nf-btn nf-btn-primary" :href="homeLink">
                     <svg
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="1.5"
+                        stroke-width="2"
                         stroke-linecap="round"
                         stroke-linejoin="round"
                     >
-                        <path d="M22 2L11 13"></path>
-                        <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
+                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                        <polyline points="9 22 9 12 15 12 15 22" />
                     </svg>
-                </div>
-                <div class="plane-trail"></div>
-            </div>
-
-            <div class="error-code-container">
-                <div class="error-code" :style="errorTextStyle">
-                    <span class="digit digit-1">4</span>
-                    <span class="digit digit-0">0</span>
-                    <span class="digit digit-4">4</span>
-                </div>
-                <div class="error-glow"></div>
-            </div>
-
-            <div class="content-card" :style="cardStyle">
-                <div class="card-glow card-glow-top"></div>
-                <div class="card-glow card-glow-bottom"></div>
-
-                <h1 class="title">
-                    <span class="title-line">{{ isDark ? '页面迷失在' : '糟糕，页面走丢了' }}</span>
-                    <span class="title-highlight">{{ isDark ? '星空中' : '云端之上' }}</span>
-                </h1>
-
-                <p class="description">
-                    {{
-                        isDark
-                            ? '你访问的地址可能已经被删除、重命名，或者由于时空波动暂时无法访问。'
-                            : '你访问的页面可能已经被移动或删除，或者暂时无法访问。'
-                    }}
-                    <br />
-                    <span class="highlight-text">
-                        {{
-                            isDark
-                                ? '建议您回到安全的基站重新出发。'
-                                : '别担心，试试返回首页或上一页吧。'
-                        }}
-                    </span>
-                </p>
-
-                <div class="btn-group">
-                    <button class="btn btn-primary" @click="goHome">
-                        <svg
-                            class="btn-icon"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        >
-                            <path d="M18 13v6a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-6"></path>
-                            <polyline points="15 11 12 8 9 11"></polyline>
-                            <line x1="12" y1="18" x2="12" y2="8"></line>
-                        </svg>
-                        <span>返回首页</span>
-                    </button>
-                    <button class="btn btn-outline" @click="goBack">
-                        <svg
-                            class="btn-icon"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                        >
-                            <polyline points="11 19 3 12 11 5"></polyline>
-                            <polyline points="23 19 15 12 23 5"></polyline>
-                        </svg>
-                        <span>返回上一页</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- 暗色：星星和小行星 -->
-            <div v-if="isDark" class="floating-elements">
-                <div class="floating-star floating-star-1"></div>
-                <div class="floating-star floating-star-2"></div>
-                <div class="floating-star floating-star-3"></div>
-                <div class="floating-asteroid floating-asteroid-1"></div>
-                <div class="floating-asteroid floating-asteroid-2"></div>
-            </div>
-
-            <!-- 亮色：小鸟装饰 -->
-            <div v-else class="floating-elements light-floats">
-                <div class="bird bird-1"></div>
-                <div class="bird bird-2"></div>
-                <div class="bird bird-3"></div>
+                    {{ t.home }}
+                </a>
+                <button type="button" class="nf-btn nf-btn-ghost" @click="goBack">
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <polyline points="9 14 4 9 9 4" />
+                        <path d="M20 20v-7a4 4 0 0 0-4-4H4" />
+                    </svg>
+                    {{ t.back }}
+                </button>
             </div>
         </div>
-
-        <div class="noise-overlay"></div>
-    </div>
+    </section>
 </template>
 
-<script setup lang="ts">
-    import { ref, onMounted, onUnmounted, computed, watch, type CSSProperties } from 'vue';
-    import { useData } from 'vitepress';
+<script setup>
+    import { ref, computed, onMounted, onUnmounted } from 'vue';
+    import { withBase, useRoute } from 'vitepress';
 
-    interface Particle {
-        x: number;
-        y: number;
-        size: number;
-        speedX: number;
-        speedY: number;
-        opacity: number;
-        brightness: number;
+    const route = useRoute();
+    // 英文区路径以 /en 开头，其余走中文根路径
+    const isEn = computed(() => route.path.startsWith('/en'));
+    const homeLink = computed(() => withBase(isEn.value ? '/en/' : '/'));
+
+    const t = computed(() =>
+        isEn.value
+            ? {
+                  title: 'Oops, lost in space!',
+                  desc: 'The page you are looking for has drifted into an unknown galaxy.\nCheck the URL, or head back home and keep exploring.',
+                  home: 'Back to Home',
+                  back: 'Go Back',
+              }
+            : {
+                  title: '哎呀，迷航了！',
+                  desc: '你访问的页面似乎漂浮到了未知星域，\n检查一下网址，或返回首页继续探索吧。',
+                  home: '返回首页',
+                  back: '返回上一页',
+              }
+    );
+
+    const scene = ref(null);
+    const stars = ref([]);
+    let rafId = 0;
+    let reducedMotion = false;
+
+    // 鼠标视差：写入 CSS 变量，rAF 节流
+    function handleMove(e) {
+        if (reducedMotion || !scene.value || rafId) return;
+        const mx = (e.clientX / window.innerWidth - 0.5) * 2;
+        const my = (e.clientY / window.innerHeight - 0.5) * 2;
+        rafId = requestAnimationFrame(() => {
+            rafId = 0;
+            scene.value?.style.setProperty('--nf-mx', mx.toFixed(3));
+            scene.value?.style.setProperty('--nf-my', my.toFixed(3));
+        });
     }
 
-    const { isDark } = useData();
-    const particleCanvas = ref<HTMLCanvasElement | null>(null);
-    const mousePos = ref({ x: 0, y: 0 });
-    let animationId: number;
-    let particles: Particle[] = [];
-    let time = ref(0);
-
-    const handleMouseMove = (e: MouseEvent) => {
-        mousePos.value = {
-            x: (e.clientX - window.innerWidth / 2) / 30,
-            y: (e.clientY - window.innerHeight / 2) / 30,
-        };
-    };
-
-    const cardStyle = computed<CSSProperties>(() => ({
-        transform: `rotateY(${-mousePos.value.x}deg) rotateX(${mousePos.value.y}deg)`,
-    }));
-
-    const errorTextStyle = computed<CSSProperties>(() => ({
-        transform: `translateX(${mousePos.value.x * 1.2}px) translateY(${mousePos.value.y * 1.2}px)`,
-    }));
-
-    const initParticles = (canvas: HTMLCanvasElement) => {
-        const width = (canvas.width = window.innerWidth);
-        const height = (canvas.height = window.innerHeight);
-        particles = [];
-
-        for (let i = 0; i < 120; i++) {
-            particles.push({
-                x: Math.random() * width,
-                y: Math.random() * height,
-                size: Math.random() * 3 + 0.5,
-                speedX: (Math.random() - 0.5) * 0.3,
-                speedY: (Math.random() - 0.5) * 0.3,
-                opacity: Math.random() * 0.7 + 0.3,
-                brightness: Math.random(),
-            });
+    function goBack() {
+        if (window.history.length > 1) {
+            window.history.back();
+        } else {
+            window.location.href = homeLink.value;
         }
-    };
-
-    const animate = (ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) => {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        time.value++;
-        if (!isDark.value) {
-            animationId = requestAnimationFrame(() => animate(ctx, canvas));
-            return;
-        }
-
-        particles.forEach((p) => {
-            p.brightness = (Math.sin(time.value * 0.002 + p.x * 0.01) + 1) / 2;
-            ctx.globalAlpha = p.opacity * (0.5 + p.brightness * 0.5);
-
-            const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.size * 2);
-            gradient.addColorStop(0, '#ffffff');
-            gradient.addColorStop(0.5, 'rgba(0, 210, 255, 0.5)');
-            gradient.addColorStop(1, 'rgba(0, 210, 255, 0)');
-
-            ctx.fillStyle = gradient;
-            ctx.beginPath();
-            ctx.arc(p.x, p.y, p.size * 2, 0, Math.PI * 2);
-            ctx.fill();
-
-            p.x += p.speedX;
-            p.y += p.speedY;
-
-            if (p.x < 0) p.x = canvas.width;
-            if (p.x > canvas.width) p.x = 0;
-            if (p.y < 0) p.y = canvas.height;
-            if (p.y > canvas.height) p.y = 0;
-        });
-
-        animationId = requestAnimationFrame(() => animate(ctx, canvas));
-    };
-
-    const goHome = () => {
-        window.location.href = '/';
-    };
-
-    const goBack = () => {
-        window.history.back();
-    };
-
-    const handleResize = () => {
-        if (particleCanvas.value) {
-            initParticles(particleCanvas.value);
-        }
-    };
+    }
 
     onMounted(() => {
-        const canvas = particleCanvas.value;
-        if (canvas) {
-            const ctx = canvas.getContext('2d');
-            if (ctx) {
-                initParticles(canvas);
-                animate(ctx, canvas);
-            }
+        reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // 星星仅在客户端生成，避免服务端渲染水合不一致
+        stars.value = Array.from({ length: 72 }, (_, i) => {
+            const size = Math.random() < 0.85 ? 2 : 3.5;
+            const duration = 2.5 + Math.random() * 4;
+            return {
+                id: i,
+                style: {
+                    left: `${(Math.random() * 100).toFixed(2)}%`,
+                    top: `${(Math.random() * 100).toFixed(2)}%`,
+                    width: `${size}px`,
+                    height: `${size}px`,
+                    animationDuration: `${duration.toFixed(2)}s`,
+                    animationDelay: `${(-Math.random() * duration).toFixed(2)}s`,
+                },
+            };
+        });
+
+        if (!reducedMotion) {
+            window.addEventListener('mousemove', handleMove, { passive: true });
         }
-        window.addEventListener('resize', handleResize);
     });
 
     onUnmounted(() => {
-        cancelAnimationFrame(animationId);
-        window.removeEventListener('resize', handleResize);
+        window.removeEventListener('mousemove', handleMove);
+        if (rafId) cancelAnimationFrame(rafId);
     });
 </script>
 
-<style scoped lang="scss">
-    @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700;800&display=swap');
+<style scoped>
+    .nf-scene {
+        /* 亮色主题变量 */
+        --nf-star: #7b8ec4;
+        --nf-star-glow: rgba(123, 142, 196, 0.7);
+        --nf-meteor: rgba(70, 110, 200, 0.85);
+        --nf-text-1: #10224e;
+        --nf-text-2: #4a5c8f;
+        --nf-grad: linear-gradient(180deg, #0090d0, #00b892);
+        --nf-glow: rgba(1, 190, 255, 0.2);
+        --nf-btn-ghost-bg: rgba(16, 34, 78, 0.05);
+        --nf-btn-ghost-border: rgba(16, 34, 78, 0.18);
+        --nf-btn-ghost-hover: rgba(16, 34, 78, 0.1);
 
-    $neon-blue: #00f0ff;
-    $neon-purple: #bf00ff;
-
-    /* ==================== 公共样式 ==================== */
-    .not-found-body {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
         width: 100%;
         min-height: 100vh;
+        padding: calc(var(--vp-nav-height) + 32px) 24px 64px;
         overflow: hidden;
-        font-family: 'Space Mono', monospace;
-        display: flex;
-        position: relative;
-        transition: background 0.6s ease;
+        background:
+            radial-gradient(1200px 600px at 70% -10%, rgba(1, 190, 255, 0.16), transparent 60%),
+            radial-gradient(900px 500px at 12% 110%, rgba(0, 255, 198, 0.12), transparent 60%),
+            linear-gradient(180deg, #eef4ff 0%, #e3ecff 55%, #d9e6ff 100%);
+    }
 
-        .noise-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
-            opacity: 0.03;
-            pointer-events: none;
-            z-index: 100;
-        }
+    .dark .nf-scene {
+        /* 暗色主题变量 */
+        --nf-star: #ffffff;
+        --nf-star-glow: rgba(255, 255, 255, 0.85);
+        --nf-meteor: rgba(255, 255, 255, 0.95);
+        --nf-text-1: #f2f6ff;
+        --nf-text-2: #9fb0d8;
+        --nf-grad: linear-gradient(180deg, #01beff, #00ffc6);
+        --nf-glow: rgba(1, 190, 255, 0.35);
+        --nf-btn-ghost-bg: rgba(255, 255, 255, 0.08);
+        --nf-btn-ghost-border: rgba(255, 255, 255, 0.22);
+        --nf-btn-ghost-hover: rgba(255, 255, 255, 0.16);
 
-        .particle-canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 2;
-        }
+        background:
+            radial-gradient(1200px 600px at 70% -10%, rgba(1, 190, 255, 0.14), transparent 60%),
+            radial-gradient(900px 500px at 12% 110%, rgba(0, 255, 198, 0.08), transparent 60%),
+            linear-gradient(180deg, #070b1c 0%, #0c1330 55%, #122048 100%);
+    }
 
-        .container {
-            z-index: 10;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            flex: 1;
-            perspective: 1200px;
-            overflow: hidden;
+    /* 移动端补上固定导航栏的高度 */
+    @media (min-width: 960px) {
+        .nf-scene {
+            min-height: calc(100vh - var(--vp-nav-height));
+            padding-top: 24px;
         }
     }
 
-    /* ==================== 暗色主题：夜空 ==================== */
-    .not-found-body.is-dark {
-        background: linear-gradient(135deg, #050510 0%, #1a1a3e 50%, #0d0d2b 100%);
-
-        .stars-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image:
-                radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.8), transparent),
-                radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.5), transparent),
-                radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.6), transparent),
-                radial-gradient(2px 2px at 160px 120px, rgba(255, 255, 255, 0.7), transparent),
-                radial-gradient(1px 1px at 230px 80px, rgba(255, 255, 255, 0.4), transparent),
-                radial-gradient(2px 2px at 300px 150px, rgba(255, 255, 255, 0.8), transparent),
-                radial-gradient(1px 1px at 350px 200px, rgba(255, 255, 255, 0.5), transparent),
-                radial-gradient(2px 2px at 420px 60px, rgba(255, 255, 255, 0.6), transparent),
-                radial-gradient(1px 1px at 500px 180px, rgba(255, 255, 255, 0.7), transparent),
-                radial-gradient(2px 2px at 600px 100px, rgba(255, 255, 255, 0.5), transparent);
-            background-repeat: repeat;
-            background-size: 650px 250px;
-            animation: twinkle 8s ease-in-out infinite;
-            z-index: 1;
-        }
-
-        .orbit-container {
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            opacity: 0.3;
-
-            .orbit-ring {
-                position: absolute;
-                border: 1px solid rgba(0, 210, 255, 0.2);
-                border-radius: 50%;
-                top: 50%;
-                left: 50%;
-                transform-origin: center;
-                &-1 {
-                    width: 400px;
-                    height: 400px;
-                    margin-left: -200px;
-                    margin-top: -200px;
-                    animation: orbitRotate1 60s linear infinite;
-                }
-                &-2 {
-                    width: 300px;
-                    height: 300px;
-                    margin-left: -150px;
-                    margin-top: -150px;
-                    animation: orbitRotate2 45s linear infinite;
-                }
-                &-3 {
-                    width: 200px;
-                    height: 200px;
-                    margin-left: -100px;
-                    margin-top: -100px;
-                    animation: orbitRotate3 30s linear infinite;
-                }
-            }
-
-            .orbit-planet {
-                position: absolute;
-                width: 20px;
-                height: 20px;
-                background: radial-gradient(circle, $neon-blue, $neon-purple);
-                border-radius: 50%;
-                top: 50%;
-                left: 50%;
-                margin-left: -10px;
-                margin-top: -210px;
-                box-shadow:
-                    0 0 20px $neon-blue,
-                    0 0 40px $neon-purple;
-                animation: orbitPlanet 20s ease-in-out infinite;
-            }
-        }
-
-        .error-code-container .error-code {
-            background: linear-gradient(180deg, #ffffff 0%, $neon-blue 40%, $neon-purple 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: codeGlow 3s ease-in-out infinite;
-        }
-
-        .error-code-container .error-glow {
-            background: radial-gradient(ellipse, rgba(0, 240, 255, 0.2) 0%, transparent 70%);
-        }
-
-        .content-card {
-            background: rgba(10, 10, 30, 0.6);
-            border: 1px solid rgba(0, 240, 255, 0.2);
-            box-shadow:
-                0 0 60px rgba(0, 240, 255, 0.1),
-                0 25px 50px rgba(0, 0, 0, 0.5),
-                inset 0 0 60px rgba(0, 240, 255, 0.05);
-
-            .card-glow {
-                background: linear-gradient(
-                    90deg,
-                    transparent,
-                    rgba(0, 240, 255, 0.3),
-                    transparent
-                );
-            }
-
-            .title .title-highlight {
-                background: linear-gradient(90deg, $neon-blue, $neon-purple);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
-
-            .description .highlight-text {
-                color: rgba(0, 240, 255, 0.9);
-            }
-
-            .btn-primary {
-                background: linear-gradient(135deg, $neon-blue, $neon-purple);
-                color: white;
-                box-shadow: 0 10px 30px rgba(0, 240, 255, 0.3);
-
-                &:hover {
-                    box-shadow:
-                        0 20px 40px rgba(0, 240, 255, 0.4),
-                        0 0 30px rgba(0, 240, 255, 0.3);
-                }
-            }
-
-            .btn-outline {
-                background: transparent;
-                border: 2px solid rgba(255, 255, 255, 0.3);
-                color: #ffffff;
-
-                &:hover {
-                    background: rgba(0, 240, 255, 0.1);
-                    border-color: $neon-blue;
-                    box-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
-                }
-            }
-        }
-
-        .floating-star {
-            background: #ffffff;
-            box-shadow:
-                0 0 10px #ffffff,
-                0 0 20px rgba(0, 240, 255, 0.5);
-        }
-    }
-
-    /* ==================== 亮色主题：白天 ==================== */
-    .not-found-body.is-light {
-        background: linear-gradient(180deg, #87ceeb 0%, #b0e0f6 30%, #e0f0ff 60%, #f0f8ff 100%);
-
-        .clouds-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            overflow: hidden;
-
-            .sun {
-                position: absolute;
-                top: 8%;
-                right: 15%;
-                width: 80px;
-                height: 80px;
-                background: radial-gradient(circle, #ffd700 0%, #ffa500 60%, transparent 70%);
-                border-radius: 50%;
-                box-shadow:
-                    0 0 60px rgba(255, 215, 0, 0.4),
-                    0 0 120px rgba(255, 165, 0, 0.2);
-                animation: sunPulse 4s ease-in-out infinite;
-            }
-
-            .cloud {
-                position: absolute;
-                background: rgba(255, 255, 255, 0.9);
-                border-radius: 50px;
-                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-
-                &::before,
-                &::after {
-                    content: '';
-                    position: absolute;
-                    background: inherit;
-                    border-radius: 50%;
-                }
-
-                &-1 {
-                    width: 160px;
-                    height: 50px;
-                    top: 15%;
-                    left: -5%;
-                    animation: cloudFloat1 30s linear infinite;
-                    &::before {
-                        width: 70px;
-                        height: 70px;
-                        top: -35px;
-                        left: 25px;
-                    }
-                    &::after {
-                        width: 90px;
-                        height: 80px;
-                        top: -40px;
-                        left: 55px;
-                    }
-                }
-
-                &-2 {
-                    width: 200px;
-                    height: 55px;
-                    top: 25%;
-                    left: 30%;
-                    animation: cloudFloat2 40s linear infinite;
-                    opacity: 0.7;
-                    &::before {
-                        width: 80px;
-                        height: 80px;
-                        top: -40px;
-                        left: 30px;
-                    }
-                    &::after {
-                        width: 100px;
-                        height: 90px;
-                        top: -45px;
-                        left: 75px;
-                    }
-                }
-
-                &-3 {
-                    width: 140px;
-                    height: 45px;
-                    top: 10%;
-                    left: 60%;
-                    animation: cloudFloat3 35s linear infinite;
-                    opacity: 0.8;
-                    &::before {
-                        width: 60px;
-                        height: 60px;
-                        top: -30px;
-                        left: 20px;
-                    }
-                    &::after {
-                        width: 80px;
-                        height: 70px;
-                        top: -35px;
-                        left: 50px;
-                    }
-                }
-
-                &-4 {
-                    width: 180px;
-                    height: 48px;
-                    top: 35%;
-                    left: 80%;
-                    animation: cloudFloat1 45s linear infinite reverse;
-                    opacity: 0.6;
-                    &::before {
-                        width: 75px;
-                        height: 75px;
-                        top: -38px;
-                        left: 28px;
-                    }
-                    &::after {
-                        width: 95px;
-                        height: 85px;
-                        top: -42px;
-                        left: 68px;
-                    }
-                }
-            }
-        }
-
-        .paper-plane-container {
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            opacity: 0.25;
-
-            .paper-plane {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 40px;
-                height: 40px;
-                color: #64748b;
-                animation: planeFly 12s ease-in-out infinite;
-            }
-
-            .plane-trail {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 200px;
-                height: 2px;
-                background: linear-gradient(
-                    90deg,
-                    transparent,
-                    rgba(100, 116, 139, 0.3),
-                    transparent
-                );
-                transform-origin: left center;
-                animation: trailFade 12s ease-in-out infinite;
-            }
-        }
-
-        .error-code-container .error-code {
-            background: linear-gradient(180deg, #1e293b 0%, #3b82f6 40%, #6366f1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: codeFloat 4s ease-in-out infinite;
-            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
-        }
-
-        .error-code-container .error-glow {
-            background: radial-gradient(ellipse, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
-        }
-
-        .content-card {
-            background: rgba(255, 255, 255, 0.75);
-            border: 1px solid rgba(148, 163, 184, 0.3);
-            box-shadow:
-                0 8px 32px rgba(0, 0, 0, 0.08),
-                0 2px 8px rgba(0, 0, 0, 0.04);
-
-            .card-glow {
-                background: linear-gradient(
-                    90deg,
-                    transparent,
-                    rgba(59, 130, 246, 0.15),
-                    transparent
-                );
-            }
-
-            .title {
-                color: #1e293b;
-
-                .title-highlight {
-                    background: linear-gradient(90deg, #3b82f6, #6366f1);
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                }
-            }
-
-            .description {
-                color: #64748b;
-
-                .highlight-text {
-                    color: #3b82f6;
-                }
-            }
-
-            .btn-primary {
-                background: linear-gradient(135deg, #3b82f6, #6366f1);
-                color: white;
-                box-shadow: 0 4px 14px rgba(59, 130, 246, 0.3);
-
-                &:hover {
-                    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
-                }
-            }
-
-            .btn-outline {
-                background: rgba(255, 255, 255, 0.8);
-                border: 2px solid rgba(100, 116, 139, 0.3);
-                color: #475569;
-
-                &:hover {
-                    background: rgba(59, 130, 246, 0.08);
-                    border-color: #3b82f6;
-                    box-shadow: 0 4px 14px rgba(59, 130, 246, 0.15);
-                }
-            }
-        }
-
-        .light-floats .bird {
-            position: absolute;
-            width: 0;
-            height: 0;
-
-            &::before,
-            &::after {
-                content: '';
-                position: absolute;
-                width: 12px;
-                height: 3px;
-                background: #64748b;
-                border-radius: 50%;
-                top: 0;
-            }
-
-            &::before {
-                left: 0;
-                transform: rotate(-20deg);
-                transform-origin: right center;
-                animation: birdWing 0.6s ease-in-out infinite;
-            }
-
-            &::after {
-                left: 10px;
-                transform: rotate(20deg);
-                transform-origin: left center;
-                animation: birdWing 0.6s ease-in-out infinite 0.1s;
-            }
-
-            &-1 {
-                top: 18%;
-                left: 10%;
-                animation: birdFly1 18s linear infinite;
-            }
-            &-2 {
-                top: 22%;
-                left: 40%;
-                animation: birdFly2 22s linear infinite;
-            }
-            &-3 {
-                top: 12%;
-                left: 70%;
-                animation: birdFly3 25s linear infinite;
-            }
-        }
-    }
-
-    /* ==================== 公共组件样式 ==================== */
-    .error-code-container {
-        position: relative;
-        margin-bottom: 30px;
-
-        .error-code {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: clamp(8rem, 20vw, 18rem);
-            font-weight: 900;
-            letter-spacing: -0.08em;
-            pointer-events: none;
-            transition: transform 0.15s ease-out;
-            user-select: none;
-
-            .digit {
-                display: inline-block;
-                animation: digitFloat 6s ease-in-out infinite;
-                &-1 {
-                    animation-delay: 0s;
-                }
-                &-0 {
-                    animation-delay: 0.2s;
-                }
-                &-4 {
-                    animation-delay: 0.4s;
-                }
-            }
-        }
-
-        .error-glow {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 60%;
-            height: 30%;
-            filter: blur(60px);
-            animation: glowPulse 4s ease-in-out infinite;
-        }
-    }
-
-    .content-card {
-        position: relative;
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-        padding: 50px 70px;
-        border-radius: 30px;
-        text-align: center;
-        transform-style: preserve-3d;
-        transition:
-            transform 0.15s ease-out,
-            background 0.6s ease,
-            border-color 0.6s ease,
-            box-shadow 0.6s ease;
-        overflow: hidden;
-
-        .card-glow {
-            position: absolute;
-            width: 200%;
-            height: 50px;
-            filter: blur(20px);
-
-            &-top {
-                top: 0;
-                animation: cardGlowTop 3s ease-in-out infinite;
-            }
-            &-bottom {
-                bottom: 0;
-                animation: cardGlowBottom 3s ease-in-out infinite 1.5s;
-            }
-        }
-
-        .title {
-            font-size: clamp(1.5rem, 4vw, 3rem);
-            margin-bottom: 20px;
-            font-weight: 700;
-            line-height: 1.2;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            transition: color 0.6s ease;
-
-            .title-line {
-                animation: fadeInUp 0.8s ease-out;
-            }
-            .title-highlight {
-                animation: fadeInUp 0.8s ease-out 0.2s both;
-                -webkit-background-clip: text;
-            }
-        }
-
-        .description {
-            font-size: clamp(0.9rem, 2vw, 1.2rem);
-            margin-bottom: 40px;
-            line-height: 1.8;
-            transition: color 0.6s ease;
-
-            .highlight-text {
-                font-weight: 600;
-            }
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 25px;
-            justify-content: center;
-            flex-wrap: wrap;
-
-            .btn {
-                position: relative;
-                padding: 15px 40px;
-                border-radius: 50px;
-                cursor: pointer;
-                font-weight: 700;
-                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                letter-spacing: 2px;
-                font-size: clamp(0.8rem, 1.5vw, 1rem);
-                outline: none;
-                overflow: hidden;
-                display: flex;
-                align-items: center;
-                gap: 10px;
-                font-family: 'Space Mono', monospace;
-
-                .btn-icon {
-                    width: 18px;
-                    height: 18px;
-                    transition: transform 0.3s ease;
-                }
-
-                &-primary:hover {
-                    transform: translateY(-5px) scale(1.02);
-                    .btn-icon {
-                        transform: scale(1.2);
-                    }
-                    &:active {
-                        transform: translateY(-2px) scale(0.98);
-                    }
-                }
-
-                &-outline:hover {
-                    transform: translateY(-3px);
-                    .btn-icon {
-                        transform: scale(1.1);
-                    }
-                }
-            }
-        }
-    }
-
-    .floating-elements {
+    /* ---------------- 星空 ---------------- */
+    .nf-stars {
         position: absolute;
-        width: 100%;
-        height: 100%;
+        inset: 0;
+    }
+
+    .nf-star {
+        position: absolute;
+        border-radius: 50%;
+        background: var(--nf-star);
+        box-shadow: 0 0 6px 1px var(--nf-star-glow);
+        animation: nf-twinkle ease-in-out infinite;
+    }
+
+    @keyframes nf-twinkle {
+        0%,
+        100% {
+            opacity: 0.15;
+            transform: scale(0.8);
+        }
+        50% {
+            opacity: 0.9;
+            transform: scale(1.25);
+        }
+    }
+
+    /* ---------------- 流星 ---------------- */
+    .nf-meteor {
+        position: absolute;
+        top: -20px;
+        width: 150px;
+        height: 2px;
+        border-radius: 999px;
+        background: linear-gradient(90deg, transparent, var(--nf-meteor));
+        filter: drop-shadow(0 0 6px var(--nf-meteor));
+        opacity: 0;
         pointer-events: none;
-        overflow: hidden;
-
-        .floating-star {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            border-radius: 50%;
-            &-1 {
-                top: 10%;
-                left: 15%;
-                animation: floatStar1 10s ease-in-out infinite;
-            }
-            &-2 {
-                top: 25%;
-                right: 10%;
-                animation: floatStar2 12s ease-in-out infinite;
-            }
-            &-3 {
-                bottom: 20%;
-                left: 20%;
-                animation: floatStar3 15s ease-in-out infinite;
-            }
-        }
-
-        .floating-asteroid {
-            position: absolute;
-            width: 30px;
-            height: 20px;
-            background: linear-gradient(135deg, rgba(100, 100, 120, 0.3), rgba(80, 80, 100, 0.1));
-            border-radius: 50% 30% 50% 70%;
-            border: 1px solid rgba(150, 150, 180, 0.2);
-            &-1 {
-                top: 35%;
-                left: 5%;
-                animation: floatAsteroid1 20s linear infinite;
-            }
-            &-2 {
-                bottom: 30%;
-                right: 8%;
-                animation: floatAsteroid2 25s linear infinite;
-                transform: scale(0.8);
-            }
-        }
     }
 
-    /* ==================== 暗色动画 ==================== */
-    @keyframes twinkle {
-        0%,
-        100% {
-            opacity: 0.5;
-        }
-        50% {
-            opacity: 0.8;
-        }
+    .nf-meteor-1 {
+        left: 18%;
+        transform: rotate(38deg);
+        animation: nf-meteor-1 8s ease-in infinite;
     }
 
-    @keyframes codeGlow {
-        0%,
-        100% {
-            filter: brightness(1) drop-shadow(0 0 60px rgba(0, 240, 255, 0.5));
-        }
-        50% {
-            filter: brightness(1.2) drop-shadow(0 0 80px rgba(0, 240, 255, 0.7));
-        }
+    .nf-meteor-2 {
+        left: 45%;
+        transform: rotate(30deg);
+        animation: nf-meteor-2 11s ease-in infinite;
+        animation-delay: 4.5s;
     }
 
-    @keyframes orbitRotate1 {
-        from {
-            transform: translate(-50%, -50%) rotate(0deg);
-        }
-        to {
-            transform: translate(-50%, -50%) rotate(360deg);
-        }
-    }
-    @keyframes orbitRotate2 {
-        from {
-            transform: translate(-50%, -50%) rotate(360deg);
-        }
-        to {
-            transform: translate(-50%, -50%) rotate(0deg);
-        }
-    }
-    @keyframes orbitRotate3 {
-        from {
-            transform: translate(-50%, -50%) rotate(0deg);
-        }
-        to {
-            transform: translate(-50%, -50%) rotate(360deg);
-        }
-    }
-
-    @keyframes orbitPlanet {
-        0%,
-        100% {
-            transform: translateY(0) translateX(0);
-        }
-        25% {
-            transform: translateY(-8px) translateX(5px);
-        }
-        50% {
-            transform: translateY(0) translateX(8px);
-        }
-        75% {
-            transform: translateY(8px) translateX(-5px);
-        }
-    }
-
-    /* ==================== 亮色动画 ==================== */
-    @keyframes sunPulse {
-        0%,
-        100% {
-            box-shadow:
-                0 0 60px rgba(255, 215, 0, 0.4),
-                0 0 120px rgba(255, 165, 0, 0.2);
-            transform: scale(1);
-        }
-        50% {
-            box-shadow:
-                0 0 80px rgba(255, 215, 0, 0.5),
-                0 0 150px rgba(255, 165, 0, 0.3);
-            transform: scale(1.05);
-        }
-    }
-
-    @keyframes cloudFloat1 {
-        from {
-            transform: translateX(-200px);
-        }
-        to {
-            transform: translateX(calc(100vw + 200px));
-        }
-    }
-    @keyframes cloudFloat2 {
-        from {
-            transform: translateX(calc(100vw + 200px));
-        }
-        to {
-            transform: translateX(-300px);
-        }
-    }
-    @keyframes cloudFloat3 {
-        from {
-            transform: translateX(-250px);
-        }
-        to {
-            transform: translateX(calc(100vw + 250px));
-        }
-    }
-
-    @keyframes codeFloat {
-        0%,
-        100% {
-            transform: translateY(0);
-        }
-        50% {
-            transform: translateY(-8px);
-        }
-    }
-
-    @keyframes planeFly {
+    @keyframes nf-meteor-1 {
         0% {
-            transform: translate(-100px, 50px) rotate(-15deg);
-        }
-        25% {
-            transform: translate(100px, -80px) rotate(-5deg);
-        }
-        50% {
-            transform: translate(200px, 30px) rotate(-20deg);
-        }
-        75% {
-            transform: translate(50px, -60px) rotate(-8deg);
-        }
-        100% {
-            transform: translate(-100px, 50px) rotate(-15deg);
-        }
-    }
-
-    @keyframes trailFade {
-        0%,
-        100% {
+            transform: translate3d(0, 0, 0) rotate(38deg);
             opacity: 0;
-            transform: rotate(-15deg) scaleX(0.5);
         }
-        25%,
-        75% {
-            opacity: 1;
-            transform: rotate(-15deg) scaleX(1);
+        4% {
+            opacity: 0.9;
         }
-    }
-
-    @keyframes birdFly1 {
-        from {
-            transform: translateX(-50px);
+        16% {
+            transform: translate3d(380px, 296px, 0) rotate(38deg);
+            opacity: 0;
         }
-        to {
-            transform: translateX(calc(100vw + 50px));
-        }
-    }
-    @keyframes birdFly2 {
-        from {
-            transform: translateX(calc(100vw + 50px));
-        }
-        to {
-            transform: translateX(-80px);
-        }
-    }
-    @keyframes birdFly3 {
-        from {
-            transform: translateX(-60px);
-        }
-        to {
-            transform: translateX(calc(100vw + 60px));
+        100% {
+            transform: translate3d(380px, 296px, 0) rotate(38deg);
+            opacity: 0;
         }
     }
 
-    @keyframes birdWing {
+    @keyframes nf-meteor-2 {
+        0% {
+            transform: translate3d(0, 0, 0) rotate(30deg);
+            opacity: 0;
+        }
+        4% {
+            opacity: 0.7;
+        }
+        14% {
+            transform: translate3d(450px, 260px, 0) rotate(30deg);
+            opacity: 0;
+        }
+        100% {
+            transform: translate3d(450px, 260px, 0) rotate(30deg);
+            opacity: 0;
+        }
+    }
+
+    /* ---------------- 视差层 ---------------- */
+    .nf-layer {
+        transform: translate3d(
+            calc(var(--nf-mx, 0) * var(--nf-depth, -8px)),
+            calc(var(--nf-my, 0) * var(--nf-depth, -8px)),
+            0
+        );
+        transition: transform 0.2s ease-out;
+        will-change: transform;
+    }
+
+    .nf-stars.nf-layer {
+        --nf-depth: -6px;
+    }
+
+    .nf-planet.nf-layer {
+        --nf-depth: -14px;
+    }
+
+    .nf-astro-wrap.nf-layer {
+        --nf-depth: -12px;
+    }
+
+    /* ---------------- 行星 ---------------- */
+    .nf-planet {
+        position: absolute;
+        top: 12%;
+        right: 8%;
+        width: clamp(90px, 12vw, 150px);
+        animation: nf-drift 9s ease-in-out infinite;
+    }
+
+    /* ---------------- 宇航员 ---------------- */
+    .nf-astro-wrap {
+        display: flex;
+        justify-content: center;
+    }
+
+    .nf-astro {
+        width: clamp(150px, 24vw, 200px);
+        height: auto;
+        filter: drop-shadow(0 24px 40px rgba(10, 20, 60, 0.18));
+        animation: nf-float 6s ease-in-out infinite;
+    }
+
+    @keyframes nf-float {
         0%,
         100% {
-            transform: rotate(-20deg);
+            transform: translateY(0) rotate(-2deg);
         }
         50% {
-            transform: rotate(-40deg);
+            transform: translateY(-18px) rotate(2.5deg);
         }
     }
 
-    /* ==================== 公共动画 ==================== */
-    @keyframes digitFloat {
+    @keyframes nf-drift {
         0%,
         100% {
             transform: translateY(0);
         }
-        25% {
-            transform: translateY(-10px);
-        }
-        75% {
-            transform: translateY(5px);
+        50% {
+            transform: translateY(-12px);
         }
     }
 
-    @keyframes glowPulse {
+    /* 挥手的右臂 */
+    .nf-arm-r {
+        transform-box: view-box;
+        transform-origin: 162px 152px;
+        animation: nf-wave 2.8s ease-in-out infinite;
+    }
+
+    @keyframes nf-wave {
         0%,
         100% {
-            opacity: 0.3;
-            transform: translate(-50%, -50%) scale(1);
+            transform: rotate(22deg);
         }
         50% {
-            opacity: 0.6;
-            transform: translate(-50%, -50%) scale(1.2);
+            transform: rotate(44deg);
         }
     }
 
-    @keyframes cardGlowTop {
+    /* 摆动的左臂与双腿 */
+    .nf-arm-l {
+        transform-box: view-box;
+        transform-origin: 71px 148px;
+        animation: nf-sway 5s ease-in-out infinite;
+    }
+
+    @keyframes nf-sway {
         0%,
         100% {
-            transform: translateX(-100%);
-            opacity: 0;
+            transform: rotate(5deg);
         }
         50% {
-            opacity: 1;
-        }
-        100% {
-            transform: translateX(100%);
-            opacity: 0;
+            transform: rotate(-7deg);
         }
     }
 
-    @keyframes cardGlowBottom {
+    .nf-leg-l {
+        transform-box: view-box;
+        transform-origin: 106px 220px;
+        animation: nf-leg-swing 6s ease-in-out infinite;
+    }
+
+    .nf-leg-r {
+        transform-box: view-box;
+        transform-origin: 134px 220px;
+        animation: nf-leg-swing 6s ease-in-out infinite;
+        animation-delay: -3s;
+    }
+
+    @keyframes nf-leg-swing {
         0%,
         100% {
-            transform: translateX(100%);
-            opacity: 0;
+            transform: rotate(4deg);
         }
         50% {
-            opacity: 1;
-        }
-        100% {
-            transform: translateX(-100%);
-            opacity: 0;
+            transform: rotate(-4deg);
         }
     }
 
-    @keyframes fadeInUp {
+    /* ---------------- 文案内容 ---------------- */
+    .nf-content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: -8px;
+        text-align: center;
+    }
+
+    .nf-content > * {
+        animation: nf-fade-up 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+    }
+
+    .nf-content > *:nth-child(1) {
+        animation-delay: 0.05s;
+    }
+    .nf-content > *:nth-child(2) {
+        animation-delay: 0.15s;
+    }
+    .nf-content > *:nth-child(3) {
+        animation-delay: 0.25s;
+    }
+    .nf-content > *:nth-child(4) {
+        animation-delay: 0.32s;
+    }
+    .nf-content > *:nth-child(5) {
+        animation-delay: 0.4s;
+    }
+
+    @keyframes nf-fade-up {
         from {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(24px);
         }
         to {
             opacity: 1;
@@ -1185,138 +564,133 @@
         }
     }
 
-    @keyframes floatStar1 {
+    /* 404 大数字：独立浮动 */
+    .nf-code {
+        display: flex;
+        margin: 0;
+        font-size: clamp(96px, 18vw, 168px);
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: 0.04em;
+    }
+
+    .nf-code span {
+        background: var(--nf-grad);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        filter: drop-shadow(0 12px 28px var(--nf-glow));
+        animation: nf-bob 3.2s ease-in-out infinite;
+    }
+
+    .nf-code span:nth-child(2) {
+        animation-delay: 0.35s;
+    }
+    .nf-code span:nth-child(3) {
+        animation-delay: 0.7s;
+    }
+
+    @keyframes nf-bob {
         0%,
         100% {
-            transform: translate(0, 0) rotate(0deg);
-        }
-        25% {
-            transform: translate(20px, -30px) rotate(90deg);
+            transform: translateY(0);
         }
         50% {
-            transform: translate(40px, 0) rotate(180deg);
-        }
-        75% {
-            transform: translate(20px, 30px) rotate(270deg);
+            transform: translateY(-12px);
         }
     }
 
-    @keyframes floatStar2 {
-        0%,
-        100% {
-            transform: translate(0, 0) scale(1);
-        }
-        50% {
-            transform: translate(-30px, 20px) scale(1.5);
-        }
+    .nf-title {
+        margin: 16px 0 0;
+        font-size: clamp(22px, 3.5vw, 32px);
+        font-weight: 700;
+        color: var(--nf-text-1);
     }
 
-    @keyframes floatStar3 {
-        0%,
-        100% {
-            transform: translate(0, 0) scale(1);
-            opacity: 0.5;
-        }
-        50% {
-            transform: translate(50px, -40px) scale(1.2);
-            opacity: 1;
-        }
+    .nf-desc {
+        margin: 14px 0 0;
+        font-size: 15px;
+        line-height: 1.8;
+        color: var(--nf-text-2);
+        white-space: pre-line;
     }
 
-    @keyframes floatAsteroid1 {
-        0% {
-            transform: translateX(-100px) rotate(0deg);
-        }
-        100% {
-            transform: translateX(calc(100vw + 100px)) rotate(360deg);
-        }
+    /* ---------------- 按钮 ---------------- */
+    .nf-actions {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+        margin-top: 30px;
     }
 
-    @keyframes floatAsteroid2 {
-        0% {
-            transform: translateX(calc(100vw + 100px)) rotate(360deg);
-        }
-        100% {
-            transform: translateX(-100px) rotate(0deg);
-        }
+    .nf-btn {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        padding: 12px 28px;
+        border: 1px solid transparent;
+        border-radius: 999px;
+        font-size: 15px;
+        font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+        transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease,
+            background-color 0.2s ease,
+            border-color 0.2s ease;
     }
 
-    /* ==================== 响应式 ==================== */
-    @media (max-width: 768px) {
-        .not-found-body .container {
-            .orbit-container,
-            .paper-plane-container {
-                width: 300px;
-                height: 300px;
-            }
-
-            .content-card {
-                padding: 35px 25px;
-                margin: 0 15px;
-
-                .title {
-                    font-size: clamp(1.2rem, 5vw, 2rem);
-                }
-                .description {
-                    font-size: 0.9rem;
-                    margin-bottom: 30px;
-                }
-
-                .btn-group {
-                    gap: 15px;
-                    .btn {
-                        padding: 12px 25px;
-                        font-size: 0.8rem;
-                        .btn-icon {
-                            width: 16px;
-                            height: 16px;
-                        }
-                    }
-                }
-            }
-        }
+    .nf-btn svg {
+        width: 17px;
+        height: 17px;
     }
 
-    @media (max-width: 480px) {
-        .not-found-body .container .content-card {
-            padding: 25px 20px;
-            border-radius: 20px;
-
-            .btn-group {
-                flex-direction: column;
-                align-items: center;
-                .btn {
-                    width: 100%;
-                    justify-content: center;
-                }
-            }
-        }
+    .nf-btn:hover {
+        transform: translateY(-2px);
     }
 
+    .nf-btn:active {
+        transform: translateY(0);
+    }
+
+    .nf-btn:focus-visible {
+        outline: 2px solid #01beff;
+        outline-offset: 3px;
+    }
+
+    .nf-btn-primary {
+        color: #ffffff;
+        background: linear-gradient(135deg, #01beff 0%, #00d2b4 100%);
+        box-shadow: 0 8px 24px rgba(1, 190, 255, 0.35);
+    }
+
+    .nf-btn-primary:hover {
+        box-shadow: 0 12px 32px rgba(1, 190, 255, 0.5);
+    }
+
+    .nf-btn-ghost {
+        color: var(--nf-text-1);
+        font-family: inherit;
+        background: var(--nf-btn-ghost-bg);
+        border-color: var(--nf-btn-ghost-border);
+    }
+
+    .nf-btn-ghost:hover {
+        background: var(--nf-btn-ghost-hover);
+    }
+
+    /* ---------------- 无障碍：减弱动效 ---------------- */
     @media (prefers-reduced-motion: reduce) {
-        .not-found-body {
-            .stars-bg,
-            .clouds-bg,
-            .error-code,
-            .orbit-ring,
-            .orbit-planet,
-            .card-glow,
-            .floating-star,
-            .floating-asteroid,
-            .error-glow,
-            .cloud,
-            .sun,
-            .paper-plane,
-            .plane-trail,
-            .bird {
-                animation: none !important;
-            }
+        .nf-scene,
+        .nf-scene * {
+            animation: none !important;
+            transition: none !important;
+        }
 
-            .btn,
-            .content-card,
-            .error-code-container {
-                transition: none;
-            }
+        .nf-meteor {
+            display: none;
         }
     }
 </style>

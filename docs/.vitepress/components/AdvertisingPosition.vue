@@ -1,6 +1,5 @@
 <script setup lang="ts">
     import { VPSponsors } from 'vitepress/theme';
-    import { useSponsor } from '../composable';
 
     const data = [
         {

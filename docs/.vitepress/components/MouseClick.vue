@@ -125,10 +125,15 @@
         };
     }
 
-    // 动画循环
+    // 动画循环（按需启动：无活动粒子时自动停止，点击时再启动）
     function animate() {
-        const ctx = canvas.value.getContext('2d');
-        ctx.clearRect(0, 0, canvas.value.width, canvas.value.height);
+        const canvasEl = canvas.value;
+        if (!canvasEl || document.hidden) {
+            animationFrameId = null;
+            return;
+        }
+        const ctx = canvasEl.getContext('2d');
+        ctx.clearRect(0, 0, canvasEl.width, canvasEl.height);
 
         // 更新并绘制粒子
         particles = particles.filter((particle) => {
@@ -144,7 +149,19 @@
             return shouldKeep;
         });
 
+        // 没有活动粒子时停止循环，避免空转浪费 CPU
+        if (particles.length === 0 && circles.length === 0) {
+            animationFrameId = null;
+            return;
+        }
+
         animationFrameId = requestAnimationFrame(animate);
+    }
+
+    function startAnimate() {
+        if (!animationFrameId) {
+            animationFrameId = requestAnimationFrame(animate);
+        }
     }
 
     // 处理点击事件
@@ -162,6 +179,15 @@
 
         // 创建随机圆形
         circles.push(createRandomCircle(x, y));
+
+        startAnimate();
+    }
+
+    function handleVisibilityChange() {
+        // 页面恢复可见且有活动粒子时重新启动循环
+        if (!document.hidden && (particles.length > 0 || circles.length > 0)) {
+            startAnimate();
+        }
     }
 
     onMounted(() => {
@@ -169,15 +195,18 @@
         const tapEvent = 'ontouchstart' in window ? 'touchstart' : 'mousedown';
         window.addEventListener(tapEvent, handleClick);
         window.addEventListener('resize', setCanvasSize);
-        animate();
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+        // 初始无粒子，不启动动画循环
     });
 
     onUnmounted(() => {
         const tapEvent = 'ontouchstart' in window ? 'touchstart' : 'mousedown';
         window.removeEventListener(tapEvent, handleClick);
         window.removeEventListener('resize', setCanvasSize);
+        document.removeEventListener('visibilitychange', handleVisibilityChange);
         if (animationFrameId) {
             cancelAnimationFrame(animationFrameId);
+            animationFrameId = null;
         }
     });
 </script>

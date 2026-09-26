@@ -1,9 +1,9 @@
-# 华玥组件库 hy-app 使用教程
+# 华玥组件库 @hy-app/ui 安装使用教程
 
 ::: info 温馨提示
 
 - 温馨提示node(推荐) >= 16.14.0 sass(推荐)
-- 1.53.0<=sass<=1.101.0
+- 1.78.0\<sass<=1.101.0
 
 :::
 
@@ -17,19 +17,19 @@
 
 ::: code-group
 
-```shell [npm]
+```shell
 $ npm install -D sass@1.98.0
 ```
 
-```shell [pnpm]
+```shell
 $ pnpm add -D sass@1.98.0
 ```
 
-```shell [cnpm]
+```shell
 $ cnpm install -D sass@1.98.0
 ```
 
-```shell [yarn]
+```shell
 $ yarn add -D sass@1.98.0
 ```
 
@@ -45,19 +45,19 @@ $ yarn add -D sass@1.98.0
 
 ::: code-group
 
-```shell [npm]
+```shell
 $ npm install dayjs
 ```
 
-```shell [pnpm]
+```shell
 $ pnpm add dayjs
 ```
 
-```shell [cnpm]
+```shell
 $ cnpm install dayjs
 ```
 
-```shell [yarn]
+```shell
 $ yarn add dayjs
 ```
 
@@ -73,19 +73,19 @@ $ yarn add dayjs
 
 ::: code-group
 
-```shell [npm]
+```shell
 $ npm install @hy-app/ui
 ```
 
-```shell [pnpm]
+```shell
 $ pnpm add @hy-app/ui
 ```
 
-```shell [cnpm]
+```shell
 $ cnpm install @hy-app/ui
 ```
 
-```shell [yarn]
+```shell
 $ yarn install @hy-app/ui
 ```
 
@@ -95,7 +95,7 @@ $ yarn install @hy-app/ui
 
 修改项目根目录下的 ./src/pages.json 文件，添加如下 easycom 配置：
 
-```json [./src/pages.json]
+```json
 {
     "easycom": {
         "custom": {
@@ -109,7 +109,7 @@ $ yarn install @hy-app/ui
 
 > VS Code和trae 能提供组件的属性提示、类型检查、自动补全
 
-```json tsconfig.json
+```json
 {
     "compilerOptions": {
         "types": ["@hy-app/ui/global"]
@@ -121,11 +121,11 @@ $ yarn install @hy-app/ui
 
 > 华玥组件库的全局样式、主题变量、组件基础样式需统一导入，否则组件会丢失样式效果。
 
-```scss [./uni.scss]
+```scss
 @use '@hy-app/ui/index.scss' as *;
 ```
 
-## :deciduous_tree: 页面上使用组件
+## :deciduous\_tree: 页面上使用组件
 
 ```html
 <template>
@@ -133,3 +133,4 @@ $ yarn install @hy-app/ui
     <hy-input></hy-input>
 </template>
 ```
+
