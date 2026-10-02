@@ -6,26 +6,26 @@
                 {
                     "text": "快速开始",
                     "items": [
-                        { "text": "介绍", "link": "/zh/guide/intro" },
-                        { "text": "快速上手", "link": "/zh/guide/start" },
-                        { "text": "内置样式", "link": "/zh/guide/style" },
-                        { "text": "开发常见问题", "link": "/zh/guide/announcements" },
-                        { "text": "更新日志", "link": "/zh/guide/changelog" }
+                        { "text": "介绍", "link": "/guide/intro" },
+                        { "text": "快速上手", "link": "/guide/start" },
+                        { "text": "内置样式", "link": "/guide/style" },
+                        { "text": "开发常见问题", "link": "/guide/announcements" },
+                        { "text": "更新日志", "link": "/guide/changelog" }
                     ]
                 },
                 {
                     "text": "工程化项目",
                     "items": [
-                        { "text": "配置主题", "link": "/zh/guide/theme" },
-                        { "text": "国际化", "link": "/zh/guide/locale" }
+                        { "text": "配置主题", "link": "/guide/theme" },
+                        { "text": "国际化", "link": "/guide/locale" }
                     ]
                 },
                 {
                     "text": "AI 工具",
                     "items": [
-                        { "text": "Skills", "link": "/zh/guide/skills" },
-                        { "text": "LLMs", "link": "/zh/guide/LLMs" },
-                        { "text": "MCP", "link": "/zh/guide/mcp" }
+                        { "text": "Skills", "link": "/guide/skills" },
+                        { "text": "LLMs", "link": "/guide/LLMs" },
+                        { "text": "MCP", "link": "/guide/mcp" }
                     ]
                 }
             ]
@@ -33,22 +33,22 @@
         {
             "text": "组件库",
             "items": [
-                { "text": "基础组件", "link": "/zh/components/badge" },
-                { "text": "表单组件", "link": "/zh/components/addressPicker" },
-                { "text": "布局组件", "link": "/zh/components/card" },
-                { "text": "反馈组件", "link": "/zh/components/actionSheet" },
-                { "text": "导航组件", "link": "/zh/components/backTop" },
-                { "text": "其他组件", "link": "/zh/components/avatar" },
-                { "text": "业务组件", "link": "/zh/components/coupon" }
+                { "text": "基础组件", "link": "/components/badge" },
+                { "text": "表单组件", "link": "/components/addressPicker" },
+                { "text": "布局组件", "link": "/components/card" },
+                { "text": "反馈组件", "link": "/components/actionSheet" },
+                { "text": "导航组件", "link": "/components/backTop" },
+                { "text": "其他组件", "link": "/components/avatar" },
+                { "text": "业务组件", "link": "/components/coupon" }
             ]
         },
         {
             "text": "api",
-            "link": "/zh/api/intro"
+            "link": "/api/intro"
         },
         {
             "text": "📖 学习文档",
-            "link": "/zh/download/web"
+            "link": "/download/web"
         },
         {
             "text": "关于作者",
@@ -56,52 +56,52 @@
         }
     ],
     "sidebar": {
-        "/zh/guide/": [
+        "/guide/": [
             {
                 "text": "快速开始",
                 "items": [
-                    { "text": "介绍", "link": "/zh/guide/intro" },
-                    { "text": "快速上手", "link": "/zh/guide/start" },
-                    { "text": "内置样式", "link": "/zh/guide/style" },
-                    { "text": "开发常见问题", "link": "/zh/guide/announcements" },
-                    { "text": "更新日志", "link": "/zh/guide/changelog" }
+                    { "text": "介绍", "link": "/guide/intro" },
+                    { "text": "快速上手", "link": "/guide/start" },
+                    { "text": "内置样式", "link": "/guide/style" },
+                    { "text": "开发常见问题", "link": "/guide/announcements" },
+                    { "text": "更新日志", "link": "/guide/changelog" }
                 ]
             },
             {
                 "text": "工程化项目",
                 "items": [
-                    { "text": "配置主题", "link": "/zh/guide/theme" },
-                    { "text": "国际化", "link": "/zh/guide/locale" }
+                    { "text": "配置主题", "link": "/guide/theme" },
+                    { "text": "国际化", "link": "/guide/locale" }
                 ]
             },
             {
                 "text": "AI 工具",
                 "items": [
-                    { "text": "Skills", "link": "/zh/guide/skills" },
-                    { "text": "LLMs", "link": "/zh/guide/LLMs" },
-                    { "text": "MCP", "link": "/zh/guide/mcp" }
+                    { "text": "Skills", "link": "/guide/skills" },
+                    { "text": "LLMs", "link": "/guide/LLMs" },
+                    { "text": "MCP", "link": "/guide/mcp" }
                 ]
             }
         ],
-        "/zh/components/": [
+        "/components/": [
             {
                 "text": "基础组件",
                 "collapsed": false,
                 "items": [
-                    { "text": "Badge 徽标", "link": "/zh/components/badge" },
-                    { "text": "Button 按钮", "link": "/zh/components/button" },
-                    { "text": "Cell 单元格", "link": "/zh/components/cell" },
-                    { "text": "Color 颜色", "link": "/zh/components/color" },
+                    { "text": "Badge 徽标", "link": "/components/badge" },
+                    { "text": "Button 按钮", "link": "/components/button" },
+                    { "text": "Cell 单元格", "link": "/components/cell" },
+                    { "text": "Color 颜色", "link": "/components/color" },
                     {
                         "text": "ConfigProvider 全局配置",
-                        "link": "/zh/components/configProvider"
+                        "link": "/components/configProvider"
                     },
-                    { "text": "Icon 图标", "link": "/zh/components/icon" },
-                    { "text": "Image 图片", "link": "/zh/components/image" },
-                    { "text": "Loading 加载动画", "link": "/zh/components/loading" },
-                    { "text": "Swiper 轮播图", "link": "/zh/components/swiper" },
-                    { "text": "Tag 标签", "link": "/zh/components/tag" },
-                    { "text": "Text 文本", "link": "/zh/components/text" }
+                    { "text": "Icon 图标", "link": "/components/icon" },
+                    { "text": "Image 图片", "link": "/components/image" },
+                    { "text": "Loading 加载动画", "link": "/components/loading" },
+                    { "text": "Swiper 轮播图", "link": "/components/swiper" },
+                    { "text": "Tag 标签", "link": "/components/tag" },
+                    { "text": "Text 文本", "link": "/components/text" }
                 ]
             },
             {
@@ -110,158 +110,158 @@
                 "items": [
                     {
                         "text": "AddressPicker 地址选择器",
-                        "link": "/zh/components/addressPicker"
+                        "link": "/components/addressPicker"
                     },
-                    { "text": "Calendar 日历", "link": "/zh/components/calendar" },
-                    { "text": "Cascader 级联选择器", "link": "/zh/components/cascader" },
-                    { "text": "Checkbox 复选框", "link": "/zh/components/checkbox" },
-                    { "text": "CheckButton 复选框按钮", "link": "/zh/components/checkButton" },
+                    { "text": "Calendar 日历", "link": "/components/calendar" },
+                    { "text": "Cascader 级联选择器", "link": "/components/cascader" },
+                    { "text": "Checkbox 复选框", "link": "/components/checkbox" },
+                    { "text": "CheckButton 复选框按钮", "link": "/components/checkButton" },
                     {
                         "text": "DatetimePicker 时间选择器",
-                        "link": "/zh/components/datetimePicker"
+                        "link": "/components/datetimePicker"
                     },
-                    { "text": "Form 表单", "link": "/zh/components/form" },
-                    { "text": "FormGroup 表单组", "link": "/zh/components/formGroup" },
-                    { "text": "Input 输入框", "link": "/zh/components/input" },
-                    { "text": "Keyboard 键盘", "link": "/zh/components/keyboard" },
-                    { "text": "NumberStep 步进器", "link": "/zh/components/numberStep" },
-                    { "text": "Picker 选择器", "link": "/zh/components/picker" },
-                    { "text": "Radio 单选框", "link": "/zh/components/radio" },
-                    { "text": "Rate 评分", "link": "/zh/components/rate" },
-                    { "text": "Search 搜索", "link": "/zh/components/search" },
-                    { "text": "Slider 滑块", "link": "/zh/components/slider" },
-                    { "text": "Switch 开关", "link": "/zh/components/switch" },
-                    { "text": "Textarea 文本域", "link": "/zh/components/textarea" },
-                    { "text": "Upload 上传", "link": "/zh/components/upload" }
+                    { "text": "Form 表单", "link": "/components/form" },
+                    { "text": "FormGroup 表单组", "link": "/components/formGroup" },
+                    { "text": "Input 输入框", "link": "/components/input" },
+                    { "text": "Keyboard 键盘", "link": "/components/keyboard" },
+                    { "text": "NumberStep 步进器", "link": "/components/numberStep" },
+                    { "text": "Picker 选择器", "link": "/components/picker" },
+                    { "text": "Radio 单选框", "link": "/components/radio" },
+                    { "text": "Rate 评分", "link": "/components/rate" },
+                    { "text": "Search 搜索", "link": "/components/search" },
+                    { "text": "Slider 滑块", "link": "/components/slider" },
+                    { "text": "Switch 开关", "link": "/components/switch" },
+                    { "text": "Textarea 文本域", "link": "/components/textarea" },
+                    { "text": "Upload 上传", "link": "/components/upload" }
                 ]
             },
             {
                 "text": "布局组件",
                 "collapsed": false,
                 "items": [
-                    { "text": "Card 卡片", "link": "/zh/components/card" },
-                    { "text": "Divider 分割线", "link": "/zh/components/divider" },
-                    { "text": "Flex 弹性布局", "link": "/zh/components/flex" },
-                    { "text": "FloatButton 悬浮按钮", "link": "/zh/components/floatButton" },
-                    { "text": "Grid 宫格布局", "link": "/zh/components/grid" },
-                    { "text": "List 虚拟列表", "link": "/zh/components/list" },
+                    { "text": "Card 卡片", "link": "/components/card" },
+                    { "text": "Divider 分割线", "link": "/components/divider" },
+                    { "text": "Flex 弹性布局", "link": "/components/flex" },
+                    { "text": "FloatButton 悬浮按钮", "link": "/components/floatButton" },
+                    { "text": "Grid 宫格布局", "link": "/components/grid" },
+                    { "text": "List 虚拟列表", "link": "/components/list" },
                     {
                         "text": "LineProgress 线形进度条",
-                        "link": "/zh/components/lineProgress"
+                        "link": "/components/lineProgress"
                     },
-                    { "text": "Line 线条", "link": "/zh/components/line" },
-                    { "text": "Overlay 遮罩层", "link": "/zh/components/overlay" },
-                    { "text": "ScrollList 横向滚动列表", "link": "/zh/components/scrollList" },
-                    { "text": "Skeleton 骨架屏", "link": "/zh/components/skeleton" },
-                    { "text": "Sticky 吸顶", "link": "/zh/components/sticky" },
-                    { "text": "Waterfall 瀑布流", "link": "/zh/components/waterfall" },
-                    { "text": "Watermark 水印", "link": "/zh/components/watermark" }
+                    { "text": "Line 线条", "link": "/components/line" },
+                    { "text": "Overlay 遮罩层", "link": "/components/overlay" },
+                    { "text": "ScrollList 横向滚动列表", "link": "/components/scrollList" },
+                    { "text": "Skeleton 骨架屏", "link": "/components/skeleton" },
+                    { "text": "Sticky 吸顶", "link": "/components/sticky" },
+                    { "text": "Waterfall 瀑布流", "link": "/components/waterfall" },
+                    { "text": "Watermark 水印", "link": "/components/watermark" }
                 ]
             },
             {
                 "text": "反馈组件",
                 "collapsed": false,
                 "items": [
-                    { "text": "ActionSheet 操作菜单", "link": "/zh/components/actionSheet" },
-                    { "text": "FoldingPanel 折叠面板", "link": "/zh/components/foldingPanel" },
-                    { "text": "Modal 模态框", "link": "/zh/components/modal" },
-                    { "text": "NoticeBar 滚动通知", "link": "/zh/components/noticeBar" },
-                    { "text": "Notify 消息提示", "link": "/zh/components/notify" },
-                    { "text": "Popover 气泡", "link": "/zh/components/popover" },
-                    { "text": "Popup 弹出层", "link": "/zh/components/popup" },
-                    { "text": "SwipeAction 滑动单元格", "link": "/zh/components/swipeAction" },
-                    { "text": "Toast 提示信息", "link": "/zh/components/toast" },
-                    { "text": "Tooltip 长按提示", "link": "/zh/components/tooltip" },
-                    { "text": "Warn 警告提示", "link": "/zh/components/warn" }
+                    { "text": "ActionSheet 操作菜单", "link": "/components/actionSheet" },
+                    { "text": "FoldingPanel 折叠面板", "link": "/components/foldingPanel" },
+                    { "text": "Modal 模态框", "link": "/components/modal" },
+                    { "text": "NoticeBar 滚动通知", "link": "/components/noticeBar" },
+                    { "text": "Notify 消息提示", "link": "/components/notify" },
+                    { "text": "Popover 气泡", "link": "/components/popover" },
+                    { "text": "Popup 弹出层", "link": "/components/popup" },
+                    { "text": "SwipeAction 滑动单元格", "link": "/components/swipeAction" },
+                    { "text": "Toast 提示信息", "link": "/components/toast" },
+                    { "text": "Tooltip 长按提示", "link": "/components/tooltip" },
+                    { "text": "Warn 警告提示", "link": "/components/warn" }
                 ]
             },
             {
                 "text": "导航组件",
                 "collapsed": false,
                 "items": [
-                    { "text": "BackTop 返回顶部", "link": "/zh/components/backTop" },
-                    { "text": "Dropdown 下拉菜单", "link": "/zh/components/dropdown" },
-                    { "text": "Empty 空状态", "link": "/zh/components/empty" },
-                    { "text": "IndexBar 索引栏", "link": "/zh/components/indexBar" },
-                    { "text": "Menu 侧边菜单栏", "link": "/zh/components/menu" },
-                    { "text": "Navbar 自定义导航栏", "link": "/zh/components/navbar" },
-                    { "text": "Pagination 分页", "link": "/zh/components/pagination" },
-                    { "text": "Subsection 分段器", "link": "/zh/components/subsection" },
-                    { "text": "Steps 步骤条", "link": "/zh/components/steps" },
-                    { "text": "Tabs 标签", "link": "/zh/components/tabs" },
-                    { "text": "TabBar 底部导航栏", "link": "/zh/components/tabBar" }
+                    { "text": "BackTop 返回顶部", "link": "/components/backTop" },
+                    { "text": "Dropdown 下拉菜单", "link": "/components/dropdown" },
+                    { "text": "Empty 空状态", "link": "/components/empty" },
+                    { "text": "IndexBar 索引栏", "link": "/components/indexBar" },
+                    { "text": "Menu 侧边菜单栏", "link": "/components/menu" },
+                    { "text": "Navbar 自定义导航栏", "link": "/components/navbar" },
+                    { "text": "Pagination 分页", "link": "/components/pagination" },
+                    { "text": "Subsection 分段器", "link": "/components/subsection" },
+                    { "text": "Steps 步骤条", "link": "/components/steps" },
+                    { "text": "Tabs 标签", "link": "/components/tabs" },
+                    { "text": "TabBar 底部导航栏", "link": "/components/tabBar" }
                 ]
             },
             {
                 "text": "其他组件",
                 "collapsed": false,
                 "items": [
-                    { "text": "Avatar 头像", "link": "/zh/components/avatar" },
-                    { "text": "CodeInput 验证码输入", "link": "/zh/components/codeInput" },
-                    { "text": "CountTo 数字滚动", "link": "/zh/components/countTo" },
-                    { "text": "CountDown 倒计时", "link": "/zh/components/countDown" },
-                    { "text": "Parse 富文本", "link": "/zh/components/parse" },
-                    { "text": "Qrcode 二维码", "link": "/zh/components/qrcode" },
-                    { "text": "ReadMore 展开阅读更多", "link": "/zh/components/readMore" },
-                    { "text": "RollingNum 滚动数字", "link": "/zh/components/rollingNum" },
-                    { "text": "Signature 签名", "link": "/zh/components/signature" },
-                    { "text": "Table 表格", "link": "/zh/components/table" },
-                    { "text": "Transition 动画", "link": "/zh/components/transition" }
+                    { "text": "Avatar 头像", "link": "/components/avatar" },
+                    { "text": "CodeInput 验证码输入", "link": "/components/codeInput" },
+                    { "text": "CountTo 数字滚动", "link": "/components/countTo" },
+                    { "text": "CountDown 倒计时", "link": "/components/countDown" },
+                    { "text": "Parse 富文本", "link": "/components/parse" },
+                    { "text": "Qrcode 二维码", "link": "/components/qrcode" },
+                    { "text": "ReadMore 展开阅读更多", "link": "/components/readMore" },
+                    { "text": "RollingNum 滚动数字", "link": "/components/rollingNum" },
+                    { "text": "Signature 签名", "link": "/components/signature" },
+                    { "text": "Table 表格", "link": "/components/table" },
+                    { "text": "Transition 动画", "link": "/components/transition" }
                 ]
             },
             {
                 "text": "业务组件",
                 "collapsed": false,
                 "items": [
-                    { "text": "Coupon 优惠券", "link": "/zh/components/coupon" },
-                    { "text": "Price 金额", "link": "/zh/components/price" },
-                    { "text": "SubmitBar 提交订单", "link": "/zh/components/submitBar" }
+                    { "text": "Coupon 优惠券", "link": "/components/coupon" },
+                    { "text": "Price 金额", "link": "/components/price" },
+                    { "text": "SubmitBar 提交订单", "link": "/components/submitBar" }
                 ]
             }
         ],
-        "/zh/api/": [
+        "/api/": [
             {
                 "text": "开发指南",
                 "items": [
-                    { "text": "介绍", "link": "/zh/api/intro" },
-                    { "text": "便捷工具", "link": "/zh/api/fastTools" }
+                    { "text": "介绍", "link": "/api/intro" },
+                    { "text": "便捷工具", "link": "/api/fastTools" }
                 ]
             },
             {
                 "text": "网络",
-                "items": [{ "text": "http请求封装", "link": "/zh/api/http" }]
+                "items": [{ "text": "http请求封装", "link": "/api/http" }]
             },
             {
                 "text": "工具库",
                 "items": [
-                    { "text": "hooks方法", "link": "/zh/api/hooks" },
-                    { "text": "节流防抖", "link": "/zh/api/throttle" },
-                    { "text": "base64加密解密", "link": "/zh/api/encrypt" },
-                    { "text": "递归", "link": "/zh/api/deepClone" },
-                    { "text": "清空数据", "link": "/zh/api/clear" },
-                    { "text": "字节转换大小", "link": "/zh/api/bytesToSize" },
-                    { "text": "时间格式化", "link": "/zh/api/formatTime" },
-                    { "text": "本地图片转换base64", "link": "/zh/api/imgToBase64" },
-                    { "text": "全局唯一标识符", "link": "/zh/api/guid" },
-                    { "text": "颜色转换", "link": "/zh/api/colorSwitch" },
-                    { "text": "获取元素节点信息", "link": "/zh/api/getRect" },
-                    { "text": "对象互转地址栏参数", "link": "/zh/api/objectToParams" },
-                    { "text": "数据互相转换单位", "link": "/zh/api/unitSwitch" },
-                    { "text": "随机数值", "link": "/zh/api/random" },
-                    { "text": "校验规则", "link": "/zh/api/inspect" },
-                    { "text": "安装apk", "link": "/zh/api/updateVersion" },
-                    { "text": "内部工具", "link": "/zh/api/inside" },
-                    { "text": "颜色渐变工具", "link": "/zh/api/colorGradient" }
+                    { "text": "hooks方法", "link": "/api/hooks" },
+                    { "text": "节流防抖", "link": "/api/throttle" },
+                    { "text": "base64加密解密", "link": "/api/encrypt" },
+                    { "text": "递归", "link": "/api/deepClone" },
+                    { "text": "清空数据", "link": "/api/clear" },
+                    { "text": "字节转换大小", "link": "/api/bytesToSize" },
+                    { "text": "时间格式化", "link": "/api/formatTime" },
+                    { "text": "本地图片转换base64", "link": "/api/imgToBase64" },
+                    { "text": "全局唯一标识符", "link": "/api/guid" },
+                    { "text": "颜色转换", "link": "/api/colorSwitch" },
+                    { "text": "获取元素节点信息", "link": "/api/getRect" },
+                    { "text": "对象互转地址栏参数", "link": "/api/objectToParams" },
+                    { "text": "数据互相转换单位", "link": "/api/unitSwitch" },
+                    { "text": "随机数值", "link": "/api/random" },
+                    { "text": "校验规则", "link": "/api/inspect" },
+                    { "text": "安装apk", "link": "/api/updateVersion" },
+                    { "text": "内部工具", "link": "/api/inside" },
+                    { "text": "颜色渐变工具", "link": "/api/colorGradient" }
                 ]
             }
         ],
-        "/zh/download": [
+        "/download": [
             {
                 "text": "文档集合",
                 "items": [
-                    { "text": "前端软件集合", "link": "/zh/download/web" },
-                    { "text": "服务软件集合", "link": "/zh/download/service" },
-                    { "text": "后端软件集合", "link": "/zh/download/java" }
+                    { "text": "前端软件集合", "link": "/download/web" },
+                    { "text": "服务软件集合", "link": "/download/service" },
+                    { "text": "后端软件集合", "link": "/download/java" }
                 ]
             }
         ]

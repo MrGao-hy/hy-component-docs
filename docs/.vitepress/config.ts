@@ -17,11 +17,14 @@ export default defineConfig({
     sitemap: {
         hostname: 'https://www.hy-design-uni.top',
     },
+    rewrites: {
+        'zh/:rest*': ':rest*',
+    },
 
     locales: {
         root: {
             label: '中文',
-            lang: 'zh-CN',
+            lang: 'zh-Hans',
             title: '华玥组件库',
             description: '华玥UI组件库官方文档',
             // ==========中文导航、侧边栏全部移到这里==========
