@@ -11,10 +11,10 @@ hero:
     actions:
         - theme: brand
           text: 开始使用 🚀
-          link: /zh/guide/start
+          link: /guide/start
         - theme: alt
           text: 📱 演示
-          link: /zh/guide/intro#演示模板
+          link: /guide/intro#演示模板
     image:
         src: /images/home.png
         alt: Star
