@@ -15,6 +15,7 @@
 - `closeOnClickOverlay` 开启后，点击遮罩只会触发 `close` 事件，不会自动关闭模态框，需要自行处理关闭逻辑
 - `asyncClose` 和 `asyncCancelClose` 属性在当前实现中已通过 `loading` 和 `autoClose` 属性替代
 - 当传入自定义插槽时，`content` 属性将失效
+- 当前页面自定义弹窗组件时， `hy-modal` 建议显式传入 `:message="false"`，声明其为独立模态框，避免按钮点击被全局消息回调接管而失效
 
 :::
 
@@ -371,33 +372,99 @@
 </script>
 ```
 
+## :confetti_ball:全局消息与自定义模态框共存
+
+`useMessage()` 会向所有后代组件注入一份全局消息状态，需要配合一个携带 `message` 属性的 `hy-modal` 作为驱动实例来渲染弹窗。
+
+但当页面中同时存在**全局消息驱动实例**和**自定义模态框**时，自定义的 `hy-modal` 也在注入范围内：如果被误判为驱动实例，它的显隐将跟随全局状态、按钮点击也会被全局回调接管，表现为 `v-model` 失效、点击确认/取消按钮没有任何反应。
+
+此时为自定义模态框显式传入 `:message="false"`，即可声明它是独立模态框，完全走 `v-model` 与 `confirm`/`cancel` 事件，不受全局注入状态劫持。
+
+### 完整示例
+
+```html
+<template>
+    <view>
+        <hy-button text="全局消息确认" @click="onGlobalConfirm"></hy-button>
+        <hy-button text="打开自定义模态框" @click="show = true"></hy-button>
+
+        <!-- 全局消息驱动实例：由 message.alert / message.confirm 控制 -->
+        <hy-modal message></hy-modal>
+
+        <!-- 自定义模态框：显式声明 :message="false"，不受全局注入状态影响 -->
+        <hy-modal
+            v-model="show"
+            title="填写信息"
+            content="这是一个独立的自定义模态框"
+            show-cancel-button
+            @confirm="onConfirm"
+            @cancel="show = false"
+        ></hy-modal>
+    </view>
+</template>
+
+<script setup>
+    import { ref } from 'vue';
+    import { useMessage } from '@hy-app/ui';
+
+    const show = ref(false);
+
+    // 在页面（或公共布局组件）中调用一次，向后代组件提供全局消息状态
+    const message = useMessage();
+
+    const onGlobalConfirm = async () => {
+        const confirmed = await message.confirm({
+            title: '删除确认',
+            content: '确定要删除这条数据吗？'
+        });
+        if (confirmed) {
+            uni.showToast({ title: '已删除', icon: 'success' });
+        }
+    };
+
+    const onConfirm = () => {
+        uni.showToast({ title: '自定义模态框已确认', icon: 'none' });
+        show.value = false;
+    };
+</script>
+```
+
+::: tip 提示
+
+- `useMessage()` 建议在公共布局组件中统一调用并挂载 `<hy-modal />`，所有使用该布局的页面共享同一个全局消息实例；
+- 全局消息驱动实例不要绑定 `v-model`，它的显隐完全由 `message.alert` / `message.confirm` 控制；
+- 同页面内出现点击没反应、`v-model` 不生效的自定义模态框时，优先检查是否漏传了 `:message="false"`。
+
+:::
+
 ## API
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
+| 参数 | 说明 | 类型 | 默认值   |
+| --- | --- | --- |-------|
 | modelValue | 是否显示模态框 | `boolean` | false |
-| title | 标题内容 | `string` | - |
-| content | 模态框内容，如传入slot内容，则此参数无效 | `string` | - |
-| confirmText | 确认按钮的文字 | `string` | 确认 |
-| cancelText | 取消按钮的文字 | `string` | 取消 |
-| showConfirmButton | 是否显示确认按钮 | `boolean` | true |
+| message | 是否作为 useMessage 全局消息的驱动实例；为 `true` 时由 `message.alert` / `message.confirm` 控制显隐与回调，为 `false` 时是独立模态框，走 `v-model` 与 `confirm`/`cancel` 事件，不受全局注入状态劫持 | `boolean` | false |
+| title | 标题内容 | `string` | -     |
+| content | 模态框内容，如传入slot内容，则此参数无效 | `string` | -     |
+| confirmText | 确认按钮的文字 | `string` | 确认    |
+| cancelText | 取消按钮的文字 | `string` | 取消    |
+| showConfirmButton | 是否显示确认按钮 | `boolean` | true  |
 | showCancelButton | 是否显示取消按钮 | `boolean` | false |
-| confirmColor | 确认按钮的颜色 | `string` | - |
-| cancelColor | 取消按钮的颜色 | `string` | - |
+| confirmColor | 确认按钮的颜色 | `string` | -     |
+| cancelColor | 取消按钮的颜色 | `string` | -     |
 | buttonReverse | 对调确认和取消的位置 | `boolean` | false |
-| zoom | 是否开启缩放模式 | `boolean` | true |
-| round | 模态框圆角，支持数值、px、rpx单位 | `string`\|`number` | 16 |
-| autoClose | 点击确认按钮后是否自动关闭 | `boolean` | true |
+| zoom | 是否开启缩放模式 | `boolean` | true  |
+| round | 模态框圆角，支持数值、px、rpx单位 | `string`\|`number` | 16    |
+| autoClose | 点击确认按钮后是否自动关闭 | `boolean` | true  |
 | loading | 是否显示loading状态 | `boolean` | false |
 | closeOnClickOverlay | 是否允许点击遮罩关闭Modal（注意：关闭事件需要自行处理，只会在开启closeOnClickOverlay后点击遮罩层执行close回调） | `boolean` | false |
-| negativeTop | 往上偏移的值，给一个负的margin-top，往上偏移，避免和键盘重合的情况，数值默认单位px | `number` | 0 |
+| negativeTop | 往上偏移的值，给一个负的margin-top，往上偏移，避免和键盘重合的情况，数值默认单位px | `number` | 0     |
 | width | modal宽度，不支持百分比，数值默认单位px，支持rpx单位 | `string`\|`number` | 550rpx |
-| confirmButtonShape | 确认按钮的样式，设置后将不会显示取消按钮，可选值：circle、square | `string` | - |
-| contentTextAlign | 文案对齐方式，可选值：left、center、right | `string` | left |
-| customStyle | 自定义需要用到的外部样式 | `CSSProperties` | - |
-| customClass | 自定义外部类名 | `string` | - |
+| confirmButtonShape | 确认按钮的样式，设置后将不会显示取消按钮，可选值：circle、square | `string` | -     |
+| contentTextAlign | 文案对齐方式，可选值：left、center、right | `string` | left  |
+| customStyle | 自定义需要用到的外部样式 | `CSSProperties` | -     |
+| customClass | 自定义外部类名 | `string` | -     |
 
 ### Events
 

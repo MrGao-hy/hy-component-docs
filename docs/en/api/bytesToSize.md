@@ -1,21 +1,21 @@
-## bytesToSize Byte-to-Size Conversion Tool
+﻿# bytesToSize Byte Unit Conversion Utility
 
-## List of Functions
+## Function List
 
 ### bytesToSize(bytes) => string
 
-Converts a byte size to a readable unit string, automatically selecting the appropriate unit (b/KB/MB/GB).
+Converts a byte count into a readable unit string, automatically selecting the appropriate unit (b/KB/MB/GB).
 
 **Parameters**
 
-| Parameter Name | Type   | Required | Default Value | Description     |
-| -------------- | ------ | -------- | ------------ | ---------------- |
-| bytes          | number | Yes      | -             | Byte size        |
+| Name   | Type   | Required | Default | Description |
+| ------ | ------ | -------- | ------- | ----------- |
+| bytes  | number | Yes      | -       | Byte size   |
 
 **Return Value**
 
-| Type   | Description                                 |
-| ------ | ------------------------------------ |
+| Type   | Description                                     |
+| ------ | ----------------------------------------------- |
 | string | The converted readable unit string (b/KB/MB/GB) |
 
 **Example**

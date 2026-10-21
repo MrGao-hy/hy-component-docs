@@ -11,15 +11,16 @@
                             "link": "/en/guide/intro"
                         },
                         {
-                            "text": "Quick Start",
+                            "text": "Start",
                             "link": "/en/guide/start"
                         },
                         {
-                            "text": "Built-in Styles",
+                            "text": "Styles",
                             "link": "/en/guide/style"
                         },
+                        { "text": "Cases", "link": "/en/guide/cases" },
                         {
-                            "text": "Common Development Issues",
+                            "text": "Issues",
                             "link": "/en/guide/announcements"
                         },
                         {
@@ -116,15 +117,16 @@
                         "link": "/en/guide/intro"
                     },
                     {
-                        "text": "Quick Start",
+                        "text": "Start",
                         "link": "/en/guide/start"
                     },
                     {
-                        "text": "Built-in Styles",
+                        "text": "Styles",
                         "link": "/en/guide/style"
                     },
+                    { "text": "Cases", "link": "/en/guide/cases" },
                     {
-                        "text": "Common Development Issues",
+                        "text": "Issues",
                         "link": "/en/guide/announcements"
                     },
                     {

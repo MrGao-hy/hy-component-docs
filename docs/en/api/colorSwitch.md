@@ -1,21 +1,21 @@
-## colorSwitch Color Conversion Tool
+﻿# colorSwitch Color Conversion Tool
 
 ## Function List
 
 ### rgbToHex(rgb) => string
 
-Convert RGB color values to HEX hexadecimal color values.
+Converts an RGB color value to a HEX hexadecimal color value.
 
 **Parameters**
 
-| Parameter Name | Type   | Required | Default | Description                   |
-| -------------- | ------ | -------- | ------- | ---------------------------- |
-| rgb            | string | Yes      | -       | RGB color value, e.g., `rgb(230, 231, 233)` |
+| Parameter | Type   | Required | Default | Description                          |
+| --------- | ------ | -------- | ------- | ------------------------------------ |
+| rgb       | string | Yes      | -       | RGB color value, e.g., `rgb(230, 231, 233)` |
 
 **Return Value**
 
-| Type   | Description               |
-| ------ | ------------------ |
+| Type   | Description            |
+| ------ | ---------------------- |
 | string | HEX hexadecimal color value |
 
 **Example**
@@ -31,18 +31,18 @@ console.log(rgbToHex(rgb)); // #0D9114
 
 ### hexToRgb(hex) => string
 
-Convert HEX hexadecimal color values to RGB color values.
+Converts a HEX hexadecimal color value to an RGB color value.
 
 **Parameters**
 
-| Parameter Name | Type   | Required | Default | Description                   |
-| -------------- | ------ | -------- | ------- | ------------------------ |
-| hex            | string | Yes      | -       | HEX color value, e.g., `#0afdce` |
+| Parameter | Type   | Required | Default | Description                 |
+| --------- | ------ | -------- | ------- | --------------------------- |
+| hex       | string | Yes      | -       | HEX color value, e.g., `#0afdce` |
 
 **Return Value**
 
-| Type   | Description       |
-| ------ | ------------------ |
+| Type   | Description |
+| ------ | ----------- |
 | string | RGB color value |
 
 **Example**
@@ -58,21 +58,21 @@ console.log(hexToRgb(hex)); // rgb(10, 253, 206)
 
 ### colorGradient(startColor, endColor, step) => string[]
 
-Calculate equally spaced gradient colors between two colors and return a color array.
+Calculates equally divided gradient colors between two colors and returns an array of colors.
 
 **Parameters**
 
-| Parameter Name     | Type   | Required | Default | Description                        |
-| ---------- | ------ | -------- | ------- | --------------------------- |
-| startColor | string | Yes      | -       | Starting color value, in HEX or RGB format |
-| endColor   | string | Yes      | -       | Ending color value, in HEX or RGB format |
-| step       | number | Yes      | -       | Equal division value               |
+| Parameter  | Type   | Required | Default | Description                                |
+| ---------- | ------ | -------- | ------- | ------------------------------------------ |
+| startColor | string | Yes      | -       | Start color value, in HEX or RGB format    |
+| endColor   | string | Yes      | -       | End color value, in HEX or RGB format      |
+| step       | number | Yes      | -       | Number of divisions                        |
 
 **Return Value**
 
-| Type     | Description       |
-| -------- | ------------------ |
-| string[] | Gradient color array |
+| Type     | Description           |
+| -------- | --------------------- |
+| string[] | Array of gradient colors |
 
 **Example**
 
@@ -87,19 +87,19 @@ console.log(colorGradient('rgb(250,250,250)', 'rgb(252,252,252)', 3));
 
 ### colorToRgba(color, opacity?) => string
 
-Convert color values to RGBA format, supporting the setting of opacity.
+Converts a color value to RGBA format, with support for setting opacity.
 
 **Parameters**
 
-| Parameter Name  | Type   | Required | Default | Description                    |
-| ------- | ------ | -------- | ------- | ----------------------- |
-| color   | string | Yes      | -       | Color value, in HEX or RGB format |
-| opacity | number | No       | 0.3    | Opacity value (0-1)       |
+| Parameter | Type   | Required | Default | Description                      |
+| --------- | ------ | -------- | ------- | -------------------------------- |
+| color     | string | Yes      | -       | Color value, in HEX or RGB format |
+| opacity   | number | No       | 0.3     | Opacity value (0-1)              |
 
 **Return Value**
 
-| Type   | Description        |
-| ------ | ------------------ |
+| Type   | Description     |
+| ------ | --------------- |
 | string | RGBA color value |
 
 **Example**

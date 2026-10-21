@@ -1,23 +1,23 @@
-## colorGradient Color Gradient Tool
+﻿# colorGradient Color Gradient Utility
 
 ## Function List
 
 ### colorGradient(startColor?, endColor?, step?) => string[]
 
-Calculate the equal parts of the gradient colors between two colors and return an array of color values.
+Calculates evenly divided gradient colors between two colors and returns an array of colors.
 
 **Parameters**
 
-| Parameter Name | Type   | Required | Default Value | Description                      |
-| -------------- | ------ | ---- | ------ | ------------------------- |
-| startColor     | string | No   | -      | Starting color, in HEX or RGB format |
-| endColor       | string | No   | -      | Ending color, in HEX or RGB format |
-| step           | number | No   | -      | Gradient steps                  |
+| Parameter  | Type   | Required | Default | Description                        |
+| ---------- | ------ | -------- | ------- | ---------------------------------- |
+| startColor | string | No       | -       | Start color, in HEX or RGB format  |
+| endColor   | string | No       | -       | End color, in HEX or RGB format    |
+| step       | number | No       | -       | Number of gradient steps           |
 
 **Return Value**
 
-| Type     | Description         |
-| -------- | ------------ |
+| Type     | Description              |
+| -------- | ------------------------ |
 | string[] | Array of gradient colors |
 
 **Example**
@@ -34,20 +34,20 @@ console.log(colors);
 
 ### hexToRgb(sColor, str?) => string | number[]
 
-Convert a HEX color value to RGB format, can choose to return a string or an array.
+Converts a HEX color value to RGB format, with an option to return a string or an array.
 
 **Parameters**
 
-| Parameter Name | Type    | Required | Default Value | Description           |
-| ------ | ------- | ---- | ------ | -------------- |
-| sColor | string  | Yes   | -      | HEX color value |
-| str    | boolean | No   | true   | Whether to return a string |
+| Parameter | Type    | Required | Default | Description                 |
+| --------- | ------- | -------- | ------- | --------------------------- |
+| sColor    | string  | Yes      | -       | HEX color value             |
+| str       | boolean | No       | true    | Whether to return a string  |
 
 **Return Value**
 
-| Type               | Description                   |
-| ------------------ | ---------------------- |
-| string \| number[] | RGB color value string or array |
+| Type               | Description                          |
+| ------------------ | ------------------------------------ |
+| string \| number[] | RGB color value string or array      |
 
 **Example**
 
@@ -65,18 +65,18 @@ console.log(rgbArray); // [41, 121, 255]
 
 ### rgbToHex(rgb) => string
 
-Convert an RGB color value to a HEX hexadecimal color value.
+Converts an RGB color value to a HEX hexadecimal color value.
 
 **Parameters**
 
-| Parameter Name | Type   | Required | Default Value | Description       |
-| ------ | ------ | ---- | ------ | ---------- |
-| rgb    | string | Yes   | -      | RGB color value |
+| Parameter | Type   | Required | Default | Description     |
+| --------- | ------ | -------- | ------- | --------------- |
+| rgb       | string | Yes      | -       | RGB color value |
 
 **Return Value**
 
-| Type   | Description       |
-| ------ | ---------- |
+| Type   | Description     |
+| ------ | --------------- |
 | string | HEX color value |
 
 **Example**

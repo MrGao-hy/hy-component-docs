@@ -91,7 +91,7 @@ export default defineConfig({
         ['link', { rel: 'icon', href: '/images/hy_logo_light.png' }],
         ['meta', { name: 'algolia-site-verification', content: '375FCD1927B1F391' }],
         // 首屏语言检测脚本（渲染前执行，避免语言闪烁）
-        langRedirectHead,
+        // langRedirectHead,
     ],
     markdown: {
         lineNumbers: true,

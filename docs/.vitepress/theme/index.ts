@@ -6,6 +6,7 @@ import DemoModel from '../components/DemoModel.vue';
 import TheIconList from '../components/TheIconList.vue';
 import TheColors from '../components/Colors.vue';
 import PreviewDome from '../components/PreviewDome.vue';
+import CaseShowcase from '../components/CaseShowcase.vue';
 import BackTop from '../components/BackTop.vue';
 import MouseClick from '../components/MouseClick.vue';
 import MouseFollower from '../components/MouseFollower.vue';
@@ -37,6 +38,7 @@ export default {
         app.component('TheIconList', TheIconList);
         app.component('TheColors', TheColors);
         app.component('PreviewDome', PreviewDome);
+        app.component('CaseShowcase', CaseShowcase);
         app.component('BackTop', BackTop);
         app.component('MouseClick', MouseClick);
         app.component('MouseFollower', MouseFollower);

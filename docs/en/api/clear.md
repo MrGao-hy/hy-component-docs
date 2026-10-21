@@ -1,22 +1,22 @@
-# clearVal Clear Object Values
+﻿# clearVal Clear Object Values
 
 ## Function List
 
 ### clearVal(obj) => any
 
-Recursively clears the values of basic data types in an object, including strings, numbers, boolean values, etc.
+Recursively clears primitive type values in an object, including strings, numbers, booleans, etc.
 
 **Parameters**
 
-| Parameter Name | Type        | Required | Default Value | Description |
-| --- | ----------- | --- | -------- | ------------ |
+| Parameter | Type | Required | Default | Description |
+| --- | --- | --- | --- | --- |
 | obj | object \| string \| number \| undefined \| boolean | Yes | - | The value or object to be cleared |
 
 **Return Value**
 
-| Type | Description |
-| ---- | ----------- |
-| any  | The object or value after clearing |
+| Type | Description      |
+| ---- | ---------------- |
+| any  | The cleared object or value |
 
 **Example**
 
@@ -24,7 +24,7 @@ Recursively clears the values of basic data types in an object, including string
 import { clearVal } from '@hy-app/ui';
 
 const obj = {
-    name: 'I have a value',
+    name: '我有值',
     is: true,
     num: 100,
 };

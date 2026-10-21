@@ -1,4 +1,4 @@
-﻿# hooks 组合式 API
+# hooks 组合式 API
 
 ## useShare 小程序全局配置分享
 
@@ -114,6 +114,15 @@ toast.loading('加载中...');
 
 消息弹窗组合式 API，提供 alert 和 confirm 方法。
 
+::: warning 注意事项
+
+`useMessage()` 只会向后代组件注入全局消息状态，必须在调用它的组件模板中挂载一个携带 `message` 属性的 `hy-modal` 作为驱动实例，弹窗才会渲染：
+
+- 驱动实例不要绑定 `v-model`，显隐完全由 `message.alert` / `message.confirm` 控制；
+- 当同页面还存在自定义 `hy-modal` 时，需为其显式传入 `:message="false"`，避免按钮点击被全局回调接管而失效，详见 [Modal 全局消息与自定义模态框共存](/zh/components/modal.md#confetti-ball-全局消息与自定义模态框共存)。
+
+:::
+
 **返回值**
 
 | 类型            | 说明                                     |
@@ -144,17 +153,33 @@ toast.loading('加载中...');
 
 **示例**
 
-```typescript
-import { useMessage } from '@hy-app/ui';
+```html
+<template>
+    <view>
+        <hy-button text="删除" @click="onRemove"></hy-button>
 
-const message = useMessage();
+        <!-- 全局消息驱动实例 -->
+        <hy-modal message></hy-modal>
+    </view>
+</template>
 
-const result = await message.confirm({
-    title: '删除确认',
-    content: '确定要删除吗？',
-    confirmText: '确定',
-    cancelText: '取消',
-});
+<script setup>
+    import { useMessage } from '@hy-app/ui';
+
+    const message = useMessage();
+
+    const onRemove = async () => {
+        const result = await message.confirm({
+            title: '删除确认',
+            content: '确定要删除吗？',
+            confirmText: '确定',
+            cancelText: '取消'
+        });
+        if (result) {
+            uni.showToast({ title: '已删除', icon: 'success' });
+        }
+    };
+</script>
 ```
 
 ---

@@ -18,6 +18,7 @@
 - `border` 属性支持三种类型：`surround`（四周边框）、`bottom`（底部边框）、`none`（无边框）
 - `maxlength` 设置为 `-1` 时不限制最大长度
 - 组件支持 `hy-form` 表单验证，通过 `form-item` 使用
+- 如果想让textarea支持换行，需要把`confirmType`设置为`return`
 
 :::
 
