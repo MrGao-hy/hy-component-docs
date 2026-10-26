@@ -6,18 +6,18 @@
     // Template case data: to add a new case, simply append an item to the array
     const cases = [
         {
-            name: 'Women's Fashion Shopping Platform',
-            desc: 'An online shopping mini-program template featuring trendy new women's fashion, with stylish UI design, suited for women's clothing product display and online transaction scenarios. Built with the Hy Component Library.',
-            tags: ['WeChat Mini Program', 'Free & Open Source'],
-            qr: '/images/qrcode/case_1.png',
-            tip: 'Please scan with WeChat',
+            name: "Women's Fashion Shopping Platform",
+            desc: "An online shopping mini-program template featuring trendy new women's fashion, with stylish UI design, suited for women's clothing product display and online transaction scenarios. Built with the Hy Component Library.",
+            tags: ["WeChat Mini Program", "Free & Open Source"],
+            qr: "/images/qrcode/case_1.png",
+            tip: "Please scan with WeChat",
         },
         {
-            name: 'Campus Second-hand Marketplace',
-            desc: 'A second-hand goods trading template for campus scenarios, with a clean interface and smooth interactions. Built with the Hy Component Library.',
-            tags: ['WeChat Mini Program', 'Free & Open Source'],
-            qr: '/images/qrcode/case_2.png',
-            tip: 'Please scan with WeChat',
+            name: "Campus Second-hand Marketplace",
+            desc: "A second-hand goods trading template for campus scenarios, with a clean interface and smooth interactions. Built with the Hy Component Library.",
+            tags: ["WeChat Mini Program", "Free & Open Source"],
+            qr: "/images/qrcode/case_2.png",
+            tip: "Please scan with WeChat",
         },
     ];
 </script>
