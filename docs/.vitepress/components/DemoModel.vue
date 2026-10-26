@@ -1,3 +1,11 @@
+<!--
+    DemoModel：手机模拟器（iPhone Pro 风格在线演示壳）
+    用途：页面右侧固定的真机预览壳——铛金属机身、实体侧键、灵动岛、毛玻璃状态栏（实时时钟）
+          与 Home Indicator；内置 iframe 加载 H5 演示页，并同步明暗主题（THEME）与中英文语言（LANG）、
+          将 PC 鼠标点击转换为触摸事件传给 iframe（SIMULATED_TOUCH）。
+    用法：已在 theme/index.ts 全局注册，文档中写 <demo-model url="pages-design/xxx/xxx" />。
+    环境：开发环境 iframe 指向 localhost:8070，线上指向 h5.hy-design-uni.top。
+-->
 <template>
     <div class="demo-model-wrap" :class="{ 'is-dark': isDark }">
         <!-- 左侧实体按键：操作键 / 音量+ / 音量- -->
@@ -104,7 +112,7 @@
         url: '/',
         prefix: '/web/#',
     });
-    const { isDark } = useData();
+    const { isDark, lang } = useData();
     const baseUrl = ref(
         import.meta.env.DEV ? 'http://localhost:8070/#/' : 'https://h5.hy-design-uni.top/#/'
     );
@@ -133,12 +141,34 @@
 
     // 传递是否暗黑主题值
     const postTheme = () => {
-        h5Iframe.value?.contentWindow?.postMessage(isDark.value, targetOrigin.value);
+        h5Iframe.value?.contentWindow?.postMessage(
+            {
+                type: 'THEME',
+                isDark: isDark.value,
+            },
+            targetOrigin.value
+        );
+    };
+
+    // 传递当前文档语言（zh-Hans / en-US），H5 端据此切换中英文
+    const postLang = () => {
+        console.log(lang.value, '===');
+        h5Iframe.value?.contentWindow?.postMessage(
+            {
+                type: 'LANG',
+                lang: lang.value,
+            },
+            targetOrigin.value
+        );
     };
 
     watch(isDark, postTheme);
+    watch(lang, postLang);
 
-    const handleIframeLoad = () => postTheme();
+    const handleIframeLoad = () => {
+        postTheme();
+        postLang();
+    };
 
     // 监听 PC 端 pointerdown
     const handlePointerDown = (e: PointerEvent) => {

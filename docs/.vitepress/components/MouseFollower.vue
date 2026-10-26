@@ -1,3 +1,9 @@
+<!--
+    MouseFollower：鼠标跟随粒子特效
+    用途：全屏透明 canvas，彩色粒子围绕鼠标环绕游走并带拖尾，跟随速度随鼠标移动自适应；
+          仅在支持精确指针的桌面设备启用（触屏设备自动跳过）。
+    挂载：MyLayout 的 #layout-top 插槽，全站生效。
+-->
 <template>
     <canvas
         ref="canvas"

@@ -1,3 +1,10 @@
+<!--
+    PageView：站点访问量统计面板
+    用途：展示“本站总访问量 / 访客数”，数据来自不蒜子 busuanzi
+          （由 MyLayout 在路由变化时调用 busuanzi.fetch() 刷新，span id 为其注入点）；
+          带入场动画与顶部流光分割线。
+    用法：theme/index.ts 注册为 PageView，一般放在首页 md 中。
+-->
 <script setup lang="ts">
     import { ref, onMounted } from 'vue';
 

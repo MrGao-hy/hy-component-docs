@@ -1,3 +1,10 @@
+<!--
+    Colors（TheColors）：内置主题色色卡展示
+    用途：以卡片形式展示组件库全部内置颜色的 normal / dark / disabled / light 四态色值，
+          色块样式依赖全局 tn-bg-* 类（见 styles/scss/color.scss）。
+    用法：theme/index.ts 注册为 TheColors，文档中直接写 <TheColors />；
+          新增颜色在下方 colorList 中补充一项即可。
+-->
 <template>
     <div v-if="props.type == 2">
         <div class="tn-color__wrap">

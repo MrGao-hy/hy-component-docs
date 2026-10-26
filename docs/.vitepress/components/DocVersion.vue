@@ -1,3 +1,9 @@
+<!--
+    DocVersion：组件库最新版本号标签
+    用途：从 npm registry 请求 @hy-app/ui 的 latest 版本号，以小标签展示在站点标题旁，
+          便于用户对照文档与组件库版本；请求结果做模块级缓存，失败时静默隐藏。
+    挂载：MyLayout 的 #nav-bar-title-after 插槽（导航栏标题后）。
+-->
 <template>
     <div class="tag" v-if="version">{{ version }}</div>
 </template>

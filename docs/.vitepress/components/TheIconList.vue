@@ -1,3 +1,9 @@
+<!--
+    TheIconList：iconfont 图标列表
+    用途：网格展示组件库全部内置图标（图标预览 / 中文名 / 常量名），
+          点击任意图标复制其名称，并通过 ant-design-vue notification 弹出复制成功提示。
+    维护：新增图标在下方 icon 数组中补充（icon: 类名后缀, label: 中文名, name: 常量名）。
+-->
 <template>
     <div class="container">
         <template v-for="item in icon" :key="item.icon">

@@ -1,3 +1,9 @@
+<!--
+    BackTop：返回顶部按钮（带阅读进度环）
+    用途：滚动超过 100px 后在右下角浮现，外圈圆形进度条实时反映当前阅读进度，
+          点击平滑回到顶部；滚动监听已做节流。
+    挂载：MyLayout 的 #doc-footer-before 插槽，全站生效。
+-->
 <script setup>
     import { onBeforeUnmount, onMounted, ref, computed } from 'vue';
 

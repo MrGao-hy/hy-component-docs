@@ -1,3 +1,10 @@
+<!--
+    PreviewDome：多平台预览二维码卡片
+    用途：以网格卡片形式展示华玥UI 各端（H5 / 微信、支付宝、抖音小程序 / 安卓 / 鸿蒙）
+          的在线预览或下载二维码，用户扫码即可体验或下载对应客户端。
+    用法：已在 theme/index.ts 全局注册，文档中直接写 <PreviewDome /> 即可。
+    维护：新增平台只需在下方 platforms 数组中追加一项（name / tip / qr）。
+-->
 <template>
     <div class="preview-grid">
         <div v-for="platform in platforms" :key="platform.name" class="preview-card">

@@ -1,3 +1,9 @@
+<!--
+    NoPage（404.vue）：404 页面（太空迷航主题）
+    用途：全屏星空场景展示 404 状态，星空/流星/行星/宇航员均为 SVG 绘制，
+          带鼠标视差、中英文自动切换（/en 路径走英文文案）及“返回首页/上一页”操作。
+    挂载：theme/index.ts 注册为 NoPage，经 MyLayout 的 #not-found 插槽接管 VitePress 默认 404。
+-->
 <template>
     <section ref="scene" class="nf-scene" aria-label="404 页面不存在">
         <!-- 星空（视差层，客户端生成避免 SSR 水合不一致） -->

@@ -1,3 +1,9 @@
+<!--
+    MouseClick：点击粒子迸发特效
+    用途：全屏透明 canvas，在点击/触摸处迸发彩色粒子与扩散圆环；
+          动画循环按需启动（无粒子时自动暂停），页面隐藏时停止，避免空转耗电。
+    挂载：MyLayout 的 #layout-top 插槽，全站生效。
+-->
 <template>
     <canvas
         ref="canvas"

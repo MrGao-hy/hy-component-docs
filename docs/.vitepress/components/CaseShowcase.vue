@@ -1,3 +1,9 @@
+<!--
+    CaseShowcase：模板案例展示卡片
+    用途：接收案例数组，渲染二维码卡片网格（案例名 / 简介 / 标签 / 微信小程序码），
+          网格末尾自动追加“更多案例上架中”空态占位卡片。
+    用法：<CaseShowcase :cases="[{ name, desc, tags: [], qr, tip }]" />
+-->
 <script setup>
     // 模板案例展示组件：接收案例数组，渲染二维码卡片网格 + 空态占位卡片
     defineProps({
