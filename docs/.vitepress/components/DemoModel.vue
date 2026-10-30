@@ -152,7 +152,6 @@
 
     // 传递当前文档语言（zh-Hans / en-US），H5 端据此切换中英文
     const postLang = () => {
-        console.log(lang.value, '===');
         h5Iframe.value?.contentWindow?.postMessage(
             {
                 type: 'LANG',

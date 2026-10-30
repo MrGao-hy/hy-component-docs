@@ -158,6 +158,70 @@ Help me check whether this hy-input usage is correct:
 
 ---
 
+## Qoder Configuration
+
+Qoder (including the Chinese edition Qoder CN) connects via the built-in MCP settings page.
+
+Click the user avatar in the upper-right corner (or press `Ctrl + Shift + ,` on Windows, `⌘ + ⇧ + ,` on macOS) to open **Qoder IDE Settings**, then select **MCP** in the left navigation pane.
+
+### Option 1: Add via My Servers (recommended, no installation required)
+
+1. Switch to the **My Servers** tab and click **+ Add** in the upper-right corner.
+2. Add the following configuration in the JSON file that opens:
+
+```json
+{
+    "mcpServers": {
+        "hy-app": {
+            "command": "npx",
+            "args": ["-y", "@hy-app/mcp"]
+        }
+    }
+}
+```
+
+3. Close the file and click **Save**. The `hy-app` entry appears in the list; the link icon means the connection is successful. Expand the entry to view the available tools.
+
+### Option 2: After installing globally
+
+```json
+{
+    "mcpServers": {
+        "hy-app": {
+            "command": "hy-app-mcp"
+        }
+    }
+}
+```
+
+:::tip Note for Windows users
+
+- When using npx, it is recommended to add the `-y` flag to skip the first-run installation prompt, preventing the STDIO process from hanging.
+- If `npx` fails to start, run `npm install -g @hy-app/mcp` first, then use the `hy-app-mcp` command in Option 2.
+
+:::
+
+### Qoder Usage Examples
+
+Switch to **Agent** mode in the Chat panel and ask directly. Qoder prompts for confirmation before calling MCP tools; press `Ctrl + Enter` to execute:
+
+```
+# Search components
+Help me find a popup component
+
+# View component API
+Get the Props information for the Button component
+
+# Check platform compatibility
+Does the Form component support Alipay Mini Program?
+
+# Validate code
+Check whether this code has any property errors:
+<hy-button type="primary" size="big" @click="handleClick">
+```
+
+---
+
 ## Tool Details
 
 ### search_components

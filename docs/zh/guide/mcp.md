@@ -61,19 +61,6 @@ npx @hy-app/mcp
 }
 ```
 
-### 方式三：项目本地安装
-
-```json
-{
-    "mcpServers": {
-        "hy-app": {
-            "command": "node",
-            "args": ["./node_modules/@hy-app/mcp/dist/index.js"]
-        }
-    }
-}
-```
-
 配置文件位置：
 
 - **Windows**: `%APPDATA%\Cursor\User\globalStorage\saoudrizwan.claude-dev\settings\cline_mcp_settings.json`
@@ -134,27 +121,49 @@ Form 组件支持支付宝小程序吗？
 }
 ```
 
-### Trae 使用示例
+---
 
-在 Trae 对话框中直接提问，AI 会自动调用 MCP 工具：
+## Qoder 配置
 
+Qoder（含中文版 Qoder CN）通过设置面板内置的 MCP 管理页接入：
+
+点击右上角用户头像（或使用快捷键 `Ctrl + Shift + ,`，macOS 为 `⌘ + ⇧ + ,`）打开 **个人设置**，在左侧导航中选择 **MCP 服务器**；也可以依次点击 **设置 → 其他设置 → Qoder CN → 个人设置 → MCP 服务器** 进入。
+
+### 方式一：My Servers 添加（推荐，无需安装）
+
+1. 找到配置文件 `mcp.json`，点击「打开」按钮；
+2. 将以下配置填入 `mcp.json` 文件：
+```json
+{
+    "mcpServers": {
+        "hy-app": {
+            "command": "npx",
+            "args": ["-y", "@hy-app/mcp"]
+        }
+    }
+}
 ```
-# 示例 1：了解组件用法
-我想在项目中使用 hy-app 的 Picker 组件，帮我生成一个基础选择器的代码
 
-# 示例 2：平台兼容性检查
-我的项目需要运行在微信小程序上，Radio 组件能用吗？
+3. 关闭文件并点击 **Save** 保存。列表中出现 `hy-app` 且状态显示「已连接」即代表连接成功，展开条目可查看可用的工具列表。
 
-# 示例 3：Hook 使用
-教我用 useToast Hook 实现一个全局提示
+### 方式二：全局安装后
 
-# 示例 4：主题定制
-我想把组件库的主题色改为 #FF6600，应该怎么做？
-
-# 示例 5：代码校验
-帮我检查这段 hy-input 的用法是否正确：
-<hy-input v-model="value" type="email" :clearable="true" placeholder="请输入邮箱" />
+```json
+{
+    "mcpServers": {
+        "hy-app": {
+            "command": "hy-app-mcp"
+        }
+    }
+}
 ```
+
+:::tip Windows 用户注意
+
+- npx 方式建议带 `-y` 参数，跳过首次运行的安装确认，避免 STDIO 模式下进程卡住；
+- 若 `npx` 启动失败，可先执行 `npm install -g @hy-app/mcp`，再改用方式二的 `hy-app-mcp` 命令。
+
+:::
 
 ---
 

@@ -77,16 +77,19 @@
 
 ### 镂空带背景色不带边框
 
-- 通过`borderColor`属性设置边框颜色
-
 ```html
 <template>
-    <hy-tag label="标签" type="primary" plain plainFill borderColor="transparent"></hy-tag>
-    <hy-tag label="标签" type="success" plain plainFill borderColor="transparent"></hy-tag>
-    <hy-tag label="标签" type="error" plain plainFill borderColor="transparent"></hy-tag>
-    <hy-tag label="标签" type="warning" plain plainFill borderColor="transparent"></hy-tag>
-    <hy-tag label="标签" type="info" plain plainFill borderColor="transparent"></hy-tag>
-    <hy-tag label="标签" color="#800080" plain plainFill borderColor="transparent"></hy-tag>
+  <hy-tag :label="t('label')" type="primary" :border="false" shape="circle"></hy-tag>
+  <hy-tag :label="t('label')" type="success" :border="false"></hy-tag>
+  <hy-tag
+          :label="t('label')"
+          type="primary"
+          plain
+          plain-fill
+          :border="false"
+          shape="circle"
+  ></hy-tag>
+  <hy-tag :label="t('label')" type="error" plain plain-fill :border="false"></hy-tag>
 </template>
 ```
 
@@ -155,25 +158,26 @@
 
 ### Tag Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| label | 标签的文字内容 | `string` | - |
-| type | 主题类型 | `error`\|`warning`\|`success`\|`primary`\|`info` | primary |
-| disabled | 禁用 | `boolean` | false |
-| size | 标签大小 | `mini`\|`small`\|`medium`\|`large` | medium |
-| shape | 标签形状 | `circle`\|`square`\|`opposite` | square |
-| bgColor | 背景颜色，默认为空字符串，即不处理 | `string` | - |
-| color | 标签字体颜色，默认为空字符串，即不处理 | `string` | - |
-| borderColor | 标签的边框颜色 | `string` | - |
-| closeColor | 关闭按钮图标的颜色 | `string` | - |
-| value | 点击时返回的索引值，用于区分例遍的数组哪个元素被点击了 | `string`\|`number` | - |
-| plainFill | 镂空时是否填充背景色 | `boolean` | false |
-| plain | 是否镂空 | `boolean` | false |
-| closable | 是否可关闭，设置为true，文字右边会出现一个关闭图标 | `boolean` | false |
-| show | 标签显示 | `boolean` | true |
-| icon | 图标，详见[图标Api](./icon#api) | `HyIconProps` | - |
-| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
-| customClass | 自定义外部类名 | `CSSProperties` | - |
+| 参数 | 说明                          | 类型 | 默认值     |
+| --- |-----------------------------| --- |---------|
+| label | 标签的文字内容                     | `string` | -       |
+| type | 主题类型                        | `error`\|`warning`\|`success`\|`primary`\|`info` | primary |
+| disabled | 禁用                          | `boolean` | false   |
+| size | 标签大小                        | `mini`\|`small`\|`medium`\|`large` | medium  |
+| shape | 标签形状                        | `circle`\|`square`\|`opposite` | square  |
+| bgColor | 背景颜色，默认为空字符串，即不处理           | `string` | -       |
+| color | 标签字体颜色，默认为空字符串，即不处理         | `string` | -       |
+| border | 是否显示边框                      | `boolean` | true    |
+| borderColor | 标签的边框颜色                     | `string` | -       |
+| closeColor | 关闭按钮图标的颜色                   | `string` | -       |
+| value | 点击时返回的索引值，用于区分例遍的数组哪个元素被点击了 | `string`\|`number` | -       |
+| plainFill | 镂空时是否填充背景色                  | `boolean` | false   |
+| plain | 是否镂空                        | `boolean` | false   |
+| closable | 是否可关闭，设置为true，文字右边会出现一个关闭图标 | `boolean` | false   |
+| show | 标签显示                        | `boolean` | true    |
+| icon | 图标，详见[图标Api](./icon#api)    | `HyIconProps` | -       |
+| customStyle | 定义需要用到的外部样式                 | `CSSProperties` | -       |
+| customClass | 自定义外部类名                     | `CSSProperties` | -       |
 
 ### Events
 
