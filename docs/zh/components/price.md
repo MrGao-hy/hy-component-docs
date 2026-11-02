@@ -167,4 +167,11 @@ import { HyPrice } from 'hy-app';
 | ------ | -------- | ------------ |
 | click  | 点击金额 | text: 金额值 |
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-price-font-size` | 字号 | `32rpx` |
+| `--hy-price-margin-top` | 上边距 | `5px` |
+
 <demo-model url="pages-design/price/price"></demo-model>

@@ -216,4 +216,23 @@ export interface ToastOptions {
 
 :::
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-toast-z-index` | 层级 | `11000` |
+| `--hy-toast-padding` | 内边距 | `20rpx 32rpx` |
+| `--hy-toast-radius` | 圆角 | `16rpx` |
+| `--hy-toast-bg-color` | 背景色（带图标模式） | `#585858` |
+| `--hy-toast-max-width` | 最大宽度 | `600rpx` |
+| `--hy-toast-box-shadow` | 阴影 | `0 8rpx 24rpx rgba(0, 0, 0, 0.15)` |
+| `--hy-toast-loading-padding` | loading 模式内边距 | `40rpx` |
+| `--hy-toast-icon-size` | 图标尺寸 | `40rpx` |
+| `--hy-toast-icon-margin-right` | 图标右边距 | `16rpx` |
+| `--hy-toast-text-max-width` | 文字最大宽度 | `480rpx` |
+| `--hy-toast-default-bg-color` | 默认模式背景色 | `rgba(0, 0, 0, 0.75)` |
+| `--hy-toast-icon-radius` | 图标圆角 | 跟随 `--hy-radius-semicircle`（100px） |
+| `--hy-toast-text-color` | 文字颜色 | `#ffffff` |
+| `--hy-toast-text-font-size` | 文字字号 | 跟随 `--hy-font-size-base`（28rpx） |
+
 <demo-model url="pages-design/toast/toast"></demo-model>

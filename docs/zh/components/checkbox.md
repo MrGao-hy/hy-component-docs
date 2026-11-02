@@ -268,6 +268,18 @@
 | icon   | 自定义`icon`内容  | iconColor \| iconSize |
 | label  | 自定义`label`内容 | record                |
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-checkbox-margin` | 外边距 | `5px` |
+| `--hy-checkbox-radius-square` | 方形勾选框圆角 | `3px` |
+| `--hy-checkbox-disabled-checked-opacity` | 禁用选中透明度 | `0.5` |
+| `--hy-checkbox-font-size` | 标签字号 | 跟随 `--hy-font-size-base`（28rpx） |
+| `--hy-checkbox-disabled-color` | 禁用文字颜色 | 跟随 `--hy-text-color--disabled` |
+| `--hy-checkbox-border` | 勾选框边框 | 跟随 `--hy-border-line` |
+
+
 [^1]: `circle`：两边为半圆；`square`：方形带圆角
 
 [^2]: `normal`：默认尺寸；`large`：大尺寸； `small`：小尺寸；

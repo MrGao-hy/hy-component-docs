@@ -158,6 +158,14 @@
 | ------- | -------- | ------ |
 | default | 按钮内容 | -      |
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-float-button-radius` | 按钮圆角 | 跟随 `--hy-radius-sm`（8rpx） |
+| `--hy-float-button-menus-max-height` | 菜单最大高度 | `250px` |
+| `--hy-float-button-menu-font-size` | 菜单字号 | 跟随 `--hy-font-size-base`（28rpx） |
+
 [^1]: `row`：横向；`column`：纵向
 
 [^2]: `circle`：两边为半圆；`square`：方形带圆角

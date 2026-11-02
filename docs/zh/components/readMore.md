@@ -164,4 +164,12 @@ const content = ref(`山不在高，有仙则名。水不在深，有龙则灵�
 | ------ | ------------------------------ |
 | init   | 重新初始化组件内部高度计算过程 |
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-read-more-font-size` | 字号 | `15px` |
+| `--hy-read-more-mask-height` | 渐变遮罩高度 | `100px` |
+| `--hy-read-more-line-height` | 行高 | `30px` |
+
 <demo-model url="pages-design/readMore/readMore"></demo-model>

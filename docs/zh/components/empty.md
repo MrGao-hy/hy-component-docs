@@ -94,6 +94,14 @@
 | default     | 默认插槽       | -      |
 | description | 自定义底部描述 | -      |
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-empty-description-width` | 描述文字宽度 | `70%` |
+| `--hy-empty-button-margin-top` | 按钮上边距 | `100rpx` |
+| `--hy-empty-description-color` | 描述文字颜色 | 跟随 `--hy-text-color--grey` |
+
 [^1]: `normal`：默认尺寸；`large`：大尺寸； `small`：小尺寸；`mini`：迷你尺寸
 
 [^2]: `error`：#fa3534；`warning`：#ff9900；`success`：#19be6b；`primary`：#2979ff； `info`：#909399；

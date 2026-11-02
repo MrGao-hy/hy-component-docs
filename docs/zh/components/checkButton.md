@@ -223,6 +223,24 @@ const columns = reactive([
 | ------ | ---- | ------ |
 | name   | -    | -      |
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-check-button-border-width` | 边框宽度 | `2rpx` |
+| `--hy-check-button-hover-opacity` | 按压透明度 | `0.8` |
+| `--hy-check-button-padding-small` | small 内边距 | `10rpx 16rpx` |
+| `--hy-check-button-padding-medium` | medium 内边距 | `16rpx 20rpx` |
+| `--hy-check-button-padding-large` | large 内边距 | `20rpx 24rpx` |
+| `--hy-check-button-font-size-small` | small 字号（行高同步跟随） | 跟随 `--hy-font-size-sm`（24rpx） |
+| `--hy-check-button-font-size-medium` | medium 字号（行高同步跟随） | 跟随 `--hy-font-size-base`（28rpx） |
+| `--hy-check-button-font-size-large` | large 字号（行高同步跟随） | 跟随 `--hy-font-size-md`（32rpx） |
+| `--hy-check-button-radius-circle` | 圆形圆角 | 跟随 `--hy-radius-semicircle`（100px） |
+| `--hy-check-button-radius-square` | 方形圆角 | 跟随 `--hy-radius-sm`（8rpx） |
+| `--hy-check-button-disabled-color` | 禁用文字颜色 | 跟随 `--hy-text-color--disabled` |
+| `--hy-check-button-disabled-border-color` | 禁用态边框颜色 | 跟随 `--hy-background--disabled` |
+
+
 [^1]: `selectType`设置为`radio`时候v-model必须传是字符串/数字，设置为`checkbox`时候`v-model`必须传数组
 
 [^2]: `checkbox`：多选；`radio`：单选

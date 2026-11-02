@@ -103,4 +103,12 @@
 | ------------ | -------------------------------------------- |
 | setFormatter | 为兼容微信小程序而暴露的内部方法，见上方说明 |
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-address-picker-radius` | 输入框圆角 | `4px` |
+| `--hy-address-picker-border` | 输入框边框 | `1px solid #eee` |
+| `--hy-address-picker-padding` | 输入框内边距 | `0 10px` |
+
 <demo-model url="pages-design/addressPicker/addressPicker"></demo-model>

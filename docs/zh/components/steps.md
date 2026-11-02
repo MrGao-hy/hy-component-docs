@@ -418,4 +418,21 @@ export interface StepListVo {
 
 :::
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-steps-icon-size` | 图标尺寸 | `20px` |
+| `--hy-steps-dot-size` | 圆点尺寸 | `10px` |
+| `--hy-steps-icon-text-font-size` | 图标文字字号 | `11px` |
+| `--hy-steps-title-font-size` | 标题字号 | `30rpx` |
+| `--hy-steps-title-active-font-size` | 激活标题字号 | `34rpx` |
+| `--hy-steps-content-min-height` | 内容区最小高度 | `60px` |
+| `--hy-steps-icon-radius` | 图标容器圆角 | 跟随 `--hy-radius-semicircle`（100px） |
+| `--hy-steps-dot-radius` | 点形状圆角 | 跟随 `--hy-radius-circle`（50%） |
+| `--hy-steps-icon-text-color` | 图标内文字颜色 | 跟随 `--hy-text-color--grey` |
+| `--hy-steps-date-font-size` | 日期字号 | `24rpx` |
+| `--hy-steps-date-color` | 日期颜色 | `#999` |
+| `--hy-steps-icon-border` | 图标容器边框 | 跟随 `--hy-border-line` |
+
 <demo-model url="pages-design/steps/steps"></demo-model>

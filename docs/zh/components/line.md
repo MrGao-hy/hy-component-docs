@@ -82,4 +82,10 @@
 | customStyle | 自定义需要用到的外部样式 | `CSSProperties` | - |
 | customClass | 自定义外部类名 | `string` | - |
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-line-color` | 线条颜色 | 跟随 `--hy-border-color` |
+
 <demo-model url="pages-design/line/line"></demo-model>

@@ -431,4 +431,19 @@ export type SortType = 'asc' | 'desc' | 'normal';
 
 :::
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-table-header-text-color` | 表头文字颜色 | `#909399` |
+| `--hy-table-stripe-bg` | 斑马纹背景色 | 跟随 `--hy-background--table-header` |
+| `--hy-table-header-height` | 表头高度 | `50px` |
+| `--hy-table-header-cell-padding` | 表头单元格内边距 | `0 20rpx` |
+| `--hy-table-header-cell-font-size` | 表头单元格字号 | `28rpx` |
+| `--hy-table-cell-padding` | 内容单元格内边距 | `0 8px` |
+| `--hy-table-cell-font-size` | 内容单元格字号 | `14px` |
+| `--hy-table-fixed-left-shadow` | 固定列阴影（左侧） | `4px 0 10px rgba(0, 0, 0, 0.1)` |
+| `--hy-table-fixed-right-shadow` | 固定列阴影（右侧） | `-4px 0 10px rgba(0, 0, 0, 0.1)` |
+| `--hy-table-border` | 表格边框（含单元格分隔线，8 处同步） | 跟随 `--hy-border-line` |
+
 <demo-model url="pages-design/table/table"></demo-model>

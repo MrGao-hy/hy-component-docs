@@ -250,4 +250,10 @@ export interface DropdownMenuItem {
 
 :::
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-dropdown-item-border` | 列表项分隔线 | 跟随 `--hy-border-line` |
+
 <demo-model url="pages-design/dropdown/dropdown"></demo-model>

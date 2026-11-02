@@ -230,4 +230,23 @@
 | click | `disabled` 为 `true` 时，点击输入框触发，用于跳转搜索页 | - |
 | clickIcon | 左侧图标点击时触发 | `keyword: string` 当前输入框的值 |
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-search-close-size` | 清除按钮尺寸 | `20px` |
+| `--hy-search-placeholder-font-size` | 占位符字号 | `25rpx` |
+| `--hy-search-placeholder-line-height` | 占位符行高 | `30rpx` |
+| `--hy-search-border-width` | 边框宽度 | `1px` |
+| `--hy-search-action-width` | 右侧操作区宽度 | `100rpx` |
+| `--hy-search-label-color` | 左侧标签颜色 | 跟随 `--hy-text-color` |
+| `--hy-search-label-font-size` | 左侧标签字号 | 跟随 `--hy-font-size-base`（28rpx） |
+| `--hy-search-close-radius` | 清除按钮圆角 | 跟随 `--hy-radius-circle`（50%） |
+| `--hy-search-input-color` | 输入文字颜色 | 跟随 `--hy-text-color` |
+| `--hy-search-input-font-size` | 输入文字字号 | 跟随 `--hy-font-size-base`（28rpx） |
+| `--hy-search-disabled-color` | 禁用文字颜色 | 跟随 `--hy-text-color--disabled` |
+| `--hy-search-placeholder-color` | 占位符颜色 | 跟随 `--hy-text-color--placeholder` |
+| `--hy-search-action-color` | 右侧操作文字颜色 | 跟随 `--hy-text-color` |
+| `--hy-search-action-font-size` | 右侧操作文字字号 | 跟随 `--hy-font-size-base`（28rpx） |
+
 <demo-model url="pages-design/search/search"></demo-model>

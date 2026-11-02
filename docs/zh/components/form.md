@@ -727,4 +727,13 @@ const registerFormRules = reactive({
 | resetField    | 重置字段 | -                                |
 | clearValidate | 清除验证 | -                                |
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-form-item-margin-bottom` | 下外边距 | `16px` |
+| `--hy-form-item-error-color` | 错误提示颜色 | `#ff4d4f` |
+| `--hy-form-item-error-font-size` | 错误提示字号 | `12px` |
+| `--hy-form-item-label-color` | 标签文字颜色 | 跟随 `--hy-text-color` |
+
 <demo-model url="pages-design/form/form"></demo-model>

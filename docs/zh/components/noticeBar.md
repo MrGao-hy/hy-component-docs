@@ -241,4 +241,14 @@
 | click  | 点击通告文字触发     | index: 当前显示的text索引 |
 | close  | 点击右侧关闭图标触发 | -                         |
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-notice-bar-padding` | 内边距 | `9px 12px` |
+| `--hy-notice-bar-bg` | 背景色 | `#fff6c8` |
+| `--hy-notice-bar-font-size` | 文字字号 | `14px` |
+| `--hy-notice-bar-swiper-height` | 垂直滚动行高 | `16px` |
+| `--hy-notice-bar-radius` | 通知栏圆角 | 跟随 `--hy-radius-sm`（8rpx） |
+
 <demo-model url="pages-design/noticeBar/noticeBar"></demo-model>

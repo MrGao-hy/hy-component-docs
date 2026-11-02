@@ -298,4 +298,12 @@ type IParam = {
 
 :::
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-datetime-picker-radius` | 圆角 | `4px` |
+| `--hy-datetime-picker-border` | 边框 | `1px solid #eee` |
+| `--hy-datetime-picker-padding` | 内边距 | `0 10px` |
+
 <demo-model url="pages-design/dateTimePicker/dateTimePicker"></demo-model>

@@ -80,4 +80,10 @@
 | ------- | ---------- | ------ |
 | default | 自定义内容 | -      |
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-back-top-tips-font-size` | 提示文字字号 | `12px` |
+
 <demo-model url="pages-design/backTop/backTop"></demo-model>

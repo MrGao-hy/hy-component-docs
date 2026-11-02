@@ -184,4 +184,13 @@ const showMore = () => {
 | ------- | ---- | ------ |
 | default | -    | -      |
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-scroll-list-indicator-width` | 指示条宽度 | `60px` |
+| `--hy-scroll-list-indicator-height` | 指示条高度 | `4px` |
+| `--hy-scroll-list-indicator-bar-width` | 指示条滑块宽度 | `20px` |
+| `--hy-scroll-list-indicator-radius` | 指示条圆角 | 跟随 `--hy-radius-semicircle`（100px） |
+
 <demo-model url="pages-design/scrollList/scrollList"></demo-model>

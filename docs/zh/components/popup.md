@@ -308,4 +308,12 @@
 | ------- | ---------- | ------ |
 | default | 弹出层内容 | -      |
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-popup-z-index` | 层级 | `9999` |
+| `--hy-popup-radius` | 圆角（round 模式） | 跟随 `--hy-radius-lg`（32rpx） |
+| `--hy-popup-close-hover-opacity` | 关闭按钮按压透明度 | `0.4` |
+
 <demo-model url="pages-design/popup/popup"></demo-model>

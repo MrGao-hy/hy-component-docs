@@ -99,4 +99,10 @@ const show = ref(true);
 | ------- | ---------------------------------- | ------ |
 | default | 默认插槽，用于在遮罩层上方嵌入内容 | -      |
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-overlay-bg` | 遮罩背景色 | `rgba(0, 0, 0, 0.7)` |
+
 <demo-model url="pages-design/overlay/overlay"></demo-model>

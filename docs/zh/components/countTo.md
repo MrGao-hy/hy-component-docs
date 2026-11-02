@@ -137,6 +137,12 @@ const resume = () => {
 | resume  | 从暂停时的值开始滚动                           |
 | reStart | 暂定状态，重新再开始滚动；或者滚动状态下，暂停 |
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-count-to-color` | 数字文字颜色 | 跟随 `--hy-text-color` |
+
 [^1] `DD`-日，`HH`-时，`mm`-分，`ss`-秒，`SSS`-毫秒
 
 <demo-model url="pages-design/countTo/countTo"></demo-model>

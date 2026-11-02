@@ -351,4 +351,15 @@ export type SubSectionVo = string | number | SubSectionItemVo;
 
 :::
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-subsection-height` | 外层高度 | `35px` |
+| `--hy-subsection-padding` | 外层内边距 | `3px` |
+| `--hy-subsection-inner-height` | 内层滑块高度 | `32px` |
+| `--hy-subsection-font-size` | 字号 | `12px` |
+| `--hy-subsection-line-height` | 行高 | `14px` |
+| `--hy-subsection-radius` | 整体圆角 | 跟随 `--hy-radius-sm`（8rpx） |
+
 <demo-model url="pages-design/subsection/subsection"></demo-model>

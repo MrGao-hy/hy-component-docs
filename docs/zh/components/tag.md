@@ -186,4 +186,23 @@
 | click  | 点击标签触发                           | \{label:显示文本内容, value:文本值\} |
 | close  | closable为true时，点击标签关闭按钮触发 | value：文本内容                      |
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-tag-border-width` | 边框宽度 | `2rpx` |
+| `--hy-tag-padding-mini` | mini 内边距 | `4rpx 12rpx` |
+| `--hy-tag-padding-small` | small 内边距 | `6rpx 16rpx` |
+| `--hy-tag-padding-medium` | medium 内边距 | `8rpx 20rpx` |
+| `--hy-tag-padding-large` | large 内边距 | `10rpx 24rpx` |
+| `--hy-tag-close-size-mini` | mini 关闭图标尺寸 | `14px` |
+| `--hy-tag-close-size-small` | small 关闭图标尺寸 | `16px` |
+| `--hy-tag-close-size-medium` | medium 关闭图标尺寸 | `20px` |
+| `--hy-tag-close-size-large` | large 关闭图标尺寸 | `22px` |
+| `--hy-tag-font-size-mini` | mini 字号（行高同步跟随） | 跟随 `--hy-font-size-xs`（20rpx） |
+| `--hy-tag-font-size-small` | small 字号（行高同步跟随） | 跟随 `--hy-font-size-sm`（24rpx） |
+| `--hy-tag-font-size-medium` | medium 字号（行高同步跟随） | 跟随 `--hy-font-size-base`（28rpx） |
+| `--hy-tag-font-size-large` | large 字号（行高同步跟随） | 跟随 `--hy-font-size-md`（32rpx） |
+| `--hy-tag-close-radius` | 关闭按钮圆角 | 跟随 `--hy-radius-semicircle`（100px） |
+
 <demo-model url="pages-design/tag/tag"></demo-model>

@@ -181,6 +181,13 @@ const reset = () => {
 | pause  | 暂停倒计时 |
 | reset  | 重置倒计时 |
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-count-down-font-size` | 文字字号 | `15px` |
+| `--hy-count-down-line-height` | 文字行高 | `22px` |
+
 [^1] `DD`-日，`HH`-时，`mm`-分，`ss`-秒，`SSS`-毫秒
 
 <demo-model url="pages-design/countDown/countDown"></demo-model>

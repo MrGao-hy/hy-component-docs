@@ -481,4 +481,24 @@
 | default       | 传入自定义内容，覆盖content属性                        | -      |
 | confirmButton | 传入自定义按钮，用于在微信小程序弹窗通过按钮授权的场景 | -      |
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-modal-max-width` | 弹窗最大宽度 | `650rpx` |
+| `--hy-modal-radius` | 圆角 | 跟随 `--hy-radius-base`（20rpx） |
+| `--hy-modal-title-padding-top` | 标题上内边距 | `25px` |
+| `--hy-modal-content-padding` | 内容内边距 | `20px` |
+| `--hy-modal-button-group-padding` | 按钮组内边距 | `20px` |
+| `--hy-modal-confirm-button-padding` | 确认按钮区域内边距 | `0 25px 15px` |
+| `--hy-modal-button-height` | 按钮高度 | `43px` |
+| `--hy-modal-button-radius` | 按钮圆角 | 跟随 `--hy-radius-semicircle`（100px） |
+| `--hy-modal-button-font-size` | 按钮字号 | `16px` |
+| `--hy-modal-title-font-size` | 标题字号 | 跟随 `--hy-font-size-base`（28rpx） |
+| `--hy-modal-title-color` | 标题颜色 | 跟随 `--hy-text-color` |
+| `--hy-modal-content-font-size` | 内容字号 | 跟随 `--hy-font-size-sm`（24rpx） |
+| `--hy-modal-content-color` | 内容颜色 | 跟随 `--hy-text-color--grey` |
+| `--hy-modal-button-confirm-color` | 确认按钮颜色 | `#FFFFFF` |
+| `--hy-modal-button-cancel-color` | 取消按钮颜色 | 跟随 `--hy-text-color` |
+
 <demo-model url="pages-design/modal/modal"></demo-model>

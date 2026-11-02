@@ -101,4 +101,12 @@
 | ------ | -------- | -------- |
 | click  | 点击事件 | -        |
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-divider-min-height` | 最小高度 | `35px` |
+| `--hy-divider-text-color` | 文字/圆点颜色 | 跟随 `--hy-text-color--3` |
+| `--hy-divider-dot-font-size` | 圆点字号 | 跟随 `--hy-font-size-sm`（24rpx） |
+
 <demo-model url="pages-design/divider/divider"></demo-model>

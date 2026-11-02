@@ -213,4 +213,13 @@ const change = (e) => {
 | ------- | -------- | ------ |
 | default | 默认插槽 | -      |
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-switch-border-color` | 边框颜色 | `rgba(0, 0, 0, 0.12)` |
+| `--hy-switch-node-box-shadow` | 圆点阴影 | `1px 1px 1px 0 rgba(0, 0, 0, 0.25)` |
+| `--hy-switch-disabled-opacity` | 禁用透明度 | `0.6` |
+| `--hy-switch-radius` | 开关整体圆角 | 跟随 `--hy-radius-semicircle`（100px） |
+
 <demo-model url="pages-design/switch/switch"></demo-model>

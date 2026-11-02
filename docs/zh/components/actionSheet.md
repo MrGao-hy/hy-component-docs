@@ -506,4 +506,27 @@ interface SelectEventParams {
 | ------- | ------------ | ------ |
 | default | 面板默认插槽 | -      |
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-action-sheet-width` | 面板宽度 | `calc(100vw - 20px)` |
+| `--hy-action-sheet-item-height` | 选项高度 | `48px` |
+| `--hy-action-sheet-header-line-height` | 头部行高 | `44px` |
+| `--hy-action-sheet-cancel-width` | 取消按钮宽度 | `calc(100% - 48px)` |
+| `--hy-action-sheet-cancel-margin` | 取消按钮外边距 | `0 auto 24px` |
+| `--hy-action-sheet-close-top` | 关闭按钮上边距 | `20px` |
+| `--hy-action-sheet-close-right` | 关闭按钮右边距 | `15px` |
+| `--hy-action-sheet-panel-height` | 分享面板单项高度 | `160rpx` |
+| `--hy-action-sheet-panel-width` | 分享面板单项宽度 | `140rpx` |
+| `--hy-action-sheet-font-size` | 选项字号 | 跟随 `--hy-font-size-base`（28rpx） |
+| `--hy-action-sheet-item-color` | 选项颜色 | 跟随 `--hy-text-color` |
+| `--hy-action-sheet-disabled-color` | 禁用选项颜色 | 跟随 `--hy-text-color--disabled` |
+| `--hy-action-sheet-subname-font-size` | 二级描述字号 | 跟随 `--hy-font-size-sm`（24rpx） |
+| `--hy-action-sheet-subname-color` | 二级描述颜色 | 跟随 `--hy-text-color--grey` |
+| `--hy-action-sheet-cancel-color` | 取消按钮颜色 | 跟随 `--hy-text-color` |
+| `--hy-action-sheet-close-radius` | 关闭按钮圆角 | 跟随 `--hy-radius-circle`（50%） |
+| `--hy-action-sheet-panel-img-radius` | 分享面板图标圆角 | 跟随 `--hy-radius-base`（20rpx） |
+| `--hy-action-sheet-panel-title-font-size` | 分享面板标题字号 | 跟随 `--hy-font-size-sm`（24rpx） |
+
 <demo-model url="pages-design/actionSheet/actionSheet"></demo-model>

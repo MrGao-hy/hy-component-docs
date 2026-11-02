@@ -86,4 +86,13 @@ const value = ref<number>(1);
 | ------ | ---------- | -------------------- |
 | change | 值修改事件 | value: value为当前数 |
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-pagination-nav-min-width` | 上下页按钮最小宽度 | `60px` |
+| `--hy-pagination-nav-active-color` | 上下页按钮激活色 | `rgba(0, 0, 0, 0.65)` |
+| `--hy-pagination-nav-disabled-color` | 上下页按钮禁用色 | `rgba(0, 0, 0, 0.15)` |
+| `--hy-pagination-font-size` | 信息文字字号 | 跟随 `--hy-font-size-sm`（24rpx） |
+
 <demo-model url="pages-design/pagination/pagination"></demo-model>

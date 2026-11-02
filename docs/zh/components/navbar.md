@@ -98,6 +98,8 @@
 
 ## API
 
+### Props
+
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | safeAreaInsetTop | 是否开启顶部安全区适配 | `boolean` | true |
@@ -119,19 +121,30 @@
 | customStyle | 自定义需要用到的外部样式 | `CSSProperties` | - |
 | customClass | 自定义外部类名 | `string` | - |
 
-## Events
+### Events
 
 | 事件名     | 说明         | 回调参数 |
 | ---------- | ------------ | -------- |
 | leftClick  | 点击左侧区域 | -        |
 | rightClick | 点击右侧区域 | -        |
 
-## Slots
+### Slots
 
 | 插槽名 | 说明               | 接收值 |
 | ------ | ------------------ | ------ |
 | left   | 自定义左侧部分内容 | -      |
 | right  | 自定义右侧部分内容 | -      |
 | center | 自定义中部内容     | -      |
+
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-navbar-z-index` | 层级 | `9999` |
+| `--hy-navbar-height` | 高度 | `44px` |
+| `--hy-navbar-text-font-size` | 左右文字字号 | `15px` |
+| `--hy-navbar-title-font-size` | 中间标题字号 | 跟随 `--hy-font-size-base`（28rpx） |
+| `--hy-navbar-sub-font-size` | 中间副标题字号 | 跟随 `--hy-font-size-sm`（24rpx） |
+| `--hy-navbar-sub-color` | 中间副标题颜色 | 跟随 `--hy-text-color--grey` |
 
 <demo-model url="pages-design/navbar/navbar"></demo-model>

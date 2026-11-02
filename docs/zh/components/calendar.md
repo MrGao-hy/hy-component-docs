@@ -374,4 +374,30 @@ export interface IMonthProps {
 
 :::
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-calendar-confirm-padding` | 确认按钮内边距 | `7px 18px` |
+| `--hy-calendar-title-font-size` | 标题字号 | `16px` |
+| `--hy-calendar-title-height` | 标题高度（含行高） | `42px` |
+| `--hy-calendar-subtitle-font-size` | 副标题字号 | `14px` |
+| `--hy-calendar-subtitle-height` | 副标题高度（含行高） | `40px` |
+| `--hy-calendar-weekday-font-size` | 星期字号 | `13px` |
+| `--hy-calendar-weekday-line-height` | 星期行高 | `30px` |
+| `--hy-calendar-month-title-font-size` | 月份标题字号 | `14px` |
+| `--hy-calendar-month-title-height` | 月份标题高度（含行高） | `42px` |
+| `--hy-calendar-month-mark-font-size` | 月份水印文字大小 | `155px` |
+| `--hy-calendar-day-selected-radius` | 选中日期圆角 | `3px` |
+| `--hy-calendar-day-dot-size` | 日期圆点尺寸 | `7px` |
+| `--hy-calendar-day-info-font-size` | 日期数字字号 | `16px` |
+| `--hy-calendar-day-bottom-info-font-size` | 日期底部信息字号 | `10px` |
+| `--hy-calendar-subtitle-color` | 副标题颜色 | 跟随 `--hy-text-color--2` |
+| `--hy-calendar-weekday-color` | 星期颜色 | 跟随 `--hy-text-color--grey` |
+| `--hy-calendar-month-title-color` | 月份标题颜色 | 跟随 `--hy-text-color--2` |
+| `--hy-calendar-month-mark-color` | 月份水印颜色 | 跟随 `--hy-text-color--4` |
+| `--hy-calendar-day-selected-color` | 选中日期文字颜色 | `#ffffff` |
+| `--hy-calendar-day-disabled-color` | 禁用日期文字颜色 | 跟随 `--hy-text-color--disabled` |
+| `--hy-calendar-day-bottom-info-color` | 日期底部信息颜色 | 跟随 `--hy-text-color--2` |
+
 <demo-model url="pages-design/calendar/calendar"></demo-model>

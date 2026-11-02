@@ -316,4 +316,26 @@
 | ------- | -------- | ------ |
 | default | 默认插槽 | -      |
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 | 备注 |
+| --- | --- | --- | --- |
+| `--hy-button-height` | 默认尺寸高度 | `40px` | medium 尺寸沿用此值 |
+| `--hy-button-height-large` | large 高度 | `50px` | |
+| `--hy-button-height-small` | small 高度 | `30px` | |
+| `--hy-button-height-mini` | mini 高度 | `22px` | |
+| `--hy-button-font-size` | 默认文字大小 | `15px` | 设置 `text-size` prop 时以 prop 为准 |
+| `--hy-button-font-size-medium` | medium 文字大小 | `14px` | 同上 |
+| `--hy-button-font-size-small` | small 文字大小 | `12px` | 同上 |
+| `--hy-button-font-size-mini` | mini 文字大小 | `10px` | 同上 |
+| `--hy-button-padding-large` | large 内边距 | `0 15px` | |
+| `--hy-button-padding-medium` | medium 内边距 | `0 12px` | |
+| `--hy-button-padding-small` | small 内边距 | `0 8px` | |
+| `--hy-button-padding-mini` | mini 内边距 | `0 8px` | |
+| `--hy-button-min-width-small` | small 最小宽度 | `60px` | 非 APP-NVUE 生效 |
+| `--hy-button-min-width-mini` | mini 最小宽度 | `50px` | 非 APP-NVUE 生效 |
+| `--hy-button-radius` | 方形按钮圆角（shape=square） | 跟随 `--hy-radius-sm`（8rpx） | 圆形按钮请覆盖 `--hy-radius-semicircle` |
+| `--hy-button-disabled-opacity` | 禁用透明度 | `0.5` | |
+| `--hy-button-hairline-width` | 细边框宽度（hairline） | `0.5px` | |
+
 <demo-model url="pages-design/button/button"></demo-model>

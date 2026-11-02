@@ -127,6 +127,14 @@
 | ------ | -------------- | ----------------------------------- |
 | click  | 点击图标时触发 | `index`: 通过`props`传递的`index`值 |
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-icon-label-max-width` | 标签文字最大宽度 | `150rpx` |
+| `--hy-icon-label-color` | 标签文字颜色 | 跟随 `--hy-text-color--grey` |
+| `--hy-icon-label-font-size` | 标签字号 | 跟随 `--hy-font-size-sm`（24rpx） |
+
 ## 图标集
 
 <TheIconList />

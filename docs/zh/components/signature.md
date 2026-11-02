@@ -253,4 +253,11 @@ onMounted(() => {
 | ------ | -------------- | --------------------------------------------------------- |
 | footer | 自定义底部按钮 | clear, confirm, restore, revoke, currentStep, historyList |
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-signature-radius` | 画布区域圆角 | 跟随 `--hy-radius-base`（20rpx） |
+| `--hy-signature-border` | 画布区域边框 | 跟随 `--hy-border-line` |
+
 <demo-model url="pages-design/signature/signature"></demo-model>

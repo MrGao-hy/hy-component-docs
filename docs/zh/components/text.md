@@ -167,8 +167,16 @@
 | ------ | ------------ | -------- |
 | click  | 点击触发事件 | -        |
 
-[^1]: `text`-普通文本，`price`-价格，`phone`-手机号，`name`-姓名，`date`-日期，`link`-超链接
+### CSS 变量
 
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-text-price-font-size` | 价格模式字号 | `14px` |
+| `--hy-text-font-size` | 正文主体字号 | 跟随 `--hy-font-size-base`（28rpx） |
+| `--hy-text-price-color` | 价格文字颜色 | 跟随 `--hy-text-color--grey` |
+
+
+[^1]: `text`-普通文本，`price`-价格，`phone`-手机号，`name`-姓名，`date`-日期，`link`-超链接
 [^2]: 当`mode`等于`phone`或`name`时候`format`设置为`encrypt`表示隐藏中间内容
 
 <demo-model url="pages-design/text/text"></demo-model>

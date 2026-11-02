@@ -241,4 +241,15 @@ const value = ref(1);
 | input  | 输入框   | record |
 | plus   | 增加按钮 | -      |
 
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-number-step-btn-width` | 加减按钮宽度 | `35px` |
+| `--hy-number-step-radius` | 圆角 | `4px` |
+| `--hy-number-step-font-size` | 字号 | `15px` |
+| `--hy-number-step-input-margin` | 输入框外边距 | `0 2px` |
+| `--hy-number-step-input-color` | 输入文字颜色 | 跟随 `--hy-text-color` |
+| `--hy-number-step-disabled-color` | 禁用文字颜色 | 跟随 `--hy-text-color--disabled` |
+
 <demo-model url="pages-design/numberBox/numberBox"></demo-model>
