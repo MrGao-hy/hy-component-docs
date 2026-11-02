@@ -1,6 +1,6 @@
 # Upload Component
 
-> This component is used for file upload scenarios, supporting uploads of various file types such as images and videos
+> This component is used for file upload scenarios, supporting the upload of images, videos, and various other file types
 
 ## :pushpin: Platform Differences
 
@@ -47,7 +47,7 @@ const afterRead = (event: any) => {
         if (progress >= 100) {
             clearInterval(timer);
             list.value[0].status = 'success';
-            list.value[0].message = 'Upload successful';
+            list.value[0].message = 'Upload succeeded';
         }
     }, 200);
 };
@@ -57,7 +57,7 @@ const afterRead = (event: any) => {
 
 ### Limiting Upload Count
 
-Set the maximum number of uploads via `maxCount`; the default is 52.
+Use `maxCount` to set the maximum number of uploads. The default is 52.
 
 ```html
 <hy-upload :fileList="list" :maxCount="3" @afterRead="afterRead"></hy-upload>
@@ -65,7 +65,7 @@ Set the maximum number of uploads via `maxCount`; the default is 52.
 
 ### Multiple Image Upload
 
-Set `multiple` to enable multi-select mode; not supported on some Android devices.
+Set `multiple` to enable multi-select mode. Some Android devices do not support it.
 
 ::: code-group
 
@@ -90,7 +90,7 @@ const afterRead = (event: any) => {
                 url: item.url,
                 schedule: 0,
             });
-            // Simulate a single file upload
+            // Simulate uploading a single file
             const index = list.value.findIndex((v) => v.url === item.url);
             let progress = 0;
             const timer = setInterval(() => {
@@ -99,7 +99,7 @@ const afterRead = (event: any) => {
                 if (progress >= 100) {
                     clearInterval(timer);
                     list.value[index].status = 'success';
-                    list.value[index].message = 'Upload successful';
+                    list.value[index].message = 'Upload succeeded';
                 }
             }, 200);
         });
@@ -111,7 +111,7 @@ const afterRead = (event: any) => {
 
 ### Limiting File Size
 
-Use `maxSize` to set the maximum size of a single file, in bytes (byte).
+Use `maxSize` to set the maximum size of a single file, in bytes (B).
 
 ```html
 <template>
@@ -162,7 +162,7 @@ Set `accept="video"` to restrict uploads to video files only.
         list.value.push({
             type: 'video',
             status: 'success',
-            message: 'Upload successful',
+            message: 'Upload succeeded',
             url: file.url,
         });
     };
@@ -249,7 +249,7 @@ Set `disabled` to disable the upload functionality.
     <hy-upload :fileList="list" disabled>
         <view class="disabled-btn">
             <hy-icon name="lock" color="#ccc" size="24"></hy-icon>
-            <text class="disabled-text">Upload is disabled</text>
+            <text class="disabled-text">Upload disabled</text>
         </view>
     </hy-upload>
 </template>
@@ -300,9 +300,9 @@ Set `status="failed"` to display the upload failed state.
 </script>
 ```
 
-### Image Cropping Mode
+### Image Crop Mode
 
-Use `imageMode` to set the cropping mode of the preview image, consistent with the `mode` attribute of the image component.
+Use `imageMode` to set the crop mode of the preview image, consistent with the `mode` property of the image component.
 
 ```html
 <hy-upload :fileList="list" imageMode="aspectFit"></hy-upload>
@@ -324,7 +324,7 @@ Use `capture` to set the capture mode for images or videos.
 <!-- Select from album only -->
 <hy-upload :fileList="list" :capture="['album']"></hy-upload>
 
-<!-- Camera capture only -->
+<!-- Capture with camera only -->
 <hy-upload :fileList="list" :capture="['camera']"></hy-upload>
 
 <!-- Support both album and camera -->
@@ -336,10 +336,10 @@ Use `capture` to set the capture mode for images or videos.
 Use `sizeType` to control the size type of the selected images.
 
 ```html
-<!-- Select original images only -->
+<!-- Original images only -->
 <hy-upload :fileList="list" :sizeType="['original']"></hy-upload>
 
-<!-- Select compressed images only -->
+<!-- Compressed images only -->
 <hy-upload :fileList="list" :sizeType="['compressed']"></hy-upload>
 
 <!-- Support both original and compressed images -->
@@ -350,48 +350,48 @@ Use `sizeType` to control the size type of the selected images.
 
 ### Upload Props
 
-| Parameter | Description | Type | Default Value |
+| Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
-| accept | Accepted file types; `file` is only supported on H5 (only the WeChat Mini Program supports setting accept to `all` or `media`) | `string` | image |
-| extension | Filters by file extension; no item may be an empty string. No filtering by default. | `string[]` | [] |
-| capture | Image or video capture mode; when accept is of image type, setting the additional option `camera` in capture will directly invoke the camera | `('album' \| 'camera')[]` | ['album', 'camera'] |
+| accept | Accepted file types; file is only supported on H5 (only the WeChat Mini Program supports configuring accept as all or media) | `string` | image |
+| extension | Filter by file extension; each item cannot be an empty string. No filtering by default. | `string[]` | [] |
+| capture | Image or video capture mode; when accept is image, optionally adding camera to capture can directly launch the camera | `('album' \| 'camera')[]` | ['album', 'camera'] |
 | compressed | Takes effect when accept is video; whether to compress the video | `boolean` | true |
-| camera | Takes effect when accept is video; optional values are `back` or `front` | `'back' \| 'front'` | back |
-| maxDuration | Takes effect when accept is video; the maximum recording duration for shooting a video, in seconds | `number` | 60 |
-| uploadIcon | Icon for the upload area; only built-in icons are supported | `string` | IconConfig.UPLOAD |
+| camera | Takes effect when accept is video; optional values are back or front | `'back' \| 'front'` | back |
+| maxDuration | Takes effect when accept is video; the maximum video recording duration, in seconds | `number` | 60 |
+| uploadIcon | Icon of the upload area; only built-in icons are supported | `string` | IconConfig.UPLOAD |
 | uploadIconColor | Color of the icon in the upload area | `string` | #D3D4D6 |
 | useBeforeRead | Whether to enable the before-read event | `boolean` | false |
-| previewFullImage | Whether to display the component's built-in image preview | `boolean` | true |
+| previewFullImage | Whether to show the component's built-in image preview feature | `boolean` | true |
 | maxCount | Maximum number of uploads | `number` | 52 |
 | disabled | Whether to disable the component | `boolean` | false |
-| imageMode | Cropping mode when previewing uploaded images, consistent with the image component's `mode` attribute | `string` | aspectFill |
-| name | Identifier, which can be retrieved in the second parameter of callback functions | `string` | '' |
-| sizeType | `original` for original images, `compressed` for compressed images; both by default; not effective on H5 | `('original' \| 'compressed')[]` | ['original', 'compressed'] |
-| multiple | Whether to enable multiple image selection; not supported on some Android devices | `boolean` | false |
-| deletable | Whether to show the delete image button | `boolean` | true |
-| maxSize | Maximum size of a single selected file, in B (byte); no limit by default | `number` | Number.MAX_VALUE |
+| imageMode | Crop mode when previewing uploaded images, consistent with the image component's mode property | `string` | aspectFill |
+| name | Identifier, which can be retrieved in the second parameter of the callback function | `string` | '' |
+| sizeType | original for original images, compressed for compressed images; both by default; not effective on H5 | `('original' \| 'compressed')[]` | ['original', 'compressed'] |
+| multiple | Whether to enable multiple image selection; some Android devices do not support it | `boolean` | false |
+| deletable | Whether to show the delete button for images | `boolean` | true |
+| maxSize | Maximum size of a single selected file, in bytes (B); unlimited by default | `number` | Number.MAX_VALUE |
 | fileList | List of already uploaded files to display | `FileVo[]` | [] |
 | uploadText | Hint text for the upload area | `string` | '' |
-| width | Width of the internal preview image area and the image selection button area; numeric values default to the unit rpx | `string \| number` | 80 |
-| height | Height of the internal preview image area and the image selection button area; numeric values default to the unit rpx | `string \| number` | 80 |
+| width | Width of the internal image preview area and the image selection button area; numbers default to the unit rpx | `string \| number` | 80 |
+| height | Height of the internal image preview area and the image selection button area; numbers default to the unit rpx | `string \| number` | 80 |
 | beforeRead | Handler function before reading | `(file, detail) => void` | - |
 | afterRead | Handler function after reading | `(file, detail) => void` | - |
 | customStyle | Custom external styles to apply | `CSSProperties` | - |
 
 ## fileList Data Structure
 
-| Parameter | Description                 | Type                                 | Default Value |
-| --------- | -------------------- | ------------------------------------ | ------ |
-| url       | Local URL of the uploaded file | `string`                             | -      |
-| type      | Uploaded file type         | `'image' \| 'video' \| 'file'`       | -      |
-| thumb     | Thumbnail URL           | `string`                             | -      |
-| size      | File size             | `number`                             | -      |
-| isVideo   | Whether it is a video             | `boolean`                            | -      |
-| isImage   | Whether it is an image             | `boolean`                            | -      |
-| deletable | Whether to show the delete button     | `boolean`                            | -      |
-| status    | Upload status             | `'loading' \| 'failed' \| 'success'` | -      |
-| message   | Hint message             | `string`                             | -      |
-| schedule  | Upload progress             | `string \| number`                   | -      |
+| Parameter | Description           | Type                                 | Default |
+| --------- | --------------------- | ------------------------------------ | ------- |
+| url       | Local address link of the uploaded file | `string`                             | -       |
+| type      | Uploaded file type    | `'image' \| 'video' \| 'file'`       | -       |
+| thumb     | Thumbnail URL         | `string`                             | -       |
+| size      | File size             | `number`                             | -       |
+| isVideo   | Whether it is a video | `boolean`                            | -       |
+| isImage   | Whether it is an image | `boolean`                            | -       |
+| deletable | Whether to show the delete button | `boolean`                            | -       |
+| status    | Upload status         | `'loading' \| 'failed' \| 'success'` | -       |
+| message   | Hint message          | `string`                             | -       |
+| schedule  | Upload progress       | `string \| number`                   | -       |
 
 ### Events
 
@@ -400,16 +400,16 @@ Use `sizeType` to control the size type of the selected images.
 | afterRead | Handler function after the file is read | `{ file: FileVo \| FileVo[], name: string, index: number }` |
 | beforeRead | Handler function before the file is read | `{ file: FileVo \| FileVo[], name: string, index: number, callback: (ok) => void }` |
 | oversize | File size exceeds the maximum allowed size | `{ file: FileVo \| FileVo[], name: string, index: number }` |
-| clickPreview | Triggered when an image is previewed in fullscreen | `{ file: FileVo, name: string, index: number }` |
+| clickPreview | Triggered when previewing an image in fullscreen | `{ file: FileVo, name: string, index: number }` |
 | delete | Triggered when an image is deleted | `{ file: FileVo, name: string, index: number }` |
 | error | Triggered on upload error | `error: any` |
 
 ### Slots
 
-| Slot Name  | Description                 |
-| ------- | -------------------- |
-| default | Custom upload button content   |
-| trigger | Custom area that triggers the upload |
+| Slot Name | Description                            |
+| --------- | -------------------------------------- |
+| default   | Custom upload button content           |
+| trigger   | Custom area to trigger the upload      |
 
 ### Typings
 
@@ -417,7 +417,7 @@ Use `sizeType` to control the size type of the selected images.
 
 ```ts
 export interface FileVo {
-    /** Local URL of the uploaded file */
+    /** Local address link of the uploaded file */
     url?: string;
     /** Uploaded file type */
     type?: 'image' | 'video' | 'file';
@@ -449,6 +449,18 @@ export interface UploadFileParams {
 ```
 
 :::
+
+### CSS Variables
+
+| Variable Name | Description | Default |
+| --- | --- | --- |
+| `--hy-upload-image-width` | Preview image size | `80px` |
+| `--hy-upload-text-font-size` | Hint text font size | `11px` |
+| `--hy-upload-radius` | Upload item border radius | `2px` |
+| `--hy-upload-item-margin` | Upload item outer margin | `0 8px 8px 0` |
+| `--hy-upload-deletable-size` | Delete button size | `14px` |
+| `--hy-upload-other-bg` | File type background color | `rgb(242, 242, 242)` |
+| `--hy-upload-text-color` | Hint text color | Follows `--hy-text-color--grey` |
 
 <demo-model url="pages-design/upload/upload"></demo-model>
 

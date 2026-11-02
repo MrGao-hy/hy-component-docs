@@ -3,14 +3,14 @@
 
 :::tip What it does
 
-`MCP` connects the component library's real API data to AI assistants. While coding, it automatically queries component properties, events, and usage, preventing AI from fabricating components or APIs that don't exist.
+`MCP` connects the component library's real API data to AI assistants. While coding, it automatically queries component properties, events, and usage, preventing AI from fabricating nonexistent components or APIs.
 
 :::
 
 ## Installation
 
 ```bash
-# Install globally
+# Global installation
 npm install -g @hy-app/mcp
 
 # Or use npx (no installation required)
@@ -19,16 +19,16 @@ npx @hy-app/mcp
 
 ## Available Tools
 
-| Tool Name                  | Description                                            |
-| -------------------------- | ------------------------------------------------------ |
-| `search_components`        | Search components, supports fuzzy matching by Chinese and English names |
-| `get_component_api`        | Get component API (Props/Events/Slots)                 |
-| `get_component_examples`   | Get component usage example code                       |
-| `check_platform_support`   | Query component platform compatibility                 |
-| `get_hook_doc`             | Get Hook documentation (useToast, useShare, etc.)      |
+| Tool Name                  | Description                                    |
+| -------------------------- | --------------------------------------- |
+| `search_components`        | Search components, supports fuzzy matching by Chinese or English name |
+| `get_component_api`        | Get component API (Props/Events/Slots) |
+| `get_component_examples`   | Get component usage example code |
+| `check_platform_support`   | Check component platform compatibility |
+| `get_hook_doc`             | Get Hook documentation (useToast, useShare, etc.) |
 | `get_tool_doc`             | Get utility function documentation (http, throttle, etc.) |
-| `get_guide`                | Get development guides (theme, i18n, etc.)             |
-| `validate_component_usage` | Validate whether component usage is correct            |
+| `get_guide`                | Get development guides (theming, internationalization, etc.) |
+| `validate_component_usage` | Validate whether component usage is correct |
 
 ---
 
@@ -49,7 +49,7 @@ Open Cursor Settings → MCP, and add the following configuration:
 }
 ```
 
-### Option 2: After installing globally
+### Option 2: After global installation
 
 ```json
 {
@@ -61,39 +61,26 @@ Open Cursor Settings → MCP, and add the following configuration:
 }
 ```
 
-### Option 3: Install locally in the project
-
-```json
-{
-    "mcpServers": {
-        "hy-app": {
-            "command": "node",
-            "args": ["./node_modules/@hy-app/mcp/dist/index.js"]
-        }
-    }
-}
-```
-
 Configuration file locations:
 
 - **Windows**: `%APPDATA%\Cursor\User\globalStorage\saoudrizwan.claude-dev\settings\cline_mcp_settings.json`
 - **macOS**: `~/Library/Application Support/Cursor/User/globalStorage/saoudrizwan.claude-dev/settings/cline_mcp_settings.json`
 
-You can also edit it directly in Cursor via `Cmd/Ctrl + Shift + P` → type `MCP` → click `Edit MCP Settings`.
+You can also edit directly in Cursor via `Cmd/Ctrl + Shift + P` → type `MCP` → click `Edit MCP Settings`.
 
 ### Cursor Usage Examples
 
-In the Cursor chat:
+In the Cursor chat box:
 
 ```
 # Search components
-Help me find a popup component
+Help me find a dialog component
 
 # View component API
 Get the Props information for the Button component
 
 # Check platform compatibility
-Does the Form component support Alipay Mini Program?
+Does the Form component support Alipay Mini Programs?
 
 # Get usage examples
 Give me the loading example code for the Loading component
@@ -107,7 +94,7 @@ Check whether this code has any property errors:
 
 ## Trae Configuration
 
-### Option 1: After installing globally
+### Option 1: After global installation
 
 Open Trae Settings → Chat → MCP Configuration:
 
@@ -134,41 +121,18 @@ Open Trae Settings → Chat → MCP Configuration:
 }
 ```
 
-### Trae Usage Examples
-
-Ask questions directly in the Trae chat, and the AI will automatically call MCP tools:
-
-```
-# Example 1: Learn component usage
-I want to use the hy-app Picker component in my project, help me generate code for a basic picker
-
-# Example 2: Platform compatibility check
-My project needs to run on WeChat Mini Program, can I use the Radio component?
-
-# Example 3: Hook usage
-Show me how to use the useToast Hook to implement a global toast
-
-# Example 4: Theme customization
-I want to change the component library's theme color to #FF6600, how should I do that?
-
-# Example 5: Code validation
-Help me check whether this hy-input usage is correct:
-<hy-input v-model="value" type="email" :clearable="true" placeholder="Please enter your email" />
-```
-
 ---
 
 ## Qoder Configuration
 
-Qoder (including the Chinese edition Qoder CN) connects via the built-in MCP settings page.
+Qoder (including the Chinese version Qoder CN) connects through the built-in MCP management page in the settings panel:
 
-Click the user avatar in the upper-right corner (or press `Ctrl + Shift + ,` on Windows, `⌘ + ⇧ + ,` on macOS) to open **Qoder IDE Settings**, then select **MCP** in the left navigation pane.
+Click the user avatar in the top-right corner (or use the shortcut `Ctrl + Shift + ,` — `⌘ + ⇧ + ,` on macOS) to open **Personal Settings**, then select **MCP Servers** in the left navigation. You can also navigate there via **Settings → Other Settings → Qoder CN → Personal Settings → MCP Servers**.
 
 ### Option 1: Add via My Servers (recommended, no installation required)
 
-1. Switch to the **My Servers** tab and click **+ Add** in the upper-right corner.
-2. Add the following configuration in the JSON file that opens:
-
+1. Find the configuration file `mcp.json` and click the "Open" button;
+2. Add the following configuration to the `mcp.json` file:
 ```json
 {
     "mcpServers": {
@@ -180,9 +144,9 @@ Click the user avatar in the upper-right corner (or press `Ctrl + Shift + ,` on 
 }
 ```
 
-3. Close the file and click **Save**. The `hy-app` entry appears in the list; the link icon means the connection is successful. Expand the entry to view the available tools.
+3. Close the file and click **Save**. When `hy-app` appears in the list with a "Connected" status, the connection is successful; expand the entry to view the list of available tools.
 
-### Option 2: After installing globally
+### Option 2: After global installation
 
 ```json
 {
@@ -196,29 +160,10 @@ Click the user avatar in the upper-right corner (or press `Ctrl + Shift + ,` on 
 
 :::tip Note for Windows users
 
-- When using npx, it is recommended to add the `-y` flag to skip the first-run installation prompt, preventing the STDIO process from hanging.
-- If `npx` fails to start, run `npm install -g @hy-app/mcp` first, then use the `hy-app-mcp` command in Option 2.
+- When using npx, it is recommended to add the `-y` parameter to skip the installation confirmation prompt on first run, preventing the process from hanging in STDIO mode;
+- If `npx` fails to start, you can first run `npm install -g @hy-app/mcp`, then switch to the `hy-app-mcp` command from Option 2.
 
 :::
-
-### Qoder Usage Examples
-
-Switch to **Agent** mode in the Chat panel and ask directly. Qoder prompts for confirmation before calling MCP tools; press `Ctrl + Enter` to execute:
-
-```
-# Search components
-Help me find a popup component
-
-# View component API
-Get the Props information for the Button component
-
-# Check platform compatibility
-Does the Form component support Alipay Mini Program?
-
-# Validate code
-Check whether this code has any property errors:
-<hy-button type="primary" size="big" @click="handleClick">
-```
 
 ---
 
@@ -230,8 +175,8 @@ Search components and return a list of matching components.
 
 ```json
 {
-    "componentName": "search keyword",
-    "category": "optional, category filter"
+    "componentName": "Search keyword",
+    "category": "Optional, category filter"
 }
 ```
 
@@ -242,9 +187,9 @@ Get component API documentation.
 ```json
 {
     "componentName": "button",
-    "section": "optional: props | events | slots | all, default all",
-    "detail": "optional: whether to return full details, default true. Set to false to reduce tokens, returning only name/type/default/enum",
-    "includeExamples": "optional: whether to include example code, default false"
+    "section": "Optional: props | events | slots | all, defaults to all",
+    "detail": "Optional: whether to return full details, defaults to true. Set to false to reduce tokens and return only name/type/default/enum",
+    "includeExamples": "Optional: whether to include example code, defaults to false"
 }
 ```
 
@@ -255,19 +200,19 @@ Get component usage example code.
 ```json
 {
     "componentName": "button",
-    "feature": "optional, filter by feature keyword",
-    "listOnly": "optional, return only the title list, default false"
+    "feature": "Optional, filter by feature keyword",
+    "listOnly": "Optional, return only the title list, defaults to false"
 }
 ```
 
 ### check_platform_support
 
-Query component platform compatibility.
+Check component platform compatibility.
 
 ```json
 {
     "componentName": "button",
-    "platform": "optional: app | h5 | weixin | alipay"
+    "platform": "Optional: app | h5 | weixin | alipay"
 }
 ```
 
@@ -278,7 +223,7 @@ Get Hook documentation.
 ```json
 {
     "name": "useToast",
-    "includeExamples": "optional, default false"
+    "includeExamples": "Optional, defaults to false"
 }
 ```
 
@@ -289,7 +234,7 @@ Get utility function documentation.
 ```json
 {
     "name": "http",
-    "includeExamples": "optional, default false"
+    "includeExamples": "Optional, defaults to false"
 }
 ```
 
@@ -300,7 +245,7 @@ Get development guides.
 ```json
 {
     "topic": "theme | locale | style | intro",
-    "query": "optional, search for specific content"
+    "query": "Optional, search for specific content"
 }
 ```
 
@@ -321,9 +266,9 @@ Validate component usage.
 
 This MCP service is optimized for token consumption in AI editors:
 
-- **get_component_api** does not return example code by default; retrieve it via `includeExamples=true` or by calling `get_component_examples` separately
+- **get_component_api** does not return example code by default; use `includeExamples=true` or call `get_component_examples` separately to retrieve them
 - **get_component_api** supports a `detail=false` compact mode that returns only `{name, type, default, enum}`, ideal for quick lookups
 - **get_hook_doc / get_tool_doc** do not return example code by default
 - **get_component_examples** supports `listOnly=true` to first view the title list, then fetch specific code as needed
-- **search_components** returns compact summaries, with up to 10 results
+- **search_components** returns concise summaries, with a maximum of 10 results
 - Component names support the `hy-` prefix; both `hy-list` and `list` will match the List component

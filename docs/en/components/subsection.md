@@ -5,22 +5,22 @@
 ## :pushpin: Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ------------------- | ------------------- |
-| ✔        | ✔   | ✔                   | ✔                   |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
-## :warning: Notes
+## :warning: Important Notes
 
-::: warning Notes
+::: warning Important Notes
 
-- The `list` prop supports three forms: string array, number array, and object array
+- The `list` property supports three forms: string array, number array, and object array
 - Object array items use the `name` and `value` fields by default, which can be customized via `customKeys`
-- The background color `bgColor` is effective when `mode` is `button`, but ineffective when `mode` is `subsection`
-- The `current` prop sets the default selected index (starting from 0)
-- When binding with `v-model`, the value is the `value` of the selected item (string or number)
+- The background color `bgColor` takes effect when `mode` is `button`, but has no effect when `mode` is `subsection`
+- The `current` property sets the default selected index (starting from 0)
+- When binding with `v-model`, the value is the selected item's `value` (string or number)
 
 :::
 
-## :japanese_castle: Basic Usage Examples
+## :japanese_castle: Basic Usage
 
 ### String Array Form
 
@@ -65,8 +65,8 @@
     const value = ref('all');
     const list = [
         { name: 'All', value: 'all' },
-        { name: 'Unused', value: 'unused' },
-        { name: 'Used', value: 'used' },
+        { name: 'Unredeemed', value: 'unused' },
+        { name: 'Redeemed', value: 'used' },
     ];
 </script>
 ```
@@ -98,8 +98,8 @@
 <script setup lang="ts">
     import { ref } from 'vue';
 
-    const value = ref('Option 1');
-    const list = ['Option 1', 'Option 2', 'Option 3'];
+    const value = ref('Option One');
+    const list = ['Option One', 'Option Two', 'Option Three'];
 </script>
 ```
 
@@ -113,8 +113,8 @@
 <script setup lang="ts">
     import { ref } from 'vue';
 
-    const value = ref('Option 1');
-    const list = ['Option 1', 'Option 2', 'Option 3'];
+    const value = ref('Option One');
+    const list = ['Option One', 'Option Two', 'Option Three'];
 </script>
 ```
 
@@ -156,8 +156,8 @@
 <script setup lang="ts">
     import { ref } from 'vue';
 
-    const value = ref('Option 1');
-    const list = ['Option 1', 'Option 2', 'Option 3'];
+    const value = ref('Option One');
+    const list = ['Option One', 'Option Two', 'Option Three'];
 </script>
 ```
 
@@ -188,8 +188,8 @@
 <script setup lang="ts">
     import { ref } from 'vue';
 
-    const value = ref('Option 1');
-    const list = ['Option 1', 'Option 2', 'Option 3'];
+    const value = ref('Option One');
+    const list = ['Option One', 'Option Two', 'Option Three'];
 </script>
 ```
 
@@ -203,8 +203,8 @@
 <script setup lang="ts">
     import { ref } from 'vue';
 
-    const value = ref('Option 1');
-    const list = ['Option 1', 'Option 2', 'Option 3'];
+    const value = ref('Option One');
+    const list = ['Option One', 'Option Two', 'Option Three'];
 </script>
 ```
 
@@ -241,7 +241,7 @@
 <template>
     <view>
         <hy-subsection :list="list" v-model="value" @change="handleChange"></hy-subsection>
-        <view class="current-value">Current selected: {{ value }}</view>
+        <view class="current-value">Currently selected: {{ value }}</view>
     </view>
 </template>
 
@@ -267,7 +267,7 @@
 </style>
 ```
 
-### Combined with Content Switching
+### Working with Content Switching
 
 ```html
 <template>
@@ -275,8 +275,8 @@
         <hy-subsection :list="list" v-model="value" mode="subsection"></hy-subsection>
         <view class="content-box">
             <view v-if="value === 'all'">Show all content</view>
-            <view v-else-if="value === 'unused'">Show unused content</view>
-            <view v-else>Show used content</view>
+            <view v-else-if="value === 'unused'">Show unredeemed content</view>
+            <view v-else>Show redeemed content</view>
         </view>
     </view>
 </template>
@@ -287,8 +287,8 @@
     const value = ref('all');
     const list = [
         { name: 'All', value: 'all' },
-        { name: 'Unused', value: 'unused' },
-        { name: 'Used', value: 'used' },
+        { name: 'Unredeemed', value: 'unused' },
+        { name: 'Redeemed', value: 'used' },
     ];
 </script>
 
@@ -304,37 +304,37 @@
 
 ### Subsection Props
 
-| Parameter | Description | Type | Default Value |
+| Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
 | modelValue / v-model | Value of the selected item | `string` \| `number` | - |
 | current | Default selected index (starting from 0) | `number` | 0 |
 | list | Array of options | `SubSectionVo[]` | [] |
-| customKeys | Key-value mapping for list | `object` | { name: 'name', value: 'value' } |
+| customKeys | Key mapping for `list` | `object` | { name: 'name', value: 'value' } |
 | activeColor | Color when active | `string` | - |
 | inactiveColor | Color when inactive | `string` | - |
 | mode | Mode, `button` or `subsection` | `string` | button |
-| fontSize | Font size, in px | `number` | 12 |
+| fontSize | Font size in px | `number` | 12 |
 | bold | Whether the active option's font is bold | `boolean` | true |
 | bgColor | Component background color (effective in button mode) | `string` | - |
-| customStyle | External styles to be applied | `CSSProperties` | - |
+| customStyle | Custom external styles | `CSSProperties` | - |
 | customClass | Custom external class name | `string` | - |
 
 ### Events
 
-| Event Name        | Description                          | Callback Parameters       |
-| ----------------- | ------------------------------------ | ------------------------- |
-| change            | Triggered when the option changes    | `index: number`           |
-| update:modelValue | Triggered when the value changes     | `value: string \| number` |
+| Event Name         | Description                          | Callback Parameters       |
+| ------------------ | ----------------------------------- | ------------------------- |
+| change             | Triggered when the option changes   | `index: number`           |
+| update:modelValue  | Triggered when the selected value changes | `value: string \| number` |
 
 ### Slots
 
-| Slot Name | Description   | Received Value |
-| --------- | ------------- | -------------- |
-| default   | Default slot  | -              |
+| Slot Name | Description   | Accepted Values |
+| --------- | ------------- | --------------- |
+| default   | Default slot  | -               |
 
 ### Typings
 
-::: details Type Description
+::: details Type Definitions
 
 ```ts
 export interface SubSectionItemVo extends AnyObject {
@@ -350,5 +350,16 @@ export type SubSectionVo = string | number | SubSectionItemVo;
 ```
 
 :::
+
+### CSS Variables
+
+| Variable Name | Description | Default |
+| --- | --- | --- |
+| `--hy-subsection-height` | Outer height | `35px` |
+| `--hy-subsection-padding` | Outer padding | `3px` |
+| `--hy-subsection-inner-height` | Inner slider height | `32px` |
+| `--hy-subsection-font-size` | Font size | `12px` |
+| `--hy-subsection-line-height` | Line height | `14px` |
+| `--hy-subsection-radius` | Overall border radius | Follows `--hy-radius-sm` (8rpx) |
 
 <demo-model url="pages-design/subsection/subsection"></demo-model>

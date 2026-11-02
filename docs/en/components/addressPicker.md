@@ -4,17 +4,17 @@
 
 ::: tip Tip
 
-This project references the component development approach of the uView-Plus open-source project, implementing custom components based on Vue 3 and TypeScript.<br> Thanks to the uView-Plus open-source project and its team members for their contributions; their component development approach has provided valuable reference for this project. If you need to learn more about component development details.
+This project references the component development approach of the uView-Plus open-source project, implementing custom components based on Vue 3 and TypeScript.<br> Thanks to the uView-Plus open-source project and its team members for their contributions; their component development ideas have provided valuable reference for this project. If you need to learn more about the component development details.
 
 :::
 
-## :pushpin:Platform Differences
+## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
 | -------- | --- | ---------- | ------------ |
 | ✔        | ✔   | ✔          | ✔            |
 
-## :japanese_castle:Basic Usage Example
+## :japanese_castle: Basic Usage
 
 ```html
 <!-- Global usage -->
@@ -38,7 +38,7 @@ This project references the component development approach of the uView-Plus ope
 </script>
 ```
 
-### Open via Built-in Input Field
+### Open via Internal Input Box
 
 ```html
 <template>
@@ -58,49 +58,57 @@ This project references the component development approach of the uView-Plus ope
 
 ### AddressPicker Props
 
-| Parameter | Description | Type | Default |
+| Parameter | Description | Type | Default Value |
 | --- | --- | --- | --- |
-| hasInput | Whether to include a built-in input field | `boolean` | false |
-| input | Collection of input field properties; available when hasInput is true, see [Input Api](./input#api) for details | `HyInputProps` | - |
-| show | Controls the popup and dismissal of the picker | `boolean` | false |
-| popupMode | Controls the popup direction of the picker | `bottom`\|`center`\|`left`\|`right`\|`top` | bottom |
+| hasInput | Whether to include a built-in input box | `boolean` | false |
+| input | Collection of input box properties, available when hasInput is true, see [Input API](./input#api) for details | `HyInputProps` | - |
+| show | Used to control the pop-up and collapse of the picker | `boolean` | false |
+| popupMode | Used to control the pop-up direction of the picker | `bottom`\|`center`\|`left`\|`right`\|`top` | bottom |
 | showToolbar | Whether to show the top toolbar | `boolean` | true |
 | v-model | Binding value | `string` | - |
 | title | Top title | `string` | - |
-| separator | Condition for splitting the string into an array | `string` | " " |
+| separator | Delimiter used to split the string into an array | `string` | " " |
 | loading | Whether to show the loading state | `boolean` | false |
 | itemHeight | Height of a single option in each column | `number` | 44 |
 | cancelText | Text of the cancel button | `string` | Cancel |
 | confirmText | Text of the confirm button | `string` | Confirm |
 | cancelColor | Color of the cancel button | `string` | #909193 |
 | confirmColor | Color of the confirm button | `string` | - |
-| visibleItemCount | Number of visible options per column | `number` | 5 |
+| visibleItemCount | Number of visible options in each column | `number` | 5 |
 | closeOnClickOverlay | Whether to allow closing the picker by clicking the overlay | `boolean` | false |
 | defaultIndex | Default index for each column | `array` | - |
 | toolbarRightSlot | Whether to enable the right slot | `boolean` | false |
-| customStyle | Custom external style of the input field | `CSSProperties` | - |
+| customStyle | Custom outer style of the input box | `CSSProperties` | - |
 
 ### Events
 
-| Event Name | Description                           | Callback Parameters                        |
+| Event Name | Description                    | Callback Parameters                          |
 | ------- | ------------------------------ | ------------------------------- |
-| close   | Triggered when the picker is closed               | -                               |
+| close   | Triggered when the picker is closed | -                               |
 | confirm | Triggered when the confirm button is clicked, returns the currently selected value | Array: see the "Callback Parameters" section above |
-| change  | Triggered when the selected value changes             | Array: see the "Callback Parameters" section above |
-| cancel  | Triggered when the cancel button is clicked                   | -                               |
+| change  | Triggered when the selected value changes | Array: see the "Callback Parameters" section above |
+| cancel  | Click the cancel button        | -                               |
 
 ### Slots
 
-| Slot Name | Description | Received Value |
+| Slot Name | Description | Accepted Value |
 | --- | --- | --- |
-| trigger | Custom input field | value |
-| toolbar-right | Toolbar right content; customizes the right-side content. Due to WeChat Mini Program limitations, you must also set :toolbarRightSlot="true" for it to take effect. | - |
-| toolbar-bottom | Content below the toolbar; customizes the bottom content | - |
+| trigger | Custom input box | value |
+| toolbar-right | Toolbar right content, customizes the right-side content. Due to WeChat Mini Program limitations, you need to also set :toolbarRightSlot="true" for it to take effect. | - |
+| toolbar-bottom | Content below the toolbar, customizes the bottom content | - |
 
 ### Methods
 
-| Method Name       | Description                                         |
+| Method Name | Description                                          |
 | ------------ | -------------------------------------------- |
-| setFormatter | Internal method exposed for WeChat Mini Program compatibility; see description above |
+| setFormatter | Internal method exposed for WeChat Mini Program compatibility, see the description above |
+
+### CSS Variables
+
+| Variable Name | Description | Default Value |
+| --- | --- | --- |
+| `--hy-address-picker-radius` | Input box border radius | `4px` |
+| `--hy-address-picker-border` | Input box border | `1px solid #eee` |
+| `--hy-address-picker-padding` | Input box padding | `0 10px` |
 
 <demo-model url="pages-design/addressPicker/addressPicker"></demo-model>

@@ -1,14 +1,14 @@
 # Image Component
 
-> This component is an enhanced version of uni-app's image component. In addition to inheriting the original features, it also supports fade-in animation, loading state, load failure indicators, border radius values, and shapes.
+> This component is an enhanced version of the uni-app image component. In addition to inheriting all the original features, it also supports fade-in animation, loading indicators, load failure hints, border radius values, and shapes.
 
-## :pushpin:Platform Differences
+## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ---------- | ------------ |
-| ✔        | ✔   | ✔          | ✔            |
+| -------- | --- | ------------------- | ------------------- |
+| ✔        | ✔   | ✔                   | ✔                   |
 
-## :japanese_castle:Basic Usage Example
+## :japanese_castle: Basic Usage
 
 ```html
 <!-- Global usage -->
@@ -17,7 +17,7 @@
 ></hy-image>
 ```
 
-### Set Size
+### Setting Size
 
 - Set the image width via the `width` prop
 - Set the image height via the `height` prop
@@ -32,10 +32,10 @@
 </template>
 ```
 
-### Set Shape
+### Setting Border Radius
 
 - Set the image shape via the `shape` prop
-    - `circle`: circular
+    - `circle`: circle
     - `square`: square
 
 ```html
@@ -49,7 +49,7 @@
 </template>
 ```
 
-### Preview Full-size Image
+### Previewing Full-size Image
 
 - Set `previewImage` to true to enable full-size image preview
 
@@ -62,7 +62,7 @@
 </template>
 ```
 
-### Set Fade-in Effect
+### Setting Fade-in Effect
 
 - Set `fade` to true to enable the animation (true by default)
 
@@ -77,44 +77,54 @@
 
 ## API
 
-| Parameter | Description | Type | Default |
+### Props
+
+| Prop | Description | Type | Default |
 | --- | --- | --- | --- |
-| src | Image URL, **strongly recommended** to use an absolute or network path | `string` | - |
-| mode | Crop mode, see [image component](https://uniapp.dcloud.net.cn/component/image.html) for details | `string` | aspectFill |
-| width | Width, default unit px for numeric values | `string`\|`number` | 200 |
-| height | Height, default unit px for numeric values | `string`\|`number` | 150 |
+| src | Image URL. It is **strongly recommended** to use an absolute or network path | `string` | - |
+| mode | Crop mode. See [image component](https://uniapp.dcloud.net.cn/component/image.html) for details | `string` | aspectFill |
+| width | Width, px by default for numeric values | `string`\|`number` | 200 |
+| height | Height, px by default for numeric values | `string`\|`number` | 150 |
 | shape | Image shape[^1] | `circle`\|`square` | square |
-| radius | Border radius, default unit px for numeric values | `string`\|`number` | 0 |
-| lazyLoad | Whether to enable lazy loading, only effective on WeChat Mini Program, App, Baidu Mini Program, and ByteDance Mini Program | `boolean` | true |
-| showMenuByLongPress | Whether to enable the mini program code recognition menu on long press, only effective on WeChat Mini Program | `boolean` | true |
-| loadingIcon | Loading icon or small image | `string` | LOADING |
-| errorIcon | Error icon or small image | `string` | NOTICE |
+| radius | Border radius, px by default for numeric values | `string`\|`number` | 0 |
+| lazyLoad | Whether to lazy load. Only effective on WeChat Mini Program, App, Baidu Mini Program, and ByteDance Mini Program | `boolean` | true |
+| showMenuByLongPress | Whether to enable showing the mini program code recognition menu when long-pressing the image. Only effective on WeChat Mini Program | `boolean` | true |
+| loadingIcon | Loading icon, or small image | `string` | LOADING |
+| errorIcon | Load failure icon, or small image | `string` | NOTICE |
 | showLoading | Whether to show the loading icon or a custom slot | `boolean` | true |
 | showError | Whether to show the error icon or a custom slot | `boolean` | true |
 | fade | Whether to enable the fade-in effect | `boolean` | true |
-| webp | Only supports network resources, only effective on WeChat Mini Program | `boolean` | false |
+| webp | Only supports network resources. Only effective on WeChat Mini Program | `boolean` | false |
 | duration | Transition duration used with the fade prop, in ms | `number` | 500 |
-| bgColor | Background color, used when loading images on dark pages to blend with the background color | `string` | - |
-| indistinct | Blur the image, applies a blur style to the image | `boolean` | false |
-| previewImage | Whether to enable image preview | `boolean` | false |
+| bgColor | Background color, used to blend with the background when loading images on dark pages | `string` | - |
+| indistinct | Blurred image, applies a blur style to the image | `boolean` | false |
+| previewImage | Whether to preview the image | `boolean` | false |
 | customStyle | Custom external styles to be applied | `CSSProperties` | - |
 | customClass | Custom external class name | `string` | - |
 
-## Events
+### Events
 
-| Event Name | Description               | Callback Parameters      |
+| Event | Description | Callback Parameters |
 | ------ | ------------------ | ------------- |
-| click  | Triggered when the image is clicked     | -             |
+| click  | Triggered when the image is clicked | - |
 | error  | Triggered when the image fails to load | err: error message |
-| load   | Triggered when the image loads successfully | e             |
+| load   | Triggered when the image loads successfully | e |
 
-## Slots
+### Slots
 
-| Slot Name  | Description                   | Received Value |
+| Slot | Description | Accepted Values |
 | ------- | ---------------------- | ------ |
-| loading | Custom loading indicator content | -      |
-| error   | Custom failure indicator content   | -      |
+| loading | Custom loading hint content | - |
+| error   | Custom failure hint content | - |
 
-[^1]: `circle`: semicircles on both sides; `square`: square
+### CSS Variables
+
+| Variable | Description | Default |
+| --- | --- | --- |
+| `--hy-image-width` | Default width | `250px` |
+| `--hy-image-height` | Default height | `200px` |
+| `--hy-image-placeholder-color` | Loading/failure placeholder color | Follows `--hy-text-color--grey` |
+
+[^1]: `circle`: both sides are semicircles; `square`: square
 
 <demo-model url="pages-design/image/image"></demo-model>

@@ -1,12 +1,12 @@
 # Keyboard Component <Badge type="tip">^0.7.0</Badge>
 
-> A virtual keyboard component that supports multiple modes such as numeric keyboard, license plate keyboard, and ID card keyboard, with customizable header and keys.
+> A virtual keyboard component that supports multiple modes, including numeric keyboard, license plate keyboard, and ID card keyboard, with a customizable header and keys.
 
-## :pushpin: Platform Compatibility
+## :pushpin: Platform Differences
 
-| APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ------------------- | ------------------- |
-| ✔        | ✔   | ✔                   | ✔                   |
+| APP(vue) | H5 | WeChat Mini Program | Alipay Mini Program |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
 ### 2. v-model Binding
 
@@ -14,9 +14,9 @@ The component uses `v-model:show` to control visibility, and `v-model` to bind t
 
 ```html
 <hy-keyboard
-    v-model:show="showKeyboard"   <!-- Controls show/hide -->
-    v-model="inputValue"          <!-- Binds the input value -->
-    v-model:car-lang="carLang"    <!-- Effective when mode is car, switches between Chinese/English -->
+    v-model:show="showKeyboard"   <!-- Control show/hide -->
+    v-model="inputValue"          <!-- Bind the input value -->
+    v-model:car-lang="carLang"    <!-- Effective when mode is car; switches between Chinese and English -->
 ></hy-keyboard>
 ```
 
@@ -24,10 +24,10 @@ The component uses `v-model:show` to control visibility, and `v-model` to bind t
 
 The license plate keyboard supports two modes:
 
-| Mode        | Prop                    | Description                                            | Use Case                                        |
-| ----------- | ----------------------- | ------------------------------------------------------ | ------------------------------------------------ |
-| Uncontrolled | Pass `auto-switch-lang` | Language switching is managed automatically inside the component | Simple scenarios, works out of the box     |
-| Controlled   | Pass `v-model:car-lang` | Manually control language switching                    | Need to listen to or control the language in the parent component |
+| Mode | Property | Description | Use Case |
+| ---------- | --------------------- | ------------------------ | -------------------------- |
+| Uncontrolled mode | Pass `auto-switch-lang` | The component manages language switching internally | Simple scenarios, ready to use out of the box |
+| Controlled mode | Pass `v-model:car-lang` | Manually control language switching | Need to listen to or control the language in the parent component |
 
 **Uncontrolled mode example:**
 
@@ -45,7 +45,7 @@ The license plate keyboard supports two modes:
 ```ts
 const carLang = ref<'zh' | 'en'>('zh');
 
-// Manual switching logic
+// Manually control the switching logic
 const handleInput = (val: string) => {
     if (val.length === 1) {
         carLang.value = 'en';
@@ -61,17 +61,17 @@ const handleDelete = () => {
 
 ### 4. custom Mode Description
 
-The keyboard in `custom` mode has a fixed sidebar on the right side, containing the delete key and the close key:
+The keyboard in `custom` mode has a fixed sidebar on the right side, containing a delete key and a close key:
 
-- The delete and close keys in the sidebar are **always displayed** and require no extra configuration
-- If you need to customize additional key positions, you can use the `extra-key` prop
+- The delete key and close key in the sidebar are **always displayed** and require no extra configuration
+- If you need to customize additional key positions, you can use the `extra-key` property
 
 ```html
 <!-- custom mode: custom keys at the bottom, fixed delete and close keys on the right -->
 <hy-keyboard mode="custom" v-model="value" :extra-key="['00', '.']" close-text="Done"></hy-keyboard>
 ```
 
-### 5. extraKey Prop
+### 5. extraKey Property
 
 `extraKey` supports two formats:
 
@@ -83,7 +83,7 @@ The keyboard in `custom` mode has a fixed sidebar on the right side, containing 
 <hy-keyboard mode="custom" :extra-key="['.', '00']"></hy-keyboard>
 ```
 
-### 6. showDotKey Prop
+### 6. showDotKey Property
 
 Controls whether to display the decimal point key, which is displayed by default:
 
@@ -95,9 +95,9 @@ Controls whether to display the decimal point key, which is displayed by default
 <hy-keyboard :show-dot-key="true"></hy-keyboard>
 ```
 
-### 7. randomKeyOrder Prop
+### 7. randomKeyOrder Property
 
-When set to `true`, the number keys will be shuffled in random order:
+When set to `true`, the numeric keys will be shuffled in random order:
 
 ```html
 <hy-keyboard :random-key-order="true"></hy-keyboard>
@@ -105,13 +105,13 @@ When set to `true`, the number keys will be shuffled in random order:
 
 ::: tip Note
 
-The random order is generated only once **each time the keyboard is shown**; tapping keys while the keyboard is open will not change the positions of other keys.
+The random order is generated only once **each time the keyboard is shown**; pressing keys while the keyboard is open will not change the positions of other keys.
 
 :::
 
 ### 8. close Event Handling
 
-When the close button or the overlay is tapped, the `close` event is triggered, but the keyboard will **not close automatically**; you need to handle it manually:
+Clicking the close button or the overlay triggers the `close` event, but it will **not automatically close the keyboard**; you need to handle it manually:
 
 ```html
 <hy-keyboard v-model:show="showKeyboard" @close="showKeyboard = false"></hy-keyboard>
@@ -268,7 +268,7 @@ const handleDelete = () => {
 ></hy-keyboard>
 ```
 
-### Randomized Numeric Keyboard
+### Random Numeric Keyboard
 
 ```html
 <hy-keyboard
@@ -294,7 +294,7 @@ const handleDelete = () => {
 ></hy-keyboard>
 ```
 
-### Custom Title via Slot
+### Slot Custom Title
 
 ```html
 <hy-keyboard v-model:show="showKeyboard" mode="default" v-model="value" close-text="Done">
@@ -325,45 +325,64 @@ const handleDelete = () => {
 
 ### Keyboard Props
 
-| Prop | Description | Type | Default |
+| Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
 | show | Whether to show the keyboard | `boolean` | false |
-| modelValue | Bound value | `string` | - |
+| modelValue | The bound value | `string` | - |
 | title | Title | `string` | - |
 | mode | Keyboard mode, optional values: default (numeric keyboard), custom (custom keyboard), car (license plate keyboard), idcard (ID card keyboard) | `string` | default |
 | zIndex | Z-index level | `number` | 100 |
 | maxlength | Maximum input length | `number` | Infinity |
 | showDeleteKey | Whether to show the delete key | `boolean` | true |
 | showDotKey | Whether to show the decimal point key | `boolean` | true |
-| randomKeyOrder | Whether to randomize keyboard key order | `boolean` | false |
+| randomKeyOrder | Whether to randomize the keyboard key order | `boolean` | false |
 | closeText | Confirm button text | `string` | - |
 | deleteText | Delete button text | `string` | - |
 | closeButtonLoading | Whether the close button shows a loading state | `boolean` | false |
-| modal | Whether to show the overlay | `boolean` | false |
-| hideOnClickOutside | Whether to collapse the keyboard when tapping outside | `boolean` | true |
+| overlay | Whether to show the overlay | `boolean` | false |
+| overlayOpacity | Overlay opacity | `boolean` | false |
+| hideOnClickOutside | Whether to collapse the keyboard when clicking outside | `number` | 0 |
 | lockScroll | Whether to lock scrolling | `boolean` | true |
-| safeAreaInsetBottom | Whether to fit within the bottom safe area | `boolean` | true |
-| extraKey | Extra keys, supports string or string array | `string` \| `string[]` | - |
-| carLang | License plate keyboard language mode, optional values: zh (provinces), en (letters); if not passed, it's uncontrolled mode | `string` | - |
-| autoSwitchLang | Whether the license plate keyboard automatically switches language | `boolean` | false |
-| customStyle | External styles to be applied | `CSSProperties` | - |
+| safeAreaInsetBottom | Whether to be within the bottom safe area | `boolean` | true |
+| extraKey | Extra keys, supports a string or an array of strings | `string` \| `string[]` | - |
+| carLang | License plate keyboard language mode, optional values: zh (provinces), en (letters); if not passed, it runs in uncontrolled mode | `string` | - |
+| autoSwitchLang | Whether the license plate keyboard switches language automatically | `boolean` | false |
+| customStyle | Define external styles to be used | `CSSProperties` | - |
 | customClass | Custom external class name | `string` | - |
 
 ### Keyboard Events
 
-| Event             | Description                          | Callback Parameters               |
-| ----------------- | ------------------------------------ | --------------------------------- |
-| input             | Triggered when content is input      | text: the input character         |
-| delete            | Triggered when content is deleted    | -                                 |
-| close             | Triggered when the keyboard closes   | -                                 |
-| update:show       | Triggered when visibility changes    | show: current visibility state    |
-| update:modelValue | Triggered when the value changes     | value: current value              |
-| update:carLang    | Triggered when the language changes  | lang: current language ('zh' or 'en') |
+| Event Name | Description | Callback Parameters |
+| ----------------- | ------------------ | -------------------------- |
+| input | Triggered when content is input | text: the input character |
+| delete | Triggered when content is deleted | - |
+| close | Triggered when the keyboard is closed | - |
+| update:show | Triggered when visibility changes | show: current visibility state |
+| update:modelValue | Triggered when the value changes | value: current value |
+| update:carLang | Triggered when the license plate language changes | lang: current language ('zh' or 'en') |
 
 ### Keyboard Slots
 
-| Slot   | Description          | Received Values |
-| ------ | -------------------- | --------------- |
-| title  | Custom title content | -               |
+| Slot Name | Description | Received Values |
+| ------ | -------------- | ------ |
+| title  | Custom title content | -      |
+
+### CSS Variables
+
+| Variable | Description | Default |
+| --- | --- | --- |
+| `--hy-keyboard-header-height` | Header height | `80rpx` |
+| `--hy-keyboard-header-padding` | Header padding | `0 32rpx` |
+| `--hy-keyboard-title-font-size` | Title font size | `32rpx` |
+| `--hy-keyboard-close-font-size` | Close button font size | `28rpx` |
+| `--hy-keyboard-key-gap` | Key gap | Follows `--hy-border-margin-padding-sm` (10rpx) |
+| `--hy-keyboard-sidebar-width` | Sidebar width | `160rpx` |
+| `--hy-keyboard-key-height` | Key height | `100rpx` |
+| `--hy-keyboard-key-radius` | Key border radius | `12rpx` |
+| `--hy-keyboard-key-shadow` | Key shadow | `0 2rpx 8rpx rgba(0, 0, 0, 0.06)` |
+| `--hy-keyboard-car-key-height` | License plate key height | `88rpx` |
+| `--hy-keyboard-car-key-font-size` | License plate key font size | `28rpx` |
+| `--hy-keyboard-key-font-size` | Key font size | Follows `--hy-font-size-lg` (36rpx) |
+| `--hy-keyboard-border` | Header divider line | Follows `--hy-border-line` |
 
 <demo-model url="pages-design/keyboard/keyboard"></demo-model>

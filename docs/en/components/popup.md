@@ -1,26 +1,26 @@
 # Popup Component
 
-> A popup container used to display dialogs, message prompts, and other content. It supports popping up from the top, bottom, left, right, and center. The component only provides the container; the internal content is customized by the user.
+> A popup layer container used to display dialogs, message prompts, and other content, supporting popups from the top, bottom, left, right, and center. The component only provides the container; the internal content is customized by the user.
 
-## :pushpin:Platform Difference Notes
+## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
 | -------- | --- | ---------- | ------------ |
 | ✔        | ✔   | ✔          | ✔            |
 
-## :warning:Notes
+## :warning: Notes
 
 ::: warning Notes
 
-- The component only provides the popup container; the internal content must be customized by the user
-- When `mode="center"`, the zoom animation is enabled by default and can be disabled via the `zoom` property
-- The `round` property only takes effect for `mode="top"`, `mode="bottom"`, and `mode="center"`
-- When `closeOnClickOverlay` is set to `true`, clicking the overlay will only trigger the `close` event and will not automatically hide the popup; you need to handle it manually in the event callback
+- The component only provides the popup layer container; the internal content must be customized by the user
+- When `mode="center"`, the zoom animation is enabled by default and can be disabled via the `zoom` prop
+- The `round` prop only takes effect for `mode="top"`, `mode="bottom"`, and `mode="center"`
+- When `closeOnClickOverlay` is set to `true`, clicking the overlay only triggers the `close` event and does not automatically hide the popup; you need to handle it manually in the event callback
 - `closeIconPos` currently only supports two positions: `top-left` and `top-right`
 
 :::
 
-## :japanese_castle:Basic Usage Examples
+## :japanese_castle: Basic Usage Examples
 
 ### Basic Usage
 
@@ -84,7 +84,7 @@
 </template>
 ```
 
-### Customizing the Overlay Style
+### Custom Overlay Style
 
 ```html
 <template>
@@ -123,11 +123,11 @@
     <hy-popup
         :show="show"
         :closeOnClickOverlay="false"
-        title="You must click the button to close"
+        title="Must click the button to close"
         @close="show = false"
     >
         <view class="popup-content">
-            <text>Clicking the overlay cannot close the popup</text>
+            <text>Clicking the overlay will not close the popup</text>
             <hy-button text="Close Popup" @click="show = false"></hy-button>
         </view>
     </hy-popup>
@@ -211,7 +211,7 @@
 ```html
 <template>
     <hy-cell clickable @click="show = true">
-        <hy-cell-item title="Custom Style"></hy-cell-item>
+        <hy-cell-item title="Custom Styles"></hy-cell-item>
     </hy-cell>
 
     <hy-popup
@@ -223,7 +223,7 @@
         @close="show = false"
     >
         <view class="popup-content">
-            <text>Custom background color and style</text>
+            <text>Custom background color and styles</text>
         </view>
     </hy-popup>
 </template>
@@ -256,7 +256,7 @@
         @close="show = false"
     >
         <view class="popup-content">
-            <text>Automatically adapts to the bottom safe area (iPhoneX and similar models)</text>
+            <text>Automatically adapts to the bottom safe area (iPhone X and similar models)</text>
             <text>Automatically adapts to the top status bar</text>
         </view>
     </hy-popup>
@@ -273,21 +273,21 @@
 
 ### Popup Props
 
-| Parameter | Description | Type | Default Value |
+| Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | show | Whether to show the popup | `boolean` | false |
 | overlay | Whether to show the overlay | `boolean` | true |
 | mode | Popup direction, optional values: `left`, `right`, `top`, `bottom`, `center` | `string` | bottom |
-| duration | Animation transition duration for the overlay opening or closing, in ms | `number` | 300 |
+| duration | Animation transition duration for opening or closing the overlay, in ms | `number` | 300 |
 | closeable | Whether to show the close icon | `boolean` | false |
 | overlayStyle | Custom overlay style, generally used to modify the overlay color | `CSSProperties` | - |
-| overlayOpacity | Overlay opacity, between 0-1, do not use together with overlayStyle | `number` | 0.5 |
-| closeOnClickOverlay | Whether clicking the overlay closes the popup (Note: the close event needs to be handled by yourself; the close callback is only executed when clicking the overlay after closeOnClickOverlay is enabled) | `boolean` | true |
-| zIndex | The z-index value of the popup | `number` | 10086 |
-| safeAreaInsetBottom | Whether to reserve the bottom safe area for devices like iPhoneX | `boolean` | true |
-| safeAreaInsetTop | Whether to reserve the top safe area (status bar height) | `boolean` | false |
+| overlayOpacity | Overlay opacity, between 0-1; do not use together with overlayStyle | `number` | 0.5 |
+| closeOnClickOverlay | Whether clicking the overlay closes the popup (Note: the close event must be handled manually; the close callback is only executed when clicking the overlay after closeOnClickOverlay is enabled) | `boolean` | true |
+| zIndex | The z-index value of the popup layer | `number` | 10086 |
+| safeAreaInsetBottom | Whether to reserve bottom safe area distance for iPhone X and similar models | `boolean` | true |
+| safeAreaInsetTop | Whether to reserve top safe area distance (status bar height) | `boolean` | false |
 | closeIconPos | Custom close icon position, optional values: `top-left`, `top-right` | `string` | top-right |
-| round | Rounded corner value, only effective for `mode=top | bottom | center` | `string` \| `number` | - |
+| round | Sets the border-radius value, only effective for `mode=top \| bottom \| center` | `string` \| `number` | - |
 | zoom | Whether to enable zoom when `mode=center` | `boolean` | true |
 | bgColor | Background color, generally used for special popup content scenarios; set to `transparent` to remove the default white background | `string` | - |
 | customStyle | Custom external styles to be applied | `CSSProperties` | {} |
@@ -295,17 +295,25 @@
 
 ### Events
 
-| Event Name  | Description                    | Callback Parameters |
-| ----------- | ----------------------------- | ------------------ |
-| open        | Triggered when the popup opens | -                  |
-| close       | Triggered when the popup closes | -                  |
-| click       | Triggered when the popup is clicked | -                  |
-| update:show | Triggered when the popup show/hide state changes | `visible: boolean` |
+| Event Name   | Description                                    | Callback Parameters |
+| ------------ | ---------------------------------------------- | ------------------- |
+| open         | Triggered when the popup opens                 | -                   |
+| close        | Triggered when the popup closes                | -                   |
+| click        | Triggered when the popup is clicked            | -                   |
+| update:show  | Triggered when the popup show/hide state changes | `visible: boolean`  |
 
 ### Slots
 
-| Slot Name | Description | Received Value |
-| ------- | ---------- | ------ |
-| default | Popup content | -      |
+| Slot Name | Description       | Accepted Values |
+| --------- | ----------------- | --------------- |
+| default   | Popup layer content | -             |
+
+### CSS Variables
+
+| Variable Name | Description | Default |
+| --- | --- | --- |
+| `--hy-popup-z-index` | Layer level | `9999` |
+| `--hy-popup-radius` | Border radius (round mode) | Follows `--hy-radius-lg` (32rpx) |
+| `--hy-popup-close-hover-opacity` | Close button pressed opacity | `0.4` |
 
 <demo-model url="pages-design/popup/popup"></demo-model>

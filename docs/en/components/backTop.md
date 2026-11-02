@@ -1,8 +1,8 @@
-# BackTop Back-to-Top Component
+# BackTop Component
 
 > This component is used for long pages. After scrolling a certain distance, a back-to-top button appears, making it convenient to quickly return to the top of the page.
 
-## :pushpin: Platform Compatibility
+## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
 | -------- | --- | ---------- | ------------ |
@@ -19,7 +19,7 @@
 <script lang="ts" setup="">
     import { onPageScroll } from '@dcloudio/uni-app';
 
-    // Create the reactive data scrollTop
+    // Create reactive data scrollTop
     const scrollTop = ref(0);
 
     // Use the onPageScroll method to update the value of scrollTop
@@ -31,7 +31,7 @@
 
 ### Changing When the Back-to-Top Button Appears
 
-- You can use the `top` parameter to change how far the page must scroll before the back-to-top button appears
+- You can use the `top` parameter to change how far the page needs to scroll before the back-to-top button appears
 
 ```html
 <template>
@@ -39,10 +39,10 @@
 </template>
 ```
 
-### Customizing the Back-to-Top Icon and Prompt
+### Customizing the Back-to-Top Icon and Tooltip
 
-- Use `icon` to change the icon of the back-to-top button; it can be a built-in icon from the Huayue component library, or an image path
-- Use the `text` parameter to change the text prompt of the back-to-top button. If you need to change the text's color and size, use the customStyle parameter
+- Use `icon` to change the icon of the back-to-top button. It can be a built-in icon from the Hy Component Library or an image path
+- Use the `text` parameter to change the tooltip text of the back-to-top button. If you need to change the color and size of the text, you can use the customStyle parameter
 
 ```html
 <template>
@@ -58,26 +58,32 @@
 | --- | --- | --- | --- |
 | mode | Button shape | `circle`\|`square` | circle |
 | icon | Icon, see [Icon API](./icon#api) for details | `string` | IconConfig.DOWNLOAD |
-| text | Prompt text of the back-to-top button | `string` | - |
-| duration | Transition duration during the return to top, in ms | `number` | 500 |
+| text | Tooltip text of the back-to-top button | `string` | - |
+| duration | Transition duration during the back-to-top process, in ms | `number` | 500 |
 | scrollTop | Scroll distance of the page | `number` | 0 |
-| top | Scroll distance required before the button is shown; numeric values default to px | `number`\|`string` | 400 |
-| bottom | Distance from the back button position to the bottom of the screen; numeric values default to px | `number`\|`string` | 100 |
-| right | Distance from the back button position to the right edge of the screen; numeric values default to px | `number`\|`string` | 20 |
-| z-index | Stacking level of the back-to-top button | `number` | 888 |
+| top | Scroll distance at which the button is displayed, numeric values default to px | `number`\|`string` | 400 |
+| bottom | Distance from the back button position to the bottom of the screen, numeric values default to px | `number`\|`string` | 100 |
+| right | Distance from the back button position to the right edge of the screen, numeric values default to px | `number`\|`string` | 20 |
+| z-index | Z-index level of the back-to-top button | `number` | 888 |
 | customStyle | Custom external styles to be applied | `CSSProperties` | - |
 | customClass | Custom external class name | `string` | - |
 
 ### Events
 
-| Event Name | Description     | Callback Parameters |
+| Event Name | Description | Callback Parameters |
 | ------ | -------- | -------- |
-| click  | Triggered when the button is clicked | -        |
+| click  | Button click | -        |
 
 ### Slots
 
-| Slot Name  | Description       | Accepted Values |
+| Slot Name | Description | Accepted Values |
 | ------- | ---------- | ------ |
 | default | Custom content | -      |
+
+### CSS Variables
+
+| Variable Name | Description | Default Value |
+| --- | --- | --- |
+| `--hy-back-top-tips-font-size` | Tooltip text font size | `12px` |
 
 <demo-model url="pages-design/backTop/backTop"></demo-model>

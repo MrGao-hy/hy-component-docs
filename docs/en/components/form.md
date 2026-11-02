@@ -1,28 +1,28 @@
 # Form Component (hy-form)
 
-> A simple and easy-to-use form component consisting of two components, `hy-form` and `hy-form-item`, supporting form validation, data binding, and more. This form component system provides you with a complete, flexible, and easy-to-use form solution that can meet most form development needs.
+> A simple and easy-to-use form component consisting of two components, `hy-form` and `hy-form-item`, with support for form validation, data binding, and more. This form component system provides you with a complete, flexible, and easy-to-use form solution that can meet most form development needs.
 
-## :pushpin: Platform Differences
+## :pushpin: Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ------------------- | ------------------- |
-| ✔        | ✔   | ✔                   | ✔                   |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
 ## :japanese_castle: Component Features
 
 - ✅ Two-way binding of form data
 - ✅ Form validation (required, length, type, custom validation)
-- ✅ Real-time validation and blur validation
-- ✅ Supports multiple form controls
+- ✅ Real-time and blur validation
+- ✅ Support for various form controls
 - ✅ Flexible label layout
 - ✅ Error message display
 - ✅ Form reset and validation clearing
 
 ::: danger Notes
 
-1. The form component uses `provide/inject` for data communication, so make sure the `hy-form-item` component is used inside `hy-form`
-2. Validation rules support the array format, allowing multiple validation rules to be set
-3. A custom validation function returning `true` means validation passed; returning `false` or a string means validation failed
+1. The form component uses `provide/inject` for data communication; make sure the `hy-form-item` component is used inside `hy-form`
+2. Validation rules support the array form, allowing multiple validation rules to be set
+3. A custom validation function returns `true` to indicate the validation passed, and `false` or a string to indicate the validation failed
 4. Form data is automatically two-way bound, so no manual data synchronization is needed
 5. Real-time validation and blur validation are supported, and the validation timing can be controlled via the `trigger` property
 
@@ -30,11 +30,11 @@
 
 ### ✅ Form Validation System
 
-- **Required Validation** - Supports the `required` attribute
-- **Length Validation** - Supports the `min` and `max` attributes
-- **Type Validation** - Supports phone number, email, and password format validation
-- **Custom Validation** - Supports custom validation functions
-- **Trigger Timing** - Supports validation triggered by `blur` and `change` events
+- **Required validation** - Supported via the `required` attribute
+- **Length validation** - Supported via the `min` and `max` attributes
+- **Type validation** - Supports phone number, email, and password format validation
+- **Custom validation** - Supports custom validation functions
+- **Trigger timing** - Supports validation triggered by `blur` and `change` events
 
 ### ✅ Flexible Layout
 
@@ -61,21 +61,21 @@
 1. **Required Validation**
 
     ```javascript
-    { required: true, message: 'Please enter username' }
+    { required: true, message: '请输入用户名' }
     ```
 
 2. **Length Validation**
 
     ```javascript
-    { min: 2, max: 20, message: 'Length must be between 2 and 20 characters' }
+    { min: 2, max: 20, message: '长度在 2 到 20 个字符' }
     ```
 
 3. **Type Validation**
 
     ```javascript
-    { type: 'phone', message: 'Please enter a valid phone number' }
-    { type: 'email', message: 'Please enter a valid email format' }
-    { type: 'password', message: 'Invalid password format' }
+    { type: 'phone', message: '请输入正确的手机号' }
+    { type: 'email', message: '请输入正确的邮箱格式' }
+    { type: 'password', message: '密码格式不正确' }
     ```
 
 4. **Custom Validation**
@@ -83,7 +83,7 @@
     {
       validator: (value: string) => {
         if (value !== formData.password) {
-          return 'The two passwords do not match'
+          return '两次输入的密码不一致'
         }
         return true
       }
@@ -91,14 +91,14 @@
     ```
 5. **Trigger Timing**
     ```ts
-    { required: true, message: 'Please enter username', trigger: ['blur', 'change'] }
+    { required: true, message: '请输入用户名', trigger: ['blur', 'change'] }
     ```
 
 ### Validation Triggers
 
-- **Real-time Validation** - Triggered when data changes
-- **Blur Validation** - Triggered when focus is lost
-- **Manual Validation** - Call the `validate()` method
+- **Real-time validation** - Triggered when data changes
+- **Blur validation** - Triggered when focus is lost
+- **Manual validation** - Call the `validate()` method
 
 ## Style Design
 
@@ -126,38 +126,38 @@
     - Use custom validation to handle complex logic
 
 3. **Performance Optimization**
-    - Avoid complex computations in validation functions
-    - Use validation trigger timing wisely
-    - Clean up unnecessary validation rules promptly
+    - Avoid complex computations inside validation functions
+    - Use validation trigger timing sensibly
+    - Clean up unneeded validation rules in a timely manner
 
 4. **User Experience**
     - Provide instant validation feedback
-    - Clear error message hints
+    - Clear error message prompts
     - Support form reset and validation clearing
 
 ## Extensibility
 
-This form component is designed with good extensibility:
+This form component is designed with excellent extensibility:
 
-1. **Supports new form controls** - Just place new controls inside form items
-2. **Supports new validation types** - New validation rules can be added to the validation system
-3. **Supports custom styles** - Styles can be customized via CSS variables and class names
-4. **Supports internationalization** - Error messages can support multiple languages
+1. **Support for new form controls** - Simply place new controls inside form items
+2. **Support for new validation types** - New validation rules can be added to the validation system
+3. **Support for custom styles** - Styles can be customized via CSS variables and class names
+4. **Support for internationalization** - Error messages can support multiple languages
 
 ## :japanese_castle: Basic Usage Example
 
 ```vue
 <template>
     <hy-form ref="formRef" :model="formData" :rules="rules" label-width="80px">
-        <hy-form-item label="Username" prop="username" required>
-            <hy-input v-model="formData.username" placeholder="Please enter username" />
+        <hy-form-item label="用户名" prop="username" required>
+            <hy-input v-model="formData.username" placeholder="请输入用户名" />
         </hy-form-item>
 
-        <hy-form-item label="Phone Number" prop="phone" required>
-            <hy-input v-model="formData.phone" type="number" placeholder="Please enter phone number" />
+        <hy-form-item label="手机号" prop="phone" required>
+            <hy-input v-model="formData.phone" type="number" placeholder="请输入手机号" />
         </hy-form-item>
 
-        <hy-form-item label="Gender" prop="gender">
+        <hy-form-item label="性别" prop="gender">
             <hy-radio v-model="formData.gender" :columns="genderOptions" />
         </hy-form-item>
     </hy-form>
@@ -174,62 +174,62 @@ This form component is designed with good extensibility:
 
     const rules = {
         username: [
-            { required: true, message: 'Please enter username', trigger: ['blur', 'change'] },
+            { required: true, message: '请输入用户名', trigger: ['blur', 'change'] },
             {
                 min: 2,
                 max: 20,
-                message: 'Username must be between 2 and 20 characters',
+                message: '用户名长度在 2 到 20 个字符',
                 trigger: ['blur', 'change'],
             },
         ],
         phone: [
-            { required: true, message: 'Please enter phone number', trigger: ['blur', 'change'] },
-            { type: 'phone', message: 'Please enter a valid phone number', trigger: ['blur', 'change'] },
+            { required: true, message: '请输入手机号', trigger: ['blur', 'change'] },
+            { type: 'phone', message: '请输入正确的手机号', trigger: ['blur', 'change'] },
         ],
     };
 
     const formRef = ref();
 
     const handleSubmit = (data: any) => {
-        console.log('Form data:', data);
+        console.log('表单数据:', data);
     };
 </script>
 ```
 
-### Validation Rules Example
+### Validation Rule Example
 
 ```javascript
 const rules = {
-  // Basic validation
+  // 基础验证
   username: [
-    { required: true, message: 'Please enter username', trigger: ['blur', 'change'] },
-    { min: 2, max: 20, message: 'Username must be between 2 and 20 characters', trigger: ['blur', 'change'] }
+    { required: true, message: '请输入用户名', trigger: ['blur', 'change'] },
+    { min: 2, max: 20, message: '用户名长度在 2 到 20 个字符', trigger: ['blur', 'change'] }
   ],
 
-  // Type validation
+  // 类型验证
   phone: [
-    { required: true, message: 'Please enter phone number', trigger: ['blur', 'change'] },
-    { type: 'phone', message: 'Please enter a valid phone number', trigger: ['blur', 'change'] }
+    { required: true, message: '请输入手机号', trigger: ['blur', 'change'] },
+    { type: 'phone', message: '请输入正确的手机号', trigger: ['blur', 'change'] }
   ],
 
-  // Custom validation
+  // 自定义验证
   confirmPassword: [
-    { required: true, message: 'Please confirm password' },
+    { required: true, message: '请确认密码' },
     {
       validator: (value: string) => {
         if (value !== formData.password) {
-          return 'The two passwords do not match'
+          return '两次输入的密码不一致'
         }
         return true
       }
     }
   ],
 
-  // Trigger timing control
+  // 触发时机控制
   email: [
     {
       type: 'email',
-      message: 'Please enter a valid email format',
+      message: '请输入正确的邮箱格式',
       trigger: ['blur', 'change']
     }
   ]
@@ -250,23 +250,23 @@ const rules = {
             label-width="100px"
             label-position="left"
         >
-            <hy-form-item label="Username" prop="username" required>
-                <hy-input v-model="formData.username" placeholder="Please enter username" />
+            <hy-form-item label="用户名" prop="username" required>
+                <hy-input v-model="formData.username" placeholder="请输入用户名" />
             </hy-form-item>
 
-            <hy-form-item label="Phone Number" prop="phone" required>
-                <hy-input v-model="formData.phone" type="number" placeholder="Please enter phone number" />
+            <hy-form-item label="手机号" prop="phone" required>
+                <hy-input v-model="formData.phone" type="number" placeholder="请输入手机号" />
             </hy-form-item>
 
-            <hy-form-item label="Email" prop="email">
-                <hy-input v-model="formData.email" placeholder="Please enter email" />
+            <hy-form-item label="邮箱" prop="email">
+                <hy-input v-model="formData.email" placeholder="请输入邮箱" />
             </hy-form-item>
 
-            <hy-form-item label="Gender" prop="gender">
+            <hy-form-item label="性别" prop="gender">
                 <hy-radio v-model="formData.gender" :columns="genderOptions" />
             </hy-form-item>
 
-            <hy-form-item label="Hobbies" prop="hobbies">
+            <hy-form-item label="爱好" prop="hobbies">
                 <hy-check-button
                     v-model="formData.hobbies"
                     :columns="hobbyOptions"
@@ -274,14 +274,14 @@ const rules = {
                 />
             </hy-form-item>
 
-            <hy-form-item label="Remarks" prop="remark">
-                <hy-textarea v-model="formData.remark" placeholder="Please enter remarks" />
+            <hy-form-item label="备注" prop="remark">
+                <hy-textarea v-model="formData.remark" placeholder="请输入备注" />
             </hy-form-item>
         </hy-form>
 
         <view class="form-actions">
-            <hy-button type="primary" @click="handleSubmit">Submit</hy-button>
-            <hy-button @click="handleReset">Reset</hy-button>
+            <hy-button type="primary" @click="handleSubmit">提交</hy-button>
+            <hy-button @click="handleReset">重置</hy-button>
         </view>
     </view>
 </template>
@@ -300,30 +300,30 @@ const rules = {
 
     const rules = {
         username: [
-            { required: true, message: 'Please enter username' },
+            { required: true, message: '请输入用户名' },
             {
                 min: 2,
                 max: 20,
-                message: 'Username must be between 2 and 20 characters',
+                message: '用户名长度在 2 到 20 个字符',
                 trigger: ['change', 'blur'],
             },
         ],
         phone: [
-            { required: true, message: 'Please enter phone number' },
-            { type: 'phone', message: 'Please enter a valid phone number', trigger: ['change', 'blur'] },
+            { required: true, message: '请输入手机号' },
+            { type: 'phone', message: '请输入正确的手机号', trigger: ['change', 'blur'] },
         ],
-        email: [{ type: 'email', message: 'Please enter a valid email format', trigger: ['change', 'blur'] }],
+        email: [{ type: 'email', message: '请输入正确的邮箱格式', trigger: ['change', 'blur'] }],
     };
 
     const genderOptions = [
-        { label: 'Male', value: 'male' },
-        { label: 'Female', value: 'female' },
+        { label: '男', value: 'male' },
+        { label: '女', value: 'female' },
     ];
 
     const hobbyOptions = [
-        { label: 'Reading', value: 'reading' },
-        { label: 'Music', value: 'music' },
-        { label: 'Sports', value: 'sports' },
+        { label: '阅读', value: 'reading' },
+        { label: '音乐', value: 'music' },
+        { label: '运动', value: 'sports' },
     ];
 
     const formRef = ref();
@@ -331,7 +331,7 @@ const rules = {
     const handleSubmit = () => {
         const result = formRef.value?.submit();
         if (result) {
-            console.log('Form submitted successfully:', result);
+            console.log('表单提交成功:', result);
         }
     };
 
@@ -343,7 +343,7 @@ const rules = {
 
 :::
 
-### Encapsulating a Form Component
+### Encapsulated Form Component
 
 ::: details Click to view the complete example
 
@@ -354,7 +354,7 @@ const rules = {
 
     interface IColumns extends FormColumnsType {
         /**
-         * Whether individual validation is needed
+         * 是否需要单个校验
          * */
         valid?: boolean;
     }
@@ -383,7 +383,7 @@ const rules = {
     });
 
     /**
-     * Validate the form
+     * 验证表单
      * */
     const validate = () => {
         return new Promise((resolve, reject) => {
@@ -474,7 +474,7 @@ const rules = {
 
 ```vue [.vue]
 <template>
-    <!-- Form area -->
+    <!-- 表单区域 -->
     <the-form
         ref="registerRef"
         :columns="registerFormColumns"
@@ -485,7 +485,7 @@ const rules = {
             <hy-input
                 v-model="formData.code"
                 type="number"
-                placeholder="Please enter the verification code"
+                placeholder="请输入验证码"
                 :maxlength="6"
                 :custom-style="{ height: '80rpx', flex: 1 }"
             >
@@ -506,7 +506,7 @@ const rules = {
 ```
 
 ```ts [.ts]
-// Form data
+// 表单数据
 const formData = reactive({
     companyName: '',
     creditCode: '',
@@ -522,7 +522,7 @@ const registerFormColumns = reactive([
         field: 'companyName',
         type: FormTypeEnum.TEXT,
         input: {
-            placeholder: 'Please enter the company name',
+            placeholder: '请输入企业名称',
             prefixIcon: { name: 'qiye', customPrefix: 'icon' },
             customStyle: { height: '80rpx' },
         },
@@ -531,7 +531,7 @@ const registerFormColumns = reactive([
         field: 'creditCode',
         type: FormTypeEnum.NUMBER,
         input: {
-            placeholder: 'Please enter the Unified Social Credit Code (18 digits)',
+            placeholder: '请输入统一社会信用代码（18位）',
             prefixIcon: { name: 'xinyongdaima', customPrefix: 'icon' },
             customStyle: { height: '80rpx' },
         },
@@ -541,30 +541,30 @@ const registerFormColumns = reactive([
         type: FormTypeEnum.SELECT,
         select: [
             [
-                { label: 'No base', value: '无基地' },
-                { label: 'Planting base', value: '种植基地' },
-                { label: 'GAP base', value: 'GAP基地' },
-                { label: 'Fresh processing', value: '趁鲜加工' },
-                { label: 'Farming base', value: '养殖基地' },
+                { label: '无基地', value: '无基地' },
+                { label: '种植基地', value: '种植基地' },
+                { label: 'GAP基地', value: 'GAP基地' },
+                { label: '趁鲜加工', value: '趁鲜加工' },
+                { label: '养殖基地', value: '养殖基地' },
             ],
         ],
         input: {
-            placeholder: 'Please select origin information',
+            placeholder: '请选择产地信息',
             prefixIcon: { name: 'chandiguanli_icox', customPrefix: 'icon' },
             customStyle: { height: '80rpx' },
         },
     },
     {
         field: 'invoice',
-        label: 'Invoice Info:',
+        label: '发票信息：',
         type: FormTypeEnum.RADIO,
         actions: [
             {
-                label: 'General Invoice',
+                label: '普通发票',
                 value: 'apply',
             },
             {
-                label: 'VAT Invoice',
+                label: '增值税发票',
                 value: 'banana',
             },
         ],
@@ -573,7 +573,7 @@ const registerFormColumns = reactive([
         field: 'contactName',
         type: FormTypeEnum.TEXT,
         input: {
-            placeholder: 'Please enter the contact name',
+            placeholder: '请输入联系人姓名',
             prefixIcon: { name: IconConfig.MINE },
             customStyle: { height: '80rpx' },
         },
@@ -582,7 +582,7 @@ const registerFormColumns = reactive([
         field: 'contactUnit',
         type: FormTypeEnum.TEXT,
         input: {
-            placeholder: 'Please enter the contact position',
+            placeholder: '请输入联系人职务',
             prefixIcon: { name: 'zhiwu', customPrefix: 'icon' },
             customStyle: { height: '80rpx' },
         },
@@ -591,7 +591,7 @@ const registerFormColumns = reactive([
         field: 'contactPhone',
         type: FormTypeEnum.NUMBER,
         input: {
-            placeholder: 'Please enter the contact phone number',
+            placeholder: '请输入联系人手机号',
             prefixIcon: { name: IconConfig.TELEPHONE },
             customStyle: { height: '80rpx' },
         },
@@ -606,48 +606,48 @@ const registerFormRules = reactive({
     companyName: [
         {
             required: true,
-            message: 'Please enter the company name',
+            message: '请输入企业名称',
             trigger: ['blur', 'change'],
         },
     ],
     creditCode: [
         {
             required: true,
-            message: 'Please enter the credit code',
+            message: '请输入信用代码',
             trigger: ['blur', 'change'],
         },
     ],
     producingArea: {
         required: true,
-        message: 'Please select origin information',
+        message: '请选择产地信息',
     },
     invoice: {
         required: true,
-        message: 'Please select the invoice type',
+        message: '请选择发票类型',
     },
     contactName: [
         {
             required: true,
-            message: 'Please enter the contact name',
+            message: '请输入联系人姓名',
             trigger: ['blur', 'change'],
         },
     ],
     contactUnit: [
         {
             required: true,
-            message: "Please enter the contact's position",
+            message: '请输入联系人的职务',
             trigger: ['blur', 'change'],
         },
     ],
     contactPhone: [
         {
             required: true,
-            message: "Please enter the contact's phone number",
+            message: '请输入联系人的手机号',
             trigger: ['blur', 'change'],
         },
         {
             type: 'phone',
-            message: 'Please enter a valid phone number',
+            message: '请输入正确的手机号',
             trigger: ['blur', 'change'],
         },
     ],
@@ -660,51 +660,51 @@ const registerFormRules = reactive({
 
 ### hy-form Props
 
-| Parameter     | Description             | Type                             | Default  |
-| ------------- | ----------------------- | -------------------------------- | -------- |
-| model         | Form data object        | `Record<string, any>`            | -        |
-| rules         | Validation rules        | `FormItemRule`\|`FormItemRule[]` | -        |
-| border        | Form bottom border      | `boolean`                        | false    |
-| labelWidth    | Label width             | `string` \| `number`             | `'auto'` |
-| labelPosition | Label position          | `left` \| `top`                  | `'left'` |
-| labelAlign    | Label alignment         | `left` \| `center` \| `right`    | `'left'` |
+| Parameter     | Description                  | Type                             | Default |
+| ------------- | ---------------------------- | -------------------------------- | ------- |
+| model         | Form data object             | `Record<string, any>`            | -       |
+| rules         | Validation rules             | `FormItemRule`\|`FormItemRule[]` | -       |
+| border        | Bottom border of the form    | `boolean`                        | false   |
+| labelWidth    | Label width                  | `string` \| `number`             | `'auto'`|
+| labelPosition | Label position               | `left` \| `top`                  | `'left'`|
+| labelAlign    | Label alignment              | `left` \| `center` \| `right`    | `'left'`|
 
 ### hy-form-item Props
 
 | Parameter | Description      | Type      | Default |
-| --------- | ---------------- | --------- | ------- |
-| label     | Label text       | `string`  | -       |
-| prop      | Form field name  | `string`  | -       |
-| required  | Whether required | `boolean` | `false` |
-| rules     | Validation rules | `any`     | `{}`    |
+| -------- | ---------- | --------- | ------- |
+| label    | Label text      | `string`  | -       |
+| prop     | Form field name | `string`  | -       |
+| required | Whether required | `boolean` | `false` |
+| rules    | Validation rules | `any`     | `{}`    |
 
 ### FormItemRule
 
-> The `rules` type is `{[key: string]: FormItemRule | FormItemRule[]}`
+> The rules type is `{[key: string]: FormItemRule | FormItemRule[]}`
 
-| Parameter | Description                          | Type                             | Default |
-| --------- | ------------------------------------ | -------------------------------- | ------ |
-| required  | Whether required                     | `boolean`                        | -      |
-| message   | Message shown when validation fails  | `string`                         | -      |
-| min       | Minimum length                       | `number`                         | -      |
-| max       | Maximum length                       | `number`                         | -      |
-| type      | Validation type                      | `phone` \| `email` \| `password` | -      |
-| trigger   | When to trigger validation           | `(blur \| change)[]`             | -      |
-| validator | Custom validation function           | `Function`                       | -      |
+| Parameter | Description                         | Type                             | Default |
+| --------- | ----------------------------------- | -------------------------------- | ------- |
+| required  | Whether required                    | `boolean`                        | -       |
+| message   | Message shown when validation fails | `string`                         | -       |
+| min       | Minimum length                      | `number`                         | -       |
+| max       | Maximum length                      | `number`                         | -       |
+| type      | Validation type                     | `phone` \| `email` \| `password` | -       |
+| trigger   | When validation is triggered        | `(blur \| change)[]`             | -       |
+| validator | Custom validation function          | `Function`                       | -       |
 
 ## Events
 
 ### hy-form Events
 
-| Event Name | Description                    | Callback Parameters                                |
-| ---------- | ------------------------------ | -------------------------------------------------- |
-| submit     | Triggered on form submit       | `(data: Record<string, any>)`                      |
-| validate   | Triggered on form validation   | `(valid: boolean, errors: Record<string, string>)` |
+| Event Name | Description                     | Callback Parameters                               |
+| ---------- | ------------------------------- | ------------------------------------------------- |
+| submit     | Triggered on form submit        | `(data: Record<string, any>)`                     |
+| validate   | Triggered on form validation    | `(valid: boolean, errors: Record<string, string>)`|
 
 ### hy-form-item Events
 
-| Event Name | Description                  | Callback Parameters |
-| ---------- | ---------------------------- | ------------------- |
+| Event Name | Description                 | Callback Parameters |
+| ---------- | --------------------------- | ------------------- |
 | change     | Triggered when value changes | `(value: any)`      |
 | blur       | Triggered on blur            | `(value: any)`      |
 
@@ -712,19 +712,28 @@ const registerFormRules = reactive({
 
 ### hy-form Methods
 
-| Method        | Description      | Parameters           |
-| ------------- | ---------------- | -------------------- |
-| validate      | Validate the form | -                   |
-| resetFields   | Reset the form    | -                   |
-| clearValidate | Clear validation  | `(fields?: string[])` |
-| submit        | Submit the form   | -                   |
+| Method Name   | Description    | Parameters           |
+| ------------- | -------------- | -------------------- |
+| validate      | Validate form  | -                    |
+| resetFields   | Reset form     | -                    |
+| clearValidate | Clear validation | `(fields?: string[])` |
+| submit        | Submit form    | -                    |
 
 ### hy-form-item Methods
 
-| Method        | Description       | Parameters                        |
-| ------------- | ----------------- | --------------------------------- |
-| validate      | Validate the field | `(trigger?: 'blur' \| 'change')` |
-| resetField    | Reset the field    | -                                |
-| clearValidate | Clear validation   | -                                |
+| Method Name   | Description      | Parameters                        |
+| ------------- | ---------------- | --------------------------------- |
+| validate      | Validate field   | `(trigger?: 'blur' \| 'change')`  |
+| resetField    | Reset field      | -                                 |
+| clearValidate | Clear validation | -                                 |
+
+### CSS Variables
+
+| Variable Name | Description | Default |
+| --- | --- | --- |
+| `--hy-form-item-margin-bottom` | Bottom outer margin | `16px` |
+| `--hy-form-item-error-color` | Error message color | `#ff4d4f` |
+| `--hy-form-item-error-font-size` | Error message font size | `12px` |
+| `--hy-form-item-label-color` | Label text color | Follows `--hy-text-color` |
 
 <demo-model url="pages-design/form/form"></demo-model>

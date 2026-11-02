@@ -1,6 +1,6 @@
-# Price Amount Component
+# Price Component
 
-> A business component for displaying price amounts, supporting differentiated display of number sizes before and after the decimal point to enhance the visual effect and readability of amounts.
+> A business component for displaying prices, supporting differentiated font sizes for digits before and after the decimal point, enhancing the visual effect and readability of amounts.
 
 ## :pushpin: Platform Differences
 
@@ -10,11 +10,11 @@
 
 ## Component Features
 
-- **Differentiated Display**: Automatically distinguishes number sizes before and after the decimal point, enhancing visual hierarchy
-- **Flexible Configuration**: Supports custom color, size, weight, slant, and other style properties
-- **Multi-symbol Support**: Custom currency symbols to accommodate different currency needs
+- **Differentiated Display**: Automatically differentiates font sizes for digits before and after the decimal point, enhancing visual hierarchy
+- **Flexible Configuration**: Supports customizing style attributes such as color, size, weight, and slant
+- **Multi-Currency Support**: Customizable currency symbols to accommodate different currency needs
 - **Formatting Control**: Supports setting the number of decimal places for precise control over amount display
-- **Responsive Design**: Adapts to multiple platforms while maintaining consistent visual effects
+- **Responsive Design**: Adapts to multiple platforms, maintaining consistent visual effects
 
 ## :japanese_castle: Basic Usage Examples
 
@@ -31,7 +31,7 @@ const price = 10;
 
 :::
 
-### Set Color
+### Setting Color
 
 ::: code-group
 
@@ -47,7 +47,7 @@ const price = 10;
 
 :::
 
-### Set Size
+### Setting Size
 
 ::: code-group
 
@@ -63,7 +63,7 @@ const price = 10;
 
 :::
 
-### Keep Decimal Places
+### Decimal Places
 
 ::: code-group
 
@@ -79,7 +79,7 @@ const price = 10;
 
 :::
 
-### Set Prefix Symbol
+### Setting Prefix Symbol
 
 ::: code-group
 
@@ -95,7 +95,7 @@ const price = 10;
 
 :::
 
-### Set Weight
+### Setting Weight
 
 ::: code-group
 
@@ -111,7 +111,7 @@ const price = 10;
 
 :::
 
-### Set Slant
+### Setting Slant
 
 ::: code-group
 
@@ -127,7 +127,7 @@ const price = 10;
 
 :::
 
-### Set Ratio
+### Setting Ratio
 
 ::: code-group
 
@@ -148,23 +148,30 @@ import { HyPrice } from 'hy-app';
 
 ### Price Props
 
-| Parameter   | Description                                  | Type                 | Default |
-| ----------- | -------------------------------------------- | -------------------- | ------- |
-| text        | Amount value                                 | `string` \| `number` | 0.00    |
-| symbol      | Currency symbol                              | `string`             | ￥      |
-| ratio       | Scale ratio                                  | `number`             | 1.4     |
-| num         | Number of decimal places to retain           | `number`             | 2       |
-| color       | Font color                                   | `string`             | #FE3232 |
-| size        | Font size; numeric values default to px      | `string` \| `number` | 12      |
-| weight      | Font weight                                  | `number`             | 500     |
-| slant       | Whether to slant                             | `boolean`            | false   |
-| customStyle | Custom external styles to be applied         | `CSSProperties`      | -       |
-| customClass | Custom external class name                   | `string`             | -       |
+| Parameter   | Description                                | Type                 | Default |
+| ----------- | ------------------------------------------ | -------------------- | ------- |
+| text        | Amount value                               | `string` \| `number` | 0.00    |
+| symbol      | Currency symbol                            | `string`             | ￥      |
+| ratio       | Ratio size                                 | `number`             | 1.4     |
+| num         | Number of decimal places to keep           | `number`             | 2       |
+| color       | Font color                                 | `string`             | #FE3232 |
+| size        | Font size, default unit is px for numbers  | `string` \| `number` | 12      |
+| weight      | Font weight                                | `number`             | 500     |
+| slant       | Whether to slant                           | `boolean`            | false   |
+| customStyle | Custom external styles to be applied       | `CSSProperties`      | -       |
+| customClass | Custom external class name                 | `string`             | -       |
 
 ### Events
 
-| Event Name | Description        | Callback Parameters |
-| ---------- | ------------------ | ------------------- |
-| click      | Click on the amount | text: amount value |
+| Event Name | Description     | Callback Parameters    |
+| ---------- | --------------- | ---------------------- |
+| click      | Click on amount | text: Amount value     |
+
+### CSS Variables
+
+| Variable Name            | Description   | Default Value |
+| ------------------------ | ------------- | ------------- |
+| `--hy-price-font-size`   | Font size     | `32rpx`       |
+| `--hy-price-margin-top`  | Top margin    | `5px`         |
 
 <demo-model url="pages-design/price/price"></demo-model>

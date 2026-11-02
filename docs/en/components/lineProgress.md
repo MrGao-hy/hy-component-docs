@@ -1,14 +1,14 @@
 # LineProgress Linear Progress Bar Component
 
-> Displays the current progress of an operation or task, such as file uploading, in the form of a linear progress bar.
+> Displays the current progress of an operation or task, such as uploading a file. It is a linear progress bar.
 
-## :pushpin: Platform Compatibility Notes
+## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ---------- | ------------ |
-| ✔        | ✔   | ✔          | ✔            |
+| -------- | --- | ------------------- | ------------------- |
+| ✔        | ✔   | ✔                   | ✔                   |
 
-## :japanese_castle: Basic Usage Examples
+## :japanese_castle: Basic Usage
 
 ```html
 <!-- Global usage -->
@@ -35,7 +35,7 @@
 </template>
 ```
 
-### Custom Styles
+### Custom Style
 
 ```html
 <template>
@@ -45,7 +45,7 @@
 
 ### Manual Increment/Decrement
 
-- Increase or decrease by controlling the value of the `percentage` parameter
+- Increase or decrease the progress by controlling the value of the `percentage` parameter
 
 ```html
 <template>
@@ -78,21 +78,29 @@
 
 ### LineProgress Props
 
-| Parameter     | Description                                                   | Type                 | Default Value |
-| ------------- | ------------------------------------------------------------- | -------------------- | ------ |
-| activeColor   | Color of the active portion of the progress bar               | `string`             | -      |
-| inactiveColor | Background color of the progress bar, defaults to gray        | `string`             | -      |
-| percentage    | Progress percentage, numeric value                            | `number`             | 0      |
-| showText      | Whether to display the percentage value inside the progress bar | `boolean`            | true   |
-| height        | Height of the progress bar; default unit for numeric values is px | `number` \| `string` | 12     |
-| fontSize      | Font size; default unit for numeric values is px              | `number` \| `string` | -      |
-| customStyle   | Custom external styles to be applied                          | `CSSProperties`      | -      |
-| customClass   | Custom external class name                                    | `string`             | -      |
+| Parameter      | Description                                                    | Type                 | Default Value |
+| -------------- | -------------------------------------------------------------- | -------------------- | ------------- |
+| activeColor    | The color of the active portion of the progress bar            | `string`             | -             |
+| inactiveColor  | The background color of the progress bar, gray by default      | `string`             | -             |
+| percentage     | Progress percentage, a number                                  | `number`             | 0             |
+| showText       | Whether to display the percentage value inside the progress bar | `boolean`          | true          |
+| height         | The height of the progress bar; default unit is px for numbers | `number` \| `string` | 12            |
+| fontSize       | Font size; default unit is px for numbers                      | `number` \| `string` | -             |
+| customStyle    | Custom external styles to be applied                           | `CSSProperties`      | -             |
+| customClass    | Custom external class name                                     | `string`             | -             |
 
 ### Slots
 
-| Slot Name | Description                                                                        | Accepted Value |
-| --------- | ---------------------------------------------------------------------------------- | -------------- |
-| default   | Custom display content passed in, which overrides the default percentage display   | -              |
+| Slot Name | Description                                                                    | Accepted Value |
+| --------- | ------------------------------------------------------------------------------ | -------------- |
+| default   | Pass in custom display content, which will override the default percentage display | -         |
+
+### CSS Variables
+
+| Variable Name | Description | Default Value |
+| --- | --- | --- |
+| `--hy-line-progress-text-font-size` | Progress text font size | `10px` |
+| `--hy-line-progress-radius` | Progress bar border radius | Follows `--hy-radius-semicircle` (100px) |
+| `--hy-line-progress-text-color` | Progress text color | `#ffffff` |
 
 <demo-model url="pages-design/lineProgress/lineProgress"></demo-model>

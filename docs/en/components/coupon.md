@@ -1,24 +1,24 @@
 # Coupon Component
 
-> The Coupon component is used to display and manage coupon information, supporting the display of multiple coupon types, including money-off coupons, discount coupons, and no-threshold coupons, with flexible customization options to meet the needs of different business scenarios.
+> The Coupon component is used to display and manage coupon information. It supports displaying multiple types of coupons, including money-off coupons, discount coupons, and no-threshold coupons, and provides flexible customization options to meet different business scenario needs.
 
 ## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ---------- | ------------ |
-| ✔        | ✔   | ✔          | ✔            |
+| -------- | --- | ------------------- | ------------------- |
+| ✔        | ✔   | ✔                   | ✔                   |
 
 ## Component Features
 
-- **Multiple Type Support**: Supports displaying various coupon types, such as money-off coupons, discount coupons, and no-threshold coupons
+- **Multiple Type Support**: Supports displaying various coupon types, including money-off coupons, discount coupons, and no-threshold coupons
 - **Flexible Customization**: Provides rich customization options, including background color, button styles, status management, and more
-- **Status Management**: Built-in support for multiple coupon statuses, such as unused, used, expired, redeemed, etc.
+- **Status Management**: Built-in support for multiple coupon statuses, such as unused, used, expired, and redeemed
 - **Visual Effects**: Supports custom styles, shadows, and a special notch effect design
-- **Event Callbacks**: Provides a complete event callback mechanism, making it easy to handle coupon click and usage operations
+- **Event Callbacks**: Provides a comprehensive event callback mechanism, making it easy to handle coupon click and use operations
 
 ## :japanese_castle: Basic Usage Example
 
-```html [Template]
+```html [template]
 <template>
     <hy-coupon
         title="New Product Coupon"
@@ -36,7 +36,7 @@
 
 ### Custom Background Color
 
-You can customize the coupon's background color by setting the `bg-color` property, which supports solid colors, gradients, or complex CSS background styles.
+You can customize the coupon's background color by setting the `bg-color` attribute, which supports solid colors, gradients, or complex CSS background styles.
 
 #### 1. Using a Gradient Background
 
@@ -56,11 +56,11 @@ You can customize the coupon's background color by setting the `bg-color` proper
 </template>
 ```
 
-#### 2. Using Custom Styles to Create a Middle Notch Effect
+#### 2. Using Custom Styles to Create a Notch Effect in the Middle
 
-If you need to create a middle notch effect, you can use complex CSS background styles:
+If you need to create a notch effect in the middle, you can use complex CSS background styles:
 
-```html [Template]
+```html [template]
 <template>
     <hy-coupon
         title="New Product Coupon"
@@ -91,7 +91,7 @@ If you need to create a middle notch effect, you can use complex CSS background 
 </script>
 ```
 
-::: tip Friendly Reminder
+::: tip Tip
 
 - 15rpx controls the size of the notch
 - 60px and 51px control the heights of the top and bottom sections, which can be adjusted as needed to avoid gaps
@@ -100,15 +100,15 @@ If you need to create a middle notch effect, you can use complex CSS background 
 
 ### Coupon Types
 
-The Coupon component supports three main types of coupon display. The following shows how to display different types of coupons at the same time:
+The Coupon component supports three main coupon types for display. The following shows how to display different coupon types at the same time:
 
 #### Supported Coupon Types
 
-| Type        | Description     | Example           |
-| ----------- | -------- | -------------- |
-| moneyOff    | Money-off coupon   | ¥20 off orders over ¥100  |
-| discount    | Discount coupon   | 20% off storewide        |
-| fixedAmount | No-threshold coupon | ¥10 off with no minimum spend |
+| Type       | Description        | Example                      |
+| ---------- | ------------------ | ---------------------------- |
+| moneyOff   | Money-off coupon   | ¥20 off orders over ¥100     |
+| discount   | Discount coupon    | 20% off storewide            |
+| fixedAmount | No-threshold coupon | Instant ¥10 off, no minimum spend |
 
 #### Multiple Coupon Types Display Example
 
@@ -158,16 +158,16 @@ The Coupon component supports three main types of coupon display. The following 
             name: 'Fresh Produce 20% Off Coupon',
             type: 'discount',
             status: 'unused',
-            description: 'Only valid for the fresh produce category, with a maximum discount of ¥50',
+            description: 'Only valid for the fresh produce category, max discount of ¥50',
             minSpend: 50,
-            value: 8, // Represents a 20% discount
+            value: 8, // Represents 20% off
             maxDiscount: 50,
             validFrom: '2024-01-01T00:00:00',
             validTo: '2024-12-31T23:59:59',
         },
         {
             id: '3',
-            name: 'No-Threshold ¥10 Coupon',
+            name: '¥10 No-Threshold Coupon',
             type: 'fixedAmount',
             status: 'unused',
             description: 'No minimum spend required, valid storewide',
@@ -193,36 +193,52 @@ The Coupon component supports three main types of coupon display. The following 
 | type | Coupon type: moneyOff: money-off coupon, discount: discount coupon, fixedAmount: no-threshold coupon | `moneyOff`\|`discount`\|`fixedAmount` | - |
 | typeText | Text description of the coupon type below the amount | `string` | - |
 | status | Coupon status | `string` | - |
-| disabledStatus | Disabled statuses for the coupon | `array` | - |
+| disabledStatus | Coupon disabled statuses | `array` | - |
 | description | Coupon description | `string` | - |
 | desEllipsis | Number of lines before the description is truncated; none means no truncation, a number indicates the line at which truncation begins | `string`\|`number` | none |
 | amount | Coupon amount | `string`\|`number` | - |
-| unit | Coupon unit; the default value is used if not set | `string` | - |
+| unit | Coupon unit; uses the default value if not set | `string` | - |
 | startDate | Coupon start time | `string` | - |
 | endDate | Coupon end time | `string` | - |
 | format | Time format | `string` | yyyy-MM-dd |
-| dateDesc | Date description; if not provided, the period from start time to end time is used | `string` | - |
+| dateDesc | Date description; if not set, displays the range from start time to end time | `string` | - |
 | bgColor | Background color | `string` | - |
-| boxShadow | Whether to show a shadow | `boolean` | false |
+| boxShadow | Whether to show shadow | `boolean` | false |
 | btnMode | Button type | `text`\|`button`\|`none` | button |
 | btnText | Button text | `string` | Claim Now |
 | buttonProp | [Button props API](./button#API) | `HyButtonProps` | - |
-| customStyle | Defines external styles to be used | `CSSProperties` | - |
+| customStyle | Defines external styles to be applied | `CSSProperties` | - |
 | customClass | Custom external class name | `string` | - |
 
 ### Events
 
-| Event Name | Description           | Callback Parameters |
-| ------ | -------------- | -------- |
-| click  | Coupon clicked     | -        |
-| used   | Use coupon button clicked | -        |
+| Event Name | Description | Callback Parameters |
+| ---------- | ----------- | ------------------- |
+| click      | Triggered when the coupon is clicked | - |
+| used       | Triggered when using the coupon is clicked | - |
 
 ### Slots
 
-| Slot Name | Description               | Received Values |
-| ------ | ------------------ | ------ |
-| left   | Custom amount slot     | -      |
-| right  | Custom right-side detail slot | -      |
-| button | Custom button slot     | -      |
+| Slot Name | Description | Accepted Values |
+| --------- | ----------- | --------------- |
+| left      | Custom amount slot | - |
+| right     | Custom right-side details slot | - |
+| button    | Custom button slot | - |
+
+### CSS Variables
+
+| Variable Name | Description | Default Value |
+| --- | --- | --- |
+| `--hy-coupon-box-width` | Width of the left amount area | `180rpx` |
+| `--hy-coupon-bg-height` | Background height | `166rpx` |
+| `--hy-coupon-radius` | Card border radius | `16rpx` |
+| `--hy-coupon-value-font-size` | Amount font size | `64rpx` |
+| `--hy-coupon-suffix-font-size` | Amount unit font size | `28rpx` |
+| `--hy-coupon-name-font-size` | Coupon name font size | `30rpx` |
+| `--hy-coupon-desc-font-size` | Description text font size | `22rpx` |
+| `--hy-coupon-tag-width` | Status tag width | `120rpx` |
+| `--hy-coupon-tag-font-size` | Status tag font size | `26rpx` |
+| `--hy-coupon-tag-bg` | Status tag background color | `#ffd16d` |
+| `--hy-coupon-tag-color` | Status tag text color | `#d43c33` |
 
 <demo-model url="pages-design/coupon/coupon"></demo-model>

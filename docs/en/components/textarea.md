@@ -1,8 +1,8 @@
 # Textarea Component
 
-> Used for entering multi-line text content, such as chat input boxes, remarks, and other scenarios.
+> Used for entering multi-line text, such as chat input boxes, remarks, and other scenarios.
 
-## :pushpin: Platform Compatibility
+## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
 | -------- | --- | ------------------- | ------------------- |
@@ -13,15 +13,16 @@
 ::: warning Notes
 
 - `modelValue` is used for two-way binding of the input content
-- The `focus` attribute sets automatic focus; not supported on nvue, and on H5 it depends on the browser implementation
-- The `formatter` attribute is used for formatting input content, but WeChat Mini Program does not support passing functions via props; you need to use the `setFormatter` method
-- The `border` attribute supports three types: `surround` (border on all sides), `bottom` (bottom border), `none` (no border)
+- The `focus` property sets automatic focus; not supported on nvue, and on H5 it depends on the browser implementation
+- The `formatter` property is used to format input content, but WeChat Mini Program does not support passing functions via props; use the `setFormatter` method instead
+- The `border` property supports three types: `surround` (border on all sides), `bottom` (bottom border), `none` (no border)
 - When `maxlength` is set to `-1`, there is no limit on the maximum length
-- The component supports `hy-form` form validation when used with `form-item`
+- The component supports `hy-form` form validation, used via `form-item`
+- If you want the textarea to support line breaks, you need to set `confirmType` to `return`
 
 :::
 
-## :japanese_castle: Basic Usage
+## :japanese_castle: Basic Usage Examples
 
 ```html
 <!-- Global usage -->
@@ -36,7 +37,7 @@ const value = ref('');
 
 ### Border Types
 
-Set the border type via the `border` attribute:
+Set the border type via the `border` property:
 
 ```html
 <!-- Border on all sides (default) -->
@@ -51,7 +52,7 @@ Set the border type via the `border` attribute:
 
 ### Character Count
 
-Set the `count` attribute to display the character count:
+Set the `count` property to display a character count:
 
 ```html
 <hy-textarea v-model="value" placeholder="Please enter content" count></hy-textarea>
@@ -59,7 +60,7 @@ Set the `count` attribute to display the character count:
 
 ### Auto Height
 
-Set the `autoHeight` attribute to automatically increase the input height:
+Set the `autoHeight` property to automatically increase the input height:
 
 ```html
 <hy-textarea v-model="value" autoHeight placeholder="Please enter content" count></hy-textarea>
@@ -67,7 +68,7 @@ Set the `autoHeight` attribute to automatically increase the input height:
 
 ### Disabled State
 
-Set the `disabled` attribute to disable the input:
+Set the `disabled` property to disable the input:
 
 ```html
 <hy-textarea v-model="value" disabled placeholder="Disabled state"></hy-textarea>
@@ -75,7 +76,7 @@ Set the `disabled` attribute to disable the input:
 
 ### Auto Focus
 
-Set the `focus` attribute to automatically gain focus:
+Set the `focus` property to automatically gain focus:
 
 ```html
 <hy-textarea v-model="value" :focus="isFocus" placeholder="Auto focus"></hy-textarea>
@@ -102,10 +103,10 @@ Customize styles via `customStyle` or `customClass`:
 
 ### Formatting
 
-Format input content via the `formatter` attribute:
+Format input content via the `formatter` property:
 
 ```html
-<hy-textarea v-model="value" :formatter="formatter" placeholder="Numbers only"></hy-textarea>
+<hy-textarea v-model="value" :formatter="formatter" placeholder="Only numbers allowed"></hy-textarea>
 ```
 
 ```typescript
@@ -113,7 +114,7 @@ import { ref } from 'vue';
 
 const value = ref('');
 
-// Formatter: only allows digits
+// Formatter: only allow numbers
 const formatter = (val: string) => {
     return val.replace(/[^0-9]/g, '');
 };
@@ -154,7 +155,7 @@ const rules = {
 
 ### Chat Input Scenario
 
-Combine with other components to create a chat input effect:
+Combine with other components to create a chat input box:
 
 ```html
 <view class="chat-input">
@@ -179,44 +180,59 @@ Combine with other components to create a chat input effect:
 | modelValue | Content of the input | `string` | - |
 | placeholder | Placeholder shown when the input is empty | `string` | - |
 | placeholderClass | Style class for the placeholder[^1] | `string` | textarea-placeholder |
-| placeholderStyle | Styles for the placeholder, in object form | `string` | - |
-| height | Height of the input; numbers default to px | `string \| number` | 70 |
-| confirmType | Sets the text of the button at the bottom-right corner of the keyboard; only effective on WeChat Mini Program, App-vue, and H5 | `string` | done |
+| placeholderStyle | Style of the placeholder, in object form | `string` | - |
+| height | Input height, defaults to px for numeric values | `string \| number` | 70 |
+| confirmType | Sets the text of the button at the bottom-right of the keyboard; only effective on WeChat Mini Program, App-vue, and H5 | `string` | done |
 | disabled | Whether to disable | `boolean` | false |
-| count | Whether to show the character count | `boolean` | false |
+| count | Whether to display the character count | `boolean` | false |
 | focus | Whether to automatically gain focus; not supported on nvue, and on H5 it depends on the browser implementation | `boolean` | false |
-| autoHeight | Whether to automatically increase the height | `boolean` | false |
-| fixed | If the textarea is inside a position:fixed area, you need to explicitly set fixed to true | `boolean` | false |
-| cursorSpacing | Distance between the cursor and the keyboard | `number` | 0 |
-| cursor | Cursor position when focused | `number` | - |
-| showConfirmBar | Whether to show the bar above the keyboard containing the "Done" button | `boolean` | true |
-| selectionStart | Cursor start position; effective with auto focus, must be used together with selection-end | `number` | -1 |
-| selectionEnd | Cursor end position; effective with auto focus, must be used together with selection-start | `number` | -1 |
+| autoHeight | Whether to automatically increase height | `boolean` | false |
+| fixed | If the textarea is inside a position:fixed area, you need to explicitly set the fixed property to true | `boolean` | false |
+| cursorSpacing | Specifies the distance between the cursor and the keyboard | `number` | 0 |
+| cursor | Specifies the cursor position when focused | `number` | - |
+| showConfirmBar | Whether to show the bar above the keyboard with the "Done" button | `boolean` | true |
+| selectionStart | Cursor start position, effective when auto-focused, must be used together with selection-end | `number` | -1 |
+| selectionEnd | Cursor end position, effective when auto-focused, must be used together with selection-start | `number` | -1 |
 | adjustPosition | Whether to automatically push the page up when the keyboard pops up | `boolean` | true |
-| disableDefaultPadding | Whether to remove the default inner padding on iOS; only effective on WeChat Mini Program | `boolean` | false |
-| holdKeyboard | When focused, the keyboard is not dismissed when tapping the page; only effective on WeChat Mini Program | `boolean` | false |
-| maxlength | Maximum input length; when set to -1, there is no limit on the maximum length | `number` | 140 |
+| disableDefaultPadding | Whether to remove the default padding on iOS; only effective on WeChat Mini Program | `boolean` | false |
+| holdKeyboard | When focused, tapping the page won't collapse the keyboard; only effective on WeChat Mini Program | `boolean` | false |
+| maxlength | Maximum input length; set to -1 for no limit on the maximum length | `number` | 140 |
 | border | Border type[^2] | `surround \| bottom \| none` | surround |
-| formatter | Input filtering or formatting function[^3] | `function` | - |
-| customStyle | External styles to apply | `CSSProperties` | - |
+| formatter | Input filter or formatter function[^3] | `function` | - |
+| customStyle | Defines external styles to be applied | `CSSProperties` | - |
 | customClass | Custom external class name | `string` | - |
 
 ### Events
 
-| Event Name           | Description                                        | Callback        |
-| -------------------- | -------------------------------------------------- | --------------- |
-| focus                | Triggered when the input gains focus               | `event`         |
-| blur                 | Triggered when the input loses focus               | `event`         |
-| lineChange           | Triggered when the number of lines changes         | `event`         |
-| change               | Triggered when typing on the keyboard              | `value: string` |
-| update:modelValue    | Triggered on keyboard input                        | `value: string` |
-| confirm              | Triggered when the Done button is tapped           | `event`         |
-| keyboardheightchange | Triggered when the keyboard height changes         | `event`         |
+| Event Name           | Description                            | Callback        |
+| -------------------- | -------------------------------------- | --------------- |
+| focus                | Triggered when the input gains focus   | `event`         |
+| blur                 | Triggered when the input loses focus   | `event`         |
+| lineChange           | Triggered when the number of lines in the input changes | `event` |
+| change               | Triggered on keyboard input (change event) | `value: string` |
+| update:modelValue    | Triggered on keyboard input (input event) | `value: string` |
+| confirm              | Triggered when Done is clicked (confirm event) | `event`  |
+| keyboardheightchange | Triggered when the keyboard height changes | `event`     |
 
-[^1]: Note: when scoped is used in the page or component's style, you need to prepend `/deep/` to the class name
+### CSS Variables
+
+| Variable Name | Description | Default |
+| --- | --- | --- |
+| `--hy-textarea-min-height` | Minimum height | `50rpx` |
+| `--hy-textarea-max-height` | Maximum height | `200rpx` |
+| `--hy-textarea-font-size` | Font size | `15px` |
+| `--hy-textarea-count-font-size` | Character count font size | `12px` |
+| `--hy-textarea-color` | Input text color | Follows `--hy-text-color` |
+| `--hy-textarea-disabled-color` | Disabled text color | Follows `--hy-text-color--disabled` |
+| `--hy-textarea-radius` | Input border radius | Follows `--hy-radius-sm` (8rpx) |
+| `--hy-textarea-count-radius` | Character count border radius | Follows `--hy-radius-sm` (8rpx) |
+| `--hy-textarea-border` | Border | Follows `--hy-border-line` |
+
+
+[^1]: Note that when scoped is used in the page or component's style, you need to write `/deep/` before the class name
 
 [^2]: `surround`: border on all sides; `bottom`: bottom border only; `none`: no border
 
-[^3]: WeChat Mini Program does not support passing functions via props; it is recommended to use the `formatter` attribute directly in the page (on other platforms)
+[^3]: WeChat Mini Program does not support passing functions via props; it is recommended to use the `formatter` property directly on the page (other platforms)
 
 <demo-model url="pages-design/textarea/textarea"></demo-model>

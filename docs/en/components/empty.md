@@ -1,23 +1,23 @@
-# Empty Empty-State Component
+# Empty Component
 
-> This component is used for scenarios where content needs to be loaded but the first page of loaded data is empty, displaying a "no content" prompt. We have carefully selected a dozen or so scenario-specific icons for your convenience.
+> This component is used for scenarios where content needs to be loaded but the first page of data comes back empty, prompting the user that there is "no content". We have carefully selected a dozen scenario-specific icons for your convenience.
 
 ## :pushpin: Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ------------------- | ------------------- |
-| ✔        | ✔   | ✔                   | ✔                   |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
-## :japanese_castle: Basic Usage Examples
+## :japanese_castle: Basic Usage
 
 ```html
 <!-- Global usage -->
 <hy-empty></hy-empty>
 ```
 
-### Displaying and Configuring the Button
+### Show and Configure the Button
 
-- `btnText` Text displayed on the button
+- `btnText` Button text
 - `btnSize` Button size
 - `btnShape` Button shape
 - `btnPlain` Whether the button is outlined
@@ -35,7 +35,7 @@
 </template>
 ```
 
-### Configuring the Prompt Text
+### Configure the Prompt Text
 
 - `desSize` Prompt text size
 - `desColor` Prompt text color
@@ -67,37 +67,45 @@
 | Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
 | show | Whether to show the component | `boolean` | true |
-| mode | Empty page content | `string` | content |
+| mode | Empty state content | `string` | content |
 | imageUrl | Empty state icon image | `string` | - |
 | zIndex | Component z-index | `number` | 889 |
 | width | Image width, numbers default to px unit | `string`\|`number` | 240px |
 | height | Image height, numbers default to px unit | `string`\|`number` | 240px |
-| description | Prompt message | `string` | No data yet |
+| description | Prompt message | `string` | No data |
 | desSize | Prompt message size, numbers default to px unit | `string`\|`number` | 15 |
 | desColor | Prompt message color | `string` | - |
 | imgMargin | Icon image margin | `string` | - |
-| button | Collection of button properties, displayed when text has a value, see [Button API](./button#api) for details | `HyButtonProps` | - |
+| button | Collection of button properties, displayed when `text` has a value, see [Button API](./button#api) | `HyButtonProps` | - |
 | navigateUrl | Navigation URL | `string` | - |
-| customStyle | Custom outer style of the input box | `CSSProperties` | - |
-| customClass | Custom outer class name | `string` | - |
+| customStyle | Custom external style of the input box | `CSSProperties` | - |
+| customClass | Custom external class name | `string` | - |
 
 ### Events
 
-| Event Name | Description | Callback Parameters |
+| Event Name | Description             | Callback Parameters |
 | ------ | ---------------- | -------- |
 | click  | Function executed when the button is clicked | -        |
 
 ### Slots
 
-| Slot Name   | Description                   | Accepted Values |
-| ----------- | ------------------------------ | ------ |
-| default     | Default slot                   | -      |
-| description | Custom bottom description      | -      |
+| Slot Name      | Description           | Accepted Value |
+| ----------- | -------------- | ------ |
+| default     | Default slot       | -      |
+| description | Custom bottom description | -      |
+
+### CSS Variables
+
+| Variable Name | Description | Default |
+| --- | --- | --- |
+| `--hy-empty-description-width` | Description text width | `70%` |
+| `--hy-empty-button-margin-top` | Button top margin | `100rpx` |
+| `--hy-empty-description-color` | Description text color | Follows `--hy-text-color--grey` |
 
 [^1]: `normal`: default size; `large`: large size; `small`: small size; `mini`: mini size
 
 [^2]: `error`: #fa3534; `warning`: #ff9900; `success`: #19be6b; `primary`: #2979ff; `info`: #909399;
 
-[^3]: `circle`: both ends are semicircular; `square`: square with rounded corners
+[^3]: `circle`: semicircular ends; `square`: square with rounded corners
 
 <demo-model url="pages-design/empty/empty"></demo-model>

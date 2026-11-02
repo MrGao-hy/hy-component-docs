@@ -1,48 +1,48 @@
 # Popover Component
 
-> Commonly used to display hint information.
+> Commonly used to display prompt messages.
 
-## :pushpin: Platform Difference Notes
+## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
 | -------- | --- | ---------- | ------------ |
 | ✔        | ✔   | ✔          | ✔            |
 
-## :japanese_castle: Basic Usage Example
+## :japanese_castle: Basic Usage
 
 ::: warning Note
 
-Currently, the bubble container is given a fixed width and cannot auto-fit its width, because an auto-fitting width cannot exceed the parent container's width
+Currently, the popover container is given a fixed width and cannot adapt to its content, because an adaptive width cannot exceed the parent container's width.
 
 :::
 
 ```html
-<!-- Global usage -->
-<hy-popover content="I am a hint message">
-    <hy-button type="primary" :stop="false">Button</hy-button>
+<!-- 全局使用 -->
+<hy-popover content="我是提示信息">
+    <hy-button type="primary" :stop="false">按钮</hy-button>
 </hy-popover>
 ```
 
 ### Popover Placement
 
-- Set the bubble position via `placement`
-    - `top`: bubble at the top-center position
-    - `top-start`: bubble at the top-left position
-    - `top-end`: bubble at the top-right position
-    - `bottom`: bubble at the bottom-center position
-    - `bottom-start`: bubble at the bottom-left position
-    - `bottom-end`: bubble at the bottom-right position
-    - `left`: bubble at the middle-left position
-    - `left-start`: bubble at the upper-left position
-    - `left-end`: bubble at the lower-left position
-    - `right `: bubble at the middle-right position
-    - `right-start`: bubble at the upper-right position
-    - `right-end`: bubble at the lower-right position
+- Set the popover position via `placement`
+    - `top` popover at the top center
+    - `top-start` popover at the top left
+    - `top-end` popover at the top right
+    - `bottom` popover at the bottom center
+    - `bottom-start` popover at the bottom left
+    - `bottom-end` popover at the bottom right
+    - `left` popover at the left center
+    - `left-start` popover at the left, upper side
+    - `left-end` popover at the left, lower side
+    - `right` popover at the right center
+    - `right-start` popover at the right, upper side
+    - `right-end` popover at the right, lower side
 
 ```html
 <template>
-    <hy-popover content="I am a hint message" placement="top">
-        <hy-button type="primary" :stop="false">Top</hy-button>
+    <hy-popover content="我是提示信息" placement="top">
+        <hy-button type="primary" :stop="false">上面</hy-button>
     </hy-popover>
 </template>
 ```
@@ -51,7 +51,7 @@ Currently, the bubble container is given a fixed width and cannot auto-fit its w
 
 ::: tip Friendly Reminder
 
-In normal mode, `content` must be set to a string; in menu mode, `content` must be set as an array
+In normal mode, `content` must be set to a string; in menu mode, `content` must be set as an array.
 
 :::
 
@@ -61,7 +61,7 @@ In normal mode, `content` must be set to a string; in menu mode, `content` must 
 ```html
 <template>
     <hy-popover :content="menuList" mode="menu">
-        <hy-button type="primary" :stop="false">Menu</hy-button>
+        <hy-button type="primary" :stop="false">菜单</hy-button>
     </hy-popover>
 </template>
 
@@ -72,32 +72,32 @@ In normal mode, `content` must be set to a string; in menu mode, `content` must 
     const menuList = reactive([
         {
             iconClass: IconConfig.REMIND,
-            content: 'Mark all as read',
+            content: '全部标记已读',
         },
         {
             iconClass: IconConfig.DELETE,
-            content: 'Clear recent conversations',
+            content: '清空最近会话',
         },
         {
             iconClass: IconConfig.SETTING,
-            content: 'Message subscription settings',
+            content: '消息订阅设置',
         },
         {
             iconClass: IconConfig.NOTICE,
-            content: 'Message exception detection',
+            content: '消息异常检测',
         },
     ]);
 </script>
 ```
 
-### Bubble Position
+### Popover Position
 
-- Control the position via `offset`
+- Control the position by setting `offset`
 
 ```html
 <template>
-    <hy-popover content="I am a hint message" placement="top">
-        <hy-button type="primary" :stop="false">Top</hy-button>
+    <hy-popover content="我是提示信息" placement="top">
+        <hy-button type="primary" :stop="false">上面</hy-button>
     </hy-popover>
 </template>
 ```
@@ -106,7 +106,7 @@ In normal mode, `content` must be set to a string; in menu mode, `content` must 
 
 ::: warn Tip
 
-When using custom slot content, you need to add the `width`, `background`, `z-index`, and `position` properties to the outermost element to prevent arrow style issues
+When using custom slot content, you need to add `width`, `background`, `z-index`, and `position` properties to the outermost element to prevent arrow style issues.
 
 :::
 
@@ -114,21 +114,21 @@ When using custom slot content, you need to add the `width`, `background`, `z-in
 <template>
     <hy-popover>
         <template #content>
-            <view class="pop-content">This is a piece of custom-styled content.</view>
+            <view class="pop-content">这是一段自定义样式的内容。</view>
         </template>
-        <hy-button type="primary" :stop="false">Top</hy-button>
+        <hy-button type="primary" :stop="false">上面</hy-button>
     </hy-popover>
 </template>
 ```
 
 ```scss
 .pop-content {
-    /* Required - Start */
+    /* 必填 开始 */
     width: 150px;
     background: #fff;
     z-index: 999;
     position: relative;
-    /* Required - End */
+    /* 必填 结束 */
     color: #8268de;
     font-weight: bolder;
     padding: 10px;
@@ -136,13 +136,13 @@ When using custom slot content, you need to add the `width`, `background`, `z-in
 }
 ```
 
-### Closing the Bubble Popup on the Page
+### Closing the Popover on the Page
 
 ```html
 <template>
     <view style="height: 800px; width: 300px" @tap="closeOutside">
-        <hy-popover content="I am a hint message" placement="top">
-            <hy-button type="primary" :stop="false">Top</hy-button>
+        <hy-popover content="我是提示信息" placement="top">
+            <hy-button type="primary" :stop="false">上面</hy-button>
         </hy-popover>
     </view>
 </template>
@@ -158,29 +158,42 @@ const { closeOutside } = useQueue();
 
 ### Popover Props
 
-| Parameter | Description                                      | Type                | Default |
-| --------- | ------------------------------------------------ | ------------------- | ------- |
-| v-model   | Whether manually visible                         | `boolean`           | false   |
-| content   | Content to display                               | `string` \| `Array` | -       |
-| mode      | Current display mode, determines content form    | `normal` \| `menu`  | normal  |
-| placement | Popover placement[^1]                            | `string`            | bottom  |
-| disabled  | Whether the popover is available                 | `boolean`           | false   |
-| offset    | Offset of the popover position                   | `number`            | 0       |
+| Parameter | Description                                        | Type                | Default |
+| --------- | -------------------------------------------------- | ------------------- | ------- |
+| v-model   | Whether the popover is visible (manual state)      | `boolean`           | false   |
+| content   | Content to display                                 | `string` \| `Array` | -       |
+| mode      | Current display mode, determines how content is rendered | `normal` \| `menu`  | normal  |
+| placement | Position of the popover[^1]                        | `string`            | bottom  |
+| disabled  | Whether the popover is disabled                    | `boolean`           | false   |
+| offset    | Offset of the position                             | `number`            | 0       |
 
 ### Methods
 
-| Event Name | Description                            | Callback Parameters |
-| ---------- | -------------------------------------- | ------------------- |
-| open       | Event triggered when the tooltip opens | -                   |
-| close      | Event triggered when the tooltip closes | -                  |
+| Event Name | Description                       | Callback Parameters |
+| ---------- | --------------------------------- | ------------------- |
+| open       | Event fired when the tooltip opens  | -                   |
+| close      | Event fired when the tooltip closes | -                   |
 
 ### Slots
 
-| Slot Name | Description                       | Received Values |
-| --------- | --------------------------------- | --------------- |
-| default   | Default slot                      | -               |
-| content   | Custom content inside the bubble  | -               |
+| Slot Name | Description                    | Accepted Value |
+| --------- | ------------------------------ | -------------- |
+| default   | Default slot                   | -              |
+| content   | Custom content inside the popover | -           |
+
+### CSS Variables
+
+| Variable | Description | Default |
+| --- | --- | --- |
+| `--hy-popover-z-index` | Stacking level | `998` |
+| `--hy-popover-icon-size` | Icon size | `18px` |
+| `--hy-popover-menu-padding` | Menu padding | `20rpx 0` |
+| `--hy-popover-min-height` | Minimum height | `36px` |
+| `--hy-popover-width` | Width | `200px` |
+| `--hy-popover-line-height` | Line height | `22px` |
+| `--hy-popover-radius` | Popover/menu border radius | Follows `--hy-radius-sm` (8rpx) |
+| `--hy-popover-border` | Menu row divider | Follows `--hy-border-line` |
+
+[^1]: `left-top`: top-left; `left-bottom`: bottom-left; `right-top`: top-right; `right-bottom`: bottom-right; `left-center`: center-left; `right-center`: center-right; `top-center`: top-center; `bottom-center`: bottom-center;
 
 <demo-model url="pages-design/popover/popover"></demo-model>
-
-[^1]: `left-top`: top-left; `left-bottom`: bottom-left; `right-top`: top-right; `right-bottom`: bottom-right; `left-center`: middle-left; `right-center`: middle-right; `top-center`: top-center; `bottom-center`: bottom-center;

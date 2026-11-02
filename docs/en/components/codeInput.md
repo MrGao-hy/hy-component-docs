@@ -1,8 +1,8 @@
 # CodeInput Verification Code Input Component
 
-> This component is generally used in scenarios for verifying users' SMS verification codes, and can also be used in combination with Huayue's keyboard component
+> This component is generally used in scenarios where the user's SMS verification code needs to be verified, and it can also be used in combination with Hy's keyboard component
 
-## :pushpin: Platform Difference Notes
+## :pushpin: Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
 | -------- | --- | ------------------- | ------------------- |
@@ -12,10 +12,10 @@
 
 ::: warning Notes
 
-- When `disabledKeyboard` is set to `true`, tapping the input box will not bring up the system keyboard, which is suitable for use with a custom keyboard
+- When `disabledKeyboard` is set to `true`, tapping the input box will not bring up the system keyboard, making it suitable for use with a custom keyboard
 - When the `dot` parameter is set to `true`, the input content will be displayed as dots, but event callbacks will return the real value
 - `mode` supports two modes: `box` (box mode) and `line` (bottom line mode)
-- The `disabledDot` parameter controls whether inputting a decimal point is disabled; the default is `true` (input disabled)
+- The `disabledDot` parameter controls whether inputting the decimal point is prohibited; the default is `true` (input prohibited)
 
 :::
 
@@ -47,7 +47,7 @@
 </script>
 ```
 
-### Cell Spacing
+### Box Spacing
 
 ```html
 <template>
@@ -131,7 +131,7 @@
 </script>
 ```
 
-### No Border
+### Borderless
 
 ```html
 <template>
@@ -147,7 +147,7 @@
 
 ### Working with a Custom Keyboard
 
-When you need to use a custom keyboard, set `disabledKeyboard` to `true` to prevent the system keyboard from conflicting with the custom keyboard. The custom keyboard opens automatically when the input box is tapped and gains focus.
+When you need to use a custom keyboard, set `disabledKeyboard` to `true` to prevent conflicts between the system keyboard and the custom keyboard. The custom keyboard opens automatically when the input box is tapped and gains focus.
 
 ```html
 <template>
@@ -188,7 +188,7 @@ When you need to use a custom keyboard, set `disabledKeyboard` to `true` to prev
 </script>
 ```
 
-### Listening to Input Events
+### Listen to Input Events
 
 ```html
 <template>
@@ -201,7 +201,7 @@ When you need to use a custom keyboard, set `disabledKeyboard` to `true` to prev
     const value = ref('');
 
     const handleChange = (value) => {
-        console.log('Input content changed:', value);
+        console.log('Input changed:', value);
     };
 
     const handleFinish = (value) => {
@@ -210,7 +210,7 @@ When you need to use a custom keyboard, set `disabledKeyboard` to `true` to prev
 </script>
 ```
 
-### Listening to Focus Events
+### Listen to Focus Events
 
 ```html
 <template>
@@ -237,34 +237,48 @@ When you need to use a custom keyboard, set `disabledKeyboard` to `true` to prev
 
 ### CodeInput Props
 
-| Parameter        | Description                                                            | Type               | Default |
-| ---------------- | ---------------------------------------------------------------------- | ------------------ | ------- |
-| v-model          | Preset value                                                           | `string`\|`number` | -       |
-| adjustPosition   | Whether to automatically push the page up when the keyboard pops up    | `boolean`          | true    |
-| maxlength        | Number of input characters                                             | `number`           | 6       |
-| border           | Input box without border                                               | `boolean`          | true    |
-| dot              | Whether to fill with dots                                              | `boolean`          | true    |
-| mode             | Mode selection, see "Basic Usage" above for details                    | `box`\|`line`      | box     |
-| hairline         | Whether to use a hairline border                                       | `boolean`          | false   |
-| space            | Distance between characters                                            | `number`           | 10      |
-| focus            | Whether to automatically gain focus                                    | `boolean`          | false   |
-| bold             | Whether the font and input line are bold                               | `boolean`          | false   |
-| color            | Font color                                                             | `string`           | -       |
-| fontSize         | Font size, unit rpx                                                    | `string`\|`number` | 18      |
-| size             | Size of the input box, width equals height, numeric value defaults to px | `string`\|`number` | 35      |
-| disabledKeyboard | Disable bringing up the system keyboard when tapping the input box     | `boolean`          | false   |
-| borderColor      | Border and line color                                                  | `string`           | -       |
-| disabledDot      | Whether to disable inputting the "." symbol                            | `boolean`          | true    |
-| customStyle      | Custom external styles to be applied                                   | `CSSProperties`    | -       |
-| customClass      | Custom external class name                                             | `string`           | -       |
+| Parameter         | Description                                                        | Type               | Default |
+| ----------------- | ------------------------------------------------------------------ | ------------------ | ------- |
+| v-model           | Preset value                                                       | `string`\|`number` | -       |
+| adjustPosition    | Whether the page is automatically pushed up when the keyboard pops up | `boolean`          | true    |
+| maxlength         | Number of characters to input                                      | `number`           | 6       |
+| border            | Borderless input box                                               | `boolean`          | true    |
+| dot               | Whether to fill with dots                                          | `boolean`          | true    |
+| mode              | Mode selection, see "Basic Usage" above for details                | `box`\|`line`      | box     |
+| hairline          | Whether to use a hairline border                                   | `boolean`          | false   |
+| space             | Distance between characters                                        | `number`           | 10      |
+| focus             | Whether to automatically gain focus                                | `boolean`          | false   |
+| bold              | Whether the font and input line are bold                           | `boolean`          | false   |
+| color             | Font color                                                         | `string`           | -       |
+| fontSize          | Font size, unit rpx                                                | `string`\|`number` | 18      |
+| size              | Size of the input box, width equals height, numeric values default to px | `string`\|`number` | 35      |
+| disabledKeyboard  | Disable bringing up the system keyboard when tapping the input box | `boolean`          | false   |
+| borderColor       | Border and line color                                              | `string`           | -       |
+| disabledDot       | Whether to prohibit inputting the "." symbol                       | `boolean`          | true    |
+| customStyle       | Custom external styles to apply                                    | `CSSProperties`    | -       |
+| customClass       | Custom external class name                                         | `string`           | -       |
 
 ### Events
 
-| Event Name | Description                                                                        | Callback Parameters           |
-| ---------- | ---------------------------------------------------------------------------------- | ----------------------------- |
-| change     | Triggered when the input content changes, see above for details                    | value: current input value    |
-| finish     | Triggered when the number of input characters reaches maxlength, see above         | value: current input value    |
-| focus      | Triggered when the input box gains focus                                           | -                             |
-| blur       | Triggered when the input box loses focus                                           | -                             |
+| Event Name | Description                                                                               | Callback Parameter          |
+| ---------- | ----------------------------------------------------------------------------------------- | --------------------------- |
+| change     | Triggered when the input content changes, see above for details                           | value: the current input value |
+| finish     | Triggered when the number of input characters reaches the maxlength value, see above for details | value: the current input value |
+| focus      | Triggered when the input box gains focus                                                  | -                           |
+| blur       | Triggered when the input box loses focus                                                  | -                           |
+
+### CSS Variables
+
+| Variable Name | Description | Default Value |
+| --- | --- | --- |
+| `--hy-code-input-font-size` | Font size | `15px` |
+| `--hy-code-input-dot-size` | Password dot size | `7px` |
+| `--hy-code-input-line-width` | Underline width | `40px` |
+| `--hy-code-input-text-color` | Character color | Follows `--hy-icon-color` |
+| `--hy-code-input-dot-radius` | Password dot border radius | Follows `--hy-radius-semicircle` (100px) |
+| `--hy-code-input-no-radius` | Borderless mode border radius | Follows `--hy-radius-sm` (8rpx) |
+| `--hy-code-input-cursor-color` | Cursor color | Follows `--hy-text-color` |
+| `--hy-code-input-line-radius` | Underline border radius | Follows `--hy-radius-semicircle` (100px) |
+| `--hy-code-input-border-color` | Default state border/line color | Follows `--hy-border-color--2` |
 
 <demo-model url="pages-design/codeInput/codeInput"></demo-model>

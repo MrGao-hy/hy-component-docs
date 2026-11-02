@@ -1,6 +1,6 @@
 # Grid Layout Component
 
-> The grid component is generally used for scenarios where multiple items of the same type are displayed at the same time. You can add a badge component or icons to grid items, and it can also be extended into a horizontally sliding carousel. Platform differences
+> The grid component is generally used in scenarios where multiple items of the same type are displayed simultaneously. You can add badge components or icons to grid items, and it can also be extended into a horizontally swipeable carousel. Platform Differences
 
 ## :pushpin: Platform Differences
 
@@ -11,7 +11,7 @@
 ## :japanese_castle: Basic Usage Examples
 
 ```html
-<!-- 全局使用 -->
+<!-- Global usage -->
 <hy-gird :list="list"></hy-gird>
 ```
 
@@ -19,34 +19,34 @@
 import { IconConfig } from '@hy-app/ui';
 import { ref } from 'vue';
 
-// 创建响应式数据
+// Create reactive data
 const list = ref([
     {
         icon: IconConfig.CRY_FILL,
-        name: '小狗',
+        name: 'Puppy',
     },
     {
         icon: 'https://img1.baidu.com/it/u=563605416,3386931726&fm=253',
-        name: '小猫',
+        name: 'Kitten',
     },
     {
         icon: 'star',
-        name: '小鸡',
+        name: 'Chick',
     },
 ]);
 ```
 
-### Set Spacing
+### Setting the Gap
 
 ```html
-<!-- 全局使用 -->
+<!-- Global usage -->
 <hy-gird :list="list" gap="10px"></hy-gird>
 ```
 
-### Set the Number of Grid Columns
+### Setting the Number of Grid Columns
 
 ```html
-<!-- 全局使用 -->
+<!-- Global usage -->
 <hy-gird :list="list" col="5"></hy-gird>
 ```
 
@@ -66,19 +66,19 @@ const list = ref([
     import { IconConfig } from '@hy-app/ui';
     import { ref } from 'vue';
 
-    // 创建响应式数据
+    // Create reactive data
     const list = ref([
         {
             url: IconConfig.CRY_FILL,
-            title: '小狗',
+            title: 'Puppy',
         },
         {
             url: 'https://img1.baidu.com/it/u=563605416,3386931726&fm=253',
-            title: '小猫',
+            title: 'Kitten',
         },
         {
             url: 'star',
-            title: '小鸡',
+            title: 'Chick',
         },
     ]);
 </script>
@@ -90,67 +90,74 @@ const list = ref([
 
 | Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
-| list | Data set | `GridItemVo[]` | - |
+| list | Dataset | `GridItemVo[]` | - |
 | col | Number of grid columns | `number` | 4 |
-| size | Icon size; numeric values use px as the default unit | `number`\|`string` | 4 |
+| size | Icon size, defaults to px for numeric values | `number`\|`string` | 4 |
 | customKeys | Custom keys | `CustomKeysVo` | \{name: 'name',icon: 'icon'\} |
-| border | Whether to show the grid border | `boolean` | false |
-| itemHeight | Height of a single grid cell; numeric values use px as the default unit | `string` \| `number` | 100px |
-| align | Grid alignment; determines whether items align left, center, or right when there are few items | `center`\|`left`\|`right` | left |
-| gap | Gap; numeric values use px as the default unit | `string` \| `number` | 0 |
+| border | Whether to show grid borders | `boolean` | false |
+| itemHeight | Height of a single grid cell, defaults to px for numeric values | `string` \| `number` | 100px |
+| align | Grid alignment; determines left, center, or right alignment when there are few items | `center`\|`left`\|`right` | left |
+| gap | Spacing, defaults to px for numeric values | `string` \| `number` | 0 |
 | bgColor | Background color of the grid | `string` | transparent |
-| iconProps | Icon props API configuration; see [Icon API](./icon#api) for details | `HyIconProps` | - |
-| customStyle | Custom external styles to be applied | `CSSProperties` | - |
+| iconProps | Icon property API configuration, see [Icon API](./icon#api) for details | `HyIconProps` | - |
+| customStyle | Custom external styles to be used | `CSSProperties` | - |
 | customClass | Custom external class name | `string` | - |
 
 ### Events
 
 | Event Name | Description         | Callback Parameters                     |
 | ------ | ------------ | ---------------------------- |
-| click  | Triggered when a grid item is clicked | (item: GridItemVo \| string) |
+| click  | Triggered when a grid cell is clicked | (item: GridItemVo \| string) |
 
 ### Slots
 
-| Slot Name  | Description     | Accepted Values                       |
+| Slot Name  | Description     | Received Values                       |
 | ------- | -------- | ---------------------------- |
 | default | Default slot | record: GridItemVo \| string |
 
 ### Typings
 
-::: details Type definitions
+::: details Type Description
 
 ```ts
 type GridItemVo = {
     /**
-     * 图标名称或图片地址
+     * Icon name or image URL
      * */
     icon?: string;
     /**
-     * 名称
+     * Name
      * */
     name?: string;
     /**
-     * 图标属性api配置
+     * Icon property API configuration
      * */
     iconProps?: Partial<HyIconProps>;
     /**
-     * 自定义内容键值对
+     * Custom content key-value pairs
      * */
     [key: string]: any;
 };
 
 type CustomKeysVo = {
     /**
-     * 自定义标题键名
+     * Custom name key
      * */
     name: string;
     /**
-     * 自定义icon键名
+     * Custom icon key
      * */
     icon: string;
 };
 ```
 
 :::
+
+### CSS Variables
+
+| Variable | Description | Default |
+| --- | --- | --- |
+| `--hy-grid-hover-opacity` | Opacity of a grid cell when pressed | `0.7` |
+| `--hy-grid-border` | Grid cell border (right and bottom borders are synchronized) | Follows `--hy-border-line` |
 
 <demo-model url="pages-design/grid/grid"></demo-model>

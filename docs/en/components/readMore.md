@@ -1,14 +1,14 @@
-# ReadMore Expand-to-Read-More Component
+# ReadMore Expand to Read More Component
 
-> This component is generally used in scenarios where the content is long: part of it is initially collapsed, and clicking expands the full content.
+> This component is generally used in scenarios where the content is long, part of it is initially collapsed, and clicking expands the full content.
 
-## :pushpin: Platform Compatibility
+## :pushpin:Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
 | -------- | --- | ---------- | ------------ |
 | ✔        | ✔   | ✔          | ✔            |
 
-## :japanese_castle: Basic Usage Example
+## :japanese_castle:Basic Usage
 
 ```html
 <!-- Global usage -->
@@ -20,14 +20,14 @@
 ```ts
 import { ref } from 'vue';
 
-const content = ref(`A mountain need not be high; with an immortal dwelling, it gains renown. Water need not be deep; with a dragon, it gains spirit. This is a humble room, but my virtue makes it fragrant.
-Moss stains the steps green; grass colors seep blue through the curtain. Learned scholars chat and laugh here; among visitors there are no simpletons. One may softly play the unadorned zither and read gilded scriptures.
-No pipes and strings clamor in the ears, no official documents weary the body. Like Zhuge Liang's hut in Nanyang, like Yang Ziyun's pavilion in western Shu. As Confucius said: "What humbleness is there?"`);
+const content = ref(`山不在高，有仙则名。水不在深，有龙则灵。斯是陋室，惟吾德馨。
+苔痕上阶绿，草色入帘青。谈笑有鸿儒，往来无白丁。可以调素琴，阅金经。
+无丝竹之乱耳，无案牍之劳形。南阳诸葛庐，西蜀子云亭。孔子云：何陋之有？`);
 ```
 
-### Configuring the Expansion Height
+### Configuring Expansion Height
 
-- By configuring the `showHeight` height (in px), the button labeled "Expand to read full text" will only appear if the height of the content passed in via the slot exceeds this value
+- By configuring the `showHeight` height (in px), the button with the text "Expand to read full text" will only appear when the height of the content passed into the slot exceeds this value.
 
 ```html
 <hy-read-more showHeight="600">
@@ -39,7 +39,7 @@ No pipes and strings clamor in the ears, no official documents weary the body. L
 
 ::: warning Note
 
-The upper part of this component has a white fading shadow, used to blend the click area with the text content. If you don't want this shadow, you can adjust the shadowStyle object, whose internals are as follows:
+The upper part of this component has a white faded shadow, used to blend the click area with the text content. If you don't want this shadow, you can adjust the shadowStyle object, whose internal structure is as follows:
 
 ```javascript
 {
@@ -57,7 +57,7 @@ The upper part of this component has a white fading shadow, used to blend the cl
 
 :::
 
-- If you don't want the shadow, simply set `backgroundImage` to `none`; adjust `paddingTop` and `marginTop` to suitable values as needed.
+- If you don't want the shadow, simply set `backgroundImage` to `none`. As for `paddingTop` and `marginTop`, just adjust them to appropriate values yourself.
 
 ```html
 <template>
@@ -81,7 +81,7 @@ The upper part of this component has a white fading shadow, used to blend the cl
 
 ::: warning Note
 
-Sometimes the content to be displayed is fetched from the backend. When the component's internal mounted lifecycle initializes, the request has not yet returned, which can cause the content height to be inaccurate during initialization. After the request completes and rendering finishes (i.e., this.$nextTick), you can call the component's init method via ref to re-initialize it.
+Sometimes the content to be displayed is fetched from the backend. When the component initializes in its internal mounted lifecycle hook, the request has not yet returned, which can cause an inaccuracy in the content height during initialization. After the request completes and rendering is finished (i.e., in this.$nextTick), you can call the component's init method via ref to re-initialize it.
 
 :::
 
@@ -98,16 +98,16 @@ Sometimes the content to be displayed is fetched from the backend. When the comp
     // Create reactive data
     const content = ref('');
 
-    // Create a component reference
+    // Create component reference
     const uReadMoreRef = ref(null);
 
     // Simulate a backend request
     async function fetchData() {
         return new Promise((resolve) => {
             setTimeout(() => {
-                resolve(`A mountain need not be high; with an immortal dwelling, it gains renown. Water need not be deep; with a dragon, it gains spirit. This is a humble room, but my virtue makes it fragrant.
-      Moss stains the steps green; grass colors seep blue through the curtain. Learned scholars chat and laugh here; among visitors there are no simpletons. One may softly play the unadorned zither and read gilded scriptures.
-      No pipes and strings clamor in the ears, no official documents weary the body. Like Zhuge Liang's hut in Nanyang, like Yang Ziyun's pavilion in western Shu. As Confucius said: "What humbleness is there?"`);
+                resolve(`山不在高，有仙则名。水不在深，有龙则灵。斯是陋室，惟吾德馨。
+      苔痕上阶绿，草色入帘青。谈笑有鸿儒，往来无白丁。可以调素琴，阅金经。
+      无丝竹之乱耳，无案牍之劳形。南阳诸葛庐，西蜀子云亭。孔子云：何陋之有？`);
             }, 2000);
         });
     }
@@ -120,7 +120,7 @@ Sometimes the content to be displayed is fetched from the backend. When the comp
         // Wait for the DOM to update
         await nextTick();
 
-        // Call the child component's init method
+        // Call the init method of the child component
         if (uReadMoreRef.value) {
             uReadMoreRef.value.init();
         }
@@ -132,36 +132,44 @@ Sometimes the content to be displayed is fetched from the backend. When the comp
 
 ### readMore Props
 
-| Parameter | Description | Type | Default |
+| Parameter | Description | Type | Default Value |
 | --- | --- | --- | --- |
 | showHeight | The "expand full text" button is only displayed when the content exceeds this height; default unit is px | `string`\|`number` | 400 |
-| toggle | Whether to show a collapse button after expanding | `boolean` | false |
+| toggle | Whether to show the collapse button after expanding | `boolean` | false |
 | closeText | Prompt text when collapsed | `string` | Expand to read full text |
 | openText | Prompt text when expanded | `string` | Collapse |
 | color | Color of the prompt text | `string` | - |
-| fontSize | Size of the prompt text; default unit is px | `string`\|`number` | 14 |
-| textIndent | Number of characters for the first-line indent of paragraphs | `string` | 2em |
-| name | Used as the callback parameter returned in the open and close events | `string` | - |
+| fontSize | Font size of the prompt text; default unit is px | `string`\|`number` | 14 |
+| textIndent | Number of characters to indent the first line of a paragraph | `string` | 2em |
+| name | Returned as a callback parameter in the open and close events | `string` | - |
 | shadowStyle | Custom handling of the shadow, in object form | `CSSProperties` | - |
-| customStyle | External styles to be applied | `CSSProperties` | - |
+| customStyle | Defines external styles to be applied | `CSSProperties` | - |
 
 ### Events
 
 | Event Name | Description | Callback Parameters |
 | ------ | ---------------- | ------------------------------ |
-| open | Triggered when the content is expanded | name - the value of the name parameter passed in props |
-| close | Triggered when the content is collapsed | name - the value of the name parameter passed in props |
+| open   | Triggered when the content is expanded | name - the value of the name parameter passed in via props |
+| close  | Triggered when the content is collapsed | name - the value of the name parameter passed in via props |
 
 ### Slots
 
-| Slot Name | Description | Accepted Values |
+| Slot Name  | Description     | Accepted Value |
 | ------- | -------- | ------ |
-| default | Default slot | - |
+| default | Default slot | -      |
 
 ### Methods
 
-| Name | Description |
+| Name | Description                           |
 | ------ | ------------------------------ |
-| init | Re-initializes the component's internal height calculation process |
+| init   | Re-initializes the component's internal height calculation process |
+
+### CSS Variables
+
+| Variable Name | Description | Default Value |
+| --- | --- | --- |
+| `--hy-read-more-font-size` | Font size | `15px` |
+| `--hy-read-more-mask-height` | Gradient mask height | `100px` |
+| `--hy-read-more-line-height` | Line height | `30px` |
 
 <demo-model url="pages-design/readMore/readMore"></demo-model>

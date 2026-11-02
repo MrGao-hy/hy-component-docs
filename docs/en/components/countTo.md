@@ -5,19 +5,19 @@
 ## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ---------- | ------------ |
-| ✔        | ✔   | ✔          | ✔            |
+| -------- | --- | ------------------- | ------------------- |
+| ✔        | ✔   | ✔                   | ✔                   |
 
-## :japanese_castle: Basic Usage Examples
+## :japanese_castle: Basic Usage
 
 ```html
-<!-- Global usage -->
+<!-- 全局使用 -->
 <hy-count-to time="3600 * 30 * 1000"></hy-count-to>
 ```
 
-### Display Decimal Points
+### Displaying Decimal Points
 
-- Set the number of decimal places by configuring `decimals`
+- Set the number of decimal places via `decimals`
 
 ```html
 <template>
@@ -25,9 +25,9 @@
 </template>
 ```
 
-### Thousand Separator
+### Thousands Separator
 
-- Set the thousand separator by configuring `separator`
+- Set the thousands separator via `separator`
 
 ```html
 <template>
@@ -35,9 +35,9 @@
 </template>
 ```
 
-### Set Scrolling Duration
+### Setting Scroll Duration
 
-- Set the scrolling duration by configuring `duration`
+- Set the scrolling duration via `duration`
 
 ```html
 <template>
@@ -45,11 +45,11 @@
 </template>
 ```
 
-### Set Font
+### Setting the Font
 
-- Make the font bold by setting `bold`
-- Set the font size by configuring `fontSize`
-- Set the font color by configuring `color`
+- Make the font bold via `bold`
+- Set the font size via `fontSize`
+- Set the font color via `color`
 
 ```html
 <template>
@@ -64,9 +64,9 @@
 ```html [vue]
 <hy-count-to ref="countToRef" :endVal="1542222" :duration="10000" :autoplay="false"></hy-count-to>
 <view class="hy-flex">
-    <hy-button text="Start" type="success" @click="start"></hy-button>
-    <hy-button text="Pause" type="error" @click="pause"></hy-button>
-    <hy-button text="Resume" type="info" @click="resume"></hy-button>
+    <hy-button text="开始" type="success" @click="start"></hy-button>
+    <hy-button text="暂停" type="error" @click="pause"></hy-button>
+    <hy-button text="继续" type="info" @click="resume"></hy-button>
 </view>
 ```
 
@@ -108,34 +108,40 @@ const resume = () => {
 
 ### CountTo
 
-| Parameter | Description                                              | Type               | Default |
-| --------- | -------------------------------------------------------- | ------------------ | ------- |
-| startVal  | Start value                                              | `number`           | 0       |
-| endVal    | End value                                                | `number`           | 0       |
-| duration  | Time required for the scrolling process, in ms           | `number`           | 2000    |
-| autoplay  | Whether to start scrolling automatically                 | `boolean`          | true    |
-| decimals  | Number of decimal places to display, see above           | `number`           | 0       |
-| useEasing | Whether to ease at the end when scrolling finishes, see above | `boolean`      | true    |
-| decimal   | Decimal separator                                        | `string`           | ,       |
-| color     | Font color                                               | `string`           | #606266 |
-| fontSize  | Font size, default unit is px for numeric values         | `string`\|`number` | 22      |
-| bold      | Whether the font is bold                                 | `boolean`          | false   |
-| separator | Thousand separator, see above                            | `string`           | -       |
+| Parameter | Description                                                | Type               | Default |
+| --------- | ---------------------------------------------------------- | ------------------ | ------- |
+| startVal  | Start value                                                | `number`           | 0       |
+| endVal    | End value                                                  | `number`           | 0       |
+| duration  | Time required for the scrolling process, in ms             | `number`           | 2000    |
+| autoplay  | Whether to start scrolling automatically                   | `boolean`          | true    |
+| decimals  | Number of decimal places to display, see above             | `number`           | 0       |
+| useEasing | Whether to ease the ending when scrolling finishes, see above | `boolean`        | true    |
+| decimal   | Decimal separator                                          | `string`           | ,       |
+| color     | Font color                                                 | `string`           | #606266 |
+| fontSize  | Font size, numeric values default to px                    | `string`\|`number` | 22      |
+| bold      | Whether the font is bold                                   | `boolean`          | false   |
+| separator | Thousands separator, see above                             | `string`           | -       |
 
 ### Events
 
-| Event Name | Description                                    | Callback Parameters |
-| ---------- | --------------------------------------------- | ------------------- |
-| end        | Triggered when the value scrolls to the target value | -        |
+| Event Name | Description                                  | Callback Parameters |
+| ---------- | -------------------------------------------- | ------------------- |
+| end        | Triggered when the value scrolls to the target value | -            |
 
 ### Methods
 
-| Event Name | Description                                                                |
-| ---------- | --------------------------------------------------------------------------- |
-| start      | Start scrolling                                                             |
-| pause      | Pause scrolling                                                             |
-| resume     | Resume scrolling from the paused value                                      |
-| reStart    | While paused, restart scrolling from the beginning; or while scrolling, pause |
+| Name    | Description                                                            |
+| ------- | ---------------------------------------------------------------------- |
+| start   | Start scrolling                                                        |
+| pause   | Pause scrolling                                                        |
+| resume  | Resume scrolling from the paused value                                 |
+| reStart | When paused, restart scrolling; or when scrolling, pause               |
+
+### CSS Variables
+
+| Variable              | Description         | Default                     |
+| --------------------- | ------------------- | --------------------------- |
+| `--hy-count-to-color` | Number text color   | Follows `--hy-text-color`   |
 
 [^1] `DD`-day, `HH`-hour, `mm`-minute, `ss`-second, `SSS`-millisecond
 

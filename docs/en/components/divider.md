@@ -1,18 +1,18 @@
 # Divider Component
 
-> A dividing line used to separate content, commonly used for the "no more" hint at the bottom of a page
+> A divider line that separates content, typically used for the "no more" hint at the bottom of a page
 
-## :pushpin:Platform Compatibility
+## :pushpin: Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ---------- | ------------ |
-| ✔        | ✔   | ✔          | ✔            |
+| -------- | --- | ------------------- | ------------------- |
+| ✔        | ✔   | ✔                   | ✔                   |
 
-## :japanese_castle:Basic Usage
+## :japanese_castle: Basic Usage
 
 ```html
-<!-- 全局使用 -->
-<hy-divider text="分割"></hy-divider>
+<!-- Global usage -->
+<hy-divider text="Divider"></hy-divider>
 ```
 
 ### Setting a Dashed Line
@@ -21,7 +21,7 @@
 
 ```html
 <template>
-    <hy-divider text="月落" dashed></hy-divider>
+    <hy-divider text="Moonset" dashed></hy-divider>
 </template>
 ```
 
@@ -31,14 +31,14 @@
 
 ```html
 <template>
-    <!--细线-->
-    <hy-divider text="月落" hairline></hy-divider>
-    <!--粗线-->
-    <hy-divider text="月落" :hairline="false"></hy-divider>
+    <!-- Thin line -->
+    <hy-divider text="Moonset" hairline></hy-divider>
+    <!-- Thick line -->
+    <hy-divider text="Moonset" :hairline="false"></hy-divider>
 </template>
 ```
 
-### Using a Dot Instead of Text
+### Replacing Text with a Dot
 
 - Use `dot` to replace the text with a dot
 
@@ -48,17 +48,17 @@
 </template>
 ```
 
-### Setting Text Alignment
+### Aligning Text Left or Right
 
-- Use `textPosition` to specify whether the text is aligned left or right
-    - `left`: text aligned to the left
-    - `center`: text centered (default)
-    - `right`: text aligned to the right
+- Use `textPosition` to align the text to the left or right
+    - `left`: Text aligned left
+    - `center`: Text centered (default)
+    - `right`: Text aligned right
 
 ```html
 <template>
-    <hy-divider text="月落" textPosition="left"></hy-divider>
-    <hy-divider text="月落" textPosition="right"></hy-divider>
+    <hy-divider text="Moonset" textPosition="left"></hy-divider>
+    <hy-divider text="Moonset" textPosition="right"></hy-divider>
 </template>
 ```
 
@@ -68,7 +68,7 @@
 
 ```html
 <template>
-    <hy-divider text="月落" textColor="#2979ff" lineColor="#ff0000"></hy-divider>
+    <hy-divider text="Moonset" textColor="#2979ff" lineColor="#ff0000"></hy-divider>
 </template>
 ```
 
@@ -81,24 +81,32 @@
 | text | Text content | `string`\|`loadMore`\| `loading`\|`noMore` | - |
 | dashed | Whether to use a dashed line | `boolean` | false |
 | hairline | Whether to use a hairline (thin line) | `boolean` | true |
-| dot | Whether to use a dot instead of text; takes precedence over the text field | `boolean` | false |
+| dot | Whether to replace the text with a dot; takes precedence over the text field | `boolean` | false |
 | textPosition | Position of the text content | `center`\|`left`\|`right` | center |
 | textSize | Text size; numeric values default to px | `string` \| `number` | 14 |
 | textColor | Text color | `string` | #909399 |
 | lineColor | Line color | `string` | #dcdfe6 |
 | loadingIcon | Icon for the loading state | `string` | LOADING |
-| loadMoreText | Prompt text shown before loading | `string` | Load more |
-| loadingText | Prompt text shown while loading | `string` | Loading... |
-| noMoreText | Prompt text shown when there is no more content | `string` | No more data |
+| loadMoreText | Prompt text before loading | `string` | Load more |
+| loadingText | Prompt text while loading | `string` | Loading... |
+| noMoreText | Prompt text when there is no more content | `string` | No more data |
 | marginTop | Distance from the previous element; numeric values default to px | `string` \| `number` | 0 |
 | marginBottom | Distance from the next element; numeric values default to px | `string` \| `number` | 0 |
-| customStyle | Custom external styles to be applied | `CSSProperties` | - |
+| customStyle | Custom external styles to apply | `CSSProperties` | - |
 | customClass | Custom external class name | `string` | - |
 
 ### Events
 
 | Event Name | Description | Callback Parameters |
-| ------ | -------- | -------- |
-| click  | Click event | -        |
+| ---------- | ----------- | ------------------- |
+| click      | Click event | -                   |
+
+### CSS Variables
+
+| Variable | Description | Default |
+| --- | --- | --- |
+| `--hy-divider-min-height` | Minimum height | `35px` |
+| `--hy-divider-text-color` | Text/dot color | Follows `--hy-text-color--3` |
+| `--hy-divider-dot-font-size` | Dot font size | Follows `--hy-font-size-sm` (24rpx) |
 
 <demo-model url="pages-design/divider/divider"></demo-model>

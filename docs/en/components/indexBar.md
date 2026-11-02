@@ -1,6 +1,6 @@
 # Index-Bar Component
 
-> An index bar component for quickly locating list content, supporting both tap and slide interactions, compatible with Mini Program and App platforms.
+> An index bar component used to quickly locate list content. It supports both tap and slide interactions, and is compatible with mini-program and App platforms.
 
 ## :pushpin: Platform Compatibility
 
@@ -100,7 +100,7 @@
 <hy-index-bar v-model="activeIndex" :index-list="indexList" :show-toast="false" />
 ```
 
-### Custom Styling
+### Custom Style
 
 ```html
 <hy-index-bar
@@ -276,7 +276,7 @@ const handleIndexClick = (index: string, event: Event) => {
     scrollToSection(index);
 };
 
-// Handle index scroll event
+// Handle index slide event
 const handleIndexScroll = (index: string) => {
     scrollToSection(index);
 };
@@ -325,27 +325,38 @@ const scrollToSection = async (i: string) => {
 
 ### IndexBar Props
 
-| Prop | Description | Type | Default |
+| Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
 | v-model | Currently active index value | `string` | - |
-| indexList | Index list data; supports a string array or an object array | `string`\|`number`\|`IIndexItem[]` | - |
+| indexList | Index list data, supports string arrays or object arrays | `string`\|`number`\|`IIndexItem[]` | - |
 | position | Index bar position, optional values: 'left', 'right' | `left`\|`right` | right |
 | showToast | Whether to show the index letter toast | `boolean` | true |
 | indexColor | Index item color | `string` | - |
-| activeIndexColor | Color of the index item in active state | `string` | - |
+| activeIndexColor | Color of the active index item | `string` | - |
 | indexBgColor | Index item background color | `string` | transparent |
-| activeIndexBgColor | Background color of the index item in active state | `string` | - |
-| indexSize | Index item size; numbers default to px | `number`\|`string` | 12 |
-| height | Index bar height; numbers default to px | `number`\|`string` | 100% |
-| width | Index bar width; numbers default to px | number/string | 20 |
+| activeIndexBgColor | Background color of the active index item | `string` | - |
+| indexSize | Index item size, numbers use px by default | `number`\|`string` | 12 |
+| height | Index bar height, numbers use px by default | `number`\|`string` | 100% |
+| width | Index bar width, numbers use px by default | number/string | 20 |
 | customStyle | Custom external styles to apply | `CSSProperties` | - |
 | customClass | Custom external class name | `string` | - |
 
 ### Events
 
-| Event | Description       | Callback Parameters                                          |
+| Event | Description | Callback Parameters |
 | ------ | ---------------- | ----------------------------------------------------------- |
 | click  | Triggered when an index item is clicked | index: string - the clicked index value<br>event: Event - the event object |
-| scroll | Triggered when sliding on the index bar | index: string - the index value currently slid to               |
+| scroll | Triggered when sliding the index bar | index: string - the index value currently slid to |
+
+### CSS Variables
+
+| Variable | Description | Default |
+| --- | --- | --- |
+| `--hy-index-bar-z-index` | Z-index level | `999` |
+| `--hy-index-bar-toast-size` | Toast bubble size | `50px` |
+| `--hy-index-bar-index-color` | Index text color | Follows `--hy-text-color--3` |
+| `--hy-index-bar-index-radius` | Index item border radius | Follows `--hy-radius-sm` (8rpx) |
+| `--hy-index-bar-toast-color` | Toast bubble text color | `#ffffff` |
+| `--hy-index-bar-toast-font-size` | Toast bubble font size | Follows `--hy-font-size-lg` (36rpx) |
 
 <demo-model url="pages-design/indexBar/indexBar"></demo-model>

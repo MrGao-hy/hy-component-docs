@@ -1,18 +1,18 @@
 # Navbar Custom Navigation Bar Component
 
-> This component is generally used in special cases where a custom navigation bar is required. It is generally recommended to use the navigation bar that comes with uni-app.
+> This component is generally used in special cases where a custom navigation bar is needed. In general, it is recommended to use the navigation bar that comes with uni-app.
 
-## :pushpin: Platform Differences
+## :pushpin: Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ---------- | ------------ |
-| ✔        | ✔   | ✔          | ✔            |
+| -------- | --- | ------------------- | ------------------- |
+| ✔        | ✔   | ✔                   | ✔                   |
 
 ## :japanese_castle: Basic Usage Example
 
 ```html
-<!-- 全局使用 -->
-<hy-navbar title="个人中心"></hy-navbar>
+<!-- Global usage -->
+<hy-navbar title="Personal Center"></hy-navbar>
 ```
 
 ## Preventing Collapse
@@ -21,7 +21,7 @@
 
 ```html
 <template>
-    <hy-navbar title="个人中心" placeholder></hy-navbar>
+    <hy-navbar title="Personal Center" placeholder></hy-navbar>
 </template>
 ```
 
@@ -29,17 +29,17 @@
 
 ```html
 <template>
-    <hy-navbar title="个人中心" bgColor="#001f3f"></hy-navbar>
+    <hy-navbar title="Personal Center" bgColor="#001f3f"></hy-navbar>
 </template>
 ```
 
 ## Fixed at Top
 
-- By configuring `field`, the navigation bar is fixed at the top
+- By configuring `fixed`, the navigation bar is fixed at the top
 
 ```html
 <template>
-    <hy-navbar title="个人中心" fixed></hy-navbar>
+    <hy-navbar title="Personal Center" fixed></hy-navbar>
 </template>
 ```
 
@@ -54,10 +54,10 @@
 ```html
 <template>
     <hy-navbar
-        title="文档"
+        title="Docs"
         :leftIcon="IconConfig.LEFT"
-        leftText="返回"
-        rightText="地址"
+        leftText="Back"
+        rightText="Address"
         :rightIcon="IconConfig.MAP"
     ></hy-navbar>
 </template>
@@ -71,7 +71,7 @@
 
 ```html
 <template>
-    <hy-navbar title="自定义插槽" :fixed="false" bg-color="#F8F8F8">
+    <hy-navbar title="Custom Slot" :fixed="false" bg-color="#F8F8F8">
         <template #left>
             <view class="u-nav-slot">
                 <hy-icon :name="IconConfig.LEFT" size="16"></hy-icon>
@@ -98,6 +98,8 @@
 
 ## API
 
+### Props
+
 | Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
 | safeAreaInsetTop | Whether to enable top safe area adaptation | `boolean` | true |
@@ -105,33 +107,44 @@
 | fixed | Whether the navigation bar is fixed at the top | `boolean` | true |
 | border | Whether to display a bottom border at the bottom of the navigation bar | `boolean` | false |
 | leftIcon | Name of the left back icon | `string` | IconConfig.LEFT |
-| leftText | Prompt text on the left | `string` | - |
-| rightText | Prompt text on the right | `string` | - |
+| leftText | Hint text on the left | `string` | - |
+| rightText | Hint text on the right | `string` | - |
 | rightIcon | Name of the right back icon | `string` | - |
 | title | Navigation bar title; if set to an empty string, the title placeholder area will be hidden | `string` | - |
 | bgColor | Navigation bar background setting | `string` | - |
-| titleWidth | Maximum width of the navigation bar title; content that overflows will be hidden with an ellipsis, unit: rpx | `string`\|`number` | 400rpx |
-| height | Navigation bar height (does not include the status bar height, which is automatically added internally); default unit for numeric values: px | `string`\|`number` | 44px |
-| leftIconSize | Size of the left back icon; default unit for numeric values: px | `string`\|`number` | 20 |
+| titleWidth | Maximum width of the navigation bar title; overflowing content is hidden with an ellipsis, unit rpx | `string`\|`number` | 400rpx |
+| height | Navigation bar height (does not include the status bar height, which is added automatically internally), default unit px for numbers | `string`\|`number` | 44px |
+| leftIconSize | Size of the left back icon, default unit px for numbers | `string`\|`number` | 20 |
 | leftIconColor | Color of the left back icon | `string` | - |
-| autoBack | Whether to automatically go back to the previous page when the left area (back icon) is clicked | `boolean` | false |
+| autoBack | Whether to automatically navigate back to the previous page when the left area (back icon) is clicked | `boolean` | false |
 | titleStyle | Style of the title, in object or string form | `CSSProperties` | - |
 | customStyle | Custom external styles to be applied | `CSSProperties` | - |
 | customClass | Custom external class name | `string` | - |
 
-## Events
+### Events
 
-| Event Name  | Description           | Callback Parameters |
-| ---------- | ------------ | -------- |
-| leftClick  | Left area clicked | -        |
-| rightClick | Right area clicked | -        |
+| Event Name  | Description          | Callback Parameters |
+| ----------- | -------------------- | ------------------- |
+| leftClick   | Left area clicked    | -                   |
+| rightClick  | Right area clicked   | -                   |
 
-## Slots
+### Slots
 
-| Slot Name | Description                 | Accepted Values |
-| ------ | ------------------ | ------ |
-| left   | Custom content for the left section | -      |
-| right  | Custom content for the right section | -      |
-| center | Custom content for the center section | -      |
+| Slot Name | Description                        | Accepted Value |
+| --------- | ---------------------------------- | -------------- |
+| left      | Custom left section content        | -              |
+| right     | Custom right section content       | -              |
+| center    | Custom center content              | -              |
+
+### CSS Variables
+
+| Variable | Description | Default |
+| --- | --- | --- |
+| `--hy-navbar-z-index` | Stacking level | `9999` |
+| `--hy-navbar-height` | Height | `44px` |
+| `--hy-navbar-text-font-size` | Font size of left/right text | `15px` |
+| `--hy-navbar-title-font-size` | Font size of the center title | Follows `--hy-font-size-base` (28rpx) |
+| `--hy-navbar-sub-font-size` | Font size of the center subtitle | Follows `--hy-font-size-sm` (24rpx) |
+| `--hy-navbar-sub-color` | Color of the center subtitle | Follows `--hy-text-color--grey` |
 
 <demo-model url="pages-design/navbar/navbar"></demo-model>

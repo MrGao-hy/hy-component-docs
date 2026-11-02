@@ -1,19 +1,19 @@
 # Sticky Component
 
-> `hy-sticky` is a high-performance, cross-platform sticky positioning component that pins elements to the top of the screen as the page scrolls. It leverages the IntersectionObserver API for high-performance monitoring and provides an elegant fallback solution to ensure compatibility across various platforms.
+> `hy-sticky` is a high-performance cross-platform sticky positioning component that enables elements to stay fixed at the top of the screen as the page scrolls. The component uses the IntersectionObserver API for high-performance monitoring and provides an elegant fallback solution to ensure compatibility across various platforms.
 
 ## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | -------------------- | ------------------- |
-| ✔        | ✔   | ✔                    | ✔                   |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
 ## Features
 
 - ✅ Supports custom sticky offset
-- ✅ Works with both regular page scrolling and `scroll-view`
-- ✅ Automatically handles placeholder elements to prevent page jitter
-- ✅ High-performance implementation, prioritizing IntersectionObserver
+- ✅ Supports usage in both normal scrolling and `scroll-view`
+- ✅ Automatically handles placeholder elements to avoid page jitter
+- ✅ High-performance implementation, prioritizes IntersectionObserver
 - ✅ Supports enable/disable control
 - ✅ Supports sticky state change events
 
@@ -60,7 +60,7 @@
 </hy-sticky>
 ```
 
-### Using Inside a scroll-view
+### Usage in scroll-view
 
 ```vue
 <template>
@@ -68,7 +68,7 @@
         <view class="header">Scroll container header</view>
 
         <hy-sticky scroll-selector="my-scroll-view">
-            <view class="sticky-header">Sticky within a scroll-view</view>
+            <view class="sticky-header">Sticky at the top within scroll-view</view>
         </hy-sticky>
 
         <view class="content">Scrolling content...</view>
@@ -81,7 +81,7 @@
 ```vue
 <template>
     <hy-sticky @change="handleChange">
-        <view class="sticky-header">Current state: {{ isSticky ? 'Sticky' : 'Not sticky' }}</view>
+        <view class="sticky-header">Current state: {{ isSticky ? 'Sticky' : 'Not Sticky' }}</view>
     </hy-sticky>
 </template>
 
@@ -101,34 +101,34 @@
 
 ::: tip Notes
 
-1. When dynamic changes in page content cause the sticky element's height to change, call the `refresh` method to recalculate
+1. When dynamic changes in page content cause the sticky element's height to change, please call the `refresh` method to recalculate
 2. When using inside a scroll-view, the `scrollSelector` property must be set correctly
 3. For complex nested scrolling scenarios, more fine-grained control may be required
-4. To use on the H5 platform, make sure the browser supports IntersectionObserver or use a polyfill
+4. To use on the H5 side, make sure the browser supports IntersectionObserver or use a polyfill
 
 :::
 
 #### 1. Not working in a custom scroll container?
 
-Make sure the `scrollSelector` property is set correctly, specifying the class name of the scroll container (without the dot).
+Please make sure the `scrollSelector` property is set correctly, specifying the class name of the scroll container (without the dot).
 
 ```vue
 <scroll-view class="my-scroll-view" scroll-y>
   <hy-sticky scroll-selector="my-scroll-view">
-    <!-- Content -->
+    <!-- content -->
   </hy-sticky>
 </scroll-view>
 ```
 
-#### 2. Page layout jitters after sticking?
+#### 2. Page layout jitters after the element sticks?
 
-The component automatically creates a placeholder element internally to avoid page jitter. If jitter still occurs, try manually calling the `refresh` method to recalculate the height.
+The component automatically creates a placeholder element internally to avoid page jitter. If jitter issues persist, try manually calling the `refresh` method to recalculate the height.
 
 ```vue
 <template>
     <hy-sticky ref="stickyRef">
         <view class="dynamic-content">
-            <!-- Dynamic content -->
+            <!-- dynamic content -->
         </view>
     </hy-sticky>
 </template>
@@ -153,29 +153,35 @@ The component automatically creates a placeholder element internally to avoid pa
 
 ### Sticky Props
 
-| Prop | Description | Type | Default |
+| Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
 | offsetTop | Offset from the top when sticky; the default unit is px for numeric values | `string`\|`number` | 0 |
-| zIndex | z-index level when sticky | `string`\|`number` | 99 |
+| zIndex | Z-index level when sticky | `string`\|`number` | 99 |
 | enable | Whether to enable the sticky functionality | `boolean` | true |
 | scrollSelector | When used inside a `scroll-view`, specifies the class name of the `scroll-view` (without the dot) | `string` | - |
 
 ### Events
 
-| Event  | Description                        | Callback Parameters                            |
-| ------ | ---------------------------------- | ---------------------------------------------- |
-| change | Triggered when sticky state changes | isFixed: Boolean - Whether currently sticky |
+| Event Name | Description               | Callback Parameters                                |
+| ------ | ------------------ | --------------------------------------- |
+| change | Triggered when the sticky state changes | isFixed: Boolean - Whether it is currently in the sticky state |
 
 ### Methods
 
-| Name    | Description                                                        | Parameters |
-| ------- | ------------------------------------------------------------------ | ---------- |
-| refresh | Refreshes the component state, typically used after content height changes | -          |
+| Name  | Description                                 | Parameters |
+| ------- | ------------------------------------ | ---- |
+| refresh | Refreshes the component state, usually used after the content height changes | -    |
 
 ### Slots
 
-| Slot    | Description   | Accepted Values |
-| ------- | ------------- | --------------- |
-| default | Sticky content | -               |
+| Slot Name  | Description     | Accepted Values |
+| ------- | -------- | ------ |
+| default | Sticky content | -      |
+
+### CSS Variables
+
+| Variable Name | Description | Default |
+| --- | --- | --- |
+| `--hy-sticky-bg` | Background color when sticky | Follows `--hy-background--container` |
 
 <demo-model url="pages-design/sticky/sticky"></demo-model>

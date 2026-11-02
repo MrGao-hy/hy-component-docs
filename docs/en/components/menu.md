@@ -1,14 +1,14 @@
 # Menu Sidebar Navigation Component
 
-> A vertically displayed navigation bar, used to switch between different content areas.
+> A vertically displayed navigation bar used for switching between different content areas.
 
-## :pushpin: Platform Difference Notes
+## :pushpin: Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | -------------------- | ------------------- |
-| ✔        | ✔   | ✔                    | ✔                   |
+| -------- | --- | ------------------- | ------------------- |
+| ✔        | ✔   | ✔                   | ✔                   |
 
-## :japanese_castle: Basic Usage Example
+## :japanese_castle: Basic Usage
 
 ```html
 <!-- 全局使用 -->
@@ -32,7 +32,7 @@ const list = [
 
 ## Setting Different Widths
 
-- Set the width via the `width` prop
+- Set the width through the `width` property
 
 ```html
 <template>
@@ -42,7 +42,7 @@ const list = [
 
 ## Setting the Selected Color
 
-- Set the selected color via the `color` prop
+- Set the selected color through the `color` property
 
 ```html
 <template>
@@ -497,29 +497,29 @@ export const data = [
 
 ### Menu Props
 
-| Parameter   | Description                                             | Type               | Default |
-| ----------- | ------------------------------------------------------- | ------------------ | ------- |
-| list        | Menu data set                                           | `MenuParamsVo[]`   | -       |
-| id          | Unique key to bind                                      | `string`           | id      |
-| color       | Selected color                                          | `string`           | -       |
-| width       | Width of the sidebar menu bar; numeric values use px    | `number`\|`string` | 120     |
-| icon        | Icon properties, see [Icon API](./icon#api)             | `HyIconProps`      | -       |
-| badge       | Badge properties, see [Badge API](./badge#api)          | `HyBadgeProps`     | -       |
-| customStyle | Custom external styles to be applied                    | `CSSProperties`    | -       |
-| customClass | Custom external class name                              | `string`           | -       |
+| Parameter   | Description                               | Type               | Default |
+| ----------- | ----------------------------------------- | ------------------ | ------- |
+| list        | Menu data set                             | `MenuParamsVo[]`   | -       |
+| id          | Unique key for binding                    | `string`           | id      |
+| color       | Selected color                            | `string`           | -       |
+| width       | Width of the sidebar menu; numeric values default to px | `number`\|`string` | 120 |
+| icon        | Icon properties; see [Icon API](./icon#api) for details | `HyIconProps` | -  |
+| badge       | Badge properties; see [Badge API](./badge#api) for details | `HyBadgeProps` | - |
+| customStyle | Custom external styles to apply           | `CSSProperties`    | -       |
+| customClass | Custom external class name                | `string`           | -       |
 
 ### Events
 
-| Event Name | Description                           | Callback Parameters                 |
-| ---------- | ------------------------------------- | ----------------------------------- |
-| change     | Triggered when the option is switched | (temp: MenuParamsVo, index: number) |
+| Event Name | Description                                | Callback Parameters                 |
+| ---------- | ------------------------------------------ | ----------------------------------- |
+| change     | Triggered when the selected option changes | (temp: MenuParamsVo, index: number) |
 
 ### Slots
 
-| Slot Name | Description  | Slot Props |
-| --------- | ------------ | ---------- |
-| default   | Custom title | -          |
-| icon      | Custom icon  | -          |
+| Slot Name | Description   | Accepted Values |
+| --------- | ------------- | --------------- |
+| default   | Custom title  | -               |
+| icon      | Custom icon   | -               |
 
 ## Typings
 
@@ -555,5 +555,16 @@ type MenuParamsVo = {
 ```
 
 :::
+
+### CSS Variables
+
+| Variable Name | Description | Default |
+| --- | --- | --- |
+| `--hy-menu-max-width` | Maximum menu width | `260rpx` |
+| `--hy-menu-indicator-width` | Width of the selected indicator bar | `4px` |
+| `--hy-menu-indicator-height` | Height of the selected indicator bar | `15px` |
+| `--hy-menu-indicator-radius` | Corner radius of the selected indicator bar | Follows `--hy-radius-semicircle` (100px) |
+| `--hy-menu-title-font-size` | Title font size (line height follows accordingly) | Follows `--hy-font-size-base` (28rpx) |
+| `--hy-menu-disabled-color` | Disabled text color | Follows `--hy-text-color--disabled` |
 
 <demo-model url="pages-design/menu/menu"></demo-model>

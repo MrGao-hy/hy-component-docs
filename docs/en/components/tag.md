@@ -1,14 +1,14 @@
 # Tag Component
 
-> The tag component is generally used for marking and selection. We provide richer presentation forms that can comprehensively cover your usage scenarios.
+> The tag component is generally used for marking and selection. We provide richer presentation styles to comprehensively cover your usage scenarios.
 
 ## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ---------- | ------------ |
-| ✔        | ✔   | ✔          | ✔            |
+| -------- | --- | -------------------- | ------------------- |
+| ✔        | ✔   | ✔                    | ✔                   |
 
-## :japanese_castle: Basic Usage
+## :japanese_castle: Basic Usage Example
 
 ```html
 <!-- Global usage -->
@@ -18,12 +18,12 @@
 ### Theme Colors
 
 - Configure the theme color by setting `type`
-    - `primary`: Information tag (default)
-    - `success`: Primary tag
+    - `primary`: Info tag (default)
+    - `success`: Main tag
     - `info`: Default tag
     - `warning`: Warning tag
     - `error`: Danger tag
-- Use the `color` value to set custom colors or gradient colors;
+- Set custom colors or gradient colors via the `color` value;
 
 ```html
 <template>
@@ -39,9 +39,9 @@
 </template>
 ```
 
-### Plain (Outlined) Tags
+### Plain Tags
 
-- Set the plain (outlined) background color by setting `plain`
+- Set a plain (outlined) background by setting `plain`
 
 ```html
 <template>
@@ -59,7 +59,7 @@
 
 ### Plain with Background Color
 
-- Give the background color semi-transparency by setting `plainFill`
+- Set `plainFill` to make the background semi-transparent
 
 ```html
 <template>
@@ -77,22 +77,25 @@
 
 ### Plain with Background Color and No Border
 
-- Set the border color via the `borderColor` property
-
 ```html
 <template>
-    <hy-tag label="Tag" type="primary" plain plainFill borderColor="transparent"></hy-tag>
-    <hy-tag label="Tag" type="success" plain plainFill borderColor="transparent"></hy-tag>
-    <hy-tag label="Tag" type="error" plain plainFill borderColor="transparent"></hy-tag>
-    <hy-tag label="Tag" type="warning" plain plainFill borderColor="transparent"></hy-tag>
-    <hy-tag label="Tag" type="info" plain plainFill borderColor="transparent"></hy-tag>
-    <hy-tag label="Tag" color="#800080" plain plainFill borderColor="transparent"></hy-tag>
+  <hy-tag :label="t('label')" type="primary" :border="false" shape="circle"></hy-tag>
+  <hy-tag :label="t('label')" type="success" :border="false"></hy-tag>
+  <hy-tag
+          :label="t('label')"
+          type="primary"
+          plain
+          plain-fill
+          :border="false"
+          shape="circle"
+  ></hy-tag>
+  <hy-tag :label="t('label')" type="error" plain plain-fill :border="false"></hy-tag>
 </template>
 ```
 
-### Tag Shape
+### Tag Shapes
 
-- Set the tag shape by configuring `shape`
+- Set the tag shape via `shape`
     - `circle`: Semicircle
     - `square`: Square
     - `opposite`: Diagonal rounded corners
@@ -101,13 +104,13 @@
 <template>
     <hy-tag label="Circle" shape="circle"></hy-tag>
     <hy-tag label="Square" shape="square"></hy-tag>
-    <hy-tag label="Diagonal rounded corners" shape="opposite"></hy-tag>
+    <hy-tag label="Diagonal Rounded" shape="opposite"></hy-tag>
 </template>
 ```
 
 ### Closable Tags
 
-- By configuring `closable`, an icon for removing the tag is provided in the upper right corner
+- Configure `closable` to display an icon for removing the tag in the top-right corner
 
 ```html
 <template>
@@ -123,11 +126,11 @@
 
 ### Tag Size Settings
 
-- The `size` property offers tags in three size specifications, medium by default.
+- The `size` property provides multiple tag sizes, with medium as the default.
     - `large`: Large tag
     - `medium`: Medium tag
     - `small`: Small tag
-    - `mini`: Mini version
+    - `mini`: Mini
 
 ```html
 <template>
@@ -156,30 +159,50 @@
 ### Tag Props
 
 | Parameter | Description | Type | Default |
-| --- | --- | --- | --- |
-| label | Text content of the tag | `string` | - |
+| --- |-----------------------------------------------| --- |---------|
+| label | Text content of the tag | `string` | -       |
 | type | Theme type | `error`\|`warning`\|`success`\|`primary`\|`info` | primary |
-| disabled | Disabled | `boolean` | false |
-| size | Tag size | `mini`\|`small`\|`medium`\|`large` | medium |
-| shape | Tag shape | `circle`\|`square`\|`opposite` | square |
-| bgColor | Background color, defaults to an empty string, i.e., not processed | `string` | - |
-| color | Tag font color, defaults to an empty string, i.e., not processed | `string` | - |
-| borderColor | Border color of the tag | `string` | - |
-| closeColor | Color of the close button icon | `string` | - |
-| value | Index value returned on click, used to distinguish which element of the iterated array was clicked | `string`\|`number` | - |
-| plainFill | Whether to fill the background color when plain | `boolean` | false |
-| plain | Whether the tag is plain (outlined) | `boolean` | false |
-| closable | Whether the tag is closable; when set to true, a close icon appears to the right of the text | `boolean` | false |
-| show | Tag visibility | `boolean` | true |
-| icon | Icon, see [Icon API](./icon#api) for details | `HyIconProps` | - |
-| customStyle | Defines external styles to be applied | `CSSProperties` | - |
-| customClass | Custom external class name | `CSSProperties` | - |
+| disabled | Disabled | `boolean` | false   |
+| size | Tag size | `mini`\|`small`\|`medium`\|`large` | medium  |
+| shape | Tag shape | `circle`\|`square`\|`opposite` | square  |
+| bgColor | Background color, defaults to an empty string, i.e., not processed | `string` | -       |
+| color | Tag font color, defaults to an empty string, i.e., not processed | `string` | -       |
+| border | Whether to show the border | `boolean` | true    |
+| borderColor | Border color of the tag | `string` | -       |
+| closeColor | Color of the close button icon | `string` | -       |
+| value | Index value returned on click, used to identify which element of the iterated array was clicked | `string`\|`number` | -       |
+| plainFill | Whether to fill the background color when plain | `boolean` | false   |
+| plain | Whether plain (outlined) | `boolean` | false   |
+| closable | Whether closable; when set to true, a close icon appears to the right of the text | `boolean` | false   |
+| show | Tag visibility | `boolean` | true    |
+| icon | Icon, see [Icon API](./icon#api) for details | `HyIconProps` | -       |
+| customStyle | Define external styles to be applied | `CSSProperties` | -       |
+| customClass | Custom external class name | `CSSProperties` | -       |
 
 ### Events
 
-| Event Name | Description                                   | Callback Parameters                             |
+| Event Name | Description | Callback Parameters |
 | ------ | -------------------------------------- | ------------------------------------ |
-| click  | Triggered when the tag is clicked                           | \{label: displayed text content, value: text value\} |
-| close  | Triggered when the tag's close button is clicked while `closable` is true | value: text content                      |
+| click  | Triggered when the tag is clicked | \{label: displayed text content, value: text value\} |
+| close  | Triggered when the tag's close button is clicked while `closable` is true | value: text content |
+
+### CSS Variables
+
+| Variable | Description | Default |
+| --- | --- | --- |
+| `--hy-tag-border-width` | Border width | `2rpx` |
+| `--hy-tag-padding-mini` | mini padding | `4rpx 12rpx` |
+| `--hy-tag-padding-small` | small padding | `6rpx 16rpx` |
+| `--hy-tag-padding-medium` | medium padding | `8rpx 20rpx` |
+| `--hy-tag-padding-large` | large padding | `10rpx 24rpx` |
+| `--hy-tag-close-size-mini` | mini close icon size | `14px` |
+| `--hy-tag-close-size-small` | small close icon size | `16px` |
+| `--hy-tag-close-size-medium` | medium close icon size | `20px` |
+| `--hy-tag-close-size-large` | large close icon size | `22px` |
+| `--hy-tag-font-size-mini` | mini font size (line height follows accordingly) | Follows `--hy-font-size-xs` (20rpx) |
+| `--hy-tag-font-size-small` | small font size (line height follows accordingly) | Follows `--hy-font-size-sm` (24rpx) |
+| `--hy-tag-font-size-medium` | medium font size (line height follows accordingly) | Follows `--hy-font-size-base` (28rpx) |
+| `--hy-tag-font-size-large` | large font size (line height follows accordingly) | Follows `--hy-font-size-md` (32rpx) |
+| `--hy-tag-close-radius` | Close button border radius | Follows `--hy-radius-semicircle` (100px) |
 
 <demo-model url="pages-design/tag/tag"></demo-model>

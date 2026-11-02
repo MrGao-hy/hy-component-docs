@@ -1,14 +1,14 @@
 # Bottom Navigation Bar Component
 
-> Bottom navigation bar, used for switching between different pages.
+> A bottom navigation bar used to switch between different pages.
 
-## :pushpin: Platform Compatibility
+## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ---------- | ------------ |
-| ✔        | ✔   | ✔          | ✔            |
+| -------- | --- | -------------------- | ------------------- |
+| ✔        | ✔   | ✔                    | ✔                   |
 
-## :japanese_castle: Basic Usage Example
+## :japanese_castle: Basic Usage
 
 ::: code-group
 
@@ -19,7 +19,7 @@
     <hy-tabbar-item title="Mine" icon="mine"></hy-tabbar-item>
 </hy-tabbar-group>
 
-<!-- Encapsulated component template -->
+<!-- Wrapped component template -->
 <hy-tabbar v-model="fixedCurrent" :list="list" activeColor="red"></hy-tabbar>
 ```
 
@@ -31,7 +31,7 @@ const fixedCurrent = ref('0');
 const list = [
     { name: 'Home', icon: IconConfig.HOME },
     { name: 'Categories', icon: IconConfig.HOME },
-    { name: 'Shopping Cart', icon: IconConfig.HOME, badge: 10 },
+    { name: 'Cart', icon: IconConfig.HOME, badge: 10 },
     { name: 'Mine', icon: IconConfig.HOME },
 ];
 ```
@@ -44,18 +44,18 @@ import { IconConfig } from '@hy-app/ui';
 const list = [
     { name: 'Home', icon: IconConfig.HOME },
     { name: 'Categories', icon: IconConfig.HOME },
-    { name: 'Shopping Cart', icon: IconConfig.HOME, badge: 10 },
+    { name: 'Cart', icon: IconConfig.HOME, badge: 10 },
     { name: 'Mine', icon: IconConfig.HOME },
 ];
 ```
 
-### Badge Notification
+### Badge Indicator
 
-- `badgeProp`: Receives badge parameters
+- `badgeProp`: Receives the badge parameter
 
 ::: tip Note
 
-When `isDot` is true, value must have a value; when there is no number, you can fill in true, otherwise it will not be displayed
+When `isDot` is `true`, `value` must have a value; if there is no number, you can fill in `true`, otherwise it will not be displayed.
 
 :::
 
@@ -116,70 +116,70 @@ When `isDot` is true, value must have a value; when there is no number, you can 
 
 ### TabBar Props
 
-| Parameter   | Description                            | Type             | Default |
-| ----------- | -------------------------------------- | ---------------- | ------- |
-| modelValue  | Index of the selected item             | `number`         | 0       |
-| list        | Navigation bar data collection         | `TabBarListVo[]` | []      |
-| fixed       | Whether fixed at the bottom            | `boolean`        | true    |
-| placeholder | Whether to show a placeholder element  | `boolean`        | false   |
-| color       | Icon and font color                    | `string`         | -       |
-| baseBgColor | Track color                            | `string`         | -       |
-| bgColor     | Background color                       | `string`         | -       |
-| activeColor | Active circular background color       | `string`         | -       |
-| badgeProps  | Badge [API properties](./badge#api)    | `HyBadgeProps`   | -       |
-| customStyle | Define external styles to be used      | `CSSProperties`  | -       |
-| customClass | Custom external class name             | `string`         | -       |
+| Parameter   | Description                    | Type             | Default Value |
+| ----------- | ------------------------------ | ---------------- | ------------- |
+| modelValue  | Index of the selected item     | `number`         | 0             |
+| list        | Navigation bar data collection | `TabBarListVo[]` | []            |
+| fixed       | Whether to fix at the bottom   | `boolean`        | true          |
+| placeholder | Whether to show a placeholder element | `boolean` | false         |
+| color       | Icon and font color            | `string`         | -             |
+| baseBgColor | Track color                    | `string`         | -             |
+| bgColor     | Background color               | `string`         | -             |
+| activeColor | Active circle background color | `string`         | -             |
+| badgeProps  | Badge [API properties](./badge#api) | `HyBadgeProps` | -            |
+| customStyle | Define external styles to be used | `CSSProperties` | -           |
+| customClass | Custom external class name     | `string`         | -             |
 
 #### list
 
-| Parameter | Description                    | Type   | Default |
-| --------- | ------------------------------ | ------ | ------- |
-| name      | tabBar name                    | string | -       |
-| icon      | icon or image                  | string | -       |
-| badge     | Badge value                    | number | -       |
+| Parameter | Description              | Type   | Default Value |
+| --------- | ------------------------ | ------ | ------------- |
+| name      | tabBar name              | string | -             |
+| icon      | Icon name or image       | string | -             |
+| badge     | Badge value              | number | -             |
 
 ### TabBarGroup Props
 
-| Parameter | Description | Type | Default |
+| Parameter | Description | Type | Default Value |
 | --- | --- | --- | --- |
 | modelValue | Index of the selected item | `number` | 0 |
-| fixed | Whether fixed at the bottom | `boolean` | false |
+| fixed | Whether to fix at the bottom | `boolean` | false |
 | border | Whether to show the top border | `boolean` | true |
 | placeholder | Whether to show a placeholder element | `boolean` | true |
 | shape | Shape of the navigation bar | `string` | 'square' |
 | bgColor | Background color | `string` | - |
 | activeColor | Active color | `string` | - |
 | inactiveColor | Inactive color | `string` | - |
-| safeAreaInsetBottom | Bottom safe area adaptation - mainly used for iPhone X and above models | `boolean` | true |
+| safeAreaInsetBottom | Bottom safe area adaptation - mainly for iPhone X and newer models | `boolean` | true |
 | iconSize | Icon size | `string`\|`number` | - |
-| fontSize | Text size | `string`\|`number` | - |
-| badgeProps | Badge properties | `HyBadgeProps` | - |
+| fontSize | Font size | `string`\|`number` | - |
+| badgeProps | Partial badge properties | `HyBadgeProps` | - |
 | zIndex | z-index level | `number` | 10086 |
 | customStyle | Define external styles to be used | `CSSProperties` | - |
 | customClass | Custom external class name | `string` | - |
 
 ### TabBarItem Props
 
-| Parameter | Description | Type | Default |
+| Parameter | Description | Type | Default Value |
 | --- | --- | --- | --- |
 | icon | Icon | `string` | - |
 | title | Title | `string` | - |
 | name | Unique identifier | `string`\|`number` | - |
-| value | Badge display value; when the badge is a dot, value must be set to true or have a value | `string`\|`number`\|`boolean` | - |
+| value | Badge display value; when the badge is a dot, value must be set to `true` or have a value | `string`\|`number`\|`boolean` | - |
 
 ## Events
 
 ### TabBar Emits
 
 | Event Name | Description | Callback Parameters |
-| ------ | ------------ | ------------- |
-| change | Update selected index | value: number |
+| ---------- | ----------- | ------------------- |
+| change | Updates the selected index | value: number |
 
 ### TabBarGroup Emits
 
 | Event Name | Description | Callback Parameters |
-| ------ | ------------ | -------------------------- |
-| change | Update selected index | \{value: string \| number} |
+| ---------- | ----------- | ------------------- |
+| change | Updates the selected index | \{value: string \| number} |
 
 ## Slots
 
@@ -187,19 +187,19 @@ When `isDot` is true, value must have a value; when there is no number, you can 
 
 ::: tip Note
 
-The tabBar icon slot has no effect in mini programs
+The tabBar icon slot has no effect in mini programs.
 
 :::
 
-| Slot Name | Description | Parameters |
-| ------ | -------- | ------ |
-| icon   | Icon slot | -      |
+| Slot Name | Description | Accepted Value |
+| --------- | ----------- | -------------- |
+| icon      | Icon slot   | -              |
 
 ### TabBarItem Slots
 
-| Slot Name | Description | Parameters |
-| ------ | -------- | ------ |
-| icon   | Icon slot | -      |
+| Slot Name | Description | Accepted Value |
+| --------- | ----------- | -------------- |
+| icon      | Icon slot   | -              |
 
 ### Typings
 
@@ -212,7 +212,7 @@ export interface TabBarItem {
      * */
     name: string;
     /**
-     * icon or image
+     * Icon or image
      * */
     icon: string;
     /**
@@ -223,5 +223,35 @@ export interface TabBarItem {
 ```
 
 :::
+
+### CSS Variables
+
+#### hy-tabbar
+
+| Variable Name | Description | Default Value |
+| --- | --- | --- |
+| `--hy-tabbar-height` | Height | `60px` (bottom safe area is automatically added) |
+| `--hy-tabbar-radius` | Top border radius | `15rpx 15rpx 0 0` |
+| `--hy-tabbar-padding` | Padding | `0 20rpx` |
+| `--hy-tabbar-item-width` | Item width | `60px` |
+| `--hy-tabbar-indicator-size` | Indicator size | `50px` |
+| `--hy-tabbar-circle-size` | Raised circle size | `40px` |
+
+#### hy-tabbar-group
+
+| Variable Name | Description | Default Value |
+| --- | --- | --- |
+| `--hy-tabbar-group-height` | Height | `100rpx` |
+| `--hy-tabbar-group-z-index` | Z-index level | `500` |
+| `--hy-tabbar-group-radius` | Capsule mode border radius | Follows `--hy-radius-semicircle` (100px) |
+| `--hy-tabbar-group-border` | Top border | Follows `--hy-border-line` |
+
+#### hy-tabbar-item
+
+| Variable Name | Description | Default Value |
+| --- | --- | --- |
+| `--hy-tabbar-item-icon-size` | Icon size | `40rpx` |
+| `--hy-tabbar-item-title-font-size` | Title font size | Follows `--hy-font-size-sm` (24rpx) |
+| `--hy-tabbar-item-inactive-color` | Inactive color | Follows `--hy-text-color--grey` |
 
 <demo-model url="pages-design/tabBar/tabBar"></demo-model>

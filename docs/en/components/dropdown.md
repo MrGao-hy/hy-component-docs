@@ -1,26 +1,26 @@
-# Dropdown Menu Component
+# Dropdown
 
-> A dropdown menu component used to display filter conditions or selection operations, with support for multi-level menu selection.
+> A dropdown menu component used to display filter conditions or selection options, with support for multi-level menu selection.
 
-## :pushpin:Platform Compatibility
+## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
 | -------- | --- | ------------------- | ------------------- |
 | ✔        | ✔   | ✔                   | ✔                   |
 
-## :warning:Precautions
+## :warning: Notes
 
-::: warning Precautions
+::: warning Note
 
-- This component must be used in combination with `hy-dropdown` and `hy-dropdown-item`
+- This component must be used together with `hy-dropdown` and `hy-dropdown-item`
 - `hy-dropdown-item` must be nested inside `hy-dropdown`
 - Use `v-model` to two-way bind the selected item's `value`
-- Array items passed to the `menus` property must include the `label` and `value` fields
+- Items in the array passed via the `menus` prop must contain `label` and `value` fields
 - Clicking a menu item automatically closes other expanded menus
 
 :::
 
-## :japanese_castle:Basic Usage Examples
+## :japanese_castle: Basic Usage Examples
 
 ### Basic Usage
 
@@ -28,19 +28,19 @@
 <template>
     <hy-dropdown>
         <hy-dropdown-item
-            title="All"
+            title="全部"
             :menus="options1"
             v-model="value1"
             @change="handleChange"
         ></hy-dropdown-item>
         <hy-dropdown-item
-            title="Chinese Animation"
+            title="国漫"
             :menus="options_2"
             v-model="value_2"
             @change="handleChange"
         ></hy-dropdown-item>
         <hy-dropdown-item
-            title="Country"
+            title="国家"
             :menus="options_3"
             v-model="value_3"
             @change="handleChange"
@@ -56,28 +56,28 @@
     const value_3 = ref();
 
     const options1 = ref([
-        { label: 'All Products', value: 1 },
-        { label: 'Discounted Products', value: 2 },
-        { label: 'Group Buy Products', value: 3 },
+        { label: '全部商品', value: 1 },
+        { label: '折扣商品', value: 2 },
+        { label: '团购商品', value: 3 },
     ]);
 
     const options_2 = ref([
-        { label: 'Journey to the West', value: 1 },
-        { label: 'Battle Through the Heavens', value: 2 },
-        { label: 'Swallowed Star', value: 3 },
-        { label: 'Soul Land', value: 4 },
-        { label: 'September Heartthrob', value: 5 },
+        { label: '西行记', value: 1 },
+        { label: '斗破苍穹', value: 2 },
+        { label: '吞噬星空', value: 3 },
+        { label: '斗罗大陆', value: 4 },
+        { label: '偷心九月天', value: 5 },
     ]);
 
     const options_3 = ref([
-        { label: 'China', value: 1 },
-        { label: 'Japan', value: 2 },
-        { label: 'South Korea', value: 3 },
-        { label: 'United States', value: 4 },
+        { label: '中国', value: 1 },
+        { label: '日本', value: 2 },
+        { label: '韩国', value: 3 },
+        { label: '美国', value: 4 },
     ]);
 
     const handleChange = (item, index) => {
-        console.log('Selected:', item.label, 'Index:', index);
+        console.log('选中:', item.label, '索引:', index);
     };
 </script>
 ```
@@ -87,7 +87,7 @@
 ```html
 <template>
     <hy-dropdown activeColor="#4F8EF7" inactiveColor="#999999">
-        <hy-dropdown-item title="Category" :menus="options" v-model="value"></hy-dropdown-item>
+        <hy-dropdown-item title="分类" :menus="options" v-model="value"></hy-dropdown-item>
     </hy-dropdown>
 </template>
 
@@ -96,8 +96,8 @@
 
     const value = ref();
     const options = ref([
-        { label: 'Option 1', value: 1 },
-        { label: 'Option 2', value: 2 },
+        { label: '选项1', value: 1 },
+        { label: '选项2', value: 2 },
     ]);
 </script>
 ```
@@ -107,7 +107,7 @@
 ```html
 <template>
     <hy-dropdown :height="50" titleSize="18">
-        <hy-dropdown-item title="Menu" :menus="options" v-model="value"></hy-dropdown-item>
+        <hy-dropdown-item title="菜单" :menus="options" v-model="value"></hy-dropdown-item>
     </hy-dropdown>
 </template>
 
@@ -116,20 +116,20 @@
 
     const value = ref();
     const options = ref([
-        { label: 'Option 1', value: 1 },
-        { label: 'Option 2', value: 2 },
+        { label: '选项1', value: 1 },
+        { label: '选项2', value: 2 },
     ]);
 </script>
 ```
 
-### Disabling an Item
+### Disable an Item
 
 ```html
 <template>
     <hy-dropdown>
-        <hy-dropdown-item title="Selectable Menu" :menus="options" v-model="value"></hy-dropdown-item>
+        <hy-dropdown-item title="可选菜单" :menus="options" v-model="value"></hy-dropdown-item>
         <hy-dropdown-item
-            title="Disabled Menu"
+            title="禁用菜单"
             :menus="options"
             v-model="disabledValue"
             disabled
@@ -143,18 +143,18 @@
     const value = ref();
     const disabledValue = ref();
     const options = ref([
-        { label: 'Option 1', value: 1 },
-        { label: 'Option 2', value: 2 },
+        { label: '选项1', value: 1 },
+        { label: '选项2', value: 2 },
     ]);
 </script>
 ```
 
-### Showing the Bottom Border
+### Show Bottom Border
 
 ```html
 <template>
     <hy-dropdown borderBottom>
-        <hy-dropdown-item title="Menu" :menus="options" v-model="value"></hy-dropdown-item>
+        <hy-dropdown-item title="菜单" :menus="options" v-model="value"></hy-dropdown-item>
     </hy-dropdown>
 </template>
 
@@ -163,8 +163,8 @@
 
     const value = ref();
     const options = ref([
-        { label: 'Option 1', value: 1 },
-        { label: 'Option 2', value: 2 },
+        { label: '选项1', value: 1 },
+        { label: '选项2', value: 2 },
     ]);
 </script>
 ```
@@ -174,7 +174,7 @@
 ```html
 <template>
     <hy-dropdown menuIcon="arrow-up" :menuIconSize="16">
-        <hy-dropdown-item title="Menu" :menus="options" v-model="value"></hy-dropdown-item>
+        <hy-dropdown-item title="菜单" :menus="options" v-model="value"></hy-dropdown-item>
     </hy-dropdown>
 </template>
 
@@ -183,8 +183,8 @@
 
     const value = ref();
     const options = ref([
-        { label: 'Option 1', value: 1 },
-        { label: 'Option 2', value: 2 },
+        { label: '选项1', value: 1 },
+        { label: '选项2', value: 2 },
     ]);
 </script>
 ```
@@ -193,31 +193,31 @@
 
 ### Dropdown Props
 
-| Parameter | Description | Type | Default |
+| Prop | Description | Type | Default |
 | --- | --- | --- | --- |
-| height | Height of the title menu; numbers default to px unit | `string`\|`number` | 40 |
-| borderBottom | Whether the title menu displays a bottom border | `boolean` | false |
+| height | Height of the title menu; numbers default to px | `string`\|`number` | 40 |
+| borderBottom | Whether the title menu shows a bottom border | `boolean` | false |
 | sticky | Whether to use fixed positioning | `boolean` | true |
-| activeColor | Color of the title and selected tab | `string` | - |
-| inactiveColor | Color of the title and unselected tab | `string` | #606266 |
-| titleSize | Font size of the title and selected tab; numbers default to px unit | `string`\|`number` | - |
-| closeOnClickMask | Close the popup when clicking the mask layer | `boolean` | true |
-| menuIcon | Icon name on the right side of the title menu | `string` | ARROW_DOWN_FILL |
-| menuIconSize | Size of the icon on the right side of the title menu; numbers default to px unit | `string`\|`number` | 14 |
-| customStyle | Custom external styles to apply | `CSSProperties` | - |
+| activeColor | Color of the title and option tabs when selected | `string` | - |
+| inactiveColor | Color of the title and option tabs when not selected | `string` | #606266 |
+| titleSize | Font size of the title and option tabs when selected; numbers default to px | `string`\|`number` | - |
+| closeOnClickMask | Close the popup when the mask is clicked | `boolean` | true |
+| menuIcon | Icon name shown on the right side of the title menu | `string` | ARROW_DOWN_FILL |
+| menuIconSize | Size of the icon on the right side of the title menu; numbers default to px | `string`\|`number` | 14 |
+| customStyle | Custom external styles to be applied | `CSSProperties` | - |
 
 ### DropdownItem Props
 
-| Parameter | Description | Type | Default |
+| Prop     | Description                    | Type               | Default |
 | -------- | ----------------------- | ------------------ | ------ |
 | v-model  | Two-way binding of the selected item's value | `string`\|`number` | -      |
-| title    | Menu item title         | `string`           | -      |
-| menus    | Option data             | `array`            | []     |
-| disabled | Whether to disable clicks | `boolean`        | false  |
+| title    | Menu item title              | `string`           | -      |
+| menus    | Option data                | `array`            | []     |
+| disabled | Whether clicks are disabled            | `boolean`          | false  |
 
 ### Events
 
-| Event Name | Description | Callback Parameters |
+| Event | Description               | Callback Parameters                                  |
 | ------ | ------------------ | ----------------------------------------- |
 | change | Triggered when an option is clicked | `item: DropdownMenuItem`, `index: number` |
 
@@ -225,13 +225,13 @@
 
 ### Dropdown Slots
 
-| Slot Name | Description | Received Value |
+| Slot  | Description           | Accepted Values |
 | ------- | -------------- | ------ |
 | default | Dropdown menu item content | -      |
 
 ### DropdownItem Slots
 
-| Slot Name | Description | Received Value |
+| Slot  | Description             | Accepted Values |
 | ------- | ---------------- | ------ |
 | default | Custom menu item content | -      |
 
@@ -241,13 +241,19 @@
 
 ```ts
 export interface DropdownMenuItem {
-    /** Display label */
+    /** 展示标题 */
     label: string;
-    /** Value */
+    /** 值 */
     value: string | number;
 }
 ```
 
 :::
+
+### CSS Variables
+
+| Variable | Description | Default |
+| --- | --- | --- |
+| `--hy-dropdown-item-border` | List item divider | Follows `--hy-border-line` |
 
 <demo-model url="pages-design/dropdown/dropdown"></demo-model>

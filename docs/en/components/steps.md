@@ -1,25 +1,25 @@
 # Steps Component
 
-> The Steps component is used to display multiple steps of a task and indicate which step is currently active.
+> The Steps component is used to display the multiple steps of a task and indicate which step is currently active.
 
-## :pushpin:Platform Differences
+## :pushpin: Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
 | -------- | --- | ------------------- | ------------------- |
 | ✔        | ✔   | ✔                   | ✔                   |
 
-## :warning:Precautions
+## :warning: Notes
 
-::: warning Precautions
+::: warning Note
 
-- The `list` property is required, and array items must include the `title` field
+- The `list` property is required; each array item must contain a `title` field
 - The `current` property is indexed starting from 0
 - The `direction` property supports two directions: `row` (horizontal) and `column` (vertical)
-- When `error` is `true` in a `list` item, the error state will be displayed
+- When `error` is `true` in a `list` item, an error state will be displayed
 
 :::
 
-## :japanese_castle:Basic Usage Examples
+## :japanese_castle: Basic Usage Examples
 
 ### Basic Usage
 
@@ -33,9 +33,9 @@
 
     const current = ref(1);
     const list = ref([
-        { title: 'Order Placed', docs: '2024-10-13' },
+        { title: 'Ordered', docs: '2024-10-13' },
         { title: 'Shipped', docs: '2024-10-13' },
-        { title: 'Shipping Failed', docs: '2024-10-14', error: true },
+        { title: 'Delivery Failed', docs: '2024-10-14', error: true },
     ]);
 </script>
 ```
@@ -65,9 +65,9 @@
     import { ref } from 'vue';
 
     const list = ref([
-        { title: 'Order Placed', docs: '2024-10-13', date: '10:30' },
-        { title: 'Shipped', docs: 'Courier is packing', date: '14:20' },
-        { title: 'In Transit', docs: 'Expected delivery tomorrow', date: '16:00' },
+        { title: 'Ordered', docs: '2024-10-13', date: '10:30' },
+        { title: 'Shipped', docs: 'The courier is packing the parcel', date: '14:20' },
+        { title: 'In Transit', docs: 'Expected to arrive tomorrow', date: '16:00' },
     ]);
 </script>
 ```
@@ -100,7 +100,7 @@
 </script>
 ```
 
-### Custom Icon
+### Custom Icons
 
 ```html
 <template>
@@ -164,7 +164,7 @@
 </script>
 ```
 
-### Custom Slots - Custom Icon
+### Custom Slot - Custom Icon
 
 ```html
 <template>
@@ -211,7 +211,7 @@
 </style>
 ```
 
-### Custom Slots - Custom Title and Description
+### Custom Slot - Custom Title and Description
 
 ```html
 <template>
@@ -222,7 +222,7 @@
                 <text>{{ title }}</text>
             </view>
         </template>
-        <template #desc="{ docs, date }">
+        <template #docs="{ docs, date }">
             <view class="custom-desc" v-if="docs">
                 <text class="desc-text">{{ docs }}</text>
                 <text class="desc-date" v-if="date">{{ date }}</text>
@@ -236,7 +236,7 @@
 
     const current = ref(1);
     const list = ref([
-        { title: 'Order Submitted', docs: 'Order submitted successfully', date: '2024-10-13 10:30' },
+        { title: 'Order Submitted', docs: 'The order was submitted successfully', date: '2024-10-13 10:30' },
         { title: 'Payment Completed', docs: 'Payment amount: ¥199.00', date: '2024-10-13 10:35' },
         { title: 'Order Shipped', docs: 'Tracking number: SF1234567890', date: '2024-10-13 14:00' },
     ]);
@@ -273,7 +273,7 @@
 </style>
 ```
 
-### Custom Slots - Custom Content
+### Custom Slot - Custom Content
 
 ```html
 <template>
@@ -362,46 +362,46 @@
 
 ### Props
 
-| Parameter      | Description                                    | Type                 | Default |
-| -------------- | ---------------------------------------------- | -------------------- | ------- |
-| current        | Current step index (starting from 0)           | `number`             | 0       |
-| list           | Steps data collection                          | `StepListVo[]`       | []      |
-| direction      | Direction, `row`-horizontal, `column`-vertical | `string`             | row     |
-| activeColor    | Active state color                             | `string`             | -       |
-| inactiveColor  | Inactive state color                           | `string`             | -       |
-| activeIcon     | Active state icon                              | `string`             | -       |
-| inactiveIcon   | Inactive state icon                            | `string`             | -       |
-| dot            | Whether to display dot style                   | `boolean`            | false   |
-| iconSize       | Icon size, default unit is px for numbers      | `string` \| `number` | 17      |
+| Property      | Description                                             | Type                 | Default |
+| ------------- | ------------------------------------------------------- | -------------------- | ------- |
+| current       | Current step index (starts from 0)                      | `number`             | 0       |
+| list          | Steps data collection                                   | `StepListVo[]`       | []      |
+| direction     | Direction, `row`-horizontal, `column`-vertical          | `string`             | row     |
+| activeColor   | Active state color                                      | `string`             | -       |
+| inactiveColor | Inactive state color                                    | `string`             | -       |
+| activeIcon    | Icon for the active state                               | `string`             | -       |
+| inactiveIcon  | Icon for the inactive state                             | `string`             | -       |
+| dot           | Whether to display dot style                            | `boolean`            | false   |
+| iconSize      | Icon size, default unit for numeric values is px        | `string` \| `number` | 17      |
 
 ### List Item Structure
 
-| Parameter | Description            | Type      | Default |
-| --------- | ---------------------- | --------- | ------- |
-| title     | Title                  | `string`  | -       |
-| docs      | Description            | `string`  | -       |
-| date      | Date and time          | `string`  | -       |
-| error     | Whether it's an error state | `boolean` | -   |
+| Property | Description                  | Type      | Default |
+| -------- | ---------------------------- | --------- | ------- |
+| title    | Title                        | `string`  | -       |
+| docs     | Description                  | `string`  | -       |
+| date     | Date and time                | `string`  | -       |
+| error    | Whether it is an error state | `boolean` | -       |
 
 ### Events
 
-| Event Name      | Description                      | Callback Parameters |
-| --------------- | -------------------------------- | ------------------- |
-| change          | Triggered when the step changes  | `index: number`     |
-| update:current  | Triggered when the step changes  | `index: number`     |
+| Event          | Description                      | Callback Parameters |
+| -------------- | -------------------------------- | ------------------- |
+| change         | Triggered when the step changes  | `index: number`     |
+| update:current | Triggered when the step changes  | `index: number`     |
 
 ### Slots
 
-| Slot Name | Description                        | Accepted Values                                 |
-| --------- | ---------------------------------- | ----------------------------------------------- |
-| icon      | Custom step left icon              | `index: number`, `error: boolean`               |
-| content   | Custom step right overall content  | `item: StepListVo`, `index: number`             |
-| title     | Custom step title                  | `title: string`, `index: number`                |
-| desc      | Custom step description            | `docs: string`, `date: string`, `index: number` |
+| Slot    | Description                                | Parameters                                       |
+| ------- | ------------------------------------------ | ------------------------------------------------ |
+| icon    | Custom left icon of the step               | `index: number`, `error: boolean`                |
+| content | Custom overall content on the right side   | `item: StepListVo`, `index: number`              |
+| title   | Custom step title                          | `title: string`, `index: number`                 |
+| docs    | Custom step description                    | `docs: string`, `date: string`, `index: number`  |
 
 ## Typings
 
-::: details Type Description
+::: details Type Definitions
 
 ```ts
 export interface StepListVo {
@@ -411,11 +411,28 @@ export interface StepListVo {
     docs?: string;
     /** Date and time */
     date?: string;
-    /** Whether it's an error state */
+    /** Whether it is an error state */
     error?: boolean;
 }
 ```
 
 :::
+
+### CSS Variables
+
+| Variable | Description | Default |
+| --- | --- | --- |
+| `--hy-steps-icon-size` | Icon size | `20px` |
+| `--hy-steps-dot-size` | Dot size | `10px` |
+| `--hy-steps-icon-text-font-size` | Icon text font size | `11px` |
+| `--hy-steps-title-font-size` | Title font size | `30rpx` |
+| `--hy-steps-title-active-font-size` | Active title font size | `34rpx` |
+| `--hy-steps-content-min-height` | Minimum height of the content area | `60px` |
+| `--hy-steps-icon-radius` | Icon container border radius | Follows `--hy-radius-semicircle` (`100px`) |
+| `--hy-steps-dot-radius` | Dot shape border radius | Follows `--hy-radius-circle` (`50%`) |
+| `--hy-steps-icon-text-color` | Text color inside the icon | Follows `--hy-text-color--grey` |
+| `--hy-steps-date-font-size` | Date font size | `24rpx` |
+| `--hy-steps-date-color` | Date color | `#999` |
+| `--hy-steps-icon-border` | Icon container border | Follows `--hy-border-line` |
 
 <demo-model url="pages-design/steps/steps"></demo-model>

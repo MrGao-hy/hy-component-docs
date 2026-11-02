@@ -1,32 +1,32 @@
 # Signature Component
 
-> Used for signature scenarios, a signature component implemented based on Canvas. Provides basic signing, history records, pen pressure effects, and other features.
+> A signature component built on Canvas for signing scenarios. It provides basic signing, history records, pen pressure (stroke tapering) effects, and more.
 
 ## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ------------------- | ------------------- |
-| ✔        | ✔   | ✔                   | ✔                   |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
 ## :warning: Notes
 
 ::: warning Notes
 
-- If the exported image is not clear, you can set exportScale to 2 or higher.
+- If the exported image appears blurry, you can set exportScale to 2 or higher.
 
 :::
 
-### 1. Unable to Draw in a Popup
+### 1. Unable to draw inside a popup
 
-::: warning Cause
+::: warning Reason
 
-- When used in a WeChat Mini Program popup, if the popup has not opened but the component's `onMounted` has already executed, initialization will fail. You need to call the initialization method again after the popup opens:
+- When used inside a popup in the WeChat Mini Program, the component's `onMounted` may have already executed before the popup is opened, causing initialization to fail. You need to call the initialization method again after the popup opens:
 
 :::
 
 ```html
 <template>
-    <hy-button text="Open Popup" @click="onOpen"></hy-button>
+    <hy-button text="打开弹窗" @click="onOpen"></hy-button>
     <hy-popup v-model:show="show">
         <hy-signature ref="signatureRef"></hy-signature>
     </hy-popup>
@@ -43,17 +43,17 @@ const onOpen = () => {
 }
 ```
 
-## :japanese_castle: Basic Usage Examples
+## :japanese_castle: Basic Usage
 
 ```html
-<!-- Global usage -->
+<!-- 全局使用 -->
 <hy-signature></hy-signature>
 ```
 
-### Custom Brush
+### Custom Pen
 
-- Set the stroke width by configuring `lineWidth`
-- Set the stroke color by configuring `pen-color`
+- Set `lineWidth` to configure the stroke width
+- Set `pen-color` to configure the stroke color
 
 ```html
 <template>
@@ -63,7 +63,7 @@ const onOpen = () => {
 
 ### History Operations
 
-- Enable or disable history operations by configuring `enableHistory`
+- Set `enableHistory` to control whether history operations are available
 
 ```html
 <template>
@@ -71,12 +71,12 @@ const onOpen = () => {
 </template>
 ```
 
-### Custom Pen Pressure Parameters
+### Custom Pressure Parameters
 
-- Enable pen pressure mode via `pressure` to simulate real handwriting. In pen pressure mode, stroke thickness varies with writing speed.
-- `min-width`: the minimum stroke width, i.e., the line thickness when writing fast
-- `max-width`: the maximum stroke width, i.e., the line thickness when writing slowly
-- `min-speed`: the speed threshold, used to adjust pressure sensitivity
+- Enable pressure mode via `pressure` to simulate real handwriting. In pressure mode, stroke width varies with writing speed.
+- `min-width`: the minimum stroke width, i.e., line thickness when writing fast
+- `max-width`: the maximum stroke width, i.e., line thickness when writing slowly
+- `min-speed`: speed threshold, used to adjust pressure sensitivity
 
 ```html
 <template>
@@ -92,10 +92,10 @@ const onOpen = () => {
 <template>
     <hy-signature enableHistory>
         <template #footer="{ clear, confirm, currentStep, restore, revoke, historyList }">
-            <hy-button block @click="changeDisabled" v-if="disabled">Start Signing</hy-button>
+            <hy-button block @click="changeDisabled" v-if="disabled">开始签名</hy-button>
             <block v-if="!disabled">
                 <hy-button size="small" plain @click="revoke" :disabled="currentStep <= 0">
-                    Undo
+                    撤回
                 </hy-button>
                 <hy-button
                     size="small"
@@ -103,10 +103,10 @@ const onOpen = () => {
                     @click="restore"
                     :disabled="currentStep >= historyList.length"
                 >
-                    Redo
+                    恢复
                 </hy-button>
-                <hy-button size="small" plain @click="clear">Clear</hy-button>
-                <hy-button size="small" @click="confirm">Confirm</hy-button>
+                <hy-button size="small" plain @click="clear">清除</hy-button>
+                <hy-button size="small" @click="confirm">确定</hy-button>
             </block>
         </template>
     </hy-signature>
@@ -115,7 +115,7 @@ const onOpen = () => {
 
 ### Landscape Signature Page
 
-You can implement a landscape signature page by configuring the page's `pageOrientation`
+You can create a landscape signature page by configuring the page's `pageOrientation`
 
 ::: code-group
 
@@ -135,13 +135,13 @@ You can implement a landscape signature page by configuring the page's `pageOrie
                 <view class="custom-actions">
                     <view class="button-group">
                         <hy-button size="small" plain @click="revoke" :disabled="!canUndo">
-                            Undo
+                            撤回
                         </hy-button>
                         <hy-button size="small" plain @click="restore" :disabled="!canRedo">
-                            Redo
+                            恢复
                         </hy-button>
-                        <hy-button size="small" plain @click="clear">Clear</hy-button>
-                        <hy-button size="small" type="primary" @click="confirm">Done</hy-button>
+                        <hy-button size="small" plain @click="clear">清除</hy-button>
+                        <hy-button size="small" type="primary" @click="confirm">完成</hy-button>
                     </view>
                 </view>
             </template>
@@ -207,50 +207,57 @@ onMounted(() => {
 ### Signature Props
 
 | Parameter         | Description                                   | Type               | Default |
-| ----------------- | --------------------------------------------- | ------------------ | ------- |
-| pen-color         | Signature pen color                           | `string`           | #000000 |
-| line-width        | Signature pen width                           | `number`           | 3       |
-| height            | Canvas height, default unit px for numbers    | `number`\|`string` | -       |
-| width             | Canvas width, default unit px for numbers     | `number`\|`string` | -       |
-| clear-text        | Text of the clear button                      | `string`           | -       |
-| confirm-text      | Text of the confirm button                    | `string`           | -       |
-| file-type         | Exported image type                           | `string`           | png     |
-| quality           | Exported image quality (0-1)                  | `number`           | 1       |
-| export-scale      | Scale ratio of the exported image             | `number`           | 1       |
-| disabled          | Whether to disable the signature pad          | `boolean`          | false   |
-| background-color  | Background color of the canvas                | `string`           | -       |
-| disable-scroll    | Whether to disable canvas scrolling           | `boolean`          | true    |
-| enable-history    | Whether to enable history                     | `boolean`          | false   |
-| step              | History step size                             | `number`           | 1       |
-| pressure          | Whether to enable pen pressure mode           | `boolean`          | false   |
-| min-width         | Minimum width in pen pressure mode            | `number`           | 2       |
-| max-width         | Maximum width in pen pressure mode            | `number`           | 6       |
-| min-speed         | Speed threshold in pen pressure mode          | `number`           | 1.5     |
+| ---------------- | --------------------------------------------- | ------------------ | ------- |
+| pen-color        | Pen color                                      | `string`           | #000000 |
+| line-width       | Pen width                                      | `number`           | 3       |
+| height           | Canvas height, numbers default to px           | `number`\|`string` | -       |
+| width            | Canvas width, numbers default to px            | `number`\|`string` | -       |
+| clear-text       | Text of the clear button                       | `string`           | -       |
+| confirm-text     | Text of the confirm button                     | `string`           | -       |
+| file-type        | Exported image type                            | `string`           | png     |
+| quality          | Exported image quality (0-1)                   | `number`           | 1       |
+| export-scale     | Scaling ratio of the exported image            | `number`           | 1       |
+| disabled         | Whether to disable the signature pad           | `boolean`          | false   |
+| background-color | Background color of the signature pad          | `string`           | -       |
+| disable-scroll   | Whether to disable canvas scrolling            | `boolean`          | true    |
+| enable-history   | Whether to enable history records              | `boolean`          | false   |
+| step             | History record step size                       | `number`           | 1       |
+| pressure         | Whether to enable pressure mode                | `boolean`          | false   |
+| min-width        | Minimum width in pressure mode                 | `number`           | 2       |
+| max-width        | Maximum width in pressure mode                 | `number`           | 6       |
+| min-speed        | Speed threshold in pressure mode               | `number`           | 1.5     |
 
 ### Events
 
-| Event Name | Description                       | Callback Parameters   |
-| ---------- | --------------------------------- | --------------------- |
-| start      | Triggered when signing starts     | event: TouchEvent     |
-| end        | Triggered when signing ends       | event: TouchEvent     |
-| signing    | Triggered during signing          | event: TouchEvent     |
-| confirm    | Triggered on signature confirm    | result: SignatureResult |
-| clear      | Triggered when signature is cleared | -                   |
+| Event Name | Description                       | Callback Parameters    |
+| ------- | ---------------------------------- | ----------------------- |
+| start   | Triggered when signing starts     | event: TouchEvent       |
+| end     | Triggered when signing ends       | event: TouchEvent       |
+| signing | Triggered during signing          | event: TouchEvent       |
+| confirm | Triggered when confirming signature | result: SignatureResult |
+| clear   | Triggered when clearing signature | -                       |
 
 ### Methods
 
-| Name    | Description                  | Parameters            |
-| ------- | ---------------------------- | --------------------- |
-| init    | Initialize the signature pad | forceUpdate?: boolean |
-| confirm | Confirm the signature        | -                     |
-| clear   | Clear the signature          | -                     |
-| restore | Redo the previous step       | -                     |
-| revoke  | Undo the previous step       | -                     |
+| Name    | Description                        | Parameters             |
+| ------- | ---------------------------------- | ---------------------- |
+| init    | Initialize the signature pad       | forceUpdate?: boolean  |
+| confirm | Confirm the signature              | -                      |
+| clear   | Clear the signature                | -                      |
+| restore | Restore the previous step          | -                      |
+| revoke  | Undo the previous step             | -                      |
 
 ### Slots
 
-| Slot Name | Description           | Received Values                                          |
-| --------- | --------------------- | -------------------------------------------------------- |
-| footer    | Custom bottom buttons | clear, confirm, restore, revoke, currentStep, historyList |
+| Slot Name | Description              | Values                                                   |
+| ------ | ------------------------- | --------------------------------------------------------- |
+| footer | Custom bottom buttons     | clear, confirm, restore, revoke, currentStep, historyList |
+
+### CSS Variables
+
+| Variable | Description | Default Value |
+| --- | --- | --- |
+| `--hy-signature-radius` | Corner radius of the canvas area | Follows `--hy-radius-base` (20rpx) |
+| `--hy-signature-border` | Border of the canvas area | Follows `--hy-border-line` |
 
 <demo-model url="pages-design/signature/signature"></demo-model>

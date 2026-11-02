@@ -1,14 +1,14 @@
 # CountDown Component
 
-> This component is typically used for the deadline of an activity. Through the changing numbers, it gives users a clear sense of time and prompts them to take a specific action.
+> This component is typically used for the deadline of an activity. Through the changing numbers, it gives users a clear perception of time and prompts them to take a specific action.
 
 ## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ---------- | ------------ |
-| ✔        | ✔   | ✔          | ✔            |
+| -------- | --- | -------------------- | ------------------- |
+| ✔        | ✔   | ✔                    | ✔                   |
 
-## :japanese_castle: Basic Usage
+## :japanese_castle: Basic Usage Example
 
 ```html
 <!-- Global usage -->
@@ -21,14 +21,14 @@
 
 ```html
 <template>
-    <hy-count-down :time="30 * 60 * 60 * 1000" format="DD days HH hours mm min ss sec"></hy-count-down>
+    <hy-count-down :time="30 * 60 * 60 * 1000" format="DD days HH hours mm minutes ss seconds"></hy-count-down>
 </template>
 ```
 
-### Millisecond Rendering
+### Millisecond-Level Rendering
 
-- Enable millisecond rendering by setting `millisecond`
-- The `format` value must include milliseconds
+- Customize the format by setting `millisecond`
+- The `format` value must include millisecond-level tokens
 
 ```html
 <template>
@@ -164,22 +164,29 @@ const reset = () => {
 | time        | Countdown duration, in ms                    | `number`  | 0        |
 | format      | Time format[^1]                              | `string`  | HH:mm:ss |
 | autoStart   | Whether to start the countdown automatically | `boolean` | true     |
-| millisecond | Whether to display milliseconds in countdown | `boolean` | false    |
+| millisecond | Whether to display the countdown in milliseconds | `boolean` | false |
 
 ### Events
 
-| Event Name | Description                                            | Callback Parameters |
-| ---------- | ------------------------------------------------------ | ------------------- |
-| change     | Triggered during the countdown as the time changes     | time: remaining time |
-| finish     | Countdown finished                                     | -                   |
+| Event Name | Description                                                        | Callback Parameters |
+| ---------- | ------------------------------------------------------------------ | ------------------- |
+| change     | Triggered while the countdown is running, whenever the time changes | time: remaining time |
+| finish     | Countdown finished                                                 | -                   |
 
 ### Methods
 
-| Method Name | Description       |
-| ----------- | ----------------- |
-| start       | Start countdown   |
-| pause       | Pause countdown   |
-| reset       | Reset countdown   |
+| Method Name | Description         |
+| ----------- | ------------------- |
+| start       | Start the countdown |
+| pause       | Pause the countdown |
+| reset       | Reset the countdown |
+
+### CSS Variables
+
+| Variable Name | Description | Default Value |
+| --- | --- | --- |
+| `--hy-count-down-font-size` | Font size | `15px` |
+| `--hy-count-down-line-height` | Line height | `22px` |
 
 [^1] `DD`-day, `HH`-hour, `mm`-minute, `ss`-second, `SSS`-millisecond
 
