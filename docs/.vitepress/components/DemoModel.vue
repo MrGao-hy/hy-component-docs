@@ -83,8 +83,6 @@
                         class="iframe"
                         title="组件在线演示"
                         frameborder="0"
-                        scrolling="no"
-                        style="touch-action: none"
                     ></iframe>
                 </div>
 
@@ -430,7 +428,6 @@
             width: 100%;
             height: 100%;
             border: 0;
-            overflow: hidden;
             scrollbar-width: none;
             -ms-overflow-style: none;
 

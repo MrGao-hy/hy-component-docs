@@ -26,14 +26,22 @@
 
 ```html
 <template>
-    <hy-cell clickable @click="show = true">
-        <hy-cell-item title="打开弹窗"></hy-cell-item>
-    </hy-cell>
+    <hy-button text="打开弹窗1" @click="show1 = true"></hy-button>
+    <hy-button text="打开弹窗2" @click="show2 = true"></hy-button>
 
-    <hy-popup :show="show" @close="show = false">
+    <!-- 手动控制：通过 :show 传入状态，并在 @close 回调中手动置为 false -->
+    <hy-popup :show="show1" @close="show1 = false">
         <view class="popup-content">
             <text>这是弹窗内容</text>
-            <hy-button text="关闭" @click="show = false"></hy-button>
+            <hy-button text="关闭" @click="show1 = false"></hy-button>
+        </view>
+    </hy-popup>
+
+    <!-- 双向绑定：使用 v-model:show，关闭时自动同步状态，无需监听 close -->
+    <hy-popup v-model:show="show2">
+        <view class="popup-content">
+            <text>这是弹窗内容</text>
+            <hy-button text="关闭" @click="show2 = false"></hy-button>
         </view>
     </hy-popup>
 </template>
@@ -41,7 +49,8 @@
 <script setup>
     import { ref } from 'vue';
 
-    const show = ref(false);
+    const show1 = ref(false);
+    const show2 = ref(false);
 </script>
 
 <style lang="scss" scoped>
