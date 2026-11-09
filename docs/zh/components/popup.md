@@ -282,25 +282,26 @@
 
 ### Popup Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| show | 是否展示弹窗 | `boolean` | false |
-| overlay | 是否显示遮罩 | `boolean` | true |
-| mode | 弹出方向，可选值：`left`、`right`、`top`、`bottom`、`center` | `string` | bottom |
-| duration | 遮罩打开或收起的动画过渡时间，单位ms | `number` | 300 |
-| closeable | 是否显示关闭图标 | `boolean` | false |
-| overlayStyle | 遮罩自定义样式，一般用于修改遮罩颜色 | `CSSProperties` | - |
-| overlayOpacity | 遮罩透明度，0-1之间，勿与overlayStyle共用 | `number` | 0.5 |
-| closeOnClickOverlay | 点击遮罩是否关闭弹窗（注意：关闭事件需要自行处理，只会在开启closeOnClickOverlay后点击遮罩层执行close回调） | `boolean` | true |
-| zIndex | 弹出层的z-index值 | `number` | 10086 |
-| safeAreaInsetBottom | 是否为iPhoneX等机型留出底部安全距离 | `boolean` | true |
-| safeAreaInsetTop | 是否留出顶部安全距离（状态栏高度） | `boolean` | false |
-| closeIconPos | 自定义关闭图标位置，可选值：`top-left`、`top-right` | `string` | top-right |
-| round | 设置圆角值，仅对`mode=top | bottom | center`生效 | `string` \| `number` | - |
-| zoom | 当`mode=center`时是否开启缩放 | `boolean` | true |
-| bgColor | 背景色，一般用于特殊弹窗内容场景，设置为`transparent`可去除默认的白色背景 | `string` | - |
-| customStyle | 自定义需要用到的外部样式 | `CSSProperties` | {} |
-| customClass | 自定义外部类名 | `string` | - |
+| 参数 | 说明 | 类型              | 默认值       |
+| --- | --- |-----------------|-----------|
+| show | 是否展示弹窗 | `boolean`       | false     |
+| overlay | 是否显示遮罩 | `boolean`       | true      |
+| mode | 弹出方向，可选值：`left`、`right`、`top`、`bottom`、`center` | `string`        | bottom    |
+| duration | 遮罩打开或收起的动画过渡时间，单位ms | `number`        | 300       |
+| closeable | 是否显示关闭图标 | `boolean`       | false     |
+| overlayStyle | 遮罩自定义样式，一般用于修改遮罩颜色 | `CSSProperties` | -         |
+| overlayOpacity | 遮罩透明度，0-1之间，勿与overlayStyle共用 | `number`        | 0.5       |
+| closeOnClickOverlay | 点击遮罩是否关闭弹窗（注意：关闭事件需要自行处理，只会在开启closeOnClickOverlay后点击遮罩层执行close回调） | `boolean`       | true      |
+| zIndex | 弹出层的z-index值 | `number`        | 10086     |
+| lockScroll | 是否锁住页面滚动 | `boolean`       | true      |
+| safeAreaInsetBottom | 是否为iPhoneX等机型留出底部安全距离 | `boolean`       | true      |
+| safeAreaInsetTop | 是否留出顶部安全距离（状态栏高度） | `boolean`       | false     |
+| closeIconPos | 自定义关闭图标位置，可选值：`top-left`、`top-right` | `string`        | top-right |
+| round | 设置圆角值，仅对`mode=top | bottom          | center`生效 | `string` \| `number` | - |
+| zoom | 当`mode=center`时是否开启缩放 | `boolean`       | true      |
+| bgColor | 背景色，一般用于特殊弹窗内容场景，设置为`transparent`可去除默认的白色背景 | `string`        | -         |
+| customStyle | 自定义需要用到的外部样式 | `CSSProperties` | {}        |
+| customClass | 自定义外部类名 | `string`        | -         |
 
 ### Events
 

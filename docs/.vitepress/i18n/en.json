@@ -64,34 +64,15 @@
         {
             "text": "Component",
             "items": [
-                {
-                    "text": "Basic",
-                    "link": "/en/components/badge"
-                },
-                {
-                    "text": "Form",
-                    "link": "/en/components/addressPicker"
-                },
-                {
-                    "text": "Layout",
-                    "link": "/en/components/card"
-                },
-                {
-                    "text": "Feedback",
-                    "link": "/en/components/actionSheet"
-                },
-                {
-                    "text": "Navigation",
-                    "link": "/en/components/backTop"
-                },
-                {
-                    "text": "Other",
-                    "link": "/en/components/avatar"
-                },
-                {
-                    "text": "Business",
-                    "link": "/en/components/coupon"
-                }
+                { "text": "Basic Elements", "link": "/en/components/avatar" },
+                { "text": "Layout", "link": "/en/components/card" },
+                { "text": "Lists & Content", "link": "/en/components/indexBar" },
+                { "text": "Data & Status", "link": "/en/components/countDown" },
+                { "text": "Form Input", "link": "/en/components/checkButton" },
+                { "text": "Data Pickers", "link": "/en/components/addressPicker" },
+                { "text": "Overlay & Feedback", "link": "/en/components/actionSheet" },
+                { "text": "Navigation & Actions", "link": "/en/components/backTop" },
+                { "text": "Business", "link": "/en/components/coupon" }
             ]
         },
         {
@@ -168,358 +149,137 @@
         ],
         "/en/components/": [
             {
-                "text": "Basic",
+                "text": "Basic Elements",
+                "collapsed": false,
                 "items": [
-                    {
-                        "text": "Badge",
-                        "link": "/en/components/badge"
-                    },
-                    {
-                        "text": "Button",
-                        "link": "/en/components/button"
-                    },
-                    {
-                        "text": "Cell",
-                        "link": "/en/components/cell"
-                    },
-                    {
-                        "text": "Color",
-                        "link": "/en/components/color"
-                    },
-                    {
-                        "text": "ConfigProvider",
-                        "link": "/en/components/configProvider"
-                    },
-                    {
-                        "text": "Icon",
-                        "link": "/en/components/icon"
-                    },
-                    {
-                        "text": "Image",
-                        "link": "/en/components/image"
-                    },
-                    {
-                        "text": "Loading",
-                        "link": "/en/components/loading"
-                    },
-                    {
-                        "text": "Swiper",
-                        "link": "/en/components/swiper"
-                    },
-                    {
-                        "text": "Tag",
-                        "link": "/en/components/tag"
-                    },
-                    {
-                        "text": "Text",
-                        "link": "/en/components/text"
-                    }
-                ]
-            },
-            {
-                "text": "Form",
-                "items": [
-                    {
-                        "text": "AddressPicker",
-                        "link": "/en/components/addressPicker"
-                    },
-                    {
-                        "text": "Calendar",
-                        "link": "/en/components/calendar"
-                    },
-                    {
-                        "text": "Cascader",
-                        "link": "/en/components/cascader"
-                    },
-                    {
-                        "text": "Checkbox",
-                        "link": "/en/components/checkbox"
-                    },
-                    {
-                        "text": "CheckButton",
-                        "link": "/en/components/checkButton"
-                    },
-                    {
-                        "text": "DatetimePicker",
-                        "link": "/en/components/datetimePicker"
-                    },
-                    {
-                        "text": "Form",
-                        "link": "/en/components/form"
-                    },
-                    {
-                        "text": "FormGroup",
-                        "link": "/en/components/formGroup"
-                    },
-                    {
-                        "text": "Input",
-                        "link": "/en/components/input"
-                    },
-                    {
-                        "text": "Keyboard",
-                        "link": "/en/components/keyboard"
-                    },
-                    {
-                        "text": "NumberStep",
-                        "link": "/en/components/numberStep"
-                    },
-                    {
-                        "text": "Picker",
-                        "link": "/en/components/picker"
-                    },
-                    {
-                        "text": "Radio",
-                        "link": "/en/components/radio"
-                    },
-                    {
-                        "text": "Rate",
-                        "link": "/en/components/rate"
-                    },
-                    {
-                        "text": "Search",
-                        "link": "/en/components/search"
-                    },
-                    {
-                        "text": "Slider",
-                        "link": "/en/components/slider"
-                    },
-                    {
-                        "text": "Switch",
-                        "link": "/en/components/switch"
-                    },
-                    {
-                        "text": "Textarea",
-                        "link": "/en/components/textarea"
-                    },
-                    {
-                        "text": "Upload",
-                        "link": "/en/components/upload"
-                    }
+                    { "text": "Avatar", "link": "/en/components/avatar" },
+                    { "text": "Badge", "link": "/en/components/badge" },
+                    { "text": "Button", "link": "/en/components/button" },
+                    { "text": "Color", "link": "/en/components/color" },
+                    { "text": "ConfigProvider", "link": "/en/components/configProvider" },
+                    { "text": "Icon", "link": "/en/components/icon" },
+                    { "text": "Image", "link": "/en/components/image" },
+                    { "text": "Tag", "link": "/en/components/tag" },
+                    { "text": "Text", "link": "/en/components/text" }
                 ]
             },
             {
                 "text": "Layout",
+                "collapsed": false,
                 "items": [
-                    {
-                        "text": "Card",
-                        "link": "/en/components/card"
-                    },
-                    {
-                        "text": "Divider",
-                        "link": "/en/components/divider"
-                    },
-                    {
-                        "text": "Flex",
-                        "link": "/en/components/flex"
-                    },
-                    {
-                        "text": "FloatButton",
-                        "link": "/en/components/floatButton"
-                    },
-                    {
-                        "text": "Grid",
-                        "link": "/en/components/grid"
-                    },
-                    {
-                        "text": "Virtual List",
-                        "link": "/en/components/list"
-                    },
-                    {
-                        "text": "LineProgress",
-                        "link": "/en/components/lineProgress"
-                    },
-                    {
-                        "text": "Line",
-                        "link": "/en/components/line"
-                    },
-                    {
-                        "text": "Overlay",
-                        "link": "/en/components/overlay"
-                    },
-                    {
-                        "text": "ScrollList",
-                        "link": "/en/components/scrollList"
-                    },
-                    {
-                        "text": "Skeleton",
-                        "link": "/en/components/skeleton"
-                    },
-                    {
-                        "text": "Sticky",
-                        "link": "/en/components/sticky"
-                    },
-                    {
-                        "text": "Waterfall",
-                        "link": "/en/components/waterfall"
-                    },
-                    {
-                        "text": "Watermark",
-                        "link": "/en/components/watermark"
-                    }
+                    { "text": "Card", "link": "/en/components/card" },
+                    { "text": "Cell", "link": "/en/components/cell" },
+                    { "text": "Divider", "link": "/en/components/divider" },
+                    { "text": "Flex", "link": "/en/components/flex" },
+                    { "text": "Grid", "link": "/en/components/grid" },
+                    { "text": "Line", "link": "/en/components/line" },
+                    { "text": "Sticky", "link": "/en/components/sticky" },
+                    { "text": "Transition", "link": "/en/components/transition" },
+                    { "text": "Watermark", "link": "/en/components/watermark" }
                 ]
             },
             {
-                "text": "Feedback",
+                "text": "Lists & Content",
+                "collapsed": false,
                 "items": [
-                    {
-                        "text": "ActionSheet",
-                        "link": "/en/components/actionSheet"
-                    },
-                    {
-                        "text": "FoldingPanel",
-                        "link": "/en/components/foldingPanel"
-                    },
-                    {
-                        "text": "Modal",
-                        "link": "/en/components/modal"
-                    },
-                    {
-                        "text": "NoticeBar",
-                        "link": "/en/components/noticeBar"
-                    },
-                    {
-                        "text": "Notify",
-                        "link": "/en/components/notify"
-                    },
-                    {
-                        "text": "Popover",
-                        "link": "/en/components/popover"
-                    },
-                    {
-                        "text": "Popup",
-                        "link": "/en/components/popup"
-                    },
-                    {
-                        "text": "SwipeAction",
-                        "link": "/en/components/swipeAction"
-                    },
-                    {
-                        "text": "Toast",
-                        "link": "/en/components/toast"
-                    },
-                    {
-                        "text": "Tooltip",
-                        "link": "/en/components/tooltip"
-                    },
-                    {
-                        "text": "Warn",
-                        "link": "/en/components/warn"
-                    }
+                    { "text": "IndexBar", "link": "/en/components/indexBar" },
+                    { "text": "Virtual List", "link": "/en/components/list" },
+                    { "text": "Parse", "link": "/en/components/parse" },
+                    { "text": "Qrcode", "link": "/en/components/qrcode" },
+                    { "text": "ReadMore", "link": "/en/components/readMore" },
+                    { "text": "ScrollList", "link": "/en/components/scrollList" },
+                    { "text": "Swiper", "link": "/en/components/swiper" },
+                    { "text": "Table", "link": "/en/components/table" },
+                    { "text": "Waterfall", "link": "/en/components/waterfall" }
                 ]
             },
             {
-                "text": "Navigation",
+                "text": "Data & Status",
+                "collapsed": false,
                 "items": [
-                    {
-                        "text": "BackTop",
-                        "link": "/en/components/backTop"
-                    },
-                    {
-                        "text": "Dropdown",
-                        "link": "/en/components/dropdown"
-                    },
-                    {
-                        "text": "Empty",
-                        "link": "/en/components/empty"
-                    },
-                    {
-                        "text": "IndexBar",
-                        "link": "/en/components/indexBar"
-                    },
-                    {
-                        "text": "Menu",
-                        "link": "/en/components/menu"
-                    },
-                    {
-                        "text": "Navbar",
-                        "link": "/en/components/navbar"
-                    },
-                    {
-                        "text": "Pagination",
-                        "link": "/en/components/pagination"
-                    },
-                    {
-                        "text": "Subsection",
-                        "link": "/en/components/subsection"
-                    },
-                    {
-                        "text": "Steps",
-                        "link": "/en/components/steps"
-                    },
-                    {
-                        "text": "Tabs",
-                        "link": "/en/components/tabs"
-                    },
-                    {
-                        "text": "TabBar",
-                        "link": "/en/components/tabBar"
-                    }
+                    { "text": "CountDown", "link": "/en/components/countDown" },
+                    { "text": "CountTo", "link": "/en/components/countTo" },
+                    { "text": "Empty", "link": "/en/components/empty" },
+                    { "text": "LineProgress", "link": "/en/components/lineProgress" },
+                    { "text": "Loading", "link": "/en/components/loading" },
+                    { "text": "RollingNum", "link": "/en/components/rollingNum" },
+                    { "text": "Skeleton", "link": "/en/components/skeleton" }
                 ]
             },
             {
-                "text": "Other",
+                "text": "Form Input",
+                "collapsed": false,
                 "items": [
-                    {
-                        "text": "Avatar",
-                        "link": "/en/components/avatar"
-                    },
-                    {
-                        "text": "CodeInput",
-                        "link": "/en/components/codeInput"
-                    },
-                    {
-                        "text": "CountTo",
-                        "link": "/en/components/countTo"
-                    },
-                    {
-                        "text": "CountDown",
-                        "link": "/en/components/countDown"
-                    },
-                    {
-                        "text": "Parse",
-                        "link": "/en/components/parse"
-                    },
-                    {
-                        "text": "Qrcode",
-                        "link": "/en/components/qrcode"
-                    },
-                    {
-                        "text": "ReadMore",
-                        "link": "/en/components/readMore"
-                    },
-                    {
-                        "text": "RollingNum",
-                        "link": "/en/components/rollingNum"
-                    },
-                    {
-                        "text": "Signature",
-                        "link": "/en/components/signature"
-                    },
-                    {
-                        "text": "Table",
-                        "link": "/en/components/table"
-                    },
-                    {
-                        "text": "Transition",
-                        "link": "/en/components/transition"
-                    }
+                    { "text": "CheckButton", "link": "/en/components/checkButton" },
+                    { "text": "Checkbox", "link": "/en/components/checkbox" },
+                    { "text": "CodeInput", "link": "/en/components/codeInput" },
+                    { "text": "Form", "link": "/en/components/form" },
+                    { "text": "FormGroup", "link": "/en/components/formGroup" },
+                    { "text": "Input", "link": "/en/components/input" },
+                    { "text": "Keyboard", "link": "/en/components/keyboard" },
+                    { "text": "NumberStep", "link": "/en/components/numberStep" },
+                    { "text": "Radio", "link": "/en/components/radio" },
+                    { "text": "Rate", "link": "/en/components/rate" },
+                    { "text": "Search", "link": "/en/components/search" },
+                    { "text": "Signature", "link": "/en/components/signature" },
+                    { "text": "Slider", "link": "/en/components/slider" },
+                    { "text": "Switch", "link": "/en/components/switch" },
+                    { "text": "Textarea", "link": "/en/components/textarea" },
+                    { "text": "Upload", "link": "/en/components/upload" }
+                ]
+            },
+            {
+                "text": "Data Pickers",
+                "collapsed": false,
+                "items": [
+                    { "text": "AddressPicker", "link": "/en/components/addressPicker" },
+                    { "text": "Calendar", "link": "/en/components/calendar" },
+                    { "text": "Cascader", "link": "/en/components/cascader" },
+                    { "text": "DatetimePicker", "link": "/en/components/datetimePicker" },
+                    { "text": "Picker", "link": "/en/components/picker" }
+                ]
+            },
+            {
+                "text": "Overlay & Feedback",
+                "collapsed": false,
+                "items": [
+                    { "text": "ActionSheet", "link": "/en/components/actionSheet" },
+                    { "text": "Dropdown", "link": "/en/components/dropdown" },
+                    { "text": "Modal", "link": "/en/components/modal" },
+                    { "text": "NoticeBar", "link": "/en/components/noticeBar" },
+                    { "text": "Notify", "link": "/en/components/notify" },
+                    { "text": "Overlay", "link": "/en/components/overlay" },
+                    { "text": "Popover", "link": "/en/components/popover" },
+                    { "text": "Popup", "link": "/en/components/popup" },
+                    { "text": "Toast", "link": "/en/components/toast" },
+                    { "text": "Tooltip", "link": "/en/components/tooltip" },
+                    { "text": "Warn", "link": "/en/components/warn" }
+                ]
+            },
+            {
+                "text": "Navigation & Actions",
+                "collapsed": false,
+                "items": [
+                    { "text": "BackTop", "link": "/en/components/backTop" },
+                    { "text": "FloatButton", "link": "/en/components/floatButton" },
+                    { "text": "FoldingPanel", "link": "/en/components/foldingPanel" },
+                    { "text": "Menu", "link": "/en/components/menu" },
+                    { "text": "Navbar", "link": "/en/components/navbar" },
+                    { "text": "Pagination", "link": "/en/components/pagination" },
+                    { "text": "Steps", "link": "/en/components/steps" },
+                    { "text": "Subsection", "link": "/en/components/subsection" },
+                    { "text": "SwipeAction", "link": "/en/components/swipeAction" },
+                    { "text": "TabBar", "link": "/en/components/tabBar" },
+                    { "text": "Tabs", "link": "/en/components/tabs" }
                 ]
             },
             {
                 "text": "Business",
+                "collapsed": false,
                 "items": [
-                    {
-                        "text": "Coupon",
-                        "link": "/en/components/coupon"
-                    },
-                    {
-                        "text": "Price",
-                        "link": "/en/components/price"
-                    },
-                    {
-                        "text": "SubmitBar",
-                        "link": "/en/components/submitBar"
-                    }
+                    { "text": "Coupon", "link": "/en/components/coupon" },
+                    { "text": "Price", "link": "/en/components/price" },
+                    { "text": "SubmitBar", "link": "/en/components/submitBar" }
                 ]
             }
         ],

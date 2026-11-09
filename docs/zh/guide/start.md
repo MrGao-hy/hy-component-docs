@@ -17,19 +17,19 @@
 
 ::: code-group
 
-```shell
+```shell [npm]
 $ npm install -D sass@1.98.0
 ```
 
-```shell
+```shell [pnpm]
 $ pnpm add -D sass@1.98.0
 ```
 
-```shell
+```shell [cnpm]
 $ cnpm install -D sass@1.98.0
 ```
 
-```shell
+```shell [yarn]
 $ yarn add -D sass@1.98.0
 ```
 
@@ -45,19 +45,19 @@ $ yarn add -D sass@1.98.0
 
 ::: code-group
 
-```shell
+```shell [npm]
 $ npm install dayjs
 ```
 
-```shell
+```shell [pnpm]
 $ pnpm add dayjs
 ```
 
-```shell
+```shell [cnpm]
 $ cnpm install dayjs
 ```
 
-```shell
+```shell [yarn]
 $ yarn add dayjs
 ```
 
@@ -73,19 +73,19 @@ $ yarn add dayjs
 
 ::: code-group
 
-```shell
+```shell [npm]
 $ npm install @hy-app/ui
 ```
 
-```shell
+```shell [pnpm]
 $ pnpm add @hy-app/ui
 ```
 
-```shell
+```shell [cnpm]
 $ cnpm install @hy-app/ui
 ```
 
-```shell
+```shell [yarn]
 $ yarn install @hy-app/ui
 ```
 
