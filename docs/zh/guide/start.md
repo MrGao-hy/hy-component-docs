@@ -95,7 +95,7 @@ $ yarn install @hy-app/ui
 
 修改项目根目录下的 ./src/pages.json 文件，添加如下 easycom 配置：
 
-```json
+```json [pages.json]
 {
     "easycom": {
         "custom": {
@@ -107,12 +107,10 @@ $ yarn install @hy-app/ui
 
 ## 让 Volar/VS Code 识别组件
 
-> VS Code和trae 能提供组件的属性提示、类型检查、自动补全
-
-```json
+```json [tsconfig.json]
 {
     "compilerOptions": {
-        "types": ["@hy-app/ui/global"]
+        "types": ["@hy-app/ui/global"] // [!code focus]
     }
 }
 ```
@@ -121,13 +119,13 @@ $ yarn install @hy-app/ui
 
 > 华玥组件库的全局样式、主题变量、组件基础样式需统一导入，否则组件会丢失样式效果。
 
-```scss
+```scss [uni.scss]
 @use '@hy-app/ui/index.scss' as *;
 ```
 
-## :deciduous\_tree: 页面上使用组件
+## :deciduous_tree: 页面上使用组件
 
-```html
+```html [vue]
 <template>
     <!-- 然后在所需页面直接使用 -->
     <hy-input></hy-input>
