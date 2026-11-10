@@ -227,18 +227,18 @@ Coupon 组件支持三种主要类型的优惠券展示，下面展示了如何�
 
 ### CSS 变量
 
-| 变量名 | 说明 | 默认值 |
-| --- | --- | --- |
-| `--hy-coupon-box-width` | 左侧金额区宽度 | `180rpx` |
-| `--hy-coupon-bg-height` | 背景高度 | `166rpx` |
-| `--hy-coupon-radius` | 卡片圆角 | `16rpx` |
-| `--hy-coupon-value-font-size` | 金额字号 | `64rpx` |
-| `--hy-coupon-suffix-font-size` | 金额单位字号 | `28rpx` |
-| `--hy-coupon-name-font-size` | 优惠券名称字号 | `30rpx` |
-| `--hy-coupon-desc-font-size` | 描述文字字号 | `22rpx` |
-| `--hy-coupon-tag-width` | 状态标签宽度 | `120rpx` |
-| `--hy-coupon-tag-font-size` | 状态标签字号 | `26rpx` |
-| `--hy-coupon-tag-bg` | 状态标签背景色 | `#ffd16d` |
-| `--hy-coupon-tag-color` | 状态标签文字颜色 | `#d43c33` |
+| 变量名                         | 说明             | 默认值    |
+| ------------------------------ | ---------------- | --------- |
+| `--hy-coupon-box-width`        | 左侧金额区宽度   | `180rpx`  |
+| `--hy-coupon-bg-height`        | 背景高度         | `166rpx`  |
+| `--hy-coupon-radius`           | 卡片圆角         | `16rpx`   |
+| `--hy-coupon-value-font-size`  | 金额字号         | `64rpx`   |
+| `--hy-coupon-suffix-font-size` | 金额单位字号     | `28rpx`   |
+| `--hy-coupon-name-font-size`   | 优惠券名称字号   | `30rpx`   |
+| `--hy-coupon-desc-font-size`   | 描述文字字号     | `22rpx`   |
+| `--hy-coupon-tag-width`        | 状态标签宽度     | `120rpx`  |
+| `--hy-coupon-tag-font-size`    | 状态标签字号     | `26rpx`   |
+| `--hy-coupon-tag-bg`           | 状态标签背景色   | `#ffd16d` |
+| `--hy-coupon-tag-color`        | 状态标签文字颜色 | `#d43c33` |
 
 <demo-model url="pages-design/coupon/coupon"></demo-model>

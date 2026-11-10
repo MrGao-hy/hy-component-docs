@@ -183,16 +183,16 @@ const { closeOutside } = useQueue();
 
 ### CSS 变量
 
-| 变量名 | 说明 | 默认值 |
-| --- | --- | --- |
-| `--hy-popover-z-index` | 层级 | `998` |
-| `--hy-popover-icon-size` | 图标尺寸 | `18px` |
-| `--hy-popover-menu-padding` | 菜单内边距 | `20rpx 0` |
-| `--hy-popover-min-height` | 最小高度 | `36px` |
-| `--hy-popover-width` | 宽度 | `200px` |
-| `--hy-popover-line-height` | 行高 | `22px` |
-| `--hy-popover-radius` | 气泡/菜单圆角 | 跟随 `--hy-radius-sm`（8rpx） |
-| `--hy-popover-border` | 菜单行分隔线 | 跟随 `--hy-border-line` |
+| 变量名                      | 说明          | 默认值                        |
+| --------------------------- | ------------- | ----------------------------- |
+| `--hy-popover-z-index`      | 层级          | `998`                         |
+| `--hy-popover-icon-size`    | 图标尺寸      | `18px`                        |
+| `--hy-popover-menu-padding` | 菜单内边距    | `20rpx 0`                     |
+| `--hy-popover-min-height`   | 最小高度      | `36px`                        |
+| `--hy-popover-width`        | 宽度          | `200px`                       |
+| `--hy-popover-line-height`  | 行高          | `22px`                        |
+| `--hy-popover-radius`       | 气泡/菜单圆角 | 跟随 `--hy-radius-sm`（8rpx） |
+| `--hy-popover-border`       | 菜单行分隔线  | 跟随 `--hy-border-line`       |
 
 [^1]: `left-top`：左上；`left-bottom`：左下；`right-top`：右上；`right-bottom`：右下；`left-center`：左中；`right-center`：右中；`top-center`：上中；`bottom-center`：下中；
 

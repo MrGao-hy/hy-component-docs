@@ -240,7 +240,6 @@ const columns = reactive([
 | `--hy-check-button-disabled-color` | 禁用文字颜色 | 跟随 `--hy-text-color--disabled` |
 | `--hy-check-button-disabled-border-color` | 禁用态边框颜色 | 跟随 `--hy-background--disabled` |
 
-
 [^1]: `selectType`设置为`radio`时候v-model必须传是字符串/数字，设置为`checkbox`时候`v-model`必须传数组
 
 [^2]: `checkbox`：多选；`radio`：单选

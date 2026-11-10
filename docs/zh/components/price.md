@@ -169,9 +169,9 @@ import { HyPrice } from 'hy-app';
 
 ### CSS 变量
 
-| 变量名 | 说明 | 默认值 |
-| --- | --- | --- |
-| `--hy-price-font-size` | 字号 | `32rpx` |
-| `--hy-price-margin-top` | 上边距 | `5px` |
+| 变量名                  | 说明   | 默认值  |
+| ----------------------- | ------ | ------- |
+| `--hy-price-font-size`  | 字号   | `32rpx` |
+| `--hy-price-margin-top` | 上边距 | `5px`   |
 
 <demo-model url="pages-design/price/price"></demo-model>

@@ -223,10 +223,10 @@ export interface SubmitBarIconMenus {
 
 ### CSS 变量
 
-| 变量名 | 说明 | 默认值 |
-| --- | --- | --- |
-| `--hy-submit-bar-left-font-size` | 左侧文字字号 | `20rpx` |
-| `--hy-submit-bar-right-font-size` | 右侧价格字号 | `26rpx` |
-| `--hy-submit-bar-right-width` | 右侧区域宽度 | `400rpx` |
+| 变量名                            | 说明         | 默认值   |
+| --------------------------------- | ------------ | -------- |
+| `--hy-submit-bar-left-font-size`  | 左侧文字字号 | `20rpx`  |
+| `--hy-submit-bar-right-font-size` | 右侧价格字号 | `26rpx`  |
+| `--hy-submit-bar-right-width`     | 右侧区域宽度 | `400rpx` |
 
 <demo-model url="pages-design/submitBar/submitBar"></demo-model>

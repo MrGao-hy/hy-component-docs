@@ -369,20 +369,20 @@ const handleDelete = () => {
 
 ### CSS 变量
 
-| 变量名 | 说明 | 默认值 |
-| --- | --- | --- |
-| `--hy-keyboard-header-height` | 头部高度 | `80rpx` |
-| `--hy-keyboard-header-padding` | 头部内边距 | `0 32rpx` |
-| `--hy-keyboard-title-font-size` | 标题字号 | `32rpx` |
-| `--hy-keyboard-close-font-size` | 关闭按钮字号 | `28rpx` |
-| `--hy-keyboard-key-gap` | 按键间距 | 跟随 `--hy-border-margin-padding-sm`（10rpx） |
-| `--hy-keyboard-sidebar-width` | 侧边栏宽度 | `160rpx` |
-| `--hy-keyboard-key-height` | 按键高度 | `100rpx` |
-| `--hy-keyboard-key-radius` | 按键圆角 | `12rpx` |
-| `--hy-keyboard-key-shadow` | 按键阴影 | `0 2rpx 8rpx rgba(0, 0, 0, 0.06)` |
-| `--hy-keyboard-car-key-height` | 车牌键高度 | `88rpx` |
-| `--hy-keyboard-car-key-font-size` | 车牌键字号 | `28rpx` |
-| `--hy-keyboard-key-font-size` | 按键字号 | 跟随 `--hy-font-size-lg`（36rpx） |
-| `--hy-keyboard-border` | 头部分隔线 | 跟随 `--hy-border-line` |
+| 变量名                            | 说明         | 默认值                                        |
+| --------------------------------- | ------------ | --------------------------------------------- |
+| `--hy-keyboard-header-height`     | 头部高度     | `80rpx`                                       |
+| `--hy-keyboard-header-padding`    | 头部内边距   | `0 32rpx`                                     |
+| `--hy-keyboard-title-font-size`   | 标题字号     | `32rpx`                                       |
+| `--hy-keyboard-close-font-size`   | 关闭按钮字号 | `28rpx`                                       |
+| `--hy-keyboard-key-gap`           | 按键间距     | 跟随 `--hy-border-margin-padding-sm`（10rpx） |
+| `--hy-keyboard-sidebar-width`     | 侧边栏宽度   | `160rpx`                                      |
+| `--hy-keyboard-key-height`        | 按键高度     | `100rpx`                                      |
+| `--hy-keyboard-key-radius`        | 按键圆角     | `12rpx`                                       |
+| `--hy-keyboard-key-shadow`        | 按键阴影     | `0 2rpx 8rpx rgba(0, 0, 0, 0.06)`             |
+| `--hy-keyboard-car-key-height`    | 车牌键高度   | `88rpx`                                       |
+| `--hy-keyboard-car-key-font-size` | 车牌键字号   | `28rpx`                                       |
+| `--hy-keyboard-key-font-size`     | 按键字号     | 跟随 `--hy-font-size-lg`（36rpx）             |
+| `--hy-keyboard-border`            | 头部分隔线   | 跟随 `--hy-border-line`                       |
 
 <demo-model url="pages-design/keyboard/keyboard"></demo-model>

@@ -180,8 +180,8 @@
 
 ### CSS 变量
 
-| 变量名 | 说明 | 默认值 |
-| --- | --- | --- |
+| 变量名           | 说明         | 默认值                            |
+| ---------------- | ------------ | --------------------------------- |
 | `--hy-sticky-bg` | 吸顶时背景色 | 跟随 `--hy-background--container` |
 
 <demo-model url="pages-design/sticky/sticky"></demo-model>

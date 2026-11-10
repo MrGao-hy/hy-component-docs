@@ -169,15 +169,15 @@ export interface TabsItemVo {
 
 ### CSS 变量
 
-| 变量名 | 说明 | 默认值 |
-| --- | --- | --- |
-| `--hy-tabs-item-height` | 选项高度 | `44px` |
-| `--hy-tabs-item-padding` | 选项内边距 | `0 11px` |
-| `--hy-tabs-font-size` | 字号 | `15px` |
-| `--hy-tabs-line-width` | 下划线宽度 | `30px` |
-| `--hy-tabs-line-height` | 下划线高度 | `3px` |
-| `--hy-tabs-text-color` | 标签默认颜色 | 跟随 `--hy-text-color` |
-| `--hy-tabs-text-active-color` | 标签激活颜色 | 跟随 `--hy-text-color` |
-| `--hy-tabs-line-radius` | 下划线圆角 | 跟随 `--hy-radius-semicircle`（100px） |
+| 变量名                        | 说明         | 默认值                                 |
+| ----------------------------- | ------------ | -------------------------------------- |
+| `--hy-tabs-item-height`       | 选项高度     | `44px`                                 |
+| `--hy-tabs-item-padding`      | 选项内边距   | `0 11px`                               |
+| `--hy-tabs-font-size`         | 字号         | `15px`                                 |
+| `--hy-tabs-line-width`        | 下划线宽度   | `30px`                                 |
+| `--hy-tabs-line-height`       | 下划线高度   | `3px`                                  |
+| `--hy-tabs-text-color`        | 标签默认颜色 | 跟随 `--hy-text-color`                 |
+| `--hy-tabs-text-active-color` | 标签激活颜色 | 跟随 `--hy-text-color`                 |
+| `--hy-tabs-line-radius`       | 下划线圆角   | 跟随 `--hy-radius-semicircle`（100px） |
 
 <demo-model url="pages-design/tabs/tabs"></demo-model>

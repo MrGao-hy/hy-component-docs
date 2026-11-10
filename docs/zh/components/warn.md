@@ -79,13 +79,13 @@
 
 ### CSS 变量
 
-| 变量名 | 说明 | 默认值 |
-| --- | --- | --- |
-| `--hy-warn-title-font-size` | 标题字号 | `14px` |
-| `--hy-warn-desc-font-size` | 描述字号 | `14px` |
-| `--hy-warn-close-top` | 关闭按钮上边距 | `11px` |
-| `--hy-warn-close-right` | 关闭按钮右边距 | `10px` |
-| `--hy-warn-radius` | 容器圆角 | 跟随 `--hy-radius-sm`（8rpx） |
-| `--hy-warn-text-color` | 标题/描述颜色 | `#fff` |
+| 变量名                      | 说明           | 默认值                        |
+| --------------------------- | -------------- | ----------------------------- |
+| `--hy-warn-title-font-size` | 标题字号       | `14px`                        |
+| `--hy-warn-desc-font-size`  | 描述字号       | `14px`                        |
+| `--hy-warn-close-top`       | 关闭按钮上边距 | `11px`                        |
+| `--hy-warn-close-right`     | 关闭按钮右边距 | `10px`                        |
+| `--hy-warn-radius`          | 容器圆角       | 跟随 `--hy-radius-sm`（8rpx） |
+| `--hy-warn-text-color`      | 标题/描述颜色  | `#fff`                        |
 
 <demo-model url="pages-design/warn/warn"></demo-model>

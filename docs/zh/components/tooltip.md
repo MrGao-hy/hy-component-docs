@@ -274,15 +274,15 @@ Tooltip 支持12种弹出位置，通过 `placement` 属性控制：
 
 ### CSS 变量
 
-| 变量名 | 说明 | 默认值 |
-| --- | --- | --- |
-| `--hy-tooltip-z-index` | 层级 | `998` |
-| `--hy-tooltip-bg` | 背景色 | `rgb(50, 50, 51)` |
-| `--hy-tooltip-min-height` | 最小高度 | `36px` |
-| `--hy-tooltip-width` | 宽度 | `200px` |
-| `--hy-tooltip-line-height` | 行高 | `22px` |
-| `--hy-tooltip-btn-font-size` | 按钮字号 | `13px` |
-| `--hy-tooltip-radius` | 气泡圆角 | 跟随 `--hy-radius-sm`（8rpx） |
-| `--hy-tooltip-btn-color` | 菜单按钮颜色 | `#ffffff` |
+| 变量名                       | 说明         | 默认值                        |
+| ---------------------------- | ------------ | ----------------------------- |
+| `--hy-tooltip-z-index`       | 层级         | `998`                         |
+| `--hy-tooltip-bg`            | 背景色       | `rgb(50, 50, 51)`             |
+| `--hy-tooltip-min-height`    | 最小高度     | `36px`                        |
+| `--hy-tooltip-width`         | 宽度         | `200px`                       |
+| `--hy-tooltip-line-height`   | 行高         | `22px`                        |
+| `--hy-tooltip-btn-font-size` | 按钮字号     | `13px`                        |
+| `--hy-tooltip-radius`        | 气泡圆角     | 跟随 `--hy-radius-sm`（8rpx） |
+| `--hy-tooltip-btn-color`     | 菜单按钮颜色 | `#ffffff`                     |
 
 <demo-model url="pages-design/tooltip/tooltip"></demo-model>

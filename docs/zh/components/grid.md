@@ -155,9 +155,9 @@ type CustomKeysVo = {
 
 ### CSS 变量
 
-| 变量名 | 说明 | 默认值 |
-| --- | --- | --- |
-| `--hy-grid-hover-opacity` | 宫格按压透明度 | `0.7` |
-| `--hy-grid-border` | 宫格边框（右边框与下边框同步） | 跟随 `--hy-border-line` |
+| 变量名                    | 说明                           | 默认值                  |
+| ------------------------- | ------------------------------ | ----------------------- |
+| `--hy-grid-hover-opacity` | 宫格按压透明度                 | `0.7`                   |
+| `--hy-grid-border`        | 宫格边框（右边框与下边框同步） | 跟随 `--hy-border-line` |
 
 <demo-model url="pages-design/grid/grid"></demo-model>

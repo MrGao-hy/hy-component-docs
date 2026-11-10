@@ -415,7 +415,7 @@
     const onGlobalConfirm = async () => {
         const confirmed = await message.confirm({
             title: '删除确认',
-            content: '确定要删除这条数据吗？'
+            content: '确定要删除这条数据吗？',
         });
         if (confirmed) {
             uni.showToast({ title: '已删除', icon: 'success' });
@@ -441,30 +441,30 @@
 
 ### Props
 
-| 参数 | 说明 | 类型 | 默认值   |
-| --- | --- | --- |-------|
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
 | modelValue | 是否显示模态框 | `boolean` | false |
 | message | 是否作为 useMessage 全局消息的驱动实例；为 `true` 时由 `message.alert` / `message.confirm` 控制显隐与回调，为 `false` 时是独立模态框，走 `v-model` 与 `confirm`/`cancel` 事件，不受全局注入状态劫持 | `boolean` | false |
-| title | 标题内容 | `string` | -     |
-| content | 模态框内容，如传入slot内容，则此参数无效 | `string` | -     |
-| confirmText | 确认按钮的文字 | `string` | 确认    |
-| cancelText | 取消按钮的文字 | `string` | 取消    |
-| showConfirmButton | 是否显示确认按钮 | `boolean` | true  |
+| title | 标题内容 | `string` | - |
+| content | 模态框内容，如传入slot内容，则此参数无效 | `string` | - |
+| confirmText | 确认按钮的文字 | `string` | 确认 |
+| cancelText | 取消按钮的文字 | `string` | 取消 |
+| showConfirmButton | 是否显示确认按钮 | `boolean` | true |
 | showCancelButton | 是否显示取消按钮 | `boolean` | false |
-| confirmColor | 确认按钮的颜色 | `string` | -     |
-| cancelColor | 取消按钮的颜色 | `string` | -     |
+| confirmColor | 确认按钮的颜色 | `string` | - |
+| cancelColor | 取消按钮的颜色 | `string` | - |
 | buttonReverse | 对调确认和取消的位置 | `boolean` | false |
-| zoom | 是否开启缩放模式 | `boolean` | true  |
-| round | 模态框圆角，支持数值、px、rpx单位 | `string`\|`number` | 16    |
-| autoClose | 点击确认按钮后是否自动关闭 | `boolean` | true  |
+| zoom | 是否开启缩放模式 | `boolean` | true |
+| round | 模态框圆角，支持数值、px、rpx单位 | `string`\|`number` | 16 |
+| autoClose | 点击确认按钮后是否自动关闭 | `boolean` | true |
 | loading | 是否显示loading状态 | `boolean` | false |
 | closeOnClickOverlay | 是否允许点击遮罩关闭Modal（注意：关闭事件需要自行处理，只会在开启closeOnClickOverlay后点击遮罩层执行close回调） | `boolean` | false |
-| negativeTop | 往上偏移的值，给一个负的margin-top，往上偏移，避免和键盘重合的情况，数值默认单位px | `number` | 0     |
+| negativeTop | 往上偏移的值，给一个负的margin-top，往上偏移，避免和键盘重合的情况，数值默认单位px | `number` | 0 |
 | width | modal宽度，不支持百分比，数值默认单位px，支持rpx单位 | `string`\|`number` | 550rpx |
-| confirmButtonShape | 确认按钮的样式，设置后将不会显示取消按钮，可选值：circle、square | `string` | -     |
-| contentTextAlign | 文案对齐方式，可选值：left、center、right | `string` | left  |
-| customStyle | 自定义需要用到的外部样式 | `CSSProperties` | -     |
-| customClass | 自定义外部类名 | `string` | -     |
+| confirmButtonShape | 确认按钮的样式，设置后将不会显示取消按钮，可选值：circle、square | `string` | - |
+| contentTextAlign | 文案对齐方式，可选值：left、center、right | `string` | left |
+| customStyle | 自定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### Events
 

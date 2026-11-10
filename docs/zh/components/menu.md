@@ -558,13 +558,13 @@ type MenuParamsVo = {
 
 ### CSS 变量
 
-| 变量名 | 说明 | 默认值 |
-| --- | --- | --- |
-| `--hy-menu-max-width` | 菜单最大宽度 | `260rpx` |
-| `--hy-menu-indicator-width` | 选中指示条宽度 | `4px` |
-| `--hy-menu-indicator-height` | 选中指示条高度 | `15px` |
-| `--hy-menu-indicator-radius` | 选中指示条圆角 | 跟随 `--hy-radius-semicircle`（100px） |
-| `--hy-menu-title-font-size` | 标题字号（行高同步跟随） | 跟随 `--hy-font-size-base`（28rpx） |
-| `--hy-menu-disabled-color` | 禁用文字颜色 | 跟随 `--hy-text-color--disabled` |
+| 变量名                       | 说明                     | 默认值                                 |
+| ---------------------------- | ------------------------ | -------------------------------------- |
+| `--hy-menu-max-width`        | 菜单最大宽度             | `260rpx`                               |
+| `--hy-menu-indicator-width`  | 选中指示条宽度           | `4px`                                  |
+| `--hy-menu-indicator-height` | 选中指示条高度           | `15px`                                 |
+| `--hy-menu-indicator-radius` | 选中指示条圆角           | 跟随 `--hy-radius-semicircle`（100px） |
+| `--hy-menu-title-font-size`  | 标题字号（行高同步跟随） | 跟随 `--hy-font-size-base`（28rpx）    |
+| `--hy-menu-disabled-color`   | 禁用文字颜色             | 跟随 `--hy-text-color--disabled`       |
 
 <demo-model url="pages-design/menu/menu"></demo-model>

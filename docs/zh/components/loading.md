@@ -124,14 +124,14 @@
 
 ### CSS 变量
 
-| 变量名 | 说明 | 默认值 |
-| --- | --- | --- |
-| `--hy-loading-text-font-size` | 文字字号 | `14px` |
-| `--hy-loading-text-line-height` | 文字行高 | `20px` |
-| `--hy-loading-border-width` | 圆环边框宽度 | `3px` |
-| `--hy-loading-bg-color` | 圆环轨道色 | `#e5e5e5` |
-| `--hy-loading-dots-gap` | 圆点间距 | `6px` |
-| `--hy-loading-bars-gap` | 条形间距 | `3px` |
+| 变量名                             | 说明             | 默认值                       |
+| ---------------------------------- | ---------------- | ---------------------------- |
+| `--hy-loading-text-font-size`      | 文字字号         | `14px`                       |
+| `--hy-loading-text-line-height`    | 文字行高         | `20px`                       |
+| `--hy-loading-border-width`        | 圆环边框宽度     | `3px`                        |
+| `--hy-loading-bg-color`            | 圆环轨道色       | `#e5e5e5`                    |
+| `--hy-loading-dots-gap`            | 圆点间距         | `6px`                        |
+| `--hy-loading-bars-gap`            | 条形间距         | `3px`                        |
 | `--hy-loading-vertical-text-color` | 垂直排列文字颜色 | 跟随 `--hy-text-color--grey` |
 
 <demo-model url="pages-design/loading/loading"></demo-model>

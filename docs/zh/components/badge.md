@@ -126,7 +126,7 @@
 ```html
 <view class="relative">
     <hy-badge :value="12" absolute :offset="[-8, 50]" border></hy-badge>
-  
+
     <hy-avatar
         size="large"
         shape="square"
@@ -139,35 +139,35 @@
 
 ### Badge Props
 
-| 参数 | 说明                                                                  | 类型                                                       | 默认值 |
-| --- |---------------------------------------------------------------------|----------------------------------------------------------| -- |
-| isDot | 不展示数字，只有一个小点                                                        | `boolean`                                                | - |
-| value | 展示的数字，大于 overflowCount 时显示为 ${overflowCount}+，为0且show-zero为false时隐藏 | `number`                                                 | - |
-| show | 组件是否显示                                                              | `boolean`                                                | true |
-| max | 最大值，超过最大值会显示 '{max}+'                                               | `number`                                                 | 999 |
-| zIndex | 最大层级                                                                | `number`                                                 | 999 |
-| type | 主题类型                                                                | `error` \| `warning` \| `success` \| `primary` \| `info` | error |
-| showZero | 当数值为 0 时，是否展示 Badge                                                 | `boolean`                                                | false |
-| bgColor | 背景颜色，优先级比type高，如设置，type参数会失效                                        | `string`                                                 | - |
-| color | 字体颜色                                                                | `string`                                                 | #ffffff |
-| border | 是否显示边框                                                              | `boolean`                                                | false |
-| shape | 徽标形状，circle-四角均为圆角，horn-左下角为直角                                      | `circle` \| `horn`                                       | circle |
-| numberType | 置数字的显示方式，详细见上方文档                                                    | `overflow` \| `ellipsis` \| `limit`                      | overflow |
-| offset | 设置badge的位置偏移，格式为 [x, y]，也即设置的为top和right的值，absolute为true时有效          | `array`                                                  | - |
-| inverted | 是否反转背景和字体颜色                                                         | `boolean`                                                | false |
-| absolute | 组件是否绝对定位                                                            | `boolean`                                                | false |
-| customStyle | 自定义需要用到的外部样式                                                        | `CSSProperties`                                          | - |
-| customClass | 自定义外部类名                                                             | `string`                                                 | - |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| isDot | 不展示数字，只有一个小点 | `boolean` | - |
+| value | 展示的数字，大于 overflowCount 时显示为 ${overflowCount}+，为0且show-zero为false时隐藏 | `number` | - |
+| show | 组件是否显示 | `boolean` | true |
+| max | 最大值，超过最大值会显示 '{max}+' | `number` | 999 |
+| zIndex | 最大层级 | `number` | 999 |
+| type | 主题类型 | `error` \| `warning` \| `success` \| `primary` \| `info` | error |
+| showZero | 当数值为 0 时，是否展示 Badge | `boolean` | false |
+| bgColor | 背景颜色，优先级比type高，如设置，type参数会失效 | `string` | - |
+| color | 字体颜色 | `string` | #ffffff |
+| border | 是否显示边框 | `boolean` | false |
+| shape | 徽标形状，circle-四角均为圆角，horn-左下角为直角 | `circle` \| `horn` | circle |
+| numberType | 置数字的显示方式，详细见上方文档 | `overflow` \| `ellipsis` \| `limit` | overflow |
+| offset | 设置badge的位置偏移，格式为 [x, y]，也即设置的为top和right的值，absolute为true时有效 | `array` | - |
+| inverted | 是否反转背景和字体颜色 | `boolean` | false |
+| absolute | 组件是否绝对定位 | `boolean` | false |
+| customStyle | 自定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### CSS 变量
 
-| 变量名 | 说明 | 默认值 |
-| --- | --- | --- |
-| `--hy-badge-dot-size` | 圆点大小 | `8px` |
-| `--hy-badge-text-font-size` | 文字大小 | `11px` |
-| `--hy-badge-radius` | 徽标圆角 | 跟随 `--hy-radius-semicircle`（100px） |
-| `--hy-badge-padding` | 非圆点徽标内边距 | `2px 5px` |
-| `--hy-badge-inverted-font-size` | 反色模式字号 | `13px` |
-| `--hy-badge-border-width` | 白边宽度（is-border） | `2px` |
+| 变量名                          | 说明                  | 默认值                                 |
+| ------------------------------- | --------------------- | -------------------------------------- |
+| `--hy-badge-dot-size`           | 圆点大小              | `8px`                                  |
+| `--hy-badge-text-font-size`     | 文字大小              | `11px`                                 |
+| `--hy-badge-radius`             | 徽标圆角              | 跟随 `--hy-radius-semicircle`（100px） |
+| `--hy-badge-padding`            | 非圆点徽标内边距      | `2px 5px`                              |
+| `--hy-badge-inverted-font-size` | 反色模式字号          | `13px`                                 |
+| `--hy-badge-border-width`       | 白边宽度（is-border） | `2px`                                  |
 
 <demo-model url="pages-design/badge/badge"></demo-model>

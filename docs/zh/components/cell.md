@@ -175,17 +175,17 @@
 
 ### CSS 变量
 
-| 变量名 | 说明 | 默认值 |
-| --- | --- | --- |
-| `--hy-cell-item-icon-margin` | 图标右边距 | `10px` |
-| `--hy-cell-item-value-max-width` | 右侧值最大宽度 | `90%` |
-| `--hy-cell-item-font-size-large` | large 标题字号 | 跟随 `--hy-font-size-lg`（36rpx） |
+| 变量名                            | 说明            | 默认值                              |
+| --------------------------------- | --------------- | ----------------------------------- |
+| `--hy-cell-item-icon-margin`      | 图标右边距      | `10px`                              |
+| `--hy-cell-item-value-max-width`  | 右侧值最大宽度  | `90%`                               |
+| `--hy-cell-item-font-size-large`  | large 标题字号  | 跟随 `--hy-font-size-lg`（36rpx）   |
 | `--hy-cell-item-font-size-medium` | medium 标题字号 | 跟随 `--hy-font-size-base`（28rpx） |
-| `--hy-cell-item-font-size-small` | small 标题字号 | 跟随 `--hy-font-size-sm`（24rpx） |
-| `--hy-cell-item-sub-color` | 描述文字颜色 | 跟随 `--hy-text-color--grey` |
-| `--hy-cell-item-sub-font-size` | 描述文字字号 | 跟随 `--hy-font-size-sm`（24rpx） |
-| `--hy-cell-item-value-color` | 右侧值文字颜色 | 跟随 `--hy-text-color--grey` |
-| `--hy-cell-item-arrow-color` | 右箭头颜色 | 跟随 `--hy-text-color--3` |
-| `--hy-cell-item-disabled-color` | 禁用文字颜色 | 跟随 `--hy-text-color--disabled` |
+| `--hy-cell-item-font-size-small`  | small 标题字号  | 跟随 `--hy-font-size-sm`（24rpx）   |
+| `--hy-cell-item-sub-color`        | 描述文字颜色    | 跟随 `--hy-text-color--grey`        |
+| `--hy-cell-item-sub-font-size`    | 描述文字字号    | 跟随 `--hy-font-size-sm`（24rpx）   |
+| `--hy-cell-item-value-color`      | 右侧值文字颜色  | 跟随 `--hy-text-color--grey`        |
+| `--hy-cell-item-arrow-color`      | 右箭头颜色      | 跟随 `--hy-text-color--3`           |
+| `--hy-cell-item-disabled-color`   | 禁用文字颜色    | 跟随 `--hy-text-color--disabled`    |
 
 <demo-model url="pages-design/cell/cell"></demo-model>

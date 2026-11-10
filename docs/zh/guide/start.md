@@ -131,4 +131,3 @@ $ yarn install @hy-app/ui
     <hy-input></hy-input>
 </template>
 ```
-

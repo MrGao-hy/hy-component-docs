@@ -221,11 +221,11 @@ const value = ref(30);
 
 ### CSS 变量
 
-| 变量名 | 说明 | 默认值 |
-| --- | --- | --- |
-| `--hy-slider-range-font-size` | 范围数字字号 | `12px` |
-| `--hy-slider-button-size` | 滑块尺寸 | `24px` |
-| `--hy-slider-button-box-shadow` | 滑块阴影 | `0 1px 2px rgba(0, 0, 0, 0.5)` |
-| `--hy-slider-track-radius` | 轨道圆角 | 跟随 `--hy-radius-semicircle`（100px） |
+| 变量名                          | 说明         | 默认值                                 |
+| ------------------------------- | ------------ | -------------------------------------- |
+| `--hy-slider-range-font-size`   | 范围数字字号 | `12px`                                 |
+| `--hy-slider-button-size`       | 滑块尺寸     | `24px`                                 |
+| `--hy-slider-button-box-shadow` | 滑块阴影     | `0 1px 2px rgba(0, 0, 0, 0.5)`         |
+| `--hy-slider-track-radius`      | 轨道圆角     | 跟随 `--hy-radius-semicircle`（100px） |
 
 <demo-model url="pages-design/slider/slider"></demo-model>

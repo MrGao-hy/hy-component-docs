@@ -228,30 +228,30 @@ export interface TabBarItem {
 
 #### hy-tabbar
 
-| 变量名 | 说明 | 默认值 |
-| --- | --- | --- |
-| `--hy-tabbar-height` | 高度 | `60px`（自动叠加底部安全区） |
-| `--hy-tabbar-radius` | 顶部圆角 | `15rpx 15rpx 0 0` |
-| `--hy-tabbar-padding` | 内边距 | `0 20rpx` |
-| `--hy-tabbar-item-width` | 单项宽度 | `60px` |
-| `--hy-tabbar-indicator-size` | 指示器尺寸 | `50px` |
-| `--hy-tabbar-circle-size` | 凸起圆尺寸 | `40px` |
+| 变量名                       | 说明       | 默认值                       |
+| ---------------------------- | ---------- | ---------------------------- |
+| `--hy-tabbar-height`         | 高度       | `60px`（自动叠加底部安全区） |
+| `--hy-tabbar-radius`         | 顶部圆角   | `15rpx 15rpx 0 0`            |
+| `--hy-tabbar-padding`        | 内边距     | `0 20rpx`                    |
+| `--hy-tabbar-item-width`     | 单项宽度   | `60px`                       |
+| `--hy-tabbar-indicator-size` | 指示器尺寸 | `50px`                       |
+| `--hy-tabbar-circle-size`    | 凸起圆尺寸 | `40px`                       |
 
 #### hy-tabbar-group
 
-| 变量名 | 说明 | 默认值 |
-| --- | --- | --- |
-| `--hy-tabbar-group-height` | 高度 | `100rpx` |
-| `--hy-tabbar-group-z-index` | 层级 | `500` |
-| `--hy-tabbar-group-radius` | 胶囊模式圆角 | 跟随 `--hy-radius-semicircle`（100px） |
-| `--hy-tabbar-group-border` | 顶部边框 | 跟随 `--hy-border-line` |
+| 变量名                      | 说明         | 默认值                                 |
+| --------------------------- | ------------ | -------------------------------------- |
+| `--hy-tabbar-group-height`  | 高度         | `100rpx`                               |
+| `--hy-tabbar-group-z-index` | 层级         | `500`                                  |
+| `--hy-tabbar-group-radius`  | 胶囊模式圆角 | 跟随 `--hy-radius-semicircle`（100px） |
+| `--hy-tabbar-group-border`  | 顶部边框     | 跟随 `--hy-border-line`                |
 
 #### hy-tabbar-item
 
-| 变量名 | 说明 | 默认值 |
-| --- | --- | --- |
-| `--hy-tabbar-item-icon-size` | 图标尺寸 | `40rpx` |
-| `--hy-tabbar-item-title-font-size` | 标题字号 | 跟随 `--hy-font-size-sm`（24rpx） |
-| `--hy-tabbar-item-inactive-color` | 未激活颜色 | 跟随 `--hy-text-color--grey` |
+| 变量名                             | 说明       | 默认值                            |
+| ---------------------------------- | ---------- | --------------------------------- |
+| `--hy-tabbar-item-icon-size`       | 图标尺寸   | `40rpx`                           |
+| `--hy-tabbar-item-title-font-size` | 标题字号   | 跟随 `--hy-font-size-sm`（24rpx） |
+| `--hy-tabbar-item-inactive-color`  | 未激活颜色 | 跟随 `--hy-text-color--grey`      |
 
 <demo-model url="pages-design/tabBar/tabBar"></demo-model>

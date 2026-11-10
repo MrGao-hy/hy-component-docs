@@ -84,8 +84,8 @@
 
 ### CSS 变量
 
-| 变量名 | 说明 | 默认值 |
-| --- | --- | --- |
+| 变量名            | 说明     | 默认值                   |
+| ----------------- | -------- | ------------------------ |
 | `--hy-line-color` | 线条颜色 | 跟随 `--hy-border-color` |
 
 <demo-model url="pages-design/line/line"></demo-model>

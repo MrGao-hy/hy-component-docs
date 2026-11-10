@@ -155,14 +155,14 @@
 
 ### CSS 变量
 
-| 变量名 | 说明 | 默认值 |
-| --- | --- | --- |
-| `--hy-folding-panel-value-font-size` | 右侧值字号 | `13px` |
-| `--hy-folding-panel-value-margin-right` | 右侧值右边距 | `8px` |
-| `--hy-folding-panel-font-size-large` | large 标题字号 | 跟随 `--hy-font-size-lg`（36rpx） |
-| `--hy-folding-panel-font-size-medium` | medium 标题字号 | 跟随 `--hy-font-size-base`（28rpx） |
-| `--hy-folding-panel-font-size-small` | small 标题字号 | 跟随 `--hy-font-size-sm`（24rpx） |
-| `--hy-folding-panel-border` | 面板底部分隔线 | 跟随 `--hy-border-line` |
-| `--hy-folding-panel-value-color` | 右侧值文字颜色 | 跟随 `--hy-text-color--grey` |
+| 变量名                                  | 说明            | 默认值                              |
+| --------------------------------------- | --------------- | ----------------------------------- |
+| `--hy-folding-panel-value-font-size`    | 右侧值字号      | `13px`                              |
+| `--hy-folding-panel-value-margin-right` | 右侧值右边距    | `8px`                               |
+| `--hy-folding-panel-font-size-large`    | large 标题字号  | 跟随 `--hy-font-size-lg`（36rpx）   |
+| `--hy-folding-panel-font-size-medium`   | medium 标题字号 | 跟随 `--hy-font-size-base`（28rpx） |
+| `--hy-folding-panel-font-size-small`    | small 标题字号  | 跟随 `--hy-font-size-sm`（24rpx）   |
+| `--hy-folding-panel-border`             | 面板底部分隔线  | 跟随 `--hy-border-line`             |
+| `--hy-folding-panel-value-color`        | 右侧值文字颜色  | 跟随 `--hy-text-color--grey`        |
 
 <demo-model url="pages-design/foldingPanel/foldingPanel"></demo-model>

@@ -265,9 +265,9 @@ interface IAvatarClickConfig {
 
 ### CSS 变量
 
-| 变量名 | 说明 | 默认值 |
-| --- | --- | --- |
-| `--hy-avatar-circle-radius` | 圆形头像圆角 | 跟随 `--hy-radius-circle`（50%） |
+| 变量名                      | 说明         | 默认值                                        |
+| --------------------------- | ------------ | --------------------------------------------- |
+| `--hy-avatar-circle-radius` | 圆形头像圆角 | 跟随 `--hy-radius-circle`（50%）              |
 | `--hy-avatar-square-radius` | 方形头像圆角 | 跟随 `--hy-border-margin-padding-sm`（10rpx） |
 
 <demo-model url="pages-design/avatar/avatar"></demo-model>

@@ -443,10 +443,10 @@ export type SwipeActionBeforeClose = (
 
 ### CSS 变量
 
-| 变量名 | 说明 | 默认值 |
-| --- | --- | --- |
-| `--hy-swipe-action-button-padding` | 按钮内边距 | `0 15px` |
-| `--hy-swipe-action-button-line-height` | 按钮行高 | `46px` |
-| `--hy-swipe-action-button-color` | 按钮文字颜色 | `#ffffff` |
+| 变量名                                 | 说明         | 默认值    |
+| -------------------------------------- | ------------ | --------- |
+| `--hy-swipe-action-button-padding`     | 按钮内边距   | `0 15px`  |
+| `--hy-swipe-action-button-line-height` | 按钮行高     | `46px`    |
+| `--hy-swipe-action-button-color`       | 按钮文字颜色 | `#ffffff` |
 
 <demo-model url="pages-design/swipeAction/swipeAction"></demo-model>

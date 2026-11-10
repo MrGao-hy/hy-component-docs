@@ -24,8 +24,8 @@
 
 **示例**
 
-1. 单页面使用
-某个页面想自定义分享内容时，在 `<script setup>` 中配合 `@dcloudio/uni-app` 的钩子注册：
+1. 单页面使用某个页面想自定义分享内容时，在 `<script setup>` 中配合 `@dcloudio/uni-app` 的钩子注册：
+
 ```typescript [Index.vue]
 <script setup lang="ts">
 import { onShareAppMessage, onShareTimeline } from '@dcloudio/uni-app'
@@ -45,15 +45,17 @@ onShareTimeline(share.onShareTimeline)
 ```
 
 2. 全局使用
+
 > 全局注册后，微信小程序右上角菜单的“转发给朋友/分享到朋友圈”即可用，无需每个页面单独写。
+
 ```typescript [main.ts]
 import { useShare } from '@hy-app/ui';
 
 app.mixin(
-  useShare({
-    title: '华玥组件库'
-  })
-)
+    useShare({
+        title: '华玥组件库',
+    })
+);
 ```
 
 ---
@@ -173,7 +175,7 @@ toast.loading('加载中...');
             title: '删除确认',
             content: '确定要删除吗？',
             confirmText: '确定',
-            cancelText: '取消'
+            cancelText: '取消',
         });
         if (result) {
             uni.showToast({ title: '已删除', icon: 'success' });

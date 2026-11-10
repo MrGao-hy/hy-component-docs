@@ -216,17 +216,17 @@ const list = ref([
 
 ### CSS 变量
 
-| 变量名 | 说明 | 默认值 |
-| --- | --- | --- |
-| `--hy-swiper-title-font-size` | 标题字号 | `28rpx` |
-| `--hy-swiper-title-bg` | 标题背景色 | `rgba(0, 0, 0, 0.3)` |
-| `--hy-swiper-indicator-height` | 指示条高度 | `4px` |
-| `--hy-swiper-indicator-bar-width` | 指示条滑块宽度 | `22px` |
-| `--hy-swiper-dot-size` | 圆点尺寸 | `5px` |
-| `--hy-swiper-dot-active-width` | 激活圆点宽度 | `12px` |
-| `--hy-swiper-title-color` | 标题颜色 | `#ffffff` |
+| 变量名                             | 说明               | 默认值                                 |
+| ---------------------------------- | ------------------ | -------------------------------------- |
+| `--hy-swiper-title-font-size`      | 标题字号           | `28rpx`                                |
+| `--hy-swiper-title-bg`             | 标题背景色         | `rgba(0, 0, 0, 0.3)`                   |
+| `--hy-swiper-indicator-height`     | 指示条高度         | `4px`                                  |
+| `--hy-swiper-indicator-bar-width`  | 指示条滑块宽度     | `22px`                                 |
+| `--hy-swiper-dot-size`             | 圆点尺寸           | `5px`                                  |
+| `--hy-swiper-dot-active-width`     | 激活圆点宽度       | `12px`                                 |
+| `--hy-swiper-title-color`          | 标题颜色           | `#ffffff`                              |
 | `--hy-swiper-indicator-bar-radius` | 线型指示器滑块圆角 | 跟随 `--hy-radius-semicircle`（100px） |
-| `--hy-swiper-indicator-bar-bg` | 线型指示器滑块背景 | `#ffffff` |
-| `--hy-swiper-dot-radius` | 点型指示器圆角 | 跟随 `--hy-radius-semicircle`（100px） |
+| `--hy-swiper-indicator-bar-bg`     | 线型指示器滑块背景 | `#ffffff`                              |
+| `--hy-swiper-dot-radius`           | 点型指示器圆角     | 跟随 `--hy-radius-semicircle`（100px） |
 
 <demo-model url="pages-design/swiper/swiper"></demo-model>

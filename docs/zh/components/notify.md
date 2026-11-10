@@ -320,8 +320,8 @@ interface NotifyOptions {
 
 ### CSS 变量
 
-| 变量名 | 说明 | 默认值 |
-| --- | --- | --- |
+| 变量名                  | 说明     | 默认值                              |
+| ----------------------- | -------- | ----------------------------------- |
 | `--hy-notify-font-size` | 文字字号 | 跟随 `--hy-font-size-base`（28rpx） |
 
 <demo-model url="pages-design/notify/notify"></demo-model>

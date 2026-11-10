@@ -186,20 +186,19 @@ const value = ref('');
 
 ### CSS 变量
 
-| 变量名 | 说明 | 默认值 |
-| --- | --- | --- |
-| `--hy-input-radius-square` | 方形圆角 | `4px` |
-| `--hy-input-radius-circle` | 胶囊形圆角 | 跟随 `--hy-radius-semicircle`（100px） |
-| `--hy-input-height` | 输入框高度 | `24px` |
-| `--hy-input-line-height` | 行高 | `26px` |
-| `--hy-input-font-size` | 字号 | `15px` |
-| `--hy-input-clear-size` | 清除按钮尺寸 | `20px` |
-| `--hy-input-color` | 输入文字颜色 | 跟随 `--hy-text-color` |
-| `--hy-input-placeholder-color` | 占位符颜色 | 跟随 `--hy-text-color--placeholder` |
-| `--hy-input-disabled-color` | 禁用文字颜色 | 跟随 `--hy-text-color--disabled` |
-| `--hy-input-clear-radius` | 清除按钮圆角 | 跟随 `--hy-radius-semicircle`（100px） |
-| `--hy-input-border` | 边框 | 跟随 `--hy-border-line` |
-
+| 变量名                         | 说明         | 默认值                                 |
+| ------------------------------ | ------------ | -------------------------------------- |
+| `--hy-input-radius-square`     | 方形圆角     | `4px`                                  |
+| `--hy-input-radius-circle`     | 胶囊形圆角   | 跟随 `--hy-radius-semicircle`（100px） |
+| `--hy-input-height`            | 输入框高度   | `24px`                                 |
+| `--hy-input-line-height`       | 行高         | `26px`                                 |
+| `--hy-input-font-size`         | 字号         | `15px`                                 |
+| `--hy-input-clear-size`        | 清除按钮尺寸 | `20px`                                 |
+| `--hy-input-color`             | 输入文字颜色 | 跟随 `--hy-text-color`                 |
+| `--hy-input-placeholder-color` | 占位符颜色   | 跟随 `--hy-text-color--placeholder`    |
+| `--hy-input-disabled-color`    | 禁用文字颜色 | 跟随 `--hy-text-color--disabled`       |
+| `--hy-input-clear-radius`      | 清除按钮圆角 | 跟随 `--hy-radius-semicircle`（100px） |
+| `--hy-input-border`            | 边框         | 跟随 `--hy-border-line`                |
 
 [^1]: `text`：输入文本内容；`number`：数字输入键盘，app-vue下可以输入浮点数，app-nvue和小程序平台下只能输入整数；`idcard`：身份证输入键盘，微信、支付宝、百度、QQ小程序；`digit`-带小数点的数字键盘，App的nvue页面、微信、支付宝、百度、头条、QQ小程序；`password`-密码输入框
 

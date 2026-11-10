@@ -350,13 +350,13 @@ const scrollToSection = async (i: string) => {
 
 ### CSS 变量
 
-| 变量名 | 说明 | 默认值 |
-| --- | --- | --- |
-| `--hy-index-bar-z-index` | 层级 | `999` |
-| `--hy-index-bar-toast-size` | 提示气泡尺寸 | `50px` |
-| `--hy-index-bar-index-color` | 索引文字颜色 | 跟随 `--hy-text-color--3` |
-| `--hy-index-bar-index-radius` | 索引项圆角 | 跟随 `--hy-radius-sm`（8rpx） |
-| `--hy-index-bar-toast-color` | 提示气泡文字颜色 | `#ffffff` |
-| `--hy-index-bar-toast-font-size` | 提示气泡字号 | 跟随 `--hy-font-size-lg`（36rpx） |
+| 变量名                           | 说明             | 默认值                            |
+| -------------------------------- | ---------------- | --------------------------------- |
+| `--hy-index-bar-z-index`         | 层级             | `999`                             |
+| `--hy-index-bar-toast-size`      | 提示气泡尺寸     | `50px`                            |
+| `--hy-index-bar-index-color`     | 索引文字颜色     | 跟随 `--hy-text-color--3`         |
+| `--hy-index-bar-index-radius`    | 索引项圆角       | 跟随 `--hy-radius-sm`（8rpx）     |
+| `--hy-index-bar-toast-color`     | 提示气泡文字颜色 | `#ffffff`                         |
+| `--hy-index-bar-toast-font-size` | 提示气泡字号     | 跟随 `--hy-font-size-lg`（36rpx） |
 
 <demo-model url="pages-design/indexBar/indexBar"></demo-model>
