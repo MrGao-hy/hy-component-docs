@@ -1,33 +1,33 @@
 # Tooltip Long-Press Component
 
-> The Tooltip component is mainly used for long-press interactions, similar to WeChat's long-press bubble, providing features such as copy and extension buttons.
+> The Tooltip component is mainly used for long-press operations, similar to WeChat's long-press bubble, providing features such as copy and extension buttons.
 
-## :pushpin:Platform Compatibility
+## :pushpin: Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ---------- | ------------ |
-| ✔        | ✔   | ✔          | ✔            |
+| -------- | --- | ------------------- | ------------------- |
+| ✔        | ✔   | ✔                   | ✔                   |
 
-## :warning:Notes
+## :warning: Notes
 
 ::: warning Notes
 
-- Long-press trigger (`longpress`) is used by default; you can switch to click trigger (`click`) via the `triggerMode` property
-- The copy function relies on `uni.setClipboardData` and requires the user to grant clipboard permission
-- Extension buttons are configured through the `buttons` array; clicking them triggers the `click` event
+- Triggered by long press (`longpress`) by default; can be set to click trigger (`click`) via the `triggerMode` property
+- The copy function relies on `uni.setClipboardData` and requires the user to authorize clipboard permission
+- Extension buttons are configured via the `buttons` array; clicking them triggers the `click` event
 
 :::
 
-## :japanese_castle:Basic Usage
+## :japanese_castle: Basic Usage
 
 ```html
 <template>
     <view>
         <!-- Basic usage -->
-        <hy-tooltip text="Content to copy"></hy-tooltip>
+        <hy-tooltip text="Copy content"></hy-tooltip>
 
-        <!-- Customize content with a slot -->
-        <hy-tooltip text="Content to copy">
+        <!-- Customize content using slots -->
+        <hy-tooltip text="Copy content">
             <text>Long press to copy</text>
         </hy-tooltip>
     </view>
@@ -61,8 +61,8 @@ Tooltip supports 12 popup positions, controlled by the `placement` property:
 ```html
 <template>
     <view>
-        <!-- Copies the text property value by default -->
-        <hy-tooltip text="Content to copy"></hy-tooltip>
+        <!-- Copies the value of the text property by default -->
+        <hy-tooltip text="Copy content"></hy-tooltip>
 
         <!-- Custom copy content -->
         <hy-tooltip text="Displayed text" copyText="Actual content to copy"></hy-tooltip>
@@ -88,7 +88,7 @@ Tooltip supports 12 popup positions, controlled by the `placement` property:
             @click="handleClick"
         ></hy-tooltip>
 
-        <!-- Show only extension buttons (hide copy) -->
+        <!-- Show extension buttons only (hide copy) -->
         <hy-tooltip
             text="Action"
             :buttons="['Edit', 'Delete']"
@@ -100,11 +100,11 @@ Tooltip supports 12 popup positions, controlled by the `placement` property:
 
 <script setup lang="ts">
     const handleClick = (index: number) => {
-        // index = 0: copy button
-        // index = 1: first extension button
-        // index = 2: second extension button
+        // index = 0: Copy button
+        // index = 1: First extension button
+        // index = 2: Second extension button
         uni.showToast({
-            title: `Clicked button ${index}`,
+            title: `Button ${index} clicked`,
             icon: 'none',
         });
     };
@@ -119,7 +119,7 @@ Tooltip supports 12 popup positions, controlled by the `placement` property:
         <!-- Custom text style -->
         <hy-tooltip text="Custom style" size="20" color="#ff6b6b" bold></hy-tooltip>
 
-        <!-- Highlight the selected text background -->
+        <!-- Highlight the selected text background color -->
         <hy-tooltip text="Highlighted text" bgColor="#fff3cd"></hy-tooltip>
 
         <!-- Custom external style -->
@@ -152,7 +152,7 @@ Tooltip supports 12 popup positions, controlled by the `placement` property:
 </template>
 ```
 
-### :bento:Overlay
+### :bento: Overlay
 
 ```html
 <template>
@@ -196,7 +196,7 @@ Tooltip supports 12 popup positions, controlled by the `placement` property:
     const messages = ref([
         { content: 'This is an important message', time: '10:30' },
         { content: 'Please check the attachment', time: '11:45' },
-        { content: 'The meeting time has changed', time: '14:20' },
+        { content: 'The meeting time has been changed', time: '14:20' },
     ]);
 
     const handleAction = (messageIndex: number, actionIndex: number) => {
@@ -248,41 +248,41 @@ Tooltip supports 12 popup positions, controlled by the `placement` property:
 
 ### Tooltip Props
 
-| Prop | Description | Type | Default |
+| Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
 | text | Tooltip text to display | `string` | - |
-| copyText | Text to copy when the copy button is clicked; uses the text value if empty | `string` | - |
-| size | Font size; numbers use px by default | `string`\|`number` | 14 |
-| bold | Text weight | `boolean` | false |
+| copyText | Text to copy when the copy button is clicked; if empty, the text value is used | `string` | - |
+| size | Text size; numbers use px as the default unit | `string`\|`number` | 14 |
+| bold | Text boldness | `boolean` | false |
 | color | Font color | `string` | - |
 | bgColor | Background color of the text when the tooltip pops up | `string` | transparent |
-| zIndex | z-index of the popup tooltip | `number` | 10071 |
+| zIndex | z-index of the tooltip | `number` | 10071 |
 | showCopy | Whether to show the copy button | `boolean` | true |
 | buttons | Extension button group | `string[]` | [] |
 | overlay | Whether to show a transparent overlay to prevent touch-through | `boolean` | true |
-| showToast | Whether to show a toast on copy success or failure | `boolean` | true |
+| showToast | Whether to show a toast for copy success or failure | `boolean` | true |
 | triggerMode | Trigger mode | `'longpress'\|'click'` | longpress |
 | placement | Specifies the placement of the popover | `'left'\|'top'\|'right'\|'bottom'` | bottom |
-| customStyle | External styles to be applied | `CSSProperties` | - |
+| customStyle | Defines external styles to be used | `CSSProperties` | - |
 | customClass | Custom external class name | `string` | - |
 
 ### Events
 
-| Event | Description   | Callback Parameters                                                     |
+| Event Name | Description | Callback Parameters |
 | ------ | ------------ | --------------------------------------------------------- |
-| click  | Click trigger event | index: the index of the clicked button (0 is the copy button; extension buttons start from 1) |
+| click  | Triggered on click | index: the index of the clicked button (0 is the copy button; extension buttons start from 1) |
 
 ### CSS Variables
 
-| Variable | Description | Default |
-| --- | --- | --- |
-| `--hy-tooltip-z-index` | Z-index level | `998` |
-| `--hy-tooltip-bg` | Background color | `rgb(50, 50, 51)` |
-| `--hy-tooltip-min-height` | Minimum height | `36px` |
-| `--hy-tooltip-width` | Width | `200px` |
-| `--hy-tooltip-line-height` | Line height | `22px` |
-| `--hy-tooltip-btn-font-size` | Button font size | `13px` |
-| `--hy-tooltip-radius` | Bubble border radius | Follows `--hy-radius-sm` (8rpx) |
-| `--hy-tooltip-btn-color` | Menu button color | `#ffffff` |
+| Variable                     | Description        | Default                        |
+| ---------------------------- | ------------ | ----------------------------- |
+| `--hy-tooltip-z-index`       | Z-index level     | `998`                         |
+| `--hy-tooltip-bg`            | Background color       | `rgb(50, 50, 51)`             |
+| `--hy-tooltip-min-height`    | Minimum height     | `36px`                        |
+| `--hy-tooltip-width`         | Width         | `200px`                       |
+| `--hy-tooltip-line-height`   | Line height         | `22px`                        |
+| `--hy-tooltip-btn-font-size` | Button font size     | `13px`                        |
+| `--hy-tooltip-radius`        | Bubble border radius     | Follows `--hy-radius-sm` (8rpx) |
+| `--hy-tooltip-btn-color`     | Menu button color | `#ffffff`                     |
 
 <demo-model url="pages-design/tooltip/tooltip"></demo-model>

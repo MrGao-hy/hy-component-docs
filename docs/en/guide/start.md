@@ -1,17 +1,25 @@
-# Hy Component Library hy-app Usage Tutorial
+# Hy Component Library @hy-app/ui Installation & Usage Tutorial
 
 ::: info Friendly Reminder
 
-- Friendly reminder: node (recommended) >= 16.14.0, sass (recommended)
-- 1.53.0<=sass<=1.101.0
+- Reminder: node (recommended) >= 16.14.0, sass (recommended)
+- 1.78.0\<sass<=1.101.0
 
 :::
 
-## :rocket: Download scss (install if not already installed)
+## :zap: Quick Setup with Scaffolding <Badge type="danger" text="Recommended" />
+
+> You can quickly initialize a project template based on **Vue3 + TypeScript + uni-app + Vite** with the Hy Component Library already integrated via the scaffold, with no need to configure everything from scratch.
+
+```shell
+$ pnpm create uni@latest -t hy-starter <your-project-name>
+```
+
+## :rocket: Download scss (Install It If You Don't Have It)
 
 ::: tip Friendly Reminder
 
-The Hy Component Library uses `scss`, so anyone who doesn't have the `scss` plugin installed needs to install it. The version must be higher than `1.78.0`
+The Hy Component Library uses `scss`, so if you are not using the `scss` plugin, you need to install it. The version must be higher than `1.78.0`.
 
 :::
 
@@ -35,11 +43,11 @@ $ yarn add -D sass@1.98.0
 
 :::
 
-## :rainbow: Download dayjs (install if not already installed)
+## :rainbow: Download dayjs (Install It If You Don't Have It)
 
 ::: tip Friendly Reminder
 
-Note: Since the time picker uses `dayjs`, you need to install `dayjs` when using it, otherwise errors will occur
+Note: Since the time picker relies on `dayjs`, you need to install `dayjs` before using it, otherwise errors will occur.
 
 :::
 
@@ -67,7 +75,7 @@ $ yarn add dayjs
 
 ::: warning Important Notice
 
-2026-07-13 `hy-app` has ceased further iterative updates as of `v0.7.4` and will no longer add features or fix issues. Please download and migrate to the brand-new version `@hy-app/ui`.
+2026-07-13: `hy-app` stopped receiving iterative updates as of `v0.7.4`. No new features will be added or issues fixed. Please download and migrate to the brand-new version `@hy-app/ui`.
 
 :::
 
@@ -95,7 +103,7 @@ $ yarn install @hy-app/ui
 
 Modify the ./src/pages.json file in the project root directory and add the following easycom configuration:
 
-```json [./src/pages.json]
+```json [pages.json]
 {
     "easycom": {
         "custom": {
@@ -105,29 +113,27 @@ Modify the ./src/pages.json file in the project root directory and add the follo
 }
 ```
 
-## Make Volar/VS Code Recognize Components
+## Enable Volar/VS Code to Recognize Components
 
-> VS Code and Trae can provide component property hints, type checking, and auto-completion
-
-```json tsconfig.json
+```json [tsconfig.json]
 {
     "compilerOptions": {
-        "types": ["@hy-app/ui/global"]
+        "types": ["@hy-app/ui/global"] // [!code focus]
     }
 }
 ```
 
 ## :chicken: Globally Import Component Library Styles (Modify uni.scss)
 
-> The Hy Component Library's global styles, theme variables, and component base styles must be imported together, otherwise components will lose their styling effects.
+> The global styles, theme variables, and base component styles of the Hy Component Library must be imported all together; otherwise, components will lose their styling effects.
 
-```scss [./uni.scss]
+```scss [uni.scss]
 @use '@hy-app/ui/index.scss' as *;
 ```
 
-## :deciduous_tree: Using Components on Pages
+## :deciduous_tree: Use Components on Pages
 
-```html
+```html [vue]
 <template>
     <!-- Then use it directly on any page you need -->
     <hy-input></hy-input>

@@ -1,14 +1,14 @@
 # Tabs Component
 
-> This component is a tabs component. When there are many tabs, it can be configured to scroll left and right; when there are few tabs, scrolling can be disabled. One feature of this component is that when configured in scroll mode, the active tab automatically moves to the center position of the component.
+> This component is a tabs component. When there are many tabs, it can be configured to slide left and right; when there are few tabs, sliding can be disabled. One feature of this component is that when configured in scroll mode, the active tab automatically moves to the center of the component.
 
-## :pushpin: Platform Compatibility
+## :pushpin:Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ------------------- | ------------------- |
-| ✔        | ✔   | ✔                   | ✔                   |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
-## :japanese_castle: Basic Usage
+## :japanese_castle:Basic Usage Examples
 
 ```html
 <!-- Global usage -->
@@ -16,10 +16,10 @@
 ```
 
 ```ts
-const list = [{ name: 'All' }, { name: 'Unredeemed' }, { name: 'Redeemed' }];
+const list = [{ name: 'All' }, { name: 'Not Redeemed' }, { name: 'Redeemed' }];
 ```
 
-### Displaying Badges
+### Show Badge
 
 - Set badge properties via `badge`; refer directly to the [hy-badge](./badge.md) component property configuration
 
@@ -30,7 +30,7 @@ const list = [{ name: 'All' }, { name: 'Unredeemed' }, { name: 'Redeemed' }];
 <script setup>
     const list = [
         { title: 'All', badge: { isDot: true } },
-        { title: 'Unredeemed', badge: { value: 5 } },
+        { title: 'Not Redeemed', badge: { value: 5 } },
         { title: 'Redeemed' },
     ];
 </script>
@@ -38,7 +38,7 @@ const list = [{ name: 'All' }, { name: 'Unredeemed' }, { name: 'Redeemed' }];
 
 ### Custom Read Key
 
-- Customize the value to display via `keyName`
+- Customize the value to be displayed via `keyName`
 
 ```html
 <template>
@@ -47,7 +47,7 @@ const list = [{ name: 'All' }, { name: 'Unredeemed' }, { name: 'Redeemed' }];
 <script setup>
     const list = [
         { title: 'All', content: { value: 123 } },
-        { title: 'Unredeemed' },
+        { title: 'Not Redeemed' },
         { title: 'Redeemed' },
     ];
 </script>
@@ -65,12 +65,12 @@ const list = [{ name: 'All' }, { name: 'Unredeemed' }, { name: 'Redeemed' }];
 <script setup>
     const statusTabs = [
         { name: 'All', content: { value: 123 } },
-        { name: 'Unredeemed' },
+        { name: 'Not Redeemed' },
         { name: 'Redeemed' },
     ];
     // Callback executed when a tab is clicked
     const clickTabs = () => {};
-    // Callback function executed when the swiper is swiped
+    // Callback executed when the swiper slides
     const change = () => {};
 </script>
 ```
@@ -87,10 +87,10 @@ const list = [{ name: 'All' }, { name: 'Unredeemed' }, { name: 'Redeemed' }];
 </template>
 
 <script setup>
-    const statusTabs = [{ name: 'All' }, { name: 'Unredeemed' }, { name: 'Redeemed' }];
+    const statusTabs = [{ name: 'All' }, { name: 'Not Redeemed' }, { name: 'Redeemed' }];
     // Callback executed when a tab is clicked
     const clickTabs = () => {};
-    // Callback function executed when the swiper is swiped
+    // Callback executed when the swiper slides
     const change = () => {};
 </script>
 ```
@@ -102,42 +102,42 @@ const list = [{ name: 'All' }, { name: 'Unredeemed' }, { name: 'Redeemed' }];
 | Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
 | current | Index of the currently selected tab | `number` | 0 |
-| list | Array of tabs | `TabsItemVo[]` | - |
-| keyName | Key name to read from the list element objects | `string` | name |
+| list | Tab array | `TabsItemVo[]` | - |
+| keyName | Key name to read from the list element object | `string` | name |
 | duration | Time required for the slider to move once, in ms | `number` | 300 |
 | scrollable | Whether the menu is scrollable | `boolean` | false |
-| lineWidth | Slider length, default unit px for numbers | `string`\|`number` | 20 |
-| lineHeight | Slider height, default unit px for numbers | `string`\|`number` | 3 |
+| lineWidth | Slider width, default unit px for numeric values | `string`\|`number` | 20 |
+| lineHeight | Slider height, default unit px for numeric values | `string`\|`number` | 3 |
 | lineColor | Slider color | `string` | - |
 | lineBgSize | Slider background display size, used when the slider background is set to an image | `string`\|`number` | cover |
-| activeStyle | Style when a menu item is selected | `CSSProperties` | - |
-| inactiveStyle | Style when a menu item is not selected | `CSSProperties` | - |
+| activeStyle | Style of the menu item when selected | `CSSProperties` | - |
+| inactiveStyle | Style of the menu item when not selected | `CSSProperties` | - |
 | itemStyle | Style of the menu item | `string` | - |
 | badgeProps | Global definition of [badge props](./badge#Api) (badge in list takes higher priority) | `BadgeProps` | - |
-| swiperHeight | Swiper height, default unit px for numbers | `string`\|`number` | calc(100% - 44px) |
-| isSwiper | Whether to show content swiper | `boolean` | false |
+| swiperHeight | Swiper height, default unit px for numeric values | `string`\|`number` | calc(100% - 44px) |
+| isSwiper | Whether content swiping is enabled | `boolean` | false |
 | iconStyle | Custom style for the icon on the left side of the tab | `CSSProperties` | - |
-| customStyle | External styles to be applied | `CSSProperties` | - |
+| customStyle | Define external styles to be used | `CSSProperties` | - |
 | customClass | Custom external class name | `string` | - |
 
 ### Events
 
-| Event Name | Description | Callback Parameters |
+| Event Name | Description               | Callback Parameters                            |
 | --------- | ------------------ | ----------------------------------- |
-| click     | Triggered when a tab is clicked | item: TabsItemVo, index: tab index |
-| longPress | Triggered when a tab is long-pressed | item: TabsItemVo, index: tab index |
-| change    | Triggered when the tab index changes | item: TabsItemVo, index: tab index |
+| click     | Triggered when a tab is clicked     | item: TabsItemVo, index: tab index value |
+| longPress | Triggered when a tab is long-pressed     | item: TabsItemVo, index: tab index value |
+| change    | Triggered when the tab index changes | item: TabsItemVo, index: tab index value |
 
 ### Slots
 
-| Slot Name | Description | Received Values |
+| Slot Name  | Description                  | Received Values                          |
 | ------- | --------------------- | ------------------------------- |
 | default | Custom content value for the swiper | record: TabsItemVo, index: index |
-| left    | Slot on the left side of the whole component | - |
-| icon    | Icon of the tabs | record: TabsItemVo, index: index |
-| content | Content of the tabs | record: TabsItemVo, index: index |
-| right   | Slot on the right side of the whole component | - |
-| main    | Custom replacement for the bottom swiper | - |
+| left    | Overall left slot          | -                               |
+| icon    | Icon of tabs            | record: TabsItemVo, index: index |
+| content | Content of tabs            | record: TabsItemVo, index: index |
+| right   | Overall right slot          | -                               |
+| main    | Custom content replacing the bottom swiper    | -                               |
 
 ### Typings
 
@@ -169,15 +169,15 @@ export interface TabsItemVo {
 
 ### CSS Variables
 
-| Variable Name | Description | Default |
-| --- | --- | --- |
-| `--hy-tabs-item-height` | Option height | `44px` |
-| `--hy-tabs-item-padding` | Option padding | `0 11px` |
-| `--hy-tabs-font-size` | Font size | `15px` |
-| `--hy-tabs-line-width` | Underline width | `30px` |
-| `--hy-tabs-line-height` | Underline height | `3px` |
-| `--hy-tabs-text-color` | Default tab color | Follows `--hy-text-color` |
-| `--hy-tabs-text-active-color` | Active tab color | Follows `--hy-text-color` |
-| `--hy-tabs-line-radius` | Underline border radius | Follows `--hy-radius-semicircle` (100px) |
+| Variable Name                        | Description         | Default                                 |
+| ----------------------------- | ------------ | -------------------------------------- |
+| `--hy-tabs-item-height`       | Item height     | `44px`                                 |
+| `--hy-tabs-item-padding`      | Item padding   | `0 11px`                               |
+| `--hy-tabs-font-size`         | Font size         | `15px`                                 |
+| `--hy-tabs-line-width`        | Underline width   | `30px`                                 |
+| `--hy-tabs-line-height`       | Underline height   | `3px`                                  |
+| `--hy-tabs-text-color`        | Default tab color | Follows `--hy-text-color`                 |
+| `--hy-tabs-text-active-color` | Active tab color | Follows `--hy-text-color`                 |
+| `--hy-tabs-line-radius`       | Underline border radius   | Follows `--hy-radius-semicircle` (100px) |
 
 <demo-model url="pages-design/tabs/tabs"></demo-model>

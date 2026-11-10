@@ -1,8 +1,8 @@
 # Warn Alert Component
 
-> Alert component for displaying information that requires attention.
+> Alert for displaying information that requires attention.
 
-## :pushpin: Platform Differences
+## :pushpin: Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
 | -------- | --- | ------------------- | ------------------- |
@@ -12,7 +12,7 @@
 
 ```html
 <!-- Global usage -->
-<hy-warn text="月落乌啼霜满天"></hy-warn>
+<hy-warn text="Moon sets, crows cry, frost fills the sky"></hy-warn>
 ```
 
 ### Theme Configuration
@@ -21,16 +21,16 @@
 
 ::: tip Note
 
-In the current version, the icons are built-in Hy icons that vary based on the `type` parameter and cannot be customized.
+In the current version, the icons are built-in Hy icons. Different icons are displayed according to the `type` parameter and cannot be customized.
 
 :::
 
 ```html
 <template>
-    <hy-warn text="风萧萧兮易水寒" show-icon type="success"></hy-warn>
-    <hy-warn text="风萧萧兮易水寒" show-icon type="primary"></hy-warn>
-    <hy-warn text="风萧萧兮易水寒" show-icon type="error"></hy-warn>
-    <hy-warn text="风萧萧兮易水寒" show-icon type="info"></hy-warn>
+    <hy-warn text="The wind blows chill, the Yi River cold" show-icon type="success"></hy-warn>
+    <hy-warn text="The wind blows chill, the Yi River cold" show-icon type="primary"></hy-warn>
+    <hy-warn text="The wind blows chill, the Yi River cold" show-icon type="error"></hy-warn>
+    <hy-warn text="The wind blows chill, the Yi River cold" show-icon type="info"></hy-warn>
 </template>
 ```
 
@@ -40,18 +40,18 @@ In the current version, the icons are built-in Hy icons that vary based on the `
 
 ```html
 <template>
-    <hy-warn text="风萧萧兮易水寒" closable></hy-warn>
+    <hy-warn text="The wind blows chill, the Yi River cold" closable></hy-warn>
 </template>
 ```
 
-### Dark or Light Background
+### Dark or Light Background Color
 
 ```html
 <template>
     <!-- Light -->
-    <hy-warn text="风萧萧兮易水寒" theme="light"></hy-warn>
+    <hy-warn text="The wind blows chill, the Yi River cold" theme="light"></hy-warn>
     <!-- Dark -->
-    <hy-warn text="风萧萧兮易水寒" theme="dark"></hy-warn>
+    <hy-warn text="The wind blows chill, the Yi River cold" theme="dark"></hy-warn>
 </template>
 ```
 
@@ -62,12 +62,12 @@ In the current version, the icons are built-in Hy icons that vary based on the `
 | Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
 | title | Displayed text | `string` | - |
-| type | Use preset colors | `error`\|`warning`\|`success` \|`primary`\|`info` | warning |
+| type | Preset color to use | `error`\|`warning`\|`success` \|`primary`\|`info` | warning |
 | description | Auxiliary text, lighter in color and smaller in font size than title, optional | `string` | - |
 | closable | Close button (defaults to an X icon) | `boolean` | false |
-| showIcon | Whether to show the auxiliary icon on the left | `boolean` | false |
-| theme | Dark or light display | `light` \| `dark` | dark |
-| center | Whether text is centered | `boolean` | false |
+| showIcon | Whether to display the auxiliary icon on the left | `boolean` | false |
+| theme | Display in dark or light mode | `light` \| `dark` | dark |
+| center | Whether the text is centered | `boolean` | false |
 | fontSize | Font size | `string` \| `number` | 14 |
 
 ### Events
@@ -79,13 +79,13 @@ In the current version, the icons are built-in Hy icons that vary based on the `
 
 ### CSS Variables
 
-| Variable Name | Description | Default |
-| --- | --- | --- |
-| `--hy-warn-title-font-size` | Title font size | `14px` |
-| `--hy-warn-desc-font-size` | Description font size | `14px` |
-| `--hy-warn-close-top` | Close button top margin | `11px` |
-| `--hy-warn-close-right` | Close button right margin | `10px` |
-| `--hy-warn-radius` | Container border radius | Follows `--hy-radius-sm` (8rpx) |
-| `--hy-warn-text-color` | Title/description color | `#fff` |
+| Variable                    | Description              | Default                       |
+| --------------------------- | ------------------------ | ----------------------------- |
+| `--hy-warn-title-font-size` | Title font size          | `14px`                        |
+| `--hy-warn-desc-font-size`  | Description font size    | `14px`                        |
+| `--hy-warn-close-top`       | Close button top margin  | `11px`                        |
+| `--hy-warn-close-right`     | Close button right margin| `10px`                        |
+| `--hy-warn-radius`          | Container border radius  | Follows `--hy-radius-sm` (8rpx) |
+| `--hy-warn-text-color`      | Title/description color  | `#fff`                        |
 
 <demo-model url="pages-design/warn/warn"></demo-model>

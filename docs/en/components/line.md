@@ -1,14 +1,14 @@
 # Line Component
 
-> This component is generally used to display a line for separating content blocks. It supports both horizontal and vertical modes, and can render 0.5px lines. It's also very simple to use.
+> This component is generally used to display a line to separate content blocks. It has two modes: horizontal and vertical, and supports 0.5px hairlines. It is also very easy to use.
 
 ## :pushpin: Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ---------- | ------------ |
-| ✔        | ✔   | ✔          | ✔            |
+| -------- | --- | ------------------- | ------------------- |
+| ✔        | ✔   | ✔                   | ✔                   |
 
-## :japanese_castle: Basic Usage Examples
+## :japanese_castle: Basic Usage
 
 ```html
 <!-- Global usage -->
@@ -27,15 +27,15 @@
 
 ::: tip Tip
 
-When setting the line to vertical, either the parent element must have a fixed width, or you need to set a value for length to resolve the issue of the line not being displayed
+When setting the line to vertical, either the parent element must have a fixed width, or you need to set a value for `length` to resolve the issue of the line not being displayed.
 
 :::
 
 ```html
 <template>
-    <!--Vertical-->
+    <!-- Vertical -->
     <hy-line direction="column" length="100"></hy-line>
-    <!--Horizontal-->
+    <!-- Horizontal -->
     <hy-line direction="row"></hy-line>
 </template>
 ```
@@ -60,9 +60,9 @@ When setting the line to vertical, either the parent element must have a fixed w
 
 ```html
 <template>
-    <!--Thin line-->
+    <!-- Hairline -->
     <hy-line hairline></hy-line>
-    <!--Thick line-->
+    <!-- Thick line -->
     <hy-line :hairline="false"></hy-line>
 </template>
 ```
@@ -73,19 +73,19 @@ When setting the line to vertical, either the parent element must have a fixed w
 
 | Parameter | Description | Type | Default Value |
 | --- | --- | --- | --- |
-| color | The color of the line | `string` | - |
-| length | Length, appears as height when vertical and as width when horizontal; can be a percentage, a value with rpx unit, etc. | `string`\|`number` | 100% |
-| direction | Direction of the line, row-horizontal, column-vertical | `row`\|`column` | row |
-| hairline | Whether to display a thin line | `boolean` | true |
-| margin | The spacing between the line and surrounding elements, in string form, such as "30rpx", "20rpx 30rpx"; default unit is px | `string` | 0 |
-| dashed | Whether to use a dashed line, false-solid line, true-dashed line | `boolean` | false |
-| customStyle | Custom external styles to be applied | `CSSProperties` | - |
+| color | Line color | `string` | - |
+| length | Length; when vertical it acts as height, when horizontal it acts as length. Can be a percentage, a value with an rpx unit, etc. | `string`\|`number` | 100% |
+| direction | Line direction: row-horizontal, column-vertical | `row`\|`column` | row |
+| hairline | Whether to display a hairline (thin line) | `boolean` | true |
+| margin | Spacing between the line and the elements above, below, left, and right, in string form, e.g. "30rpx", "20rpx 30rpx"; default unit is px | `string` | 0 |
+| dashed | Whether the line is dashed: false-solid, true-dashed | `boolean` | false |
+| customStyle | Custom external styles | `CSSProperties` | - |
 | customClass | Custom external class name | `string` | - |
 
 ### CSS Variables
 
-| Variable Name | Description | Default Value |
-| --- | --- | --- |
-| `--hy-line-color` | Line color | Follows `--hy-border-color` |
+| Variable Name     | Description | Default Value             |
+| ----------------- | ----------- | ------------------------- |
+| `--hy-line-color` | Line color  | Follows `--hy-border-color` |
 
 <demo-model url="pages-design/line/line"></demo-model>

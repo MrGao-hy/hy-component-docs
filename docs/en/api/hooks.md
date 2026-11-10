@@ -4,7 +4,7 @@
 
 ### useShare(options?) => { onShareAppMessage, onShareTimeline }
 
-Configures global sharing for the Mini Program and returns sharing methods to be exposed by pages.
+Globally configures sharing for the Mini Program, returning share methods for pages to expose.
 
 **Parameters**
 
@@ -12,8 +12,8 @@ Configures global sharing for the Mini Program and returns sharing methods to be
 | ------------------------ | ------ | -------- | ------- | ---------------------------------------- |
 | options                  | object | No       | -       | Share configuration                      |
 | options.title            | string | No       | -       | Title name                               |
-| options.path             | string | No       | -       | Mini Program path                        |
-| options.friendImageUrl   | string | No       | -       | Cover image for sharing with friends     |
+| options.path             | string | No       | -       | Mini program path                        |
+| options.friendImageUrl   | string | No       | -       | Cover image for sharing with a friend    |
 | options.timelineImageUrl | string | No       | -       | Cover image for sharing to Moments       |
 
 **Return Value**
@@ -24,8 +24,8 @@ Configures global sharing for the Mini Program and returns sharing methods to be
 
 **Example**
 
-1. Single page usage
-When a page needs custom share content, register it in `<script setup>` together with hooks from `@dcloudio/uni-app`:
+1. Single page usage: when a specific page needs custom share content, register it in `<script setup>` together with hooks from `@dcloudio/uni-app`:
+
 ```typescript [Index.vue]
 <script setup lang="ts">
 import { onShareAppMessage, onShareTimeline } from '@dcloudio/uni-app'
@@ -38,22 +38,24 @@ const share = useShare({
   timelineImageUrl: '/static/share-timeline.png'
 })
 
-// Registered at the page level; takes precedence over the global mixin's default sharing
+// Register at the page level; takes precedence over the default share from the global mixin
 onShareAppMessage(share.onShareAppMessage)
 onShareTimeline(share.onShareTimeline)
 </script>
 ```
 
 2. Global usage
-> Once registered globally, the "Forward to Friend / Share to Moments" options in the WeChat Mini Program's top-right menu become available, so you don't need to write it separately for each page.
+
+> After global registration, the "Forward to Friends / Share to Moments" options in the WeChat Mini Program's top-right menu become available, with no need to write it separately for each page.
+
 ```typescript [main.ts]
 import { useShare } from '@hy-app/ui';
 
 app.mixin(
-  useShare({
-    title: 'Hy Component Library'
-  })
-)
+    useShare({
+        title: 'Hy Component Library',
+    })
+);
 ```
 
 ---
@@ -62,37 +64,37 @@ app.mixin(
 
 ### useToast() => ToastInstance
 
-A Composition API for global toast messages, providing multiple types of message prompts.
+Composition API for global toast messages, providing multiple types of message prompts.
 
 **Return Value**
 
 | Type | Description |
 | --- | --- |
-| ToastInstance | Toast instance, including the show, info, success, error, warning, primary, loading, and close methods |
+| ToastInstance | Toast instance, includes the show, info, success, error, warning, primary, loading, and close methods |
 
 **ToastInstance Methods**
 
-| Method  | Parameters         | Description        |
-| ------- | ------------------ | ------------------ |
-| show    | message, options?  | Default toast      |
-| info    | message, options?  | Info toast         |
-| success | message, options?  | Success toast      |
-| error   | message, options?  | Error toast        |
-| warning | message, options?  | Warning toast      |
-| primary | message, options?  | Primary toast      |
-| loading | message?, options? | Loading            |
-| close   | -                  | Close all toasts   |
+| Method  | Parameters         | Description      |
+| ------- | ------------------ | ---------------- |
+| show    | message, options?  | Default toast    |
+| info    | message, options?  | Info toast       |
+| success | message, options?  | Success toast    |
+| error   | message, options?  | Error toast      |
+| warning | message, options?  | Warning toast    |
+| primary | message, options?  | Primary toast    |
+| loading | message?, options? | Loading          |
+| close   | -                  | Close all toasts |
 
 **options Parameters**
 
-| Parameter | Type              | Required | Default | Description                                       |
-| --------- | ----------------- | -------- | ------- | ------------------------------------------------- |
-| message   | string            | Yes      | -       | Text message to display                           |
+| Parameter | Type              | Required | Default | Description                                        |
+| --------- | ----------------- | -------- | ------- | -------------------------------------------------- |
+| message   | string            | Yes      | -       | Text message to display                            |
 | type      | string            | No       | -       | Theme type: primary, success, error, warning, info |
 | position  | string            | No       | -       | Position where the toast appears: top, center, bottom |
-| icon      | boolean \| string | No       | -       | Icon to display                                   |
-| overlay   | boolean           | No       | -       | Whether to prevent touch pass-through             |
-| duration  | number            | No       | -       | Duration (in milliseconds)                        |
+| icon      | boolean \| string | No       | -       | Icon to display                                    |
+| overlay   | boolean           | No       | -       | Whether to prevent touch-through                   |
+| duration  | number            | No       | -       | Duration (in milliseconds)                         |
 
 **Example**
 
@@ -112,29 +114,29 @@ toast.loading('Loading...');
 
 ### useMessage() => MessageInstance
 
-A Composition API for message dialogs, providing the alert and confirm methods.
+Composition API for message dialogs, providing the alert and confirm methods.
 
 ::: warning Note
 
-`useMessage()` only injects the global message state into descendant components. A `hy-modal` carrying the `message` attribute must be mounted in the calling component's template as the driver instance for the dialog to render:
+`useMessage()` only injects global message state into descendant components. A `hy-modal` carrying the `message` attribute must be mounted in the template of the component that calls it to serve as the driver instance, otherwise the dialog will not render:
 
-- Do not bind `v-model` on the driver instance; its visibility is fully controlled by `message.alert` / `message.confirm`;
-- If custom `hy-modal` instances also exist on the same page, explicitly pass `:message="false"` to them to prevent button clicks from being hijacked by the global callback and failing. See [Modal: Coexistence of Global Messages and Custom Modals](/en/components/modal.md#confetti-ball-coexistence-of-global-messages-and-custom-modals) for details.
+- Do not bind `v-model` on the driver instance; its visibility is controlled entirely by `message.alert` / `message.confirm`;
+- When other custom `hy-modal` instances exist on the same page, explicitly pass `:message="false"` to them to prevent their button clicks from being taken over by the global callback and becoming ineffective. See [Modal - Coexistence of Global Messages and Custom Modals](/en/components/modal.md#confetti-ball-coexistence-of-global-messages-and-custom-modals).
 
 :::
 
 **Return Value**
 
-| Type            | Description                                  |
-| --------------- | -------------------------------------------- |
-| MessageInstance | Message instance, including the alert and confirm methods |
+| Type            | Description                                    |
+| --------------- | ---------------------------------------------- |
+| MessageInstance | Message instance, includes the alert and confirm methods |
 
 **MessageInstance Methods**
 
-| Method  | Parameters         | Description     |
-| ------- | ------------------ | --------------- |
-| alert   | message \| options | Alert dialog    |
-| confirm | message \| options | Confirm dialog  |
+| Method  | Parameters         | Description          |
+| ------- | ------------------ | -------------------- |
+| alert   | message \| options | Alert dialog         |
+| confirm | message \| options | Confirmation dialog  |
 
 **options Parameters**
 
@@ -173,7 +175,7 @@ A Composition API for message dialogs, providing the alert and confirm methods.
             title: 'Delete Confirmation',
             content: 'Are you sure you want to delete this?',
             confirmText: 'Confirm',
-            cancelText: 'Cancel'
+            cancelText: 'Cancel',
         });
         if (result) {
             uni.showToast({ title: 'Deleted', icon: 'success' });
@@ -188,25 +190,25 @@ A Composition API for message dialogs, providing the alert and confirm methods.
 
 ### useTouch() => TouchInstance
 
-A Composition API for touch events, used to track and analyze user touch interactions.
+Composition API for touch events, used to track and analyze user touch operations.
 
 **Return Value**
 
-| Type          | Description   |
-| ------------- | ------------- |
+| Type          | Description |
+| ------------- | ----------- |
 | TouchInstance | Touch instance |
 
 **TouchInstance Properties and Methods**
 
-| Name       | Type     | Description            |
-| ---------- | -------- | ---------------------- |
-| touchStart | function | Touch start handler    |
-| touchMove  | function | Touch move handler     |
-| direction  | ref      | Touch direction        |
-| deltaX     | ref      | Horizontal delta       |
-| deltaY     | ref      | Vertical delta         |
-| offsetX    | ref      | Horizontal offset      |
-| offsetY    | ref      | Vertical offset        |
+| Name       | Type     | Description              |
+| ---------- | -------- | ------------------------ |
+| touchStart | function | Touch start handler      |
+| touchMove  | function | Touch move handler       |
+| direction  | ref      | Touch direction          |
+| deltaX     | ref      | Horizontal displacement  |
+| deltaY     | ref      | Vertical displacement    |
+| offsetX    | ref      | Horizontal offset        |
+| offsetY    | ref      | Vertical offset          |
 
 **Example**
 
@@ -222,19 +224,19 @@ const { touchStart, touchMove, direction, deltaX, deltaY } = useTouch();
 
 ### useShakeService(threshold?) => { startShakeListener, stopShakeListener }
 
-A Composition API for the shake sensor, implementing shake-to-activate functionality by listening to device acceleration.
+Composition API for the shake sensor, listens to device acceleration to implement shake detection.
 
 **Parameters**
 
-| Parameter | Type   | Required | Default | Description      |
-| --------- | ------ | -------- | ------- | ---------------- |
-| threshold | number | No       | -       | Shake threshold  |
+| Parameter | Type   | Required | Default | Description       |
+| --------- | ------ | -------- | ------- | ----------------- |
+| threshold | number | No       | -       | Shake threshold   |
 
 **Return Value**
 
 | Type   | Description                                                     |
-| ------ | --------------------------------------------------------------- |
-| object | Contains the startShakeListener and stopShakeListener methods   |
+| ------ | ---------------------------------------------------------------- |
+| object | Contains the startShakeListener and stopShakeListener methods |
 
 **Example**
 
@@ -250,11 +252,11 @@ startShakeListener(() => {
 
 ---
 
-## useTranslate Internationalization Composition API
+## useTranslate Internationalization Translation Composition API
 
 ### useTranslate(module?) => { t }
 
-A Composition API for internationalization, used to implement multi-language switching in components or pages.
+Composition API for internationalization translation, used to implement multi-language switching in components or pages.
 
 **Parameters**
 
@@ -264,8 +266,8 @@ A Composition API for internationalization, used to implement multi-language swi
 
 **Return Value**
 
-| Type   | Description               |
-| ------ | ------------------------- |
+| Type   | Description                   |
+| ------ | ----------------------------- |
 | object | Contains the t translation method |
 
 **Example**
@@ -285,22 +287,22 @@ console.log(t('welcome', 'Hy'));
 
 ### useQueue() => QueueInstance
 
-A Composition API for queue management, used to manage the display order of components and mutually exclusive closing logic.
+Composition API for queue management, used to manage component display order and mutually exclusive closing logic.
 
 **Return Value**
 
-| Type          | Description    |
-| ------------- | -------------- |
+| Type          | Description  |
+| ------------- | ------------ |
 | QueueInstance | Queue instance |
 
 **QueueInstance Methods**
 
-| Method           | Parameters | Description                                   |
-| ---------------- | ---------- | --------------------------------------------- |
-| pushToQueue      | component  | Add a component to the queue                  |
-| removeFromQueue  | component  | Remove a component from the queue             |
-| closeOther       | component  | Close all components except the current one   |
-| closeOutside     | -          | Close all components                          |
+| Method          | Parameter | Description                                  |
+| --------------- | --------- | -------------------------------------------- |
+| pushToQueue     | component | Add a component to the queue                 |
+| removeFromQueue | component | Remove a component from the queue            |
+| closeOther      | component | Close all components except the current one  |
+| closeOutside    | -         | Close all components                         |
 
 **Example**
 

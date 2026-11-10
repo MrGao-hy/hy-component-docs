@@ -1,23 +1,23 @@
 # SwipeAction Swipe Cell Component
 
-> A swipe cell component used to reveal an action menu by swiping left or right, commonly used for operations such as deleting and favoriting.
+> A swipe cell component used in scenarios where you swipe left or right to reveal an action menu, commonly used for operations such as deleting and favoriting.
 
-## :pushpin: Platform Differences
+## :pushpin: Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ------------------- | ------------------- |
-| ✔        | ✔   | ✔                   | ✔                   |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
-## :warning: Notes
+## :warning: Precautions
 
-::: warning Notes
+::: warning Precautions
 
-- The component supports both left and right swipe directions; the `left` and `right` slots are used to define the action buttons on each side
-- The `options` property is used to configure the right-side buttons and only takes effect when the `left` slot is not used
+- The component supports both left and right swipe directions; the action buttons on each side are defined via the `left` and `right` slots respectively
+- The `options` property is used to configure right-side buttons and only takes effect when the `left` slot is not used
 - `modelValue` controls the swipe state, with a value of `left`, `right`, or `close`
 - The `beforeClose` hook function is triggered before the swipe buttons close and can be used to confirm operations
-- When multiple swipe cells are used together, swiping one will automatically close the other open cells
-- Tapping the content area of an opened swipe cell will automatically close it
+- When multiple swipe cells are used together, swiping one will automatically close the other opened cells
+- Clicking the content area of an opened swipe cell will close it automatically
 
 :::
 
@@ -146,13 +146,13 @@
 </template>
 ```
 
-### Disable Swiping
+### Disabled Swiping
 
 ```html
 <template>
     <hy-swipe-action borderBottom :disabled="true">
         <view class="cell">
-            <view class="cell-title">Swiping disabled</view>
+            <view class="cell-title">Disabled swiping</view>
             <view class="cell-value">This cell cannot be swiped</view>
         </view>
     </hy-swipe-action>
@@ -166,7 +166,7 @@
     <hy-swipe-action borderBottom :duration="500">
         <view class="cell">
             <view class="cell-title">Slow animation</view>
-            <view class="cell-value">Animation transition duration is 500ms</view>
+            <view class="cell-value">Animation transition time is 500ms</view>
         </view>
     </hy-swipe-action>
 </template>
@@ -179,7 +179,7 @@
     <hy-swipe-action borderBottom :options="options" :beforeClose="handleBeforeClose">
         <view class="cell">
             <view class="cell-title">Close confirmation</view>
-            <view class="cell-value">A confirmation prompt is triggered before closing</view>
+            <view class="cell-value">A confirmation prompt appears before closing</view>
         </view>
     </hy-swipe-action>
 </template>
@@ -205,7 +205,7 @@
 </script>
 ```
 
-### Listening for Click Events
+### Listening to Click Events
 
 ```html
 <template>
@@ -217,7 +217,7 @@
     >
         <view class="cell">
             <view class="cell-title">Click events</view>
-            <view class="cell-value">Tap the content or buttons to trigger events</view>
+            <view class="cell-value">Click the content or buttons to trigger events</view>
         </view>
     </hy-swipe-action>
 </template>
@@ -264,7 +264,7 @@
         <hy-swipe-action borderBottom v-model="status" :options="options">
             <view class="cell">
                 <view class="cell-title">Programmatic control</view>
-                <view class="cell-value">Open and close via buttons</view>
+                <view class="cell-value">Control open/close via buttons</view>
             </view>
         </hy-swipe-action>
         <view class="controls">
@@ -321,9 +321,9 @@
     import { ref } from 'vue';
 
     const list = ref([
-        { title: 'List item 1', desc: 'This is the first entry' },
-        { title: 'List item 2', desc: 'This is the second entry' },
-        { title: 'List item 3', desc: 'This is the third entry' },
+        { title: 'List item 1', desc: 'This is the first data entry' },
+        { title: 'List item 2', desc: 'This is the second data entry' },
+        { title: 'List item 3', desc: 'This is the third data entry' },
     ]);
 
     const options = [
@@ -368,29 +368,29 @@
 | modelValue | State of the swipe buttons | `'left'` \| `'close'` \| `'right'` | close |
 | disabled | Whether to disable swiping | `boolean` | false |
 | borderBottom | Whether to show the bottom border | `boolean` | false |
-| options | Right-side button configuration (takes effect when the `left` slot is not used) | `SwipeActionOptionsVo[]` | [See below](./swipeAction/#options) |
+| options | Right-side button configuration (effective when no `left` slot is used) | `SwipeActionOptionsVo[]` | [See below](./swipeAction/#options) |
 | duration | Animation transition duration, in ms | `number` | 300 |
 | beforeClose | Hook function triggered before the swipe buttons close | `(reason: SwipeActionReason, position: SwipeActionPosition) => void` | - |
 
 ### Events
 
-| Event | Description | Callback Parameters |
+| Event Name | Description | Callback Parameters |
 | --- | --- | --- |
-| click | When the swipe buttons are open, tapping the entire swipe action container triggers the click event | `value: SwipeActionPosition` |
-| clickAction | Triggered when a right-side action button is clicked | `item: SwipeActionOptionsVo, index: number` |
+| click | Triggered when clicking the entire swipe action container while the swipe buttons are open | `value: SwipeActionPosition` |
+| clickAction | Triggered when clicking a right-side action button | `item: SwipeActionOptionsVo, index: number` |
 | update:modelValue | Triggered when the swipe state changes | `value: SwipeActionStatus` |
 
 ### Slots
 
-| Slot    | Description      | Accepted Values |
-| ------- | ---------------- | --------------- |
-| left    | Custom left buttons | -            |
-| default | Custom content   | -               |
-| right   | Custom right buttons | -            |
+| Slot Name | Description             | Accepted Values |
+| ------- | -------------- | ------ |
+| left    | Custom left-side buttons | -      |
+| default | Custom content           | -      |
+| right   | Custom right-side buttons | -      |
 
 ### Typings
 
-::: details Type Definitions
+::: details Type Description
 
 ```ts
 export interface SwipeActionOptionsVo {
@@ -443,10 +443,10 @@ export type SwipeActionBeforeClose = (
 
 ### CSS Variables
 
-| Variable | Description | Default |
-| --- | --- | --- |
-| `--hy-swipe-action-button-padding` | Button padding | `0 15px` |
-| `--hy-swipe-action-button-line-height` | Button line height | `46px` |
-| `--hy-swipe-action-button-color` | Button text color | `#ffffff` |
+| Variable Name                          | Description      | Default  |
+| -------------------------------------- | ------------ | --------- |
+| `--hy-swipe-action-button-padding`     | Button padding   | `0 15px`  |
+| `--hy-swipe-action-button-line-height` | Button line height | `46px`    |
+| `--hy-swipe-action-button-color`       | Button text color | `#ffffff` |
 
 <demo-model url="pages-design/swipeAction/swipeAction"></demo-model>

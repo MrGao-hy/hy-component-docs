@@ -1,17 +1,17 @@
 # CountDown Component
 
-> This component is typically used for the deadline of an activity. Through the changing numbers, it gives users a clear perception of time and prompts them to take a specific action.
+> This component is typically used for the deadline of an activity. Through the changing numbers, it gives users a clear sense of time and prompts them to take a specific action.
 
-## :pushpin: Platform Differences
+## :pushpin: Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | -------------------- | ------------------- |
-| ✔        | ✔   | ✔                    | ✔                   |
+| -------- | --- | ------------------- | ------------------- |
+| ✔        | ✔   | ✔                   | ✔                   |
 
-## :japanese_castle: Basic Usage Example
+## :japanese_castle: Basic Usage
 
 ```html
-<!-- Global usage -->
+<!-- 全局使用 -->
 <hy-count-down time="3600 * 30 * 1000"></hy-count-down>
 ```
 
@@ -21,14 +21,14 @@
 
 ```html
 <template>
-    <hy-count-down :time="30 * 60 * 60 * 1000" format="DD days HH hours mm minutes ss seconds"></hy-count-down>
+    <hy-count-down :time="30 * 60 * 60 * 1000" format="DD天HH时mm分ss秒"></hy-count-down>
 </template>
 ```
 
 ### Millisecond-Level Rendering
 
-- Customize the format by setting `millisecond`
-- The `format` value must include millisecond-level tokens
+- Enable it by setting `millisecond`
+- The `format` value must include the millisecond part
 
 ```html
 <template>
@@ -115,9 +115,9 @@
     millisecond
 ></hy-count-down>
 <view class="hy-flex">
-    <hy-button text="Reset" type="info" @click="reset"></hy-button>
-    <hy-button text="Start" type="success" @click="start"></hy-button>
-    <hy-button text="Pause" type="error" @click="pause"></hy-button>
+    <hy-button text="重置" type="info" @click="reset"></hy-button>
+    <hy-button text="开始" type="success" @click="start"></hy-button>
+    <hy-button text="暂停" type="error" @click="pause"></hy-button>
 </view>
 ```
 
@@ -159,34 +159,34 @@ const reset = () => {
 
 ### CountDown Props
 
-| Parameter   | Description                                  | Type      | Default  |
-| ----------- | -------------------------------------------- | --------- | -------- |
-| time        | Countdown duration, in ms                    | `number`  | 0        |
-| format      | Time format[^1]                              | `string`  | HH:mm:ss |
-| autoStart   | Whether to start the countdown automatically | `boolean` | true     |
-| millisecond | Whether to display the countdown in milliseconds | `boolean` | false |
+| Prop        | Description                                     | Type      | Default  |
+| ----------- | ----------------------------------------------- | --------- | -------- |
+| time        | Countdown duration, in ms                       | `number`  | 0        |
+| format      | Time format[^1]                                 | `string`  | HH:mm:ss |
+| autoStart   | Whether to start the countdown automatically    | `boolean` | true     |
+| millisecond | Whether to display the countdown in milliseconds | `boolean` | false    |
 
 ### Events
 
-| Event Name | Description                                                        | Callback Parameters |
-| ---------- | ------------------------------------------------------------------ | ------------------- |
-| change     | Triggered while the countdown is running, whenever the time changes | time: remaining time |
-| finish     | Countdown finished                                                 | -                   |
+| Event Name | Description                                                 | Callback Parameters |
+| ---------- | ----------------------------------------------------------- | ------------------- |
+| change     | Triggered when the remaining time changes during the countdown | time: remaining time |
+| finish     | Triggered when the countdown ends                           | -                   |
 
 ### Methods
 
-| Method Name | Description         |
-| ----------- | ------------------- |
-| start       | Start the countdown |
-| pause       | Pause the countdown |
-| reset       | Reset the countdown |
+| Name  | Description          |
+| ----- | -------------------- |
+| start | Starts the countdown |
+| pause | Pauses the countdown |
+| reset | Resets the countdown |
 
 ### CSS Variables
 
-| Variable Name | Description | Default Value |
-| --- | --- | --- |
-| `--hy-count-down-font-size` | Font size | `15px` |
-| `--hy-count-down-line-height` | Line height | `22px` |
+| Variable                      | Description | Default |
+| ----------------------------- | ----------- | ------- |
+| `--hy-count-down-font-size`   | Font size   | `15px`  |
+| `--hy-count-down-line-height` | Line height | `22px`  |
 
 [^1] `DD`-day, `HH`-hour, `mm`-minute, `ss`-second, `SSS`-millisecond
 

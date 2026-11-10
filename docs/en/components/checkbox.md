@@ -2,13 +2,13 @@
 
 > The checkbox component is generally used in scenarios where multiple selections are needed. It is fully functional and easy to use.
 
-## :pushpin: Platform Compatibility
+## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ---------- | ------------ |
-| ✔        | ✔   | ✔          | ✔            |
+| -------- | --- | ------------------- | ------------------- |
+| ✔        | ✔   | ✔                   | ✔                   |
 
-## :japanese_castle: Basic Usage
+## :japanese_castle: Basic Usage Example
 
 ```html
 <template>
@@ -71,7 +71,7 @@
 </script>
 ```
 
-### Single Item
+### Standalone Usage
 
 ```html
 <template>
@@ -93,7 +93,7 @@
 
 ### Custom Shape
 
-You can set the checkbox to square or circular by setting `shape` to `square` or `circle`
+You can set the checkbox to square or round by setting `shape` to `square` or `circle`.
 
 ```html
 <hy-checkbox v-model="value" :columns="columns" shape="square"></hy-checkbox>
@@ -106,18 +106,18 @@ You can set the checkbox to square or circular by setting `shape` to `square` or
 <hy-checkbox v-model="value" :columns="columns" activeColor="red"></hy-checkbox>
 ```
 
-### Arrangement
+### Layout
 
-You can arrange the checkboxes horizontally or vertically by setting `placement` to `row` or `column`
+You can arrange the checkboxes horizontally or vertically by setting `placement` to `row` or `column`.
 
 ```html
 <hy-checkbox v-model="value" :columns="columns" placement="row"></hy-checkbox>
 <hy-checkbox v-model="value" :columns="columns" placement="column"></hy-checkbox>
 ```
 
-### Horizontal Both-Ends Arrangement
+### Horizontal Layout with Icon Alignment
 
-You can set the alignment of the checkbox icon to left or right by setting iconPlacement to `left` or `right`
+You can align the checkbox icon to the left or right by setting `iconPlacement` to `left` or `right`.
 
 ```html
 <hy-checkbox v-model="value" :columns="columns" iconPlacement="right" placement="row"></hy-checkbox>
@@ -153,7 +153,7 @@ You can set the alignment of the checkbox icon to left or right by setting iconP
 ### Slots
 
 - `label`: Custom label text, the passed value is `label`
-- `icon`: Custom icon inside the checkbox, the passed values are `iconColor` and `iconSize`
+- `icon`: Custom icon inside the option box, the passed values are `iconColor` and `iconSize`
 
 ```html
 <template>
@@ -189,71 +189,71 @@ You can set the alignment of the checkbox icon to left or right by setting iconP
 
 ### Checkbox Props
 
-| Parameter | Description | Type | Default |
+| Parameter | Description | Type | Default Value |
 | --- | --- | --- | --- |
 | v-model | Two-way binding value, array type | `(string\|number)[]` \|`boolean` | - |
-| columns | Accepts an array value | `array` | - |
+| columns | Receives array values | `array` | - |
 | fieldNames | Custom keys for receiving columns | `object` | \{label: "label",value: "value",checked: "checked"\} |
 | shape | Checkbox shape[^1] | `circle`\|`square` | square |
 | size | Checkbox size[^2] | `small`\|`medium`\|`large` \|`string`\|`number` | medium |
 | disabled | Whether to disable | `boolean` | false |
-| activeColor | Color in the selected state | `string` | - |
-| inactiveColor | Color in the unselected state | `string` | #c8c9cc |
-| iconSize | Icon size, numbers default to px | `string`\|`number` | 20 |
+| activeColor | Color in selected state | `string` | - |
+| inactiveColor | Color when unselected | `string` | #c8c9cc |
+| iconSize | Icon size, default unit is px for numeric values | `string`\|`number` | 20 |
 | iconColor | Icon color | `string` | - |
-| labelSize | Label font size, numbers default to px | `string`\|`number` | - |
+| labelSize | Label font size, default unit is px for numeric values | `string`\|`number` | - |
 | labelColor | Label color | `string` | - |
 | iconPlacement | Alignment of the check icon | `left`\|`right` | left |
-| borderBottom | Whether to show an underline in vertical layout | `boolean` | false |
-| labelDisabled | Whether to prevent clicking the label to select the checkbox | `boolean` | false |
-| placement | Layout[^3] | `row`\|`column` | row |
-| customStyle | Custom external styles to be applied | `CSSProperties` | - |
+| borderBottom | Whether to show the bottom line in vertical layout | `boolean` | false |
+| labelDisabled | Whether to disable selecting the checkbox by clicking the label | `boolean` | false |
+| placement | Layout method[^3] | `row`\|`column` | row |
+| customStyle | Define external styles to be used | `CSSProperties` | - |
 
 ### CheckboxGroup Props
 
-| Parameter | Description | Type | Default |
+| Parameter | Description | Type | Default Value |
 | --- | --- | --- | --- |
 | v-model | Two-way binding value, array type | `(string\|number)[]`\|`boolean` | - |
 | shape | Checkbox shape[^1] | `circle`\|`square` | square |
 | size | Checkbox size[^2] | `small`\|`medium`\|`large`\|`string`\|`number` | medium |
 | disabled | Whether to disable | `boolean` | false |
-| activeColor | Color in the selected state | `string` | - |
-| inactiveColor | Color in the unselected state | `string` | #c8c9cc |
-| iconSize | Icon size, in px | `string`\|`number` | 20 |
+| activeColor | Color in selected state | `string` | - |
+| inactiveColor | Color when unselected | `string` | #c8c9cc |
+| iconSize | Icon size, unit is px | `string`\|`number` | 20 |
 | iconColor | Icon color | `string` | - |
-| labelSize | Label font size, in px | `string`\|`number` | - |
+| labelSize | Label font size, unit is px | `string`\|`number` | - |
 | labelColor | Label color | `string` | - |
 | iconPlacement | Alignment of the check icon | `left`\|`right` | left |
-| borderBottom | Whether to show an underline in vertical layout | `boolean` | false |
-| labelDisabled | Whether to prevent clicking the label to select the checkbox | `boolean` | false |
-| placement | Layout[^3] | `row`\|`column` | row |
-| customStyle | Custom external styles to be applied | `CSSProperties` | - |
+| borderBottom | Whether to show the bottom line in vertical layout | `boolean` | false |
+| labelDisabled | Whether to disable selecting the checkbox by clicking the label | `boolean` | false |
+| placement | Layout method[^3] | `row`\|`column` | row |
+| customStyle | Define external styles to be used | `CSSProperties` | - |
 
 ### CheckboxItem Props
 
-| Parameter | Description | Type | Default |
-| -------- | ------------- | --------- | ------ |
-| value    | Binding value        | `string`  | -      |
-| label    | Label text | `string`  | -      |
-| checked  | Whether selected by default  | `boolean` | false  |
-| disabled | Whether to disable      | `boolean` | false  |
+| Parameter | Description           | Type      | Default Value |
+| -------- | --------------------- | --------- | ------------- |
+| value    | Bound value           | `string`  | -             |
+| label    | Label text            | `string`  | -             |
+| checked  | Whether selected by default | `boolean` | false    |
+| disabled | Whether to disable    | `boolean` | false         |
 
 ## columns
 
-| Parameter | Description | Type | Default |
-| -------- | ------------ | --------- | ------ |
-| label    | Displayed text content | `string`  | -      |
-| value    | Value           | `string`  | -      |
-| checked  | Whether selected     | `boolean` | -      |
-| disabled | Whether to disable     | `boolean` | -      |
+| Parameter | Description           | Type      | Default Value |
+| -------- | --------------------- | --------- | ------------- |
+| label    | Displayed text content | `string` | -             |
+| value    | Value                 | `string`  | -             |
+| checked  | Whether selected      | `boolean` | -             |
+| disabled | Whether to disable    | `boolean` | -             |
 
 ## API
 
-| Parameter | Description | Type | Default  |
-| ------- | --------------------- | -------- | ------- |
-| label   | Custom text key for columns | `string` | label   |
-| value   | Custom value key for columns   | `string` | value   |
-| checked | Custom checked key for columns | `string` | checked |
+| Parameter | Description                     | Type     | Default Value |
+| --------- | ------------------------------- | -------- | ------------- |
+| label     | Custom text key of columns      | `string` | label         |
+| value     | Custom value key of columns     | `string` | value         |
+| checked   | Custom checked key of columns   | `string` | checked       |
 
 ## CheckboxItem Events
 
@@ -263,24 +263,23 @@ You can set the alignment of the checkbox icon to left or right by setting iconP
 
 ## CheckboxItem Slots
 
-| Slot Name | Description | Passed Values |
-| ------ | ----------------- | --------------------- |
-| icon   | Custom `icon` content  | iconColor \| iconSize |
-| label  | Custom `label` content | record                |
+| Slot Name | Description           | Passed Value         |
+| --------- | --------------------- | -------------------- |
+| icon      | Custom `icon` content | iconColor \| iconSize |
+| label     | Custom `label` content | record             |
 
 ### CSS Variables
 
-| Variable | Description | Default |
-| --- | --- | --- |
-| `--hy-checkbox-margin` | Outer margin | `5px` |
-| `--hy-checkbox-radius-square` | Border radius of square checkbox | `3px` |
-| `--hy-checkbox-disabled-checked-opacity` | Opacity when disabled and checked | `0.5` |
-| `--hy-checkbox-font-size` | Label font size | Follows `--hy-font-size-base` (28rpx) |
-| `--hy-checkbox-disabled-color` | Disabled text color | Follows `--hy-text-color--disabled` |
-| `--hy-checkbox-border` | Checkbox border | Follows `--hy-border-line` |
+| Variable Name                            | Description                        | Default Value                        |
+| ---------------------------------------- | ---------------------------------- | ------------------------------------ |
+| `--hy-checkbox-margin`                   | Outer margin                       | `5px`                                |
+| `--hy-checkbox-radius-square`            | Border radius of square checkbox   | `3px`                                |
+| `--hy-checkbox-disabled-checked-opacity` | Opacity of disabled selected state | `0.5`                                |
+| `--hy-checkbox-font-size`                | Label font size                    | Follows `--hy-font-size-base` (28rpx) |
+| `--hy-checkbox-disabled-color`           | Disabled text color                | Follows `--hy-text-color--disabled`  |
+| `--hy-checkbox-border`                   | Checkbox border                    | Follows `--hy-border-line`           |
 
-
-[^1]: `circle`: both sides are semicircular; `square`: square with rounded corners
+[^1]: `circle`: both ends are semicircular; `square`: square with rounded corners
 
 [^2]: `normal`: default size; `large`: large size; `small`: small size;
 

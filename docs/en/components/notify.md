@@ -1,19 +1,19 @@
-# Notify Message Prompt Component
+# Notify Message Notification Component
 
 > This component is generally used in scenarios where a notification slides down from the top of the page and then automatically retracts.
 
-## :pushpin: Platform Compatibility
+## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ------------------- | ------------------- |
-| ✔        | ✔   | ✔                   | ✔                   |
+| -------- | --- | -------------------- | ------------------- |
+| ✔        | ✔   | ✔                    | ✔                   |
 
 ## :warning: Notes
 
 ::: warning Notes
 
-- When `duration` is 0, the message prompt will not disappear automatically; you need to manually call the `close` method to close it
-- On H5, the navigation bar height (44px) is reserved by default; other platforms are not affected
+- When `duration` is 0, the message notification will not disappear automatically; you need to manually call the `close` method to close it
+- On H5, the navigation bar height (44px) is automatically reserved by default; other platforms are not affected
 - When `safeAreaInsetTop` is set to true, the top status bar height is automatically reserved
 
 :::
@@ -24,7 +24,7 @@
 
 ```html
 <template>
-    <hy-notify ref="notifyRef" message="I am a message prompt"></hy-notify>
+    <hy-notify ref="notifyRef" message="I am a message notification"></hy-notify>
     <hy-button text="Show Notification" @click="showNotify"></hy-button>
 </template>
 
@@ -35,7 +35,7 @@
 
     const showNotify = () => {
         notifyRef.value.show({
-            message: 'This is a message prompt',
+            message: 'This is a message notification',
         });
     };
 </script>
@@ -61,10 +61,10 @@
 ```html
 <template>
     <hy-notify ref="notifyRef"></hy-notify>
-    <hy-button text="Success Prompt" @click="showSuccess"></hy-button>
-    <hy-button text="Warning Prompt" @click="showWarning"></hy-button>
-    <hy-button text="Error Prompt" @click="showError"></hy-button>
-    <hy-button text="Info Prompt" @click="showInfo"></hy-button>
+    <hy-button text="Success Notification" @click="showSuccess"></hy-button>
+    <hy-button text="Warning Notification" @click="showWarning"></hy-button>
+    <hy-button text="Error Notification" @click="showError"></hy-button>
+    <hy-button text="Info Notification" @click="showInfo"></hy-button>
 </template>
 
 <script setup>
@@ -75,7 +75,7 @@
     const showSuccess = () => {
         notifyRef.value.show({
             type: 'success',
-            message: 'Operation succeeded',
+            message: 'Operation successful',
         });
     };
 
@@ -137,12 +137,12 @@
 </script>
 ```
 
-### Custom Styles
+### Custom Style
 
 ```html
 <template>
     <hy-notify ref="notifyRef"></hy-notify>
-    <hy-button text="Custom Colors" @click="showCustomStyle"></hy-button>
+    <hy-button text="Custom Color" @click="showCustomStyle"></hy-button>
 </template>
 
 <script setup>
@@ -225,7 +225,7 @@
 
     const showNotify = () => {
         notifyRef.value.show({
-            message: 'Callback executes after 3 seconds',
+            message: 'Callback executed after 3 seconds',
             duration: 3000,
             complete: () => {
                 uni.showToast({
@@ -251,18 +251,18 @@
 | bgColor | Background color | `string` | - |
 | icon | Custom icon name | `string` | - |
 | message | Text content to display | `string` | - |
-| duration | Display duration; does not disappear when set to 0, unit: ms | `number` | 3000 |
-| fontSize | Font size; default unit is px for numeric values | `number` \| `string` | 15 |
+| duration | Display duration in ms; does not disappear when set to 0 | `number` | 3000 |
+| fontSize | Font size; numbers default to px | `number` \| `string` | 15 |
 | safeAreaInsetTop | Whether to reserve top safe area (status bar height) | `boolean` | false |
-| customStyle | Custom external styles to apply | `CSSProperties` | - |
+| customStyle | Custom external styles to be applied | `CSSProperties` | - |
 | customClass | Custom external class name | `string` | - |
 
 ### Methods
 
-| Method | Description                          | Parameter Type  |
-| ------ | ------------------------------------ | --------------- |
-| show   | Show the notification and load config | `NotifyOptions` |
-| close  | Close the notification               | -               |
+| Method | Description        | Parameter Type  |
+| ------ | ------------------ | --------------- |
+| show   | Show the notification and load the configuration | `NotifyOptions` |
+| close  | Close the notification           | -               |
 
 ### NotifyOptions Configuration
 
@@ -274,20 +274,20 @@
 | bgColor | Background color | `string` | - |
 | icon | Custom icon name | `string` | - |
 | message | Text content to display | `string` | - |
-| duration | Display duration; does not disappear when set to 0, unit: ms | `number` | 3000 |
-| fontSize | Font size; default unit is px for numeric values | `number` \| `string` | 15 |
+| duration | Display duration in ms; does not disappear when set to 0 | `number` | 3000 |
+| fontSize | Font size; numbers default to px | `number` \| `string` | 15 |
 | safeAreaInsetTop | Whether to reserve top safe area | `boolean` | false |
 | complete | Callback function after closing | `() => void` | - |
 
 ### Slots
 
-| Slot Name | Description             | Accepted Value |
-| --------- | ----------------------- | -------------- |
-| icon      | Custom notification icon | -              |
+| Slot | Description       | Accepted Value |
+| ---- | ------------------ | -------------- |
+| icon | Custom notification icon | -              |
 
 ## typings
 
-::: details Type Definitions
+::: details Type Description
 
 ```ts
 type NotifyType = 'primary' | 'success' | 'warning' | 'error' | 'info';
@@ -320,8 +320,8 @@ interface NotifyOptions {
 
 ### CSS Variables
 
-| Variable | Description | Default |
-| --- | --- | --- |
-| `--hy-notify-font-size` | Text font size | Follows `--hy-font-size-base` (28rpx) |
+| Variable                | Description | Default                             |
+| ----------------------- | ----------- | ----------------------------------- |
+| `--hy-notify-font-size` | Font size   | Follows `--hy-font-size-base` (28rpx) |
 
 <demo-model url="pages-design/notify/notify"></demo-model>

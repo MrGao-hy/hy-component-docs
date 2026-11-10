@@ -13,7 +13,7 @@
 ```html
 <!-- Global usage -->
 <hy-transition :show="show">
-    <view class="transition">I am content</view>
+    <view class="transition">I am the content</view>
 </hy-transition>
 ```
 
@@ -23,21 +23,25 @@ import { ref } from 'vue';
 const show = ref(true);
 ```
 
-### Animation Modes
+### Animation Mode
 
 > By setting `mode`
 >
 > - `fade` fade in
-> - `fade-up` slide up and fade in
-> - `fade-down` slide down and fade in
-> - `fade-left` slide left and fade in
-> - `fade-right` slide right and fade in
+> - `fade-up` slide up with fade in
+> - `fade-down` slide down with fade in
+> - `fade-left` slide left with fade in
+> - `fade-right` slide right with fade in
 > - `slide-up` slide up in
 > - `slide-down` slide down in
-> - `slide-left` slide in from left
-> - `slide-right` slide in from right
+> - `slide-left` slide left in
+> - `slide-right` slide right in
 > - `zoom-in` zoom in
-> - `zoom-out` zoom out
+> - `zoom-out` zoom out in
+> - `rotate` rotate in
+> - `flip-x` 3D flip in on X-axis
+> - `flip-y` 3D flip in on Y-axis
+> - `bounce` bounce in
 
 ```html
 <template>
@@ -49,11 +53,11 @@ const show = ref(true);
 
 > By setting `timingFunction`
 >
-> - `linear`: the transition effect runs at the same speed from start to end, equivalent to cubic-bezier(0,0,1,1).
-> - `ease`: the transition effect starts slowly, then speeds up, and finally ends slowly. This is the default value, equivalent to cubic-bezier(0.25,0.1,0.25,1).
-> - `ease-in`: the transition effect starts slowly and then gradually speeds up, equivalent to cubic-bezier(0.42,0,1,1).
-> - `ease-out`: the transition effect starts quickly and then gradually slows down, equivalent to cubic-bezier(0,0,0.58,1).
-> - `ease-in-out`: the transition effect starts slowly, speeds up in the middle, and then slows down at the end, equivalent to cubic-bezier(0.42,0,0.58,1).
+> - `linear`: The transition effect runs at the same speed from start to end, equivalent to cubic-bezier(0,0,1,1).
+> - `ease`: The transition effect starts slowly, then speeds up, and finally ends slowly. This is the default value, equivalent to cubic-bezier(0.25,0.1,0.25,1).
+> - `ease-in`: The transition effect starts slowly and then gradually speeds up, equivalent to cubic-bezier(0.42,0,1,1).
+> - `ease-out`: The transition effect starts quickly and then gradually slows down, equivalent to cubic-bezier(0,0,0.58,1).
+> - `ease-in-out`: The transition effect starts slowly, speeds up in the middle, and then slows down to end, equivalent to cubic-bezier(0.42,0,0.58,1).
 
 ```html
 <template>
@@ -68,10 +72,13 @@ const show = ref(true);
 | Parameter      | Description                                    | Type            | Default  |
 | -------------- | ---------------------------------------------- | --------------- | -------- |
 | show           | Whether to show the component                  | `boolean`       | false    |
-| mode           | Animation mode to use, see above for details   | `string`        | fade     |
-| duration       | Duration of the animation, in ms               | `number`        | 300      |
-| timingFunction | Animation transition function, see above        | `string`        | ease-out |
+| mode           | Animation mode used, see above for details     | `string`        | fade     |
+| duration       | Animation execution time, in ms                | `number`        | 300      |
+| shop           | Whether to prevent click event bubbling        | `boolean`       | false    |
+| lockScroll     | Whether to prevent touch scroll penetration    | `boolean`       | false    |
+| timingFunction | Animation transition function, see above       | `string`        | ease-out |
 | customStyle    | Define external styles to be used              | `CSSProperties` | -        |
+| customClass    | Custom external class name                     | `string`        | -        |
 
 ### Events
 

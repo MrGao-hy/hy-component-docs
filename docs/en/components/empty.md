@@ -1,6 +1,6 @@
 # Empty Component
 
-> This component is used for scenarios where content needs to be loaded but the first page of data comes back empty, prompting the user that there is "no content". We have carefully selected a dozen scenario-specific icons for your convenience.
+> This component is used for scenarios where content needs to be loaded but the first page of data comes back empty, displaying a "no content" prompt. We have carefully selected over a dozen scenario-specific icons for your convenience.
 
 ## :pushpin: Platform Compatibility
 
@@ -8,16 +8,16 @@
 | -------- | --- | ---------- | ------------ |
 | ✔        | ✔   | ✔          | ✔            |
 
-## :japanese_castle: Basic Usage
+## :japanese_castle: Basic Usage Example
 
 ```html
 <!-- Global usage -->
 <hy-empty></hy-empty>
 ```
 
-### Show and Configure the Button
+### Displaying and Configuring the Button
 
-- `btnText` Button text
+- `btnText` Text to display on the button
 - `btnSize` Button size
 - `btnShape` Button shape
 - `btnPlain` Whether the button is outlined
@@ -35,7 +35,7 @@
 </template>
 ```
 
-### Configure the Prompt Text
+### Configuring the Prompt Text
 
 - `desSize` Prompt text size
 - `desColor` Prompt text color
@@ -64,48 +64,48 @@
 
 ### Empty Props
 
-| Parameter | Description | Type | Default |
+| Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | show | Whether to show the component | `boolean` | true |
-| mode | Empty state content | `string` | content |
+| mode | Empty state page content | `string` | content |
 | imageUrl | Empty state icon image | `string` | - |
 | zIndex | Component z-index | `number` | 889 |
-| width | Image width, numbers default to px unit | `string`\|`number` | 240px |
-| height | Image height, numbers default to px unit | `string`\|`number` | 240px |
-| description | Prompt message | `string` | No data |
-| desSize | Prompt message size, numbers default to px unit | `string`\|`number` | 15 |
+| width | Image width, numbers default to px | `string`\|`number` | 240px |
+| height | Image height, numbers default to px | `string`\|`number` | 240px |
+| description | Prompt message | `string` | No data yet |
+| desSize | Prompt message size, numbers default to px | `string`\|`number` | 15 |
 | desColor | Prompt message color | `string` | - |
 | imgMargin | Icon image margin | `string` | - |
-| button | Collection of button properties, displayed when `text` has a value, see [Button API](./button#api) | `HyButtonProps` | - |
+| button | Collection of button properties, displayed when text has a value, see [Button API](./button#api) for details | `HyButtonProps` | - |
 | navigateUrl | Navigation URL | `string` | - |
-| customStyle | Custom external style of the input box | `CSSProperties` | - |
-| customClass | Custom external class name | `string` | - |
+| customStyle | Custom outer style of the component | `CSSProperties` | - |
+| customClass | Custom outer class name | `string` | - |
 
 ### Events
 
-| Event Name | Description             | Callback Parameters |
+| Event Name | Description                | Callback Parameters |
 | ------ | ---------------- | -------- |
 | click  | Function executed when the button is clicked | -        |
 
 ### Slots
 
-| Slot Name      | Description           | Accepted Value |
-| ----------- | -------------- | ------ |
-| default     | Default slot       | -      |
+| Slot Name   | Description                  | Accepted Value |
+| ----------- | ------------------------- | ------ |
+| default     | Default slot                     | -      |
 | description | Custom bottom description | -      |
 
 ### CSS Variables
 
-| Variable Name | Description | Default |
-| --- | --- | --- |
-| `--hy-empty-description-width` | Description text width | `70%` |
-| `--hy-empty-button-margin-top` | Button top margin | `100rpx` |
+| Variable Name                  | Description            | Default                       |
+| ------------------------------ | ------------ | ---------------------------- |
+| `--hy-empty-description-width` | Description text width | `70%`                        |
+| `--hy-empty-button-margin-top` | Button top margin      | `100rpx`                     |
 | `--hy-empty-description-color` | Description text color | Follows `--hy-text-color--grey` |
 
 [^1]: `normal`: default size; `large`: large size; `small`: small size; `mini`: mini size
 
 [^2]: `error`: #fa3534; `warning`: #ff9900; `success`: #19be6b; `primary`: #2979ff; `info`: #909399;
 
-[^3]: `circle`: semicircular ends; `square`: square with rounded corners
+[^3]: `circle`: both ends are semicircular; `square`: square with rounded corners
 
 <demo-model url="pages-design/empty/empty"></demo-model>

@@ -1,22 +1,22 @@
 # Price Component
 
-> A business component for displaying prices, supporting differentiated font sizes for digits before and after the decimal point, enhancing the visual effect and readability of amounts.
+> A business component for displaying price amounts, supporting differentiated font sizes for digits before and after the decimal point, enhancing the visual effect and readability of amounts.
 
 ## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ------------------- | ------------------- |
-| ✔        | ✔   | ✔                   | ✔                   |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
 ## Component Features
 
-- **Differentiated Display**: Automatically differentiates font sizes for digits before and after the decimal point, enhancing visual hierarchy
-- **Flexible Configuration**: Supports customizing style attributes such as color, size, weight, and slant
-- **Multi-Currency Support**: Customizable currency symbols to accommodate different currency needs
+- **Differentiated Display**: Automatically distinguishes digit sizes before and after the decimal point, enhancing visual hierarchy
+- **Flexible Configuration**: Supports custom color, size, weight, slant, and other style properties
+- **Multi-unit Support**: Customizable currency symbol to adapt to different currency needs
 - **Formatting Control**: Supports setting the number of decimal places for precise control over amount display
-- **Responsive Design**: Adapts to multiple platforms, maintaining consistent visual effects
+- **Responsive Design**: Adapts to multiple platforms while maintaining consistent visual effects
 
-## :japanese_castle: Basic Usage Examples
+## :japanese_castle: Basic Usage Example
 
 ::: code-group
 
@@ -31,7 +31,7 @@ const price = 10;
 
 :::
 
-### Setting Color
+### Set Color
 
 ::: code-group
 
@@ -47,7 +47,7 @@ const price = 10;
 
 :::
 
-### Setting Size
+### Set Size
 
 ::: code-group
 
@@ -63,7 +63,7 @@ const price = 10;
 
 :::
 
-### Decimal Places
+### Keep Decimal Places
 
 ::: code-group
 
@@ -79,7 +79,7 @@ const price = 10;
 
 :::
 
-### Setting Prefix Symbol
+### Set Prefix Symbol
 
 ::: code-group
 
@@ -95,7 +95,7 @@ const price = 10;
 
 :::
 
-### Setting Weight
+### Set Weight
 
 ::: code-group
 
@@ -111,7 +111,7 @@ const price = 10;
 
 :::
 
-### Setting Slant
+### Set Slant
 
 ::: code-group
 
@@ -127,7 +127,7 @@ const price = 10;
 
 :::
 
-### Setting Ratio
+### Set Ratio
 
 ::: code-group
 
@@ -155,7 +155,7 @@ import { HyPrice } from 'hy-app';
 | ratio       | Ratio size                                 | `number`             | 1.4     |
 | num         | Number of decimal places to keep           | `number`             | 2       |
 | color       | Font color                                 | `string`             | #FE3232 |
-| size        | Font size, default unit is px for numbers  | `string` \| `number` | 12      |
+| size        | Font size, numeric values default to px    | `string` \| `number` | 12      |
 | weight      | Font weight                                | `number`             | 500     |
 | slant       | Whether to slant                           | `boolean`            | false   |
 | customStyle | Custom external styles to be applied       | `CSSProperties`      | -       |
@@ -163,15 +163,15 @@ import { HyPrice } from 'hy-app';
 
 ### Events
 
-| Event Name | Description     | Callback Parameters    |
-| ---------- | --------------- | ---------------------- |
-| click      | Click on amount | text: Amount value     |
+| Event Name | Description      | Callback Parameters |
+| ---------- | ---------------- | ------------------- |
+| click      | Click on amount  | text: amount value  |
 
 ### CSS Variables
 
-| Variable Name            | Description   | Default Value |
-| ------------------------ | ------------- | ------------- |
-| `--hy-price-font-size`   | Font size     | `32rpx`       |
-| `--hy-price-margin-top`  | Top margin    | `5px`         |
+| Variable Name           | Description | Default |
+| ----------------------- | ----------- | ------- |
+| `--hy-price-font-size`  | Font size   | `32rpx` |
+| `--hy-price-margin-top` | Top margin  | `5px`   |
 
 <demo-model url="pages-design/price/price"></demo-model>

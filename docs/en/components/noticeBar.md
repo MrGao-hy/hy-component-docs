@@ -1,6 +1,6 @@
 # NoticeBar Scrolling Notice Component
 
-> This component is used for scrolling announcement scenarios, supporting multiple modes such as horizontal scrolling, vertical scrolling, and stepped scrolling.
+> This component is used for scrolling notice scenarios, supporting multiple modes such as horizontal scrolling, vertical scrolling, and step scrolling.
 
 ## :pushpin: Platform Differences
 
@@ -12,9 +12,9 @@
 
 ::: warning Notes
 
-- The `text` parameter supports a string or array format; an array is recommended for carousel scrolling
-- `url` and `mode="link"` must be set together to enable page navigation
-- The `step` property only takes effect when `direction="row"`, enabling stepped scrolling
+- The `text` parameter supports either a string or an array; an array is recommended for carousel scrolling
+- `url` and `mode="link"` must both be set to enable page navigation
+- The `step` property only takes effect when `direction="row"`, enabling step-style scrolling
 - The `disableTouch` property currently only supports App 2.5.5+, H5 2.5.5+, Alipay Mini Program, and ByteDance Mini Program
 
 :::
@@ -25,7 +25,7 @@
 
 ```html
 <template>
-    <hy-notice-bar text="Welcome to the Hy Component Library"></hy-notice-bar>
+    <hy-notice-bar text="Welcome to Hy Component Library"></hy-notice-bar>
 </template>
 ```
 
@@ -39,7 +39,7 @@
 <script setup>
     import { reactive } from 'vue';
 
-    const textList = reactive(['Ji-ji, and ji-ji again,', 'Mulan weaves at her door.', 'No sound of loom or shuttle,', 'Only the maiden sighs.']);
+    const textList = reactive(['Ji-ji and again ji-ji,', 'Mulan weaves facing the door.', 'No sound of loom and shuttle,', 'Only the daughter sighs.']);
 </script>
 ```
 
@@ -67,7 +67,7 @@
 <script setup>
     import { reactive } from 'vue';
 
-    const textList = reactive(['Scroll speed is 150px/s', 'The larger the value, the faster the scrolling']);
+    const textList = reactive(['Scroll speed is 150px/s', 'The larger the speed value, the faster the scrolling']);
 </script>
 ```
 
@@ -92,7 +92,7 @@
 </template>
 ```
 
-### Horizontal Stepped Scrolling
+### Horizontal Step Scrolling
 
 ```html
 <template>
@@ -193,11 +193,11 @@
 <script setup>
     import { reactive } from 'vue';
 
-    const textList = reactive(['Clicking a notice triggers an event', 'Closing a notice also triggers an event']);
+    const textList = reactive(['Clicking the notice triggers an event', 'Closing the notice also triggers an event']);
 
     const handleClick = (index) => {
         uni.showToast({
-            title: `Clicked notice No. ${index + 1}`,
+            title: `Clicked notice #${index + 1}`,
             icon: 'none',
         });
     };
@@ -215,40 +215,40 @@
 
 ### NoticeBar Props
 
-| Parameter | Description | Type | Default |
+| Prop | Description | Type | Default |
 | --- | --- | --- | --- |
-| text | Content to display, supports a string or array | `string`\|`string[]` | - |
-| direction | Scroll mode: row-horizontal scrolling, column-vertical scrolling | `row` \| `column` | row |
-| step | When direction = row, whether to use stepped scrolling | `boolean` | false |
-| icon | Whether to show the left icon; accepts an icon name or icon configuration object | `string`\|`HyIconProps` | NOTIFICATION_FILL |
-| mode | Notice mode: link-shows right arrow, closable-shows right close icon | `link` \| `closable` | - |
+| text | Content to display, supports a string or an array | `string`\|`string[]` | - |
+| direction | Notice scrolling mode, row-horizontal scrolling, column-vertical scrolling | `row` \| `column` | row |
+| step | Whether to use step-style scrolling when direction = row | `boolean` | false |
+| icon | Whether to show the left icon, accepts an icon name or an icon configuration object | `string`\|`HyIconProps` | NOTIFICATION_FILL |
+| mode | Notice mode, link-shows right arrow, closable-shows a close icon on the right | `link` \| `closable` | - |
 | color | Text color; the icon also uses this color | `string` | #ff9900 |
 | bgColor | Background color | `string` | - |
-| speed | Scroll speed for horizontal scrolling, i.e., pixels scrolled per second; the larger the value, the faster the scrolling | `number` | 80 |
-| fontSize | Font size; numeric values use px by default | `string` \| `number` | 14 |
-| duration | Time for one scroll cycle, in ms | `number` | 2000 |
-| disableTouch | Whether to disable swipe switching; only supported on App 2.5.5+, H5 2.5.5+, Alipay Mini Program, and ByteDance Mini Program | `boolean` | true |
+| speed | Scroll speed for horizontal scrolling, i.e., how many px are scrolled per second; the larger the value, the faster the scrolling | `number` | 80 |
+| fontSize | Font size, numbers default to px | `string` \| `number` | 14 |
+| duration | Time for one scrolling cycle, in ms | `number` | 2000 |
+| disableTouch | Whether to disable switching by hand swiping, only supported on App 2.5.5+, H5 2.5.5+, Alipay Mini Program, and ByteDance Mini Program | `boolean` | true |
 | url | Page path to navigate to | `string` | - |
-| linkType | Page navigation type; optional values: navigateTo, redirectTo, switchTab, reLaunch | `string` | navigateTo |
-| justifyContent | Horizontal layout type of the text; optional values: flex-start, center, flex-end | `string` | flex-start |
-| customStyle | Custom outer styles | `CSSProperties` | - |
-| customClass | Custom outer class name | `string` | - |
+| linkType | Page navigation type, optional values: navigateTo, redirectTo, switchTab, reLaunch | `string` | navigateTo |
+| justifyContent | Horizontal layout type of the text, optional values: flex-start, center, flex-end | `string` | flex-start |
+| customStyle | Custom external styles | `CSSProperties` | - |
+| customClass | Custom external class name | `string` | - |
 
 ### Events
 
-| Event Name | Description                        | Callback Parameters                      |
-| ---------- | ---------------------------------- | ---------------------------------------- |
-| click      | Triggered when the notice text is clicked | index: index of the currently displayed text |
-| close      | Triggered when the right close icon is clicked | -                                      |
+| Event Name | Description                            | Callback Parameters                          |
+| ---------- | -------------------------------------- | -------------------------------------------- |
+| click      | Triggered when the notice text is clicked | index: the index of the currently displayed text |
+| close      | Triggered when the close icon on the right is clicked | -                                            |
 
 ### CSS Variables
 
-| Variable Name | Description | Default Value |
-| --- | --- | --- |
-| `--hy-notice-bar-padding` | Inner padding | `9px 12px` |
-| `--hy-notice-bar-bg` | Background color | `#fff6c8` |
-| `--hy-notice-bar-font-size` | Text font size | `14px` |
-| `--hy-notice-bar-swiper-height` | Vertical scrolling line height | `16px` |
-| `--hy-notice-bar-radius` | Notice bar border radius | Follows `--hy-radius-sm` (8rpx) |
+| Variable                        | Description                    | Default                        |
+| ------------------------------- | ------------------------------ | ------------------------------ |
+| `--hy-notice-bar-padding`       | Padding                        | `9px 12px`                     |
+| `--hy-notice-bar-bg`            | Background color               | `#fff6c8`                      |
+| `--hy-notice-bar-font-size`     | Font size                      | `14px`                         |
+| `--hy-notice-bar-swiper-height` | Line height for vertical scrolling | `16px`                      |
+| `--hy-notice-bar-radius`        | Notice bar border radius       | Follows `--hy-radius-sm` (8rpx) |
 
 <demo-model url="pages-design/noticeBar/noticeBar"></demo-model>

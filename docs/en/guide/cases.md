@@ -1,20 +1,20 @@
-# :trophy: Excellent Template Examples
+# :trophy: Excellent Template Cases
 
-> This page collects excellent mini-program template examples built with the Hy Component Library. Scan the QR code with WeChat to experience them online, for learning and reference.
+> This is a collection of excellent mini-program template cases built with the Hy Component Library. Scan the QR code with WeChat to experience them online — provided for learning and reference.
 
 <script setup>
     // Template case data: to add a new case, simply append an item to the array
     const cases = [
         {
-            name: "Women's Fashion Shopping Platform",
-            desc: "An online shopping mini-program template focused on the latest trendy women's fashion, featuring stylish UI design, well-suited for showcasing women's clothing products and online transaction scenarios. Built with the Hy Component Library.",
+            name: "Women's Clothing Shopping Platform",
+            desc: "An online shopping mini-program template focused on new trendy women's clothing, featuring a fashionable UI design, suitable for women's apparel display and online transaction scenarios. Built with the Hy Component Library.",
             tags: ["WeChat Mini Program", "Free & Open Source"],
             qr: "/images/qrcode/case_1.png",
             tip: "Please scan with WeChat",
         },
         {
             name: "Campus Second-hand Marketplace",
-            desc: "A second-hand idle goods trading template for campus scenarios, with a clean interface and smooth interactions, built with the Hy Component Library.",
+            desc: "A second-hand goods trading template designed for campus scenarios, with a clean interface and smooth interactions, built with the Hy Component Library.",
             tags: ["WeChat Mini Program", "Free & Open Source"],
             qr: "/images/qrcode/case_2.png",
             tip: "Please scan with WeChat",
@@ -26,10 +26,10 @@
 
 ## :mailbox_with_mail: Submit Your Case
 
-If you also have an excellent template built with the Hy Component Library, you are welcome to submit it for display on this page:
+If you have also built an excellent template based on the Hy Component Library, you are welcome to submit it for display on this page:
 
-- Include the **template name, description, and WeChat Mini Program QR code**
-- Content must be healthy and compliant; templates with a high proportion of component library usage will be prioritized
+- Include the **template name, description, and WeChat mini-program QR code**
+- Content must be healthy and compliant; templates with a higher proportion of component library usage will be given priority for inclusion
 
 ::: tip
 

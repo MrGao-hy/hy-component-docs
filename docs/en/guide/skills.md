@@ -1,8 +1,8 @@
 # Skills
 
-:::tip What it's for
+:::tip What it is for
 
-`skills` provides predefined frontend development capabilities, offering you specification constraints and component library usage guidance during the coding process.
+`skills` provides predefined frontend development capabilities, offering you coding standards and component library usage guidance during the coding process.
 
 :::
 
@@ -14,9 +14,9 @@ pnpm dlx skills add hy‑uniapp/skills
 npx skills add hy-uniapp/skills
 ```
 
-### Approach
+### Solution
 
-Needs to be used together with the [mcp service](./mcp.md)
+Needs to be used together with the [MCP service](./mcp.md)
 
 ### Flowchart
 

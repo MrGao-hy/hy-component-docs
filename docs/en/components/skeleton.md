@@ -1,27 +1,27 @@
-# hy-skeleton Skeleton Screen
+# hy-skeleton Skeleton
 
-> A combination of placeholder graphics displayed while waiting for content to load, featuring animated loading effects to reduce user waiting anxiety.
+> A combination of placeholder graphics displayed while waiting for content to load, featuring dynamic loading effects to reduce user waiting anxiety.
 
-## :pushpin: Platform Differences
+## :pushpin: Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ---------- | ------------ |
-| ✔        | ✔   | ✔          | ✔            |
+| -------- | --- | ------------------- | ------------------- |
+| ✔        | ✔   | ✔                   | ✔                   |
 
 ## :warning: Notes
 
 ::: warning Notes
 
-- The skeleton screen is displayed when the `loading` property is `undefined` or `true`; the slot content is displayed when it is `false`
-- The `rowCol` property takes precedence over the `theme` property. If `rowCol` is set, the `theme` configuration will be ignored
+- The skeleton screen is displayed when the `loading` prop is `undefined` or `true`; the slot content is displayed when it is `false`
+- The `rowCol` prop takes precedence over the `theme` prop. If `rowCol` is set, the `theme` configuration will be ignored
 - Animation effects add some performance overhead; it is recommended to disable animations in performance-sensitive scenarios
-- The component supports virtual host and global styles, making it easy to integrate into existing projects
+- The component supports virtualized host and global styles, making it easy to integrate into existing projects
 
 :::
 
-## :japanese_castle: Basic Usage Example
+## :japanese_castle: Basic Usage Examples
 
-The `text` theme is used by default, displaying a text skeleton screen.
+By default, the `text` theme is used to display a text skeleton screen.
 
 ```html
 <hy-skeleton />
@@ -29,9 +29,9 @@ The `text` theme is used by default, displaying a text skeleton screen.
 
 ### Different Themes
 
-Four themes are supported: `text`, `avatar`, `paragraph`, `image`.
+Four themes are supported: `text`, `avatar`, `paragraph`, and `image`.
 
-::: tip Tip
+::: tip Tips
 
 - **text**: Text theme, displays a single line of text by default
 - **avatar**: Avatar theme, displays a circular avatar
@@ -49,7 +49,7 @@ Four themes are supported: `text`, `avatar`, `paragraph`, `image`.
 
 ### Loading State
 
-Use the `loading` property to control the visibility of the skeleton screen. When `loading` is `true`, the skeleton screen is displayed; when it is `false`, the actual content is displayed.
+Use the `loading` prop to control the visibility of the skeleton screen. When `loading` is `true`, the skeleton screen is shown; when it is `false`, the actual content is shown.
 
 ```html
 <hy-skeleton :loading="loading">
@@ -68,16 +68,16 @@ Two animation effects are supported: `gradient` (gradient loading animation) and
 
 ### Custom Rows and Columns
 
-The `rowCol` property allows you to customize the number of rows and columns, width, height, spacing, and more.
+Use the `rowCol` prop to customize the number of rows and columns, width, height, spacing, and more of the skeleton screen.
 
 ```html
 <!-- Example 1: Three-row skeleton, one column in the first row, one column in the second row, two columns in the third row -->
 <hy-skeleton :rowCol="[1, 1, 2]" />
 
-<!-- Example 2: Customize the third row's width to 100px -->
+<!-- Example 2: Customize the width of the third row to 100px -->
 <hy-skeleton :rowCol="[1, 1, { width: '100px' }]" />
 
-<!-- Example 3: Two columns in the third row, with custom width, height, and spacing -->
+<!-- Example 3: The third row has two columns with custom width, height, and spacing -->
 <hy-skeleton
     :rowCol="[1, 2, [{ width: '100px', height: '20px' }, { width: '200px', height: '20px', marginLeft: '10px' }]]"
 />
@@ -100,7 +100,7 @@ The `rowCol` property allows you to customize the number of rows and columns, wi
         ]
       ]"
         >
-            <view>Content after loading is complete</view>
+            <view>Content displayed after loading</view>
         </hy-skeleton>
     </view>
 </template>
@@ -123,17 +123,17 @@ The `rowCol` property allows you to customize the number of rows and columns, wi
 | Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
 | theme | Skeleton style, optional values: `text`, `avatar`, `paragraph`, `image` | `string` | text |
-| rowCol | Used to set the number of rows and columns, width and height, spacing, etc. | `Array<number \| SkeletonRowColObj \| Array<SkeletonRowColObj>>` | - |
-| loading | Whether it is in loading state. When `true`, the skeleton screen is displayed; when `false`, the actual content is displayed | `boolean` | true |
+| rowCol | Used to set the number of rows and columns, width, height, spacing, etc. | `Array<number \| SkeletonRowColObj \| Array<SkeletonRowColObj>>` | - |
+| loading | Whether in loading state; when `true`, the skeleton screen is shown; when `false`, the actual content is shown | `boolean` | true |
 | animation | Animation effect, optional values: `gradient` (gradient), `flashed` (flashing); empty means no animation | `string` | - |
-| customStyle | External styles to be applied | `CSSProperties` | - |
+| customStyle | Defines external styles to be applied | `CSSProperties` | - |
 | customClass | Custom external class name | `string` | - |
 
 ### Slots
 
-| Slot Name  | Description                 | Value |
-| ------- | -------------------- | ------ |
-| default | Content displayed when loading is complete | -      |
+| Slot Name | Description                    | Accepted Values |
+| --------- | ------------------------------ | --------------- |
+| default   | Content displayed when loading is complete | -      |
 
 ### Typings
 
@@ -172,12 +172,12 @@ export type SkeletonThemeVars = {
 
 ### CSS Variables
 
-| Variable | Description | Default |
-| --- | --- | --- |
-| `--hy-skeleton-height` | Content placeholder height | `20px` |
-| `--hy-skeleton-circle-size` | Circular avatar placeholder size | `48px` |
-| `--hy-skeleton-radius` | Skeleton block border radius (text/col) | Follows `--hy-radius-sm` (8rpx) |
-| `--hy-skeleton-rect-radius` | Rectangular skeleton border radius | Follows `--hy-radius-base` (20rpx) |
-| `--hy-skeleton-circle-radius` | Circular skeleton border radius | Follows `--hy-radius-circle` (50%) |
+| Variable Name                 | Description                              | Default                           |
+| ----------------------------- | ---------------------------------------- | -------------------------------- |
+| `--hy-skeleton-height`        | Content placeholder height               | `20px`                           |
+| `--hy-skeleton-circle-size`   | Circular avatar placeholder size         | `48px`                           |
+| `--hy-skeleton-radius`        | Skeleton block border radius (text/col)  | Follows `--hy-radius-sm` (8rpx)    |
+| `--hy-skeleton-rect-radius`   | Rectangular skeleton border radius       | Follows `--hy-radius-base` (20rpx) |
+| `--hy-skeleton-circle-radius` | Circular skeleton border radius          | Follows `--hy-radius-circle` (50%) |
 
 <demo-model url="pages-design/skeleton/skeleton"></demo-model>

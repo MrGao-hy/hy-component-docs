@@ -1,21 +1,21 @@
 # Divider Component
 
-> A divider line that separates content, typically used for the "no more" hint at the bottom of a page
+> A divider used to separate content, typically used at the bottom of a page as a "no more" hint
 
-## :pushpin: Platform Compatibility
+## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
 | -------- | --- | ------------------- | ------------------- |
 | ✔        | ✔   | ✔                   | ✔                   |
 
-## :japanese_castle: Basic Usage
+## :japanese_castle: Basic Usage Examples
 
 ```html
 <!-- Global usage -->
 <hy-divider text="Divider"></hy-divider>
 ```
 
-### Setting a Dashed Line
+### Set Dashed Line
 
 - Use `dashed` to specify a dashed line
 
@@ -25,7 +25,7 @@
 </template>
 ```
 
-### Setting a Hairline
+### Set Hairline
 
 - Use `hairline` to specify a thin line
 
@@ -38,7 +38,7 @@
 </template>
 ```
 
-### Replacing Text with a Dot
+### Replace Text with a Dot
 
 - Use `dot` to replace the text with a dot
 
@@ -48,12 +48,12 @@
 </template>
 ```
 
-### Aligning Text Left or Right
+### Set Text Alignment (Left/Right)
 
-- Use `textPosition` to align the text to the left or right
-    - `left`: Text aligned left
-    - `center`: Text centered (default)
-    - `right`: Text aligned right
+- Use `textPosition` to specify the text alignment
+    - `left`: text aligned to the left
+    - `center`: text centered (default)
+    - `right`: text aligned to the right
 
 ```html
 <template>
@@ -62,7 +62,7 @@
 </template>
 ```
 
-### Setting Text Color and Line Color
+### Set Text Color and Line Color
 
 - Use `textColor` and `lineColor` to specify the text color and line color
 
@@ -80,16 +80,16 @@
 | --- | --- | --- | --- |
 | text | Text content | `string`\|`loadMore`\| `loading`\|`noMore` | - |
 | dashed | Whether to use a dashed line | `boolean` | false |
-| hairline | Whether to use a hairline (thin line) | `boolean` | true |
+| hairline | Whether to use a thin line | `boolean` | true |
 | dot | Whether to replace the text with a dot; takes precedence over the text field | `boolean` | false |
 | textPosition | Position of the text content | `center`\|`left`\|`right` | center |
 | textSize | Text size; numeric values default to px | `string` \| `number` | 14 |
 | textColor | Text color | `string` | #909399 |
 | lineColor | Line color | `string` | #dcdfe6 |
 | loadingIcon | Icon for the loading state | `string` | LOADING |
-| loadMoreText | Prompt text before loading | `string` | Load more |
-| loadingText | Prompt text while loading | `string` | Loading... |
-| noMoreText | Prompt text when there is no more content | `string` | No more data |
+| loadMoreText | Prompt before loading | `string` | Load more |
+| loadingText | Loading prompt | `string` | Loading... |
+| noMoreText | "No more" prompt | `string` | No more data |
 | marginTop | Distance from the previous element; numeric values default to px | `string` \| `number` | 0 |
 | marginBottom | Distance from the next element; numeric values default to px | `string` \| `number` | 0 |
 | customStyle | Custom external styles to apply | `CSSProperties` | - |
@@ -103,10 +103,10 @@
 
 ### CSS Variables
 
-| Variable | Description | Default |
-| --- | --- | --- |
-| `--hy-divider-min-height` | Minimum height | `35px` |
-| `--hy-divider-text-color` | Text/dot color | Follows `--hy-text-color--3` |
-| `--hy-divider-dot-font-size` | Dot font size | Follows `--hy-font-size-sm` (24rpx) |
+| Variable Name                | Description       | Default                            |
+| ---------------------------- | ----------------- | ---------------------------------- |
+| `--hy-divider-min-height`    | Minimum height    | `35px`                             |
+| `--hy-divider-text-color`    | Text/dot color    | Follows `--hy-text-color--3`       |
+| `--hy-divider-dot-font-size` | Dot font size     | Follows `--hy-font-size-sm` (24rpx) |
 
 <demo-model url="pages-design/divider/divider"></demo-model>

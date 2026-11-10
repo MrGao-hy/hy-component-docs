@@ -1,12 +1,12 @@
-# Radio Component
+# radio Component
 
-> The radio component is generally used in scenarios where a selection among multiple options is required. It is fully functional and easy to use.
+> The radio component is generally used in scenarios where a single choice needs to be made from multiple options. This component is fully functional and easy to use
 
 ## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ---------- | ------------ |
-| ✔        | ✔   | ✔          | ✔            |
+| -------- | --- | ------------------- | ------------------- |
+| ✔        | ✔   | ✔                   | ✔                   |
 
 ## :japanese_castle: Basic Usage
 
@@ -61,7 +61,7 @@ const fieldNames = ref({
 
 ### Custom Shape
 
-You can set `shape` to `square` or `circle` to render the selection box as a square or a circle
+You can set `shape` to `square` or `circle` to make the radio square or round
 
 ```html
 <hy-radio v-model="value" :columns="columns" shape="square"></hy-radio>
@@ -74,7 +74,7 @@ You can set `shape` to `square` or `circle` to render the selection box as a squ
 <hy-radio v-model="value" :columns="columns" activeColor="red"></hy-radio>
 ```
 
-### Layout Direction
+### Arrangement
 
 You can set `placement` to `row` or `column` to arrange the radios horizontally or vertically
 
@@ -83,9 +83,9 @@ You can set `placement` to `row` or `column` to arrange the radios horizontally 
 <hy-radio v-model="value" :columns="columns" placement="column"></hy-radio>
 ```
 
-### Horizontal Layout with Icon Positioning
+### Horizontal Alignment
 
-You can set `iconPlacement` to `left` or `right` to align the check icon to the left or to the right
+You can set `iconPlacement` to `left` or `right` to align the check icon of the radio to the left or right
 
 ```html
 <hy-radio v-model="value" :columns="columns" iconPlacement="right" placement="row"></hy-radio>
@@ -118,8 +118,8 @@ const value = ref('apply');
 
 ### Slots
 
-- `label`: Custom label text; the passed value is `label`
-- `icon`: Custom icon inside the selection box; the passed values are `iconColor` and `iconSize`
+- `label`: Custom label text, the passed value is `label`
+- `icon`: Custom icon inside the option box, the passed values are `iconColor` and `iconSize`
 
 ```html
 <hy-radio v-model="value" :columns="columns">
@@ -153,48 +153,48 @@ const value = ref('apply');
 
 ### Radio Props
 
-| Parameter | Description | Type | Default |
+| Parameter | Description | Type | Default Value |
 | --- | --- | --- | --- |
-| v-model | Two-way bound value | `string`\|`number` | - |
-| columns | Accepts an array of options | `CheckboxColumnsVo[]` | - |
-| fieldNames | Custom keys for the columns fields | `IFieldNames` | \{label: "label",value: "value",checked: "checked"\} |
-| shape | Shape of the selection box[^1] | `circle`\|`square` | circle |
-| size | Size of the selection box[^2] | `string`\|`number` | medium |
+| v-model | Two-way bound value, array type | `string`\|`number` | - |
+| columns | Accepts an array of values | `CheckboxColumnsVo[]` | - |
+| fieldNames | Custom keys for receiving columns | `IFieldNames` | \{label: "label",value: "value",checked: "checked"\} |
+| shape | Radio shape[^1] | `circle`\|`square` | circle |
+| size | Radio size[^2] | `string`\|`number` | medium |
 | disabled | Whether to disable | `boolean` | false |
-| activeColor | Color in the selected state | `string` | - |
-| inactiveColor | Color in the unselected state | `string` | #c8c9cc |
-| iconSize | Icon size; numeric values default to px | `string`\|`number` | 20 |
+| activeColor | Color in selected state | `string` | - |
+| inactiveColor | Color in unselected state | `string` | #c8c9cc |
+| iconSize | Icon size, numeric values default to px | `string`\|`number` | 20 |
 | iconColor | Icon color | `string` | - |
-| label | Label hint text | `string` | - |
+| label | Label text | `string` | - |
 | labelSize | Label font size, in px | `string`\|`number` | - |
 | labelColor | Label color | `string` | - |
 | iconPlacement | Alignment of the check icon | `left`\|`right` | left |
-| borderBottom | Whether to show an underline when arranged vertically | `boolean` | false |
-| labelDisabled | Whether clicking the label text to select the radio is disabled | `boolean` | false |
-| placement | Layout[^3] | `row`\|`column` | row |
-| customStyle | External styles to apply | `CSSProperties` | - |
+| borderBottom | Whether to show the bottom divider line in vertical layout | `boolean` | false |
+| labelDisabled | Whether to disable selecting the radio by clicking the label text | `boolean` | false |
+| placement | Layout method[^3] | `row`\|`column` | row |
+| customStyle | Custom external styles to apply | `CSSProperties` | - |
 
 ### Events
 
-| Event | Description | Callback Parameters |
+| Event Name | Description | Callback Parameters |
 | --- | --- | --- |
-| change | Triggered when the state of any radio changes; the callback is an object | detail = array( [each element is the value of a selected radio] ) |
+| change | Triggered when any radio's state changes; the callback is an object | detail = array( [elements are the values of the selected radios] ) |
 
 ### Slots
 
-| Slot | Description              | Passed Value                  |
-| ------ | ----------------- | --------------------- |
-| icon   | Custom `icon` content  | iconColor \| iconSize |
-| label  | Custom `label` content | record                |
+| Slot Name | Description            | Passed Values         |
+| --------- | ---------------------- | --------------------- |
+| icon      | Custom `icon` content  | iconColor \| iconSize |
+| label     | Custom `label` content | record                |
 
 ### typing
 
-::: details Type Description
+::: details Type Definitions
 
 ```ts
 interface CheckboxColumnsVo extends FieldNamesType {
     /**
-     * Text content to display
+     * Display text content
      * */
     label?: string;
     /**
@@ -214,7 +214,7 @@ interface CheckboxColumnsVo extends FieldNamesType {
 
 export interface IFieldNames {
     /**
-     * Custom label key for columns
+     * Custom text key for columns
      * */
     label: string;
     /**
@@ -232,17 +232,17 @@ export interface IFieldNames {
 
 ### CSS Variables
 
-| Variable | Description | Default |
-| --- | --- | --- |
-| `--hy-radio-margin` | Outer margin | `5px` |
-| `--hy-radio-radius-square` | Border radius of the square dot frame | `3px` |
-| `--hy-radio-disabled-checked-opacity` | Opacity when disabled and checked | `0.5` |
-| `--hy-radio-label-color` | Label text color | Follows `--hy-text-color` |
-| `--hy-radio-font-size` | Label font size | Follows `--hy-font-size-base` (28rpx) |
-| `--hy-radio-disabled-color` | Disabled text color | Follows `--hy-text-color--disabled` |
-| `--hy-radio-border` | Dot frame border | Follows `--hy-border-line` |
+| Variable Name                         | Description                              | Default Value                       |
+| ------------------------------------- | ---------------------------------------- | ----------------------------------- |
+| `--hy-radio-margin`                   | Outer margin                             | `5px`                               |
+| `--hy-radio-radius-square`            | Border radius of the square dot box      | `3px`                               |
+| `--hy-radio-disabled-checked-opacity` | Opacity of checked state when disabled   | `0.5`                               |
+| `--hy-radio-label-color`              | Label text color                         | Follows `--hy-text-color`           |
+| `--hy-radio-font-size`                | Label font size                          | Follows `--hy-font-size-base` (28rpx) |
+| `--hy-radio-disabled-color`           | Disabled text color                      | Follows `--hy-text-color--disabled` |
+| `--hy-radio-border`                   | Dot box border                           | Follows `--hy-border-line`          |
 
-[^1]: `circle`: semicircles on both sides; `square`: square with rounded corners
+[^1]: `circle`: semicircular on both ends; `square`: square with rounded corners
 
 [^2]: `normal`: default size; `large`: large size; `small`: small size;
 

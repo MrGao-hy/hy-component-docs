@@ -1,24 +1,24 @@
 # Input Component
 
-> This component is an input box. With it, you can quickly implement features such as form validation, content input, and dropdown selection.
+> This component is an input box that allows you to quickly implement form validation, content input, dropdown selection, and other features.
 
 ## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | -------------------- | ------------------- |
-| ✔        | ✔   | ✔                    | ✔                   |
+| -------- | --- | ------------------- | ------------------- |
+| ✔        | ✔   | ✔                   | ✔                   |
 
-## :japanese_castle: Basic Usage Example
+## :japanese_castle: Basic Usage Examples
 
-- Set the input type via `type`; the default is `text`
-- Set the placeholder displayed when the input is empty via `placeholder`
-- Use `border` to configure whether the input border is shown
+- Set the input type via `type`, which defaults to `text`
+- Set the placeholder shown when the input is empty via `placeholder`
+- Configure whether to display the input border via `border`
 - Bind the `@change` event
 
 ```html
 <!-- Global usage -->
 <hy-input
-    text="月落"
+    text="Yueluo"
     placeholder="Please enter content"
     border="surround"
     v-model="value"
@@ -34,7 +34,7 @@ const value = ref('');
 
 ### Clearable
 
-Set `clearable` to `true` to add a clear button at the end of the input box.
+Setting `clearable` to `true` adds a clear button at the end of the input.
 
 ```html
 <hy-input clearable></hy-input>
@@ -43,10 +43,10 @@ Set `clearable` to `true` to add a clear button at the end of the input box.
 ### Input Types
 
 - `text` - Text input keyboard.
-- `number` - Numeric input keyboard. On app-vue, floating-point numbers can be entered; on app-nvue and mini program platforms, only integers can be entered.
-- `idcard` - ID card input keyboard, available on WeChat, Alipay, Baidu, and QQ mini programs.
-- `digit` - Numeric keyboard with a decimal point, available on App nvue pages and WeChat, Alipay, Baidu, Toutiao, and QQ mini programs.
-- `password` - Equivalent to setting password to true
+- `number` - Numeric input keyboard. Floating-point numbers can be entered on app-vue, while only integers can be entered on app-nvue and mini-program platforms.
+- `idcard` - ID card input keyboard, available on WeChat, Alipay, Baidu, and QQ mini-programs.
+- `digit` - Numeric keyboard with a decimal point, available on nvue pages in App, as well as on WeChat, Alipay, Baidu, Toutiao, and QQ mini-programs.
+- `password` - Equivalent to the effect of setting password to true
 
 ```html
 <hy-input type="text"></hy-input>
@@ -58,8 +58,8 @@ Set `clearable` to `true` to add a clear button at the end of the input box.
 
 ### Input Shape
 
-- Set `shape` to `circle` to get an input box with semicircular ends.
-- Set `shape` to `square` to get a square input box.
+- Setting `shape` to `circle` produces an input with semicircular ends.
+- Setting `shape` to `square` produces a square input.
 
 ```html
 <hy-input shape="circle"></hy-input>
@@ -80,8 +80,8 @@ Set `clearable` to `true` to add a clear button at the end of the input box.
 
 ### Prefix and Suffix Icons
 
-- Set `prefixIcon` to configure the prefix icon, with freely customizable style information.
-- Set `suffixIcon` to configure the suffix icon, with freely customizable style information.
+- Set `prefixIcon` to configure a prefix icon with freely customizable style information.
+- Set `suffixIcon` to configure a suffix icon with freely customizable style information.
 
 ```html
 <hy-input
@@ -101,7 +101,7 @@ Set `clearable` to `true` to add a clear button at the end of the input box.
 
 ### Prefix and Suffix Slots
 
-Set `slot` to `prefix` or `suffix` to designate prefix/suffix slots for custom content or icons
+Set `slot` to `prefix` or `suffix` to specify the prefix/suffix slots for custom content or icons
 
 ```html
 <template>
@@ -127,84 +127,83 @@ Set `slot` to `prefix` or `suffix` to designate prefix/suffix slots for custom c
 
 ### Input Props
 
-| Prop | Description | Type | Default |
+| Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
-| modelValue | The entered value | `string` | - |
-| type | Input box type[^1] | `number`\|`idcard`\|`digit`\| `password`\|`text` | text |
-| disabled | Whether to disable the input box | `boolean` | false |
+| modelValue | The input value | `string` | - |
+| type | Input type[^1] | `number`\|`idcard`\|`digit`\| `password`\|`text` | text |
+| disabled | Whether to disable the input | `boolean` | false |
 | disabledColor | Background color in the disabled state | `string` | - |
 | clearable | Whether to show the clear control | `boolean` | false |
 | password | Whether it is a password type | `boolean` | false |
-| maxlength | Maximum input length. When set to -1, there is no limit on the maximum length (Note: Alipay does not support -1, so any other value must be set) | `number` | 140 |
-| placeholder | Placeholder shown when the input box is empty | `string` | - |
-| placeholderClass | Specifies the style class of the placeholder. Note that when scoped is used in the page or component style, /deep/ must be prepended to the class name | `string` | input-placeholder |
-| placeholderStyle | Specifies the style of the placeholder | `CSSProperties` | - |
-| showWordLimit | Whether to show the word count. Only effective when type ="text" or type ="textarea" | `boolean` | false |
-| confirmType | Sets the text of the button in the bottom-right corner. See the uni-app documentation for compatibility details | `string` | done |
-| confirmHold | Whether to keep the keyboard from collapsing when the bottom-right keyboard button is tapped. Not effective on H5 | `boolean` | false |
-| holdKeyboard | When focused, the keyboard will not collapse when the page is tapped. Effective on WeChat Mini Program | `boolean` | false |
-| focus | Automatically gets focus. On the H5 platform, whether focusing works and whether the soft keyboard pops up depend on the current browser's implementation. | `boolean` | false |
-| autoBlur | Whether to automatically lose focus when the keyboard collapses. Currently only effective on App 3.0.0+ | `boolean` | false |
-| disableDefaultPadding | Whether to remove the default padding on iOS. Only effective on WeChat Mini Program and when type=textarea | `boolean` | false |
-| cursor | Specifies the cursor position when focused | `number` | -1 |
-| cursorSpacing | Distance between the bottom of the input box and the keyboard when focused | `number` | 30 |
-| selectionStart | Cursor start position. Effective when auto-focused; must be used together with selection-end | `number` | -1 |
-| selectionEnd | Cursor end position. Effective when auto-focused; must be used together with selection-start | `number` | -1 |
+| maxlength | Maximum input length; when set to -1, the maximum length is unlimited (Note: Alipay does not support -1, so set it to any other value) | `number` | 140 |
+| placeholder | Placeholder shown when the input is empty | `string` | - |
+| placeholderClass | Style class for the placeholder. Note that when the page or component style uses scoped, you need to write /deep/ before the class name | `string` | input-placeholder |
+| placeholderStyle | Style of the placeholder | `CSSProperties` | - |
+| showWordLimit | Whether to show the input word count, only effective when type="text" or type="textarea" | `boolean` | false |
+| confirmType | Text of the button in the bottom-right corner of the keyboard; see the uni-app documentation for compatibility details | `string` | done |
+| confirmHold | Whether to keep the keyboard from collapsing when the bottom-right keyboard button is tapped; ineffective on H5 | `boolean` | false |
+| holdKeyboard | When focused, the keyboard won't collapse when tapping the page; effective on WeChat Mini Program | `boolean` | false |
+| focus | Automatically obtain focus. On the H5 platform, whether focus can be obtained and whether the soft keyboard pops up along with it depends on the implementation of the current browser. | `boolean` | false |
+| autoBlur | Whether to automatically lose focus when the keyboard collapses; currently only effective on App 3.0.0+ | `boolean` | false |
+| disableDefaultPadding | Whether to remove the default padding on iOS; only effective on WeChat Mini Program and when type=textarea | `boolean` | false |
+| cursor | Position of the cursor when focused | `number` | -1 |
+| cursorSpacing | Distance between the bottom of the input and the keyboard when the input is focused | `number` | 30 |
+| selectionStart | Cursor start position; effective with auto focus, must be used together with selection-end | `number` | -1 |
+| selectionEnd | Cursor end position; effective with auto focus, must be used together with selection-start | `number` | -1 |
 | adjustPosition | Whether to automatically push the page up when the keyboard pops up | `boolean` | true |
-| inputAlign | Alignment of the input box content | `string` | left |
-| fontSize | Font size of the input box. Numbers use px as the default unit | `string` \| `number` | 15px |
-| color | Font color of the input box | `string` | - |
-| prefixIcon | Prefix icon of the input box. See [Icon API](./icon#api) for configuration details | `HyIconProps` | - |
-| suffixIcon | Suffix icon of the input box. See [Icon API](./icon#api) for configuration details | `HyIconProps` | - |
+| inputAlign | Alignment of the input content | `string` | left |
+| fontSize | Font size of the input; the default unit for numeric values is px | `string` \| `number` | 15px |
+| color | Font color of the input | `string` | - |
+| prefixIcon | Prefix icon of the input; see [Icon API](./icon#api) for configuration details | `HyIconProps` | - |
+| suffixIcon | Suffix icon of the input; see [Icon API](./icon#api) for configuration details | `HyIconProps` | - |
 | border | Border type[^2] | `surround`\|`bottom`\|`none` | surround |
-| readonly | Whether it is read-only. The difference from disabled is that disabled grays out the component, while readonly does not | `boolean` | false |
-| shape | Input box shape[^3] | `circle`\|`square` | square |
+| readonly | Whether it is read-only. Unlike disabled, disabled grays out the component while readonly does not | `boolean` | false |
+| shape | Input shape[^3] | `circle`\|`square` | square |
 | formatter | Input filtering or formatting function (for WeChat Mini Program compatibility, it can only be set via the setFormatter method) | `function` \| `null` | null |
 | customStyle | Custom external styles to be applied | `CSSProperties` | - |
 | customClass | Custom external class name | `string` | - |
 
 ### Events
 
-| Event                | Description                                      | Callback Parameter |
-| -------------------- | ------------------------------------------------ | ------------------ |
-| blur                 | Triggered when the input box loses focus         | value: content value |
-| focus                | Triggered when the input box gains focus         | -                  |
-| confirm              | Triggered when the done button is tapped         | value: content value |
-| keyboardheightchange | Triggered when the keyboard height changes       | event              |
-| update:modelValue    | Triggered when the content changes               | value: content value |
-| change               | Triggered when the content changes               | value: content value |
-| clear                | Triggered when tapping to clear the content      | -                  |
-| onPrefix             | Triggered when the prefix is tapped              | -                  |
-| onSuffix             | Triggered when the suffix is tapped              | -                  |
+| Event Name          | Description                                | Callback Parameters |
+| ------------------- | ------------------------------------------ | ------------------- |
+| blur                | Triggered when the input loses focus       | value: content value |
+| focus               | Triggered when the input gains focus       | -                   |
+| confirm             | Triggered when the done button is tapped   | value: content value |
+| keyboardheightchange | Triggered when the keyboard height changes | event               |
+| update:modelValue   | Triggered when the content changes         | value: content value |
+| change              | Triggered when the content changes         | value: content value |
+| clear               | Tap to clear the content                   | -                   |
+| onPrefix            | Triggered when the prefix is tapped        | -                   |
+| onSuffix            | Triggered when the suffix is tapped        | -                   |
 
 ### Slots
 
-| Slot | Description |
-| ---- | ----------- |
-| prefix | Content in front of the input box |
-| suffix | Content after the input box |
+| Slot Name | Description               |
+| --------- | ------------------------- |
+| prefix    | Prefix content of the input |
+| suffix    | Suffix content of the input |
 
 ### CSS Variables
 
-| Variable | Description | Default |
-| --- | --- | --- |
-| `--hy-input-radius-square` | Square corner radius | `4px` |
-| `--hy-input-radius-circle` | Capsule corner radius | Follows `--hy-radius-semicircle` (100px) |
-| `--hy-input-height` | Input box height | `24px` |
-| `--hy-input-line-height` | Line height | `26px` |
-| `--hy-input-font-size` | Font size | `15px` |
-| `--hy-input-clear-size` | Clear button size | `20px` |
-| `--hy-input-color` | Input text color | Follows `--hy-text-color` |
-| `--hy-input-placeholder-color` | Placeholder color | Follows `--hy-text-color--placeholder` |
-| `--hy-input-disabled-color` | Disabled text color | Follows `--hy-text-color--disabled` |
-| `--hy-input-clear-radius` | Clear button corner radius | Follows `--hy-radius-semicircle` (100px) |
-| `--hy-input-border` | Border | Follows `--hy-border-line` |
+| Variable Name                  | Description               | Default Value                          |
+| ------------------------------ | ------------------------- | -------------------------------------- |
+| `--hy-input-radius-square`     | Square corner radius      | `4px`                                  |
+| `--hy-input-radius-circle`     | Capsule corner radius     | Follows `--hy-radius-semicircle` (100px) |
+| `--hy-input-height`            | Input height              | `24px`                                 |
+| `--hy-input-line-height`       | Line height               | `26px`                                 |
+| `--hy-input-font-size`         | Font size                 | `15px`                                 |
+| `--hy-input-clear-size`        | Clear button size         | `20px`                                 |
+| `--hy-input-color`             | Input text color          | Follows `--hy-text-color`              |
+| `--hy-input-placeholder-color` | Placeholder color         | Follows `--hy-text-color--placeholder` |
+| `--hy-input-disabled-color`    | Disabled text color       | Follows `--hy-text-color--disabled`    |
+| `--hy-input-clear-radius`      | Clear button corner radius | Follows `--hy-radius-semicircle` (100px) |
+| `--hy-input-border`            | Border                    | Follows `--hy-border-line`             |
 
+[^1]: `text`: text input keyboard; `number`: numeric input keyboard — floating-point numbers can be entered on app-vue, while only integers can be entered on app-nvue and mini-program platforms; `idcard`: ID card input keyboard, available on WeChat, Alipay, Baidu, and QQ mini-programs; `digit`: numeric keyboard with a decimal point, available on nvue pages in App, as well as on WeChat, Alipay, Baidu, Toutiao, and QQ mini-programs; `password`: password input box
 
-[^1]: `text`: Text input; `number`: Numeric input keyboard — floating-point numbers can be entered under app-vue, while only integers can be entered under app-nvue and mini program platforms; `idcard`: ID card input keyboard, available on WeChat, Alipay, Baidu, and QQ mini programs; `digit`: Numeric keyboard with a decimal point, available on App nvue pages and WeChat, Alipay, Baidu, Toutiao, and QQ mini programs; `password`: Password input box
+[^2]: `surround`: border on all four sides; `bottom`: border at the bottom; `none`: no border
 
-[^2]: `surround`: Border on all four sides; `bottom`: Border on the bottom; `none`: No border
-
-[^3]: `circle`: Semicircular on both ends; `square`: Square with rounded corners
+[^3]: `circle`: semicircular on both sides; `square`: square with rounded corners
 
 <demo-model url="pages-design/input/input"></demo-model>

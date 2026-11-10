@@ -1,6 +1,6 @@
 # Menu Sidebar Navigation Component
 
-> A vertically displayed navigation bar used for switching between different content areas.
+> A vertically displayed navigation bar, used for switching between different content areas.
 
 ## :pushpin: Platform Compatibility
 
@@ -8,31 +8,31 @@
 | -------- | --- | ------------------- | ------------------- |
 | ✔        | ✔   | ✔                   | ✔                   |
 
-## :japanese_castle: Basic Usage
+## :japanese_castle: Basic Usage Example
 
 ```html
-<!-- 全局使用 -->
+<!-- Global usage -->
 <hy-menu :list="list"></hy-menu>
 ```
 
 ```ts
 const list = [
-    { title: '盖浇饭', icon: IconConfig.PHOTO },
-    { title: '炒菜', value: 'title', disabled: true },
-    { title: '米粉面条', value: 'showCancelButton' },
-    { title: '汉堡披萨', value: 'buttonReverse' },
-    { title: '饮品甜品', value: 'buttonReverse' },
-    { title: '面点粥水饺混沌', value: 'buttonReverse' },
-    { title: '小吃麻辣烫', value: 'buttonReverse' },
-    { title: '中餐', value: 'buttonReverse' },
-    { title: '西餐', value: 'buttonReverse' },
-    { title: '大餐', value: 'buttonReverse' },
+    { title: 'Rice Bowls', icon: IconConfig.PHOTO },
+    { title: 'Stir-Fried Dishes', value: 'title', disabled: true },
+    { title: 'Rice Noodles & Noodles', value: 'showCancelButton' },
+    { title: 'Burgers & Pizza', value: 'buttonReverse' },
+    { title: 'Drinks & Desserts', value: 'buttonReverse' },
+    { title: 'Dim Sum, Porridge, Dumplings & Wontons', value: 'buttonReverse' },
+    { title: 'Snacks & Malatang', value: 'buttonReverse' },
+    { title: 'Chinese Food', value: 'buttonReverse' },
+    { title: 'Western Food', value: 'buttonReverse' },
+    { title: 'Feasts', value: 'buttonReverse' },
 ];
 ```
 
 ## Setting Different Widths
 
-- Set the width through the `width` property
+- Set the width via the `width` prop
 
 ```html
 <template>
@@ -42,7 +42,7 @@ const list = [
 
 ## Setting the Selected Color
 
-- Set the selected color through the `color` property
+- Set the selected color via the `color` prop
 
 ```html
 <template>
@@ -91,7 +91,7 @@ import { useThemeStore } from '@/store';
 import { data } from './data';
 import { IconConfig, debounce } from '@hy-app/ui';
 
-// 组件
+// Components
 import HyMenu from '@/package/components/hy-menu/hy-menu.vue';
 import HyGrid from '@/package/components/hy-grid/hy-grid.vue';
 import HyConfigProvider from '@/package/components/hy-config-provider/hy-config-provider.vue';
@@ -110,16 +110,16 @@ const scrollTop = ref<number>(0);
 const itemScrollTop = ref<ItemTopVo[]>([]);
 const current = ref<string | number>(1);
 const list = [
-    { id: 1, title: '盖浇饭', icon: IconConfig.PHOTO },
-    { id: 2, title: '炒菜', value: 'title', disabled: true },
-    { id: 3, title: '米粉面条', value: 'showCancelButton', badge: 6 },
-    { id: 4, title: '汉堡披萨', value: 'buttonReverse' },
-    { id: 5, title: '饮品甜品', value: 'buttonReverse' },
-    { id: 6, title: '面点粥水饺混沌', value: 'buttonReverse' },
-    { id: 7, title: '小吃麻辣烫', value: 'buttonReverse' },
-    { id: 8, title: '中餐', value: 'buttonReverse' },
-    { id: 9, title: '西餐', value: 'buttonReverse' },
-    { id: 10, title: '大餐', value: 'buttonReverse' },
+    { id: 1, title: 'Rice Bowls', icon: IconConfig.PHOTO },
+    { id: 2, title: 'Stir-Fried Dishes', value: 'title', disabled: true },
+    { id: 3, title: 'Rice Noodles & Noodles', value: 'showCancelButton', badge: 6 },
+    { id: 4, title: 'Burgers & Pizza', value: 'buttonReverse' },
+    { id: 5, title: 'Drinks & Desserts', value: 'buttonReverse' },
+    { id: 6, title: 'Dim Sum, Porridge, Dumplings & Wontons', value: 'buttonReverse' },
+    { id: 7, title: 'Snacks & Malatang', value: 'buttonReverse' },
+    { id: 8, title: 'Chinese Food', value: 'buttonReverse' },
+    { id: 9, title: 'Western Food', value: 'buttonReverse' },
+    { id: 10, title: 'Feasts', value: 'buttonReverse' },
 ];
 
 onMounted(() => {
@@ -135,7 +135,7 @@ onMounted(() => {
 
 function onScroll(e: any) {
     const { scrollTop } = e.detail;
-    // 防止执行chang事件的时候改变当前值
+    // Prevent the current value from being changed while the change event is executing
     if (execute.value) {
         debounce(() => (execute.value = false));
         return;
@@ -157,324 +157,324 @@ const onChange = (temp: MenuParamsVo) => {
 export const data = [
     {
         id: 1,
-        name: '盖浇饭',
+        name: 'Rice Bowls',
         children: [
             {
                 key: '1-1',
-                name: '蘑菇盖浇饭',
+                name: 'Mushroom Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '1-2',
-                name: '牛肉香菇盖浇饭',
+                name: 'Beef & Shiitake Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '1-3',
-                name: '鱼香肉丝盖浇饭',
+                name: 'Yu-Xiang Shredded Pork Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '1-4',
-                name: '肉末茄子盖浇饭',
+                name: 'Minced Pork & Eggplant Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '1-5',
-                name: '红烧肉盖浇饭',
+                name: 'Braised Pork Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '1-6',
-                name: '猪脚盖浇饭',
+                name: 'Pig Trotter Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
         ],
     },
     {
         id: 3,
-        name: '米粉面条',
+        name: 'Rice Noodles & Noodles',
         children: [
             {
                 key: '3-1',
-                name: '蘑菇盖浇饭',
+                name: 'Mushroom Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '3-2',
-                name: '牛肉香菇盖浇饭',
+                name: 'Beef & Shiitake Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '3-3',
-                name: '鱼香肉丝盖浇饭',
+                name: 'Yu-Xiang Shredded Pork Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '3-4',
-                name: '肉末茄子盖浇饭',
+                name: 'Minced Pork & Eggplant Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '3-5',
-                name: '红烧肉盖浇饭',
+                name: 'Braised Pork Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '3-6',
-                name: '猪脚盖浇饭',
+                name: 'Pig Trotter Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
         ],
     },
     {
         id: 4,
-        name: '汉堡披萨',
+        name: 'Burgers & Pizza',
         children: [
             {
                 key: '4-1',
-                name: '蘑菇盖浇饭',
+                name: 'Mushroom Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '4-2',
-                name: '牛肉香菇盖浇饭',
+                name: 'Beef & Shiitake Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '4-3',
-                name: '鱼香肉丝盖浇饭',
+                name: 'Yu-Xiang Shredded Pork Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '4-4',
-                name: '肉末茄子盖浇饭',
+                name: 'Minced Pork & Eggplant Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '4-5',
-                name: '红烧肉盖浇饭',
+                name: 'Braised Pork Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '4-6',
-                name: '猪脚盖浇饭',
+                name: 'Pig Trotter Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
         ],
     },
     {
         id: 5,
-        name: '饮品甜品',
+        name: 'Drinks & Desserts',
         children: [
             {
                 key: '5-1',
-                name: '蘑菇盖浇饭',
+                name: 'Mushroom Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '5-2',
-                name: '牛肉香菇盖浇饭',
+                name: 'Beef & Shiitake Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '5-3',
-                name: '鱼香肉丝盖浇饭',
+                name: 'Yu-Xiang Shredded Pork Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '5-4',
-                name: '肉末茄子盖浇饭',
+                name: 'Minced Pork & Eggplant Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '5-5',
-                name: '红烧肉盖浇饭',
+                name: 'Braised Pork Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '5-6',
-                name: '猪脚盖浇饭',
+                name: 'Pig Trotter Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
         ],
     },
     {
         id: 6,
-        name: '面点粥水饺混沌',
+        name: 'Dim Sum, Porridge, Dumplings & Wontons',
         children: [
             {
                 key: '6-1',
-                name: '蘑菇盖浇饭',
+                name: 'Mushroom Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '6-2',
-                name: '牛肉香菇盖浇饭',
+                name: 'Beef & Shiitake Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '6-3',
-                name: '鱼香肉丝盖浇饭',
+                name: 'Yu-Xiang Shredded Pork Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '6-4',
-                name: '肉末茄子盖浇饭',
+                name: 'Minced Pork & Eggplant Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '6-5',
-                name: '红烧肉盖浇饭',
+                name: 'Braised Pork Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '6-6',
-                name: '猪脚盖浇饭',
+                name: 'Pig Trotter Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
         ],
     },
     {
         id: 7,
-        name: '小吃麻辣烫',
+        name: 'Snacks & Malatang',
         children: [
             {
                 key: '7-1',
-                name: '蘑菇盖浇饭',
+                name: 'Mushroom Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '7-2',
-                name: '牛肉香菇盖浇饭',
+                name: 'Beef & Shiitake Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '7-3',
-                name: '鱼香肉丝盖浇饭',
+                name: 'Yu-Xiang Shredded Pork Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '7-4',
-                name: '肉末茄子盖浇饭',
+                name: 'Minced Pork & Eggplant Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '7-5',
-                name: '红烧肉盖浇饭',
+                name: 'Braised Pork Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '7-6',
-                name: '猪脚盖浇饭',
+                name: 'Pig Trotter Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
         ],
     },
     {
         id: 8,
-        name: '中餐',
+        name: 'Chinese Food',
         children: [
             {
                 key: '8-1',
-                name: '蘑菇盖浇饭',
+                name: 'Mushroom Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '8-2',
-                name: '牛肉香菇盖浇饭',
+                name: 'Beef & Shiitake Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '8-3',
-                name: '鱼香肉丝盖浇饭',
+                name: 'Yu-Xiang Shredded Pork Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '8-4',
-                name: '肉末茄子盖浇饭',
+                name: 'Minced Pork & Eggplant Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '8-5',
-                name: '红烧肉盖浇饭',
+                name: 'Braised Pork Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '8-6',
-                name: '猪脚盖浇饭',
+                name: 'Pig Trotter Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
         ],
     },
     {
         id: 9,
-        name: '西餐',
+        name: 'Western Food',
         children: [
             {
                 key: '9-1',
-                name: '蘑菇盖浇饭',
+                name: 'Mushroom Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '9-2',
-                name: '牛肉香菇盖浇饭',
+                name: 'Beef & Shiitake Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '9-3',
-                name: '鱼香肉丝盖浇饭',
+                name: 'Yu-Xiang Shredded Pork Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '9-4',
-                name: '肉末茄子盖浇饭',
+                name: 'Minced Pork & Eggplant Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '9-5',
-                name: '红烧肉盖浇饭',
+                name: 'Braised Pork Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '9-6',
-                name: '猪脚盖浇饭',
+                name: 'Pig Trotter Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
         ],
     },
     {
         id: 10,
-        name: '大餐',
+        name: 'Feasts',
         children: [
             {
                 key: '10-1',
-                name: '蘑菇盖浇饭',
+                name: 'Mushroom Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '10-2',
-                name: '牛肉香菇盖浇饭',
+                name: 'Beef & Shiitake Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '10-3',
-                name: '鱼香肉丝盖浇饭',
+                name: 'Yu-Xiang Shredded Pork Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '10-4',
-                name: '肉末茄子盖浇饭',
+                name: 'Minced Pork & Eggplant Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '10-5',
-                name: '红烧肉盖浇饭',
+                name: 'Braised Pork Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
             {
                 key: '10-6',
-                name: '猪脚盖浇饭',
+                name: 'Pig Trotter Rice Bowl',
                 url: 'https://gips2.baidu.com/it/u=987818134,4255615059&fm=3003&app=3003&f=JPEG',
             },
         ],
@@ -497,29 +497,29 @@ export const data = [
 
 ### Menu Props
 
-| Parameter   | Description                               | Type               | Default |
-| ----------- | ----------------------------------------- | ------------------ | ------- |
-| list        | Menu data set                             | `MenuParamsVo[]`   | -       |
-| id          | Unique key for binding                    | `string`           | id      |
-| color       | Selected color                            | `string`           | -       |
-| width       | Width of the sidebar menu; numeric values default to px | `number`\|`string` | 120 |
-| icon        | Icon properties; see [Icon API](./icon#api) for details | `HyIconProps` | -  |
-| badge       | Badge properties; see [Badge API](./badge#api) for details | `HyBadgeProps` | - |
-| customStyle | Custom external styles to apply           | `CSSProperties`    | -       |
-| customClass | Custom external class name                | `string`           | -       |
+| Parameter   | Description                                        | Type               | Default |
+| ----------- | -------------------------------------------------- | ------------------ | ------- |
+| list        | Menu data set                                      | `MenuParamsVo[]`   | -       |
+| id          | Bound unique key                                   | `string`           | id      |
+| color       | Selected color                                     | `string`           | -       |
+| width       | Width of the sidebar menu bar, default unit is px  | `number`\|`string` | 120     |
+| icon        | Icon property set, see [Icon API](./icon#api)      | `HyIconProps`      | -       |
+| badge       | Badge property set, see [Badge API](./badge#api)   | `HyBadgeProps`     | -       |
+| customStyle | Custom external styles to be applied               | `CSSProperties`    | -       |
+| customClass | Custom external class name                         | `string`           | -       |
 
 ### Events
 
-| Event Name | Description                                | Callback Parameters                 |
-| ---------- | ------------------------------------------ | ----------------------------------- |
-| change     | Triggered when the selected option changes | (temp: MenuParamsVo, index: number) |
+| Event  | Description                       | Callback Parameters                   |
+| ------ | --------------------------------- | ------------------------------------- |
+| change | Triggered when an option switches | (temp: MenuParamsVo, index: number)   |
 
 ### Slots
 
-| Slot Name | Description   | Accepted Values |
-| --------- | ------------- | --------------- |
-| default   | Custom title  | -               |
-| icon      | Custom icon   | -               |
+| Slot    | Description   | Parameters |
+| ------- | ------------- | ---------- |
+| default | Custom title  | -          |
+| icon    | Custom icon   | -          |
 
 ## Typings
 
@@ -528,15 +528,15 @@ export const data = [
 ```ts
 type MenuParamsVo = {
     /**
-     *  唯一id
+     *  Unique id
      * */
     id: string | number;
     /**
-     *  标题下·
+     *  Title
      * */
     title: string;
     /**
-     *  是否禁用
+     *  Whether disabled
      * */
     disabled?: boolean;
     /**
@@ -544,11 +544,11 @@ type MenuParamsVo = {
      * */
     icon?: string;
     /**
-     *  徽标值
+     *  Badge value
      * */
     badge?: number;
     /**
-     *  键值
+     *  Key value
      * */
     [key: string]: string | number;
 };
@@ -558,13 +558,13 @@ type MenuParamsVo = {
 
 ### CSS Variables
 
-| Variable Name | Description | Default |
-| --- | --- | --- |
-| `--hy-menu-max-width` | Maximum menu width | `260rpx` |
-| `--hy-menu-indicator-width` | Width of the selected indicator bar | `4px` |
-| `--hy-menu-indicator-height` | Height of the selected indicator bar | `15px` |
-| `--hy-menu-indicator-radius` | Corner radius of the selected indicator bar | Follows `--hy-radius-semicircle` (100px) |
-| `--hy-menu-title-font-size` | Title font size (line height follows accordingly) | Follows `--hy-font-size-base` (28rpx) |
-| `--hy-menu-disabled-color` | Disabled text color | Follows `--hy-text-color--disabled` |
+| Variable                     | Description                             | Default                                    |
+| ---------------------------- | --------------------------------------- | ------------------------------------------ |
+| `--hy-menu-max-width`        | Maximum menu width                      | `260rpx`                                   |
+| `--hy-menu-indicator-width`  | Selected indicator width                | `4px`                                      |
+| `--hy-menu-indicator-height` | Selected indicator height               | `15px`                                     |
+| `--hy-menu-indicator-radius` | Selected indicator border radius        | Follows `--hy-radius-semicircle` (100px)   |
+| `--hy-menu-title-font-size`  | Title font size (line height follows)   | Follows `--hy-font-size-base` (28rpx)      |
+| `--hy-menu-disabled-color`   | Disabled text color                     | Follows `--hy-text-color--disabled`        |
 
 <demo-model url="pages-design/menu/menu"></demo-model>

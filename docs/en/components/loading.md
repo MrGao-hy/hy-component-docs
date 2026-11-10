@@ -1,14 +1,14 @@
 # Loading Animation Component
 
-> This component is a small animation, currently used in the loading state scenarios of Hy's loadMore (load more) and other components.
+> This component is a small animation, currently used in the loading state scenarios of Hy's loadMore (Load More) and other components.
 
 ## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ------------------- | ------------------ |
-| ✔        | ✔   | ✔                   | ✔                  |
+| -------- | --- | ------------------- | ------------------- |
+| ✔        | ✔   | ✔                   | ✔                   |
 
-## :japanese_castle: Basic Usage Example
+## :japanese_castle: Basic Usage Examples
 
 ```html
 <!-- Global usage -->
@@ -17,8 +17,8 @@
 
 ### Animation Text
 
-- By configuring `text`, you can specify the text content
-- By configuring `textSize`, you can specify the text size
+- Configure `text` to specify the text content
+- Configure `textSize` to specify the text size
 
 ```html
 <template>
@@ -28,10 +28,10 @@
 
 ### Mode Types
 
-- By configuring `mode`, you can specify the mode
-    - `spinner` petal configuration (default)
+- Configure `mode` to specify the mode
+    - `spinner` flower petal style (default)
     - `circle` ring loading style
-    - `semicircle` semicircle loading style
+    - `semicircle` half-circle loading style
     - `dots` bouncing dots loading style
     - `bars` sound wave bars loading style
 
@@ -45,9 +45,9 @@
 </template>
 ```
 
-### Arrangement Types
+### Layout Type
 
-- By configuring `direction`, you can specify whether the text and icon are arranged vertically
+- Configure `direction` to specify whether the text and icon are arranged vertically
     - `row` loading icon and text arranged horizontally
     - `column` loading icon and text arranged vertically
 
@@ -60,7 +60,7 @@
 
 ### Animation Mode
 
-- `timing-function` can specify the `animation-timing-function` CSS property within the animation when `mode` is `semicircle` or `circle`, defaults to `ease-in-out`
+- `timing-function` can specify the `animation-timing-function` CSS property of the animation when `mode` is `semicircle` or `circle`, defaults to `ease-in-out`
 
 ```html
 <template>
@@ -68,9 +68,9 @@
 </template>
 ```
 
-### Animation Run Duration
+### Animation Duration
 
-- By configuring `duration`, you can specify the run cycle time of the animation
+- Configure `duration` to specify the animation cycle time
 
 ```html
 <template>
@@ -80,8 +80,8 @@
 
 ### Icon Color
 
-- By configuring `color`, you can specify the color of the animation's active area.
-- By configuring `inactive-color`, you can specify the dark edge color when mode is circle
+- Configure `color` to specify the color of the animation's active area.
+- Configure `inactive-color` to specify the dark edge color when mode is circle
 
 ```html
 <template>
@@ -92,7 +92,7 @@
 
 ### Icon Size
 
-- By configuring `size`, you can set the size in px; within the component, the size value is applied as the component's width and height
+- Configure `size` to set the size in px; within the component, the size value is applied as the component's width and height
 
 ```html
 <template>
@@ -111,27 +111,27 @@
 | textColor | Prompt text color | `string` | #909399 |
 | direction | Whether the icon and text are arranged vertically | `column`\|`row` | row |
 | mode | Mode selection[^1] | `spinner`\|`circle`\|`semicircle`\|`dots` \|`bars` | spinner |
-| size | Size of the loading icon, numeric values default to px | `string` \| `number` | 24 |
-| textSize | Size of the loading text, numeric values default to px | `string` \| `number` | 15 |
+| size | Loading icon size, default unit in px | `string` \| `number` | 24 |
+| textSize | Loading text size, default unit in px | `string` \| `number` | 15 |
 | text | Text content | `string` | - |
-| timingFunction | Specifies the animation-timing-function CSS property, but only effective when mode is circle or semicircle | `ease-in-out`\|`ease-out`\| `ease-in`\|`linear`\|`ease` | ease-in-out |
+| timingFunction | Specifies the animation-timing-function CSS property, only effective when mode is circle or semicircle | `ease-in-out`\|`ease-out`\| `ease-in`\|`linear`\|`ease` | ease-in-out |
 | duration | Animation execution cycle time, in ms | `number` | 1200 |
-| inactiveColor | Dark edge color of the icon, only effective when mode is circle | `string` | - |
-| customStyle | Define external styles to be used | `string` | - |
+| inactiveColor | Dark edge color of the icon, effective when mode is circle | `string` | - |
+| customStyle | Define external styles to be applied | `string` | - |
 | customClass | Custom external class name | `string` | - |
 
-[^1]: `spinner`: petal shape; `circle`: circle; `small`: small size; `semicircle`: semicircle
+[^1]: `spinner`: flower petal shape; `circle`: circular; `small`: small size; `semicircle`: half circle
 
 ### CSS Variables
 
-| Variable Name | Description | Default Value |
-| --- | --- | --- |
-| `--hy-loading-text-font-size` | Text font size | `14px` |
-| `--hy-loading-text-line-height` | Text line height | `20px` |
-| `--hy-loading-border-width` | Ring border width | `3px` |
-| `--hy-loading-bg-color` | Ring track color | `#e5e5e5` |
-| `--hy-loading-dots-gap` | Dot spacing | `6px` |
-| `--hy-loading-bars-gap` | Bar spacing | `3px` |
-| `--hy-loading-vertical-text-color` | Vertically arranged text color | Follows `--hy-text-color--grey` |
+| Variable Name                       | Description             | Default Value                |
+| ----------------------------------- | ----------------------- | ---------------------------- |
+| `--hy-loading-text-font-size`      | Text font size          | `14px`                       |
+| `--hy-loading-text-line-height`    | Text line height        | `20px`                       |
+| `--hy-loading-border-width`        | Ring border width       | `3px`                        |
+| `--hy-loading-bg-color`            | Ring track color        | `#e5e5e5`                    |
+| `--hy-loading-dots-gap`            | Dot spacing             | `6px`                        |
+| `--hy-loading-bars-gap`            | Bar spacing             | `3px`                        |
+| `--hy-loading-vertical-text-color` | Vertical text color     | Follows `--hy-text-color--grey` |
 
 <demo-model url="pages-design/loading/loading"></demo-model>

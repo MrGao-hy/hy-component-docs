@@ -15,10 +15,10 @@
 
 ## :file_folder: 文件传输
 
-| 名称 | 简介 |
-| --- | --- |
-| [WinSCP](https://winscp.net/) | Windows 下图形化 SFTP / FTP / SCP 传输工具 |
-| [FileZilla](https://filezilla-project.org/) | 开源跨平台 FTP 客户端，老牌稳定 |
+| 名称                                        | 简介                                       |
+| ------------------------------------------- | ------------------------------------------ |
+| [WinSCP](https://winscp.net/)               | Windows 下图形化 SFTP / FTP / SCP 传输工具 |
+| [FileZilla](https://filezilla-project.org/) | 开源跨平台 FTP 客户端，老牌稳定            |
 
 ## :monorail: 服务器管理面板
 
@@ -47,22 +47,22 @@
 
 ## :computer: 远程桌面
 
-| 名称 | 简介 |
-| --- | --- |
-| [RustDesk](https://rustdesk.com/) | 开源免费远程桌面，可自建中继服务器 |
-| [ToDesk](https://www.todesk.com/) | 国产流畅远程控制，个人免费 |
-| [向日葵](https://sunlogin.oray.com/) | 老牌国产远程控制，全平台覆盖 |
-| [TeamViewer](https://www.teamviewer.com/) | 全球知名远程桌面（商用收费） |
+| 名称                                      | 简介                               |
+| ----------------------------------------- | ---------------------------------- |
+| [RustDesk](https://rustdesk.com/)         | 开源免费远程桌面，可自建中继服务器 |
+| [ToDesk](https://www.todesk.com/)         | 国产流畅远程控制，个人免费         |
+| [向日葵](https://sunlogin.oray.com/)      | 老牌国产远程控制，全平台覆盖       |
+| [TeamViewer](https://www.teamviewer.com/) | 全球知名远程桌面（商用收费）       |
 
 ## :chart_with_upwards_trend: 监控 & 告警
 
-| 名称 | 简介 |
-| --- | --- |
+| 名称                                                   | 简介                              |
+| ------------------------------------------------------ | --------------------------------- |
 | [Uptime Kuma](https://github.com/louislam/uptime-kuma) | 高颜值自托管网站 / 服务可用性监控 |
-| [哪吒监控](https://github.com/nezhahq/nezha) | 开源轻量多服务器监控与告警 |
-| [Zabbix](https://www.zabbix.com/) | 企业级分布式监控解决方案 |
-| [Prometheus](https://prometheus.io/) | 云原生监控与时间序列数据库标准 |
-| [Grafana](https://grafana.com/) | 可视化监控仪表盘，数据源全都能接 |
+| [哪吒监控](https://github.com/nezhahq/nezha)           | 开源轻量多服务器监控与告警        |
+| [Zabbix](https://www.zabbix.com/)                      | 企业级分布式监控解决方案          |
+| [Prometheus](https://prometheus.io/)                   | 云原生监控与时间序列数据库标准    |
+| [Grafana](https://grafana.com/)                        | 可视化监控仪表盘，数据源全都能接  |
 
 ## :hammer_and_wrench: 在线工具
 

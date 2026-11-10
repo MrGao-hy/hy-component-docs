@@ -1,14 +1,14 @@
-# SubmitBar Order Submission Bar Component
+# SubmitBar Submit Order Bar Component
 
-> The SubmitBar order submission bar is a core functional component for e-commerce applications. It is mainly used at the bottom of product detail pages, providing a quick action bar that guides users through the purchase process. The component supports extensive customization options, allowing styles and functionality to be flexibly adjusted according to business requirements.
+> The SubmitBar submit order bar component is a core functional component for mall applications, mainly used at the bottom of product detail pages to provide a quick action bar that guides users through the purchase process. The component supports rich custom configurations, allowing styles and features to be flexibly adjusted according to business needs.
 
 ::: tip Component Description
 
-This component is a core business component for e-commerce apps. It provides a complete bottom action bar solution, with multi-platform support and rich interaction customization.
+This component is a core business component for malls, providing a complete bottom action bar solution, with support for multi-platform adaptation and rich interaction customization.
 
 :::
 
-## :pushpin: Platform Differences
+## :pushpin: Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
 | -------- | --- | ------------------- | ------------------- |
@@ -16,10 +16,10 @@ This component is a core business component for e-commerce apps. It provides a c
 
 ## Component Features
 
-- **Fixed Bottom**: The component is fixed to the bottom of the page by default, ensuring the action entry is always visible
-- **Custom Styles**: Rich customization options for button color, text, shape, and more, with gradient color support
-- **Icons & Badges**: Supports configuring left-side menu icons, with badges to indicate new messages or product quantities
-- **Flexible Layout**: Supports showing/hiding the left and right buttons, as well as customizing content via slots
+- **Fixed Bottom**: The component is fixed at the bottom of the page by default, ensuring action entries are always visible
+- **Custom Styles**: Supports rich customization options for button color, text, shape, and more, with gradient color support
+- **Icons and Badges**: Supports left-side menu icon configuration, and badges can be added to indicate new messages or product quantities
+- **Flexible Layout**: Supports showing/hiding left and right buttons, as well as custom content display via slots
 
 ## :japanese_castle: Basic Usage Example
 
@@ -47,7 +47,7 @@ const menus = reactive([
 
 :::
 
-### Hiding Buttons
+### Hide Buttons
 
 - Hide the left button by setting `show-left-btn`
 - Hide the right button by setting `show-right-btn`
@@ -75,7 +75,7 @@ const menus = reactive([
 
 :::
 
-### Defining Button Styles
+### Define Button Styles
 
 - Set the button text color via `textColor`
 - Set the left button text via `leftBtnText`
@@ -124,8 +124,8 @@ const menus = reactive([
 
 ### Right Icon Content Settings
 
-- Define the icon, text, and badge value (style) by setting the items in `menus`
-    - `icon` icon from the icon library
+- Define the icon, text, and badge values (styles) by setting the content in `menus`
+    - `icon` icon from the library
     - `text` text content
     - `badge` badge value, see the [Badge API](./badge.md#api) for usage
 - Set the icon color via `iconColor`
@@ -163,43 +163,43 @@ const menus = reactive([
 
 ### SubmitBar Props
 
-| Parameter       | Description                                  | Type                   | Default     |
-| -------------- | -------------------------------------------- | ---------------------- | ----------- |
-| menus          | Left menu bar                                | `SubmitBarIconMenus[]` | -           |
-| fixed          | Whether to fix to the bottom                 | `boolean`              | true        |
-| border         | Whether to show the top border               | `boolean`              | true        |
-| leftLoading    | Show loading on the left button              | `boolean`              | false       |
-| rightLoading   | Show loading on the right button             | `boolean`              | false       |
-| iconColor      | Color of the left icons                      | `string`               | -           |
-| iconLabelColor | Color of the left text                       | `string`               | #909193FF   |
-| textColor      | Text color of the right buttons              | `string`               | -           |
-| showLeftBtn    | Whether to show the left button              | `boolean`              | true        |
-| showRightBtn   | Whether to show the right button             | `boolean`              | true        |
-| leftBtnText    | Left button text                             | `string`               | Add to Cart |
-| rightBtnText   | Right button text                            | `string`               | Buy Now     |
-| leftBtnColor   | Left button color, supports gradient colors  | `string`               | #ed3f14     |
-| rightBtnColor  | Right button color, supports gradient colors | `string`               | #ff7900     |
-| shape          | Shape of the buttons                         | `circle`\|`square`     | circle      |
-| warn           | Button click throttle duration (unit: ms)    | `number`               | 300         |
-| customStyle    | External styles to be applied                | `CSSProperties`        | -           |
+| Parameter       | Description                                    | Type                   | Default    |
+| --------------- | ---------------------------------------------- | ---------------------- | ---------- |
+| menus           | Left menu bar                                  | `SubmitBarIconMenus[]` | -          |
+| fixed           | Whether to fix at the bottom                   | `boolean`              | true       |
+| border          | Whether to show the top border                 | `boolean`              | true       |
+| leftLoading     | Loading state of the left button               | `boolean`              | false      |
+| rightLoading    | Loading state of the right button              | `boolean`              | false      |
+| iconColor       | Color of the left icons                        | `string`               | -          |
+| iconLabelColor  | Color of the left text                         | `string`               | #909193FF  |
+| textColor       | Text color of the right buttons                | `string`               | -          |
+| showLeftBtn     | Whether to show the left button                | `boolean`              | true       |
+| showRightBtn    | Whether to show the right button               | `boolean`              | true       |
+| leftBtnText     | Left button text                               | `string`               | Add to Cart |
+| rightBtnText    | Right button text                              | `string`               | Buy Now    |
+| leftBtnColor    | Left button color, supports gradient colors    | `string`               | #ed3f14    |
+| rightBtnColor   | Right button color, supports gradient colors   | `string`               | #ff7900    |
+| shape           | Button shape                                   | `circle`\|`square`     | circle     |
+| warn            | Button click throttle duration (unit: ms)      | `number`               | 300        |
+| customStyle     | External styles to be applied                  | `CSSProperties`        | -          |
 
 ### Events
 
-| Event Name | Description                               | Callback Parameters                     |
-| ---------- | ----------------------------------------- | --------------------------------------- |
-| click      | Triggered when a button is clicked        | index: number                           |
+| Event Name | Description                             | Callback Parameters                     |
+| ---------- | --------------------------------------- | --------------------------------------- |
+| click      | Triggered when a button is clicked      | index: number                           |
 | menuClick  | Triggered when a left menu item is clicked | temp: SubmitBarIconMenus, index: number |
 
 ### Slots
 
-| Slot Name | Description                | Accepted Values |
-| --------- | -------------------------- | --------------- |
-| left      | Custom content on the left | -               |
+| Slot Name | Description              | Accepted Value |
+| --------- | ------------------------ | -------------- |
+| left      | Custom content on the left  | -              |
 | right     | Custom content on the right | -              |
 
 ### Typings
 
-::: details Type Definitions
+::: details Type Description
 
 ```ts
 export interface SubmitBarIconMenus {
@@ -223,10 +223,10 @@ export interface SubmitBarIconMenus {
 
 ### CSS Variables
 
-| Variable Name | Description | Default Value |
-| --- | --- | --- |
-| `--hy-submit-bar-left-font-size` | Left text font size | `20rpx` |
-| `--hy-submit-bar-right-font-size` | Right price font size | `26rpx` |
-| `--hy-submit-bar-right-width` | Right area width | `400rpx` |
+| Variable Name                     | Description            | Default  |
+| --------------------------------- | ---------------------- | -------- |
+| `--hy-submit-bar-left-font-size`  | Left text font size    | `20rpx`  |
+| `--hy-submit-bar-right-font-size` | Right price font size  | `26rpx`  |
+| `--hy-submit-bar-right-width`     | Right area width       | `400rpx` |
 
 <demo-model url="pages-design/submitBar/submitBar"></demo-model>

@@ -3,5 +3,5 @@
 完成中文文档编写后，执行以下命令同步生成英文版本：
 
 ```shell
-npx vpi gen
+$ npx vpi gen
 ```

@@ -1,12 +1,12 @@
-# ScrollList Horizontal Scrolling List Component
+# ScrollList Horizontal Scroll List Component
 
-> This component is generally used for scenarios where multiple products or categories are displayed simultaneously, and it can also implement a list that swipes left and right.
+> This component is generally used for scenarios where multiple products or categories are displayed at the same time, and it can also implement a list that can be swiped left and right.
 
-## :pushpin: Platform Difference Notes
+## :pushpin: Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ---------- | ------------ |
-| ✔        | ✔   | ✔          | ✔            |
+| -------- | --- | ------------------- | ------------------- |
+| ✔        | ✔   | ✔                   | ✔                   |
 
 ## :japanese_castle: Basic Usage Example
 
@@ -49,7 +49,7 @@ const list = ref<any[]>([
             <text class="scroll-list__goods-item__text">￥{{ item.price }}</text>
         </view>
         <view class="scroll-list__show-more">
-            <text class="scroll-list__show-more__text">View More</text>
+            <text class="scroll-list__show-more__text">View more</text>
             <up-icon name="arrow-leftward" color="#f56c6c" size="12"></up-icon>
         </view>
     </view>
@@ -112,7 +112,7 @@ const right = () => {
 };
 
 const showMore = () => {
-    uni.showToast({ title: 'View More' });
+    uni.showToast({ title: 'View more' });
 };
 ```
 
@@ -162,35 +162,35 @@ const showMore = () => {
 
 ### ScrollList Props
 
-| Parameter             | Description                                            | Type            | Default |
-| --------------------- | ------------------------------------------------------ | --------------- | ------- |
-| indicatorWidth        | Overall width of the indicator; default unit is px     | `number`        | 50      |
-| indicatorBarWidth     | Width of the slider bar; default unit is px            | `number`        | 20      |
-| indicator             | Whether to show the panel indicator                    | `boolean`       | true    |
-| indicatorColor        | Inactive color of the indicator                        | `string`        | -       |
-| indicatorActiveColor  | Color of the indicator slider bar                      | `string`        | -       |
-| indicatorStyle        | Indicator style; can be positioned via bottom, left, right | `CSSProperties` | -    |
+| Parameter             | Description                                              | Type            | Default |
+| --------------------- | -------------------------------------------------------- | --------------- | ------- |
+| indicatorWidth        | Overall width of the indicator, default unit px          | `number`        | 50      |
+| indicatorBarWidth     | Width of the slider bar, default unit px                 | `number`        | 20      |
+| indicator             | Whether to show the panel indicator                      | `boolean`       | true    |
+| indicatorColor        | Inactive color of the indicator                          | `string`        | -       |
+| indicatorActiveColor  | Color of the indicator slider bar                        | `string`        | -       |
+| indicatorStyle        | Indicator style, can be positioned via bottom/left/right | `CSSProperties` | -       |
 
 ### Events
 
-| Event Name  | Description                          | Callback Parameters |
-| ----------- | ------------------------------------ | ------------------- |
-| scrollLeft  | Triggered when scrolled to the left  | -                   |
-| scrollRight | Triggered when scrolled to the right | -                   |
+| Event Name  | Description                        | Callback Parameters |
+| ----------- | ---------------------------------- | ------------------- |
+| scrollLeft  | Triggered when swiped to the left  | -                   |
+| scrollRight | Triggered when swiped to the right | -                   |
 
 ### Slots
 
-| Slot Name | Description | Accepted Values |
-| --------- | ----------- | --------------- |
-| default   | -           | -               |
+| Slot Name | Description | Accepted Value |
+| --------- | ----------- | -------------- |
+| default   | -           | -              |
 
 ### CSS Variables
 
-| Variable Name | Description | Default Value |
-| --- | --- | --- |
-| `--hy-scroll-list-indicator-width` | Indicator width | `60px` |
-| `--hy-scroll-list-indicator-height` | Indicator height | `4px` |
-| `--hy-scroll-list-indicator-bar-width` | Indicator slider bar width | `20px` |
-| `--hy-scroll-list-indicator-radius` | Indicator border radius | Follows `--hy-radius-semicircle` (100px) |
+| Variable                               | Description                  | Default                                |
+| -------------------------------------- | ---------------------------- | -------------------------------------- |
+| `--hy-scroll-list-indicator-width`     | Indicator width              | `60px`                                 |
+| `--hy-scroll-list-indicator-height`    | Indicator height             | `4px`                                  |
+| `--hy-scroll-list-indicator-bar-width` | Indicator slider bar width   | `20px`                                 |
+| `--hy-scroll-list-indicator-radius`    | Indicator border radius      | Follows `--hy-radius-semicircle` (100px) |
 
 <demo-model url="pages-design/scrollList/scrollList"></demo-model>

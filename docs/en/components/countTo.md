@@ -1,6 +1,6 @@
 # CountTo Number Scrolling Component
 
-> This component is generally used in scenarios where a number needs to be scrolled to a specific value; the target is required to be an incrementing value.
+> This component is generally used in scenarios where a number needs to be scrolled to a certain value; the target is expected to be an incrementing value.
 
 ## :pushpin: Platform Differences
 
@@ -8,10 +8,10 @@
 | -------- | --- | ------------------- | ------------------- |
 | ✔        | ✔   | ✔                   | ✔                   |
 
-## :japanese_castle: Basic Usage
+## :japanese_castle: Basic Usage Examples
 
 ```html
-<!-- 全局使用 -->
+<!-- Global usage -->
 <hy-count-to time="3600 * 30 * 1000"></hy-count-to>
 ```
 
@@ -64,9 +64,9 @@
 ```html [vue]
 <hy-count-to ref="countToRef" :endVal="1542222" :duration="10000" :autoplay="false"></hy-count-to>
 <view class="hy-flex">
-    <hy-button text="开始" type="success" @click="start"></hy-button>
-    <hy-button text="暂停" type="error" @click="pause"></hy-button>
-    <hy-button text="继续" type="info" @click="resume"></hy-button>
+    <hy-button text="Start" type="success" @click="start"></hy-button>
+    <hy-button text="Pause" type="error" @click="pause"></hy-button>
+    <hy-button text="Resume" type="info" @click="resume"></hy-button>
 </view>
 ```
 
@@ -108,40 +108,40 @@ const resume = () => {
 
 ### CountTo
 
-| Parameter | Description                                                | Type               | Default |
-| --------- | ---------------------------------------------------------- | ------------------ | ------- |
-| startVal  | Start value                                                | `number`           | 0       |
-| endVal    | End value                                                  | `number`           | 0       |
-| duration  | Time required for the scrolling process, in ms             | `number`           | 2000    |
-| autoplay  | Whether to start scrolling automatically                   | `boolean`          | true    |
-| decimals  | Number of decimal places to display, see above             | `number`           | 0       |
-| useEasing | Whether to ease the ending when scrolling finishes, see above | `boolean`        | true    |
-| decimal   | Decimal separator                                          | `string`           | ,       |
-| color     | Font color                                                 | `string`           | #606266 |
-| fontSize  | Font size, numeric values default to px                    | `string`\|`number` | 22      |
-| bold      | Whether the font is bold                                   | `boolean`          | false   |
-| separator | Thousands separator, see above                             | `string`           | -       |
+| Parameter | Description                                           | Type               | Default |
+| --------- | ----------------------------------------------------- | ------------------ | ------- |
+| startVal  | Start value                                           | `number`           | 0       |
+| endVal    | End value                                             | `number`           | 0       |
+| duration  | Time required for the scrolling process, in ms        | `number`           | 2000    |
+| autoplay  | Whether to start scrolling automatically              | `boolean`          | true    |
+| decimals  | Number of decimal places to display, see above        | `number`           | 0       |
+| useEasing | Whether to apply easing at the end, see above         | `boolean`          | true    |
+| decimal   | Decimal separator                                     | `string`           | ,       |
+| color     | Font color                                            | `string`           | #606266 |
+| fontSize  | Font size, numeric values default to px               | `string`\|`number` | 22      |
+| bold      | Whether the font is bold                              | `boolean`          | false   |
+| separator | Thousands separator, see above                        | `string`           | -       |
 
 ### Events
 
-| Event Name | Description                                  | Callback Parameters |
-| ---------- | -------------------------------------------- | ------------------- |
-| end        | Triggered when the value scrolls to the target value | -            |
+| Event Name | Description                                    | Callback Parameters |
+| ---------- | ---------------------------------------------- | ------------------- |
+| end        | Triggered when the value scrolls to the target | -                   |
 
 ### Methods
 
-| Name    | Description                                                            |
-| ------- | ---------------------------------------------------------------------- |
-| start   | Start scrolling                                                        |
-| pause   | Pause scrolling                                                        |
-| resume  | Resume scrolling from the paused value                                 |
-| reStart | When paused, restart scrolling; or when scrolling, pause               |
+| Method Name | Description                                                                  |
+| ----------- | ---------------------------------------------------------------------------- |
+| start       | Start scrolling                                                              |
+| pause       | Pause scrolling                                                              |
+| resume      | Resume scrolling from the paused value                                       |
+| reStart     | When paused, restart scrolling from the beginning; or pause while scrolling  |
 
 ### CSS Variables
 
-| Variable              | Description         | Default                     |
-| --------------------- | ------------------- | --------------------------- |
-| `--hy-count-to-color` | Number text color   | Follows `--hy-text-color`   |
+| Variable              | Description          | Default                 |
+| --------------------- | -------------------- | ----------------------- |
+| `--hy-count-to-color` | Number text color    | Follows `--hy-text-color` |
 
 [^1] `DD`-day, `HH`-hour, `mm`-minute, `ss`-second, `SSS`-millisecond
 

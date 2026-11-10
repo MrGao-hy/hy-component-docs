@@ -1,14 +1,14 @@
-# Pagination
+# Pagination Component
 
-> When the data volume is too large, use pagination to break up the data.
+> When there is too much data, use pagination to break it up into pages.
 
-## :pushpin: Platform Compatibility
+## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
 | -------- | --- | ------------------- | ------------------- |
 | ✔        | ✔   | ✔                   | ✔                   |
 
-## :japanese_castle: Basic Usage
+## :japanese_castle: Basic Usage Example
 
 ```html
 <!-- Global usage -->
@@ -23,7 +23,7 @@ const value = ref<number>(1);
 
 ### Show Icons
 
-- By setting `show-icon`, the pagination navigation is displayed as icons
+- By setting `show-icon`, the pagination navigation will be displayed as icons
 
 ```html
 <template>
@@ -31,9 +31,9 @@ const value = ref<number>(1);
 </template>
 ```
 
-### Text Tips
+### Text Message
 
-- By setting `show-message`, text tips are displayed
+- By setting `show-message`, display a text message
 
 ```html
 <template>
@@ -43,7 +43,7 @@ const value = ref<number>(1);
 
 ### Items Per Page
 
-- By setting `pageSize`, the number of items displayed per page is configured
+- By setting `pageSize`, display the number of items shown per page
 
 ```html
 <template>
@@ -53,8 +53,8 @@ const value = ref<number>(1);
 
 ### Set Display Text
 
-- By setting `prevText`, the previous page button text is displayed
-- By setting `nextText`, the next page button text is displayed
+- By setting `prevText`, display the previous page button text
+- By setting `nextText`, display the next page button text
 
 ```html
 <template>
@@ -66,33 +66,33 @@ const value = ref<number>(1);
 
 ### Pagination Props
 
-| Parameter     | Description                                                        | Type            | Default Value |
-| ------------- | ------------------------------------------------------------------ | --------------- | ------------- |
-| v-model       | Current page                                                       | `number`        | 1             |
-| totalPage     | Total number of pages; if `total` is set, it takes priority when calculating the page count | `number` | 1      |
-| showIcon      | Whether to show pagination icons                                   | `boolean`       | false         |
-| showMessage   | Whether to show text tips                                          | `boolean`       | false         |
-| total         | Total number of data items                                         | `number`        | -             |
-| pageSize      | Page size                                                          | `number`        | 10            |
-| prevText      | Previous page button text                                          | `string`        | Previous Page |
-| nextText      | Next page button text                                              | `string`        | Next Page     |
-| hideIfOnePage | Whether to hide when there is only one page                        | `boolean`       | true          |
-| customStyle   | Custom external styles to be applied                               | `CSSProperties` | -             |
-| customClass   | Custom external class name                                         | `string`        | -             |
+| Parameter     | Description                                                                  | Type            | Default |
+| ------------- | ---------------------------------------------------------------------------- | --------------- | ------- |
+| v-model       | Current page                                                                 | `number`        | 1       |
+| totalPage     | Total number of pages; if `total` is set, page count is calculated from it   | `number`        | 1       |
+| showIcon      | Whether to show pagination icons                                             | `boolean`       | false   |
+| showMessage   | Whether to show the text message                                             | `boolean`       | false   |
+| total         | Total number of data items                                                   | `number`        | -       |
+| pageSize      | Page size                                                                    | `number`        | 10      |
+| prevText      | Previous page button text                                                    | `string`        | Prev    |
+| nextText      | Next page button text                                                        | `string`        | Next    |
+| hideIfOnePage | Whether to hide when there is only one page                                  | `boolean`       | true    |
+| customStyle   | Custom external styles to be applied                                         | `CSSProperties` | -       |
+| customClass   | Custom external class name                                                   | `string`        | -       |
 
 ### Events
 
-| Event Name | Description      | Callback Parameter                 |
-| ---------- | ---------------- | ---------------------------------- |
-| change     | Value change event | value: the current page number   |
+| Event Name | Description        | Callback Parameter                 |
+| ---------- | ------------------ | ---------------------------------- |
+| change     | Value change event | value: the current page number     |
 
 ### CSS Variables
 
-| Variable Name | Description | Default Value |
-| --- | --- | --- |
-| `--hy-pagination-nav-min-width` | Minimum width of the previous/next page buttons | `60px` |
-| `--hy-pagination-nav-active-color` | Active color of the previous/next page buttons | `rgba(0, 0, 0, 0.65)` |
-| `--hy-pagination-nav-disabled-color` | Disabled color of the previous/next page buttons | `rgba(0, 0, 0, 0.15)` |
-| `--hy-pagination-font-size` | Font size of the info text | Follows `--hy-font-size-sm` (24rpx) |
+| Variable Name                        | Description                                  | Default                            |
+| ------------------------------------ | -------------------------------------------- | ---------------------------------- |
+| `--hy-pagination-nav-min-width`      | Minimum width of prev/next page buttons      | `60px`                             |
+| `--hy-pagination-nav-active-color`   | Active color of prev/next page buttons       | `rgba(0, 0, 0, 0.65)`              |
+| `--hy-pagination-nav-disabled-color` | Disabled color of prev/next page buttons     | `rgba(0, 0, 0, 0.15)`              |
+| `--hy-pagination-font-size`          | Font size of the info text                   | Follows `--hy-font-size-sm` (24rpx) |
 
 <demo-model url="pages-design/pagination/pagination"></demo-model>

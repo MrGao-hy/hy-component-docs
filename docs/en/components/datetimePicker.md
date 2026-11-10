@@ -1,4 +1,4 @@
-# DatetimePicker Component
+# DatetimePicker Date & Time Picker Component
 
 > This picker is used for selecting dates and times
 
@@ -8,7 +8,7 @@ Please run `npm i dayjs` first to install the dependency.
 
 :::
 
-## :pushpin: Platform Compatibility
+## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
 | -------- | --- | ---------- | ------------ |
@@ -18,11 +18,11 @@ Please run `npm i dayjs` first to install the dependency.
 
 ::: warning Notes
 
-- The `minDate` and `maxDate` parameters require a timestamp (in milliseconds), not a date string
+- The `minDate` and `maxDate` parameters must be passed as timestamps (in milliseconds), not date strings
 - WeChat Mini Program does not support passing function parameters via props; `formatter` must be set via the `setFormatter` method
-- When `hasInput` is set to `true`, the component comes with a built-in input box, and clicking the input box opens the picker
-- `mode` supports multiple formats, see the description below for details
-- `minHour`, `maxHour`, `minMinute`, and `maxMinute` are only valid when `mode=time`
+- When `hasInput` is set to `true`, the component comes with a built-in input box; clicking the input box opens the picker
+- `mode` supports multiple formats, see details below
+- `minHour`, `maxHour`, `minMinute`, `maxMinute` are only effective when `mode=time`
 
 :::
 
@@ -47,7 +47,7 @@ Please run `npm i dayjs` first to install the dependency.
 ```html
 <template>
     <view>
-        <hy-button @click="showPicker = true" :text="value || '选择日期'"></hy-button>
+        <hy-button @click="showPicker = true" :text="value || 'Select Date'"></hy-button>
         <hy-datetime-picker
             v-model="value"
             v-model:show="showPicker"
@@ -66,36 +66,36 @@ Please run `npm i dayjs` first to install the dependency.
 
 ### Various time modes
 
-- `datetime`: Selects date/time in the format YYYY-MM-DD HH:mm:ss
-- `date`: Selects date in the format YYYY-MM-DD
-- `time`: Selects time in the format HH:mm
-- `year-month`: Selects date in the format YYYY-MM
-- `month-day`: Selects date in the format MM-DD
-- `hour-minute`: Selects time in the format HH:mm
-- `minute-second`: Selects time in the format mm:ss
+- `datetime`: select date and time in the format YYYY-MM-DD HH:mm:ss
+- `date`: select date in the format YYYY-MM-DD
+- `time`: select time in the format HH:mm
+- `year-month`: select date in the format YYYY-MM
+- `month-day`: select date in the format MM-DD
+- `hour-minute`: select time in the format HH:mm
+- `minute-second`: select time in the format mm:ss
 
 ```html
 <template>
     <view>
-        <!-- 完整时间 -->
+        <!-- Full date and time -->
         <hy-datetime-picker v-model="value1" has-input></hy-datetime-picker>
 
-        <!-- 年月日 -->
+        <!-- Year-month-day -->
         <hy-datetime-picker v-model="value2" has-input mode="date"></hy-datetime-picker>
 
-        <!-- 年月 -->
+        <!-- Year-month -->
         <hy-datetime-picker v-model="value3" has-input mode="year-month"></hy-datetime-picker>
 
-        <!-- 月日 -->
+        <!-- Month-day -->
         <hy-datetime-picker v-model="value4" has-input mode="month-day"></hy-datetime-picker>
 
-        <!-- 时间(时分秒) -->
+        <!-- Time (hour:minute:second) -->
         <hy-datetime-picker v-model="value5" has-input mode="time"></hy-datetime-picker>
 
-        <!-- 小时/分 -->
+        <!-- Hour/minute -->
         <hy-datetime-picker v-model="value6" has-input mode="hour-minute"></hy-datetime-picker>
 
-        <!-- 分/秒 -->
+        <!-- Minute/second -->
         <hy-datetime-picker v-model="value7" has-input mode="minute-second"></hy-datetime-picker>
     </view>
 </template>
@@ -132,7 +132,7 @@ Please run `npm i dayjs` first to install the dependency.
     import { ref, computed } from 'vue';
 
     const value = ref(Date.now());
-    // 设置可选范围为过去一年到未来一年
+    // Set the selectable range from one year in the past to one year in the future
     const minDate = computed(() => {
         return new Date(new Date().getFullYear() - 1, 0, 1).getTime();
     });
@@ -154,7 +154,7 @@ Please run `npm i dayjs` first to install the dependency.
             mode="datetime"
             :formatter="formatter"
         ></hy-datetime-picker>
-        <hy-button @click="show = true">打开</hy-button>
+        <hy-button @click="show = true">Open</hy-button>
     </view>
 </template>
 
@@ -167,19 +167,19 @@ Please run `npm i dayjs` first to install the dependency.
 
     const formatter = (type, value) => {
         if (type === 'year') {
-            return `${value}年`;
+            return `${value}Y`;
         }
         if (type === 'month') {
-            return `${value}月`;
+            return `${value}M`;
         }
         if (type === 'day') {
-            return `${value}日`;
+            return `${value}D`;
         }
         return value;
     };
 
     onMounted(() => {
-        // 微信小程序需要用此写法
+        // WeChat Mini Program requires this syntax
         // datetimePickerRef.value.setFormatter(formatter);
     });
 </script>
@@ -192,8 +192,8 @@ Please run `npm i dayjs` first to install the dependency.
     <hy-datetime-picker
         has-input
         v-model="value"
-        cancelText="取消选择"
-        confirmText="确认选择"
+        cancelText="Cancel Selection"
+        confirmText="Confirm Selection"
         cancelColor="#999999"
         confirmColor="#f56c6c"
     ></hy-datetime-picker>
@@ -213,7 +213,7 @@ Please run `npm i dayjs` first to install the dependency.
     <hy-datetime-picker
         has-input
         v-model="value"
-        :input="{ placeholder: '请选择日期时间', border: true }"
+        :input="{ placeholder: 'Please select date and time', border: true }"
         customStyle="{ marginTop: '20rpx' }"
     ></hy-datetime-picker>
 </template>
@@ -231,23 +231,23 @@ Please run `npm i dayjs` first to install the dependency.
 
 | Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
-| show | Controls the popup and collapse of the picker | `boolean` | false |
+| show | Controls the showing and hiding of the picker | `boolean` | false |
 | v-model | Binding value | `string` \| `number` \| `Date` | - |
 | mode | Display format | `date` \| `datetime` \| `time` \| `year-month` \| `month-day` \| `hour-minute` \| `minute-second` | datetime |
-| hasInput | Whether to include a built-in input box | `boolean` | false |
+| hasInput | Whether the component includes a built-in input box | `boolean` | false |
 | input | Collection of input box attributes; available when hasInput is true, see [Input API](./input#api) for details | `HyInputProps` | - |
 | format | Date format displayed in the input box | `string` | 'YYYY-MM-DD HH:mm' |
 | popupMode | Controls the popup direction of the picker | `bottom` \| `center` \| `left` \| `right` \| `top` | bottom |
 | showToolbar | Whether to show the top toolbar | `boolean` | true |
 | title | Top title | `string` | - |
-| maxDate | Maximum selectable time (timestamp in milliseconds) | `number` | 10 years ahead |
-| minDate | Minimum selectable time (timestamp in milliseconds) | `number` | 10 years back |
-| minHour | Minimum selectable hour, only valid when mode=time | `number` | 0 |
-| maxHour | Maximum selectable hour, only valid when mode=time | `number` | 23 |
-| minMinute | Minimum selectable minute, only valid when mode=time | `number` | 0 |
-| maxMinute | Maximum selectable minute, only valid when mode=time | `number` | 59 |
+| maxDate | Maximum selectable time (timestamp in milliseconds) | `number` | 10 years in the future |
+| minDate | Minimum selectable time (timestamp in milliseconds) | `number` | 10 years in the past |
+| minHour | Minimum selectable hour, only effective when mode=time | `number` | 0 |
+| maxHour | Maximum selectable hour, only effective when mode=time | `number` | 23 |
+| minMinute | Minimum selectable minute, only effective when mode=time | `number` | 0 |
+| maxMinute | Maximum selectable minute, only effective when mode=time | `number` | 59 |
 | filter | Option filter function | `function` | null |
-| formatter | Option formatter function | `function` | null |
+| formatter | Option format function | `function` | null |
 | loading | Whether to show the loading state | `boolean` | false |
 | itemHeight | Height of a single option in each column | `number` | 44 |
 | cancelText | Text of the cancel button | `string` | Cancel |
@@ -255,43 +255,43 @@ Please run `npm i dayjs` first to install the dependency.
 | cancelColor | Color of the cancel button | `string` | #909193 |
 | confirmColor | Color of the confirm button | `string` | #3c9cff |
 | visibleItemCount | Number of visible options per column | `number` | 5 |
-| closeOnClickOverlay | Whether clicking the overlay is allowed to close the picker | `boolean` | false |
-| defaultIndex | Default index of each column | `array` | - |
+| closeOnClickOverlay | Whether to allow closing the picker by clicking the overlay | `boolean` | false |
+| defaultIndex | Default index for each column | `array` | - |
 | toolbarRightSlot | Whether to enable the right slot | `boolean` | false |
-| customStyle | Custom outer style of the input box | `CSSProperties` | - |
-| customClass | Custom outer class name | `string` | - |
+| customStyle | Custom external style of the input box | `CSSProperties` | - |
+| customClass | Custom external class name | `string` | - |
 
 ### Events
 
-| Event    | Description                                                    | Callback          |
+| Event Name | Description                           | Callback Parameters          |
 | ------- | ------------------------------ | ----------------- |
-| close   | Triggered when the picker is closed                            | -                 |
+| close   | Triggered when the picker is closed               | -                 |
 | confirm | Triggered when the confirm button is clicked, returns the currently selected value | `{ value, mode }` |
-| change  | Triggered when the selected value changes                      | `{ value, mode }` |
-| cancel  | Triggered when the cancel button is clicked                    | -                 |
+| change  | Triggered when the selected value changes             | `{ value, mode }` |
+| cancel  | Triggered when the cancel button is clicked                   | -                 |
 
 ### Slots
 
-| Slot | Description |
+| Slot Name | Description |
 | --- | --- |
-| toolbar-right | Content on the right side of the toolbar; customizes the right-side content. Due to WeChat Mini Program limitations, `toolbarRightSlot="true"` must also be set for it to take effect |
+| toolbar-right | Toolbar right-side content for customization; due to WeChat Mini Program limitations, `toolbarRightSlot="true"` must also be set for it to take effect |
 | toolbar-bottom | Custom area below the input box |
 
 ### Methods
 
-| Method       | Description                                                 |
+| Method Name       | Description                                                 |
 | ------------ | ---------------------------------------------------- |
-| setFormatter | Internal method exposed for WeChat Mini Program compatibility, used to set the formatter function |
+| setFormatter | Internal method exposed for WeChat Mini Program compatibility, used to set the formatting function |
 
 ### Typings
 
-::: details Type Description
+::: details Type Definitions
 
 ```ts
 type IParam = {
-    /** 值 */
+    /** Value */
     value: string | number;
-    /** 时间模型 */
+    /** Time mode */
     mode: HyApp.DateModeEnum;
 };
 ```
@@ -300,10 +300,10 @@ type IParam = {
 
 ### CSS Variables
 
-| Variable | Description | Default |
-| --- | --- | --- |
-| `--hy-datetime-picker-radius` | Border radius | `4px` |
-| `--hy-datetime-picker-border` | Border | `1px solid #eee` |
-| `--hy-datetime-picker-padding` | Padding | `0 10px` |
+| Variable Name                         | Description   | Default Value           |
+| ------------------------------ | ------ | ---------------- |
+| `--hy-datetime-picker-radius`  | Border radius   | `4px`            |
+| `--hy-datetime-picker-border`  | Border   | `1px solid #eee` |
+| `--hy-datetime-picker-padding` | Padding | `0 10px`         |
 
 <demo-model url="pages-design/dateTimePicker/dateTimePicker"></demo-model>

@@ -1,12 +1,12 @@
 # Index-Bar Component
 
-> An index bar component used to quickly locate list content. It supports both tap and slide interactions, and is compatible with mini-program and App platforms.
+> An index bar component for quickly locating list content, supporting both tap and swipe interactions, and compatible with Mini Program and App platforms.
 
 ## :pushpin: Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ---------- | ------------ |
-| ✔        | ✔   | ✔          | ✔            |
+| -------- | --- | ------------------- | ------------------- |
+| ✔        | ✔   | ✔                   | ✔                   |
 
 ## :japanese_castle: Basic Usage Example
 
@@ -37,8 +37,8 @@
 
     // Contact data
     const contactList = ref([
-        { index: 'A', list: [{ name: 'A Jie' }, { name: 'A Ming' }] },
-        { index: 'B', list: [{ name: 'Bei Bei' }, { name: 'Bao Bao' }] },
+        { index: 'A', list: [{ name: '阿杰' }, { name: '阿明' }] },
+        { index: 'B', list: [{ name: '贝贝' }, { name: '宝宝' }] },
         // More data...
     ]);
 
@@ -94,13 +94,13 @@
 </style>
 ```
 
-### Hiding the Toast
+### Hide the Toast Prompt
 
 ```html
 <hy-index-bar v-model="activeIndex" :index-list="indexList" :show-toast="false" />
 ```
 
-### Custom Style
+### Custom Styling
 
 ```html
 <hy-index-bar
@@ -186,55 +186,55 @@ const instance = getCurrentInstance();
 const position = ref<string>('right');
 const sectionRect = ref<UniNamespace.NodeInfo[]>([]);
 const scrollTop = ref<number>(0);
-// Whether to show the toast
+// Whether to show the toast prompt
 const showToast = ref<boolean>(true);
 // Currently active index
 const currentActiveIndex = ref<string>('');
 const isScroll = ref<boolean>(true);
 // Mock city data
 const cityData = reactive({
-    A: ['Anqing', 'Anyang', 'Anshan', 'Anshun', 'Ankang', 'Aksu', 'Altay'],
+    A: ['安庆', '安阳', '鞍山', '安顺', '安康', '阿克苏', '阿勒泰'],
     B: [
-        'Beijing',
-        'Shanghai',
-        'Guangzhou',
-        'Shenzhen',
-        'Chongqing',
-        'Chengdu',
-        'Hangzhou',
-        'Wuhan',
-        "Xi'an",
-        'Suzhou',
-        'Tianjin',
-        'Nanjing',
-        'Changsha',
-        'Zhengzhou',
-        'Dongguan',
-        'Qingdao',
-        'Shenyang',
-        'Ningbo',
-        'Kunming',
+        '北京',
+        '上海',
+        '广州',
+        '深圳',
+        '重庆',
+        '成都',
+        '杭州',
+        '武汉',
+        '西安',
+        '苏州',
+        '天津',
+        '南京',
+        '长沙',
+        '郑州',
+        '东莞',
+        '青岛',
+        '沈阳',
+        '宁波',
+        '昆明',
     ],
-    C: ['Changchun', 'Changzhou', 'Changsha', 'Chengdu', 'Chongqing', 'Fuzhou', 'Changchun', 'Changsha'],
-    D: ['Dalian', 'Dongguan', 'Dezhou', 'Datong', 'Daqing', 'Dali'],
-    E: ['Ezhou', 'Enshi', 'Ezhou'],
-    F: ['Fuzhou', 'Foshan', 'Fushun', 'Fuxin', 'Fuyang', 'Fuzhou'],
-    G: ['Guangzhou', 'Guiyang', 'Guilin', 'Ganzhou', 'Guangyuan', "Guang'an"],
-    H: ['Hangzhou', 'Hefei', 'Harbin', 'Haikou', 'Hohhot', 'Huzhou', 'Handan', 'Hanzhong', 'Hengshui'],
-    J: ['Jinan', 'Changchun', 'Jilin', 'Jinzhou', 'Jingzhou', 'Jingmen', 'Jinjiang'],
-    K: ['Kunming', 'Kaifeng', 'Karamay', 'Kashgar'],
-    L: ['Lanzhou', 'Luoyang', 'Linyi', 'Liaocheng', 'Longyan', 'Lijiang'],
-    M: ['Mianyang', "Ma'anshan", 'Maoming', 'Meizhou', 'Meishan'],
-    N: ['Nanjing', 'Nanchang', 'Nanning', 'Nantong', 'Ningbo', 'Nanyang', 'Nanchong'],
-    P: ['Pingdingshan', 'Panjin', 'Panzhihua', 'Pingxiang'],
-    Q: ['Qingdao', 'Quanzhou', 'Qujing', 'Qinhuangdao', 'Qiqihar', 'Qingyang'],
-    R: ['Rizhao', 'Shigatse', 'Rongchang'],
-    S: ['Shenzhen', 'Suzhou', 'Shenyang', 'Shijiazhuang', 'Shaoxing', 'Xiamen', 'Shangqiu', 'Shangrao', 'Shiyan'],
-    T: ['Tianjin', 'Taiyuan', 'Tangshan', 'Taizhou', 'Taizhou', 'Tongliao', 'Turpan'],
-    W: ['Wuhan', "Xi'an", 'Wenzhou', 'Wuxi', 'Weifang', 'Urumqi', 'Weihai', 'Weinan'],
-    X: ["Xi'an", 'Xiamen', 'Xuzhou', 'Xinxiang', 'Xinyang', 'Xiangyang', 'Xining'],
-    Y: ['Yantai', 'Yangzhou', 'Yichang', 'Yueyang', "Yan'an", 'Yinchuan', 'Yuncheng'],
-    Z: ['Zhengzhou', 'Zhuzhou', 'Zhuhai', 'Zhongshan', 'Zhanjiang', 'Zhaoqing', 'Zhangjiakou', 'Zaozhuang'],
+    C: ['长春', '常州', '长沙', '成都', '重庆', '福州', '长春', '长沙'],
+    D: ['大连', '东莞', '德州', '大同', '大庆', '大理'],
+    E: ['鄂州', '恩施', '鄂州'],
+    F: ['福州', '佛山', '抚顺', '阜新', '阜阳', '抚州'],
+    G: ['广州', '贵阳', '桂林', '赣州', '广元', '广安'],
+    H: ['杭州', '合肥', '哈尔滨', '海口', '呼和浩特', '湖州', '邯郸', '汉中', '衡水'],
+    J: ['济南', '长春', '吉林', '锦州', '荆州', '荆门', '晋江'],
+    K: ['昆明', '开封', '克拉玛依', '喀什'],
+    L: ['兰州', '洛阳', '临沂', '聊城', '龙岩', '丽江'],
+    M: ['绵阳', '马鞍山', '茂名', '梅州', '眉山'],
+    N: ['南京', '南昌', '南宁', '南通', '宁波', '南阳', '南充'],
+    P: ['平顶山', '盘锦', '攀枝花', '萍乡'],
+    Q: ['青岛', '泉州', '曲靖', '秦皇岛', '齐齐哈尔', '庆阳'],
+    R: ['日照', '日喀则', '荣昌'],
+    S: ['深圳', '苏州', '沈阳', '石家庄', '绍兴', '厦门', '商丘', '上饶', '十堰'],
+    T: ['天津', '太原', '唐山', '泰州', '台州', '通辽', '吐鲁番'],
+    W: ['武汉', '西安', '温州', '无锡', '潍坊', '乌鲁木齐', '威海', '渭南'],
+    X: ['西安', '厦门', '徐州', '新乡', '信阳', '襄阳', '西宁'],
+    Y: ['烟台', '扬州', '宜昌', '岳阳', '延安', '银川', '运城'],
+    Z: ['郑州', '株洲', '珠海', '中山', '湛江', '肇庆', '张家口', '枣庄'],
 });
 
 // Convert to index list format
@@ -276,7 +276,7 @@ const handleIndexClick = (index: string, event: Event) => {
     scrollToSection(index);
 };
 
-// Handle index slide event
+// Handle index scroll event
 const handleIndexScroll = (index: string) => {
     scrollToSection(index);
 };
@@ -328,35 +328,35 @@ const scrollToSection = async (i: string) => {
 | Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
 | v-model | Currently active index value | `string` | - |
-| indexList | Index list data, supports string arrays or object arrays | `string`\|`number`\|`IIndexItem[]` | - |
-| position | Index bar position, optional values: 'left', 'right' | `left`\|`right` | right |
+| indexList | Index list data; supports string arrays or object arrays | `string`\|`number`\|`IIndexItem[]` | - |
+| position | Index bar position; optional values: 'left', 'right' | `left`\|`right` | right |
 | showToast | Whether to show the index letter toast | `boolean` | true |
 | indexColor | Index item color | `string` | - |
-| activeIndexColor | Color of the active index item | `string` | - |
+| activeIndexColor | Color of the index item in active state | `string` | - |
 | indexBgColor | Index item background color | `string` | transparent |
-| activeIndexBgColor | Background color of the active index item | `string` | - |
-| indexSize | Index item size, numbers use px by default | `number`\|`string` | 12 |
-| height | Index bar height, numbers use px by default | `number`\|`string` | 100% |
-| width | Index bar width, numbers use px by default | number/string | 20 |
+| activeIndexBgColor | Background color of the index item in active state | `string` | - |
+| indexSize | Index item size; number values default to px | `number`\|`string` | 12 |
+| height | Index bar height; number values default to px | `number`\|`string` | 100% |
+| width | Index bar width; number values default to px | number/string | 20 |
 | customStyle | Custom external styles to apply | `CSSProperties` | - |
 | customClass | Custom external class name | `string` | - |
 
 ### Events
 
-| Event | Description | Callback Parameters |
+| Event Name | Description | Callback Parameters |
 | ------ | ---------------- | ----------------------------------------------------------- |
 | click  | Triggered when an index item is clicked | index: string - the clicked index value<br>event: Event - the event object |
-| scroll | Triggered when sliding the index bar | index: string - the index value currently slid to |
+| scroll | Triggered when the index bar is swiped | index: string - the index value currently swiped to |
 
 ### CSS Variables
 
-| Variable | Description | Default |
-| --- | --- | --- |
-| `--hy-index-bar-z-index` | Z-index level | `999` |
-| `--hy-index-bar-toast-size` | Toast bubble size | `50px` |
-| `--hy-index-bar-index-color` | Index text color | Follows `--hy-text-color--3` |
-| `--hy-index-bar-index-radius` | Index item border radius | Follows `--hy-radius-sm` (8rpx) |
-| `--hy-index-bar-toast-color` | Toast bubble text color | `#ffffff` |
+| Variable Name                   | Description | Default |
+| -------------------------------- | ---------------- | --------------------------------- |
+| `--hy-index-bar-z-index`         | Stacking level | `999`                             |
+| `--hy-index-bar-toast-size`      | Toast bubble size | `50px`                            |
+| `--hy-index-bar-index-color`     | Index text color | Follows `--hy-text-color--3`      |
+| `--hy-index-bar-index-radius`    | Index item border radius | Follows `--hy-radius-sm` (8rpx)   |
+| `--hy-index-bar-toast-color`     | Toast bubble text color | `#ffffff`                         |
 | `--hy-index-bar-toast-font-size` | Toast bubble font size | Follows `--hy-font-size-lg` (36rpx) |
 
 <demo-model url="pages-design/indexBar/indexBar"></demo-model>

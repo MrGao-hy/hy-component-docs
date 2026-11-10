@@ -1,3 +1,5 @@
+## :bulb: Issue 1: In mini-programs, the component's custom-class does not take effect
+
 ::: tip Cause
 
 The `scoped` styles of Vue Single File Components conflict with the mini-program component style isolation mechanism, preventing external style classes from penetrating into the component's internals.
@@ -11,11 +13,11 @@ In uni-app, use the deep selector `:deep()` to force penetration through the dou
 ```html
 <template>
     <!-- Reference the component and pass in custom-class -->
-    <hy-button custom-class="my-button">Confirm Submission</hy-button>
+    <hy-button custom-class="my-button">Confirm</hy-button>
 </template>
 
 <style lang="scss" scoped>
-    /* ✅ Correct: Use :deep() to wrap the custom-class class name */
+    /* ✅ Correct: Wrap the custom-class name with :deep() */
     :deep(.my-button) {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         border-radius: 20rpx;
@@ -29,9 +31,9 @@ In uni-app, use the deep selector `:deep()` to force penetration through the dou
 </style>
 ```
 
-### :two: Customizing Component Library Styles Within the Current Component
+### :two: Customizing component library styles within the current component
 
-> When using `Hy components` inside custom components, you need to enable the `styleIsolation: 'shared'` option
+> When using `Hy components` inside a custom component, you need to enable the `styleIsolation: 'shared'` option
 
 **For `Vue 3.2` and below, you can enable the `styleIsolation: 'shared'` option with the following configuration:**
 
@@ -58,7 +60,7 @@ In uni-app, use the deep selector `:deep()` to force penetration through the dou
 </script>
 ```
 
-## :bulb: Issue 3: If the following warning appears when running or compiling the project:
+## :bulb: Issue 2: If the following warning appears when running or compiling the project:
 
 ```shell
 Deprecation Warning [legacy-js-api]:
@@ -84,13 +86,13 @@ export default defineConfig({
 });
 ```
 
-## 💡 Issue 4: Autocomplete is not available for hy-app theme variables in editors such as VS Code, Trae, and Cursor
+## :bulb: Issue 3: In editors such as VS Code, Trae, and Cursor, hy-app theme variables do not get autocompletion
 
-This is because editors cannot recognize Sass variables from node_modules by default. Please install the `Some Sass` extension first. Once installed, reopen the project, and you will get features such as autocomplete and hover hints for hy-app theme variables.
+This is because editors cannot recognize Sass variables from node_modules by default. Please install the `Some Sass` extension first. After installation, reopen the project, and you will get autocompletion, hover hints, and other features for hy-app theme variables.
 
-## Issue 5: When using hy-button in the WeChat Mini Program, tapping the button triggers event bubbling
+## :bulb: Issue 4: When using hy-button in a WeChat mini-program, clicking the button triggers event bubbling
 
-You can use `tap.stop` to prevent click event bubbling:
+You can use `tap.stop` to stop the click event from bubbling:
 
 ```html
 <hy-button text="Button" @tap.stop="click1($event)"></hy-button>
