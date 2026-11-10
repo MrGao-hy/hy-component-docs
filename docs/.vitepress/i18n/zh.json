@@ -265,7 +265,8 @@
                 "items": [
                     { "text": "前端软件集合", "link": "/download/web" },
                     { "text": "服务软件集合", "link": "/download/service" },
-                    { "text": "后端软件集合", "link": "/download/java" }
+                    { "text": "后端软件集合", "link": "/download/java" },
+                    { "text": "AI工具集合", "link": "/download/ai" }
                 ]
             }
         ]

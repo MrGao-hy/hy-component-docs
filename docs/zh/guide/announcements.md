@@ -1,3 +1,5 @@
+## :bulb: 问题一：在小程序中，组件自定义custom-class不生效
+
 ::: tip 原因
 
 Vue 单文件组件的 `scoped` 样式与小程序组件样式隔离机制冲突，导致外部样式类无法穿透到组件内部。
@@ -58,7 +60,7 @@ Vue 单文件组件的 `scoped` 样式与小程序组件样式隔离机制冲突
 </script>
 ```
 
-## :bulb: 问题三：如果在运行或编译项目时出现如下警告：
+## :bulb: 问题二：如果在运行或编译项目时出现如下警告：
 
 ```shell
 Deprecation Warning [legacy-js-api]:
@@ -84,11 +86,11 @@ export default defineConfig({
 });
 ```
 
-## 💡 问题四：在 VS Code、Trae、Cursor 等编辑器中，使用 hy-app 主题变量时无法获得自动补全
+## :bulb: 问题三：在 VS Code、Trae、Cursor 等编辑器中，使用 hy-app 主题变量时无法获得自动补全
 
 这是因为编辑器默认无法识别node_modules的 Sass 变量。请先安装 `Some Sass` 插件，安装完成后重新打开项目，即可获得 hy-app 主题变量的自动补全、悬停提示等功能。
 
-## 问题五：在微信小程序使用hy-button时候，点击按钮会触发冒泡事件
+## :bulb: 问题四：在微信小程序使用hy-button时候，点击按钮会触发冒泡事件
 
 你可以使用`tap.stop`进行点击阻止冒泡事件
 

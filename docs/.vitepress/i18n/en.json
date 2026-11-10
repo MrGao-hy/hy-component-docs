@@ -399,6 +399,10 @@
                     {
                         "text": "Back-end Software Collection",
                         "link": "/en/download/java"
+                    },
+                    {
+                        "text": "AI Tools",
+                        "link": "/en/download/ai"
                     }
                 ]
             }

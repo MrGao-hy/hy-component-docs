@@ -7,6 +7,14 @@
 
 :::
 
+## :zap: 脚手架快速搭建 <Badge type="danger" text="推荐" />
+
+> 通过脚手架可快速初始化一个基于 **Vue3 + TypeScript + uni-app + Vite** 且已集成华玥组件库的项目模板，无需从零配置。
+
+```shell
+$ pnpm create uni@latest -t hy-starter <你的项目名称>
+```
+
 ## :rocket: 下载scss(没有的话需要安装)
 
 ::: tip 温馨提示

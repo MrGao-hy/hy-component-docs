@@ -17,6 +17,18 @@
 | [nvm](https://nvm.uihtm.com/doc/download-nvm.html#google_vignette) | 一个nodejs版本管理工具 |
 | [npm](https://nvm.uihtm.com/doc/download-nvm.html#google_vignette) | 一个nodejs版本管理工具 |
 | [pnpm](https://pnpm.io/) | 节省时间。节省磁盘空间。为您的单体仓库注入超强动力。 |
+| [Figma](https://www.figma.com/) | 主流在线 UI 设计与团队协作工具 |
+| [蓝湖](https://lanhuapp.com/) | 设计稿标注 / 切图 / 前后端协作平台 |
+| [即时设计](https://js.design/) | 国产在线设计工具，可实时协作 |
+| [PixPin](https://pixpin.cn/) | 截图 + 贴图 + 长截图 + OCR，Snipaste 增强替代 |
+| [Typora](https://typoraio.cn/) | 所见即所得 Markdown 编辑器 |
+| [PicGo](https://github.com/Molunerfinn/PicGo) | 开源图床上传工具，配合 Typora 食用 |
+| [Motrix](https://motrix.app/) | 开源全能下载工具，界面高颜值 |
+| [Charles](https://www.charlesproxy.com/) | HTTP / HTTPS 抓包代理（付费） |
+| [Fiddler](https://www.telerik.com/fiddler) | 免费抓包调试工具，Windows 首选 |
+| [Whistle](https://wproxy.org/whistle/) | 腾讯出品跨平台抓包代理，基于 Node |
+| [uTools](https://u.tools/) | 效率启动器，插件生态丰富 |
+| [Everything](https://www.voidtools.com/zh-cn/) | Windows 文件秒搜神器 |
 
 ## :hammer_and_wrench: 常用在线工具
 
@@ -35,6 +47,36 @@
 - [图片 ↔ Base64](https://www.67tool.com/images/convert/base64)
 - [百度 AI 去水印](https://image.baidu.com/search/index?tn=baiduimage&word=百度AI图片助手)
 - [cloudflare域名代理](https://dash.cloudflare.com/)
+- [Can I Use](https://caniuse.com/) – CSS / JS 特性浏览器兼容性查询
+- [CodePen](https://codepen.io/) – 前端在线代码游乐场与灵感社区
+- [CodeSandbox](https://codesandbox.io/) – 在线全栈 IDE，支持 Vue / React 全家桶
+- [StackBlitz](https://stackblitz.com/) – 浏览器里秒开 Node 环境
+- [JSFiddle](https://jsfiddle.net/) – 老牌在线代码演示工具
+- [TinyPNG](https://tinypng.com/) – PNG / JPG 智能压缩
+- [Squoosh](https://squoosh.app/) – Google 出品图片压缩 / 转格式
+- [Photopea](https://www.photopea.com/) – 在线版 PS，免安装打开 PSD
+- [iconfont](https://www.iconfont.cn/) – 阿里巴巴矢量图标库
+- [Iconify](https://iconify.design/) – 全网图标聚合搜索
+- [IconPark](https://iconpark.oceanengine.com/) – 字节跳动开源图标库
+- [Regex101](https://regex101.com/) – 正则在线测试与逐步解析
+- [any-rule](https://any86.github.io/any-rule/) – 常用正则大全
+- [Coolors](https://coolors.co/) – 配色方案生成器
+- [Color Hunt](https://colorhunt.co/) – 热门配色灵感库
+- [中国色](https://www.zhongguose.com/) – 中国传统色色谱
+- [CSS Gradient](https://cssgradient.io/) – CSS 渐变背景生成器
+- [Shadows](https://shadows.brumm.af/) – CSS 阴影生成器
+- [SVGOMG](https://jakearchibald.github.io/svgomg/) – SVG 在线压缩优化
+- [Flexbox Froggy](https://flexboxfroggy.com/#zh-cn) – 边玩游戏边学 Flex 布局
+- [BootCDN](https://www.bootcdn.net/) – 国内前端 CDN 加速
+- [jsDelivr](https://www.jsdelivr.com/) – 全球开源 CDN，支持 GitHub 直链
+- [unpkg](https://unpkg.com/) – npm 包 CDN 直链
+- [gitignore 在线生成](https://toptal.com/developers/gitignore) – 勾选技术栈一键生成 .gitignore
+- [Canva](https://www.canva.cn/) – 在线平面设计平台
+- [稿定设计](https://www.gaoding.com/) – 在线抠图 / 海报设计
+- [Vercel](https://vercel.com/) – 前端部署平台，主流框架零配置
+- [Netlify](https://www.netlify.com/) – 静态站托管 + Serverless
+- [Cloudflare Pages](https://pages.cloudflare.com/) – 全球边缘节点静态托管
+- [GitHub Pages](https://pages.github.com/) – 免费静态站托管
 
 ## :books: 官方文档
 
@@ -63,6 +105,24 @@
 | Pinia | [官方文档](https://pinia.vuejs.org) | Vue 3 官方状态管理库 |
 | ECharts | [官方文档](https://echarts.apache.org/zh/index.html) | 图形图标组件 |
 | Three.js | [官方文档](https://threejs.org) | WebGL 3D |
+| Tailwind CSS | [官方文档](https://tailwindcss.com/) | 原子化 CSS 框架 |
+| Element Plus | [官方文档](https://element-plus.org/zh-CN/) | Vue 3 桌面端组件库 |
+| Ant Design Vue | [官方文档](https://ant-design-vue.github.io/zh-cn/) | 蚂蚁企业级 Vue 组件库 |
+| Vant | [官方文档](https://vant-ui.github.io/vant/) | 有赞移动端组件库 |
+| uView UI | [官方文档](https://www.uviewui.com/) | uni-app 生态组件库 |
+| Vue Router | [官方文档](https://router.vuejs.org/zh/) | Vue 官方路由 |
+| Nuxt | [官方文档](https://nuxt.com/) | Vue 全栈 / SSR 框架 |
+| Next.js | [官方文档](https://nextjs.org/) | React 全栈框架 |
+| Taro | [官方文档](https://taro.jd.com/) | 京东多端开发框架，React 语法写小程序 |
+| Webpack | [中文文档](https://www.webpackjs.com/) | 经典模块打包器 |
+| Rspack | [官方文档](https://rspack.dev/zh/) | Rust 重写的 Webpack，快十倍 |
+| ESLint | [中文文档](https://zh-hans.eslint.org/) | JS / TS 代码规范检查 |
+| Prettier | [中文文档](https://prettier.nodejs.cn/) | 代码格式化工具 |
+| Axios | [中文文档](https://www.axios-http.cn/) | 最流行的 HTTP 请求库 |
+| Node.js | [官方文档](https://nodejs.org/zh-cn/docs) | JavaScript 运行时 |
+| GSAP | [官方文档](https://gsap.com/) | 高性能动画库 |
+| Swiper | [官方文档](https://www.swiper.com.cn/) | 触摸滑动轮播库 |
+| AntV | [官方文档](https://antv.antgroup.com/zh) | 蚂蚁数据可视化全家桶 |
 
 ## :jigsaw: 教程精选
 
@@ -70,5 +130,3 @@
 - [【vue+echarts】3D 中国地图省市区三级下钻](https://juejin.cn/post/7365831792428875813)
 - [Vue 3 + TS 使用 VueDocGen 自动生成组件文档](https://blog.csdn.net/billku/article/details/149056009)
 - [uni-app + Vite 项目中实现自动路由配置](https://blog.csdn.net/weixin_68340504/article/details/156941685?spm=1011.2415.3001.5331)
-
-## :rocket: uni-app 常用插件
