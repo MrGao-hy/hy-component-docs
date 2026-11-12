@@ -169,11 +169,12 @@
 | color | 标签字体颜色，默认为空字符串，即不处理 | `string` | - |
 | border | 是否显示边框 | `boolean` | true |
 | borderColor | 标签的边框颜色 | `string` | - |
-| closeColor | 关闭按钮图标的颜色 | `string` | - |
 | value | 点击时返回的索引值，用于区分例遍的数组哪个元素被点击了 | `string`\|`number` | - |
 | plainFill | 镂空时是否填充背景色 | `boolean` | false |
 | plain | 是否镂空 | `boolean` | false |
 | closable | 是否可关闭，设置为true，文字右边会出现一个关闭图标 | `boolean` | false |
+| closeColor | 关闭按钮图标的颜色 | `string` | - |
+| closeSize | 关闭按钮图标的尺寸 | `string`\|`number` | - |
 | show | 标签显示 | `boolean` | true |
 | icon | 图标，详见[图标Api](./icon#api) | `HyIconProps` | - |
 | customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
@@ -203,6 +204,9 @@
 | `--hy-tag-font-size-small` | small 字号（行高同步跟随） | 跟随 `--hy-font-size-sm`（24rpx） |
 | `--hy-tag-font-size-medium` | medium 字号（行高同步跟随） | 跟随 `--hy-font-size-base`（28rpx） |
 | `--hy-tag-font-size-large` | large 字号（行高同步跟随） | 跟随 `--hy-font-size-md`（32rpx） |
-| `--hy-tag-close-radius` | 关闭按钮圆角 | 跟随 `--hy-radius-semicircle`（100px） |
+| `--hy-tag-transition-ease` | 标准过渡曲线 | 跟随 `--hy-transition-ease` |
+| `--hy-tag-icon-margin` | 图标右边间距 | 跟随 `--hy-border-margin-padding-sm` |
+| `--hy-tag-close-margin` | 清除按钮左边间距 | 跟随 `--hy-border-margin-padding-sm` |
+| `--hy-tag-font-text-weight` | 文字字重 | 跟随 `--hy-font-weight-medium` |
 
 <demo-model url="pages-design/tag/tag"></demo-model>

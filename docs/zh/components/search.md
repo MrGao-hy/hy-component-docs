@@ -232,21 +232,26 @@
 
 ### CSS 变量
 
-| 变量名                                | 说明             | 默认值                              |
-| ------------------------------------- | ---------------- | ----------------------------------- |
-| `--hy-search-close-size`              | 清除按钮尺寸     | `20px`                              |
-| `--hy-search-placeholder-font-size`   | 占位符字号       | `25rpx`                             |
-| `--hy-search-placeholder-line-height` | 占位符行高       | `30rpx`                             |
-| `--hy-search-border-width`            | 边框宽度         | `1px`                               |
-| `--hy-search-action-width`            | 右侧操作区宽度   | `100rpx`                            |
-| `--hy-search-label-color`             | 左侧标签颜色     | 跟随 `--hy-text-color`              |
-| `--hy-search-label-font-size`         | 左侧标签字号     | 跟随 `--hy-font-size-base`（28rpx） |
-| `--hy-search-close-radius`            | 清除按钮圆角     | 跟随 `--hy-radius-circle`（50%）    |
-| `--hy-search-input-color`             | 输入文字颜色     | 跟随 `--hy-text-color`              |
-| `--hy-search-input-font-size`         | 输入文字字号     | 跟随 `--hy-font-size-base`（28rpx） |
-| `--hy-search-disabled-color`          | 禁用文字颜色     | 跟随 `--hy-text-color--disabled`    |
-| `--hy-search-placeholder-color`       | 占位符颜色       | 跟随 `--hy-text-color--placeholder` |
-| `--hy-search-action-color`            | 右侧操作文字颜色 | 跟随 `--hy-text-color`              |
-| `--hy-search-action-font-size`        | 右侧操作文字字号 | 跟随 `--hy-font-size-base`（28rpx） |
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-search-background` | 搜索框背景色 | 跟随 `--hy-background--track` |
+| `--hy-search-padding` | 搜索容器的padding间距 | 跟随 `--hy-border-margin-padding-lg`（30rpx） |
+| `--hy-search-placeholder-font-size` | 占位符字号 | `25rpx` |
+| `--hy-search-placeholder-line-height` | 占位符行高 | `30rpx` |
+| `--hy-search-border-width` | 边框宽度 | `1px` |
+| `--hy-search-action-width` | 右侧操作区宽度 | `100rpx` |
+| `--hy-search-label-color` | 左侧标签颜色 | 跟随 `--hy-text-color` |
+| `--hy-search-label-font-size` | 左侧标签字号 | 跟随 `--hy-font-size-base`（28rpx） |
+| `--hy-search-close-radius` | 清除按钮圆角 | 跟随 `--hy-radius-circle`（50%） |
+| `--hy-search-close-color` | 清除按钮背景颜色 | 跟随 `--hy-background--empty` |
+| `--hy-search-close-size` | 清除按钮尺寸 | `20px` |
+| `--hy-search-input-color` | 输入文字颜色 | 跟随 `--hy-text-color` |
+| `--hy-search-input-font-size` | 输入文字字号 | 跟随 `--hy-font-size-base`（28rpx） |
+| `--hy-search-input-margin` | 输入框两边间距 | 跟随 `--hy-border-margin-padding-sm`（10rpx） |
+| `--hy-search-disabled-color` | 禁用文字颜色 | 跟随 `--hy-text-color--disabled` |
+| `--hy-search-placeholder-color` | 占位符颜色 | 跟随 `--hy-text-color--placeholder` |
+| `--hy-search-action-color` | 右侧操作文字颜色 | 跟随 `--hy-text-color` |
+| `--hy-search-action-font-size` | 右侧操作文字字号 | 跟随 `--hy-font-size-base`（28rpx） |
+| `--hy-search-action-active-margin` | 右边按钮距离搜索间距 | 跟随 `--hy-border-margin-padding-sm`（10rpx） |
 
 <demo-model url="pages-design/search/search"></demo-model>

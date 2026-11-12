@@ -108,12 +108,9 @@
 | Tailwind CSS | [官方文档](https://tailwindcss.com/) | 原子化 CSS 框架 |
 | Element Plus | [官方文档](https://element-plus.org/zh-CN/) | Vue 3 桌面端组件库 |
 | Ant Design Vue | [官方文档](https://ant-design-vue.github.io/zh-cn/) | 蚂蚁企业级 Vue 组件库 |
-| Vant | [官方文档](https://vant-ui.github.io/vant/) | 有赞移动端组件库 |
-| uView UI | [官方文档](https://www.uviewui.com/) | uni-app 生态组件库 |
 | Vue Router | [官方文档](https://router.vuejs.org/zh/) | Vue 官方路由 |
 | Nuxt | [官方文档](https://nuxt.com/) | Vue 全栈 / SSR 框架 |
 | Next.js | [官方文档](https://nextjs.org/) | React 全栈框架 |
-| Taro | [官方文档](https://taro.jd.com/) | 京东多端开发框架，React 语法写小程序 |
 | Webpack | [中文文档](https://www.webpackjs.com/) | 经典模块打包器 |
 | Rspack | [官方文档](https://rspack.dev/zh/) | Rust 重写的 Webpack，快十倍 |
 | ESLint | [中文文档](https://zh-hans.eslint.org/) | JS / TS 代码规范检查 |

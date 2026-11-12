@@ -138,13 +138,14 @@
 
 ### CSS 变量
 
-| 变量名                        | 说明           | 默认值                              |
-| ----------------------------- | -------------- | ----------------------------------- |
-| `--hy-navbar-z-index`         | 层级           | `9999`                              |
-| `--hy-navbar-height`          | 高度           | `44px`                              |
-| `--hy-navbar-text-font-size`  | 左右文字字号   | `15px`                              |
-| `--hy-navbar-title-font-size` | 中间标题字号   | 跟随 `--hy-font-size-base`（28rpx） |
-| `--hy-navbar-sub-font-size`   | 中间副标题字号 | 跟随 `--hy-font-size-sm`（24rpx）   |
-| `--hy-navbar-sub-color`       | 中间副标题颜色 | 跟随 `--hy-text-color--grey`        |
+| 变量名                          | 说明           | 默认值                              |
+| ------------------------------- | -------------- | ----------------------------------- |
+| `--hy-navbar-z-index`           | 层级           | `9999`                              |
+| `--hy-navbar-height`            | 高度           | `44px`                              |
+| `--hy-navbar-text-font-size`    | 左右文字字号   | `15px`                              |
+| `--hy-navbar-title-font-size`   | 中间标题字号   | 跟随 `--hy-font-size-base`（28rpx） |
+| `--hy-navbar-sub-font-size`     | 中间副标题字号 | 跟随 `--hy-font-size-sm`（24rpx）   |
+| `--hy-navbar-sub-color`         | 中间副标题颜色 | 跟随 `--hy-text-color--grey`        |
+| `--hy-navbar-background--color` | 导航栏背景颜色 | 跟随 `--hy-background--container`   |
 
 <demo-model url="pages-design/navbar/navbar"></demo-model>

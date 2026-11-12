@@ -221,11 +221,15 @@ const value = ref(30);
 
 ### CSS 变量
 
-| 变量名                          | 说明         | 默认值                                 |
-| ------------------------------- | ------------ | -------------------------------------- |
-| `--hy-slider-range-font-size`   | 范围数字字号 | `12px`                                 |
-| `--hy-slider-button-size`       | 滑块尺寸     | `24px`                                 |
-| `--hy-slider-button-box-shadow` | 滑块阴影     | `0 1px 2px rgba(0, 0, 0, 0.5)`         |
-| `--hy-slider-track-radius`      | 轨道圆角     | 跟随 `--hy-radius-semicircle`（100px） |
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-slider-range-font-size` | 范围数字字号 | `12px` |
+| `--hy-slider-button-size` | 滑块尺寸 | `24px` |
+| `--hy-slider-button-box-shadow` | 滑块阴影 | `0 1px 2px rgba(0, 0, 0, 0.5)` |
+| `--hy-slider-track-radius` | 轨道圆角 | 跟随 `--hy-radius-semicircle`（100px） |
+| `--hy-slider-inner-padding` | 滑块内padding间距 | 跟随 `--hy-border-margin-padding-sm`（10rpx） |
+| `--hy-slider-base-background` | 滑块轨道背景色 | 跟随 `--hy-background--track` |
+| `--hy-slider-color` | 滑块主题色 | 跟随 `--hy-primary` |
+| `--hy-slider-button-color` | 滑块按钮颜色 | 跟随 `--hy-background--block` |
 
 <demo-model url="pages-design/slider/slider"></demo-model>

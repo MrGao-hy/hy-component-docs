@@ -228,5 +228,10 @@ const list = ref([
 | `--hy-swiper-indicator-bar-radius` | 线型指示器滑块圆角 | 跟随 `--hy-radius-semicircle`（100px） |
 | `--hy-swiper-indicator-bar-bg`     | 线型指示器滑块背景 | `#ffffff`                              |
 | `--hy-swiper-dot-radius`           | 点型指示器圆角     | 跟随 `--hy-radius-semicircle`（100px） |
+| `--hy-swiper-background`           | 轮播图背景色       | 跟随 `--hy-background`                 |
+| `--hy-swiper-title-margin-tb`      | 标题上下边距       | 跟随 `--hy-border-margin-padding-sm`   |
+| `--hy-swiper-title-margin-lr`      | 标题左右边距       | 跟随 `--hy-border-margin-padding-lg`   |
+| `--hy-swiper-indicator-bottom`     | 指示器下边距       | 跟随 `--hy-border-margin-padding-sm`   |
+| `--hy-swiper-dot-margin`           | 点型指示器间距     | 跟随 `--hy-border-margin-padding-sm`   |
 
 <demo-model url="pages-design/swiper/swiper"></demo-model>

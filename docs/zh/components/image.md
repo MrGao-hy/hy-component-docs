@@ -32,6 +32,21 @@
 </template>
 ```
 
+::: tip 注意当`mode="widthFix"`时，图片高度会随宽度自适应，此时`height`属性无法控制高度。如需固定高度，请通过`customStyle`设置：
+
+```html
+<template>
+    <hy-image
+        src="https://q9.itc.cn/q_70/images03/20250211/6ee1b8e0f4704083ba715986c8c3795f.jpeg"
+        mode="widthFix"
+        width="200"
+        :custom-style="{ height: '372rpx' }"
+    ></hy-image>
+</template>
+```
+
+:::
+
 ### 设置圆角
 
 - 通过配置`shape`设置图片形状
