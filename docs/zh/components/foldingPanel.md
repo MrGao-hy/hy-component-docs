@@ -103,8 +103,8 @@
 | contentHeight | 内容区域最大高度，数值默认单位px | `string`\|`numner` | 150    |
 | disabled      | 是否禁用当个面板                 | `boolean`          | false  |
 | defaultOpen   | 默认是否展开                     | `boolean`          | false  |
-| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
-| customClass | 自定义外部类名 | `string` | - |
+| customStyle   | 定义需要用到的外部样式           | `CSSProperties`    | -      |
+| customClass   | 自定义外部类名                   | `string`           | -      |
 
 ### Events
 

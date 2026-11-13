@@ -355,21 +355,21 @@ const tableData = reactive([
 
 ### Table Props
 
-| 参数       | 说明                                             | 类型               | 默认值 |
-| ---------- | ------------------------------------------------ | ------------------ | ------ |
-| data       | 表格数据源                                       | `Array`            | -      |
-| columns    | 列配置信息                                       | `ITableColumn[]`   | -      |
-| height     | 表格高度，支持数字或带单位字符串，数值默认单位px | `string`\|`number` | 400    |
-| rowHeight  | 行高，支持数字或带单位字符串，数值默认单位px     | `string`\|`number` | 50     |
-| stripe     | 是否显示斑马纹                                   | `boolean`          | false  |
-| border     | 是否显示横向边框                                 | `boolean`          | true   |
-| loading    | 是否显示加载状态                                 | `boolean`          | false  |
-| rowKey     | 行数据的唯一键名                                 | `string`           | id     |
-| showHeader | 是否显示表头                                     | `boolean`          | true   |
-| emptyUrl   | 空状态的图片URL                                  | `string`           | -      |
-| emptyDes   | 空状态的描述文本                                 | `string`           | -      |
-| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
-| customClass | 自定义外部类名 | `string` | - |
+| 参数        | 说明                                             | 类型               | 默认值 |
+| ----------- | ------------------------------------------------ | ------------------ | ------ |
+| data        | 表格数据源                                       | `Array`            | -      |
+| columns     | 列配置信息                                       | `ITableColumn[]`   | -      |
+| height      | 表格高度，支持数字或带单位字符串，数值默认单位px | `string`\|`number` | 400    |
+| rowHeight   | 行高，支持数字或带单位字符串，数值默认单位px     | `string`\|`number` | 50     |
+| stripe      | 是否显示斑马纹                                   | `boolean`          | false  |
+| border      | 是否显示横向边框                                 | `boolean`          | true   |
+| loading     | 是否显示加载状态                                 | `boolean`          | false  |
+| rowKey      | 行数据的唯一键名                                 | `string`           | id     |
+| showHeader  | 是否显示表头                                     | `boolean`          | true   |
+| emptyUrl    | 空状态的图片URL                                  | `string`           | -      |
+| emptyDes    | 空状态的描述文本                                 | `string`           | -      |
+| customStyle | 定义需要用到的外部样式                           | `CSSProperties`    | -      |
+| customClass | 自定义外部类名                                   | `string`           | -      |
 
 ### Events
 

@@ -233,14 +233,14 @@
 
 ### CheckboxItem Props
 
-| 参数     | 说明          | 类型      | 默认值 |
-| -------- | ------------- | --------- | ------ |
-| value    | 绑定值        | `string`  | -      |
-| label    | label提示文字 | `string`  | -      |
-| checked  | 是否默认选中  | `boolean` | false  |
-| disabled | 是否禁用      | `boolean` | false  |
-| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
-| customClass | 自定义外部类名 | `string` | - |
+| 参数        | 说明                   | 类型            | 默认值 |
+| ----------- | ---------------------- | --------------- | ------ |
+| value       | 绑定值                 | `string`        | -      |
+| label       | label提示文字          | `string`        | -      |
+| checked     | 是否默认选中           | `boolean`       | false  |
+| disabled    | 是否禁用               | `boolean`       | false  |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | -      |
+| customClass | 自定义外部类名         | `string`        | -      |
 
 #### columns
 

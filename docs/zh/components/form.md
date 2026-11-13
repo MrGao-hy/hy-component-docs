@@ -660,27 +660,27 @@ const registerFormRules = reactive({
 
 ### hy-form Props
 
-| 参数          | 说明         | 类型                             | 默认值   |
-| ------------- | ------------ | -------------------------------- | -------- |
-| model         | 表单数据对象 | `Record<string, any>`            | -        |
-| rules         | 验证规则     | `FormItemRule`\|`FormItemRule[]` | -        |
-| border        | 表单底部边框 | `boolean`                        | false    |
-| labelWidth    | 标签宽度     | `string` \| `number`             | `'auto'` |
-| labelPosition | 标签位置     | `left` \| `top`                  | `'left'` |
-| labelAlign    | 标签对齐方式 | `left` \| `center` \| `right`    | `'left'` |
-| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
-| customClass | 自定义外部类名 | `string` | - |
+| 参数          | 说明                   | 类型                             | 默认值   |
+| ------------- | ---------------------- | -------------------------------- | -------- |
+| model         | 表单数据对象           | `Record<string, any>`            | -        |
+| rules         | 验证规则               | `FormItemRule`\|`FormItemRule[]` | -        |
+| border        | 表单底部边框           | `boolean`                        | false    |
+| labelWidth    | 标签宽度               | `string` \| `number`             | `'auto'` |
+| labelPosition | 标签位置               | `left` \| `top`                  | `'left'` |
+| labelAlign    | 标签对齐方式           | `left` \| `center` \| `right`    | `'left'` |
+| customStyle   | 定义需要用到的外部样式 | `CSSProperties`                  | -        |
+| customClass   | 自定义外部类名         | `string`                         | -        |
 
 ### hy-form-item Props
 
-| 参数     | 说明       | 类型      | 默认值  |
-| -------- | ---------- | --------- | ------- |
-| label    | 标签文本   | `string`  | -       |
-| prop     | 表单字段名 | `string`  | -       |
-| required | 是否必填   | `boolean` | `false` |
-| rules    | 验证规则   | `any`     | `{}`    |
-| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
-| customClass | 自定义外部类名 | `string` | - |
+| 参数        | 说明                   | 类型            | 默认值  |
+| ----------- | ---------------------- | --------------- | ------- |
+| label       | 标签文本               | `string`        | -       |
+| prop        | 表单字段名             | `string`        | -       |
+| required    | 是否必填               | `boolean`       | `false` |
+| rules       | 验证规则               | `any`           | `{}`    |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | -       |
+| customClass | 自定义外部类名         | `string`        | -       |
 
 #### FormItemRule
 
