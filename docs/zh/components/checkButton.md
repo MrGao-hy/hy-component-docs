@@ -181,6 +181,8 @@ const columns = reactive([
 
 ## API
 
+### CheckButton Props
+
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | v-model | 选中得值[^1] | `string`\|`number`\| `(string\|number)[]` | - |
@@ -193,8 +195,10 @@ const columns = reactive([
 | type | 标签类型[^3] | `error`\|`warning`\|`success` \|`primary`\|`info` | primary |
 | size | 标签的大小[^4] | `small`\|`medium`\|`large` | medium |
 | shape | tag的形状[^5] | `circle`\|`square` | square |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
-## columns
+#### columns
 
 | 参数     | 说明         | 类型      | 默认值 |
 | -------- | ------------ | --------- | ------ |
@@ -203,7 +207,7 @@ const columns = reactive([
 | checked  | 是否选中     | `boolean` | -      |
 | disabled | 是否禁用     | `boolean` | -      |
 
-## API
+#### fieldNames
 
 | 参数    | 说明                  | 类型     | 默认值  |
 | ------- | --------------------- | -------- | ------- |
@@ -211,13 +215,13 @@ const columns = reactive([
 | value   | 自定义columns的值键   | `string` | value   |
 | checked | 自定义columns的选中键 | `string` | checked |
 
-## Events
+### Events
 
 | 事件名 | 说明     | 回调参数 |
 | ------ | -------- | -------- |
 | change | 选择触发 | -        |
 
-## Slots
+### Slots
 
 | 插槽名 | 说明 | 接收值 |
 | ------ | ---- | ------ |

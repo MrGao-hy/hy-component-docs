@@ -311,6 +311,8 @@ onReady(() => {
 | weekText | 星期文案，可用于多语言。 | `string[]` | ['日', '一', '二', '三', '四', '五', '六'] |
 | forbidDays | 单选与多选禁止选中的日期列表，mode!=range时有效。 | `Date[]` | [] |
 | forbidDaysToast | 单选与多选禁止选中的日期选择时提示 | `string` | 该日期已禁用 |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### Methods
 

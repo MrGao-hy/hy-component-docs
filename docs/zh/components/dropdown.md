@@ -204,7 +204,8 @@
 | closeOnClickMask | 点击遮罩层关闭弹窗 | `boolean` | true |
 | menuIcon | 标题菜单右侧的图标名称 | `string` | ARROW_DOWN_FILL |
 | menuIconSize | 标题菜单右侧图标的大小，数值默认单位px | `string`\|`number` | 14 |
-| customStyle | 自定义需要用到的外部样式 | `CSSProperties` | - |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### DropdownItem Props
 
@@ -214,6 +215,8 @@
 | title    | 菜单项标题              | `string`           | -      |
 | menus    | 选项数据                | `array`            | []     |
 | disabled | 是否禁用点击            | `boolean`          | false  |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### Events
 

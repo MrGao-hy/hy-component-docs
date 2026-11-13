@@ -150,6 +150,8 @@
 | showLoading | 是否显示加载状态 | `boolean` | true |
 | loadingText | 加载中提示语 | `string` | 二维码生成中 |
 | allowPreview | 是否允许预览图片 | `boolean` | false |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### Events
 

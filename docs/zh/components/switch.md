@@ -199,7 +199,8 @@ const change = (e) => {
 | icon | 图标api集合，详见[图标Api](./icon#api) | `HyIconProps` | - |
 | asyncChange | 是否开启异步变更，开启后需要手动控制输入值 | `boolean` | false |
 | space | 圆点与外边框的距离 | `string`\|`number` | 0 |
-| customStyle | 自定义样式 | `CSSProperties` | - |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### Events
 

@@ -426,7 +426,7 @@ const onClick = (temp: any) => {
 | zIndex | 菜单层级 | `number` | 100 |
 | round | 圆角值 | `string` \| `number` | 20 |
 | safeAreaInsetBottom | 是否开启底部安全区适配 | `boolean` | true |
-| customStyle | 自定义外部样式 | `CSSProperties` | - |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
 | customClass | 自定义外部类名 | `string` | - |
 | customHeaderClass | 自定义标题类名 | `string` | - |
 

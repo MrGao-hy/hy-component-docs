@@ -668,6 +668,8 @@ const registerFormRules = reactive({
 | labelWidth    | 标签宽度     | `string` \| `number`             | `'auto'` |
 | labelPosition | 标签位置     | `left` \| `top`                  | `'left'` |
 | labelAlign    | 标签对齐方式 | `left` \| `center` \| `right`    | `'left'` |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### hy-form-item Props
 
@@ -677,8 +679,10 @@ const registerFormRules = reactive({
 | prop     | 表单字段名 | `string`  | -       |
 | required | 是否必填   | `boolean` | `false` |
 | rules    | 验证规则   | `any`     | `{}`    |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
-### FormItemRule
+#### FormItemRule
 
 > rules类型`{[key: string]: FormItemRule | FormItemRule[]}`
 

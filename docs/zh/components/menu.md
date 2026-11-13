@@ -521,7 +521,7 @@ export const data = [
 | default | 自定义title | -      |
 | icon    | 图标自定义  | -      |
 
-## Typings
+### Typings
 
 ::: details 显示类型声明
 

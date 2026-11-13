@@ -312,6 +312,8 @@ export default [
 | v-model | 接收列表值                           | `array`  | -      |
 | addTime | 单条数据添加到队列的时间间隔，单位ms | `number` | 200    |
 | idKey   | 数据的唯一值的键名                   | `string` | id     |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### Methods
 

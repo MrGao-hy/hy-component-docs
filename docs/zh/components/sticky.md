@@ -159,6 +159,8 @@
 | zIndex | 吸顶时的层级 | `string`\|`number` | 99 |
 | enable | 是否启用吸顶功能 | `boolean` | true |
 | scrollSelector | 在 `scroll-view` 内使用时，指定 `scroll-view` 的类名（不含点） | `string` | - |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### Events
 

@@ -350,6 +350,8 @@
 | keyField | 每一项的唯一标识key | `string` | id |
 | load | 加载状态 | `loadMore` \| `loading` \| `noMore` | loadMore |
 | showDivider | 是否显示底部加载状态提示 | `boolean` | true |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### Events
 

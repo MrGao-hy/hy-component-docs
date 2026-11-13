@@ -173,6 +173,7 @@ const value = ref('apply');
 | labelDisabled | 是否禁止点击提示语选中复选框 | `boolean` | false |
 | placement | 布局方式[^3] | `row`\|`column` | row |
 | customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### Events
 

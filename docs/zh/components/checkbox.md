@@ -208,6 +208,7 @@
 | labelDisabled | 是否禁止点击提示语选中复选框 | `boolean` | false |
 | placement | 布局方式[^3] | `row`\|`column` | row |
 | customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### CheckboxGroup Props
 
@@ -228,6 +229,7 @@
 | labelDisabled | 是否禁止点击提示语选中复选框 | `boolean` | false |
 | placement | 布局方式[^3] | `row`\|`column` | row |
 | customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### CheckboxItem Props
 
@@ -237,8 +239,10 @@
 | label    | label提示文字 | `string`  | -      |
 | checked  | 是否默认选中  | `boolean` | false  |
 | disabled | 是否禁用      | `boolean` | false  |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
-## columns
+#### columns
 
 | 参数     | 说明         | 类型      | 默认值 |
 | -------- | ------------ | --------- | ------ |
@@ -247,7 +251,7 @@
 | checked  | 是否选中     | `boolean` | -      |
 | disabled | 是否禁用     | `boolean` | -      |
 
-## API
+### fieldNames
 
 | 参数    | 说明                  | 类型     | 默认值  |
 | ------- | --------------------- | -------- | ------- |
@@ -261,7 +265,14 @@
 | --- | --- | --- |
 | change | 任一个checkbox状态发生变化时触发，回调为一个对象 | detail = array( [元素为被选中的checkbox的value] ) |
 
-## CheckboxItem Slots
+### Checkbox Slots
+
+| 插槽名 | 说明              | 传值                  |
+| ------ | ----------------- | --------------------- |
+| icon   | 自定义`icon`内容  | iconColor \| iconSize |
+| label  | 自定义`label`内容 | record                |
+
+### CheckboxItem Slots
 
 | 插槽名 | 说明              | 传值                  |
 | ------ | ----------------- | --------------------- |

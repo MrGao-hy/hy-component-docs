@@ -171,5 +171,7 @@
 | zIndex | 自定义层级 | `number` | 10086 |
 | opacity | 自定义透明度，取值 0~1 | `number` | 0.5 |
 | isAntiTheft`v0.6.4` | 防删除、防修改样式功能(在h5有效) | `boolean` | false |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 <demo-model url="pages-design/watermark/watermark"></demo-model>

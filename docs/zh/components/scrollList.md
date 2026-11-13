@@ -170,6 +170,8 @@ const showMore = () => {
 | indicatorColor       | 指示器非激活颜色                              | `string`        | -      |
 | indicatorActiveColor | 指示器滑块颜色                                | `string`        | -      |
 | indicatorStyle       | 指示器样式，可通过bottom，left，right进行定位 | `CSSProperties` | -      |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### Events
 

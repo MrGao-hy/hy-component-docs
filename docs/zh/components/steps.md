@@ -373,6 +373,8 @@
 | inactiveIcon  | 未激活状态图标                  | `string`             | -      |
 | dot           | 是否显示点状样式                | `boolean`            | false  |
 | iconSize      | 图标大小，数值默认单位px        | `string` \| `number` | 17     |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### List Item 结构
 

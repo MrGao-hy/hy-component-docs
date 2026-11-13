@@ -78,7 +78,8 @@
 | closeOnClickOverlay | 是否允许点击遮罩关闭选择器 | `boolean` | false |
 | defaultIndex | 各列的默认索引 | `array` | - |
 | toolbarRightSlot | 是否右边插槽 | `boolean` | false |
-| customStyle | 自定义输入框外部样式 | `CSSProperties` | - |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### Events
 

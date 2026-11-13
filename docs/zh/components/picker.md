@@ -394,6 +394,8 @@
 | hasInput | 是否显示输入框 | `boolean` | false |
 | input | 输入框配置属性，hasInput为true时生效，详见[输入框Api](./input#api) | `HyInputProps` | {} |
 | toolbarRightSlot | 是否启用工具栏右侧插槽（需配合slot="toolbar-right"使用） | `boolean` | false |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### Events
 

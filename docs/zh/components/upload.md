@@ -376,9 +376,10 @@ const afterRead = (event: any) => {
 | height | 内部预览图片区域和选择图片按钮的区域高度，数值默认单位rpx | `string \| number` | 80 |
 | beforeRead | 读取前的处理函数 | `(file, detail) => void` | - |
 | afterRead | 读取后的处理函数 | `(file, detail) => void` | - |
-| customStyle | 自定义需要用到的外部样式 | `CSSProperties` | - |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
-## fileList 数据结构
+#### fileList 数据结构
 
 | 参数      | 说明                 | 类型                                 | 默认值 |
 | --------- | -------------------- | ------------------------------------ | ------ |

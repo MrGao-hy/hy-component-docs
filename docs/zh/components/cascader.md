@@ -137,6 +137,8 @@ const lazyLoad = (option: any, tabIndex: number, resolve: (children: any[]) => v
 | childrenKey | 选项子级对应的 key | `string` | children |
 | lazyLoad | 异步加载子节点的回调函数，提供后将启用异步加载模式 | `CascaderLazyLoad` | - |
 | isLeafKey | 选项对象中，标识叶子节点的 key | `string` | isLeaf |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### Events
 

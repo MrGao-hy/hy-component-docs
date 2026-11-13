@@ -371,6 +371,8 @@
 | options | 右侧按钮配置（无 left 插槽时生效） | `SwipeActionOptionsVo[]` | [见下方](./swipeAction/#options) |
 | duration | 动画过渡时间，单位 ms | `number` | 300 |
 | beforeClose | 关闭滑动按钮前的钩子函数 | `(reason: SwipeActionReason, position: SwipeActionPosition) => void` | - |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### Events
 

@@ -368,6 +368,8 @@ const tableData = reactive([
 | showHeader | 是否显示表头                                     | `boolean`          | true   |
 | emptyUrl   | 空状态的图片URL                                  | `string`           | -      |
 | emptyDes   | 空状态的描述文本                                 | `string`           | -      |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### Events
 

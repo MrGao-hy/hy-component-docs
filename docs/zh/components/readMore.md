@@ -144,6 +144,7 @@ const content = ref(`山不在高，有仙则名。水不在深，有龙则灵�
 | name | 用于在open和close事件中当作回调参数返回 | `string` | - |
 | shadowStyle | 对阴影的自定义处理，对象形式 | `CSSProperties` | - |
 | customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### Events
 

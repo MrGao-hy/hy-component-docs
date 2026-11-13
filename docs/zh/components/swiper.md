@@ -199,6 +199,8 @@ const list = ref([
 | radius | 组件圆角，数值默认单位px | `string` \| `number` | 4 |
 | loading | 是否加载中 | `boolean` | false |
 | showTitle | 是否显示标题，要求数组对象中有title属性 | `boolean` | false |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### Events
 
