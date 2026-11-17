@@ -74,11 +74,12 @@ const show = ref(true);
 | show           | 是否展示组件                   | `boolean`       | false    |
 | mode           | 使用的动画模式，见上方说明     | `string`        | fade     |
 | duration       | 动画的执行时间，单位ms         | `number`        | 300      |
-| shop           | 是否阻止点击事件冒泡           | `boolean`       | false    |
+| stop           | 是否阻止点击事件冒泡           | `boolean`       | false    |
 | lockScroll     | 是否阻止触摸滚动穿透           | `boolean`       | false    |
 | timingFunction | 使用的动画过渡函数，见上方说明 | `string`        | ease-out |
 | customStyle    | 定义需要用到的外部样式         | `CSSProperties` | -        |
 | customClass    | 自定义外部类名                 | `string`        | -        |
+| stop | 是否阻止点击事件冒泡 | `boolean` | false |
 
 ### Events
 
@@ -90,6 +91,7 @@ const show = ref(true);
 | beforeLeave | 离开前触发 | -        |
 | leave       | 离开中触发 | -        |
 | afterLeave  | 离开后触发 | -        |
+| click | 点击触发 | - |
 
 ### Slots
 

@@ -360,6 +360,14 @@
 | click         | 点击列表项时触发 | item: 单条数据内容 |
 | scrollToLower | 滚动到底部时触发 | -                  |
 
+### Methods
+
+| 方法名              | 说明                             | 参数                           |
+| ------------------- | -------------------------------- | ------------------------------ |
+| refreshHeightCache  | 刷新列表项的高度缓存             | -                              |
+| scrollToIndex       | 滚动到指定索引位置的列表项       | `index: number, offset?: number` |
+| scrollToTop         | 滚动到列表顶部                   | -                              |
+
 ### Slots
 
 | 插槽名     | 说明                             | 接收值                     |
@@ -371,5 +379,12 @@
 | right      | 两列模式下右边单个容器（H5/APP） | record: 单条数据           |
 | right-list | 两列模式下右边列表插槽（小程序） | record: 右边列表数据       |
 | footer     | 底部插槽，自定义加载更多区域     | -                          |
+
+
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- | --- |
+| `--hy-list-left-margin` | 左列容器右外边距 | 跟随 `--hy-border-margin-padding-base` |
 
 <demo-model url="pages-design/list/list"></demo-model>

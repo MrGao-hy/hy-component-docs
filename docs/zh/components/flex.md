@@ -70,6 +70,13 @@
 | customStyle | 自定义需要用到的外部样式 | `CSSProperties` | - |
 | customClass | 自定义外部类名 | `string` | - |
 
+
+### Flex Slots
+
+| 插槽名 | 说明 | 接收值 |
+| --- | --- | --- | --- |
+| default | 默认插槽，用于自定义内容 | - |
+
 <demo-model url="pages-design/flex/flex"></demo-model>
 
 [^1]: flex-start：左对齐；center：居中对齐；flex-end：右对齐；space-between：两端对齐，项目之间间隔相等；space-around：每个项目两侧的间隔相等，项目之间的间隔是项目与边框间隔的两倍；space-evenly：所有间隔完全相等；

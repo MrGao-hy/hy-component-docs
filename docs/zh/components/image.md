@@ -139,6 +139,7 @@
 | `--hy-image-width`             | 默认宽度          | `250px`                      |
 | `--hy-image-height`            | 默认高度          | `200px`                      |
 | `--hy-image-placeholder-color` | 加载/失败占位颜色 | 跟随 `--hy-text-color--grey` |
+| `--hy-image-placeholder-background` | 加载/失败占位区背景色 | 跟随 `--hy-background--empty` |
 
 [^1]: `circle`：两边为半圆；`square`：方形
 

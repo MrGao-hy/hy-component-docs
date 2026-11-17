@@ -436,5 +436,10 @@ export interface StepListVo {
 | `--hy-steps-date-font-size`         | 日期字号       | `24rpx`                                |
 | `--hy-steps-date-color`             | 日期颜色       | `#999`                                 |
 | `--hy-steps-icon-border`            | 图标容器边框   | 跟随 `--hy-border-line`                |
+| `--hy-steps-content-margin` | 纵向步骤内容左外边距 | 跟随 `--hy-border-margin-padding-sm` |
+| `--hy-steps-error` | 危险色 | 跟随 `--hy-error` |
+| `--hy-steps-info` | 信息色 | 跟随 `--hy-info` |
+| `--hy-steps-line-background` | 连接线背景色 | 跟随 `--hy-background--line` |
+| `--hy-steps-primary` | 主题色 | 跟随 `--hy-primary` |
 
 <demo-model url="pages-design/steps/steps"></demo-model>

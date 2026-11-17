@@ -384,5 +384,8 @@ const handleDelete = () => {
 | `--hy-keyboard-car-key-font-size` | 车牌键字号   | `28rpx`                                       |
 | `--hy-keyboard-key-font-size`     | 按键字号     | 跟随 `--hy-font-size-lg`（36rpx）             |
 | `--hy-keyboard-border`            | 头部分隔线   | 跟随 `--hy-border-line`                       |
+| `--hy-keyboard-background` | 键盘整体背景色 | 跟随 `--hy-background--track` |
+| `--hy-keyboard-body-padding` | 按键区内边距 | 跟随 `--hy-border-margin-padding-sm` |
+| `--hy-keyboard-header-background` | 头部背景色 | 跟随 `--hy-background--track` |
 
 <demo-model url="pages-design/keyboard/keyboard"></demo-model>

@@ -133,5 +133,8 @@
 | `--hy-loading-dots-gap`            | 圆点间距         | `6px`                        |
 | `--hy-loading-bars-gap`            | 条形间距         | `3px`                        |
 | `--hy-loading-vertical-text-color` | 垂直排列文字颜色 | 跟随 `--hy-text-color--grey` |
+| `--hy-loading-column-text-margin` | 垂直排列文字上外边距 | 跟随 `--hy-border-margin-padding-base` |
+| `--hy-loading-primary` | 主题色 | 跟随 `--hy-primary` |
+| `--hy-loading-row-text-margin` | 水平排列文字左外边距 | 跟随 `--hy-border-margin-padding-base` |
 
 <demo-model url="pages-design/loading/loading"></demo-model>

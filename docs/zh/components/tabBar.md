@@ -194,6 +194,7 @@ tabBar图标插槽在小程序是没有效果
 | 插槽名 | 说明     | 接收值 |
 | ------ | -------- | ------ |
 | icon   | 图标插槽 | -      |
+| default | 默认插槽，用于自定义内容 | - |
 
 ### TabBarItem Slots
 
@@ -236,6 +237,8 @@ export interface TabBarItem {
 | `--hy-tabbar-item-width`     | 单项宽度   | `60px`                       |
 | `--hy-tabbar-indicator-size` | 指示器尺寸 | `50px`                       |
 | `--hy-tabbar-circle-size`    | 凸起圆尺寸 | `40px`                       |
+| `--hy-tabbar-background` | 底部栏背景色 | 跟随 `--hy-background--container` |
+| `--hy-tabbar-primary` | 主题色 | 跟随 `--hy-primary` |
 
 #### hy-tabbar-group
 
@@ -245,6 +248,9 @@ export interface TabBarItem {
 | `--hy-tabbar-group-z-index` | 层级         | `500`                                  |
 | `--hy-tabbar-group-radius`  | 胶囊模式圆角 | 跟随 `--hy-radius-semicircle`（100px） |
 | `--hy-tabbar-group-border`  | 顶部边框     | 跟随 `--hy-border-line`                |
+| `--hy-tabbar-group-background` | 底部栏背景色 | 跟随 `--hy-background--container` |
+| `--hy-tabbar-group-circle-margin` | 胶囊模式左右外边距 | 跟随 `--hy-border-margin-padding-lg` |
+| `--hy-tabbar-group-shadow-base` | 基础阴影 | 跟随 `--hy-shadow-base` |
 
 #### hy-tabbar-item
 
@@ -253,5 +259,6 @@ export interface TabBarItem {
 | `--hy-tabbar-item-icon-size`       | 图标尺寸   | `40rpx`                           |
 | `--hy-tabbar-item-title-font-size` | 标题字号   | 跟随 `--hy-font-size-sm`（24rpx） |
 | `--hy-tabbar-item-inactive-color`  | 未激活颜色 | 跟随 `--hy-text-color--grey`      |
+| `--hy-tabbar-item-primary` | 主题色 | 跟随 `--hy-primary` |
 
 <demo-model url="pages-design/tabBar/tabBar"></demo-model>

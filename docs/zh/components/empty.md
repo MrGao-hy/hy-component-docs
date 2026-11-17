@@ -101,6 +101,7 @@
 | `--hy-empty-description-width` | 描述文字宽度 | `70%`                        |
 | `--hy-empty-button-margin-top` | 按钮上边距   | `100rpx`                     |
 | `--hy-empty-description-color` | 描述文字颜色 | 跟随 `--hy-text-color--grey` |
+| `--hy-empty-description-margin-top` | 描述文字上外边距 | 跟随 `--hy-border-margin-padding-base` |
 
 [^1]: `normal`：默认尺寸；`large`：大尺寸； `small`：小尺寸；`mini`：迷你尺寸
 

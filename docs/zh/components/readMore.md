@@ -77,57 +77,6 @@ const content = ref(`山不在高，有仙则名。水不在深，有龙则灵�
 </script>
 ```
 
-### 异步初始化
-
-::: warning 提示
-
-有时候需要展示的内容是从后端获取的，组件内部的mounted生命周期初始化时，请求尚未回来，会导致 内容的高度在初始化有误差。可以在请求完毕渲染后(指的是this.$nextTick)，通过ref调用组件的init方法，重新初始化。
-
-:::
-
-```html
-<template>
-    <hy-read-more showHeight="600" ref="uReadMoreRef">
-        <rich-text :nodes="content"></rich-text>
-    </hy-read-more>
-</template>
-
-<script setup>
-    import { ref, onMounted, nextTick } from 'vue';
-
-    // 创建响应式数据
-    const content = ref('');
-
-    // 创建组件引用
-    const uReadMoreRef = ref(null);
-
-    // 模拟后端请求
-    async function fetchData() {
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                resolve(`山不在高，有仙则名。水不在深，有龙则灵。斯是陋室，惟吾德馨。
-      苔痕上阶绿，草色入帘青。谈笑有鸿儒，往来无白丁。可以调素琴，阅金经。
-      无丝竹之乱耳，无案牍之劳形。南阳诸葛庐，西蜀子云亭。孔子云：何陋之有？`);
-            }, 2000);
-        });
-    }
-
-    // 在组件挂载后调用
-    onMounted(async () => {
-        await fetchData();
-        content.value = text;
-
-        // 等待 DOM 更新
-        await nextTick();
-
-        // 调用子组件的 init 方法
-        if (uReadMoreRef.value) {
-            uReadMoreRef.value.init();
-        }
-    });
-</script>
-```
-
 ## API
 
 ### readMore Props
@@ -159,12 +108,6 @@ const content = ref(`山不在高，有仙则名。水不在深，有龙则灵�
 | ------- | -------- | ------ |
 | default | 默认插槽 | -      |
 
-### Methods
-
-| 插槽名 | 说明                           |
-| ------ | ------------------------------ |
-| init   | 重新初始化组件内部高度计算过程 |
-
 ### CSS 变量
 
 | 变量名                       | 说明         | 默认值  |
@@ -172,5 +115,9 @@ const content = ref(`山不在高，有仙则名。水不在深，有龙则灵�
 | `--hy-read-more-font-size`   | 字号         | `15px`  |
 | `--hy-read-more-mask-height` | 渐变遮罩高度 | `100px` |
 | `--hy-read-more-line-height` | 行高         | `30px`  |
+| `--hy-read-more-mask-background` | 展开遮罩渐变背景色（自透明渐变至该色） | 跟随 `--hy-background--container` |
+| `--hy-read-more-primary` | 主题色 | 跟随 `--hy-primary` |
+| `--hy-read-more-text-margin` | 展开文字右外边距 | 跟随 `--hy-border-margin-padding-sm` |
+| `--hy-read-more-toggle-margin` | 展开按钮上下外边距 | 跟随 `--hy-border-margin-padding-sm` |
 
 <demo-model url="pages-design/readMore/readMore"></demo-model>

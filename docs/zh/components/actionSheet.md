@@ -528,5 +528,12 @@ interface SelectEventParams {
 | `--hy-action-sheet-close-radius` | 关闭按钮圆角 | 跟随 `--hy-radius-circle`（50%） |
 | `--hy-action-sheet-panel-img-radius` | 分享面板图标圆角 | 跟随 `--hy-radius-base`（20rpx） |
 | `--hy-action-sheet-panel-title-font-size` | 分享面板标题字号 | 跟随 `--hy-font-size-sm`（24rpx） |
+| `--hy-action-sheet-actions-padding-y` | 选项区上下内边距 | 跟随 `--hy-border-margin-padding-base` |
+| `--hy-action-sheet-cancel-background` | 取消按钮背景色 | 跟随 `--hy-background--track` |
+| `--hy-action-sheet-close-padding` | 关闭按钮内边距 | 跟随 `--hy-border-margin-padding-sm` |
+| `--hy-action-sheet-header-padding` | 头部左右及上方内边距 | 跟随 `--hy-border-margin-padding-base` |
+| `--hy-action-sheet-panel-img-size` | 面板图片尺寸 | 跟随 `--hy-img-size-base` |
+| `--hy-action-sheet-panel-padding-x` | 面板项左右内边距 | 跟随 `--hy-border-margin-padding-base` |
+| `--hy-action-sheet-panel-padding-y` | 面板项上下内边距 | 跟随 `--hy-border-margin-padding-sm` |
 
 <demo-model url="pages-design/actionSheet/actionSheet"></demo-model>

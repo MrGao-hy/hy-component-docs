@@ -191,7 +191,7 @@ const columns = reactive([
 | selectType | 单选还是多选[^2] | `checkbox`\|`radio` | checkbox |
 | disabled | 禁用 | `boolean` | false |
 | col | 设置子元素列排序，参考css属性值grid-template-columns | `string` | repeat(3, 1fr) |
-| gap | 设置每行间距，数值默认单位px | `string`\| `number` | 10px |
+| gap | 设置每行间距,需要加单位 | `string`\| `number` | 10px |
 | type | 标签类型[^3] | `error`\|`warning`\|`success` \|`primary`\|`info` | primary |
 | size | 标签的大小[^4] | `small`\|`medium`\|`large` | medium |
 | shape | tag的形状[^5] | `circle`\|`square` | square |
@@ -226,6 +226,7 @@ const columns = reactive([
 | 插槽名 | 说明 | 接收值 |
 | ------ | ---- | ------ |
 | name   | -    | -      |
+| default | 默认插槽，用于自定义内容 | - |
 
 ### CSS 变量
 
@@ -243,6 +244,14 @@ const columns = reactive([
 | `--hy-check-button-radius-square` | 方形圆角 | 跟随 `--hy-radius-sm`（8rpx） |
 | `--hy-check-button-disabled-color` | 禁用文字颜色 | 跟随 `--hy-text-color--disabled` |
 | `--hy-check-button-disabled-border-color` | 禁用态边框颜色 | 跟随 `--hy-background--disabled` |
+| `--hy-check-button-disabled-background` | 按钮禁用态背景色 | 跟随 `--hy-background--disabled` |
+| `--hy-check-button-error` | 危险色 | 跟随 `--hy-error` |
+| `--hy-check-button-info` | 信息色 | 跟随 `--hy-info` |
+| `--hy-check-button-opacity-disabled` | 禁用态透明度 | 跟随 `--hy-opacity-disabled` |
+| `--hy-check-button-primary` | 主题色 | 跟随 `--hy-primary` |
+| `--hy-check-button-success` | 成功色 | 跟随 `--hy-success` |
+| `--hy-check-button-transition-ease` | 标准过渡曲线 | 跟随 `--hy-transition-ease` |
+| `--hy-check-button-warning` | 警告色 | 跟随 `--hy-warning` |
 
 [^1]: `selectType`设置为`radio`时候v-model必须传是字符串/数字，设置为`checkbox`时候`v-model`必须传数组
 

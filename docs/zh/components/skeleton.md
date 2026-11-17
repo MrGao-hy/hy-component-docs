@@ -179,5 +179,7 @@ export type SkeletonThemeVars = {
 | `--hy-skeleton-radius`        | 骨架块圆角（text/col） | 跟随 `--hy-radius-sm`（8rpx）    |
 | `--hy-skeleton-rect-radius`   | 矩形骨架圆角           | 跟随 `--hy-radius-base`（20rpx） |
 | `--hy-skeleton-circle-radius` | 圆形骨架圆角           | 跟随 `--hy-radius-circle`（50%） |
+| `--hy-skeleton-background` | 骨架块背景色 | 跟随 `--hy-background--skeleton` |
+| `--hy-skeleton-row-margin` | 骨架行下外边距 | 跟随 `--hy-border-margin-padding-base` |
 
 <demo-model url="pages-design/skeleton/skeleton"></demo-model>

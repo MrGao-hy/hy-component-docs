@@ -242,6 +242,11 @@ export interface IFieldNames {
 | `--hy-radio-font-size`                | 标签字号       | 跟随 `--hy-font-size-base`（28rpx） |
 | `--hy-radio-disabled-color`           | 禁用文字颜色   | 跟随 `--hy-text-color--disabled`    |
 | `--hy-radio-border`                   | 圆点框边框     | 跟随 `--hy-border-line`             |
+| `--hy-radio-group-margin-y` | 纵向分组上下外边距 | 跟随 `--hy-border-margin-padding-lg` |
+| `--hy-radio-icon-disabled-background` | 圆点框禁用态背景色 | 跟随 `--hy-background--disabled` |
+| `--hy-radio-icon-margin` | 图标右外边距 | 跟随 `--hy-border-margin-padding-sm` |
+| `--hy-radio-label-margin` | 选项文字右外边距 | 跟随 `--hy-border-margin-padding-sm` |
+| `--hy-radio-primary` | 主题色 | 跟随 `--hy-primary` |
 
 [^1]: `circle`：两边为半圆；`square`：方形带圆角
 

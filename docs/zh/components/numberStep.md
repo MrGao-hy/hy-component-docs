@@ -251,5 +251,8 @@ const value = ref(1);
 | `--hy-number-step-input-margin`   | 输入框外边距 | `0 2px`                          |
 | `--hy-number-step-input-color`    | 输入文字颜色 | 跟随 `--hy-text-color`           |
 | `--hy-number-step-disabled-color` | 禁用文字颜色 | 跟随 `--hy-text-color--disabled` |
+| `--hy-number-step-background` | 步进器底色（加减按钮与输入框） | 跟随 `--hy-background--empty` |
+| `--hy-number-step-btn-hover-background` | 加减按钮点击态背景色 | 跟随 `--hy-background--hover` |
+| `--hy-number-step-disabled-background` | 禁用态背景色（加减按钮与输入框） | 跟随 `--hy-background--disabled` |
 
 <demo-model url="pages-design/numberBox/numberBox"></demo-model>

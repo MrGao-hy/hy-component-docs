@@ -271,6 +271,7 @@
 | ------ | ----------------- | --------------------- |
 | icon   | 自定义`icon`内容  | iconColor \| iconSize |
 | label  | 自定义`label`内容 | record                |
+| default | 默认插槽，用于自定义内容 | - |
 
 ### CheckboxItem Slots
 
@@ -289,6 +290,10 @@
 | `--hy-checkbox-font-size`                | 标签字号       | 跟随 `--hy-font-size-base`（28rpx） |
 | `--hy-checkbox-disabled-color`           | 禁用文字颜色   | 跟随 `--hy-text-color--disabled`    |
 | `--hy-checkbox-border`                   | 勾选框边框     | 跟随 `--hy-border-line`             |
+| `--hy-checkbox-icon-disabled-background` | 勾选框禁用态背景色 | 跟随 `--hy-background--disabled` |
+| `--hy-checkbox-icon-margin` | 勾选框图标右外边距 | 跟随 `--hy-border-margin-padding-sm` |
+| `--hy-checkbox-label-margin` | 选项文字右外边距 | 跟随 `--hy-border-margin-padding-sm` |
+| `--hy-checkbox-primary` | 主题色 | 跟随 `--hy-primary` |
 
 [^1]: `circle`：两边为半圆；`square`：方形带圆角
 

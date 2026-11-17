@@ -244,7 +244,6 @@
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| modelValue | 是否显示通知 | `boolean` | false |
 | top | 到顶部的距离（H5端默认44px） | `number` | 0 |
 | type | 主题类型 | `primary`\|`success`\|`warning`\|`error`\|`info` | primary |
 | color | 字体颜色 | `string` | #ffffff |
@@ -323,5 +322,6 @@ interface NotifyOptions {
 | 变量名                  | 说明     | 默认值                              |
 | ----------------------- | -------- | ----------------------------------- |
 | `--hy-notify-font-size` | 文字字号 | 跟随 `--hy-font-size-base`（28rpx） |
+| `--hy-notify-padding` | 通知条内边距 | 跟随 `--hy-border-margin-padding-base` |
 
 <demo-model url="pages-design/notify/notify"></demo-model>

@@ -19,7 +19,6 @@
 ::: warning 注意事项
 
 - `minDate` 和 `maxDate` 参数需要传入时间戳（毫秒），而非日期字符串
-- 微信小程序不支持通过props传递函数参数，`formatter` 需要通过 `setFormatter` 方法设置
 - `hasInput` 设置为 `true` 时，组件会自带输入框，点击输入框可打开选择器
 - `mode` 支持多种格式，详见下方说明
 - `minHour`、`maxHour`、`minMinute`、`maxMinute` 仅在 `mode=time` 时有效
@@ -148,7 +147,6 @@
 <template>
     <view>
         <hy-datetime-picker
-            ref="datetimePickerRef"
             :show="show"
             v-model="value"
             mode="datetime"
@@ -159,11 +157,10 @@
 </template>
 
 <script setup>
-    import { ref, onMounted } from 'vue';
+    import { ref } from 'vue';
 
     const show = ref(false);
     const value = ref(Date.now());
-    const datetimePickerRef = ref(null);
 
     const formatter = (type, value) => {
         if (type === 'year') {
@@ -177,11 +174,6 @@
         }
         return value;
     };
-
-    onMounted(() => {
-        // 微信小程序需要用此写法
-        // datetimePickerRef.value.setFormatter(formatter);
-    });
 </script>
 ```
 
@@ -276,12 +268,7 @@
 | --- | --- |
 | toolbar-right | 工具栏右侧内容，自定义右侧内容，因为微信小程序限制，需要同时设置 `toolbarRightSlot="true"` 生效 |
 | toolbar-bottom | 输入框下方自定义区域 |
-
-### Methods
-
-| 方法名       | 说明                                                 |
-| ------------ | ---------------------------------------------------- |
-| setFormatter | 为兼容微信小程序而暴露的内部方法，用于设置格式化函数 |
+| trigger | 自定义触发器内容 |
 
 ### Typings
 

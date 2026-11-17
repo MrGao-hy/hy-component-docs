@@ -196,7 +196,7 @@
 | `--hy-cell-item-line-height-base`     | 基础行高        | 跟随 `--hy-line-height-base`           |
 | `--hy-cell-item-padding-sm`           | 小间距          | 跟随 `--hy-border-margin-padding-sm`   |
 | `--hy-cell-item-line-height-sm`       | 小行高          | 跟随 `--hy-line-height-sm`             |
-| `--hy-cell-item-background--hover`    | 点击状态背景色  | 跟随 `--hy-background--hover`          |
-| `--hy-cell-item-background--disabled` | 禁用背景色      | 跟随 `--hy-background--disabled`       |
+| `--hy-cell-item-clickable-background` | 单元格点击态背景色 | 跟随 `--hy-background--hover` |
+| `--hy-cell-item-disabled-background` | 单元格禁用态背景色 | 跟随 `--hy-background--disabled` |
 
 <demo-model url="pages-design/cell/cell"></demo-model>

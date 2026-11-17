@@ -94,5 +94,7 @@ const value = ref<number>(1);
 | `--hy-pagination-nav-active-color`   | 上下页按钮激活色   | `rgba(0, 0, 0, 0.65)`             |
 | `--hy-pagination-nav-disabled-color` | 上下页按钮禁用色   | `rgba(0, 0, 0, 0.15)`             |
 | `--hy-pagination-font-size`          | 信息文字字号       | 跟随 `--hy-font-size-sm`（24rpx） |
+| `--hy-pagination-content-padding` | 内容区内边距 | 跟随 `--hy-border-margin-padding-base` |
+| `--hy-pagination-primary` | 主题色 | 跟随 `--hy-primary` |
 
 <demo-model url="pages-design/pagination/pagination"></demo-model>

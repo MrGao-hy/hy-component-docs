@@ -1,6 +1,8 @@
 # Index-Bar 索引栏组件
 
-> 用于快速定位列表内容的索引栏组件，支持点击和滑动两种交互方式，适配小程序和App平台。
+> 用于快速定位列表内容的索引栏组件，支持点击和滑动两种交互方式，适配小程序和 App 平台。
+>
+> 组件内部接管滚动容器，内容通过默认插槽传入，分组标题使用 `hy-index-anchor` 标记，滚动时可自动同步激活索引并实现锚点吸顶。
 
 ## :pushpin:平台差异说明
 
@@ -10,80 +12,37 @@
 
 ## :japanese_castle:基本使用示例
 
+将列表内容放入 `hy-index-bar` 默认插槽，每个分组的标题使用 `hy-index-anchor` 标记；索引值会自动收集，无需手动传入 `indexList`。
+
 ```html
 <template>
-    <view class="index-bar-demo">
-        <view class="content-list">
-            <view
-                v-for="(group, index) in contactList"
-                :key="index"
-                :id="`section-${group.index}`"
-                class="contact-group"
-            >
-                <view class="group-title">{{ group.index }}</view>
-                <view v-for="(contact, idx) in group.list" :key="idx" class="contact-item">
-                    {{ contact.name }}
-                </view>
+    <hy-index-bar v-model="activeIndex">
+        <view v-for="item in contactList" :key="item.index" class="contact-group">
+
+            <hy-index-anchor :index="item.index" />
+            <view v-for="(contact, idx) in item.list" :key="idx" class="contact-item">
+                {{ contact.name }}
             </view>
         </view>
-
-        <!-- 索引栏 -->
-        <hy-index-bar v-model="activeIndex" :index-list="indexList" @scroll="handleScroll" />
-    </view>
+    </hy-index-bar>
 </template>
 
 <script setup>
-    import { ref, computed } from 'vue';
+    import { ref } from 'vue';
 
-    // 联系人数据
     const contactList = ref([
         { index: 'A', list: [{ name: '阿杰' }, { name: '阿明' }] },
-        { index: 'B', list: [{ name: '贝贝' }, { name: '宝宝' }] },
+        { index: 'B', list: [{ name: '贝贝' }, { name: '宝宝' }] }
         // 更多数据...
     ]);
 
-    // 索引列表
-    const indexList = computed(() => contactList.value.map((item) => item.index));
-
-    // 当前激活的索引
-    const activeIndex = ref('A');
-
-    // 滚动事件处理
-    const handleScroll = (index) => {
-        // 根据索引滚动到对应位置
-        uni.createSelectorQuery()
-            .select(`#section-${index}`)
-            .boundingClientRect((rect) => {
-                if (rect) {
-                    uni.pageScrollTo({
-                        scrollTop: rect.top,
-                        duration: 300,
-                    });
-                }
-            })
-            .exec();
-    };
+    // 当前激活的索引，由索引栏在滚动/点击时自动同步
+    const activeIndex = ref('');
 </script>
 
 <style lang="scss" scoped>
-    .index-bar-demo {
-        position: relative;
-        height: 100vh;
-    }
-
-    .content-list {
-        padding: 20rpx;
-    }
-
     .contact-group {
         margin-bottom: 40rpx;
-    }
-
-    .group-title {
-        font-size: 32rpx;
-        font-weight: bold;
-        padding: 10rpx 0;
-        background-color: #f5f5f5;
     }
 
     .contact-item {
@@ -94,10 +53,36 @@
 </style>
 ```
 
-### 隐藏提示框
+::: tip
+索引栏容器需要确定高度才能正常滚动。`height` 默认撑满父级（`100%`），若父级高度不确定，可通过 `customStyle` 指定，例如 H5 端扣除导航栏占位：`{ height: 'calc(100vh - 44px)' }`。
+:::
+
+### 关闭锚点吸顶
+
+默认开启锚点吸顶，滚动到分组时锚点会固定于滚动容器顶部。通过 `sticky` 关闭：
 
 ```html
-<hy-index-bar v-model="activeIndex" :index-list="indexList" :show-toast="false" />
+<hy-index-bar v-model="activeIndex" :sticky="false">
+    <hy-index-anchor v-for="item in indexList" :key="item" :index="item" />
+</hy-index-bar>
+```
+
+### 隐藏提示框
+
+通过 `show-toast` 控制是否显示索引字母提示气泡。
+
+```html
+<hy-index-bar v-model="activeIndex" :show-toast="false">
+    <hy-index-anchor v-for="item in indexList" :key="item" :index="item" />
+</hy-index-bar>
+```
+
+### 索引栏位置
+
+通过 `position` 设置索引栏位置，可选值 `left`、`right`，默认 `right`。
+
+```html
+<hy-index-bar v-model="activeIndex" position="left"> ... </hy-index-bar>
 ```
 
 ### 自定义样式
@@ -105,36 +90,44 @@
 ```html
 <hy-index-bar
     v-model="activeIndex"
-    :index-list="indexList"
     :index-color="'#666'"
     :active-index-color="'#007AFF'"
-    :index-bg-color="'#f0f0f0'"
+    :index-bg-color="'transparent'"
     :active-index-bg-color="'#e0e0e0'"
     :index-size="14"
     :width="30"
     :height="'80%'"
-    :customStyle="{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }"
-/>
+    :custom-style="{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }"
+>
+    ...
+</hy-index-bar>
 ```
 
-### 索引列表数据格式
+### 手动指定索引列表
 
-支持两种数据格式：
-
-### 1. 字符串数组
+默认情况下索引值由插槽内的 `hy-index-anchor` 自动收集。若需自定义索引栏展示项（如与锚点顺序不同、只展示部分索引），可通过 `indexList` 手动指定，支持字符串/数字数组或对象数组。
 
 ```js
-const indexList = ref(['A', 'B', 'C', 'D', 'E']);
+// 字符串数组
+const indexList = ['A', 'B', 'C', 'D'];
+
+// 对象数组：index 为索引值，title 为标题，data 为列表数据
+const indexList = [
+    { index: 'A', title: 'A', data: [...] },
+    { index: 'B', title: 'B', data: [...] }
+];
 ```
 
-### 2. 对象数组
+```html
+<hy-index-bar v-model="activeIndex" :index-list="indexList"> ... </hy-index-bar>
+```
 
-```js
-const indexList = ref([
-  { index: 'A', data: [...] },
-  { index: 'B', data: [...] },
-  { index: 'C', data: [...] }
-])
+### 锚点独立使用
+
+`hy-index-anchor` 也可脱离索引栏单独使用，此时通过 `active` 控制激活状态、`sticky` 控制吸顶。
+
+```html
+<hy-index-anchor :index="'A'" :active="true" :sticky="true" :offset-top="0" />
 ```
 
 ### 完整代码
@@ -143,164 +136,64 @@ const indexList = ref([
 
 ```vue [vue]
 <template>
-    <hy-config-provider>
-        <scroll-view class="hy-scroll-view" scroll-y :scroll-top="scrollTop" @scroll="handleScroll">
-            <view
-                v-for="item in indexList"
-                :key="item.index"
-                class="hy-index-section"
-                :id="`index-${item.index}`"
-            >
-                <view class="hy-index-section__title hy-title">{{ item.index }}</view>
-                <view class="hy-index-section__container">
-                    <view
-                        v-for="(city, cityIndex) in item.data"
-                        :key="cityIndex"
-                        class="hy-index-section__item"
-                    >
-                        {{ city }}
-                    </view>
+    <hy-index-bar
+        v-model="currentActiveIndex"
+        :position="position"
+        :show-toast="showToast"
+        :custom-style="barCustomStyle"
+    >
+        <view v-for="item in indexList" :key="item.index" class="hy-index-section">
+            <!-- 索引锚点：放入插槽后自动注册，滚动到对应分组时吸顶并高亮 -->
+            <hy-index-anchor :index="item.index" />
+            <view class="hy-index-section__container">
+                <view
+                    v-for="(city, cityIndex) in item.data"
+                    :key="cityIndex"
+                    class="hy-index-section__item"
+                >
+                    {{ city }}
                 </view>
             </view>
-        </scroll-view>
-
-        <hy-index-bar
-            v-model="currentActiveIndex"
-            :index-list="indexs"
-            :position="position"
-            :show-toast="showToast"
-            @click="handleIndexClick"
-            @scroll="handleIndexScroll"
-        />
-    </hy-config-provider>
+        </view>
+    </hy-index-bar>
 </template>
 ```
 
 ```ts [index.ts]
-import { ref, reactive, computed, getCurrentInstance, nextTick, onMounted } from 'vue';
-import { storeToRefs } from 'pinia';
-import { getRect, sleep } from '@hy-app/ui';
+import { ref, computed } from 'vue';
+import type { CSSProperties } from 'vue';
 
-const instance = getCurrentInstance();
 // 索引栏位置
-const position = ref<string>('right');
-const sectionRect = ref<UniNamespace.NodeInfo[]>([]);
-const scrollTop = ref<number>(0);
+const position = ref<'left' | 'right'>('right');
 // 是否显示提示
 const showToast = ref<boolean>(true);
-// 当前激活的索引
+// 当前激活的索引，由索引栏在滚动/点击时自动同步
 const currentActiveIndex = ref<string>('');
-const isScroll = ref<boolean>(true);
-// 模拟城市数据
-const cityData = reactive({
+// 索引栏容器需要确定高度，H5 需扣除导航栏占位，否则滚动会落到页面级
+const barCustomStyle = { height: '100vh' } as CSSProperties;
+// #ifdef H5
+barCustomStyle.height = 'calc(100vh - 44px)';
+// #endif
+
+const cityData = {
     A: ['安庆', '安阳', '鞍山', '安顺', '安康', '阿克苏', '阿勒泰'],
-    B: [
-        '北京',
-        '上海',
-        '广州',
-        '深圳',
-        '重庆',
-        '成都',
-        '杭州',
-        '武汉',
-        '西安',
-        '苏州',
-        '天津',
-        '南京',
-        '长沙',
-        '郑州',
-        '东莞',
-        '青岛',
-        '沈阳',
-        '宁波',
-        '昆明',
-    ],
-    C: ['长春', '常州', '长沙', '成都', '重庆', '福州', '长春', '长沙'],
-    D: ['大连', '东莞', '德州', '大同', '大庆', '大理'],
-    E: ['鄂州', '恩施', '鄂州'],
-    F: ['福州', '佛山', '抚顺', '阜新', '阜阳', '抚州'],
-    G: ['广州', '贵阳', '桂林', '赣州', '广元', '广安'],
-    H: ['杭州', '合肥', '哈尔滨', '海口', '呼和浩特', '湖州', '邯郸', '汉中', '衡水'],
-    J: ['济南', '长春', '吉林', '锦州', '荆州', '荆门', '晋江'],
-    K: ['昆明', '开封', '克拉玛依', '喀什'],
-    L: ['兰州', '洛阳', '临沂', '聊城', '龙岩', '丽江'],
-    M: ['绵阳', '马鞍山', '茂名', '梅州', '眉山'],
-    N: ['南京', '南昌', '南宁', '南通', '宁波', '南阳', '南充'],
-    P: ['平顶山', '盘锦', '攀枝花', '萍乡'],
-    Q: ['青岛', '泉州', '曲靖', '秦皇岛', '齐齐哈尔', '庆阳'],
-    R: ['日照', '日喀则', '荣昌'],
-    S: ['深圳', '苏州', '沈阳', '石家庄', '绍兴', '厦门', '商丘', '上饶', '十堰'],
-    T: ['天津', '太原', '唐山', '泰州', '台州', '通辽', '吐鲁番'],
-    W: ['武汉', '西安', '温州', '无锡', '潍坊', '乌鲁木齐', '威海', '渭南'],
-    X: ['西安', '厦门', '徐州', '新乡', '信阳', '襄阳', '西宁'],
-    Y: ['烟台', '扬州', '宜昌', '岳阳', '延安', '银川', '运城'],
-    Z: ['郑州', '株洲', '珠海', '中山', '湛江', '肇庆', '张家口', '枣庄'],
-});
+    B: ['北京', '上海', '广州', '深圳', '重庆', '成都', '杭州', '武汉', '西安'],
+    C: ['长春', '常州', '长沙', '成都', '重庆', '福州'],
+    D: ['大连', '东莞', '德州', '大同', '大庆', '大理']
+    // 更多数据...
+};
 
-// 转换为索引列表格式
-const indexList = computed(() => {
-    return Object.keys(cityData)
+// 转换为索引列表格式，索引值由锚点自动收集，无需手动传入 index-list
+const indexList = computed(() =>
+    Object.keys(cityData)
         .sort()
-        .map((key) => ({
-            index: key,
-            title: key,
-            data: cityData[key as keyof typeof cityData],
-        }));
-});
-const indexs = computed(() => {
-    return Object.keys(cityData).sort();
-});
-
-onMounted(() => {
-    nextTick(() => {
-        getRect('.hy-index-section', true).then((rect) => {
-            sectionRect.value = rect;
-        });
-    });
-});
-
-// 处理滚动事件
-const handleScroll = (e: any) => {
-    // 使用uni.createSelectorQuery()获取所有索引section的位置信息
-    const scrollTop = e.detail.scrollTop;
-    if (isScroll.value) {
-        const index = sectionRect.value.findIndex((item) => item.top - 1 > scrollTop) - 1;
-        const keys = Object.keys(cityData);
-        console.log(keys[index], '==');
-        currentActiveIndex.value = keys[index];
-    }
-};
-
-// 处理索引点击事件
-const handleIndexClick = (index: string, event: Event) => {
-    scrollToSection(index);
-};
-
-// 处理索引滚动事件
-const handleIndexScroll = (index: string) => {
-    scrollToSection(index);
-};
-
-const scrollToSection = async (i: string) => {
-    isScroll.value = false;
-    const index = Object.keys(cityData).findIndex((item) => item === i);
-    scrollTop.value = sectionRect.value[index]?.top!;
-    await sleep();
-    isScroll.value = true;
-};
+        .map((key) => ({ index: key, title: key, data: cityData[key] }))
+);
 ```
 
 ```scss [index.scss]
-.hy-scroll-view {
-    width: 100%;
-    height: 100%;
-}
-
 .hy-index-section {
     padding: $hy-border-margin-padding-base;
-
-    @include e(title) {
-    }
 
     @include e(item) {
         font-size: 28rpx;
@@ -313,7 +206,7 @@ const scrollToSection = async (i: string) => {
 
     @include e(container) {
         padding: $hy-border-margin-padding-base 0;
-        border-radius: $hy-border-radius-base;
+        border-radius: $hy-radius-base;
         background: $hy-background--container;
     }
 }
@@ -327,36 +220,85 @@ const scrollToSection = async (i: string) => {
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| v-model | 当前激活的索引值 | `string` | - |
-| indexList | 索引列表数据，支持字符串数组或对象数组 | `string`\|`number`\|`IIndexItem[]` | - |
-| position | 索引栏位置，可选值：'left'、'right' | `left`\|`right` | right |
+| v-model | 当前激活的索引值 | `string`\|`number` | '' |
+| indexList | 索引列表数据，支持字符串/数字数组或对象数组；未传时自动收集插槽内 `hy-index-anchor` 的索引值 | `IIndexItem[]` | [] |
+| sticky | 锚点是否自动吸顶，吸顶时锚点固定于滚动容器顶部 | `boolean` | true |
+| position | 索引栏位置，可选值：`left`、`right` | `left`\|`right` | right |
 | showToast | 是否显示索引字母提示框 | `boolean` | true |
 | indexColor | 索引项颜色 | `string` | - |
 | activeIndexColor | 激活状态索引项颜色 | `string` | - |
 | indexBgColor | 索引项背景色 | `string` | transparent |
 | activeIndexBgColor | 激活状态索引项背景色 | `string` | - |
-| indexSize | 索引项大小，数值默认单位px | `number`\|`string` | 12 |
-| height | 索引栏高度，数值默认单位px | `number`\|`string` | 100% |
-| width | 索引栏宽度，数值默认单位px | number/string | 20 |
-| customStyle | 自定义需要用到的外部样式 | `CSSProperties` | - |
+| indexSize | 索引项大小，数值默认单位 px | `number`\|`string` | 12 |
+| height | 组件容器高度，数值默认单位 px，默认撑满父级 | `number`\|`string` | 100% |
+| width | 索引项宽高，数值默认单位 px | `number`\|`string` | 20 |
+| customStyle | 自定义外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
+
+#### IIndexItem
+
+| 字段 | 说明 | 类型 |
+| --- | --- | --- |
+| index | 索引值 | `string`\|`number` |
+| title | 索引对应的标题 | `string` |
+| data | 索引对应的列表数据（可选） | `any[]` |
+
+`indexList` 也可直接传入 `string[]` 或 `number[]`。
+
+### IndexAnchor Props
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| index | 索引值，同时作为锚点 id 与默认标题内容（必填） | `string`\|`number` | - |
+| active | 当前索引是否激活，仅独立使用（未放入 `hy-index-bar` 插槽）时生效；配合索引栏时激活状态由 v-model 驱动 | `boolean` | false |
+| sticky | 是否开启吸顶，仅独立使用时生效，且仅在激活状态下生效；配合索引栏时以索引栏的 `sticky` 为准 | `boolean` | true |
+| offsetTop | 吸顶时距离滚动容器顶部的偏移量，单位 px | `number`\|`string` | 0 |
+| zIndex | 吸顶时的层级 | `number`\|`string` | 1 |
+| customStyle | 自定义外部样式 | `CSSProperties` | - |
 | customClass | 自定义外部类名 | `string` | - |
 
 ### Events
 
-| 事件名 | 说明             | 回调参数                                                    |
-| ------ | ---------------- | ----------------------------------------------------------- |
-| click  | 点击索引项时触发 | index: string - 当前点击的索引值<br>event: Event - 事件对象 |
-| scroll | 滑动索引栏时触发 | index: string - 当前滑动到的索引值                          |
+| 事件名 | 说明 | 回调参数 |
+| --- | --- | --- |
+| click | 点击索引项时触发 | index: `string`\|`number` - 当前点击的索引值；event: Event - 事件对象 |
+| scroll | 滑动索引栏时触发 | index: `string`\|`number` - 当前滑动到的索引值 |
+| update:modelValue | 索引值改变时触发 | index: `string`\|`number` - 当前索引值 |
+
+### Slots
+
+| 插槽名 | 说明 | 接收值 |
+| --- | --- | --- |
+| default | 索引栏列表内容，分组标题使用 `hy-index-anchor` 标记 | - |
 
 ### CSS 变量
 
-| 变量名                           | 说明             | 默认值                            |
-| -------------------------------- | ---------------- | --------------------------------- |
-| `--hy-index-bar-z-index`         | 层级             | `999`                             |
-| `--hy-index-bar-toast-size`      | 提示气泡尺寸     | `50px`                            |
-| `--hy-index-bar-index-color`     | 索引文字颜色     | 跟随 `--hy-text-color--3`         |
-| `--hy-index-bar-index-radius`    | 索引项圆角       | 跟随 `--hy-radius-sm`（8rpx）     |
-| `--hy-index-bar-toast-color`     | 提示气泡文字颜色 | `#ffffff`                         |
-| `--hy-index-bar-toast-font-size` | 提示气泡字号     | 跟随 `--hy-font-size-lg`（36rpx） |
+#### hy-index-bar
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-index-bar-z-index` | 层级 | `999` |
+| `--hy-index-bar-toast-size` | 提示气泡尺寸 | `50px` |
+| `--hy-index-bar-index-color` | 索引文字颜色 | 跟随 `--hy-text-color--3` |
+| `--hy-index-bar-index-radius` | 索引项圆角 | 跟随 `--hy-radius-sm`（8rpx） |
+| `--hy-index-bar-toast-color` | 提示气泡文字颜色 | `#ffffff` |
+| `--hy-index-bar-toast-font-size` | 提示气泡字号 | 跟随 `--hy-font-size-lg`（36rpx） |
+| `--hy-index-bar-primary` | 激活索引主题色 | 跟随 `--hy-primary` |
+| `--hy-index-bar-index-active-background` | 索引项选中态背景色 | 跟随 `--hy-background--hover` |
+| `--hy-index-bar-list-margin` | 索引列表右外边距 | 跟随 `--hy-border-margin-padding-base` |
+| `--hy-index-bar-toast-background` | 提示气泡背景色 | 跟随 `--hy-background--empty` |
+
+#### hy-index-anchor
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-index-anchor-text-color` | 索引标题文字颜色 | 跟随 `--hy-text-color` |
+| `--hy-index-anchor-background` | 索引标题背景色 | 跟随 `--hy-background--container` |
+| `--hy-index-anchor-primary` | 激活索引标题文字颜色 | 跟随 `--hy-primary` |
+| `--hy-index-anchor-font-size` | 索引标题字号 | 跟随 `--hy-font-size-sm` |
+| `--hy-index-anchor-font-weight` | 索引标题字重 | 跟随 `--hy-font-weight-medium` |
+| `--hy-index-anchor-padding-y` | 索引标题纵向内边距 | 跟随 `--hy-border-margin-padding-sm` |
+| `--hy-index-anchor-padding-x` | 索引标题横向内边距 | 跟随 `--hy-border-margin-padding-base` |
+| `--hy-index-anchor-z-index` | 吸顶层级 | `1` |
 
 <demo-model url="pages-design/indexBar/indexBar"></demo-model>

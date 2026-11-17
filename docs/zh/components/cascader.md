@@ -202,5 +202,12 @@ export type CascaderLazyLoad = (
 | `--hy-cascader-item-font-size`  | 选项字号         | 跟随 `--hy-font-size-base`（28rpx） |
 | `--hy-cascader-item-color`      | 选项颜色         | 跟随 `--hy-text-color`              |
 | `--hy-cascader-border`          | 标题栏底部分隔线 | 跟随 `--hy-border-line`             |
+| `--hy-cascader-border-width-lg` | 大边框宽度 | 跟随 `--hy-border-width-lg` |
+| `--hy-cascader-font-weight-bold` | 粗体字重 | 跟随 `--hy-font-weight-bold` |
+| `--hy-cascader-header-padding` | 头部内边距 | 跟随 `--hy-border-margin-padding-base` |
+| `--hy-cascader-item-active-background` | 选项选中态背景色 | 跟随 `--hy-background--hover` |
+| `--hy-cascader-item-padding-x` | 选项左右内边距 | 跟随 `--hy-border-margin-padding-base` |
+| `--hy-cascader-item-padding-y` | 选项上下内边距 | 跟随 `--hy-border-margin-padding-lg` |
+| `--hy-cascader-primary` | 主题色 | 跟随 `--hy-primary` |
 
 <demo-model url="pages-design/cascader/cascader"></demo-model>

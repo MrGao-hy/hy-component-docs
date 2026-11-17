@@ -137,7 +137,7 @@
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| text | 显示的值 | `string`\|`number` | - |
+| text | 显示的值, mode为date时，text接收默认为时间戳（数字类型） | `string`\|`number` | - |
 | type | 主题颜色 | `string` | - |
 | show | 是否显示 | `boolean` | true |
 | prefixIcon | 前置图标 | `string` | - |
@@ -160,12 +160,20 @@
 | wordWrap | 文字换行 | `normal`\|`break-word`\|`anywhere` | normal |
 | flex | 是否占满剩余空间 | `boolean` | true |
 | customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### Events
 
 | 事件名 | 说明         | 回调参数 |
 | ------ | ------------ | -------- |
 | click  | 点击触发事件 | -        |
+
+### Slots
+
+| 插槽名 | 说明 | 回调参数 |
+| --- | --- | --- |
+| prefix | 前置内容插槽 | - |
+| suffix | 后置内容插槽 | - |
 
 ### CSS 变量
 
@@ -174,6 +182,8 @@
 | `--hy-text-price-font-size` | 价格模式字号 | `14px`                              |
 | `--hy-text-font-size`       | 正文主体字号 | 跟随 `--hy-font-size-base`（28rpx） |
 | `--hy-text-price-color`     | 价格文字颜色 | 跟随 `--hy-text-color--grey`        |
+| `--hy-text-main-color` | 文字颜色 | 跟随 `--hy-text-color` |
+| `--hy-text-primary` | 主题色 | 跟随 `--hy-primary` |
 
 [^1]: `text`-普通文本，`price`-价格，`phone`-手机号，`name`-姓名，`date`-日期，`link`-超链接
 

@@ -500,5 +500,8 @@
 | `--hy-modal-content-color` | 内容颜色 | 跟随 `--hy-text-color--grey` |
 | `--hy-modal-button-confirm-color` | 确认按钮颜色 | `#FFFFFF` |
 | `--hy-modal-button-cancel-color` | 取消按钮颜色 | 跟随 `--hy-text-color` |
+| `--hy-modal-button-cancel-background` | 取消按钮背景色 | 跟随 `--hy-background--empty` |
+| `--hy-modal-button-gap` | 底部双按钮间距 | 跟随 `--hy-border-margin-padding-lg` |
+| `--hy-modal-primary` | 主题色 | 跟随 `--hy-primary` |
 
 <demo-model url="pages-design/modal/modal"></demo-model>

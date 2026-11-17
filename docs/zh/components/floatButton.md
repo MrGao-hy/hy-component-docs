@@ -165,6 +165,8 @@
 | `--hy-float-button-radius`           | 按钮圆角     | 跟随 `--hy-radius-sm`（8rpx）       |
 | `--hy-float-button-menus-max-height` | 菜单最大高度 | `250px`                             |
 | `--hy-float-button-menu-font-size`   | 菜单字号     | 跟随 `--hy-font-size-base`（28rpx） |
+| `--hy-float-button-primary` | 主题色 | 跟随 `--hy-primary` |
+| `--hy-float-button-shadow-base` | 基础阴影 | 跟随 `--hy-shadow-base` |
 
 [^1]: `row`：横向；`column`：纵向
 

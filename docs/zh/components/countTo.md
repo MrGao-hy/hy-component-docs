@@ -84,7 +84,7 @@ const start = () => {
 
 const pause = () => {
     if (countToRef.value) {
-        countToRef.value.pause();
+        countToRef.value.stop();
     }
 };
 
@@ -121,6 +121,8 @@ const resume = () => {
 | fontSize  | 字体大小，数值默认单位px             | `string`\|`number` | 22      |
 | bold      | 字体是否加粗                         | `boolean`          | false   |
 | separator | 千位分隔符，见上方说明               | `string`           | -       |
+| customClass | 自定义外部类名 | `string` | - |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
 
 ### Events
 
@@ -130,12 +132,13 @@ const resume = () => {
 
 ### Methods
 
-| 事件名  | 说明                                           |
-| ------- | ---------------------------------------------- |
-| start   | 开始滚动                                       |
-| pause   | 暂停滚动                                       |
-| resume  | 从暂停时的值开始滚动                           |
-| reStart | 暂定状态，重新再开始滚动；或者滚动状态下，暂停 |
+| 方法名  | 说明                                       |
+| ------- | ------------------------------------------ |
+| start   | 开始滚动数字                               |
+| stop    | 停止滚动                                   |
+| resume  | 恢复滚动（暂停状态下）                     |
+| reStart | 重新开始或暂停滚动                         |
+| reset   | 重置到初始值                               |
 
 ### CSS 变量
 

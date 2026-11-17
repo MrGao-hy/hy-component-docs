@@ -120,6 +120,12 @@
 | titleStyle | 标题的样式，对象或字符串形式 | `CSSProperties` | - |
 | customStyle | 自定义需要用到的外部样式 | `CSSProperties` | - |
 | customClass | 自定义外部类名 | `string` | - |
+| centerStyle | 中间区域的样式 | `CSSProperties` | - |
+| contentPadding | 导航栏内容区域的内边距 | `string` \ | `number` |
+| leftStyle | 左侧区域的样式 | `CSSProperties` | - |
+| rightStyle | 右侧区域的样式 | `CSSProperties` | - |
+| sub | 导航栏副标题 | `string` | - |
+| titleColor | 文字颜色 | `string` | - |
 
 ### Events
 
@@ -146,6 +152,6 @@
 | `--hy-navbar-title-font-size`   | 中间标题字号   | 跟随 `--hy-font-size-base`（28rpx） |
 | `--hy-navbar-sub-font-size`     | 中间副标题字号 | 跟随 `--hy-font-size-sm`（24rpx）   |
 | `--hy-navbar-sub-color`         | 中间副标题颜色 | 跟随 `--hy-text-color--grey`        |
-| `--hy-navbar-background--color` | 导航栏背景颜色 | 跟随 `--hy-background--container`   |
+| `--hy-navbar-background` | 导航栏背景色 | 跟随 `--hy-background--container` |
 
 <demo-model url="pages-design/navbar/navbar"></demo-model>

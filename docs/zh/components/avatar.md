@@ -263,6 +263,13 @@ interface IAvatarClickConfig {
 
 :::
 
+
+### Avatar Slots
+
+| 插槽名 | 说明 | 接收值 |
+| --- | --- | --- | --- |
+| default | 默认插槽，用于自定义内容 | - |
+
 ### CSS 变量
 
 | 变量名                      | 说明         | 默认值                                        |

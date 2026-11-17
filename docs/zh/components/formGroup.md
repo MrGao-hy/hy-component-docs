@@ -226,6 +226,8 @@ const columns: FormColumnsType[] = reactive([
 | switchItem    | [开关属性api](./switch#api)集合          | `HySwitchProps`           | -      |
 | radio         | [单选属性api](./radio#api)集合           | `HyRadioProps`            | -      |
 | checkButton   | [选择按钮属性api](./checkButton#api)集合 | `HyCheckButtonProps`      | -      |
+| customClass | 自定义外部类名 | `string` | - |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
 
 ### columns
 
@@ -308,5 +310,12 @@ const columns: FormColumnsType[] = reactive([
 [^2]: type = select 时候必填(参考 [HyPicker](./picker.md) 组件)
 
 [^3]: type = radio 时候必填(参考 [HyRadio](./radio.md) 组件)
+
+
+### FormGroup Slots
+
+| 插槽名 | 说明 | 接收值 |
+| --- | --- | --- | --- |
+| default | 默认插槽，用于自定义内容 | - |
 
 <demo-model url="pages-design/formGroup/formGroup"></demo-model>

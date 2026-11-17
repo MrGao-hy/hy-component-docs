@@ -490,6 +490,10 @@ interface IPickerExpose {
 | `--hy-picker-title-font-size`       | 顶部标题字号   | 跟随 `--hy-font-size-base`（28rpx） |
 | `--hy-picker-title-color`           | 顶部标题颜色   | 跟随 `--hy-text-color--grey`        |
 | `--hy-picker-item-color`            | 选项文字颜色   | 跟随 `--hy-text-color`              |
+| `--hy-picker-indicator-background` | 选中指示区背景色 | 跟随 `--hy-background--hover` |
+| `--hy-picker-mask-background-image` | 选项列表两翼雾化遮罩背景 | 跟随 `--hy-background-image--mask--two-flanks` |
+| `--hy-picker-primary` | 主题色 | 跟随 `--hy-primary` |
+| `--hy-picker-title-padding` | 标题栏内边距 | 跟随 `--hy-border-margin-padding-lg` |
 
 [^1]: bottom：底部弹出；top：顶部弹出
 

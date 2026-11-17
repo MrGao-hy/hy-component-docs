@@ -100,6 +100,7 @@ import { IconConfig } from '@hy-app/ui';
 | inactiveIcon  | 未选中时的图标名             | `string`           | STAR      |
 | touchable     | 是否可以通过滑动手势选择评分 | `boolean`          | true      |
 | customStyle   | 自定义样式                   | `CSSProperties`    | -         |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### Events
 

@@ -69,6 +69,8 @@
 | theme | 显示的暗色或者亮色 | `light` \| `dark` | dark |
 | center | 文字是否居中 | `boolean` | false |
 | fontSize | 字体大小 | `string` \| `number` | 14 |
+| customClass | 自定义外部类名 | `string` | - |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
 
 ### Events
 
@@ -76,6 +78,13 @@
 | ------ | -------------- | -------- |
 | click  | 点击组件时触发 | -        |
 | close  | 关闭组件时触发 | -        |
+
+
+### Warn Slots
+
+| 插槽名 | 说明 | 接收值 |
+| --- | --- | --- | --- |
+| right | 自定义右侧内容 | - |
 
 ### CSS 变量
 
@@ -87,5 +96,17 @@
 | `--hy-warn-close-right`     | 关闭按钮右边距 | `10px`                        |
 | `--hy-warn-radius`          | 容器圆角       | 跟随 `--hy-radius-sm`（8rpx） |
 | `--hy-warn-text-color`      | 标题/描述颜色  | `#fff`                        |
+| `--hy-warn-error` | 危险色 | 跟随 `--hy-error` |
+| `--hy-warn-error-light` | 危险色浅色 | 跟随 `--hy-error-light` |
+| `--hy-warn-icon-margin` | 图标右外边距 | 跟随 `--hy-border-margin-padding-sm` |
+| `--hy-warn-info` | 信息色 | 跟随 `--hy-info` |
+| `--hy-warn-info-light` | 信息色浅色 | 跟随 `--hy-info-light` |
+| `--hy-warn-padding` | 警告条整体内边距 | 跟随 `--hy-border-margin-padding-base` |
+| `--hy-warn-primary` | 主题色 | 跟随 `--hy-primary` |
+| `--hy-warn-primary-light` | 主题色浅色 | 跟随 `--hy-primary-light` |
+| `--hy-warn-success` | 成功色 | 跟随 `--hy-success` |
+| `--hy-warn-success-light` | 成功色浅色 | 跟随 `--hy-success-light` |
+| `--hy-warn-warning` | 警告色 | 跟随 `--hy-warning` |
+| `--hy-warn-warning-light` | 警告色浅色 | 跟随 `--hy-warning-light` |
 
 <demo-model url="pages-design/warn/warn"></demo-model>

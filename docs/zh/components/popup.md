@@ -325,5 +325,7 @@
 | `--hy-popup-z-index`             | 层级               | `9999`                         |
 | `--hy-popup-radius`              | 圆角（round 模式） | 跟随 `--hy-radius-lg`（32rpx） |
 | `--hy-popup-close-hover-opacity` | 关闭按钮按压透明度 | `0.4`                          |
+| `--hy-popup-background` | 弹窗背景色 | 跟随 `--hy-background--container` |
+| `--hy-popup-close-offset` | 关闭按钮角落偏移 | 跟随 `--hy-border-margin-padding-lg` |
 
 <demo-model url="pages-design/popup/popup"></demo-model>

@@ -361,5 +361,8 @@ export type SubSectionVo = string | number | SubSectionItemVo;
 | `--hy-subsection-font-size`    | 字号         | `12px`                        |
 | `--hy-subsection-line-height`  | 行高         | `14px`                        |
 | `--hy-subsection-radius`       | 整体圆角     | 跟随 `--hy-radius-sm`（8rpx） |
+| `--hy-subsection-bar-background` | 滑块背景色 | 跟随 `--hy-background--container` |
+| `--hy-subsection-button-background` | 按钮模式底槽背景色 | 跟随 `--hy-background--3` |
+| `--hy-subsection-primary` | 主题色 | 跟随 `--hy-primary` |
 
 <demo-model url="pages-design/subsection/subsection"></demo-model>

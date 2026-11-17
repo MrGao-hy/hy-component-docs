@@ -84,6 +84,7 @@ const show = ref(true);
 | duration    | 动画时长，单位毫秒               | `number`        | 300    |
 | opacity     | 不透明度值，当做rgba的第四个参数 | `number`        | 0.5    |
 | lockScroll  | 是否锁住页面滚动                 | `boolean`       | false  |
+| passThrough  | 是否允许触摸穿透遮罩（穿透时背景可点击，插槽内容仍可交互）                 | `boolean`       | false  |
 | customStyle | 自定义需要用到的外部样式         | `CSSProperties` | -      |
 | customClass | 自定义外部类名                   | `string`        | -      |
 

@@ -210,6 +210,8 @@ const value = ref(30);
 | useNative     | 是否渲染uni-app框架内置组件  | `boolean`            | false  |
 | rangeValue    | 双滑快双向绑定值，数组形式   | `array`              | [0, 0] |
 | customStyle   | 定义需要用到的外部样式       | `CSSProperties`      | -      |
+| customClass | 自定义外部类名 | `string` | - |
+| disabled | 是否禁用滑块 | `boolean` | false |
 
 ### Events
 
@@ -218,6 +220,13 @@ const value = ref(30);
 | changing | 触发事件（拖动过程中） | value：当前值 |
 | change   | 触发事件               | value：当前值 |
 | start    | 开始滑动               | value：当前值 |
+
+
+### Slider Slots
+
+| 插槽名 | 说明 | 接收值 |
+| --- | --- | --- | --- |
+| default | 默认插槽，用于自定义内容 | - |
 
 ### CSS 变量
 

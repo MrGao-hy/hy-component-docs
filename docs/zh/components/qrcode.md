@@ -161,4 +161,11 @@
 | preview   | 打开图片事件   | `url: string` 图片地址, `event: Event` 事件对象 |
 | longPress | 长按二维码事件 | -                                               |
 
+
+### CSS 变量
+
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- | --- |
+| `--hy-qrcode-background` | 背景色 | 跟随 `--hy-background` |
+
 <demo-model url="pages-design/qrcode/qrcode"></demo-model>

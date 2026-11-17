@@ -1,6 +1,6 @@
 # Badge 徽标数组件
 
-> 该组件一般用于图标右上角显示未读的消息数量，提示用户点击，有圆点和圆包含文字两种形式。
+> 该组件一般用于图标右上角显示未读的消息数量，提示用户点击，有圆点和圆包含文字两种形式。支持**独立使用**与**默认插槽包裹内容**两种模式。
 
 ## :pushpin:平台差异说明
 
@@ -11,128 +11,92 @@
 ## :japanese_castle:基本使用示例
 
 ```html
-<!-- 全局使用 -->
-<hy-badge :value="10"></hy-badge>
-```
-
-### 设置徽标的类型为一个圆点
-
-- 通过`isDot`为true设置圆点
-
-```html
 <template>
-    <hy-badge :value="12" isDot></hy-badge>
+    <hy-badge :value="8"></hy-badge>
 </template>
 ```
 
-### 边角形状
+### 插槽用法
 
-- 通过`shape`设置徽标形状
-    - `circle`四角均为圆角
-    - `horn`左下角为直角
-
-```html
-<template>
-    <hy-badge :value="123" shape="circle"></hy-badge>
-    <hy-badge :value="123" shape="horn"></hy-badge>
-</template>
-```
-
-### 设置数字的显示方式
-
-- `overflow`会根据`max`字段判断，超出显示`${max}+`
-- `ellipsis`会根据`max`判断，超出显示`${max}...`
-- `limit`会依据`1000`作为判断条件，超出1000，显示`${value/1000}K`，比如`2.2k`、`3.34w`，最多保留2位小数
-
-```html
-<template>
-    <hy-badge numberType="overflow" :value="9999"></hy-badge>
-    <hy-badge numberType="ellipsis" :value="9999"></hy-badge>
-    <hy-badge numberType="limit" :value="123456"></hy-badge>
-</template>
-```
-
-### 显示主题色
-
-- 通过`type`设置主题色
-- `primary`主题信息
-- `success`主题主要
-- `error`主题危险
-- `warning`主题警告
-- `info`主题默认
-- 通过`bg-color`设置背景色
-
-```html
-<template>
-    <hy-badge :value="12" type="primary"></hy-badge>
-    <hy-badge :value="12" type="error"></hy-badge>
-    <hy-badge :value="12" type="info"></hy-badge>
-    <hy-badge :value="12" type="success"></hy-badge>
-    <hy-badge :value="12" type="warning"></hy-badge>
-    <hy-badge :value="12" bg-color="#800080"></hy-badge>
-</template>
-```
-
-### 反转色
-
-- 通过`inverted`属性设置为`true`
-
-::: tip 温馨提示
-
-如果是自定义颜色反转需要把`color`设置自定义颜色
-
-:::
-
-```html
-<hy-badge :value="12" type="primary" inverted></hy-badge>
-<hy-badge :value="12" type="error" inverted></hy-badge>
-<hy-badge :value="12" type="info" inverted></hy-badge>
-<hy-badge :value="12" type="success" inverted></hy-badge>
-<hy-badge :value="12" type="warning" inverted></hy-badge>
-<hy-badge :value="12" color="#800080" inverted></hy-badge>
-```
-
-### 反转色
-
-::: warning 注意
-
-此组件内部默认为absulote绝对定位，所以需要给badge父组件(元素)设置position: relative相对定位， 再通过调整`offset`偏移值 (数组，两个元素，第一个元素为top值，第二个元素为right值，单位rpx，可为负值，如"[-10, -10]")设置到合适的位置即可。如果不需要组件内容默认的自动绝对定位，设置absolute参数为false即可。
-
-:::
+传入默认插槽后，组件以包裹形态渲染，角标自动骑缝定位于内容右上角，无需再手动开启 `absolute` 定位。适合给头像、图标等内容添加角标。
 
 ::: code-group
 
 ```html [vue]
-<view class="relative">
-    <hy-badge :value="12" absolute :offset="[-8, 50]"></hy-badge>
-    <hy-avatar
-        size="large"
-        shape="square"
-        src="https://img0.baidu.com/it/u=3196617431,1263013381&fm=253"
-    ></hy-avatar>
-</view>
+<template>
+    <hy-badge :value="8" border>
+        <hy-avatar size="large" shape="square" :src="config.avatar"></hy-avatar>
+    </hy-badge>
+    <hy-badge is-dot border>
+        <hy-avatar size="large" shape="circle" :src="config.avatar"></hy-avatar>
+    </hy-badge>
+</template>
 ```
 
-```scss [index.scss]
-.relative {
-    position: relative;
-}
+```ts [index.ts]
+const config = {
+    avatar: 'https://cdn.example.com/avatar.png'
+};
 ```
 
 :::
 
-### 显示白色边框
+- 插槽模式下可通过 `offset` 微调角标位置，格式为 `[top, right]`，单位 px。
+- 未传插槽时保持独立角标形态，可通过 `absolute` 配合 `offset`（此时为 `[top, left]`）自行定位。
+
+### 设置圆点类型徽标
+
+通过 `is-dot` 设置圆点类型徽标。
 
 ```html
-<view class="relative">
-    <hy-badge :value="12" absolute :offset="[-8, 50]" border></hy-badge>
+<hy-badge is-dot></hy-badge>
+```
 
-    <hy-avatar
-        size="large"
-        shape="square"
-        src="https://img0.baidu.com/it/u=3196617431,1263013381&fm=253"
-    ></hy-avatar>
-</view>
+### 边角形状
+
+通过 `shape` 设置徽标形状，可选值：`circle`（圆形，默认）、`horn`（牛角形）。
+
+```html
+<hy-badge :value="123" shape="circle"></hy-badge>
+<hy-badge :value="123" shape="horn"></hy-badge>
+```
+
+### 设置数字显示模式
+
+通过 `number-type` 设置数字的显示方式，可选值：
+
+- `overflow`：超过 `max` 显示 `{max}+`
+- `ellipsis`：超过 `max` 显示 `...`
+- `limit`：超过 `max` 固定显示 `max` 数字
+
+```html
+<hy-badge :value="1234" :max="99" number-type="overflow"></hy-badge>
+```
+
+### 显示主题色
+
+通过 `type` 设置主题色，可选值：`primary`、`success`、`info`、`warning`、`error`。
+
+```html
+<hy-badge :value="8" type="primary"></hy-badge>
+<hy-badge :value="8" type="success"></hy-badge>
+<hy-badge :value="8" type="warning"></hy-badge>
+```
+
+### 反转颜色
+
+通过 `inverted` 反转背景和字体颜色。
+
+```html
+<hy-badge :value="8" inverted></hy-badge>
+```
+
+### 显示白色边框
+
+通过 `border` 显示白色边框。
+
+```html
+<hy-badge :value="8" border></hy-badge>
 ```
 
 ## API
@@ -141,33 +105,46 @@
 
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| isDot | 不展示数字，只有一个小点 | `boolean` | - |
-| value | 展示的数字，大于 overflowCount 时显示为 ${overflowCount}+，为0且show-zero为false时隐藏 | `number` | - |
-| show | 组件是否显示 | `boolean` | true |
-| max | 最大值，超过最大值会显示 '{max}+' | `number` | 999 |
-| zIndex | 最大层级 | `number` | 999 |
-| type | 主题类型 | `error` \| `warning` \| `success` \| `primary` \| `info` | error |
-| showZero | 当数值为 0 时，是否展示 Badge | `boolean` | false |
-| bgColor | 背景颜色，优先级比type高，如设置，type参数会失效 | `string` | - |
-| color | 字体颜色 | `string` | #ffffff |
-| border | 是否显示边框 | `boolean` | false |
-| shape | 徽标形状，circle-四角均为圆角，horn-左下角为直角 | `circle` \| `horn` | circle |
-| numberType | 置数字的显示方式，详细见上方文档 | `overflow` \| `ellipsis` \| `limit` | overflow |
-| offset | 设置badge的位置偏移，格式为 [x, y]，也即设置的为top和right的值，absolute为true时有效 | `array` | - |
+| isDot | 是否显示圆点 | `boolean` | false |
+| value | 显示的内容 | `string`\|`number` | 0 |
+| show | 是否显示 | `boolean` | true |
+| max | 最大值，超过最大值按 `numberType` 处理 | `number` | 999 |
+| zIndex | 层级 | `number` | 999 |
+| type | 主题类型，可选值：`error`、`warning`、`success`、`primary`、`info` | `string` | error |
+| showZero | 当数值为 0 时是否展示徽标 | `boolean` | false |
+| bgColor | 背景颜色，优先级比 `type` 高，设置后 `type` 失效 | `string` | - |
+| color | 字体颜色 | `string` | - |
+| shape | 徽标形状，可选值：`circle`、`horn` | `string` | circle |
+| border | 是否显示白边 | `boolean` | false |
+| numberType | 数字显示方式，可选值：`overflow`、`ellipsis`、`limit` | `string` | overflow |
+| offset | 位置偏移 `[x, y]`，单位 px。插槽模式下为 `[top, right]`，用于微调骑缝位置；独立模式下为 `[top, left]`（`absolute` 为 true 时有效） | `array` | - |
 | inverted | 是否反转背景和字体颜色 | `boolean` | false |
-| absolute | 组件是否绝对定位 | `boolean` | false |
-| customStyle | 自定义需要用到的外部样式 | `CSSProperties` | - |
+| absolute | 是否绝对定位，仅独立使用（未传入默认插槽）时生效；插槽模式下角标自动定位于内容右上角 | `boolean` | false |
+| customStyle | 自定义外部样式 | `CSSProperties` | - |
 | customClass | 自定义外部类名 | `string` | - |
+
+### Events
+
+| 事件名 | 说明 | 回调参数 |
+| --- | --- | --- |
+| click | 点击徽标时触发 | event: Event - 事件对象 |
+
+### Slots
+
+| 插槽名 | 说明 | 接收值 |
+| --- | --- | --- |
+| default | 包裹内容，传入后组件以包裹形态渲染，角标骑缝定位于内容右上角 | - |
 
 ### CSS 变量
 
-| 变量名                          | 说明                  | 默认值                                 |
-| ------------------------------- | --------------------- | -------------------------------------- |
-| `--hy-badge-dot-size`           | 圆点大小              | `8px`                                  |
-| `--hy-badge-text-font-size`     | 文字大小              | `11px`                                 |
-| `--hy-badge-radius`             | 徽标圆角              | 跟随 `--hy-radius-semicircle`（100px） |
-| `--hy-badge-padding`            | 非圆点徽标内边距      | `2px 5px`                              |
-| `--hy-badge-inverted-font-size` | 反色模式字号          | `13px`                                 |
-| `--hy-badge-border-width`       | 白边宽度（is-border） | `2px`                                  |
+| 变量名                             | 说明       | 默认值 |
+|---------------------------------|----------| --- |
+| `--hy-badge-dot-size`           | 圆点尺寸     | `8px` |
+| `--hy-badge-text-font-size`     | 文字字号     | `11px` |
+| `--hy-badge-radius`             | 徽标圆角     | 跟随 `--hy-radius-semicircle` |
+| `--hy-badge-padding`            | 非圆点徽标内边距 | `2px 5px` |
+| `--hy-badge-inverted-font-size` | 反色模式字号   | `13px` |
+| `--hy-badge-border-width`       | 白边宽度     | `2px` |
+| `--hy-badge-border-color`       | 白边颜色     | 跟随 `--hy-background--2` |
 
 <demo-model url="pages-design/badge/badge"></demo-model>

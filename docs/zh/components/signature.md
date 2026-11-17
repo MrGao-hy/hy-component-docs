@@ -226,6 +226,13 @@ onMounted(() => {
 | min-width        | 笔锋模式最小宽度           | `number`           | 2       |
 | max-width        | 笔锋模式最大宽度           | `number`           | 6       |
 | min-speed        | 笔锋模式速度阈值           | `number`           | 1.5     |
+| customClass | 自定义外部类名 | `string` | - |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| redoText | 恢复按钮的文本 | `string` | - |
+| restoreText | 恢复按钮的文本 | `string` | 恢复（i18n） |
+| revokeText | 撤回按钮的文本 | `string` | 撤回（i18n） |
+| round | 边框圆角 | `string` | 10rpx |
+| undoText | 撤回按钮的文本 | `string` | - |
 
 ### Events
 
@@ -259,5 +266,7 @@ onMounted(() => {
 | ----------------------- | ------------ | -------------------------------- |
 | `--hy-signature-radius` | 画布区域圆角 | 跟随 `--hy-radius-base`（20rpx） |
 | `--hy-signature-border` | 画布区域边框 | 跟随 `--hy-border-line`          |
+| `--hy-signature-content-background` | 画布区域背景色 | 跟随 `--hy-background--3` |
+| `--hy-signature-footer-margin-top` | 底部操作栏上外边距 | 跟随 `--hy-border-margin-padding-base` |
 
 <demo-model url="pages-design/signature/signature"></demo-model>

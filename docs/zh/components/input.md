@@ -162,6 +162,8 @@ const value = ref('');
 | formatter | 输入过滤或格式化函数(如需兼容微信小程序，则只能通过setFormatter方法) | `function` \| `null` | null |
 | customStyle | 自定义需要用到的外部样式 | `CSSProperties` | - |
 | customClass | 自定义外部类名 | `string` | - |
+| fixed | 如果 textarea 是在一个 position:fixed 的区域，需要显示指定属性 fixed 为 true，兼容性：微信小程序、百度小程序、字节跳动小程序、QQ小程序 | `boolean` | false |
+| ignoreCompositionEvent | 是否忽略组件内对文本合成系统事件的处理 | `boolean` | false |
 
 ### Events
 
@@ -199,6 +201,12 @@ const value = ref('');
 | `--hy-input-disabled-color`    | 禁用文字颜色 | 跟随 `--hy-text-color--disabled`       |
 | `--hy-input-clear-radius`      | 清除按钮圆角 | 跟随 `--hy-radius-semicircle`（100px） |
 | `--hy-input-border`            | 边框         | 跟随 `--hy-border-line`                |
+| `--hy-input-clear-background` | 清除按钮背景色 | 跟随 `--hy-background--track` |
+| `--hy-input-disabled-background` | 输入框禁用态背景色 | 跟随 `--hy-background--disabled` |
+| `--hy-input-field-margin` | 输入区域右外边距 | 跟随 `--hy-border-margin-padding-base` |
+| `--hy-input-prefix-icon-margin` | 前置图标右外边距 | 跟随 `--hy-border-margin-padding-sm` |
+| `--hy-input-subfix-icon-margin` | 后置图标左外边距 | 跟随 `--hy-border-margin-padding-sm` |
+| `--hy-input-text-color` | 文字颜色 | 跟随 `--hy-text-color` |
 
 [^1]: `text`：输入文本内容；`number`：数字输入键盘，app-vue下可以输入浮点数，app-nvue和小程序平台下只能输入整数；`idcard`：身份证输入键盘，微信、支付宝、百度、QQ小程序；`digit`-带小数点的数字键盘，App的nvue页面、微信、支付宝、百度、头条、QQ小程序；`password`-密码输入框
 

@@ -104,7 +104,6 @@
 | color | 图标颜色 | `string` | - |
 | bold | 是否显示粗体 | `boolean` | false |
 | index | 一个用于区分多个图标的值，点击图标时通过click事件传出 | `string` \| `number` | - |
-| hoverClass | 图标按下去的样式类，用法同uni的view组件的hover-class参数, 详见：[hover-class](https://uniapp.dcloud.net.cn/component/view.html) | `string` | - |
 | customPrefix | 自定义字体图标库时，需要写上此值，详见：扩展自定义图标库 | `string` | hy-icon |
 | label | 图标右侧/下方的label文字 | `string` | - |
 | labelPos | label相对于图标的位置 | `string` | right |
@@ -134,6 +133,12 @@
 | `--hy-icon-label-max-width` | 标签文字最大宽度 | `150rpx`                          |
 | `--hy-icon-label-color`     | 标签文字颜色     | 跟随 `--hy-text-color--grey`      |
 | `--hy-icon-label-font-size` | 标签字号         | 跟随 `--hy-font-size-sm`（24rpx） |
+| `--hy-icon-error` | 危险色 | 跟随 `--hy-error` |
+| `--hy-icon-icon-color` | 图标颜色 | 跟随 `--hy-icon-color` |
+| `--hy-icon-info` | 信息色 | 跟随 `--hy-info` |
+| `--hy-icon-primary` | 主题色 | 跟随 `--hy-primary` |
+| `--hy-icon-success` | 成功色 | 跟随 `--hy-success` |
+| `--hy-icon-warning` | 警告色 | 跟随 `--hy-warning` |
 
 ## 图标集
 

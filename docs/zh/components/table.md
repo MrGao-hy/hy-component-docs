@@ -447,5 +447,8 @@ export type SortType = 'asc' | 'desc' | 'normal';
 | `--hy-table-fixed-left-shadow` | 固定列阴影（左侧） | `4px 0 10px rgba(0, 0, 0, 0.1)` |
 | `--hy-table-fixed-right-shadow` | 固定列阴影（右侧） | `-4px 0 10px rgba(0, 0, 0, 0.1)` |
 | `--hy-table-border` | 表格边框（含单元格分隔线，8 处同步） | 跟随 `--hy-border-line` |
+| `--hy-table-background` | 表格背景色（数据行与加载遮罩） | 跟随 `--hy-background--container` |
+| `--hy-table-header-background` | 表头背景色 | 跟随 `--hy-background--table-header` |
+| `--hy-table-primary` | 主题色 | 跟随 `--hy-primary` |
 
 <demo-model url="pages-design/table/table"></demo-model>

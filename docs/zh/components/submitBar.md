@@ -180,8 +180,9 @@ const menus = reactive([
 | leftBtnColor   | 左侧按钮颜色，支持渐变色   | `string`               | #ed3f14    |
 | rightBtnColor  | 有侧按钮颜色，支持渐变色   | `string`               | #ff7900    |
 | shape          | 按钮的形状                 | `circle`\|`square`     | circle     |
-| warn           | 按钮点击节流时长(单位：ms) | `number`               | 300        |
 | customStyle    | 定义需要用到的外部样式     | `CSSProperties`        | -          |
+| customClass | 自定义外部类名 | `string` | - |
+| zIndex | 层级 | `number` \ | `string` |
 
 ### Events
 
@@ -228,5 +229,10 @@ export interface SubmitBarIconMenus {
 | `--hy-submit-bar-left-font-size`  | 左侧文字字号 | `20rpx`  |
 | `--hy-submit-bar-right-font-size` | 右侧价格字号 | `26rpx`  |
 | `--hy-submit-bar-right-width`     | 右侧区域宽度 | `400rpx` |
+| `--hy-submit-bar-background` | 底栏背景色 | 跟随 `--hy-background--container` |
+| `--hy-submit-bar-button-padding-x` | 提交按钮左右内边距 | 跟随 `--hy-border-margin-padding-lg` |
+| `--hy-submit-bar-button-padding-y` | 提交按钮上下内边距 | 跟随 `--hy-border-margin-padding-base` |
+| `--hy-submit-bar-left-item-margin` | 左侧项左右外边距 | 跟随 `--hy-border-margin-padding-base` |
+| `--hy-submit-bar-padding` | 底栏整体内边距 | 跟随 `--hy-border-margin-padding-base` |
 
 <demo-model url="pages-design/submitBar/submitBar"></demo-model>

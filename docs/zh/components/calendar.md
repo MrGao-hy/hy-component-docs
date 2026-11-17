@@ -376,6 +376,13 @@ export interface IMonthProps {
 
 :::
 
+
+### Calendar Slots
+
+| 插槽名 | 说明 | 接收值 |
+| --- | --- | --- | --- |
+| footer | 自定义底部区域内容 | - |
+
 ### CSS 变量
 
 | 变量名 | 说明 | 默认值 |
@@ -401,5 +408,8 @@ export interface IMonthProps {
 | `--hy-calendar-day-selected-color` | 选中日期文字颜色 | `#ffffff` |
 | `--hy-calendar-day-disabled-color` | 禁用日期文字颜色 | 跟随 `--hy-text-color--disabled` |
 | `--hy-calendar-day-bottom-info-color` | 日期底部信息颜色 | 跟随 `--hy-text-color--2` |
+| `--hy-calendar-error` | 危险色 | 跟随 `--hy-error` |
+| `--hy-calendar-primary` | 主题色 | 跟随 `--hy-primary` |
+| `--hy-calendar-primary-light` | 主题色浅色 | 跟随 `--hy-primary-light` |
 
 <demo-model url="pages-design/calendar/calendar"></demo-model>

@@ -373,5 +373,8 @@
 | `--hy-code-input-cursor-color` | 光标颜色            | 跟随 `--hy-text-color`                 |
 | `--hy-code-input-line-radius`  | 下划线圆角          | 跟随 `--hy-radius-semicircle`（100px） |
 | `--hy-code-input-border-color` | 默认态边框/线条颜色 | 跟随 `--hy-border-color--2`            |
+| `--hy-code-input-icon-color` | 图标颜色 | 跟随 `--hy-icon-color` |
+| `--hy-code-input-no-background` | 无边框模式格子背景色 | 跟随 `--hy-background--track` |
+| `--hy-code-input-primary` | 主题色 | 跟随 `--hy-primary` |
 
 <demo-model url="pages-design/codeInput/codeInput"></demo-model>

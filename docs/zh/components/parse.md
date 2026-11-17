@@ -295,5 +295,15 @@ export default `<title>富文本示例</title>
 | error | 出错时触发 | 返回一个 object，其中 source 是错误来源，errMsg 为错误信息，target 包含出错标签的具体信息 |
 | imgTap | 图片被点击时触发 | 返回一个 object，其中 src 是图片链接，ignore 是一个函数，在事件中调用将不进行预览；可用于阻挡 onShow 的调用 |
 | linkTap | 在链接被点击时触发 | 返回一个 object，其中包含了被点击的 a 标签的所有属性，ignore 是一个函数，在事件中调用后将不自动跳转/复制；可在该事件中进行下载文档等进一步操作 |
+| click | 点击内容时触发 | - |
+| play | 播放媒体时触发 | - |
+| tap | 点击内容时触发 | - |
+
+
+### Parse Slots
+
+| 插槽名 | 说明 | 接收值 |
+| --- | --- | --- | --- |
+| default | 默认插槽，用于自定义内容 | - |
 
 <demo-model url="pages-design/parse/parse"></demo-model>
