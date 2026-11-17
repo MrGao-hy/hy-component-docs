@@ -216,14 +216,14 @@ const change = (e) => {
 
 ### CSS 变量
 
-| 变量名                         | 说明         | 默认值                                 |
-| ------------------------------ | ------------ | -------------------------------------- |
-| `--hy-switch-border-color`     | 边框颜色     | `rgba(0, 0, 0, 0.12)`                  |
-| `--hy-switch-node-box-shadow`  | 圆点阴影     | `1px 1px 1px 0 rgba(0, 0, 0, 0.25)`    |
-| `--hy-switch-disabled-opacity` | 禁用透明度   | `0.6`                                  |
-| `--hy-switch-radius`           | 开关整体圆角 | 跟随 `--hy-radius-semicircle`（100px） |
-| `--hy-switch-inactive-background` | 关闭态背景色 | 跟随 `--hy-background--3` |
-| `--hy-switch-node-background` | 滑块背景色 | 跟随 `--hy-background--container` |
-| `--hy-switch-primary` | 主题色 | 跟随 `--hy-primary` |
+| 变量名                            | 说明         | 默认值                                 |
+| --------------------------------- | ------------ | -------------------------------------- |
+| `--hy-switch-border-color`        | 边框颜色     | `rgba(0, 0, 0, 0.12)`                  |
+| `--hy-switch-node-box-shadow`     | 圆点阴影     | `1px 1px 1px 0 rgba(0, 0, 0, 0.25)`    |
+| `--hy-switch-disabled-opacity`    | 禁用透明度   | `0.6`                                  |
+| `--hy-switch-radius`              | 开关整体圆角 | 跟随 `--hy-radius-semicircle`（100px） |
+| `--hy-switch-inactive-background` | 关闭态背景色 | 跟随 `--hy-background--3`              |
+| `--hy-switch-node-background`     | 滑块背景色   | 跟随 `--hy-background--container`      |
+| `--hy-switch-primary`             | 主题色       | 跟随 `--hy-primary`                    |
 
 <demo-model url="pages-design/switch/switch"></demo-model>

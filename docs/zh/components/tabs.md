@@ -130,21 +130,21 @@ const list = [{ name: '全部' }, { name: '未核销' }, { name: '已核销' }];
 
 ### Methods
 
-| 方法名  | 说明                     | 参数 |
-| ------- | ------------------------ | ---- |
-| resize  | 计算滑块距离左边的距离   | -    |
+| 方法名 | 说明                   | 参数 |
+| ------ | ---------------------- | ---- |
+| resize | 计算滑块距离左边的距离 | -    |
 
 ### Slots
 
-| 插槽名  | 说明                  | 接收值                          |
-| ------- | --------------------- | ------------------------------- |
-| default | 轮播图自定义content值 | record: TabsItemVo, index: 索引 |
-| left    | 整体左侧插槽          | -                               |
-| icon    | tabs的图标            | record: TabsItemVo, index: 索引 |
-| content | tabs的内容            | record: TabsItemVo, index: 索引 |
-| right   | 整体右侧插槽          | -                               |
-| main    | 自定义掉底部轮播图    | -                               |
-| line | 自定义滑块（指示线）内容 | - |
+| 插槽名  | 说明                     | 接收值                          |
+| ------- | ------------------------ | ------------------------------- |
+| default | 轮播图自定义content值    | record: TabsItemVo, index: 索引 |
+| left    | 整体左侧插槽             | -                               |
+| icon    | tabs的图标               | record: TabsItemVo, index: 索引 |
+| content | tabs的内容               | record: TabsItemVo, index: 索引 |
+| right   | 整体右侧插槽             | -                               |
+| main    | 自定义掉底部轮播图       | -                               |
+| line    | 自定义滑块（指示线）内容 | -                               |
 
 ### Typings
 
@@ -176,17 +176,17 @@ export interface TabsItemVo {
 
 ### CSS 变量
 
-| 变量名                        | 说明         | 默认值                                 |
-| ----------------------------- | ------------ | -------------------------------------- |
-| `--hy-tabs-item-height`       | 选项高度     | `44px`                                 |
-| `--hy-tabs-item-padding`      | 选项内边距   | `0 11px`                               |
-| `--hy-tabs-font-size`         | 字号         | `15px`                                 |
-| `--hy-tabs-line-width`        | 下划线宽度   | `30px`                                 |
-| `--hy-tabs-line-height`       | 下划线高度   | `3px`                                  |
-| `--hy-tabs-text-color`        | 标签默认颜色 | 跟随 `--hy-text-color`                 |
-| `--hy-tabs-text-active-color` | 标签激活颜色 | 跟随 `--hy-text-color`                 |
-| `--hy-tabs-line-radius`       | 下划线圆角   | 跟随 `--hy-radius-semicircle`（100px） |
-| `--hy-tabs-primary` | 主题色 | 跟随 `--hy-primary` |
-| `--hy-tabs-text-disabled-color` | 标签禁用态文字颜色 | 跟随 `--hy-background--disabled` |
+| 变量名                          | 说明               | 默认值                                 |
+| ------------------------------- | ------------------ | -------------------------------------- |
+| `--hy-tabs-item-height`         | 选项高度           | `44px`                                 |
+| `--hy-tabs-item-padding`        | 选项内边距         | `0 11px`                               |
+| `--hy-tabs-font-size`           | 字号               | `15px`                                 |
+| `--hy-tabs-line-width`          | 下划线宽度         | `30px`                                 |
+| `--hy-tabs-line-height`         | 下划线高度         | `3px`                                  |
+| `--hy-tabs-text-color`          | 标签默认颜色       | 跟随 `--hy-text-color`                 |
+| `--hy-tabs-text-active-color`   | 标签激活颜色       | 跟随 `--hy-text-color`                 |
+| `--hy-tabs-line-radius`         | 下划线圆角         | 跟随 `--hy-radius-semicircle`（100px） |
+| `--hy-tabs-primary`             | 主题色             | 跟随 `--hy-primary`                    |
+| `--hy-tabs-text-disabled-color` | 标签禁用态文字颜色 | 跟随 `--hy-background--disabled`       |
 
 <demo-model url="pages-design/tabs/tabs"></demo-model>

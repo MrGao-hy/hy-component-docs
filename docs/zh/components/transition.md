@@ -79,7 +79,7 @@ const show = ref(true);
 | timingFunction | 使用的动画过渡函数，见上方说明 | `string`        | ease-out |
 | customStyle    | 定义需要用到的外部样式         | `CSSProperties` | -        |
 | customClass    | 自定义外部类名                 | `string`        | -        |
-| stop | 是否阻止点击事件冒泡 | `boolean` | false |
+| stop           | 是否阻止点击事件冒泡           | `boolean`       | false    |
 
 ### Events
 
@@ -91,7 +91,7 @@ const show = ref(true);
 | beforeLeave | 离开前触发 | -        |
 | leave       | 离开中触发 | -        |
 | afterLeave  | 离开后触发 | -        |
-| click | 点击触发 | - |
+| click       | 点击触发   | -        |
 
 ### Slots
 

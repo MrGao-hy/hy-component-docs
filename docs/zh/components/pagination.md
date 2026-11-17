@@ -88,12 +88,12 @@ const value = ref<number>(1);
 
 ### CSS 变量
 
-| 变量名                               | 说明               | 默认值                            |
-| ------------------------------------ | ------------------ | --------------------------------- |
-| `--hy-pagination-nav-min-width`      | 上下页按钮最小宽度 | `60px`                            |
-| `--hy-pagination-nav-active-color`   | 上下页按钮激活色   | `rgba(0, 0, 0, 0.65)`             |
-| `--hy-pagination-nav-disabled-color` | 上下页按钮禁用色   | `rgba(0, 0, 0, 0.15)`             |
-| `--hy-pagination-font-size`          | 信息文字字号       | 跟随 `--hy-font-size-sm`（24rpx） |
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-pagination-nav-min-width` | 上下页按钮最小宽度 | `60px` |
+| `--hy-pagination-nav-active-color` | 上下页按钮激活色 | `rgba(0, 0, 0, 0.65)` |
+| `--hy-pagination-nav-disabled-color` | 上下页按钮禁用色 | `rgba(0, 0, 0, 0.15)` |
+| `--hy-pagination-font-size` | 信息文字字号 | 跟随 `--hy-font-size-sm`（24rpx） |
 | `--hy-pagination-content-padding` | 内容区内边距 | 跟随 `--hy-border-margin-padding-base` |
 | `--hy-pagination-primary` | 主题色 | 跟随 `--hy-primary` |
 

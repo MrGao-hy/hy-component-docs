@@ -175,27 +175,27 @@
 
 ### CSS 变量
 
-| 变量名                                | 说明            | 默认值                                 |
-| ------------------------------------- | --------------- | -------------------------------------- |
-| `--hy-cell-item-icon-margin`          | 图标右边距      | `10px`                                 |
-| `--hy-cell-item-font-size-large`      | large 标题字号  | 跟随 `--hy-font-size-lg`（36rpx）      |
-| `--hy-cell-item-font-size-medium`     | medium 标题字号 | 跟随 `--hy-font-size-base`（28rpx）    |
-| `--hy-cell-item-font-size-small`      | small 标题字号  | 跟随 `--hy-font-size-sm`（24rpx）      |
-| `--hy-cell-item-sub-color`            | 描述文字颜色    | 跟随 `--hy-text-color--grey`           |
-| `--hy-cell-item-sub-font-size`        | 描述文字字号    | 跟随 `--hy-font-size-sm`（24rpx）      |
-| `--hy-cell-item-title-margin`         | 标题间距        | 跟随 `--hy-border-margin-padding-sm`   |
-| `--hy-cell-item-value-color`          | 右侧值文字颜色  | 跟随 `--hy-text-color--grey`           |
-| `--hy-cell-item-value-max-width`      | 右侧值最大宽度  | `90%`                                  |
-| `--hy-cell-item-value-margin`         | 值间距          | 跟随`--hy-border-margin-padding-sm`    |
-| `--hy-cell-item-arrow-color`          | 右箭头颜色      | 跟随 `--hy-text-color--3`              |
-| `--hy-cell-item-disabled-color`       | 禁用文字颜色    | 跟随 `--hy-text-color--disabled`       |
-| `--hy-cell-item-background`           | 容器背景色      | 跟随 `--hy-background--container`      |
-| `--hy-cell-item-padding-lg`           | 大间距          | 跟随 `--hy-border-margin-padding-lg`   |
-| `--hy-cell-item-line-height-lg`       | 大行高          | 跟随 `--hy-line-height-lg`             |
-| `--hy-cell-item-padding-base`         | 基础间距        | 跟随 `--hy-border-margin-padding-base` |
-| `--hy-cell-item-line-height-base`     | 基础行高        | 跟随 `--hy-line-height-base`           |
-| `--hy-cell-item-padding-sm`           | 小间距          | 跟随 `--hy-border-margin-padding-sm`   |
-| `--hy-cell-item-line-height-sm`       | 小行高          | 跟随 `--hy-line-height-sm`             |
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-cell-item-icon-margin` | 图标右边距 | `10px` |
+| `--hy-cell-item-font-size-large` | large 标题字号 | 跟随 `--hy-font-size-lg`（36rpx） |
+| `--hy-cell-item-font-size-medium` | medium 标题字号 | 跟随 `--hy-font-size-base`（28rpx） |
+| `--hy-cell-item-font-size-small` | small 标题字号 | 跟随 `--hy-font-size-sm`（24rpx） |
+| `--hy-cell-item-sub-color` | 描述文字颜色 | 跟随 `--hy-text-color--grey` |
+| `--hy-cell-item-sub-font-size` | 描述文字字号 | 跟随 `--hy-font-size-sm`（24rpx） |
+| `--hy-cell-item-title-margin` | 标题间距 | 跟随 `--hy-border-margin-padding-sm` |
+| `--hy-cell-item-value-color` | 右侧值文字颜色 | 跟随 `--hy-text-color--grey` |
+| `--hy-cell-item-value-max-width` | 右侧值最大宽度 | `90%` |
+| `--hy-cell-item-value-margin` | 值间距 | 跟随`--hy-border-margin-padding-sm` |
+| `--hy-cell-item-arrow-color` | 右箭头颜色 | 跟随 `--hy-text-color--3` |
+| `--hy-cell-item-disabled-color` | 禁用文字颜色 | 跟随 `--hy-text-color--disabled` |
+| `--hy-cell-item-background` | 容器背景色 | 跟随 `--hy-background--container` |
+| `--hy-cell-item-padding-lg` | 大间距 | 跟随 `--hy-border-margin-padding-lg` |
+| `--hy-cell-item-line-height-lg` | 大行高 | 跟随 `--hy-line-height-lg` |
+| `--hy-cell-item-padding-base` | 基础间距 | 跟随 `--hy-border-margin-padding-base` |
+| `--hy-cell-item-line-height-base` | 基础行高 | 跟随 `--hy-line-height-base` |
+| `--hy-cell-item-padding-sm` | 小间距 | 跟随 `--hy-border-margin-padding-sm` |
+| `--hy-cell-item-line-height-sm` | 小行高 | 跟随 `--hy-line-height-sm` |
 | `--hy-cell-item-clickable-background` | 单元格点击态背景色 | 跟随 `--hy-background--hover` |
 | `--hy-cell-item-disabled-background` | 单元格禁用态背景色 | 跟随 `--hy-background--disabled` |
 

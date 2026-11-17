@@ -483,13 +483,13 @@ interface IPickerExpose {
 
 ### CSS 变量
 
-| 变量名                              | 说明           | 默认值                              |
-| ----------------------------------- | -------------- | ----------------------------------- |
-| `--hy-picker-item-disabled-opacity` | 选项禁用透明度 | `0.35`                              |
-| `--hy-picker-loading-z-index`       | 加载层层级     | `1000`                              |
-| `--hy-picker-title-font-size`       | 顶部标题字号   | 跟随 `--hy-font-size-base`（28rpx） |
-| `--hy-picker-title-color`           | 顶部标题颜色   | 跟随 `--hy-text-color--grey`        |
-| `--hy-picker-item-color`            | 选项文字颜色   | 跟随 `--hy-text-color`              |
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-picker-item-disabled-opacity` | 选项禁用透明度 | `0.35` |
+| `--hy-picker-loading-z-index` | 加载层层级 | `1000` |
+| `--hy-picker-title-font-size` | 顶部标题字号 | 跟随 `--hy-font-size-base`（28rpx） |
+| `--hy-picker-title-color` | 顶部标题颜色 | 跟随 `--hy-text-color--grey` |
+| `--hy-picker-item-color` | 选项文字颜色 | 跟随 `--hy-text-color` |
 | `--hy-picker-indicator-background` | 选中指示区背景色 | 跟随 `--hy-background--hover` |
 | `--hy-picker-mask-background-image` | 选项列表两翼雾化遮罩背景 | 跟随 `--hy-background-image--mask--two-flanks` |
 | `--hy-picker-primary` | 主题色 | 跟随 `--hy-primary` |

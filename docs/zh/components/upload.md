@@ -453,20 +453,20 @@ export interface UploadFileParams {
 
 ### CSS 变量
 
-| 变量名                       | 说明           | 默认值                       |
-| ---------------------------- | -------------- | ---------------------------- |
-| `--hy-upload-image-width`    | 预览图尺寸     | `80px`                       |
-| `--hy-upload-text-font-size` | 提示文字字号   | `11px`                       |
-| `--hy-upload-radius`         | 上传项圆角     | `2px`                        |
-| `--hy-upload-item-margin`    | 上传项外边距   | `0 8px 8px 0`                |
-| `--hy-upload-deletable-size` | 删除按钮尺寸   | `14px`                       |
-| `--hy-upload-other-bg`       | 文件类型背景色 | `rgb(242, 242, 242)`         |
-| `--hy-upload-text-color`     | 提示文字颜色   | 跟随 `--hy-text-color--grey` |
-| `--hy-upload-button-background` | 上传按钮背景色 | 跟随 `--hy-background--empty` |
+| 变量名                                | 说明                 | 默认值                        |
+| ------------------------------------- | -------------------- | ----------------------------- |
+| `--hy-upload-image-width`             | 预览图尺寸           | `80px`                        |
+| `--hy-upload-text-font-size`          | 提示文字字号         | `11px`                        |
+| `--hy-upload-radius`                  | 上传项圆角           | `2px`                         |
+| `--hy-upload-item-margin`             | 上传项外边距         | `0 8px 8px 0`                 |
+| `--hy-upload-deletable-size`          | 删除按钮尺寸         | `14px`                        |
+| `--hy-upload-other-bg`                | 文件类型背景色       | `rgb(242, 242, 242)`          |
+| `--hy-upload-text-color`              | 提示文字颜色         | 跟随 `--hy-text-color--grey`  |
+| `--hy-upload-button-background`       | 上传按钮背景色       | 跟随 `--hy-background--empty` |
 | `--hy-upload-button-hover-background` | 上传按钮点击态背景色 | 跟随 `--hy-background--hover` |
-| `--hy-upload-error` | 危险色 | 跟随 `--hy-error` |
-| `--hy-upload-primary` | 主题色 | 跟随 `--hy-primary` |
-| `--hy-upload-success` | 成功色 | 跟随 `--hy-success` |
+| `--hy-upload-error`                   | 危险色               | 跟随 `--hy-error`             |
+| `--hy-upload-primary`                 | 主题色               | 跟随 `--hy-primary`           |
+| `--hy-upload-success`                 | 成功色               | 跟随 `--hy-success`           |
 
 <demo-model url="pages-design/upload/upload"></demo-model>
 

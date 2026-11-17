@@ -157,29 +157,29 @@
 
 ### Slots
 
-| 插槽名 | 说明                   | 接收值 |
-| ------ | ---------------------- | ------ |
-| header | 自定义卡片头部内容     | -      |
-| body   | 自定义卡片主体部分内容 | -      |
-| footer | 自定义卡片底部部分内容 | -      |
-| default | 默认插槽，用于自定义内容 | - |
+| 插槽名  | 说明                     | 接收值 |
+| ------- | ------------------------ | ------ |
+| header  | 自定义卡片头部内容       | -      |
+| body    | 自定义卡片主体部分内容   | -      |
+| footer  | 自定义卡片底部部分内容   | -      |
+| default | 默认插槽，用于自定义内容 | -      |
 
 ### CSS 变量
 
-| 变量名                      | 说明             | 默认值                              |
-| --------------------------- | ---------------- | ----------------------------------- |
-| `--hy-card-font-size`       | 正文字号         | 跟随 `--hy-font-size-base`（28rpx） |
-| `--hy-card-title-max-width` | 标题最大宽度     | `400rpx`                            |
-| `--hy-card-head-padding`    | 头部内边距       | `20rpx 20rpx 10rpx`                 |
-| `--hy-card-body-padding`    | 内容内边距       | `10rpx 20rpx 10rpx`                 |
-| `--hy-card-foot-padding`    | 底部内边距       | `10rpx 20rpx 20rpx`                 |
-| `--hy-card-title-font-size` | 头部标题字号     | 跟随 `--hy-font-size-base`（28rpx） |
-| `--hy-card-sub-color`       | 头部副标题颜色   | 跟随 `--hy-text-color--grey`        |
-| `--hy-card-sub-font-size`   | 头部副标题字号   | 跟随 `--hy-font-size-sm`（24rpx）   |
-| `--hy-card-right-color`     | 头部右侧文字颜色 | 跟随 `--hy-text-color--grey`        |
-| `--hy-card-background` | 卡片背景色 | 跟随 `--hy-background--container` |
-| `--hy-card-full-margin` | 通栏模式左右外边距 | 跟随 `--hy-border-margin-padding-base` |
-| `--hy-card-right-margin` | 头部右侧左外边距 | 跟随 `--hy-border-margin-padding-sm` |
-| `--hy-card-thumb-margin` | 缩略图右外边距 | 跟随 `--hy-border-margin-padding-base` |
+| 变量名                      | 说明               | 默认值                                 |
+| --------------------------- | ------------------ | -------------------------------------- |
+| `--hy-card-font-size`       | 正文字号           | 跟随 `--hy-font-size-base`（28rpx）    |
+| `--hy-card-title-max-width` | 标题最大宽度       | `400rpx`                               |
+| `--hy-card-head-padding`    | 头部内边距         | `20rpx 20rpx 10rpx`                    |
+| `--hy-card-body-padding`    | 内容内边距         | `10rpx 20rpx 10rpx`                    |
+| `--hy-card-foot-padding`    | 底部内边距         | `10rpx 20rpx 20rpx`                    |
+| `--hy-card-title-font-size` | 头部标题字号       | 跟随 `--hy-font-size-base`（28rpx）    |
+| `--hy-card-sub-color`       | 头部副标题颜色     | 跟随 `--hy-text-color--grey`           |
+| `--hy-card-sub-font-size`   | 头部副标题字号     | 跟随 `--hy-font-size-sm`（24rpx）      |
+| `--hy-card-right-color`     | 头部右侧文字颜色   | 跟随 `--hy-text-color--grey`           |
+| `--hy-card-background`      | 卡片背景色         | 跟随 `--hy-background--container`      |
+| `--hy-card-full-margin`     | 通栏模式左右外边距 | 跟随 `--hy-border-margin-padding-base` |
+| `--hy-card-right-margin`    | 头部右侧左外边距   | 跟随 `--hy-border-margin-padding-sm`   |
+| `--hy-card-thumb-margin`    | 缩略图右外边距     | 跟随 `--hy-border-margin-padding-base` |
 
 <demo-model url="pages-design/card/card"></demo-model>

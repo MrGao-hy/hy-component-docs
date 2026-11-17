@@ -507,14 +507,14 @@ export const data = [
 | badge       | 徽标属性集合，详见[徽标Api](./badge#api) | `HyBadgeProps`     | -      |
 | customStyle | 自定义需要用到的外部样式                 | `CSSProperties`    | -      |
 | customClass | 自定义外部类名                           | `string`           | -      |
-| modelValue | 当前值 | `string` | - |
+| modelValue  | 当前值                                   | `string`           | -      |
 
 ### Events
 
-| 事件名 | 说明           | 回调参数                            |
-| ------ | -------------- | ----------------------------------- |
-| change | 选项切换时触发 | (temp: MenuParamsVo, index: number) |
-| update:modelValue | 选中项变化时触发 | - |
+| 事件名            | 说明             | 回调参数                            |
+| ----------------- | ---------------- | ----------------------------------- |
+| change            | 选项切换时触发   | (temp: MenuParamsVo, index: number) |
+| update:modelValue | 选中项变化时触发 | -                                   |
 
 ### Slots
 
@@ -560,14 +560,14 @@ type MenuParamsVo = {
 
 ### CSS 变量
 
-| 变量名                       | 说明                     | 默认值                                 |
-| ---------------------------- | ------------------------ | -------------------------------------- |
-| `--hy-menu-max-width`        | 菜单最大宽度             | `260rpx`                               |
-| `--hy-menu-indicator-width`  | 选中指示条宽度           | `4px`                                  |
-| `--hy-menu-indicator-height` | 选中指示条高度           | `15px`                                 |
-| `--hy-menu-indicator-radius` | 选中指示条圆角           | 跟随 `--hy-radius-semicircle`（100px） |
-| `--hy-menu-title-font-size`  | 标题字号（行高同步跟随） | 跟随 `--hy-font-size-base`（28rpx）    |
-| `--hy-menu-disabled-color`   | 禁用文字颜色             | 跟随 `--hy-text-color--disabled`       |
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-menu-max-width` | 菜单最大宽度 | `260rpx` |
+| `--hy-menu-indicator-width` | 选中指示条宽度 | `4px` |
+| `--hy-menu-indicator-height` | 选中指示条高度 | `15px` |
+| `--hy-menu-indicator-radius` | 选中指示条圆角 | 跟随 `--hy-radius-semicircle`（100px） |
+| `--hy-menu-title-font-size` | 标题字号（行高同步跟随） | 跟随 `--hy-font-size-base`（28rpx） |
+| `--hy-menu-disabled-color` | 禁用文字颜色 | 跟随 `--hy-text-color--disabled` |
 | `--hy-menu-background` | 菜单整体背景色 | 跟随 `--hy-background--track` |
 | `--hy-menu-item-active-background` | 菜单项选中态背景色 | 跟随 `--hy-background--active` |
 | `--hy-menu-item-disabled-background` | 菜单项禁用态背景色 | 跟随 `--hy-background--disabled` |

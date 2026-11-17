@@ -267,11 +267,11 @@
 
 ### Checkbox Slots
 
-| 插槽名 | 说明              | 传值                  |
-| ------ | ----------------- | --------------------- |
-| icon   | 自定义`icon`内容  | iconColor \| iconSize |
-| label  | 自定义`label`内容 | record                |
-| default | 默认插槽，用于自定义内容 | - |
+| 插槽名  | 说明                     | 传值                  |
+| ------- | ------------------------ | --------------------- |
+| icon    | 自定义`icon`内容         | iconColor \| iconSize |
+| label   | 自定义`label`内容        | record                |
+| default | 默认插槽，用于自定义内容 | -                     |
 
 ### CheckboxItem Slots
 
@@ -282,14 +282,14 @@
 
 ### CSS 变量
 
-| 变量名                                   | 说明           | 默认值                              |
-| ---------------------------------------- | -------------- | ----------------------------------- |
-| `--hy-checkbox-margin`                   | 外边距         | `5px`                               |
-| `--hy-checkbox-radius-square`            | 方形勾选框圆角 | `3px`                               |
-| `--hy-checkbox-disabled-checked-opacity` | 禁用选中透明度 | `0.5`                               |
-| `--hy-checkbox-font-size`                | 标签字号       | 跟随 `--hy-font-size-base`（28rpx） |
-| `--hy-checkbox-disabled-color`           | 禁用文字颜色   | 跟随 `--hy-text-color--disabled`    |
-| `--hy-checkbox-border`                   | 勾选框边框     | 跟随 `--hy-border-line`             |
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-checkbox-margin` | 外边距 | `5px` |
+| `--hy-checkbox-radius-square` | 方形勾选框圆角 | `3px` |
+| `--hy-checkbox-disabled-checked-opacity` | 禁用选中透明度 | `0.5` |
+| `--hy-checkbox-font-size` | 标签字号 | 跟随 `--hy-font-size-base`（28rpx） |
+| `--hy-checkbox-disabled-color` | 禁用文字颜色 | 跟随 `--hy-text-color--disabled` |
+| `--hy-checkbox-border` | 勾选框边框 | 跟随 `--hy-border-line` |
 | `--hy-checkbox-icon-disabled-background` | 勾选框禁用态背景色 | 跟随 `--hy-background--disabled` |
 | `--hy-checkbox-icon-margin` | 勾选框图标右外边距 | 跟随 `--hy-border-margin-padding-sm` |
 | `--hy-checkbox-label-margin` | 选项文字右外边距 | 跟随 `--hy-border-margin-padding-sm` |

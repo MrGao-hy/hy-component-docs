@@ -108,21 +108,21 @@ const resume = () => {
 
 ### CountTo
 
-| 参数      | 说明                                 | 类型               | 默认值  |
-| --------- | ------------------------------------ | ------------------ | ------- |
-| startVal  | 开始值                               | `number`           | 0       |
-| endVal    | 结束值                               | `number`           | 0       |
-| duration  | 滚动过程所需的时间，单位ms           | `number`           | 2000    |
-| autoplay  | 是否自动开始滚动                     | `boolean`          | true    |
-| decimals  | 要显示的小数位数，见上方说明         | `number`           | 0       |
-| useEasing | 滚动结束时，是否缓动结尾，见上方说明 | `boolean`          | true    |
-| decimal   | 十进制分割                           | `string`           | ,       |
-| color     | 字体颜色                             | `string`           | #606266 |
-| fontSize  | 字体大小，数值默认单位px             | `string`\|`number` | 22      |
-| bold      | 字体是否加粗                         | `boolean`          | false   |
-| separator | 千位分隔符，见上方说明               | `string`           | -       |
-| customClass | 自定义外部类名 | `string` | - |
-| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| 参数        | 说明                                 | 类型               | 默认值  |
+| ----------- | ------------------------------------ | ------------------ | ------- |
+| startVal    | 开始值                               | `number`           | 0       |
+| endVal      | 结束值                               | `number`           | 0       |
+| duration    | 滚动过程所需的时间，单位ms           | `number`           | 2000    |
+| autoplay    | 是否自动开始滚动                     | `boolean`          | true    |
+| decimals    | 要显示的小数位数，见上方说明         | `number`           | 0       |
+| useEasing   | 滚动结束时，是否缓动结尾，见上方说明 | `boolean`          | true    |
+| decimal     | 十进制分割                           | `string`           | ,       |
+| color       | 字体颜色                             | `string`           | #606266 |
+| fontSize    | 字体大小，数值默认单位px             | `string`\|`number` | 22      |
+| bold        | 字体是否加粗                         | `boolean`          | false   |
+| separator   | 千位分隔符，见上方说明               | `string`           | -       |
+| customClass | 自定义外部类名                       | `string`           | -       |
+| customStyle | 定义需要用到的外部样式               | `CSSProperties`    | -       |
 
 ### Events
 
@@ -132,13 +132,13 @@ const resume = () => {
 
 ### Methods
 
-| 方法名  | 说明                                       |
-| ------- | ------------------------------------------ |
-| start   | 开始滚动数字                               |
-| stop    | 停止滚动                                   |
-| resume  | 恢复滚动（暂停状态下）                     |
-| reStart | 重新开始或暂停滚动                         |
-| reset   | 重置到初始值                               |
+| 方法名  | 说明                   |
+| ------- | ---------------------- |
+| start   | 开始滚动数字           |
+| stop    | 停止滚动               |
+| resume  | 恢复滚动（暂停状态下） |
+| reStart | 重新开始或暂停滚动     |
+| reset   | 重置到初始值           |
 
 ### CSS 变量
 

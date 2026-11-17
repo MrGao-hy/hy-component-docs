@@ -163,26 +163,26 @@ const menus = reactive([
 
 ### SubmitBar Props
 
-| 参数           | 说明                       | 类型                   | 默认值     |
-| -------------- | -------------------------- | ---------------------- | ---------- |
-| menus          | 左侧菜单栏                 | `SubmitBarIconMenus[]` | -          |
-| fixed          | 是否固定在底部             | `boolean`              | true       |
-| border         | 是否显示顶部边框           | `boolean`              | true       |
-| leftLoading    | 加载左侧按钮loading        | `boolean`              | false      |
-| rightLoading   | 加载右侧按钮loading        | `boolean`              | false      |
-| iconColor      | 左侧icon的颜色             | `string`               | -          |
-| iconLabelColor | 左侧文字的颜色             | `string`               | #909193FF  |
-| textColor      | 右侧按钮文字颜色           | `string`               | -          |
-| showLeftBtn    | 是否显示左边按钮           | `boolean`              | true       |
-| showRightBtn   | 是否显示右边按钮           | `boolean`              | true       |
-| leftBtnText    | 左侧按钮文字               | `string`               | 加入购物车 |
-| rightBtnText   | 右侧按钮文字               | `string`               | 立即购买   |
-| leftBtnColor   | 左侧按钮颜色，支持渐变色   | `string`               | #ed3f14    |
-| rightBtnColor  | 有侧按钮颜色，支持渐变色   | `string`               | #ff7900    |
-| shape          | 按钮的形状                 | `circle`\|`square`     | circle     |
-| customStyle    | 定义需要用到的外部样式     | `CSSProperties`        | -          |
-| customClass | 自定义外部类名 | `string` | - |
-| zIndex | 层级 | `number` \ | `string` |
+| 参数           | 说明                     | 类型                   | 默认值     |
+| -------------- | ------------------------ | ---------------------- | ---------- |
+| menus          | 左侧菜单栏               | `SubmitBarIconMenus[]` | -          |
+| fixed          | 是否固定在底部           | `boolean`              | true       |
+| border         | 是否显示顶部边框         | `boolean`              | true       |
+| leftLoading    | 加载左侧按钮loading      | `boolean`              | false      |
+| rightLoading   | 加载右侧按钮loading      | `boolean`              | false      |
+| iconColor      | 左侧icon的颜色           | `string`               | -          |
+| iconLabelColor | 左侧文字的颜色           | `string`               | #909193FF  |
+| textColor      | 右侧按钮文字颜色         | `string`               | -          |
+| showLeftBtn    | 是否显示左边按钮         | `boolean`              | true       |
+| showRightBtn   | 是否显示右边按钮         | `boolean`              | true       |
+| leftBtnText    | 左侧按钮文字             | `string`               | 加入购物车 |
+| rightBtnText   | 右侧按钮文字             | `string`               | 立即购买   |
+| leftBtnColor   | 左侧按钮颜色，支持渐变色 | `string`               | #ed3f14    |
+| rightBtnColor  | 有侧按钮颜色，支持渐变色 | `string`               | #ff7900    |
+| shape          | 按钮的形状               | `circle`\|`square`     | circle     |
+| customStyle    | 定义需要用到的外部样式   | `CSSProperties`        | -          |
+| customClass    | 自定义外部类名           | `string`               | -          |
+| zIndex         | 层级                     | `number` \             | `string`   |
 
 ### Events
 
@@ -224,15 +224,15 @@ export interface SubmitBarIconMenus {
 
 ### CSS 变量
 
-| 变量名                            | 说明         | 默认值   |
-| --------------------------------- | ------------ | -------- |
-| `--hy-submit-bar-left-font-size`  | 左侧文字字号 | `20rpx`  |
-| `--hy-submit-bar-right-font-size` | 右侧价格字号 | `26rpx`  |
-| `--hy-submit-bar-right-width`     | 右侧区域宽度 | `400rpx` |
-| `--hy-submit-bar-background` | 底栏背景色 | 跟随 `--hy-background--container` |
-| `--hy-submit-bar-button-padding-x` | 提交按钮左右内边距 | 跟随 `--hy-border-margin-padding-lg` |
+| 变量名                             | 说明               | 默认值                                 |
+| ---------------------------------- | ------------------ | -------------------------------------- |
+| `--hy-submit-bar-left-font-size`   | 左侧文字字号       | `20rpx`                                |
+| `--hy-submit-bar-right-font-size`  | 右侧价格字号       | `26rpx`                                |
+| `--hy-submit-bar-right-width`      | 右侧区域宽度       | `400rpx`                               |
+| `--hy-submit-bar-background`       | 底栏背景色         | 跟随 `--hy-background--container`      |
+| `--hy-submit-bar-button-padding-x` | 提交按钮左右内边距 | 跟随 `--hy-border-margin-padding-lg`   |
 | `--hy-submit-bar-button-padding-y` | 提交按钮上下内边距 | 跟随 `--hy-border-margin-padding-base` |
-| `--hy-submit-bar-left-item-margin` | 左侧项左右外边距 | 跟随 `--hy-border-margin-padding-base` |
-| `--hy-submit-bar-padding` | 底栏整体内边距 | 跟随 `--hy-border-margin-padding-base` |
+| `--hy-submit-bar-left-item-margin` | 左侧项左右外边距   | 跟随 `--hy-border-margin-padding-base` |
+| `--hy-submit-bar-padding`          | 底栏整体内边距     | 跟随 `--hy-border-margin-padding-base` |
 
 <demo-model url="pages-design/submitBar/submitBar"></demo-model>

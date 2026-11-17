@@ -159,21 +159,21 @@ toast.success('操作成功', {
 ## API
 
 ### Toast Props
-| 参数 | 说明 | 类型 | 默认值    |
-| --- | --- | --- |--------|
-| message | 显示的文本 | `string` | -      |
-| type | 主题类型 | `'error' \| 'warning' \| 'success' \| 'primary' \| 'info'` | info   |
-| icon | 图标名称或布尔值（true显示默认图标） | `string \| boolean` | false  |
-| loading | 是否加载中状态 | `boolean` | false  |
-| loadMode | 加载图标模式 | `'circle' \| 'spinner' \| 'semicircle'` | circle |
-| overlay | 是否触摸穿透 | `boolean` | true   |
-| cover | 是否显示遮罩层 | `boolean` | false  |
-| position | toast 出现的位置 | `'top' \| 'center' \| 'bottom'` | center |
-| duration | 展示时间（毫秒），-1 时不自动关闭 | `number` | 2000   |
-| zIndex | zIndex 层级 | `number` | 110000 |
-| customStyle | 定义需要用到的外部样式 | `CSSProperties` | -      |
-| customClass | 自定义外部类名 | `string` | -      |
 
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| message | 显示的文本 | `string` | - |
+| type | 主题类型 | `'error' \| 'warning' \| 'success' \| 'primary' \| 'info'` | info |
+| icon | 图标名称或布尔值（true显示默认图标） | `string \| boolean` | false |
+| loading | 是否加载中状态 | `boolean` | false |
+| loadMode | 加载图标模式 | `'circle' \| 'spinner' \| 'semicircle'` | circle |
+| overlay | 是否触摸穿透 | `boolean` | true |
+| cover | 是否显示遮罩层 | `boolean` | false |
+| position | toast 出现的位置 | `'top' \| 'center' \| 'bottom'` | center |
+| duration | 展示时间（毫秒），-1 时不自动关闭 | `number` | 2000 |
+| zIndex | zIndex 层级 | `number` | 110000 |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### Options 参数
 
@@ -202,7 +202,7 @@ toast.success('操作成功', {
 | primary | 显示主题色提示（带图标）   | `message: string, options?: ToastOptions`  |
 | loading | 显示加载提示（需手动关闭） | `message?: string, options?: ToastOptions` |
 | close   | 关闭所有 toast             | -                                          |
-| hide | 隐藏 Toast | - |
+| hide    | 隐藏 Toast                 | -                                          |
 
 ### Typings
 
@@ -252,10 +252,10 @@ export interface ToastOptions {
 | `--hy-toast-icon-radius`       | 图标圆角             | 跟随 `--hy-radius-semicircle`（100px） |
 | `--hy-toast-text-color`        | 文字颜色             | `#ffffff`                              |
 | `--hy-toast-text-font-size`    | 文字字号             | 跟随 `--hy-font-size-base`（28rpx）    |
-| `--hy-toast-error` | 危险色 | 跟随 `--hy-error` |
-| `--hy-toast-info` | 信息色 | 跟随 `--hy-info` |
-| `--hy-toast-primary` | 主题色 | 跟随 `--hy-primary` |
-| `--hy-toast-success` | 成功色 | 跟随 `--hy-success` |
-| `--hy-toast-warning` | 警告色 | 跟随 `--hy-warning` |
+| `--hy-toast-error`             | 危险色               | 跟随 `--hy-error`                      |
+| `--hy-toast-info`              | 信息色               | 跟随 `--hy-info`                       |
+| `--hy-toast-primary`           | 主题色               | 跟随 `--hy-primary`                    |
+| `--hy-toast-success`           | 成功色               | 跟随 `--hy-success`                    |
+| `--hy-toast-warning`           | 警告色               | 跟随 `--hy-warning`                    |
 
 <demo-model url="pages-design/toast/toast"></demo-model>

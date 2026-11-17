@@ -243,13 +243,13 @@ const value = ref(1);
 
 ### CSS 变量
 
-| 变量名                            | 说明         | 默认值                           |
-| --------------------------------- | ------------ | -------------------------------- |
-| `--hy-number-step-btn-width`      | 加减按钮宽度 | `35px`                           |
-| `--hy-number-step-radius`         | 圆角         | `4px`                            |
-| `--hy-number-step-font-size`      | 字号         | `15px`                           |
-| `--hy-number-step-input-margin`   | 输入框外边距 | `0 2px`                          |
-| `--hy-number-step-input-color`    | 输入文字颜色 | 跟随 `--hy-text-color`           |
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-number-step-btn-width` | 加减按钮宽度 | `35px` |
+| `--hy-number-step-radius` | 圆角 | `4px` |
+| `--hy-number-step-font-size` | 字号 | `15px` |
+| `--hy-number-step-input-margin` | 输入框外边距 | `0 2px` |
+| `--hy-number-step-input-color` | 输入文字颜色 | 跟随 `--hy-text-color` |
 | `--hy-number-step-disabled-color` | 禁用文字颜色 | 跟随 `--hy-text-color--disabled` |
 | `--hy-number-step-background` | 步进器底色（加减按钮与输入框） | 跟随 `--hy-background--empty` |
 | `--hy-number-step-btn-hover-background` | 加减按钮点击态背景色 | 跟随 `--hy-background--hover` |

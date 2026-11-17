@@ -206,33 +206,33 @@ onMounted(() => {
 
 ### Signature Props
 
-| 参数             | 说明                       | 类型               | 默认值  |
-| ---------------- | -------------------------- | ------------------ | ------- |
-| pen-color        | 签名笔颜色                 | `string`           | #000000 |
-| line-width       | 签名笔宽度                 | `number`           | 3       |
-| height           | 画布的高度，数值默认单位px | `number`\|`string` | -       |
-| width            | 画布的宽度，数值默认单位px | `number`\|`string` | -       |
-| clear-text       | 清空按钮的文本             | `string`           | -       |
-| confirm-text     | 确认按钮的文本             | `string`           | -       |
-| file-type        | 导出图片类型               | `string`           | png     |
-| quality          | 导出图片质量(0-1)          | `number`           | 1       |
-| export-scale     | 导出图片的缩放比例         | `number`           | 1       |
-| disabled         | 是否禁用签名板             | `boolean`          | false   |
-| background-color | 画板的背景色               | `string`           | -       |
-| disable-scroll   | 是否禁用画布滚动           | `boolean`          | true    |
-| enable-history   | 是否开启历史记录           | `boolean`          | false   |
-| step             | 历史记录步长               | `number`           | 1       |
-| pressure         | 是否启用笔锋模式           | `boolean`          | false   |
-| min-width        | 笔锋模式最小宽度           | `number`           | 2       |
-| max-width        | 笔锋模式最大宽度           | `number`           | 6       |
-| min-speed        | 笔锋模式速度阈值           | `number`           | 1.5     |
-| customClass | 自定义外部类名 | `string` | - |
-| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
-| redoText | 恢复按钮的文本 | `string` | - |
-| restoreText | 恢复按钮的文本 | `string` | 恢复（i18n） |
-| revokeText | 撤回按钮的文本 | `string` | 撤回（i18n） |
-| round | 边框圆角 | `string` | 10rpx |
-| undoText | 撤回按钮的文本 | `string` | - |
+| 参数             | 说明                       | 类型               | 默认值       |
+| ---------------- | -------------------------- | ------------------ | ------------ |
+| pen-color        | 签名笔颜色                 | `string`           | #000000      |
+| line-width       | 签名笔宽度                 | `number`           | 3            |
+| height           | 画布的高度，数值默认单位px | `number`\|`string` | -            |
+| width            | 画布的宽度，数值默认单位px | `number`\|`string` | -            |
+| clear-text       | 清空按钮的文本             | `string`           | -            |
+| confirm-text     | 确认按钮的文本             | `string`           | -            |
+| file-type        | 导出图片类型               | `string`           | png          |
+| quality          | 导出图片质量(0-1)          | `number`           | 1            |
+| export-scale     | 导出图片的缩放比例         | `number`           | 1            |
+| disabled         | 是否禁用签名板             | `boolean`          | false        |
+| background-color | 画板的背景色               | `string`           | -            |
+| disable-scroll   | 是否禁用画布滚动           | `boolean`          | true         |
+| enable-history   | 是否开启历史记录           | `boolean`          | false        |
+| step             | 历史记录步长               | `number`           | 1            |
+| pressure         | 是否启用笔锋模式           | `boolean`          | false        |
+| min-width        | 笔锋模式最小宽度           | `number`           | 2            |
+| max-width        | 笔锋模式最大宽度           | `number`           | 6            |
+| min-speed        | 笔锋模式速度阈值           | `number`           | 1.5          |
+| customClass      | 自定义外部类名             | `string`           | -            |
+| customStyle      | 定义需要用到的外部样式     | `CSSProperties`    | -            |
+| redoText         | 恢复按钮的文本             | `string`           | -            |
+| restoreText      | 恢复按钮的文本             | `string`           | 恢复（i18n） |
+| revokeText       | 撤回按钮的文本             | `string`           | 撤回（i18n） |
+| round            | 边框圆角                   | `string`           | 10rpx        |
+| undoText         | 撤回按钮的文本             | `string`           | -            |
 
 ### Events
 
@@ -262,10 +262,10 @@ onMounted(() => {
 
 ### CSS 变量
 
-| 变量名                  | 说明         | 默认值                           |
-| ----------------------- | ------------ | -------------------------------- |
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
 | `--hy-signature-radius` | 画布区域圆角 | 跟随 `--hy-radius-base`（20rpx） |
-| `--hy-signature-border` | 画布区域边框 | 跟随 `--hy-border-line`          |
+| `--hy-signature-border` | 画布区域边框 | 跟随 `--hy-border-line` |
 | `--hy-signature-content-background` | 画布区域背景色 | 跟随 `--hy-background--3` |
 | `--hy-signature-footer-margin-top` | 底部操作栏上外边距 | 跟随 `--hy-border-margin-padding-base` |
 

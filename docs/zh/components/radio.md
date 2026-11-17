@@ -233,15 +233,15 @@ export interface IFieldNames {
 
 ### CSS 变量
 
-| 变量名                                | 说明           | 默认值                              |
-| ------------------------------------- | -------------- | ----------------------------------- |
-| `--hy-radio-margin`                   | 外边距         | `5px`                               |
-| `--hy-radio-radius-square`            | 方形圆点框圆角 | `3px`                               |
-| `--hy-radio-disabled-checked-opacity` | 禁用选中透明度 | `0.5`                               |
-| `--hy-radio-label-color`              | 标签文字颜色   | 跟随 `--hy-text-color`              |
-| `--hy-radio-font-size`                | 标签字号       | 跟随 `--hy-font-size-base`（28rpx） |
-| `--hy-radio-disabled-color`           | 禁用文字颜色   | 跟随 `--hy-text-color--disabled`    |
-| `--hy-radio-border`                   | 圆点框边框     | 跟随 `--hy-border-line`             |
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-radio-margin` | 外边距 | `5px` |
+| `--hy-radio-radius-square` | 方形圆点框圆角 | `3px` |
+| `--hy-radio-disabled-checked-opacity` | 禁用选中透明度 | `0.5` |
+| `--hy-radio-label-color` | 标签文字颜色 | 跟随 `--hy-text-color` |
+| `--hy-radio-font-size` | 标签字号 | 跟随 `--hy-font-size-base`（28rpx） |
+| `--hy-radio-disabled-color` | 禁用文字颜色 | 跟随 `--hy-text-color--disabled` |
+| `--hy-radio-border` | 圆点框边框 | 跟随 `--hy-border-line` |
 | `--hy-radio-group-margin-y` | 纵向分组上下外边距 | 跟随 `--hy-border-margin-padding-lg` |
 | `--hy-radio-icon-disabled-background` | 圆点框禁用态背景色 | 跟随 `--hy-background--disabled` |
 | `--hy-radio-icon-margin` | 图标右外边距 | 跟随 `--hy-border-margin-padding-sm` |

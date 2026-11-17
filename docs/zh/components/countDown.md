@@ -159,14 +159,14 @@ const reset = () => {
 
 ### CountDown Props
 
-| 参数        | 说明               | 类型      | 默认值   |
-| ----------- | ------------------ | --------- | -------- |
-| time        | 倒计时时长，单位ms | `number`  | 0        |
-| format      | 时间格式[^1]       | `string`  | HH:mm:ss |
-| autoStart   | 是否自动开始倒计时 | `boolean` | true     |
-| millisecond | 是否展示毫秒倒计时 | `boolean` | false    |
-| customClass | 自定义外部类名 | `string` | - |
-| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
+| 参数        | 说明                   | 类型            | 默认值   |
+| ----------- | ---------------------- | --------------- | -------- |
+| time        | 倒计时时长，单位ms     | `number`        | 0        |
+| format      | 时间格式[^1]           | `string`        | HH:mm:ss |
+| autoStart   | 是否自动开始倒计时     | `boolean`       | true     |
+| millisecond | 是否展示毫秒倒计时     | `boolean`       | false    |
+| customClass | 自定义外部类名         | `string`        | -        |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties` | -        |
 
 ### Events
 
@@ -183,12 +183,9 @@ const reset = () => {
 | pause  | 暂停倒计时 |
 | reset  | 重置倒计时 |
 
-
 ### CountDown Slots
 
-| 插槽名 | 说明 | 接收值 |
-| --- | --- | --- | --- |
-| default | 默认插槽，用于自定义内容 | - |
+| 插槽名 | 说明 | 接收值 | | --- | --- | --- | --- | | default | 默认插槽，用于自定义内容 | - |
 
 ### CSS 变量
 

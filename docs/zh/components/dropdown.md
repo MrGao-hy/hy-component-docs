@@ -255,14 +255,14 @@ export interface DropdownMenuItem {
 
 ### CSS 变量
 
-| 变量名                      | 说明         | 默认值                  |
-| --------------------------- | ------------ | ----------------------- |
-| `--hy-dropdown-item-border` | 列表项分隔线 | 跟随 `--hy-border-line` |
-| `--hy-dropdown-background` | 背景色 | 跟随 `--hy-background` |
-| `--hy-dropdown-item-header-background` | 头部背景色 | 跟随 `--hy-background--container` |
-| `--hy-dropdown-item-header-padding` | 头部内边距 | 跟随 `--hy-border-margin-padding-base` |
-| `--hy-dropdown-item-icon-color` | 图标颜色 | 跟随 `--hy-icon-color` |
-| `--hy-dropdown-item-panel-background` | 下拉面板背景色 | 跟随 `--hy-background--container` |
-| `--hy-dropdown-item-primary` | 主题色 | 跟随 `--hy-primary` |
+| 变量名                                 | 说明           | 默认值                                 |
+| -------------------------------------- | -------------- | -------------------------------------- |
+| `--hy-dropdown-item-border`            | 列表项分隔线   | 跟随 `--hy-border-line`                |
+| `--hy-dropdown-background`             | 背景色         | 跟随 `--hy-background`                 |
+| `--hy-dropdown-item-header-background` | 头部背景色     | 跟随 `--hy-background--container`      |
+| `--hy-dropdown-item-header-padding`    | 头部内边距     | 跟随 `--hy-border-margin-padding-base` |
+| `--hy-dropdown-item-icon-color`        | 图标颜色       | 跟随 `--hy-icon-color`                 |
+| `--hy-dropdown-item-panel-background`  | 下拉面板背景色 | 跟随 `--hy-background--container`      |
+| `--hy-dropdown-item-primary`           | 主题色         | 跟随 `--hy-primary`                    |
 
 <demo-model url="pages-design/dropdown/dropdown"></demo-model>

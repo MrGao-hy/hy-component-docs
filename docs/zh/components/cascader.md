@@ -193,15 +193,15 @@ export type CascaderLazyLoad = (
 
 ### CSS 变量
 
-| 变量名                          | 说明             | 默认值                              |
-| ------------------------------- | ---------------- | ----------------------------------- |
-| `--hy-cascader-close-size`      | 关闭按钮尺寸     | `60rpx`                             |
-| `--hy-cascader-loading-z-index` | 加载遮罩层级     | `10`                                |
-| `--hy-cascader-title-font-size` | 标题字号         | 跟随 `--hy-font-size-base`（28rpx） |
-| `--hy-cascader-title-color`     | 标题颜色         | 跟随 `--hy-text-color`              |
-| `--hy-cascader-item-font-size`  | 选项字号         | 跟随 `--hy-font-size-base`（28rpx） |
-| `--hy-cascader-item-color`      | 选项颜色         | 跟随 `--hy-text-color`              |
-| `--hy-cascader-border`          | 标题栏底部分隔线 | 跟随 `--hy-border-line`             |
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-cascader-close-size` | 关闭按钮尺寸 | `60rpx` |
+| `--hy-cascader-loading-z-index` | 加载遮罩层级 | `10` |
+| `--hy-cascader-title-font-size` | 标题字号 | 跟随 `--hy-font-size-base`（28rpx） |
+| `--hy-cascader-title-color` | 标题颜色 | 跟随 `--hy-text-color` |
+| `--hy-cascader-item-font-size` | 选项字号 | 跟随 `--hy-font-size-base`（28rpx） |
+| `--hy-cascader-item-color` | 选项颜色 | 跟随 `--hy-text-color` |
+| `--hy-cascader-border` | 标题栏底部分隔线 | 跟随 `--hy-border-line` |
 | `--hy-cascader-border-width-lg` | 大边框宽度 | 跟随 `--hy-border-width-lg` |
 | `--hy-cascader-font-weight-bold` | 粗体字重 | 跟随 `--hy-font-weight-bold` |
 | `--hy-cascader-header-padding` | 头部内边距 | 跟随 `--hy-border-margin-padding-base` |

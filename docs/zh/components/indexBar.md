@@ -18,7 +18,6 @@
 <template>
     <hy-index-bar v-model="activeIndex">
         <view v-for="item in contactList" :key="item.index" class="contact-group">
-
             <hy-index-anchor :index="item.index" />
             <view v-for="(contact, idx) in item.list" :key="idx" class="contact-item">
                 {{ contact.name }}
@@ -32,7 +31,7 @@
 
     const contactList = ref([
         { index: 'A', list: [{ name: '阿杰' }, { name: '阿明' }] },
-        { index: 'B', list: [{ name: '贝贝' }, { name: '宝宝' }] }
+        { index: 'B', list: [{ name: '贝贝' }, { name: '宝宝' }] },
         // 更多数据...
     ]);
 
@@ -53,9 +52,7 @@
 </style>
 ```
 
-::: tip
-索引栏容器需要确定高度才能正常滚动。`height` 默认撑满父级（`100%`），若父级高度不确定，可通过 `customStyle` 指定，例如 H5 端扣除导航栏占位：`{ height: 'calc(100vh - 44px)' }`。
-:::
+::: tip索引栏容器需要确定高度才能正常滚动。`height` 默认撑满父级（`100%`），若父级高度不确定，可通过 `customStyle` 指定，例如 H5 端扣除导航栏占位：`{ height: 'calc(100vh - 44px)' }`。:::
 
 ### 关闭锚点吸顶
 
@@ -82,7 +79,7 @@
 通过 `position` 设置索引栏位置，可选值 `left`、`right`，默认 `right`。
 
 ```html
-<hy-index-bar v-model="activeIndex" position="left"> ... </hy-index-bar>
+<hy-index-bar v-model="activeIndex" position="left">...</hy-index-bar>
 ```
 
 ### 自定义样式
@@ -119,7 +116,7 @@ const indexList = [
 ```
 
 ```html
-<hy-index-bar v-model="activeIndex" :index-list="indexList"> ... </hy-index-bar>
+<hy-index-bar v-model="activeIndex" :index-list="indexList">...</hy-index-bar>
 ```
 
 ### 锚点独立使用
@@ -179,7 +176,7 @@ const cityData = {
     A: ['安庆', '安阳', '鞍山', '安顺', '安康', '阿克苏', '阿勒泰'],
     B: ['北京', '上海', '广州', '深圳', '重庆', '成都', '杭州', '武汉', '西安'],
     C: ['长春', '常州', '长沙', '成都', '重庆', '福州'],
-    D: ['大连', '东莞', '德州', '大同', '大庆', '大理']
+    D: ['大连', '东莞', '德州', '大同', '大庆', '大理'],
     // 更多数据...
 };
 
@@ -237,11 +234,11 @@ const indexList = computed(() =>
 
 #### IIndexItem
 
-| 字段 | 说明 | 类型 |
-| --- | --- | --- |
-| index | 索引值 | `string`\|`number` |
-| title | 索引对应的标题 | `string` |
-| data | 索引对应的列表数据（可选） | `any[]` |
+| 字段  | 说明                       | 类型               |
+| ----- | -------------------------- | ------------------ |
+| index | 索引值                     | `string`\|`number` |
+| title | 索引对应的标题             | `string`           |
+| data  | 索引对应的列表数据（可选） | `any[]`            |
 
 `indexList` 也可直接传入 `string[]` 或 `number[]`。
 
@@ -267,9 +264,9 @@ const indexList = computed(() =>
 
 ### Slots
 
-| 插槽名 | 说明 | 接收值 |
-| --- | --- | --- |
-| default | 索引栏列表内容，分组标题使用 `hy-index-anchor` 标记 | - |
+| 插槽名  | 说明                                                | 接收值 |
+| ------- | --------------------------------------------------- | ------ |
+| default | 索引栏列表内容，分组标题使用 `hy-index-anchor` 标记 | -      |
 
 ### CSS 变量
 
@@ -290,15 +287,15 @@ const indexList = computed(() =>
 
 #### hy-index-anchor
 
-| 变量名 | 说明 | 默认值 |
-| --- | --- | --- |
-| `--hy-index-anchor-text-color` | 索引标题文字颜色 | 跟随 `--hy-text-color` |
-| `--hy-index-anchor-background` | 索引标题背景色 | 跟随 `--hy-background--container` |
-| `--hy-index-anchor-primary` | 激活索引标题文字颜色 | 跟随 `--hy-primary` |
-| `--hy-index-anchor-font-size` | 索引标题字号 | 跟随 `--hy-font-size-sm` |
-| `--hy-index-anchor-font-weight` | 索引标题字重 | 跟随 `--hy-font-weight-medium` |
-| `--hy-index-anchor-padding-y` | 索引标题纵向内边距 | 跟随 `--hy-border-margin-padding-sm` |
-| `--hy-index-anchor-padding-x` | 索引标题横向内边距 | 跟随 `--hy-border-margin-padding-base` |
-| `--hy-index-anchor-z-index` | 吸顶层级 | `1` |
+| 变量名                          | 说明                 | 默认值                                 |
+| ------------------------------- | -------------------- | -------------------------------------- |
+| `--hy-index-anchor-text-color`  | 索引标题文字颜色     | 跟随 `--hy-text-color`                 |
+| `--hy-index-anchor-background`  | 索引标题背景色       | 跟随 `--hy-background--container`      |
+| `--hy-index-anchor-primary`     | 激活索引标题文字颜色 | 跟随 `--hy-primary`                    |
+| `--hy-index-anchor-font-size`   | 索引标题字号         | 跟随 `--hy-font-size-sm`               |
+| `--hy-index-anchor-font-weight` | 索引标题字重         | 跟随 `--hy-font-weight-medium`         |
+| `--hy-index-anchor-padding-y`   | 索引标题纵向内边距   | 跟随 `--hy-border-margin-padding-sm`   |
+| `--hy-index-anchor-padding-x`   | 索引标题横向内边距   | 跟随 `--hy-border-margin-padding-base` |
+| `--hy-index-anchor-z-index`     | 吸顶层级             | `1`                                    |
 
 <demo-model url="pages-design/indexBar/indexBar"></demo-model>

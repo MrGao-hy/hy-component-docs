@@ -376,12 +376,9 @@ export interface IMonthProps {
 
 :::
 
-
 ### Calendar Slots
 
-| 插槽名 | 说明 | 接收值 |
-| --- | --- | --- | --- |
-| footer | 自定义底部区域内容 | - |
+| 插槽名 | 说明 | 接收值 | | --- | --- | --- | --- | | footer | 自定义底部区域内容 | - |
 
 ### CSS 变量
 

@@ -299,11 +299,8 @@ export default `<title>富文本示例</title>
 | play | 播放媒体时触发 | - |
 | tap | 点击内容时触发 | - |
 
-
 ### Parse Slots
 
-| 插槽名 | 说明 | 接收值 |
-| --- | --- | --- | --- |
-| default | 默认插槽，用于自定义内容 | - |
+| 插槽名 | 说明 | 接收值 | | --- | --- | --- | --- | | default | 默认插槽，用于自定义内容 | - |
 
 <demo-model url="pages-design/parse/parse"></demo-model>

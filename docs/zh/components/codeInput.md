@@ -362,19 +362,19 @@
 
 ### CSS 变量
 
-| 变量名                         | 说明                | 默认值                                 |
-| ------------------------------ | ------------------- | -------------------------------------- |
-| `--hy-code-input-font-size`    | 字号                | `15px`                                 |
-| `--hy-code-input-dot-size`     | 密码圆点尺寸        | `7px`                                  |
-| `--hy-code-input-line-width`   | 下划线宽度          | `40px`                                 |
-| `--hy-code-input-text-color`   | 字符颜色            | 跟随 `--hy-icon-color`                 |
-| `--hy-code-input-dot-radius`   | 密码圆点圆角        | 跟随 `--hy-radius-semicircle`（100px） |
-| `--hy-code-input-no-radius`    | 无边框模式圆角      | 跟随 `--hy-radius-sm`（8rpx）          |
-| `--hy-code-input-cursor-color` | 光标颜色            | 跟随 `--hy-text-color`                 |
-| `--hy-code-input-line-radius`  | 下划线圆角          | 跟随 `--hy-radius-semicircle`（100px） |
-| `--hy-code-input-border-color` | 默认态边框/线条颜色 | 跟随 `--hy-border-color--2`            |
-| `--hy-code-input-icon-color` | 图标颜色 | 跟随 `--hy-icon-color` |
-| `--hy-code-input-no-background` | 无边框模式格子背景色 | 跟随 `--hy-background--track` |
-| `--hy-code-input-primary` | 主题色 | 跟随 `--hy-primary` |
+| 变量名                          | 说明                 | 默认值                                 |
+| ------------------------------- | -------------------- | -------------------------------------- |
+| `--hy-code-input-font-size`     | 字号                 | `15px`                                 |
+| `--hy-code-input-dot-size`      | 密码圆点尺寸         | `7px`                                  |
+| `--hy-code-input-line-width`    | 下划线宽度           | `40px`                                 |
+| `--hy-code-input-text-color`    | 字符颜色             | 跟随 `--hy-icon-color`                 |
+| `--hy-code-input-dot-radius`    | 密码圆点圆角         | 跟随 `--hy-radius-semicircle`（100px） |
+| `--hy-code-input-no-radius`     | 无边框模式圆角       | 跟随 `--hy-radius-sm`（8rpx）          |
+| `--hy-code-input-cursor-color`  | 光标颜色             | 跟随 `--hy-text-color`                 |
+| `--hy-code-input-line-radius`   | 下划线圆角           | 跟随 `--hy-radius-semicircle`（100px） |
+| `--hy-code-input-border-color`  | 默认态边框/线条颜色  | 跟随 `--hy-border-color--2`            |
+| `--hy-code-input-icon-color`    | 图标颜色             | 跟随 `--hy-icon-color`                 |
+| `--hy-code-input-no-background` | 无边框模式格子背景色 | 跟随 `--hy-background--track`          |
+| `--hy-code-input-primary`       | 主题色               | 跟随 `--hy-primary`                    |
 
 <demo-model url="pages-design/codeInput/codeInput"></demo-model>

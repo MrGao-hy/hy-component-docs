@@ -250,6 +250,6 @@
 | `--hy-notice-bar-font-size`     | 文字字号     | `14px`                        |
 | `--hy-notice-bar-swiper-height` | 垂直滚动行高 | `16px`                        |
 | `--hy-notice-bar-radius`        | 通知栏圆角   | 跟随 `--hy-radius-sm`（8rpx） |
-| `--hy-notice-bar-warning` | 警告色 | 跟随 `--hy-warning` |
+| `--hy-notice-bar-warning`       | 警告色       | 跟随 `--hy-warning`           |
 
 <demo-model url="pages-design/noticeBar/noticeBar"></demo-model>

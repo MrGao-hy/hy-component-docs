@@ -162,15 +162,15 @@ const showMore = () => {
 
 ### ScrollList Props
 
-| 参数                 | 说明                                          | 类型            | 默认值 |
-| -------------------- | --------------------------------------------- | --------------- | ------ |
-| indicatorWidth       | 指示器的整体宽度，数值默认单位px              | `number`        | 50     |
-| indicatorBarWidth    | 滑块的宽度，数值默认单位px                    | `number`        | 20     |
-| indicator            | 是否显示面板指示器                            | `boolean`       | true   |
-| indicatorColor       | 指示器非激活颜色                              | `string`        | -      |
-| indicatorActiveColor | 指示器滑块颜色                                | `string`        | -      |
-| customStyle          | 定义需要用到的外部样式                        | `CSSProperties` | -      |
-| customClass          | 自定义外部类名                                | `string`        | -      |
+| 参数                 | 说明                             | 类型            | 默认值 |
+| -------------------- | -------------------------------- | --------------- | ------ |
+| indicatorWidth       | 指示器的整体宽度，数值默认单位px | `number`        | 50     |
+| indicatorBarWidth    | 滑块的宽度，数值默认单位px       | `number`        | 20     |
+| indicator            | 是否显示面板指示器               | `boolean`       | true   |
+| indicatorColor       | 指示器非激活颜色                 | `string`        | -      |
+| indicatorActiveColor | 指示器滑块颜色                   | `string`        | -      |
+| customStyle          | 定义需要用到的外部样式           | `CSSProperties` | -      |
+| customClass          | 自定义外部类名                   | `string`        | -      |
 
 ### Events
 
@@ -187,12 +187,12 @@ const showMore = () => {
 
 ### CSS 变量
 
-| 变量名                                 | 说明           | 默认值                                 |
-| -------------------------------------- | -------------- | -------------------------------------- |
-| `--hy-scroll-list-indicator-width`     | 指示条宽度     | `60px`                                 |
-| `--hy-scroll-list-indicator-height`    | 指示条高度     | `4px`                                  |
-| `--hy-scroll-list-indicator-bar-width` | 指示条滑块宽度 | `20px`                                 |
-| `--hy-scroll-list-indicator-radius`    | 指示条圆角     | 跟随 `--hy-radius-semicircle`（100px） |
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-scroll-list-indicator-width` | 指示条宽度 | `60px` |
+| `--hy-scroll-list-indicator-height` | 指示条高度 | `4px` |
+| `--hy-scroll-list-indicator-bar-width` | 指示条滑块宽度 | `20px` |
+| `--hy-scroll-list-indicator-radius` | 指示条圆角 | 跟随 `--hy-radius-semicircle`（100px） |
 | `--hy-scroll-list-indicator-background` | 指示条轨道背景色 | 跟随 `--hy-background--empty` |
 | `--hy-scroll-list-indicator-margin-top` | 指示条上外边距 | 跟随 `--hy-border-margin-padding-lg` |
 | `--hy-scroll-list-padding-bottom` | 列表底部内边距 | 跟随 `--hy-border-margin-padding-base` |

@@ -158,26 +158,26 @@ const { closeOutside } = useQueue();
 
 ### Popover Props
 
-| 参数      | 说明                               | 类型                | 默认值 |
-| --------- | ---------------------------------- | ------------------- | ------ |
-| v-model   | 手动状态是否可见                   | `boolean`           | false  |
-| content   | 显示的内容                         | `string` \| `Array` | -      |
-| mode      | 当前显示的模式，决定内容的展现形式 | `normal` \| `menu`  | normal |
-| placement | popover 的出现位置[^1]             | `string`            | bottom |
-| disabled  | popover 是否可用                   | `boolean`           | false  |
-| offset    | 出现位置的偏移量                   | `number`            | 0      |
-| customClass | 自定义外部类名 | `string` | - |
-| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
-| showClose | 是否显示关闭按钮 | `boolean` | false |
+| 参数        | 说明                               | 类型                | 默认值 |
+| ----------- | ---------------------------------- | ------------------- | ------ |
+| v-model     | 手动状态是否可见                   | `boolean`           | false  |
+| content     | 显示的内容                         | `string` \| `Array` | -      |
+| mode        | 当前显示的模式，决定内容的展现形式 | `normal` \| `menu`  | normal |
+| placement   | popover 的出现位置[^1]             | `string`            | bottom |
+| disabled    | popover 是否可用                   | `boolean`           | false  |
+| offset      | 出现位置的偏移量                   | `number`            | 0      |
+| customClass | 自定义外部类名                     | `string`            | -      |
+| customStyle | 定义需要用到的外部样式             | `CSSProperties`     | -      |
+| showClose   | 是否显示关闭按钮                   | `boolean`           | false  |
 
 ### Methods
 
-| 事件名 | 说明                 | 回调参数 |
-| ------ | -------------------- | -------- |
-| open   | 打开文字提示弹框事件 | -        |
-| close  | 关闭文字提示弹框事件 | -        |
-| change | 气泡框状态变化时触发 | params: PopoverParamsVo |
-| menuClick | 点击菜单项触发 | params: PopoverItemParamsVo |
+| 事件名    | 说明                 | 回调参数                    |
+| --------- | -------------------- | --------------------------- |
+| open      | 打开文字提示弹框事件 | -                           |
+| close     | 关闭文字提示弹框事件 | -                           |
+| change    | 气泡框状态变化时触发 | params: PopoverParamsVo     |
+| menuClick | 点击菜单项触发       | params: PopoverItemParamsVo |
 
 ### Slots
 
@@ -188,20 +188,20 @@ const { closeOutside } = useQueue();
 
 ### CSS 变量
 
-| 变量名                      | 说明          | 默认值                        |
-| --------------------------- | ------------- | ----------------------------- |
-| `--hy-popover-z-index`      | 层级          | `998`                         |
-| `--hy-popover-icon-size`    | 图标尺寸      | `18px`                        |
-| `--hy-popover-menu-padding` | 菜单内边距    | `20rpx 0`                     |
-| `--hy-popover-min-height`   | 最小高度      | `36px`                        |
-| `--hy-popover-width`        | 宽度          | `200px`                       |
-| `--hy-popover-line-height`  | 行高          | `22px`                        |
-| `--hy-popover-radius`       | 气泡/菜单圆角 | 跟随 `--hy-radius-sm`（8rpx） |
-| `--hy-popover-border`       | 菜单行分隔线  | 跟随 `--hy-border-line`       |
-| `--hy-popover-background` | 弹出气泡背景色 | 跟随 `--hy-background--box` |
-| `--hy-popover-inner-padding` | 自定义内容区内边距 | 跟随 `--hy-border-margin-padding-base` |
+| 变量名                        | 说明               | 默认值                                 |
+| ----------------------------- | ------------------ | -------------------------------------- |
+| `--hy-popover-z-index`        | 层级               | `998`                                  |
+| `--hy-popover-icon-size`      | 图标尺寸           | `18px`                                 |
+| `--hy-popover-menu-padding`   | 菜单内边距         | `20rpx 0`                              |
+| `--hy-popover-min-height`     | 最小高度           | `36px`                                 |
+| `--hy-popover-width`          | 宽度               | `200px`                                |
+| `--hy-popover-line-height`    | 行高               | `22px`                                 |
+| `--hy-popover-radius`         | 气泡/菜单圆角      | 跟随 `--hy-radius-sm`（8rpx）          |
+| `--hy-popover-border`         | 菜单行分隔线       | 跟随 `--hy-border-line`                |
+| `--hy-popover-background`     | 弹出气泡背景色     | 跟随 `--hy-background--box`            |
+| `--hy-popover-inner-padding`  | 自定义内容区内边距 | 跟随 `--hy-border-margin-padding-base` |
 | `--hy-popover-menu-padding-x` | 菜单气泡左右内边距 | 跟随 `--hy-border-margin-padding-base` |
-| `--hy-popover-shadow-base` | 基础阴影 | 跟随 `--hy-shadow-base` |
+| `--hy-popover-shadow-base`    | 基础阴影           | 跟随 `--hy-shadow-base`                |
 
 [^1]: `left-top`：左上；`left-bottom`：左下；`right-top`：右上；`right-bottom`：右下；`left-center`：左中；`right-center`：右中；`top-center`：上中；`bottom-center`：下中；
 

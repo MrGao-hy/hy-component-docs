@@ -170,10 +170,10 @@
 
 ### Slots
 
-| 插槽名 | 说明 | 回调参数 |
-| --- | --- | --- |
-| prefix | 前置内容插槽 | - |
-| suffix | 后置内容插槽 | - |
+| 插槽名 | 说明         | 回调参数 |
+| ------ | ------------ | -------- |
+| prefix | 前置内容插槽 | -        |
+| suffix | 后置内容插槽 | -        |
 
 ### CSS 变量
 
@@ -182,8 +182,8 @@
 | `--hy-text-price-font-size` | 价格模式字号 | `14px`                              |
 | `--hy-text-font-size`       | 正文主体字号 | 跟随 `--hy-font-size-base`（28rpx） |
 | `--hy-text-price-color`     | 价格文字颜色 | 跟随 `--hy-text-color--grey`        |
-| `--hy-text-main-color` | 文字颜色 | 跟随 `--hy-text-color` |
-| `--hy-text-primary` | 主题色 | 跟随 `--hy-primary` |
+| `--hy-text-main-color`      | 文字颜色     | 跟随 `--hy-text-color`              |
+| `--hy-text-primary`         | 主题色       | 跟随 `--hy-primary`                 |
 
 [^1]: `text`-普通文本，`price`-价格，`phone`-手机号，`name`-姓名，`date`-日期，`link`-超链接
 

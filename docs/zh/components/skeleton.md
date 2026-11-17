@@ -172,14 +172,14 @@ export type SkeletonThemeVars = {
 
 ### CSS 变量
 
-| 变量名                        | 说明                   | 默认值                           |
-| ----------------------------- | ---------------------- | -------------------------------- |
-| `--hy-skeleton-height`        | 内容占位高度           | `20px`                           |
-| `--hy-skeleton-circle-size`   | 圆形头像占位尺寸       | `48px`                           |
-| `--hy-skeleton-radius`        | 骨架块圆角（text/col） | 跟随 `--hy-radius-sm`（8rpx）    |
-| `--hy-skeleton-rect-radius`   | 矩形骨架圆角           | 跟随 `--hy-radius-base`（20rpx） |
-| `--hy-skeleton-circle-radius` | 圆形骨架圆角           | 跟随 `--hy-radius-circle`（50%） |
-| `--hy-skeleton-background` | 骨架块背景色 | 跟随 `--hy-background--skeleton` |
-| `--hy-skeleton-row-margin` | 骨架行下外边距 | 跟随 `--hy-border-margin-padding-base` |
+| 变量名                        | 说明                   | 默认值                                 |
+| ----------------------------- | ---------------------- | -------------------------------------- |
+| `--hy-skeleton-height`        | 内容占位高度           | `20px`                                 |
+| `--hy-skeleton-circle-size`   | 圆形头像占位尺寸       | `48px`                                 |
+| `--hy-skeleton-radius`        | 骨架块圆角（text/col） | 跟随 `--hy-radius-sm`（8rpx）          |
+| `--hy-skeleton-rect-radius`   | 矩形骨架圆角           | 跟随 `--hy-radius-base`（20rpx）       |
+| `--hy-skeleton-circle-radius` | 圆形骨架圆角           | 跟随 `--hy-radius-circle`（50%）       |
+| `--hy-skeleton-background`    | 骨架块背景色           | 跟随 `--hy-background--skeleton`       |
+| `--hy-skeleton-row-margin`    | 骨架行下外边距         | 跟随 `--hy-border-margin-padding-base` |
 
 <demo-model url="pages-design/skeleton/skeleton"></demo-model>

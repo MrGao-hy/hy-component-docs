@@ -731,19 +731,13 @@ const registerFormRules = reactive({
 | resetField    | 重置字段 | -                                |
 | clearValidate | 清除验证 | -                                |
 
-
 ### FormItem Slots
 
-| 插槽名 | 说明 | 接收值 |
-| --- | --- | --- | --- |
-| default | 默认插槽，用于自定义内容 | - |
-
+| 插槽名 | 说明 | 接收值 | | --- | --- | --- | --- | | default | 默认插槽，用于自定义内容 | - |
 
 ### Form Slots
 
-| 插槽名 | 说明 | 接收值 |
-| --- | --- | --- | --- |
-| default | 默认插槽，用于自定义内容 | - |
+| 插槽名 | 说明 | 接收值 | | --- | --- | --- | --- | | default | 默认插槽，用于自定义内容 | - |
 
 ### CSS 变量
 

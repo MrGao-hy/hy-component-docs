@@ -35,7 +35,7 @@
 
 ```ts [index.ts]
 const config = {
-    avatar: 'https://cdn.example.com/avatar.png'
+    avatar: 'https://cdn.example.com/avatar.png',
 };
 ```
 
@@ -125,26 +125,26 @@ const config = {
 
 ### Events
 
-| 事件名 | 说明 | 回调参数 |
-| --- | --- | --- |
-| click | 点击徽标时触发 | event: Event - 事件对象 |
+| 事件名 | 说明           | 回调参数                |
+| ------ | -------------- | ----------------------- |
+| click  | 点击徽标时触发 | event: Event - 事件对象 |
 
 ### Slots
 
-| 插槽名 | 说明 | 接收值 |
-| --- | --- | --- |
-| default | 包裹内容，传入后组件以包裹形态渲染，角标骑缝定位于内容右上角 | - |
+| 插槽名  | 说明                                                         | 接收值 |
+| ------- | ------------------------------------------------------------ | ------ |
+| default | 包裹内容，传入后组件以包裹形态渲染，角标骑缝定位于内容右上角 | -      |
 
 ### CSS 变量
 
-| 变量名                             | 说明       | 默认值 |
-|---------------------------------|----------| --- |
-| `--hy-badge-dot-size`           | 圆点尺寸     | `8px` |
-| `--hy-badge-text-font-size`     | 文字字号     | `11px` |
-| `--hy-badge-radius`             | 徽标圆角     | 跟随 `--hy-radius-semicircle` |
-| `--hy-badge-padding`            | 非圆点徽标内边距 | `2px 5px` |
-| `--hy-badge-inverted-font-size` | 反色模式字号   | `13px` |
-| `--hy-badge-border-width`       | 白边宽度     | `2px` |
-| `--hy-badge-border-color`       | 白边颜色     | 跟随 `--hy-background--2` |
+| 变量名                          | 说明             | 默认值                        |
+| ------------------------------- | ---------------- | ----------------------------- |
+| `--hy-badge-dot-size`           | 圆点尺寸         | `8px`                         |
+| `--hy-badge-text-font-size`     | 文字字号         | `11px`                        |
+| `--hy-badge-radius`             | 徽标圆角         | 跟随 `--hy-radius-semicircle` |
+| `--hy-badge-padding`            | 非圆点徽标内边距 | `2px 5px`                     |
+| `--hy-badge-inverted-font-size` | 反色模式字号     | `13px`                        |
+| `--hy-badge-border-width`       | 白边宽度         | `2px`                         |
+| `--hy-badge-border-color`       | 白边颜色         | 跟随 `--hy-background--2`     |
 
 <demo-model url="pages-design/badge/badge"></demo-model>

@@ -216,21 +216,21 @@ const rules = {
 
 ### CSS 变量
 
-| 变量名                          | 说明         | 默认值                           |
-| ------------------------------- | ------------ | -------------------------------- |
-| `--hy-textarea-min-height`      | 最小高度     | `50rpx`                          |
-| `--hy-textarea-max-height`      | 最大高度     | `auto`                           |
-| `--hy-textarea-font-size`       | 字号         | `15px`                           |
-| `--hy-textarea-count-font-size` | 字数统计字号 | `12px`                           |
-| `--hy-textarea-color`           | 输入文字颜色 | 跟随 `--hy-text-color`           |
-| `--hy-textarea-disabled-color`  | 禁用文字颜色 | 跟随 `--hy-text-color--disabled` |
-| `--hy-textarea-radius`          | 输入框圆角   | 跟随 `--hy-radius-sm`（8rpx）    |
-| `--hy-textarea-count-radius`    | 字数统计圆角 | 跟随 `--hy-radius-sm`（8rpx）    |
-| `--hy-textarea-border`          | 边框         | 跟随 `--hy-border-line`          |
-| `--hy-textarea-count-background` | 字数统计背景色 | 跟随 `--hy-background--3` |
-| `--hy-textarea-disabled-background` | 禁用态背景色 | 跟随 `--hy-background--disabled` |
-| `--hy-textarea-padding` | 输入框整体内边距 | 跟随 `--hy-border-margin-padding-sm` |
-| `--hy-textarea-radius-no` | 无圆角 | 跟随 `--hy-radius-no` |
+| 变量名                              | 说明             | 默认值                               |
+| ----------------------------------- | ---------------- | ------------------------------------ |
+| `--hy-textarea-min-height`          | 最小高度         | `50rpx`                              |
+| `--hy-textarea-max-height`          | 最大高度         | `auto`                               |
+| `--hy-textarea-font-size`           | 字号             | `15px`                               |
+| `--hy-textarea-count-font-size`     | 字数统计字号     | `12px`                               |
+| `--hy-textarea-color`               | 输入文字颜色     | 跟随 `--hy-text-color`               |
+| `--hy-textarea-disabled-color`      | 禁用文字颜色     | 跟随 `--hy-text-color--disabled`     |
+| `--hy-textarea-radius`              | 输入框圆角       | 跟随 `--hy-radius-sm`（8rpx）        |
+| `--hy-textarea-count-radius`        | 字数统计圆角     | 跟随 `--hy-radius-sm`（8rpx）        |
+| `--hy-textarea-border`              | 边框             | 跟随 `--hy-border-line`              |
+| `--hy-textarea-count-background`    | 字数统计背景色   | 跟随 `--hy-background--3`            |
+| `--hy-textarea-disabled-background` | 禁用态背景色     | 跟随 `--hy-background--disabled`     |
+| `--hy-textarea-padding`             | 输入框整体内边距 | 跟随 `--hy-border-margin-padding-sm` |
+| `--hy-textarea-radius-no`           | 无圆角           | 跟随 `--hy-radius-no`                |
 
 [^1]: 注意页面或组件的 style 中写了 scoped 时，需要在类名前写 `/deep/`
 

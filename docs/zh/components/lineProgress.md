@@ -97,12 +97,12 @@
 
 ### CSS 变量
 
-| 变量名                              | 说明         | 默认值                                 |
-| ----------------------------------- | ------------ | -------------------------------------- |
-| `--hy-line-progress-text-font-size` | 进度文字字号 | `10px`                                 |
-| `--hy-line-progress-radius`         | 进度条圆角   | 跟随 `--hy-radius-semicircle`（100px） |
-| `--hy-line-progress-text-color`     | 进度文字颜色 | `#ffffff`                              |
-| `--hy-line-progress-primary` | 主题色 | 跟随 `--hy-primary` |
-| `--hy-line-progress-track-background` | 底轨背景色 | 跟随 `--hy-background--empty` |
+| 变量名                                | 说明         | 默认值                                 |
+| ------------------------------------- | ------------ | -------------------------------------- |
+| `--hy-line-progress-text-font-size`   | 进度文字字号 | `10px`                                 |
+| `--hy-line-progress-radius`           | 进度条圆角   | 跟随 `--hy-radius-semicircle`（100px） |
+| `--hy-line-progress-text-color`       | 进度文字颜色 | `#ffffff`                              |
+| `--hy-line-progress-primary`          | 主题色       | 跟随 `--hy-primary`                    |
+| `--hy-line-progress-track-background` | 底轨背景色   | 跟随 `--hy-background--empty`          |
 
 <demo-model url="pages-design/lineProgress/lineProgress"></demo-model>

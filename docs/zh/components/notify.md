@@ -319,9 +319,9 @@ interface NotifyOptions {
 
 ### CSS 变量
 
-| 变量名                  | 说明     | 默认值                              |
-| ----------------------- | -------- | ----------------------------------- |
-| `--hy-notify-font-size` | 文字字号 | 跟随 `--hy-font-size-base`（28rpx） |
-| `--hy-notify-padding` | 通知条内边距 | 跟随 `--hy-border-margin-padding-base` |
+| 变量名                  | 说明         | 默认值                                 |
+| ----------------------- | ------------ | -------------------------------------- |
+| `--hy-notify-font-size` | 文字字号     | 跟随 `--hy-font-size-base`（28rpx）    |
+| `--hy-notify-padding`   | 通知条内边距 | 跟随 `--hy-border-margin-padding-base` |
 
 <demo-model url="pages-design/notify/notify"></demo-model>

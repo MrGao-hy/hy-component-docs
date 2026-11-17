@@ -133,12 +133,12 @@
 | `--hy-icon-label-max-width` | 标签文字最大宽度 | `150rpx`                          |
 | `--hy-icon-label-color`     | 标签文字颜色     | 跟随 `--hy-text-color--grey`      |
 | `--hy-icon-label-font-size` | 标签字号         | 跟随 `--hy-font-size-sm`（24rpx） |
-| `--hy-icon-error` | 危险色 | 跟随 `--hy-error` |
-| `--hy-icon-icon-color` | 图标颜色 | 跟随 `--hy-icon-color` |
-| `--hy-icon-info` | 信息色 | 跟随 `--hy-info` |
-| `--hy-icon-primary` | 主题色 | 跟随 `--hy-primary` |
-| `--hy-icon-success` | 成功色 | 跟随 `--hy-success` |
-| `--hy-icon-warning` | 警告色 | 跟随 `--hy-warning` |
+| `--hy-icon-error`           | 危险色           | 跟随 `--hy-error`                 |
+| `--hy-icon-icon-color`      | 图标颜色         | 跟随 `--hy-icon-color`            |
+| `--hy-icon-info`            | 信息色           | 跟随 `--hy-info`                  |
+| `--hy-icon-primary`         | 主题色           | 跟随 `--hy-primary`               |
+| `--hy-icon-success`         | 成功色           | 跟随 `--hy-success`               |
+| `--hy-icon-warning`         | 警告色           | 跟随 `--hy-warning`               |
 
 ## 图标集
 
