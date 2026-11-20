@@ -586,12 +586,12 @@ export type StepStatus = 'finished' | 'process' | 'error' | 'wait';
 
 点状指示器：
 
-| 变量名 | 说明 | 默认值 |
-| --- | --- | --- |
-| `--hy-step-item-dot-size` | 点状指示器宽高 | `10px` |
-| `--hy-step-item-dot-wait-bg` | 等待状态圆点背景色 | 跟随 `--hy-background--3` |
-| `--hy-step-item-dot-process-bg` | 进行中/已完成圆点背景色 | 跟随 `--hy-primary` |
-| `--hy-step-item-dot-error-bg` | 失败状态圆点背景色 | 跟随 `--hy-error` |
+| 变量名                          | 说明                    | 默认值                    |
+| ------------------------------- | ----------------------- | ------------------------- |
+| `--hy-step-item-dot-size`       | 点状指示器宽高          | `10px`                    |
+| `--hy-step-item-dot-wait-bg`    | 等待状态圆点背景色      | 跟随 `--hy-background--3` |
+| `--hy-step-item-dot-process-bg` | 进行中/已完成圆点背景色 | 跟随 `--hy-primary`       |
+| `--hy-step-item-dot-error-bg`   | 失败状态圆点背景色      | 跟随 `--hy-error`         |
 
 连接线：
 
