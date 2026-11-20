@@ -382,6 +382,8 @@
 
 ### CSS 变量
 
-| 变量名 | 说明 | 默认值 | | --- | --- | --- | --- | | `--hy-list-left-margin` | 左列容器右外边距 | 跟随 `--hy-border-margin-padding-base` |
+| 变量名                  | 说明             | 默认值                                 |
+| ----------------------- | ---------------- | -------------------------------------- |
+| `--hy-list-left-margin` | 左列容器右外边距 | 跟随 `--hy-border-margin-padding-base` |
 
 <demo-model url="pages-design/list/list"></demo-model>

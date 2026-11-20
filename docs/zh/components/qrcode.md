@@ -163,6 +163,8 @@
 
 ### CSS 变量
 
-| 变量名 | 说明 | 默认值 | | --- | --- | --- | --- | | `--hy-qrcode-background` | 背景色 | 跟随 `--hy-background` |
+| 变量名                   | 说明   | 默认值                 |
+| ------------------------ | ------ | ---------------------- |
+| `--hy-qrcode-background` | 背景色 | 跟随 `--hy-background` |
 
 <demo-model url="pages-design/qrcode/qrcode"></demo-model>
