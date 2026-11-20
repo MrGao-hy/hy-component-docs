@@ -491,7 +491,6 @@
 | `--hy-modal-button-group-padding` | 按钮组内边距 | `20px` |
 | `--hy-modal-confirm-button-padding` | 确认按钮区域内边距 | `0 25px 15px` |
 | `--hy-modal-button-height` | 按钮高度 | `43px` |
-| `--hy-modal-button-radius` | 按钮圆角 | 跟随 `--hy-radius-semicircle`（100px） |
 | `--hy-modal-button-font-size` | 按钮字号 | `16px` |
 | `--hy-modal-title-font-size` | 标题字号 | 跟随 `--hy-font-size-base`（28rpx） |
 | `--hy-modal-title-color` | 标题颜色 | 跟随 `--hy-text-color` |

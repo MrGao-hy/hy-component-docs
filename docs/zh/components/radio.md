@@ -234,7 +234,6 @@ export interface IFieldNames {
 | 变量名 | 说明 | 默认值 |
 | --- | --- | --- |
 | `--hy-radio-margin` | 外边距 | `5px` |
-| `--hy-radio-radius-square` | 方形圆点框圆角 | `3px` |
 | `--hy-radio-disabled-opacity` | 禁用态透明度 | `0.5` |
 | `--hy-radio-label-color` | 标签文字颜色 | 跟随 `--hy-text-color` |
 | `--hy-radio-font-size` | 标签字号 | 跟随 `--hy-font-size-base`（28rpx） |

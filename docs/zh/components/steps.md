@@ -591,9 +591,6 @@ export type StepStatus = 'finished' | 'process' | 'error' | 'wait';
 | `--hy-step-item-dot-size` | 点状指示器宽高 | `10px` |
 | `--hy-step-item-dot-wait-bg` | 等待状态圆点背景色 | 跟随 `--hy-background--3` |
 | `--hy-step-item-dot-process-bg` | 进行中/已完成圆点背景色 | 跟随 `--hy-primary` |
-| `--hy-step-item-dot-process-ring-color` | 进行中状态描边颜色 | 跟随 `--hy-primary-disabled` |
-| `--hy-step-item-dot-finished-bg` | 已完成状态背景色 | 跟随 `--hy-primary-light` |
-| `--hy-step-item-dot-finished-ring-color` | 已完成状态描边颜色 | 跟随 `--hy-primary` |
 | `--hy-step-item-dot-error-bg` | 失败状态圆点背景色 | 跟随 `--hy-error` |
 
 连接线：

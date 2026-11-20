@@ -283,7 +283,6 @@
 | 变量名 | 说明 | 默认值 |
 | --- | --- | --- |
 | `--hy-checkbox-margin` | 外边距 | `5px` |
-| `--hy-checkbox-radius-square` | 方形勾选框圆角 | `3px` |
 | `--hy-checkbox-disabled-opacity` | 禁用态透明度 | `0.5` |
 | `--hy-checkbox-font-size` | 标签字号 | 跟随 `--hy-font-size-base`（28rpx） |
 | `--hy-checkbox-disabled-color` | 禁用文字颜色 | 跟随 `--hy-text-color--disabled` |

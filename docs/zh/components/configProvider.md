@@ -164,42 +164,12 @@ page .hy-theme--dark {
 }
 ```
 
-### 自定义高度
-
-通过 `height` 属性自定义组件高度：
-
-```vue
-<!-- 固定高度 -->
-<hy-config-provider height="800px">...</hy-config-provider>
-
-<!-- 百分比高度 -->
-<hy-config-provider height="90%">...</hy-config-provider>
-
-<!-- 自适应高度（解决 onPageScroll 不触发问题） -->
-<hy-config-provider height="auto">...</hy-config-provider>
-```
-
-### 解决滚动事件问题
-
-由于组件默认的固定高度会限制页面滚动区域，导致 `onPageScroll` 滚动事件无法触发。如需恢复滚动事件，只需将高度设置为 `auto`：
-
-```vue
-<template>
-    <hy-config-provider height="auto">
-        <!-- 应用内容 -->
-    </hy-config-provider>
-</template>
-```
-
----
-
 ## API
 
 | 参数        | 说明                     | 类型               | 默认值 |
 | ----------- | ------------------------ | ------------------ | ------ |
 | theme       | 主题色，暗色或者默认白色 | `dark`\|`light`    | -      |
 | themeColor  | 主题颜色                 | `string`           | -      |
-| height      | 页面高度，数值默认单位px | `string`\|`number` | -      |
 | padding     | 内边距，数值默认单位px   | `string`\|`number` | -      |
 | customStyle | 自定义需要用到的外部样式 | `CSSProperties`    | -      |
 | customClass | 自定义外部类名           | `string`           | -      |
