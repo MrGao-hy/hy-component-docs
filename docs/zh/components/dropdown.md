@@ -193,19 +193,19 @@
 
 ### Dropdown Props
 
-| 参数 | 说明 | 类型 | 默认值 |
-| --- | --- | --- | --- |
-| height | 标题菜单的高度，数值默认单位px | `string`\|`number` | 40 |
-| borderBottom | 标题菜单是否显示下边框 | `boolean` | false |
-| sticky | 是否固定定位 | `boolean` | true |
-| activeColor | 标题和选项卡选中的颜色 | `string` | - |
-| inactiveColor | 标题和选项卡未选中的颜色 | `string` | #606266 |
-| titleSize | 标题和选项卡选中的字体大小，数值默认单位px | `string`\|`number` | - |
-| closeOnClickMask | 点击遮罩层关闭弹窗 | `boolean` | true |
-| menuIcon | 标题菜单右侧的图标名称 | `string` | ARROW_DOWN_FILL |
-| menuIconSize | 标题菜单右侧图标的大小，数值默认单位px | `string`\|`number` | 14 |
-| customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
-| customClass | 自定义外部类名 | `string` | - |
+| 参数             | 说明                                       | 类型               | 默认值    |
+| ---------------- | ------------------------------------------ | ------------------ | --------- |
+| height           | 标题菜单的高度，数值默认单位px             | `string`\|`number` | 40        |
+| borderBottom     | 标题菜单是否显示下边框                     | `boolean`          | false     |
+| sticky           | 是否固定定位                               | `boolean`          | true      |
+| activeColor      | 标题和选项卡选中的颜色                     | `string`           | -         |
+| inactiveColor    | 标题和选项卡未选中的颜色                   | `string`           | #606266   |
+| titleSize        | 标题和选项卡选中的字体大小，数值默认单位px | `string`\|`number` | -         |
+| closeOnClickMask | 点击遮罩层关闭弹窗                         | `boolean`          | true      |
+| menuIcon         | 标题菜单右侧的图标名称                     | `string`           | DOWN_FILL |
+| menuIconSize     | 标题菜单右侧图标的大小，数值默认单位px     | `string`\|`number` | 14        |
+| customStyle      | 定义需要用到的外部样式                     | `CSSProperties`    | -         |
+| customClass      | 自定义外部类名                             | `string`           | -         |
 
 ### DropdownItem Props
 

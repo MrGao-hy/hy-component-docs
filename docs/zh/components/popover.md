@@ -12,7 +12,8 @@
 
 ::: warning 注意
 
-目前气泡容器是给的固定宽度，无法自适应宽度，因为自适应宽度无法超出父容器宽度
+- 目前气泡容器是给的固定宽度，无法自适应宽度，因为自适应宽度无法超出父容器宽度
+- 在使用`hy-popover`包裹`hy-button`时候，需要给`hy-button`加上`stop="false"`，否则会阻止事件冒泡，导致气泡无法显示
 
 :::
 
@@ -141,7 +142,7 @@
 ```html
 <template>
     <view style="height: 800px; width: 300px" @tap="closeOutside">
-        <hy-popover content="我是提示信息" placement="top">
+        <hy-popover v-model="show" content="我是提示信息" placement="top">
             <hy-button type="primary" :stop="false">上面</hy-button>
         </hy-popover>
     </view>
@@ -152,6 +153,7 @@
 import { useQueue } from 'hy-app';
 
 const { closeOutside } = useQueue();
+const show = ref(false);
 ```
 
 ## API

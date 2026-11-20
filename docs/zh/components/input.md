@@ -139,13 +139,11 @@ const value = ref('');
 | placeholder | 输入框为空时的占位符 | `string` | - |
 | placeholderClass | 指定placeholder的样式类，注意页面或组件的style中写了scoped时，需要在类名前写/deep/ | `string` | input-placeholder |
 | placeholderStyle | 指定placeholder的样式 | `CSSProperties` | - |
-| showWordLimit | 是否显示输入字数统计，只在 type ="text"或type ="textarea"时有效 | `boolean` | false |
 | confirmType | 设置右下角按钮的文字，兼容性详见uni-app文档 | `string` | done |
 | confirmHold | 点击键盘右下角按钮时是否保持键盘不收起，H5无效 | `boolean` | false |
 | holdKeyboard | focus时，点击页面的时候不收起键盘，微信小程序有效 | `boolean` | false |
 | focus | 自动获取焦点，在 H5 平台能否聚焦以及软键盘是否跟随弹出，取决于当前浏览器本身的实现。 | `boolean` | false |
 | autoBlur | 键盘收起时，是否自动失去焦点，目前仅App3.0.0+有效 | `boolean` | false |
-| disableDefaultPadding | 是否去掉 iOS 下的默认内边距，仅微信小程序，且type=textarea时有效 | `boolean` | false |
 | cursor | 指定focus时光标的位置 | `number` | -1 |
 | cursorSpacing | 输入框聚焦时底部与键盘的距离 | `number` | 30 |
 | selectionStart | 光标起始位置，自动聚集时有效，需与selection-end搭配使用 | `number` | -1 |
@@ -162,7 +160,6 @@ const value = ref('');
 | formatter | 输入过滤或格式化函数(如需兼容微信小程序，则只能通过setFormatter方法) | `function` \| `null` | null |
 | customStyle | 自定义需要用到的外部样式 | `CSSProperties` | - |
 | customClass | 自定义外部类名 | `string` | - |
-| fixed | 如果 textarea 是在一个 position:fixed 的区域，需要显示指定属性 fixed 为 true，兼容性：微信小程序、百度小程序、字节跳动小程序、QQ小程序 | `boolean` | false |
 | ignoreCompositionEvent | 是否忽略组件内对文本合成系统事件的处理 | `boolean` | false |
 
 ### Events

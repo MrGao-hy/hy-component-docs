@@ -46,7 +46,7 @@
 
 ```html
 <template>
-    <hy-back-top :scroll-top="scrollTop" icon="arrow-up" text="返回"></hy-back-top>
+    <hy-back-top :scroll-top="scrollTop" :icon="{ name: 'arrow-up' }" text="返回"></hy-back-top>
 </template>
 ```
 
@@ -57,7 +57,7 @@
 | 参数 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | mode | 按钮形状 | `circle`\|`square` | circle |
-| icon | 图标，详见[图标Api](./icon#api) | `string` | IconConfig.DOWNLOAD |
+| icon | 自定义图标属性集合，详见[图标Api](./icon#api)，未设置时使用内置 TO_TOP 图标 | `HyIconProps` | - |
 | text | 返回顶部按钮的提示文字 | `string` | - |
 | duration | 返回顶部过程中的过渡时间，单位ms | `number` | 500 |
 | scrollTop | 页面的滚动距离 | `number` | 0 |

@@ -147,7 +147,6 @@ const lazyLoad = (option: any, tabIndex: number, resolve: (children: any[]) => v
 | close             | 弹窗关闭时触发         | -                   |
 | cancel            | 取消选择时触发         | -                   |
 | confirm           | 确认选择时触发         | `CascaderEmitValue` |
-| change            | 值改变时触发           | `CascaderEmitValue` |
 | update:show       | 弹窗显示状态改变时触发 | `boolean`           |
 | update:modelValue | 值改变时触发           | `CascaderValue`     |
 

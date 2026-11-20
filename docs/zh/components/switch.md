@@ -196,7 +196,7 @@ const change = (e) => {
 | inactiveValue | switch关闭时的值 | `boolean`\|`string`\|`number` | false |
 | activeIcon | 打开选择器时图标 | `string` | - |
 | inactiveIcon | 关闭选择器时图标 | `string` | - |
-| icon | 图标api集合，详见[图标Api](./icon#api) | `HyIconProps` | - |
+| icon | 图标api集合，详见[图标Api](./icon#api) | `Partial<HyIconProps>` | - |
 | asyncChange | 是否开启异步变更，开启后需要手动控制输入值 | `boolean` | false |
 | space | 圆点与外边框的距离 | `string`\|`number` | 0 |
 | customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |

@@ -159,19 +159,6 @@
 </template>
 ```
 
-### 自定义动画时间
-
-```html
-<template>
-    <hy-swipe-action borderBottom :duration="500">
-        <view class="cell">
-            <view class="cell-title">慢速动画</view>
-            <view class="cell-value">动画过渡时间为 500ms</view>
-        </view>
-    </hy-swipe-action>
-</template>
-```
-
 ### 关闭前钩子
 
 ```html
@@ -369,7 +356,6 @@
 | disabled | 是否禁用滑动操作 | `boolean` | false |
 | borderBottom | 是否显示底部边框 | `boolean` | false |
 | options | 右侧按钮配置（无 left 插槽时生效） | `SwipeActionOptionsVo[]` | [见下方](./swipeAction/#options) |
-| duration | 动画过渡时间，单位 ms | `number` | 300 |
 | beforeClose | 关闭滑动按钮前的钩子函数 | `(reason: SwipeActionReason, position: SwipeActionPosition) => void` | - |
 | customStyle | 定义需要用到的外部样式 | `CSSProperties` | - |
 | customClass | 自定义外部类名 | `string` | - |

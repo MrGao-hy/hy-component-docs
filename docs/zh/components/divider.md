@@ -86,7 +86,6 @@
 | textSize | 文本大小，数值默认单位px | `string` \| `number` | 14 |
 | textColor | 文本颜色 | `string` | #909399 |
 | lineColor | 线条颜色 | `string` | #dcdfe6 |
-| loadingIcon | 加载中状态的图标 | `string` | LOADING |
 | loadMoreText | 加载前的提示语 | `string` | 加载更多 |
 | loadingText | 加载中提示语 | `string` | 正在加载... |
 | noMoreText | 没有更多的提示语 | `string` | 没有更多了 |

@@ -104,12 +104,10 @@
 | radius | 圆角，数值默认单位px | `string`\|`number` | 0 |
 | lazyLoad | 是否懒加载，仅微信小程序、App、百度小程序、字节跳动小程序有效 | `boolean` | true |
 | showMenuByLongPress | 是否开启长按图片显示识别小程序码菜单，仅微信小程序有效 | `boolean` | true |
-| loadingIcon | 加载中的图标，或者小图片 | `string` | LOADING |
-| errorIcon | 加载失败的图标，或者小图片 | `string` | NOTICE |
+| errorIcon | 加载失败的图标，或者小图片 | `string` | ATTENTION |
 | showLoading | 是否显示加载中的图标或者自定义的slot | `boolean` | true |
 | showError | 是否显示加载错误的图标或者自定义的slot | `boolean` | true |
 | fade | 是否需要淡入效果 | `boolean` | true |
-| webp | 只支持网络资源，只对微信小程序有效 | `boolean` | false |
 | duration | 搭配fade参数的过渡时间，单位ms | `number` | 500 |
 | bgColor | 背景颜色，用于深色页面加载图片时，为了和背景色融合 | `string` | - |
 | indistinct | 模糊图片，给图片加上模糊样式 | `boolean` | false |

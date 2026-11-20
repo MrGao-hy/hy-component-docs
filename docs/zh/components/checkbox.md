@@ -152,17 +152,17 @@
 
 ### 插槽
 
-- `label`：自定义label文本,传值为`label`
-- `icon`：自定义选项框里icon,传值为`iconColor`和`iconSize`
+- `label`：自定义label文本,传值为`record`
+- `icon`：自定义选项框里icon,传值为`isChecked`和`iconSize`
 
 ```html
 <template>
     <hy-checkbox v-model="value" :columns="columns">
-        <template #label="{ label }">
-            <view>{{label}}</view>
+        <template #label="{ record }">
+            <view>{{record}}</view>
         </template>
-        <template #icon="{ iconColor, iconSize }">
-            <view>{{iconColor}}</view>
+        <template #icon="{ isChecked, iconSize }">
+            <view>{{isChecked}}</view>
             <view>{{iconSize}}</view>
         </template>
     </hy-checkbox>
@@ -198,9 +198,8 @@
 | size | 复选框大小[^2] | `small`\|`medium`\|`large` \|`string`\|`number` | medium |
 | disabled | 是否禁用 | `boolean` | false |
 | activeColor | 选中状态下的颜色 | `string` | - |
-| inactiveColor | 未选中的颜色 | `string` | #c8c9cc |
+| inactiveColor | 未选中的颜色，未设置时跟随CSS变量 `--hy-checkbox-icon-color` | `string` | - |
 | iconSize | 图标的大小，数值默认单位px | `string`\|`number` | 20 |
-| iconColor | 图标颜色 | `string` | - |
 | labelSize | label的字体大小，数值默认单位px | `string`\|`number` | - |
 | labelColor | label的颜色 | `string` | - |
 | iconPlacement | 勾选图标的对齐方式 | `left`\|`right` | left |
@@ -219,9 +218,8 @@
 | size | 复选框大小[^2] | `small`\|`medium`\|`large`\|`string`\|`number` | medium |
 | disabled | 是否禁用 | `boolean` | false |
 | activeColor | 选中状态下的颜色 | `string` | - |
-| inactiveColor | 未选中的颜色 | `string` | #c8c9cc |
+| inactiveColor | 未选中的颜色，未设置时跟随CSS变量 `--hy-checkbox-icon-color` | `string` | - |
 | iconSize | 图标的大小，单位px | `string`\|`number` | 20 |
-| iconColor | 图标颜色 | `string` | - |
 | labelSize | label的字体大小，px单位 | `string`\|`number` | - |
 | labelColor | label的颜色 | `string` | - |
 | iconPlacement | 勾选图标的对齐方式 | `left`\|`right` | left |
@@ -233,14 +231,14 @@
 
 ### CheckboxItem Props
 
-| 参数        | 说明                   | 类型            | 默认值 |
-| ----------- | ---------------------- | --------------- | ------ |
-| value       | 绑定值                 | `string`        | -      |
-| label       | label提示文字          | `string`        | -      |
-| checked     | 是否默认选中           | `boolean`       | false  |
-| disabled    | 是否禁用               | `boolean`       | false  |
-| customStyle | 定义需要用到的外部样式 | `CSSProperties` | -      |
-| customClass | 自定义外部类名         | `string`        | -      |
+| 参数        | 说明                   | 类型               | 默认值 |
+| ----------- | ---------------------- | ------------------ | ------ |
+| value       | 绑定值                 | `string`\|`number` | -      |
+| label       | label提示文字          | `string`           | -      |
+| checked     | 是否默认选中           | `boolean`          | false  |
+| disabled    | 是否禁用               | `boolean`          | false  |
+| customStyle | 定义需要用到的外部样式 | `CSSProperties`    | -      |
+| customClass | 自定义外部类名         | `string`           | -      |
 
 #### columns
 
@@ -269,16 +267,16 @@
 
 | 插槽名  | 说明                     | 传值                  |
 | ------- | ------------------------ | --------------------- |
-| icon    | 自定义`icon`内容         | iconColor \| iconSize |
+| icon    | 自定义`icon`内容         | isChecked \| iconSize |
 | label   | 自定义`label`内容        | record                |
 | default | 默认插槽，用于自定义内容 | -                     |
 
 ### CheckboxItem Slots
 
-| 插槽名 | 说明              | 传值                  |
-| ------ | ----------------- | --------------------- |
-| icon   | 自定义`icon`内容  | iconColor \| iconSize |
-| label  | 自定义`label`内容 | record                |
+| 插槽名 | 说明              | 传值      |
+| ------ | ----------------- | --------- |
+| icon   | 自定义`icon`内容  | isChecked |
+| label  | 自定义`label`内容 | record    |
 
 ### CSS 变量
 
@@ -286,14 +284,14 @@
 | --- | --- | --- |
 | `--hy-checkbox-margin` | 外边距 | `5px` |
 | `--hy-checkbox-radius-square` | 方形勾选框圆角 | `3px` |
-| `--hy-checkbox-disabled-checked-opacity` | 禁用选中透明度 | `0.5` |
+| `--hy-checkbox-disabled-opacity` | 禁用态透明度 | `0.5` |
 | `--hy-checkbox-font-size` | 标签字号 | 跟随 `--hy-font-size-base`（28rpx） |
 | `--hy-checkbox-disabled-color` | 禁用文字颜色 | 跟随 `--hy-text-color--disabled` |
-| `--hy-checkbox-border` | 勾选框边框 | 跟随 `--hy-border-line` |
-| `--hy-checkbox-icon-disabled-background` | 勾选框禁用态背景色 | 跟随 `--hy-background--disabled` |
+| `--hy-checkbox-label-line-height` | 选项文字行高，收缩行盒使文字与图标盒中心对齐 | `1.2` |
 | `--hy-checkbox-icon-margin` | 勾选框图标右外边距 | 跟随 `--hy-border-margin-padding-sm` |
 | `--hy-checkbox-label-margin` | 选项文字右外边距 | 跟随 `--hy-border-margin-padding-sm` |
-| `--hy-checkbox-primary` | 主题色 | 跟随 `--hy-primary` |
+| `--hy-checkbox-icon-check-color` | 图标选中颜色 | 跟随 `--hy-primary` |
+| `--hy-checkbox-icon-color` | 未选中图标颜色 | `#c8c9cc` |
 
 [^1]: `circle`：两边为半圆；`square`：方形带圆角
 

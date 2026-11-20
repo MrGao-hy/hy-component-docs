@@ -220,7 +220,7 @@
 | text | 显示的内容，支持字符串或数组 | `string`\|`string[]` | - |
 | direction | 通告滚动模式，row-横向滚动，column-竖向滚动 | `row` \| `column` | row |
 | step | direction = row时，是否使用步进形式滚动 | `boolean` | false |
-| icon | 是否显示左侧图标，接受图标名称或图标配置对象 | `string`\|`HyIconProps` | NOTIFICATION_FILL |
+| icon | 是否显示左侧图标，接受图标名称或图标配置对象 | `string`\|`Partial<HyIconProps>` | REMIND |
 | mode | 通告模式，link-显示右箭头，closable-显示右侧关闭图标 | `link` \| `closable` | - |
 | color | 文字颜色，图标也会使用此颜色 | `string` | #ff9900 |
 | bgColor | 背景颜色 | `string` | - |

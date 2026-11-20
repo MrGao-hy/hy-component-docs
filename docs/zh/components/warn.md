@@ -85,25 +85,25 @@
 
 ### CSS 变量
 
-| 变量名                      | 说明             | 默认值                                 |
-| --------------------------- | ---------------- | -------------------------------------- |
-| `--hy-warn-title-font-size` | 标题字号         | `14px`                                 |
-| `--hy-warn-desc-font-size`  | 描述字号         | `14px`                                 |
-| `--hy-warn-close-top`       | 关闭按钮上边距   | `11px`                                 |
-| `--hy-warn-close-right`     | 关闭按钮右边距   | `10px`                                 |
-| `--hy-warn-radius`          | 容器圆角         | 跟随 `--hy-radius-sm`（8rpx）          |
-| `--hy-warn-text-color`      | 标题/描述颜色    | `#fff`                                 |
-| `--hy-warn-error`           | 危险色           | 跟随 `--hy-error`                      |
-| `--hy-warn-error-light`     | 危险色浅色       | 跟随 `--hy-error-light`                |
-| `--hy-warn-icon-margin`     | 图标右外边距     | 跟随 `--hy-border-margin-padding-sm`   |
-| `--hy-warn-info`            | 信息色           | 跟随 `--hy-info`                       |
-| `--hy-warn-info-light`      | 信息色浅色       | 跟随 `--hy-info-light`                 |
-| `--hy-warn-padding`         | 警告条整体内边距 | 跟随 `--hy-border-margin-padding-base` |
-| `--hy-warn-primary`         | 主题色           | 跟随 `--hy-primary`                    |
-| `--hy-warn-primary-light`   | 主题色浅色       | 跟随 `--hy-primary-light`              |
-| `--hy-warn-success`         | 成功色           | 跟随 `--hy-success`                    |
-| `--hy-warn-success-light`   | 成功色浅色       | 跟随 `--hy-success-light`              |
-| `--hy-warn-warning`         | 警告色           | 跟随 `--hy-warning`                    |
-| `--hy-warn-warning-light`   | 警告色浅色       | 跟随 `--hy-warning-light`              |
+| 变量名 | 说明 | 默认值 |
+| --- | --- | --- |
+| `--hy-warn-title-font-size` | 标题字号 | `14px` |
+| `--hy-warn-desc-font-size` | 描述字号 | `14px` |
+| `--hy-warn-line-height` | 标题/描述行高，与左侧图标尺寸 | `21px` |
+| `--hy-warn-close-right` | 关闭按钮右边距 | `10px` |
+| `--hy-warn-radius` | 容器圆角 | 跟随 `--hy-radius-sm`（8rpx） |
+| `--hy-warn-text-color` | 标题/描述颜色 | `#fff` |
+| `--hy-warn-error` | 危险色 | 跟随 `--hy-error` |
+| `--hy-warn-error-light` | 危险色浅色 | 跟随 `--hy-error-light` |
+| `--hy-warn-icon-margin` | 图标右外边距 | 跟随 `--hy-border-margin-padding-sm` |
+| `--hy-warn-info` | 信息色 | 跟随 `--hy-info` |
+| `--hy-warn-info-light` | 信息色浅色 | 跟随 `--hy-info-light` |
+| `--hy-warn-padding` | 警告条整体内边距 | 跟随 `--hy-border-margin-padding-base` |
+| `--hy-warn-primary` | 主题色 | 跟随 `--hy-primary` |
+| `--hy-warn-primary-light` | 主题色浅色 | 跟随 `--hy-primary-light` |
+| `--hy-warn-success` | 成功色 | 跟随 `--hy-success` |
+| `--hy-warn-success-light` | 成功色浅色 | 跟随 `--hy-success-light` |
+| `--hy-warn-warning` | 警告色 | 跟随 `--hy-warning` |
+| `--hy-warn-warning-light` | 警告色浅色 | 跟随 `--hy-warning-light` |
 
 <demo-model url="pages-design/warn/warn"></demo-model>

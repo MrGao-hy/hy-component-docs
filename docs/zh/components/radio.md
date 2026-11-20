@@ -118,16 +118,16 @@ const value = ref('apply');
 
 ### 插槽
 
-- `label`：自定义label文本,传值为`label`
-- `icon`：自定义选项框里icon,传值为`iconColor`和`iconSize`
+- `label`：自定义label文本,传值为`record`
+- `icon`：自定义选项框里icon,传值为`isChecked`和`iconSize`
 
 ```html
 <hy-radio v-model="value" :columns="columns">
-    <template #label="{ label }">
-        <view>{{label}}</view>
+    <template #label="{ record }">
+        <view>{{record}}</view>
     </template>
-    <template #icon="{ iconColor, iconSize }">
-        <view>{{iconColor}}</view>
+    <template #icon="{ isChecked, iconSize }">
+        <view>{{isChecked}}</view>
         <view>{{iconSize}}</view>
     </template>
 </hy-radio>
@@ -162,10 +162,8 @@ const value = ref('apply');
 | size | 复选框大小[^2] | `string`\|`number` | medium |
 | disabled | 是否禁用 | `boolean` | false |
 | activeColor | 选中状态下的颜色 | `string` | - |
-| inactiveColor | 未选中的颜色 | `string` | #c8c9cc |
+| inactiveColor | 未选中的颜色，未设置时跟随CSS变量 `--hy-radio-icon-color` | `string` | - |
 | iconSize | 图标的大小，数值默认单位px | `string`\|`number` | 20 |
-| iconColor | 图标颜色 | `string` | - |
-| label | label提示文字 | `string` | - |
 | labelSize | label的字体大小，px单位 | `string`\|`number` | - |
 | labelColor | label的颜色 | `string` | - |
 | iconPlacement | 勾选图标的对齐方式 | `left`\|`right` | left |
@@ -185,7 +183,7 @@ const value = ref('apply');
 
 | 插槽名 | 说明              | 传值                  |
 | ------ | ----------------- | --------------------- |
-| icon   | 自定义`icon`内容  | iconColor \| iconSize |
+| icon   | 自定义`icon`内容  | isChecked \| iconSize |
 | label  | 自定义`label`内容 | record                |
 
 ### typing
@@ -237,16 +235,16 @@ export interface IFieldNames {
 | --- | --- | --- |
 | `--hy-radio-margin` | 外边距 | `5px` |
 | `--hy-radio-radius-square` | 方形圆点框圆角 | `3px` |
-| `--hy-radio-disabled-checked-opacity` | 禁用选中透明度 | `0.5` |
+| `--hy-radio-disabled-opacity` | 禁用态透明度 | `0.5` |
 | `--hy-radio-label-color` | 标签文字颜色 | 跟随 `--hy-text-color` |
 | `--hy-radio-font-size` | 标签字号 | 跟随 `--hy-font-size-base`（28rpx） |
 | `--hy-radio-disabled-color` | 禁用文字颜色 | 跟随 `--hy-text-color--disabled` |
-| `--hy-radio-border` | 圆点框边框 | 跟随 `--hy-border-line` |
 | `--hy-radio-group-margin-y` | 纵向分组上下外边距 | 跟随 `--hy-border-margin-padding-lg` |
-| `--hy-radio-icon-disabled-background` | 圆点框禁用态背景色 | 跟随 `--hy-background--disabled` |
+| `--hy-radio-label-line-height` | 选项文字行高，收缩行盒使文字与图标盒中心对齐 | `1.2` |
 | `--hy-radio-icon-margin` | 图标右外边距 | 跟随 `--hy-border-margin-padding-sm` |
 | `--hy-radio-label-margin` | 选项文字右外边距 | 跟随 `--hy-border-margin-padding-sm` |
-| `--hy-radio-primary` | 主题色 | 跟随 `--hy-primary` |
+| `--hy-radio-icon-checked-color` | 图标选中颜色 | 跟随 `--hy-primary` |
+| `--hy-radio-icon-color` | 未选中图标颜色 | `#c8c9cc` |
 
 [^1]: `circle`：两边为半圆；`square`：方形带圆角
 

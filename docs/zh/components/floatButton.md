@@ -120,21 +120,33 @@
 </template>
 ```
 
-### 设置透明度
-
-- 通过设置`opacity`设置悬浮按钮是否浮动
-
-```html
-<template>
-    <hy-float-button :opacity="0.1"></hy-float-button>
-</template>
-```
-
 ## API
 
 ### FloatButton Props
 
-| 参数 | 说明 | 类型 | 默认值 | | ----------- | -------------------------------------------- | ----------------------- | ---------------------------------------------- | --- | --- | | menus | 菜单栏集合 | `(string\|AnyObject)[]` | - | | direction | 打开方向[^1] | `row`\|`column` | column | | icon | 按钮显示的图标 | `string` | PLUS | | iconSize | 按钮图标大小，数值默认单位px | `number`\|`string` | - | | iconColor | 按钮图标颜色 | `string` | #FFFFFF | | gap | 悬浮按钮与可视区域边缘的间距，数值默认单位px | `Object` | \{ left: 16, right: 16, top: 16, bottom: 40 \} | | zIndex | 层级 | `number` | 10086 | | bgColor | 按钮背景颜色 | `string` | - | | text | 按钮文字 | `string` | - | | fontSize | 按钮文字大小，数值默认单位px | `number`\|`string` | 12px | | textColor | 按钮文字的颜色 | `string` | - | | size | 按钮的尺寸[^2] | `string` | medium | | shape | 按钮的形状[^3] | `circle`\|`square` | circle | | opacity | 按钮的透明度 | `number` | 1 | | shadow | 是否显示阴影 | `boolean` | true | | float | 是否显示漂浮的动画 | `boolean` | true | | fixed | 是否固定位置 | `boolean` | true | | draggable | 悬浮按钮能否拖动 | `boolean` | true | | position | 悬浮按钮位置[^4] | `string` | 'right-bottom' | | | | expandable | 用于控制点击时是否展开菜单 | `boolean` | true | | customStyle | 自定义需要用到的外部样式 | `CSSProperties` | - | | customClass | 自定义外部类名 | `string` | - |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| menus | 菜单栏集合 | `(string\|AnyObject)[]` | - |
+| direction | 打开方向[^1] | `row`\|`column` | column |
+| icon | 按钮显示的图标 | `string` | PLUS |
+| iconSize | 按钮图标大小，数值默认单位px | `number`\|`string` | - |
+| iconColor | 按钮图标颜色 | `string` | #FFFFFF |
+| gap | 悬浮按钮与可视区域边缘的间距，数值默认单位px | `Object` | \{ left: 16, right: 16, top: 16, bottom: 40 \} |
+| zIndex | 层级 | `number` | 10086 |
+| bgColor | 按钮背景颜色 | `string` | - |
+| text | 按钮文字 | `string` | - |
+| fontSize | 按钮文字大小，数值默认单位px | `number`\|`string` | 12px |
+| textColor | 按钮文字的颜色 | `string` | - |
+| size | 按钮的尺寸[^2] | `string` | medium |
+| shape | 按钮的形状[^3] | `circle`\|`square` | circle |
+| shadow | 是否显示阴影 | `boolean` | true |
+| float | 是否显示漂浮的动画 | `boolean` | true |
+| fixed | 是否固定位置 | `boolean` | true |
+| draggable | 悬浮按钮能否拖动 | `boolean` | true |
+| position | 悬浮按钮位置[^4] | `string` | 'right-bottom' |
+| expandable | 用于控制点击时是否展开菜单 | `boolean` | true |
+| customStyle | 自定义需要用到的外部样式 | `CSSProperties` | - |
+| customClass | 自定义外部类名 | `string` | - |
 
 ### gap
 
