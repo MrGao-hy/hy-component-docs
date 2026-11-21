@@ -337,4 +337,4 @@ const onQuery = () => {
 | ------- | ------------------------ | ------ |
 | default | 默认插槽，用于自定义内容 | -      |
 
-<demo-model url="pages-design/parse/parse"></demo-model>
+<demo-model url="pages-design/richText/richText"></demo-model>
