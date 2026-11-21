@@ -1443,9 +1443,12 @@
             border: 1px solid var(--vp-c-divider);
             border-radius: 2px;
             padding: 10px;
+            transition:
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
             &:hover {
                 border-color: var(--vp-c-brand-1);
-                box-shadow: 0 0 10rpx 10rpx rgba(0, 0, 0, 0.51);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
             }
             .iconfont {
                 font-size: 30px;
@@ -1463,6 +1466,44 @@
                 text-overflow: ellipsis;
                 white-space: nowrap;
                 text-align: center;
+            }
+        }
+
+        /* 平板端：每行 4 个 */
+        @media (max-width: 960px) {
+            .group-title {
+                font-size: 18px;
+            }
+
+            .container-box {
+                width: 24.5%;
+            }
+        }
+
+        /* 移动端：每行 3 个，缩小尺寸并去除触屏 hover 残留 */
+        @media (max-width: 768px) {
+            .group-title {
+                margin: 16px 0 12px;
+                font-size: 16px;
+            }
+
+            .container-box {
+                width: 33.33%;
+                height: 100px;
+                padding: 8px;
+
+                &:hover {
+                    border-color: var(--vp-c-divider);
+                    box-shadow: none;
+                }
+
+                .iconfont {
+                    font-size: 26px;
+                }
+
+                .name {
+                    margin-top: 12px;
+                }
             }
         }
     }
