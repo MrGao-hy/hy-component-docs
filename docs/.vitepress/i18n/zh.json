@@ -124,9 +124,9 @@
                 "items": [
                     { "text": "IndexBar 索引栏", "link": "/components/indexBar" },
                     { "text": "List 虚拟列表", "link": "/components/list" },
-                    { "text": "Parse 富文本", "link": "/components/parse" },
                     { "text": "Qrcode 二维码", "link": "/components/qrcode" },
                     { "text": "ReadMore 展开阅读更多", "link": "/components/readMore" },
+                    { "text": "RichText 富文本", "link": "/components/richText" },
                     { "text": "ScrollList 横向滚动列表", "link": "/components/scrollList" },
                     { "text": "Swiper 轮播图", "link": "/components/swiper" },
                     { "text": "Table 表格", "link": "/components/table" },
