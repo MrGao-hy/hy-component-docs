@@ -1,17 +1,17 @@
 # Slider Component
 
-> This component is generally used in forms for scenarios where a user manually selects a value within a range.
+> This component is generally used in forms for scenarios where a range is selected manually.
 
 ## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ------------------- | ------------------- |
-| ✔        | ✔   | ✔                   | ✔                   |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
 ## :japanese_castle: Basic Usage Example
 
 ```html
-<!-- Global usage -->
+<!-- 全局使用 -->
 <hy-slider v-model="value"></hy-slider>
 ```
 
@@ -23,7 +23,7 @@ const value = ref(30);
 
 ### Set Maximum and Minimum Values
 
-Using `min` and `max`, you can set the maximum and minimum values the slider can select
+With `min` and `max`, you can set the maximum and minimum values selectable by the slider
 
 ```html
 <template>
@@ -41,7 +41,7 @@ Using `min` and `max`, you can set the maximum and minimum values the slider can
 
 ::: warning Note
 
-Please note that the step must be evenly divisible by the max value; otherwise, you may end up unable to slide to the maximum value.
+Please note that the step value must be evenly divisible by the max value; otherwise, you may be unable to slide to the maximum value.
 
 :::
 
@@ -57,11 +57,11 @@ Please note that the step must be evenly divisible by the max value; otherwise, 
 </script>
 ```
 
-### Use in Containers That Are Initially Hidden (Such as Popups)
+### Use in Containers That Are Initially Hidden, Such as Popups
 
 ::: warning Note
 
-Please note that in this scenario, you should also add a `v-if` to the slider so that it renders only when the popup is shown. This ensures the correct size of the slider can be calculated.
+Please note that in this scenario, you should add a v-if to the slider so that it renders only when the popup is shown. This is necessary to correctly calculate the slider's dimensions.
 
 :::
 
@@ -72,7 +72,7 @@ Please note that in this scenario, you should also add a `v-if` to the slider so
             <hy-slider v-if="popupShow" v-model="sliderValue" min="1" max="4" showValue></hy-slider>
         </view>
     </hy-popup>
-    <hy-button type="primary" @click="popupShow = !popupShow" text="Open popup"></hy-button>
+    <hy-button type="primary" @click="popupShow = !popupShow" text="打开遮罩框"></hy-button>
 </template>
 
 <script setup>
@@ -96,7 +96,7 @@ Please note that in this scenario, you should also add a `v-if` to the slider so
 </script>
 ```
 
-### Custom Slider Block
+### Custom Slider Button
 
 ```html
 <template>
@@ -167,11 +167,11 @@ Please note that in this scenario, you should also add a `v-if` to the slider so
 
 ### Customize the Overall Style of the Slider
 
-- Use `inactive-color` to configure the background color of the bottom slider bar
-- Use `active-color` to configure the background color of the selected portion
-- Use `block-width` to configure the width of the slider block (height equals width)
-- Use `block-color` to configure the color of the slider button
-- Use `height` to configure the height of the slider bar, in rpx
+- Use inactive-color to configure the background color of the slider track
+- Use active-color to configure the background color of the selected portion
+- Use block-width to configure the slider button width (height equals width)
+- Use block-color to configure the color of the slider button
+- Use height to configure the height of the slider bar, in rpx units
 
 ```html
 <template>
@@ -193,39 +193,51 @@ Please note that in this scenario, you should also add a `v-if` to the slider so
 
 ### Slider Props
 
-| Parameter     | Description                                            | Type                 | Default |
-| ------------- | ------------------------------------------------------ | -------------------- | ------- |
-| v-model       | Two-way binding of the slider's selected value         | `number`             | 0       |
-| blockSize     | Size of the slider block                               | `number`             | 18      |
-| min           | Minimum selectable value                               | `number`             | 1       |
-| max           | Maximum selectable value                               | `number`             | 100     |
-| step          | Step size of the selection                             | `number`             | 1       |
-| activeColor   | Color of the active portion of the progress bar        | `string`             | -       |
-| inactiveColor | Background color of the progress bar                   | `string`             | -       |
-| blockColor    | Background color of the slider block                   | `string`             | -       |
-| showValue     | Whether to display the current value                   | `boolean`            | false   |
-| blockStyle    | Custom style of the slider button, as an object        | `CSSProperties`      | -       |
-| height        | Height of the progress bar; number values default to px | `string` \| `number` | 2px     |
-| isRange       | Enable dual-slider mode                                | `boolean`            | false   |
-| useNative     | Whether to render the uni-app framework's built-in component | `boolean`       | false   |
-| rangeValue    | Two-way binding value for dual sliders, as an array    | `array`              | [0, 0]  |
-| customStyle   | Custom external styles to apply                        | `CSSProperties`      | -       |
+| Parameter      | Description                                    | Type                 | Default |
+| ------------- | ---------------------------------------------- | -------------------- | ------ |
+| v-model       | Two-way binding of the slider selection value  | `number`             | 0      |
+| blockSize     | Size of the slider button                      | `number`             | 18     |
+| min           | Minimum selectable value                       | `number`             | 1      |
+| max           | Maximum selectable value                       | `number`             | 100    |
+| step          | Step size for selection                        | `number`             | 1      |
+| activeColor   | Color of the active part of the progress bar   | `string`             | -      |
+| inactiveColor | Background color of the progress bar           | `string`             | -      |
+| blockColor    | Background color of the slider button          | `string`             | -      |
+| showValue     | Whether to display the current value           | `boolean`            | false  |
+| blockStyle    | Custom style of the slider button, as an object | `CSSProperties`     | -      |
+| height        | Height of the progress bar, default unit px for numbers | `string` \| `number` | 2px |
+| isRange       | Enable dual-slider mode                        | `boolean`            | false  |
+| useNative     | Whether to render the uni-app framework's built-in component | `boolean` | false |
+| rangeValue    | Two-way binding value for dual sliders, as an array | `array`          | [0, 0] |
+| customStyle   | Define external styles to be used              | `CSSProperties`      | -      |
+| customClass   | Custom external class name                     | `string`             | -      |
+| disabled      | Whether to disable the slider                  | `boolean`            | false  |
 
 ### Events
 
-| Event Name | Description                        | Callback Parameters |
-| ---------- | ---------------------------------- | ------------------- |
-| changing   | Triggered event (during dragging)  | value: current value |
-| change     | Triggered event                    | value: current value |
-| start      | Start sliding                      | value: current value |
+| Event Name | Description                          | Callback Parameter |
+| ---------- | ------------------------------------ | ------------------ |
+| changing   | Triggered event (during dragging)    | value: current value |
+| change     | Triggered event                      | value: current value |
+| start      | Start sliding                        | value: current value |
+
+### Slider Slots
+
+| Slot Name | Description                            | Accepted Value |
+| --------- | -------------------------------------- | -------------- |
+| default   | Default slot, used for custom content  | -              |
 
 ### CSS Variables
 
-| Variable Name                   | Description                  | Default                                 |
-| ------------------------------- | ---------------------------- | --------------------------------------- |
-| `--hy-slider-range-font-size`   | Font size of range numbers   | `12px`                                  |
-| `--hy-slider-button-size`       | Slider block size            | `24px`                                  |
-| `--hy-slider-button-box-shadow` | Slider block shadow          | `0 1px 2px rgba(0, 0, 0, 0.5)`          |
-| `--hy-slider-track-radius`      | Track border radius          | Follows `--hy-radius-semicircle` (100px) |
+| Variable Name | Description | Default Value |
+| --- | --- | --- |
+| `--hy-slider-range-font-size` | Font size of range numbers | `12px` |
+| `--hy-slider-button-size` | Slider button size | `24px` |
+| `--hy-slider-button-box-shadow` | Slider button shadow | `0 1px 2px rgba(0, 0, 0, 0.5)` |
+| `--hy-slider-track-radius` | Track border radius | Follows `--hy-radius-semicircle` (100px) |
+| `--hy-slider-inner-padding` | Inner padding of the slider button | Follows `--hy-border-margin-padding-sm` (10rpx) |
+| `--hy-slider-base-background` | Slider track background color | Follows `--hy-background--track` |
+| `--hy-slider-color` | Slider theme color | Follows `--hy-primary` |
+| `--hy-slider-button-color` | Slider button color | Follows `--hy-background--block` |
 
 <demo-model url="pages-design/slider/slider"></demo-model>

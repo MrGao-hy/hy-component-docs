@@ -1,14 +1,14 @@
 # CountTo Number Scrolling Component
 
-> This component is generally used in scenarios where a number needs to be scrolled to a certain value; the target is expected to be an incrementing value.
+> This component is generally used in scenarios where a number needs to be scrolled to a certain value, and the target is required to be an increasing value.
 
-## :pushpin: Platform Differences
+## :pushpin:Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ------------------- | ------------------- |
-| ✔        | ✔   | ✔                   | ✔                   |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
-## :japanese_castle: Basic Usage Examples
+## :japanese_castle:Basic Usage Examples
 
 ```html
 <!-- Global usage -->
@@ -17,7 +17,7 @@
 
 ### Displaying Decimal Points
 
-- Set the number of decimal places via `decimals`
+- Set the number of decimal places by configuring `decimals`
 
 ```html
 <template>
@@ -27,7 +27,7 @@
 
 ### Thousands Separator
 
-- Set the thousands separator via `separator`
+- Set the thousands separator by configuring `separator`
 
 ```html
 <template>
@@ -37,7 +37,7 @@
 
 ### Setting Scroll Duration
 
-- Set the scrolling duration via `duration`
+- Set the scrolling duration by configuring `duration`
 
 ```html
 <template>
@@ -47,9 +47,9 @@
 
 ### Setting the Font
 
-- Make the font bold via `bold`
-- Set the font size via `fontSize`
-- Set the font color via `color`
+- Make the font bold by configuring `bold`
+- Set the font size by configuring `fontSize`
+- Set the font color by configuring `color`
 
 ```html
 <template>
@@ -84,7 +84,7 @@ const start = () => {
 
 const pause = () => {
     if (countToRef.value) {
-        countToRef.value.pause();
+        countToRef.value.stop();
     }
 };
 
@@ -108,19 +108,21 @@ const resume = () => {
 
 ### CountTo
 
-| Parameter | Description                                           | Type               | Default |
-| --------- | ----------------------------------------------------- | ------------------ | ------- |
-| startVal  | Start value                                           | `number`           | 0       |
-| endVal    | End value                                             | `number`           | 0       |
-| duration  | Time required for the scrolling process, in ms        | `number`           | 2000    |
-| autoplay  | Whether to start scrolling automatically              | `boolean`          | true    |
-| decimals  | Number of decimal places to display, see above        | `number`           | 0       |
-| useEasing | Whether to apply easing at the end, see above         | `boolean`          | true    |
-| decimal   | Decimal separator                                     | `string`           | ,       |
-| color     | Font color                                            | `string`           | #606266 |
-| fontSize  | Font size, numeric values default to px               | `string`\|`number` | 22      |
-| bold      | Whether the font is bold                              | `boolean`          | false   |
-| separator | Thousands separator, see above                        | `string`           | -       |
+| Parameter   | Description                                          | Type               | Default |
+| ----------- | ---------------------------------------------------- | ------------------ | ------- |
+| startVal    | Start value                                          | `number`           | 0       |
+| endVal      | End value                                            | `number`           | 0       |
+| duration    | Time required for the scrolling process, in ms       | `number`           | 2000    |
+| autoplay    | Whether to start scrolling automatically             | `boolean`          | true    |
+| decimals    | Number of decimal places to display, see above       | `number`           | 0       |
+| useEasing   | Whether to ease at the end when scrolling finishes, see above | `boolean`  | true    |
+| decimal     | Decimal separator                                    | `string`           | ,       |
+| color       | Font color                                           | `string`           | #606266 |
+| fontSize    | Font size, default unit px when numeric              | `string`\|`number` | 22      |
+| bold        | Whether the font is bold                             | `boolean`          | false   |
+| separator   | Thousands separator, see above                       | `string`           | -       |
+| customClass | Custom external class name                           | `string`           | -       |
+| customStyle | Define external styles to be used                    | `CSSProperties`    | -       |
 
 ### Events
 
@@ -130,18 +132,19 @@ const resume = () => {
 
 ### Methods
 
-| Method Name | Description                                                                  |
-| ----------- | ---------------------------------------------------------------------------- |
-| start       | Start scrolling                                                              |
-| pause       | Pause scrolling                                                              |
-| resume      | Resume scrolling from the paused value                                       |
-| reStart     | When paused, restart scrolling from the beginning; or pause while scrolling  |
+| Method Name | Description                     |
+| ----------- | -------------------------------- |
+| start       | Start scrolling the number      |
+| stop        | Stop scrolling                  |
+| resume      | Resume scrolling (when paused)  |
+| reStart     | Restart or pause scrolling      |
+| reset       | Reset to the initial value      |
 
 ### CSS Variables
 
-| Variable              | Description          | Default                 |
-| --------------------- | -------------------- | ----------------------- |
-| `--hy-count-to-color` | Number text color    | Follows `--hy-text-color` |
+| Variable Name         | Description      | Default                |
+| --------------------- | ---------------- | ---------------------- |
+| `--hy-count-to-color` | Number text color | Follows `--hy-text-color` |
 
 [^1] `DD`-day, `HH`-hour, `mm`-minute, `ss`-second, `SSS`-millisecond
 

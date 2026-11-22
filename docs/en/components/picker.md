@@ -2,21 +2,21 @@
 
 > This picker is used for single-column, multi-column, and multi-column linked selection scenarios.
 
-## :pushpin: Platform Differences
+## :pushpin: Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ---------- | ------------ |
-| ✔        | ✔   | ✔          | ✔            |
+| -------- | --- | -------------------- | ------------------- |
+| ✔        | ✔   | ✔                    | ✔                   |
 
 ## :warning: Notes
 
 ::: warning Notes
 
-- When `hasInput` is `true`, the picker is opened by clicking the input box, so there is no need to set the `show` property
+- When `hasInput` is `true`, the picker opens by clicking the input; there is no need to set the `show` property
 - `modelValue` is a string or number in single-column mode, and an array in multi-column mode
-- Multi-column linking requires calling the `setColumnValues` method in the `change` event to update the data of subsequent columns
+- Multi-column linkage requires calling the `setColumnValues` method in the `change` event to update the data of subsequent columns
 - The `columns` parameter supports a one-dimensional array (single column) or a two-dimensional array (multiple columns)
-- `popupMode` currently only supports two modes: `bottom` and `top`
+- `popupMode` currently supports only two modes: `bottom` and `top`
 
 :::
 
@@ -46,7 +46,7 @@
 </script>
 ```
 
-### Open via Input Box
+### Open via Input
 
 ```html
 <template>
@@ -100,7 +100,7 @@
 </script>
 ```
 
-### Multi-Column Linking
+### Multi-Column Linkage
 
 ```html
 <template>
@@ -238,7 +238,7 @@
 </script>
 ```
 
-### Custom Input Box Style
+### Custom Input Style
 
 ```html
 <template>
@@ -263,7 +263,7 @@
 </script>
 ```
 
-### Set Default Selection
+### Set Default Selected Item
 
 ```html
 <template>
@@ -295,7 +295,7 @@
 </script>
 ```
 
-### Disable Closing via Overlay Click
+### Disable Closing on Overlay Click
 
 ```html
 <template>
@@ -371,13 +371,13 @@
 
 | Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
-| modelValue | The value echoed back to the input box (must be set when hasInput is true) | `string`\|`number`\|`array` | - |
-| show | Whether to show the picker (no need to set when hasInput is true) | `boolean` | false |
+| modelValue | Value echoed to the input (required when hasInput is true) | `string`\|`number`\|`array` | - |
+| show | Whether to show the picker (not needed when hasInput is true) | `boolean` | false |
 | popupMode | Popup display mode[^1] | `string` | bottom |
-| separator | Multi-column separator | `string` | / |
-| showToolbar | Whether to show the top action bar | `boolean` | true |
+| separator | Separator for multiple columns | `string` | / |
+| showToolbar | Whether to show the top toolbar | `boolean` | true |
 | title | Top title | `string` | - |
-| columns | Sets the data for each column; supports a one-dimensional array (single column) or a two dimensional array (multiple columns) | `array` | [] |
+| columns | Data for each column; supports a one-dimensional array (single column) or a two-dimensional array (multiple columns) | `array` | [] |
 | loading | Whether to show the loading state | `boolean` | false |
 | itemHeight | Height of a single option in each column (px) | `number` | 44 |
 | cancelText | Cancel button text | `string` | Cancel |
@@ -385,59 +385,61 @@
 | cancelColor | Cancel button color | `string` | #909193 |
 | confirmColor | Confirm button color | `string` | - |
 | visibleItemCount | Number of visible options per column | `number` | 5 |
-| labelKey | Key name of the display text in the option object | `string` | label |
-| valueKey | Key name of the value in the option object | `string` | value |
+| labelKey | Key name of the display text in option objects | `string` | label |
+| valueKey | Key name of the value in option objects | `string` | value |
 | closeOnClickOverlay | Whether clicking the overlay is allowed to close the picker | `boolean` | false |
-| defaultIndex | Default indexes of each column | `array` | [] |
+| defaultIndex | Default index for each column | `array` | [] |
 | immediateChange | Whether to trigger the change event immediately when the finger is released | `boolean` | true |
 | zIndex | Popup z-index | `number` | 10076 |
-| hasInput | Whether to show the input box | `boolean` | false |
-| input | Input box configuration properties, effective when hasInput is true; see [Input API](./input#api) for details | `HyInputProps` | {} |
-| toolbarRightSlot | Whether to enable the toolbar right slot (must be used together with slot="toolbar-right") | `boolean` | false |
+| hasInput | Whether to show the input | `boolean` | false |
+| input | Input configuration properties; effective when hasInput is true, see [Input API](./input#api) | `HyInputProps` | {} |
+| toolbarRightSlot | Whether to enable the toolbar right slot (must be used with slot="toolbar-right") | `boolean` | false |
+| customStyle | External styles to be applied | `CSSProperties` | - |
+| customClass | Custom external class name | `string` | - |
 
 ### Events
 
-| Event Name | Description                           | Callback Parameters                                        |
-| ------- | ------------------------------ | ----------------------------------------------- |
-| close   | Triggered when the picker is closed               | -                                               |
-| confirm | Triggered when the confirm button is clicked, returning the currently selected values | `{ indexs, value, values }`                     |
-| change  | Triggered when the selected value changes             | `{ columnIndex, index, indexs, value, values }` |
-| cancel  | Triggered when the cancel button is clicked             | -                                               |
+| Event Name | Description | Callback Parameters |
+| ---------- | ----------- | -------------------- |
+| close | Triggered when the picker is closed | - |
+| confirm | Triggered when the confirm button is clicked; returns the currently selected values | `{ indexs, value, values }` |
+| change | Triggered when the selected value changes | `{ columnIndex, index, indexs, value, values }` |
+| cancel | Triggered when the cancel button is clicked | - |
 
 ### change Event Parameters
 
-| Parameter        | Description                     | Type     |
-| ----------- | ------------------------ | -------- |
-| columnIndex | Index of the column that changed         | `number` |
-| index       | Selected index of the current column         | `number` |
-| indexs      | Array of indexes for all columns         | `array`  |
-| value       | Currently selected values (array)     | `array`  |
-| values      | Data of all columns (two-dimensional array) | `array`  |
+| Parameter | Description | Type |
+| --------- | ----------- | ---- |
+| columnIndex | Index of the column that changed | `number` |
+| index | Index of the selected item in the current column | `number` |
+| indexs | Array of indexes for all columns | `array` |
+| value | Currently selected values (array) | `array` |
+| values | Data of all columns (two-dimensional array) | `array` |
 
 ### confirm Event Parameters
 
-| Parameter   | Description                     | Type    |
-| ------ | ------------------------ | ------- |
-| indexs | Array of indexes for all columns         | `array` |
-| value  | Currently selected values (array)     | `array` |
+| Parameter | Description | Type |
+| --------- | ----------- | ---- |
+| indexs | Array of indexes for all columns | `array` |
+| value | Currently selected values (array) | `array` |
 | values | Data of all columns (two-dimensional array) | `array` |
 
 ### Methods
 
-Call the following methods via ref:
+The following methods can be called via ref:
 
-| Method Name          | Description                 | Parameters                                                 |
-| --------------- | -------------------- | ---------------------------------------------------- |
+| Method Name | Description | Parameters |
+| ----------- | ----------- | ---------- |
 | setColumnValues | Set the option data of a specified column | `columnIndex: number` column index, `values: array` new data |
-| onConfirm       | Manually trigger the confirm selection     | -                                                    |
-| close           | Close the picker popup       | -                                                    |
+| onConfirm | Manually trigger confirm selection | - |
+| close | Close the picker popup | - |
 
 ### Slots
 
 | Slot Name | Description | Callback Parameters |
 | --- | --- | --- |
-| default | Custom input box content (effective when hasInput is true) | - |
-| toolbar-right | Content on the right side of the toolbar; `toolbarRightSlot="true"` must also be set for it to take effect (WeChat Mini Program limitation) | - |
+| default | Custom input content (effective when hasInput is true) | - |
+| toolbar-right | Toolbar right content; requires `toolbarRightSlot="true"` to be set at the same time to take effect (WeChat Mini Program limitation) | - |
 | toolbar-bottom | Custom area below the toolbar | - |
 
 ## typings
@@ -481,13 +483,17 @@ interface IPickerExpose {
 
 ### CSS Variables
 
-| Variable Name                              | Description           | Default                              |
-| ----------------------------------- | -------------- | ----------------------------------- |
-| `--hy-picker-item-disabled-opacity` | Opacity of disabled options | `0.35`                              |
-| `--hy-picker-loading-z-index`       | Loading layer z-index     | `1000`                              |
-| `--hy-picker-title-font-size`       | Top title font size   | Follows `--hy-font-size-base` (28rpx) |
-| `--hy-picker-title-color`           | Top title color   | Follows `--hy-text-color--grey`        |
-| `--hy-picker-item-color`            | Option text color   | Follows `--hy-text-color`              |
+| Variable Name | Description | Default Value |
+| --- | --- | --- |
+| `--hy-picker-item-disabled-opacity` | Opacity of disabled options | `0.35` |
+| `--hy-picker-loading-z-index` | Loading layer z-index | `1000` |
+| `--hy-picker-title-font-size` | Top title font size | Follows `--hy-font-size-base` (28rpx) |
+| `--hy-picker-title-color` | Top title color | Follows `--hy-text-color--grey` |
+| `--hy-picker-item-color` | Option text color | Follows `--hy-text-color` |
+| `--hy-picker-indicator-background` | Background color of the selected indicator area | Follows `--hy-background--hover` |
+| `--hy-picker-mask-background-image` | Fading mask background on both sides of the option list | Follows `--hy-background-image--mask--two-flanks` |
+| `--hy-picker-primary` | Theme color | Follows `--hy-primary` |
+| `--hy-picker-title-padding` | Title bar padding | Follows `--hy-border-margin-padding-lg` |
 
 [^1]: bottom: pops up from the bottom; top: pops up from the top
 

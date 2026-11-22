@@ -1,14 +1,14 @@
 # Overlay Component
 
-> Creates an overlay to emphasize specific page elements and prevent users from interacting with content beneath the overlay, commonly used in popup scenarios
+> Creates an overlay layer used to emphasize specific page elements and prevent users from interacting with the content beneath the overlay. It is commonly used in popup scenarios.
 
-## :pushpin: Platform Differences
+## :pushpin:Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
 | -------- | --- | ------------------- | ------------------- |
 | ✔        | ✔   | ✔                   | ✔                   |
 
-## :japanese_castle: Basic Usage
+## :japanese_castle:Basic Usage Examples
 
 ```html
 <!-- Global usage -->
@@ -23,7 +23,7 @@ const show = ref(true);
 
 ### Setting Opacity
 
-- Set the `opacity` value to adjust the overlay's opacity, with a range of 0 to 1
+- Set the `opacity` value to adjust the transparency of the overlay, with a valid range of 0~1
 
 ```html
 <template>
@@ -38,7 +38,7 @@ You can embed any content on the overlay through the default slot
 
 ::: tip Note
 
-If you don't want the click event of the slot content to bubble up to the overlay, please add @tap.stop to the specified element
+If you don't want click events on the slot content to bubble up to the overlay, add @tap.stop to the specified element
 
 :::
 
@@ -77,32 +77,33 @@ If you don't want the click event of the slot content to bubble up to the overla
 
 ### Overlay Props
 
-| Parameter   | Description                                       | Type            | Default Value |
-| ----------- | ------------------------------------------------- | --------------- | ------------- |
-| show        | Whether to show the overlay                       | `boolean`       | false         |
-| zIndex      | z-index level                                     | `number`        | 10070         |
-| duration    | Animation duration in milliseconds                | `number`        | 300           |
-| opacity     | Opacity value, used as the fourth rgba parameter  | `number`        | 0.5           |
-| lockScroll  | Whether to lock page scrolling                    | `boolean`       | false         |
-| customStyle | Custom external styles                            | `CSSProperties` | -             |
-| customClass | Custom external class name                        | `string`        | -             |
+| Parameter | Description | Type | Default |
+| --- | --- | --- | --- |
+| show | Whether to show the overlay | `boolean` | false |
+| zIndex | z-index level | `number` | 10070 |
+| duration | Animation duration, in milliseconds | `number` | 300 |
+| opacity | Opacity value, used as the fourth parameter of rgba | `number` | 0.5 |
+| lockScroll | Whether to lock page scrolling | `boolean` | false |
+| passThrough | Whether to allow touch events to pass through the overlay (when enabled, the background becomes clickable while slot content remains interactive) | `boolean` | false |
+| customStyle | Custom external styles to be applied | `CSSProperties` | - |
+| customClass | Custom external class name | `string` | - |
 
 ### Events
 
-| Event Name | Description                            | Callback Parameters |
-| ---------- | -------------------------------------- | ------------------- |
-| click      | Triggered when the overlay is clicked  | -                   |
+| Event Name | Description | Callback Parameters |
+| ---------- | ----------- | ------------------- |
+| click      | Triggered when the overlay is clicked | - |
 
 ### Slots
 
-| Slot Name | Description                                           | Accepted Value |
-| --------- | ----------------------------------------------------- | -------------- |
-| default   | Default slot for embedding content above the overlay  | -              |
+| Slot Name | Description | Accepted Value |
+| --------- | ----------- | -------------- |
+| default   | Default slot, used to embed content on top of the overlay | - |
 
 ### CSS Variables
 
-| Variable Name      | Description             | Default Value        |
-| ------------------ | ----------------------- | -------------------- |
-| `--hy-overlay-bg`  | Overlay background color| `rgba(0, 0, 0, 0.7)`  |
+| Variable          | Description  | Default               |
+| ----------------- | ------------ | --------------------- |
+| `--hy-overlay-bg` | Overlay background color | `rgba(0, 0, 0, 0.7)` |
 
 <demo-model url="pages-design/overlay/overlay"></demo-model>

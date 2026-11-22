@@ -1,6 +1,6 @@
 # ConfigProvider Global Configuration
 
-## :pushpin: Platform Differences
+## :pushpin: Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
 | -------- | --- | ------------------- | ------------------- |
@@ -8,11 +8,11 @@
 
 ## Dark Mode
 
-Set the `theme` attribute of the `ConfigProvider` component to `dark` to enable dark mode. Dark mode takes effect globally, turning all Huayue components on the page to a dark style.
+Set the `theme` prop of the `ConfigProvider` component to `dark` to enable dark mode. Dark mode takes effect globally, switching all Hy components on the page to a dark style.
 
-::: tip Tip
+::: tip Friendly Reminder
 
-Note that enabling dark mode for Huayue components only affects the UI of Huayue components, and does not affect the global text color or background color. You can refer to the following CSS to set some global styles:
+Note that enabling dark mode for Hy components only affects the UI of Hy components; it does not affect global text color or background color. You can refer to the following CSS to set up some global styles:
 
 ```vue
 .hy-theme--dark body { color: #f5f5f5; background-color: #000000; }
@@ -56,17 +56,17 @@ Note that enabling dark mode for Huayue components only affects the UI of Huayue
 
 ## Theme Customization
 
-Huayue components organize styles through a rich set of CSS variables. By overriding these CSS variables, you can achieve effects such as theme customization and dynamic theme switching.
+Hy components organize their styles through a rich set of CSS variables. By overriding these CSS variables, you can achieve custom themes, dynamic theme switching, and other effects.
 
-::: tip Tip
+::: tip Friendly Reminder
 
 `hy-config-provider` must be placed in the root directory and then imported into each page.
 
 :::
 
-### Configuring Theme Colors
+### Configuring the Theme Color
 
-Quickly configure theme colors via the `themeColor` and `themeLightColor` attributes:
+Quickly configure the theme color using the `themeColor` and `themeLightColor` props:
 
 ```vue
 <template>
@@ -78,7 +78,7 @@ Quickly configure theme colors via the `themeColor` and `themeLightColor` attrib
 
 ### Custom Style Variables
 
-Pass custom CSS variables via the `customStyle` attribute for more flexible theme customization:
+Pass custom CSS variables through the `customStyle` prop for more flexible theme customization:
 
 ```vue
 <template>
@@ -93,7 +93,7 @@ Pass custom CSS variables via the `customStyle` attribute for more flexible them
     const customStyle = ref<Record<string, string>>({});
 
     onMounted(() => {
-        // Dynamically set the theme based on business scenarios
+        // Dynamically set the theme based on the business scenario
         const theme = 'jindong'; // Can be fetched from the backend or local storage
 
         switch (theme) {
@@ -121,7 +121,7 @@ Pass custom CSS variables via the `customStyle` attribute for more flexible them
 
 ### Overriding Variables via CSS
 
-The default values of these variables are defined on the `page` node (in the H5 environment, they are defined on the `:root` node), and can be overridden directly via CSS:
+The default values of these variables are defined on the `page` node (on the `:root` node in the H5 environment) and can be overridden directly via CSS:
 
 ```scss
 /* Default theme (theme not configured) */
@@ -147,61 +147,37 @@ page .hy-theme--dark {
 
 ## Height Configuration
 
-The `hy-config-provider` component sets a fixed height by default to adapt to the safe areas of different devices. However, this setting may prevent the page scroll event `onPageScroll` from triggering.
+The `hy-config-provider` component sets a fixed height by default to accommodate the safe areas of different devices. However, this setting may cause the page scroll event `onPageScroll` to fail to trigger.
 
 ### Default Height Calculation
 
-The component's built-in height calculation logic automatically adapts to the top status bar and bottom safe area:
+The component's built-in height calculation logic automatically adapts to the top status bar and the bottom safe area:
 
 ```scss
 .hy-config-provider {
     /* Base height: viewport height - top status bar height */
     height: calc(100vh - var(--window-top));
-    /* Compatible with safe areas on older iOS versions (constant is being deprecated) */
+    /* Compatible with older iOS safe areas (constant is gradually being deprecated) */
     height: calc(100vh - var(--window-top) - constant(safe-area-inset-bottom));
-    /* Compatible with safe areas on newer iOS versions */
+    /* Compatible with newer iOS safe areas */
     height: calc(100vh - var(--window-top) - env(safe-area-inset-bottom));
 }
 ```
 
-### Custom Height
-
-Customize the component height via the `height` attribute:
-
-```vue
-<!-- Fixed height -->
-<hy-config-provider height="800px">...</hy-config-provider>
-
-<!-- Percentage height -->
-<hy-config-provider height="90%">...</hy-config-provider>
-
-<!-- Auto height (fixes the onPageScroll not triggering issue) -->
-<hy-config-provider height="auto">...</hy-config-provider>
-```
-
-### Solving Scroll Event Issues
-
-Since the component's default fixed height restricts the page scroll area, the `onPageScroll` scroll event cannot be triggered. To restore the scroll event, simply set the height to `auto`:
-
-```vue
-<template>
-    <hy-config-provider height="auto">
-        <!-- App content -->
-    </hy-config-provider>
-</template>
-```
-
----
-
 ## API
 
-| Parameter   | Description                                    | Type               | Default |
-| ----------- | ---------------------------------------------- | ------------------ | ------- |
-| theme       | Theme, dark or default light                   | `dark`\|`light`    | -       |
-| themeColor  | Theme color                                    | `string`           | -       |
-| height      | Page height, default unit is px for numbers    | `string`\|`number` | -       |
-| padding     | Inner padding, default unit is px for numbers  | `string`\|`number` | -       |
-| customStyle | Custom external styles to be used              | `CSSProperties`    | -       |
-| customClass | Custom external class name                     | `string`           | -       |
+| Prop        | Description                            | Type               | Default |
+| ----------- | -------------------------------------- | ------------------ | ------- |
+| theme       | Theme, dark or default white           | `dark`\|`light`    | -       |
+| themeColor  | Theme color                            | `string`           | -       |
+| padding     | Padding; number defaults to px         | `string`\|`number` | -       |
+| customStyle | Custom external styles to be applied   | `CSSProperties`    | -       |
+| customClass | Custom external class name             | `string`           | -       |
+
+### ConfigProvider Slots
+
+| Slot Name | Description                             | Accepted Value |
+| --------- | --------------------------------------- | -------------- |
+| default   | Default slot, used for custom content   | -              |
 
 <demo-model url="pages-design/configProvider/configProvider"></demo-model>

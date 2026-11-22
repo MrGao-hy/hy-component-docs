@@ -1,12 +1,12 @@
 # Navbar Custom Navigation Bar Component
 
-> This component is generally used in special cases where a custom navigation bar is needed. It is generally recommended to use the navigation bar that comes with uni-app.
+> This component is generally used in special cases where a custom navigation bar is needed. In general, it is recommended to use the navigation bar that comes with uni-app.
 
-## :pushpin: Platform Differences
+## :pushpin: Platform Compatibility Notes
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ------------------- | ------------------- |
-| ✔        | ✔   | ✔                   | ✔                   |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
 ## :japanese_castle: Basic Usage Example
 
@@ -33,9 +33,9 @@
 </template>
 ```
 
-## Fixed at the Top
+## Fixed at Top
 
-- By configuring `field`, the navbar is fixed at the top
+- By configuring `field`, the navigation bar is fixed at the top
 
 ```html
 <template>
@@ -45,16 +45,16 @@
 
 ## Basic Usage Example
 
-- Define the navbar title by configuring `title`
-- Define the left icon of the navbar by configuring `leftIcon`
-- Define the left text of the navbar by configuring `leftText`
-- Define the right text of the navbar by configuring `rightText`
-- Define the right icon of the navbar by configuring `rightIcon`
+- Define the navigation bar title by configuring `title`
+- Define the left icon of the navigation bar by configuring `leftIcon`
+- Define the left text of the navigation bar by configuring `leftText`
+- Define the right text of the navigation bar by configuring `rightText`
+- Define the right icon of the navigation bar by configuring `rightIcon`
 
 ```html
 <template>
     <hy-navbar
-        title="Document"
+        title="Docs"
         :leftIcon="IconConfig.LEFT"
         leftText="Back"
         rightText="Address"
@@ -103,48 +103,55 @@
 | Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
 | safeAreaInsetTop | Whether to enable top safe area adaptation | `boolean` | true |
-| placeholder | When fixed at the top, whether to generate an element of equal height to prevent collapse | `boolean` | false |
-| fixed | Whether the navbar is fixed at the top | `boolean` | true |
-| border | Whether to display a bottom border at the bottom of the navbar | `boolean` | false |
+| placeholder | When fixed at the top, whether to generate an equal-height element to prevent collapse | `boolean` | false |
+| fixed | Whether the navigation bar is fixed at the top | `boolean` | true |
+| border | Whether to show a bottom border under the navigation bar | `boolean` | false |
 | leftIcon | Name of the left back icon | `string` | IconConfig.LEFT |
 | leftText | Prompt text on the left | `string` | - |
 | rightText | Prompt text on the right | `string` | - |
-| rightIcon | Name of the right icon | `string` | - |
-| title | Navbar title; if set to an empty string, the title placeholder area will be hidden | `string` | - |
-| bgColor | Navbar background setting | `string` | - |
-| titleWidth | Maximum width of the navbar title; overflowing content will be hidden with an ellipsis, unit rpx | `string`\|`number` | 400rpx |
-| height | Navbar height (excluding the status bar height, which is automatically added internally), default unit px for numeric values | `string`\|`number` | 44px |
-| leftIconSize | Size of the left back icon, default unit px for numeric values | `string`\|`number` | 20 |
+| rightIcon | Name of the right back icon | `string` | - |
+| title | Navigation bar title; if set to an empty string, the title placeholder area will be hidden | `string` | - |
+| bgColor | Navigation bar background setting | `string` | - |
+| titleWidth | Maximum width of the navigation bar title; overflowing content is hidden with an ellipsis, unit rpx | `string`\|`number` | 400rpx |
+| height | Navigation bar height (status bar height not included; it is added automatically internally), numeric values default to unit px | `string`\|`number` | 44px |
+| leftIconSize | Size of the left back icon, numeric values default to unit px | `string`\|`number` | 20 |
 | leftIconColor | Color of the left back icon | `string` | - |
-| autoBack | Whether to automatically return to the previous page when the left area (back icon) is clicked | `boolean` | false |
-| titleStyle | Title style, in object or string form | `CSSProperties` | - |
-| customStyle | Custom external styles to be used | `CSSProperties` | - |
+| autoBack | Whether to automatically go back to the previous page when the left area (back icon) is clicked | `boolean` | false |
+| titleStyle | Style of the title, in object or string form | `CSSProperties` | - |
+| customStyle | Custom external styles to be applied | `CSSProperties` | - |
 | customClass | Custom external class name | `string` | - |
+| centerStyle | Style of the center area | `CSSProperties` | - |
+| contentPadding | Padding of the navigation bar content area | `string` \| | `number` |
+| leftStyle | Style of the left area | `CSSProperties` | - |
+| rightStyle | Style of the right area | `CSSProperties` | - |
+| sub | Navigation bar subtitle | `string` | - |
+| titleColor | Text color | `string` | - |
 
 ### Events
 
 | Event Name | Description | Callback Parameters |
-| ---------- | ----------- | ------------------- |
+| ---------- | ------------ | -------- |
 | leftClick  | Left area clicked | -        |
 | rightClick | Right area clicked | -        |
 
 ### Slots
 
-| Slot Name | Description | Accepted Values |
-| --------- | ----------- | --------------- |
+| Slot Name | Description | Value |
+| ------ | ------------------ | ------ |
 | left   | Custom content for the left section | -      |
 | right  | Custom content for the right section | -      |
-| center | Custom content for the center section | -      |
+| center | Custom content for the center | -      |
 
 ### CSS Variables
 
-| Variable Name                 | Description | Default Value                        |
-| ----------------------------- | ----------- | ------------------------------------ |
-| `--hy-navbar-z-index`         | Z-index level | `9999`                             |
-| `--hy-navbar-height`          | Height      | `44px`                               |
-| `--hy-navbar-text-font-size`  | Left/right text font size | `15px`                |
-| `--hy-navbar-title-font-size` | Center title font size | Follows `--hy-font-size-base` (28rpx) |
-| `--hy-navbar-sub-font-size`   | Center subtitle font size | Follows `--hy-font-size-sm` (24rpx) |
-| `--hy-navbar-sub-color`       | Center subtitle color | Follows `--hy-text-color--grey`   |
+| Variable Name | Description | Default |
+| ----------------------------- | -------------- | ----------------------------------- |
+| `--hy-navbar-z-index`         | Stacking level (z-index) | `9999`                              |
+| `--hy-navbar-height`          | Height | `44px`                              |
+| `--hy-navbar-text-font-size`  | Font size of left/right text | `15px`                              |
+| `--hy-navbar-title-font-size` | Font size of the center title | Follows `--hy-font-size-base` (28rpx) |
+| `--hy-navbar-sub-font-size`   | Font size of the center subtitle | Follows `--hy-font-size-sm` (24rpx)   |
+| `--hy-navbar-sub-color`       | Color of the center subtitle | Follows `--hy-text-color--grey`        |
+| `--hy-navbar-background`      | Navigation bar background color | Follows `--hy-background--container`   |
 
 <demo-model url="pages-design/navbar/navbar"></demo-model>

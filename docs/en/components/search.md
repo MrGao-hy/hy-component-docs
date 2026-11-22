@@ -1,19 +1,19 @@
 # Search Component
 
-> Search component that integrates the features commonly needed in search boxes; users can import it with one click and use it out of the box.
+> The search component integrates the features commonly needed in a search box, so users can import it with one click and use it out of the box.
 
 ## :pushpin: Platform Compatibility
 
-| APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ------------------- | ------------------- |
-| ✔        | ✔   | ✔                   | ✔                   |
+| APP(vue) | H5 | WeChat Mini Program | Alipay Mini Program |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
 ## :warning: Notes
 
 ::: warning Notes
 
 - When `showAction` is `true`, the right control is displayed; clicking it triggers the `confirm` event instead of the `search` event
-- `searchIcon` supports passing `false` to hide the icon, or passing an icon configuration object
+- `searchIcon` accepts `false` to hide the icon, or an icon configuration object
 
 :::
 
@@ -56,7 +56,7 @@
 </template>
 ```
 
-### Enable/Disable the Clear Control
+### Enabling/Disabling the Clear Control
 
 ```html
 <template>
@@ -190,63 +190,68 @@
 
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model | Two-way binding of the input search value | `string` | - |
-| shape | Search box shape, `circle` - round, `square` - square | `circle`\|`square` | circle |
-| bgColor | Search box background color | `string` | - |
-| placeholder | Placeholder text content | `string` | Search content |
-| confirmType | Sets the text of the button at the bottom-right corner of the keyboard; see uni-app documentation for compatibility details | `send`\|`search`\|`next`\|`go`\|`done` | search |
+| v-model | Two-way binding of the search input value | `string` | - |
+| shape | Shape of the search box, `circle` - round, `square` - square | `circle`\|`square` | circle |
+| bgColor | Background color of the search box | `string` | - |
+| placeholder | Placeholder text | `string` | Search content |
+| confirmType | Sets the text of the button in the bottom-right corner of the keyboard; see the uni-app documentation for compatibility details | `send`\|`search`\|`next`\|`go`\|`done` | search |
 | clearable | Whether to enable the clear control | `boolean` | true |
 | autoFocus | Whether to automatically gain focus | `boolean` | false |
-| autoBlur | Whether to automatically lose focus when the keyboard collapses | `boolean` | true |
+| autoBlur | Whether to automatically lose focus when the keyboard is collapsed | `boolean` | true |
 | adjustPosition | Whether to automatically push the page up when the keyboard pops up | `boolean` | true |
 | showAction | Whether to show the right control | `boolean` | true |
 | actionStyle | Style of the right control, in object form | `CSSProperties` | {} |
-| actionText | Right control text | `string` | Search |
-| inputAlign | Horizontal alignment of the input content, optional values: `left`, `center`, `right` | `string` | left |
+| actionText | Text of the right control | `string` | Search |
+| inputAlign | Horizontal alignment of the input content; optional values: `left`, `center`, `right` | `string` | left |
 | inputStyle | Custom input style, in object form | `CSSProperties` | {} |
 | disabled | Whether to disable the input | `boolean` | false |
-| borderColor | Border color; a border is only shown when a color is set | `string` | transparent |
-| color | Input font color | `string` | - |
+| borderColor | Border color; a border only appears when a color is set | `string` | transparent |
+| color | Font color of the input text | `string` | - |
 | placeholderColor | Color of the placeholder | `string` | - |
-| searchIcon | Collection of icon properties on the left side of the input; can be `false` (hides the icon) or an icon configuration object, see [Icon API](./icon#api) for details | `HyIconProps` \| `boolean` | { name: SEARCH } |
+| searchIcon | Collection of icon properties on the left side of the input; can be `false` (to hide the icon) or an icon configuration object; see [Icon API](./icon#api) for details | `HyIconProps` \| `boolean` | { name: SEARCH } |
 | margin | Distance between the component and other elements; supports a string (e.g., "30px") or a number | `string` \| `number` | 0 |
-| animation | Whether to enable animation, see notes above | `boolean` | false |
-| maxlength | Maximum input length for the input; -1 means unlimited | `number` | -1 |
-| height | Input height; numbers default to px as the unit | `number` | 30 |
-| label | Text information displayed on the left side of the search box | `string` | - |
+| animation | Whether to enable animation; see description above | `boolean` | false |
+| maxlength | Maximum input length of the input; -1 means unlimited | `number` | -1 |
+| height | Height of the input; the default unit for numbers is px | `number` | 30 |
+| label | Text displayed on the left side of the search box | `string` | - |
 | customStyle | Custom external styles to be applied | `CSSProperties` | - |
 | customClass | Custom external class name | `string` | - |
 
 ### Events
 
-| Event Name | Description | Callback Parameters |
+| Event | Description | Callback Parameters |
 | --- | --- | --- |
-| change | Triggered when the input content changes | `value: string` the input value |
-| search | Triggered when the user confirms the search (pressing Enter or the "Search" key at the bottom-right corner of the keyboard) | `event: InputOnConfirmEvent`, `value: string` |
-| confirm | Triggered when the user clicks the right control | `value: string` the input value |
+| change | Triggered when the input content changes | `value: string` value of the input |
+| search | Triggered when the user confirms the search (pressing Enter or the "Search" key in the bottom-right corner of the keyboard) | `event: InputOnConfirmEvent`, `value: string` |
+| confirm | Triggered when the user clicks the right control | `value: string` value of the input |
 | blur | Triggered when the input loses focus | `event: InputOnBlurEvent`, `keyword: string` |
 | focus | Triggered when the input gains focus | `event: InputOnFocusEvent`, `keyword: string` |
-| clear | Triggered when the content is cleared, after `clearable` is configured | - |
-| click | Triggered when the input is clicked while `disabled` is `true`; used for navigating to the search page | - |
-| clickIcon | Triggered when the left icon is clicked | `keyword: string` the current input value |
+| clear | Triggered when the content is cleared, if `clearable` is configured | - |
+| click | Triggered when the input is clicked while `disabled` is `true`, used for navigating to the search page | - |
+| clickIcon | Triggered when the left icon is clicked | `keyword: string` current value of the input |
 
 ### CSS Variables
 
-| Variable Name                        | Description                     | Default Value                         |
-| ------------------------------------ | ------------------------------- | ------------------------------------- |
-| `--hy-search-close-size`             | Clear button size               | `20px`                                |
-| `--hy-search-placeholder-font-size`  | Placeholder font size           | `25rpx`                               |
-| `--hy-search-placeholder-line-height`| Placeholder line height         | `30rpx`                               |
-| `--hy-search-border-width`           | Border width                    | `1px`                                 |
-| `--hy-search-action-width`           | Right action area width         | `100rpx`                              |
-| `--hy-search-label-color`            | Left label color                | Follows `--hy-text-color`             |
-| `--hy-search-label-font-size`        | Left label font size            | Follows `--hy-font-size-base` (28rpx) |
-| `--hy-search-close-radius`           | Clear button border radius      | Follows `--hy-radius-circle` (50%)    |
-| `--hy-search-input-color`            | Input text color                | Follows `--hy-text-color`             |
-| `--hy-search-input-font-size`        | Input text font size            | Follows `--hy-font-size-base` (28rpx) |
-| `--hy-search-disabled-color`         | Disabled text color             | Follows `--hy-text-color--disabled`   |
-| `--hy-search-placeholder-color`      | Placeholder color               | Follows `--hy-text-color--placeholder`|
-| `--hy-search-action-color`           | Right action text color         | Follows `--hy-text-color`             |
-| `--hy-search-action-font-size`       | Right action text font size     | Follows `--hy-font-size-base` (28rpx) |
+| Variable | Description | Default |
+| --- | --- | --- |
+| `--hy-search-background` | Background color of the search box | Follows `--hy-background--track` |
+| `--hy-search-padding` | Padding of the search container | Follows `--hy-border-margin-padding-lg` (30rpx) |
+| `--hy-search-placeholder-font-size` | Placeholder font size | `25rpx` |
+| `--hy-search-placeholder-line-height` | Placeholder line height | `30rpx` |
+| `--hy-search-border-width` | Border width | `1px` |
+| `--hy-search-action-width` | Width of the right action area | `100rpx` |
+| `--hy-search-label-color` | Color of the left label | Follows `--hy-text-color` |
+| `--hy-search-label-font-size` | Font size of the left label | Follows `--hy-font-size-base` (28rpx) |
+| `--hy-search-close-radius` | Border radius of the clear button | Follows `--hy-radius-circle` (50%) |
+| `--hy-search-close-color` | Background color of the clear button | Follows `--hy-background--empty` |
+| `--hy-search-close-size` | Size of the clear button | `20px` |
+| `--hy-search-input-color` | Color of the input text | Follows `--hy-text-color` |
+| `--hy-search-input-font-size` | Font size of the input text | Follows `--hy-font-size-base` (28rpx) |
+| `--hy-search-input-margin` | Spacing on both sides of the input | Follows `--hy-border-margin-padding-sm` (10rpx) |
+| `--hy-search-disabled-color` | Color of disabled text | Follows `--hy-text-color--disabled` |
+| `--hy-search-placeholder-color` | Placeholder color | Follows `--hy-text-color--placeholder` |
+| `--hy-search-action-color` | Color of the right action text | Follows `--hy-text-color` |
+| `--hy-search-action-font-size` | Font size of the right action text | Follows `--hy-font-size-base` (28rpx) |
+| `--hy-search-action-active-margin` | Spacing between the right button and the search box | Follows `--hy-border-margin-padding-sm` (10rpx) |
 
 <demo-model url="pages-design/search/search"></demo-model>

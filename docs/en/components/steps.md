@@ -1,27 +1,31 @@
 # Steps Component
 
-> The Steps component is used to display multiple steps of a task and indicate which step is currently in progress.
+> The Steps component is used to display the multiple steps of a task and indicate which step is currently active. It includes three components: `hy-steps` (a convenient data-driven wrapper), `hy-step-group` (steps container), and `hy-step-item` (step item); the latter two can be combined to deeply customize the content of each step.
 
-## :pushpin:Platform Differences
+## :pushpin:Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ------------------- | ------------------- |
-| ✔        | ✔   | ✔                   | ✔                   |
+| -------- | --- | -------------------- | ------------------- |
+| ✔        | ✔   | ✔                    | ✔                   |
 
 ## :warning:Notes
 
 ::: warning Notes
 
-- The `list` property is required, and each item in the array must contain a `title` field
+- `hy-steps` quickly renders the steps by passing in a `list` dataset; when you need to customize each step, use the composable approach of `hy-step-group` combined with `hy-step-item`
 - The `current` property is indexed starting from 0
-- The `direction` property supports two orientations: `row` (horizontal) and `column` (vertical)
-- When `error` is `true` in a `list` item, an error state will be displayed
+- The `direction` property supports two directions: `row` (horizontal) and `column` (vertical)
+- When an item in `list` has `error` set to `true` and that step is the current step, an error status is displayed; when `current` changes and the previous step is an error step, the component automatically jumps back to the first error step
+- When the `status` property of `hy-step-item` is passed in, it overrides the status automatically calculated based on `current`
+- When `hy-step-item` has no `title` passed, default text is displayed according to the status: Completed / Failed / In Progress / Not Started
 
 :::
 
 ## :japanese_castle:Basic Usage Examples
 
 ### Basic Usage
+
+Pass step data via `list`, and two-way bind the current step with `v-model:current`.
 
 ```html
 <template>
@@ -33,41 +37,58 @@
 
     const current = ref(1);
     const list = ref([
-        { title: '已下单', docs: '2024-10-13' },
-        { title: '已发货', docs: '2024-10-13' },
-        { title: '发货失败', docs: '2024-10-14', error: true },
+        { title: 'Ordered', docs: '2024-10-13' },
+        { title: 'Shipped', docs: '2024-10-13' },
+        { title: 'Delivery Failed', docs: '2024-10-14', error: true },
     ]);
 </script>
 ```
 
-### Horizontal Mode (Default)
+### Composable Usage (hy-step-group + hy-step-item)
+
+When you need to customize the title, description, icon, or status of each step, use `hy-step-group` with `hy-step-item` and control the current progress via `current`.
 
 ```html
 <template>
-    <hy-steps :list="list" direction="row"></hy-steps>
+    <hy-step-group :current="current">
+        <hy-step-item title="Sign Up" description="Fill in phone number and verify"></hy-step-item>
+        <hy-step-item title="Complete Profile" description="Fill in name, avatar, and other information"></hy-step-item>
+        <hy-step-item title="Log In" description="Registration successful"></hy-step-item>
+    </hy-step-group>
 </template>
 
 <script setup lang="ts">
     import { ref } from 'vue';
 
-    const list = ref([{ title: '步骤一' }, { title: '步骤二' }, { title: '步骤三' }]);
+    const current = ref(1);
 </script>
 ```
 
 ### Vertical Mode
 
+After setting `direction="column"`, steps are arranged vertically, which is suitable for displaying process details along with description information.
+
 ```html
 <template>
     <hy-steps :list="list" direction="column"></hy-steps>
+
+    <!-- Composable usage -->
+    <hy-step-group :current="current" direction="column" style="margin-top: 30rpx">
+        <hy-step-item title="Sign Up" description="Fill in phone number and verify"></hy-step-item>
+        <hy-step-item title="Complete Profile" description="Fill in name, avatar, and other information"></hy-step-item>
+        <hy-step-item title="Log In" description="Registration successful"></hy-step-item>
+    </hy-step-group>
 </template>
 
 <script setup lang="ts">
     import { ref } from 'vue';
 
+    const current = ref(1);
     const list = ref([
-        { title: '已下单', docs: '2024-10-13', date: '10:30' },
-        { title: '已发货', docs: '快递员正在打包', date: '14:20' },
-        { title: '运输中', docs: '预计明天送达', date: '16:00' },
+        { title: 'Ordered', docs: '2024-10-13', date: '10:30' },
+        { title: 'Shipped', date: '2024-10-13' },
+        { title: 'In Transit', docs: 'Expected delivery tomorrow', date: '2024-10-13' },
+        { title: 'Delivered', date: '2024-10-14' },
     ]);
 </script>
 ```
@@ -77,12 +98,36 @@
 ```html
 <template>
     <hy-steps :list="list" dot></hy-steps>
+
+    <!-- Composable usage -->
+    <hy-step-group :current="current" dot style="margin-top: 30rpx">
+        <hy-step-item title="Sign Up"></hy-step-item>
+        <hy-step-item title="Complete Profile"></hy-step-item>
+        <hy-step-item title="Log In"></hy-step-item>
+    </hy-step-group>
 </template>
 
 <script setup lang="ts">
     import { ref } from 'vue';
 
-    const list = ref([{ title: '步骤一' }, { title: '步骤二' }, { title: '步骤三' }]);
+    const current = ref(1);
+    const list = ref([{ title: 'Step 1' }, { title: 'Step 2' }, { title: 'Step 3' }]);
+</script>
+```
+
+### Center Alignment
+
+After setting `align-center`, the step content is horizontally centered; only effective for horizontal step bars.
+
+```html
+<template>
+    <hy-steps :list="list" align-center></hy-steps>
+</template>
+
+<script setup lang="ts">
+    import { ref } from 'vue';
+
+    const list = ref([{ title: 'Step 1' }, { title: 'Step 2' }, { title: 'Step 3' }]);
 </script>
 ```
 
@@ -96,34 +141,49 @@
 <script setup lang="ts">
     import { ref } from 'vue';
 
-    const list = ref([{ title: '步骤一' }, { title: '步骤二' }, { title: '步骤三' }]);
+    const list = ref([{ title: 'Step 1' }, { title: 'Step 2' }, { title: 'Step 3' }]);
 </script>
 ```
 
 ### Custom Icons
 
+When `icon` is passed to `hy-step-item`, the indicator displays as an icon; the icon and indicator sizes can be controlled via the CSS variables `--hy-step-item-icon-size` and `--hy-step-item-indicator-size` (the `iconSize` property of `hy-steps` maps to these two variables).
+
 ```html
 <template>
-    <hy-steps
-        :list="list"
-        activeIcon="check-circle"
-        inactiveIcon="circle"
-        :iconSize="20"
-    ></hy-steps>
+    <hy-step-group :current="current">
+        <hy-step-item
+            v-for="(item, i) in list"
+            :key="i"
+            :title="item.title"
+            icon="check-circle"
+        ></hy-step-item>
+    </hy-step-group>
 </template>
 
 <script setup lang="ts">
     import { ref } from 'vue';
 
-    const list = ref([{ title: '已完成' }, { title: '进行中' }, { title: '未开始' }]);
+    const current = ref(1);
+    const list = ref([{ title: 'Completed' }, { title: 'In Progress' }, { title: 'Not Started' }]);
 </script>
 ```
 
-### Error State
+### Error Status
+
+After setting `error: true` on a `list` item, the error status is displayed when that step is the current step; with the composable approach, you can directly pass `status="error"` to `hy-step-item`.
 
 ```html
 <template>
-    <hy-steps :list="list" v-model:current="current"></hy-steps>
+    <hy-steps :list="list" v-model:current="current" direction="column"></hy-steps>
+
+    <!-- Composable usage -->
+    <hy-step-group :current="current" direction="column">
+        <hy-step-item title="Ordered" description="Order submitted successfully"></hy-step-item>
+        <hy-step-item title="Paid" description="Payment amount: ¥199.00"></hy-step-item>
+        <hy-step-item title="Delivery Failed" description="Item sold out" status="error"></hy-step-item>
+        <hy-step-item title="Pending" description="Waiting for customer service"></hy-step-item>
+    </hy-step-group>
 </template>
 
 <script setup lang="ts">
@@ -131,24 +191,31 @@
 
     const current = ref(2);
     const list = ref([
-        { title: '步骤一', docs: '已完成', date: '2024-10-13' },
-        { title: '步骤二', docs: '已完成', date: '2024-10-13' },
-        { title: '步骤三', docs: '执行失败', date: '2024-10-14', error: true },
-        { title: '步骤四', docs: '未开始', date: '' },
+        { title: 'Ordered', docs: 'Order submitted successfully', date: '2024-10-13' },
+        { title: 'Paid', docs: 'Payment amount: ¥199.00', date: '2024-10-13' },
+        { title: 'Delivery Failed', docs: 'Item sold out', date: '2024-10-14', error: true },
+        { title: 'Pending', docs: 'Waiting for customer service', date: '' },
     ]);
 </script>
 ```
 
-### Dynamically Control the Current Step
+### Dynamically Controlling the Current Step
 
 ```html
 <template>
     <view>
         <hy-steps :list="list" v-model:current="current"></hy-steps>
         <view class="controls">
-            <hy-button text="上一步" :disabled="current <= 0" @click="current--"></hy-button>
             <hy-button
-                text="下一步"
+                text="Previous"
+                size="small"
+                :disabled="current <= 0"
+                @click="current--"
+            ></hy-button>
+            <hy-button
+                text="Next"
+                type="primary"
+                size="small"
                 :disabled="current >= list.length - 1"
                 @click="current++"
             ></hy-button>
@@ -160,30 +227,34 @@
     import { ref } from 'vue';
 
     const current = ref(0);
-    const list = ref([{ title: '注册用户' }, { title: '填写基本信息' }, { title: '登录' }]);
+    const list = ref([{ title: 'Sign Up' }, { title: 'Fill in Basic Information' }, { title: 'Log In' }]);
 </script>
 ```
 
-### Custom Slot - Custom Icon
+### Custom Slots - Custom Icon
+
+Replace the default indicator via the `icon` slot of `hy-step-item`.
 
 ```html
 <template>
-    <hy-steps :list="list" v-model:current="current">
-        <template #icon="{ index, error }">
-            <view class="custom-icon" :class="{ error }">
-                <text v-if="index < current">{{ index + 1 }}</text>
-                <text v-else-if="index === current">进行中</text>
-                <text v-else>待开始</text>
-            </view>
-        </template>
-    </hy-steps>
+    <hy-step-group :current="current">
+        <hy-step-item v-for="(item, i) in list" :key="i" :title="item.title">
+            <template #icon>
+                <view class="custom-icon">
+                    <text v-if="i < current">{{ i + 1 }}</text>
+                    <text v-else-if="i === current">●</text>
+                    <text v-else>○</text>
+                </view>
+            </template>
+        </hy-step-item>
+    </hy-step-group>
 </template>
 
 <script setup lang="ts">
     import { ref } from 'vue';
 
     const current = ref(1);
-    const list = ref([{ title: '步骤一' }, { title: '步骤二' }, { title: '步骤三' }]);
+    const list = ref([{ title: 'Step 1' }, { title: 'Step 2' }, { title: 'Step 3' }]);
 </script>
 
 <style lang="scss" scoped>
@@ -197,37 +268,31 @@
         justify-content: center;
         font-size: 20rpx;
         color: #999;
-
-        &.error {
-            background: #ff4d4f;
-            color: #fff;
-        }
-
-        :deep(.hy-steps__item--active) & {
-            background: #4f8ef7;
-            color: #fff;
-        }
     }
 </style>
 ```
 
-### Custom Slot - Custom Title and Description
+### Custom Slots - Custom Title and Description
+
+Customize the content structure via the `title` and `description` slots of `hy-step-item`.
 
 ```html
 <template>
-    <hy-steps :list="list" v-model:current="current">
-        <template #title="{ title, index }">
-            <view class="custom-title">
-                <text class="step-num">{{ index + 1 }}.</text>
-                <text>{{ title }}</text>
-            </view>
-        </template>
-        <template #docs="{ docs, date }">
-            <view class="custom-desc" v-if="docs">
-                <text class="desc-text">{{ docs }}</text>
-                <text class="desc-date" v-if="date">{{ date }}</text>
-            </view>
-        </template>
+    <hy-step-group :current="current">
+        <hy-step-item v-for="(item, i) in list" :key="i">
+            <template #title>
+                <view class="custom-title">
+                    <text class="step-num">{{ i + 1 }}.</text>
+                    <text>{{ item.title }}</text>
+                </view>
+            </template>
+            <template #description>
+                <view class="custom-desc" v-if="item.docs">
+                    <text class="desc-text">{{ item.docs }}</text>
+                    <text class="desc-date" v-if="item.date">{{ item.date }}</text>
+                </view>
+            </template>
+        </hy-step-item>
     </hy-steps>
 </template>
 
@@ -236,9 +301,9 @@
 
     const current = ref(1);
     const list = ref([
-        { title: '订单提交', docs: '订单已成功提交', date: '2024-10-13 10:30' },
-        { title: '支付完成', docs: '支付金额：¥199.00', date: '2024-10-13 10:35' },
-        { title: '订单发货', docs: '快递单号：SF1234567890', date: '2024-10-13 14:00' },
+        { title: 'Order Placed', docs: 'Order submitted successfully', date: '2024-10-13 10:30' },
+        { title: 'Payment Complete', docs: 'Payment amount: ¥199.00', date: '2024-10-13 10:35' },
+        { title: 'Order Shipped', docs: 'Tracking number: SF1234567890', date: '2024-10-13 14:00' },
     ]);
 </script>
 
@@ -273,31 +338,40 @@
 </style>
 ```
 
-### Custom Slot - Custom Content
+### Custom Slots - Custom Content
+
+Use the `title` slot of `hy-step-item` to carry the complete content structure (title, status tag, description, date), suitable for vertical timeline scenarios.
 
 ```html
 <template>
-    <hy-steps :list="list" v-model:current="current">
-        <template #content="{ item, index }">
-            <view class="custom-content">
-                <view class="content-title">{{ item.title }}</view>
-                <view class="content-info" v-if="item.docs">
-                    <text class="info-text">{{ item.docs }}</text>
+    <hy-step-group :current="current" direction="column">
+        <hy-step-item v-for="(item, i) in list" :key="i">
+            <template #title>
+                <view class="custom-content">
+                    <view class="content-header">
+                        <text class="content-title">{{ item.title }}</text>
+                        <text
+                            :class="[
+                                'status-tag',
+                                i < current ? 'static-done' : '',
+                                i === current ? 'static-active' : '',
+                                i > current ? 'static-pending' : ''
+                            ]"
+                        >
+                            {{
+                                i < current ? 'Completed' : i === current ? 'In Progress' : 'Pending'
+                            }}
+                        </text>
+                    </view>
+                    <view class="content-info" v-if="item.docs">
+                        <text>{{ item.docs }}</text>
+                    </view>
+                    <view class="content-date" v-if="item.date">
+                        <text>{{ item.date }}</text>
+                    </view>
                 </view>
-                <view class="content-status">
-                    <text
-                        :class="[
-                            'status-tag',
-                            index < current ? 'status-done' : '',
-                            index === current ? 'status-active' : '',
-                            index > current ? 'status-pending' : ''
-                        ]"
-                    >
-                        {{ index < current ? '已完成' : index === current ? '进行中' : '待开始' }}
-                    </text>
-                </view>
-            </view>
-        </template>
+            </template>
+        </hy-step-item>
     </hy-steps>
 </template>
 
@@ -306,15 +380,24 @@
 
     const current = ref(1);
     const list = ref([
-        { title: '用户注册', docs: '填写手机号并验证' },
-        { title: '完善资料', docs: '填写姓名、头像等信息' },
-        { title: '完成', docs: '注册成功' },
+        { title: 'User Registration', docs: 'Fill in phone number and verify', date: '2024-10-13 10:00' },
+        { title: 'Complete Profile', docs: 'Fill in name, avatar, and other information', date: '2024-10-13 10:15' },
+        { title: 'Email Verification', docs: 'Verify email validity', date: '2024-10-13 10:30' },
+        { title: 'Done', docs: 'Registration successful', date: '' },
     ]);
 </script>
 
 <style lang="scss" scoped>
     .custom-content {
         padding: 16rpx;
+        border-radius: 8rpx;
+        background: #f5f6f8;
+
+        .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
         .content-title {
             font-weight: 600;
@@ -323,15 +406,14 @@
 
         .content-info {
             margin-top: 8rpx;
-
-            .info-text {
-                font-size: 24rpx;
-                color: #666;
-            }
+            font-size: 24rpx;
+            color: #666;
         }
 
-        .content-status {
-            margin-top: 12rpx;
+        .content-date {
+            margin-top: 4rpx;
+            font-size: 22rpx;
+            color: #999;
         }
 
         .status-tag {
@@ -339,17 +421,17 @@
             padding: 4rpx 16rpx;
             border-radius: 20rpx;
 
-            &.status-done {
+            &.static-done {
                 background: #f6ffed;
                 color: #52c41a;
             }
 
-            &.status-active {
+            &.static-active {
                 background: #e6f7ff;
                 color: #1890ff;
             }
 
-            &.status-pending {
+            &.static-pending {
                 background: #f5f5f5;
                 color: #999;
             }
@@ -358,81 +440,183 @@
 </style>
 ```
 
+### Custom Step Spacing
+
+The `space` property of `hy-step-group` controls the spacing of each step, which is automatically distributed evenly by default; it represents width in horizontal mode and height in vertical mode.
+
+```html
+<template>
+    <hy-step-group :current="current" space="200rpx">
+        <hy-step-item title="Step 1" description="Fill in basic information"></hy-step-item>
+        <hy-step-item title="Step 2" description="Confirm information"></hy-step-item>
+        <hy-step-item title="Step 3" description="Done"></hy-step-item>
+    </hy-step-group>
+</template>
+
+<script setup lang="ts">
+    import { ref } from 'vue';
+
+    const current = ref(1);
+</script>
+```
+
 ## API
 
-### Props
+### hy-steps Props
 
-| Prop          | Description                                 | Type                 | Default |
-| ------------- | ------------------------------------------- | -------------------- | ------- |
-| current       | Current step index (starting from 0)        | `number`             | 0       |
-| list          | Steps data array                            | `StepListVo[]`       | []      |
-| direction     | Direction, `row`-horizontal, `column`-vertical | `string`          | row     |
-| activeColor   | Active state color                          | `string`             | -       |
-| inactiveColor | Inactive state color                        | `string`             | -       |
-| activeIcon    | Icon for the active state                   | `string`             | -       |
-| inactiveIcon  | Icon for the inactive state                 | `string`             | -       |
-| dot           | Whether to display dot style                | `boolean`            | false   |
-| iconSize      | Icon size, number values default to unit px | `string` \| `number` | 17      |
+| Parameter | Description | Type | Default |
+| --- | --- | --- | --- |
+| current | Current step index (starting from 0) | `number` | 0 |
+| list | Steps dataset | `StepListVo[]` | [] |
+| direction | Direction, `row`-horizontal, `column`-vertical | `string` | row |
+| activeColor | Active state color, mapped to CSS variables related to in-progress/completed states | `string` | - |
+| inactiveColor | Inactive state color, mapped to CSS variables for waiting-state text and connecting lines | `string` | - |
+| dot | Whether to display dot style | `boolean` | false |
+| alignCenter | Whether to horizontally center the steps, only effective for horizontal step bars | `boolean` | false |
+| iconSize | Indicator and icon size, defaults to px for numeric values | `string` \| `number` | - |
+| customStyle | External styles to be applied | `CSSProperties` | - |
+| customClass | Custom external class name | `string` | - |
+
+### hy-step-group Props
+
+| Parameter | Description | Type | Default |
+| --- | --- | --- | --- |
+| current | Current step index (starting from 0) | `number` | 0 |
+| direction | Direction, `row`-horizontal, `column`-vertical | `string` | row |
+| dot | Whether to display dot-style steps | `boolean` | false |
+| space | Spacing between steps, automatically calculated by default | `string` | - |
+| alignCenter | Whether to horizontally center the steps, only effective for horizontal step bars | `boolean` | false |
+| activeColor | Active state color, mapped to CSS variables related to in-progress/completed states | `string` | - |
+| inactiveColor | Inactive state color, mapped to CSS variables for waiting-state text and connecting lines | `string` | - |
+| iconSize | Indicator and icon size, defaults to px for numeric values | `string` \| `number` | - |
+| customStyle | Custom style | `CSSProperties` | {} |
+| customClass | Custom class name | `string` | - |
+
+### hy-step-item Props
+
+| Parameter | Description | Type | Default |
+| --------- | --------------------------------------------- | --------------- | ------ |
+| title | Step title; when not passed, default text is displayed based on status | `string` | - |
+| description | Step description | `string` | - |
+| icon | Step icon; when passed, the indicator displays as an icon | `string` | - |
+| status | Step status; when passed, overrides the status automatically calculated from `current` | `StepStatus` | - |
+| customStyle | Custom style | `CSSProperties` | {} |
+| customClass | Custom class name | `string` | - |
 
 ### List Item Structure
 
-| Field | Description             | Type      | Default |
-| ----- | ----------------------- | --------- | ------- |
-| title | Title                   | `string`  | -       |
-| docs  | Description             | `string`  | -       |
-| date  | Date and time           | `string`  | -       |
-| error | Whether it is an error state | `boolean` | -    |
+The fields of `list` data items (`StepListVo`) are as follows; `docs` and `date` are concatenated as the description text for display:
 
-### Events
+| Parameter | Description | Type | Default |
+| --------- | ------------------------------------------- | --------- | ------ |
+| title | Title | `string` | - |
+| docs | Description information | `string` | - |
+| date | Date and time | `string` | - |
+| error | Whether it is an error state (effective when it is the current step) | `boolean` | - |
 
-| Event          | Description                     | Callback Parameters |
-| -------------- | ------------------------------- | ------------------- |
-| change         | Triggered when the step changes | `index: number`     |
-| update:current | Triggered when the step changes | `index: number`     |
+### hy-steps Events
+
+| Event Name | Description | Callback Parameters |
+| ---------- | ------------------------------------------- | ------------------- |
+| change | Triggered when the step changes | `index: number` |
+| update:current | Triggered when the step changes, used with `v-model:current` | `index: number` |
 
 ### Slots
 
-| Slot    | Description                              | Received Values                                  |
-| ------- | ---------------------------------------- | ------------------------------------------------ |
-| icon    | Custom icon on the left of the step      | `index: number`, `error: boolean`                |
-| content | Custom entire content on the right of the step | `item: StepListVo`, `index: number`         |
-| title   | Custom step title                        | `title: string`, `index: number`                 |
-| docs    | Custom step description                  | `docs: string`, `date: string`, `index: number`  |
+`hy-steps` slots:
+
+| Slot Name | Description | Received Values |
+| --------- | ------------------------------------ | ------ |
+| default | Custom content slot, only rendered when `list` is empty | - |
+
+`hy-step-item` slots:
+
+| Slot Name | Description | Received Values |
+| --------- | ------------------ | ------ |
+| icon | Custom indicator icon area | - |
+| title | Custom step title | - |
+| description | Custom step description | - |
 
 ## Typings
 
-::: details Type Definitions
+::: details Type Description
 
 ```ts
+/** Step data item */
 export interface StepListVo {
-    /** 标题 */
+    /** Title */
     title?: string;
-    /** 描述信息 */
+    /** Description */
     docs?: string;
-    /** 日期时间 */
+    /** Date and time */
     date?: string;
-    /** 是否为错误状态 */
+    /** Whether it is an error */
     error?: boolean;
 }
+
+/**
+ * Step status
+ * finished: completed process: in progress error: failed wait: not started
+ */
+export type StepStatus = 'finished' | 'process' | 'error' | 'wait';
 ```
 
 :::
 
 ### CSS Variables
 
-| Variable                             | Description                  | Default                                |
-| ------------------------------------ | ---------------------------- | -------------------------------------- |
-| `--hy-steps-icon-size`               | Icon size                    | `20px`                                 |
-| `--hy-steps-dot-size`                | Dot size                     | `10px`                                 |
-| `--hy-steps-icon-text-font-size`     | Icon text font size          | `11px`                                 |
-| `--hy-steps-title-font-size`         | Title font size              | `30rpx`                                |
-| `--hy-steps-title-active-font-size`  | Active title font size       | `34rpx`                                |
-| `--hy-steps-content-min-height`      | Content area minimum height  | `60px`                                 |
-| `--hy-steps-icon-radius`             | Icon container border radius | Follows `--hy-radius-semicircle` (`100px`) |
-| `--hy-steps-dot-radius`              | Dot border radius            | Follows `--hy-radius-circle` (`50%`)   |
-| `--hy-steps-icon-text-color`         | Text color inside the icon   | Follows `--hy-text-color--grey`        |
-| `--hy-steps-date-font-size`          | Date font size               | `24rpx`                                |
-| `--hy-steps-date-color`              | Date color                   | `#999`                                 |
-| `--hy-steps-icon-border`             | Icon container border        | Follows `--hy-border-line`             |
+Component styles are controlled via CSS variables on `hy-step-item`:
+
+Indicator:
+
+| Variable Name | Description | Default |
+| --- | --- | --- |
+| `--hy-step-item-indicator-size` | Width and height of the circular indicator | `18px` |
+| `--hy-step-item-circle-radius` | Indicator border radius | Follows `--hy-radius-circle` |
+| `--hy-step-item-circle-bg` | Waiting-state indicator background color | Follows `--hy-background--3` |
+| `--hy-step-item-circle-process-bg` | In-progress indicator background color | Follows `--hy-primary` |
+| `--hy-step-item-circle-text-color` | Waiting-state indicator text color | Follows `--hy-text-color--grey` |
+| `--hy-step-item-circle-text-process-color` | In-progress indicator text color | `#ffffff` |
+| `--hy-step-item-circle-text-finished-color` | Completed-state icon color | Follows `--hy-primary` |
+| `--hy-step-item-circle-text-font-size` | Indicator text font size | `12px` |
+| `--hy-step-item-icon-size` | Custom icon size | `18px` |
+| `--hy-step-item-icon-color` | Waiting-state icon color | Follows `--hy-text-color--grey` |
+| `--hy-step-item-icon-active-color` | Active-state icon color | Follows `--hy-primary` |
+| `--hy-step-item-icon-error-color` | Failed-state icon color | Follows `--hy-error` |
+
+Dot indicator:
+
+| Variable Name | Description | Default |
+| ------------------------------- | ----------------------- | ------------------------- |
+| `--hy-step-item-dot-size` | Width and height of the dot indicator | `10px` |
+| `--hy-step-item-dot-wait-bg` | Waiting-state dot background color | Follows `--hy-background--3` |
+| `--hy-step-item-dot-process-bg` | In-progress/completed dot background color | Follows `--hy-primary` |
+| `--hy-step-item-dot-error-bg` | Failed-state dot background color | Follows `--hy-error` |
+
+Connecting line:
+
+| Variable Name | Description | Default |
+| ---------------------------------- | ------------------ | ------------------------- |
+| `--hy-step-item-line-spacing` | Spacing between the connecting line and the indicator | `4px` |
+| `--hy-step-item-line-height` | Connecting line thickness | `1px` |
+| `--hy-step-item-line-color` | Default connecting line color | Follows `--hy-background--3` |
+| `--hy-step-item-line-active-color` | Completed connecting line color | Follows `--hy-primary` |
+
+Content area and text:
+
+| Variable Name | Description | Default |
+| --- | --- | --- |
+| `--hy-step-item-content-margin-top` | Spacing between the content area and the header | `8px` |
+| `--hy-step-item-vertical-content-margin-left` | Left margin of the content area in vertical layout | `32px` |
+| `--hy-step-item-vertical-content-padding-bottom` | Bottom padding of the content area in vertical layout | `20px` |
+| `--hy-step-item-vertical-header-dot-top` | Top offset of the dot indicator in vertical layout | `6px` |
+| `--hy-step-item-title-font-size` | Title font size | Follows `--hy-font-size-base` |
+| `--hy-step-item-title-font-weight` | Title font weight | Follows `--hy-font-weight-medium` |
+| `--hy-step-item-title-color` | Default title color | Follows `--hy-text-color--2` |
+| `--hy-step-item-title-active-color` | Active title color | Follows `--hy-primary` |
+| `--hy-step-item-title-error-color` | Error title color | Follows `--hy-error` |
+| `--hy-step-item-description-font-size` | Description font size | Follows `--hy-font-size-sm` |
+| `--hy-step-item-description-color` | Description color | Follows `--hy-text-color--grey` |
+| `--hy-step-item-description-margin-top` | Spacing between the description and the title | `4px` |
 
 <demo-model url="pages-design/steps/steps"></demo-model>

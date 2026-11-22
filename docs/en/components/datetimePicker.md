@@ -18,17 +18,16 @@ Please run `npm i dayjs` first to install the dependency.
 
 ::: warning Notes
 
-- The `minDate` and `maxDate` parameters must be passed as timestamps (in milliseconds), not date strings
-- WeChat Mini Program does not support passing function parameters via props; `formatter` must be set via the `setFormatter` method
-- When `hasInput` is set to `true`, the component comes with a built-in input box; clicking the input box opens the picker
-- `mode` supports multiple formats, see details below
-- `minHour`, `maxHour`, `minMinute`, `maxMinute` are only effective when `mode=time`
+- The `minDate` and `maxDate` parameters must be passed a timestamp (in milliseconds), not a date string
+- When `hasInput` is set to `true`, the component comes with a built-in input field, and clicking the input opens the picker
+- `mode` supports multiple formats, see the description below for details
+- `minHour`, `maxHour`, `minMinute`, and `maxMinute` are only effective when `mode=time`
 
 :::
 
 ## :japanese_castle: Basic Usage Examples
 
-### Open via the built-in input box
+### Open via the Built-in Input
 
 ```html
 <template>
@@ -42,7 +41,7 @@ Please run `npm i dayjs` first to install the dependency.
 </script>
 ```
 
-### Open via an external button
+### Open via an External Button
 
 ```html
 <template>
@@ -64,15 +63,15 @@ Please run `npm i dayjs` first to install the dependency.
 </script>
 ```
 
-### Various time modes
+### Various Time Modes
 
-- `datetime`: select date and time in the format YYYY-MM-DD HH:mm:ss
-- `date`: select date in the format YYYY-MM-DD
-- `time`: select time in the format HH:mm
-- `year-month`: select date in the format YYYY-MM
-- `month-day`: select date in the format MM-DD
-- `hour-minute`: select time in the format HH:mm
-- `minute-second`: select time in the format mm:ss
+- `datetime`: Selects date and time in the format YYYY-MM-DD HH:mm:ss
+- `date`: Selects date in the format YYYY-MM-DD
+- `time`: Selects time in the format HH:mm
+- `year-month`: Selects date in the format YYYY-MM
+- `month-day`: Selects date in the format MM-DD
+- `hour-minute`: Selects time in the format HH:mm
+- `minute-second`: Selects time in the format mm:ss
 
 ```html
 <template>
@@ -113,7 +112,7 @@ Please run `npm i dayjs` first to install the dependency.
 </script>
 ```
 
-### Set maximum and minimum values
+### Setting Maximum and Minimum Values
 
 ```html
 <template>
@@ -142,13 +141,12 @@ Please run `npm i dayjs` first to install the dependency.
 </script>
 ```
 
-### Custom time formatting
+### Custom Time Formatting
 
 ```html
 <template>
     <view>
         <hy-datetime-picker
-            ref="datetimePickerRef"
             :show="show"
             v-model="value"
             mode="datetime"
@@ -159,33 +157,27 @@ Please run `npm i dayjs` first to install the dependency.
 </template>
 
 <script setup>
-    import { ref, onMounted } from 'vue';
+    import { ref } from 'vue';
 
     const show = ref(false);
     const value = ref(Date.now());
-    const datetimePickerRef = ref(null);
 
     const formatter = (type, value) => {
         if (type === 'year') {
-            return `${value}Y`;
+            return `${value} Y`;
         }
         if (type === 'month') {
-            return `${value}M`;
+            return `${value} M`;
         }
         if (type === 'day') {
-            return `${value}D`;
+            return `${value} D`;
         }
         return value;
     };
-
-    onMounted(() => {
-        // WeChat Mini Program requires this syntax
-        // datetimePickerRef.value.setFormatter(formatter);
-    });
 </script>
 ```
 
-### Custom button text and colors
+### Custom Button Text and Color
 
 ```html
 <template>
@@ -206,7 +198,7 @@ Please run `npm i dayjs` first to install the dependency.
 </script>
 ```
 
-### Custom input box style
+### Custom Input Style
 
 ```html
 <template>
@@ -231,23 +223,23 @@ Please run `npm i dayjs` first to install the dependency.
 
 | Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
-| show | Controls the showing and hiding of the picker | `boolean` | false |
+| show | Controls the popup and dismissal of the picker | `boolean` | false |
 | v-model | Binding value | `string` \| `number` \| `Date` | - |
 | mode | Display format | `date` \| `datetime` \| `time` \| `year-month` \| `month-day` \| `hour-minute` \| `minute-second` | datetime |
-| hasInput | Whether the component includes a built-in input box | `boolean` | false |
-| input | Collection of input box attributes; available when hasInput is true, see [Input API](./input#api) for details | `HyInputProps` | - |
-| format | Date format displayed in the input box | `string` | 'YYYY-MM-DD HH:mm' |
+| hasInput | Whether to include a built-in input field | `boolean` | false |
+| input | Collection of input field properties; can be set when hasInput is true, see [Input API](./input#api) for details | `HyInputProps` | - |
+| format | Date format displayed in the input field | `string` | 'YYYY-MM-DD HH:mm' |
 | popupMode | Controls the popup direction of the picker | `bottom` \| `center` \| `left` \| `right` \| `top` | bottom |
 | showToolbar | Whether to show the top toolbar | `boolean` | true |
 | title | Top title | `string` | - |
-| maxDate | Maximum selectable time (timestamp in milliseconds) | `number` | 10 years in the future |
-| minDate | Minimum selectable time (timestamp in milliseconds) | `number` | 10 years in the past |
+| maxDate | Maximum selectable time (timestamp in milliseconds) | `number` | 10 years from now |
+| minDate | Minimum selectable time (timestamp in milliseconds) | `number` | 10 years ago |
 | minHour | Minimum selectable hour, only effective when mode=time | `number` | 0 |
 | maxHour | Maximum selectable hour, only effective when mode=time | `number` | 23 |
 | minMinute | Minimum selectable minute, only effective when mode=time | `number` | 0 |
 | maxMinute | Maximum selectable minute, only effective when mode=time | `number` | 59 |
 | filter | Option filter function | `function` | null |
-| formatter | Option format function | `function` | null |
+| formatter | Option formatting function | `function` | null |
 | loading | Whether to show the loading state | `boolean` | false |
 | itemHeight | Height of a single option in each column | `number` | 44 |
 | cancelText | Text of the cancel button | `string` | Cancel |
@@ -258,8 +250,8 @@ Please run `npm i dayjs` first to install the dependency.
 | closeOnClickOverlay | Whether to allow closing the picker by clicking the overlay | `boolean` | false |
 | defaultIndex | Default index for each column | `array` | - |
 | toolbarRightSlot | Whether to enable the right slot | `boolean` | false |
-| customStyle | Custom external style of the input box | `CSSProperties` | - |
-| customClass | Custom external class name | `string` | - |
+| customStyle | Custom outer style of the input field | `CSSProperties` | - |
+| customClass | Custom outer class name | `string` | - |
 
 ### Events
 
@@ -274,14 +266,9 @@ Please run `npm i dayjs` first to install the dependency.
 
 | Slot Name | Description |
 | --- | --- |
-| toolbar-right | Toolbar right-side content for customization; due to WeChat Mini Program limitations, `toolbarRightSlot="true"` must also be set for it to take effect |
-| toolbar-bottom | Custom area below the input box |
-
-### Methods
-
-| Method Name       | Description                                                 |
-| ------------ | ---------------------------------------------------- |
-| setFormatter | Internal method exposed for WeChat Mini Program compatibility, used to set the formatting function |
+| toolbar-right | Content on the right side of the toolbar; to customize the right-side content, due to WeChat Mini Program limitations, `toolbarRightSlot="true"` must be set at the same time for it to take effect |
+| toolbar-bottom | Custom area below the input field |
+| trigger | Custom trigger content |
 
 ### Typings
 
@@ -300,7 +287,7 @@ type IParam = {
 
 ### CSS Variables
 
-| Variable Name                         | Description   | Default Value           |
+| Variable Name                  | Description | Default           |
 | ------------------------------ | ------ | ---------------- |
 | `--hy-datetime-picker-radius`  | Border radius   | `4px`            |
 | `--hy-datetime-picker-border`  | Border   | `1px solid #eee` |

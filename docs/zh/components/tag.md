@@ -150,7 +150,7 @@
 </template>
 
 <script setup>
-    import { IconConfig } from '@/hy-app/ui';
+    import { IconConfig } from '@hy-app/ui';
 </script>
 ```
 

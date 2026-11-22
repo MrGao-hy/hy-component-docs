@@ -1,6 +1,6 @@
-# Popover Component
+# Popover Bubble Component
 
-> Commonly used to display hint messages.
+> Commonly used to display prompt information.
 
 ## :pushpin: Platform Differences
 
@@ -8,50 +8,51 @@
 | -------- | --- | ------------------- | ------------------- |
 | ✔        | ✔   | ✔                   | ✔                   |
 
-## :japanese_castle: Basic Usage Examples
+## :japanese_castle: Basic Usage Example
 
 ::: warning Note
 
-Currently, the popover container uses a fixed width and cannot auto-adapt, because an auto-adaptive width cannot exceed the parent container's width.
+- Currently, the bubble container has a fixed width and cannot adapt its width automatically, because an adaptive width cannot exceed the parent container's width
+- When wrapping `hy-button` with `hy-popover`, you need to add `stop="false"` to `hy-button`; otherwise, event propagation will be blocked, preventing the bubble from displaying
 
 :::
 
 ```html
 <!-- Global usage -->
-<hy-popover content="This is a hint message">
+<hy-popover content="I am a prompt message">
     <hy-button type="primary" :stop="false">Button</hy-button>
 </hy-popover>
 ```
 
-### Popover Placement
+### Popover Placement Position
 
-- Set the popover position via `placement`
-    - `top`: popover at the top center
-    - `top-start`: popover at the top left
-    - `top-end`: popover at the top right
-    - `bottom`: popover at the bottom center
-    - `bottom-start`: popover at the bottom left
-    - `bottom-end`: popover at the bottom right
-    - `left`: popover at the left center
-    - `left-start`: popover at the left top
-    - `left-end`: popover at the left bottom
-    - `right`: popover at the right center
-    - `right-start`: popover at the right top
-    - `right-end`: popover at the right bottom
+- Control the bubble position by setting `placement`
+    - `top`: bubble at the top center position
+    - `top-start`: bubble at the top left position
+    - `top-end`: bubble at the top right position
+    - `bottom`: bubble at the bottom center position
+    - `bottom-start`: bubble at the bottom left position
+    - `bottom-end`: bubble at the bottom right position
+    - `left`: bubble at the left center position
+    - `left-start`: bubble at the left top position
+    - `left-end`: bubble at the left bottom position
+    - `right `: bubble at the right center position
+    - `right-start`: bubble at the right top position
+    - `right-end`: bubble at the right bottom position
 
 ```html
 <template>
-    <hy-popover content="This is a hint message" placement="top">
+    <hy-popover content="I am a prompt message" placement="top">
         <hy-button type="primary" :stop="false">Top</hy-button>
     </hy-popover>
 </template>
 ```
 
-### Mode Setting
+### Setting the Mode
 
 ::: tip Tip
 
-In normal mode, `content` must be set to a string; in menu mode, `content` must be set as an array.
+In normal mode, `content` must be set as a string; in menu mode, `content` must be set as an array
 
 :::
 
@@ -90,13 +91,13 @@ In normal mode, `content` must be set to a string; in menu mode, `content` must 
 </script>
 ```
 
-### Popover Position
+### Bubble Position
 
 - Control the position by setting `offset`
 
 ```html
 <template>
-    <hy-popover content="This is a hint message" placement="top">
+    <hy-popover content="I am a prompt message" placement="top">
         <hy-button type="primary" :stop="false">Top</hy-button>
     </hy-popover>
 </template>
@@ -106,7 +107,7 @@ In normal mode, `content` must be set to a string; in menu mode, `content` must 
 
 ::: warn Tip
 
-When using custom slot content, you need to add `width`, `background`, `z-index`, and `position` properties to the outermost element to prevent badge styling issues.
+When using custom slot content, you need to add the `width`, `background`, `z-index`, and `position` properties to the outermost element to prevent corner badge styling issues
 
 :::
 
@@ -114,7 +115,7 @@ When using custom slot content, you need to add `width`, `background`, `z-index`
 <template>
     <hy-popover>
         <template #content>
-            <view class="pop-content">This is a piece of content with custom styling.</view>
+            <view class="pop-content">This is a piece of custom styled content.</view>
         </template>
         <hy-button type="primary" :stop="false">Top</hy-button>
     </hy-popover>
@@ -123,12 +124,12 @@ When using custom slot content, you need to add `width`, `background`, `z-index`
 
 ```scss
 .pop-content {
-    /* Required - start */
+    /* Required - Start */
     width: 150px;
     background: #fff;
     z-index: 999;
     position: relative;
-    /* Required - end */
+    /* Required - End */
     color: #8268de;
     font-weight: bolder;
     padding: 10px;
@@ -136,12 +137,12 @@ When using custom slot content, you need to add `width`, `background`, `z-index`
 }
 ```
 
-### Closing the Popover on the Page
+### Closing the Bubble Popup on the Page
 
 ```html
 <template>
     <view style="height: 800px; width: 300px" @tap="closeOutside">
-        <hy-popover content="This is a hint message" placement="top">
+        <hy-popover v-model="show" content="I am a prompt message" placement="top">
             <hy-button type="primary" :stop="false">Top</hy-button>
         </hy-popover>
     </view>
@@ -152,47 +153,57 @@ When using custom slot content, you need to add `width`, `background`, `z-index`
 import { useQueue } from 'hy-app';
 
 const { closeOutside } = useQueue();
+const show = ref(false);
 ```
 
 ## API
 
 ### Popover Props
 
-| Parameter | Description                                          | Type                | Default |
-| --------- | ---------------------------------------------------- | ------------------- | ------- |
-| v-model   | Whether it is visible (manual state)                 | `boolean`           | false   |
-| content   | Content to display                                   | `string` \| `Array` | -       |
-| mode      | Current display mode, determines how content renders | `normal` \| `menu`  | normal  |
-| placement | Position where the popover appears[^1]               | `string`            | bottom  |
-| disabled  | Whether the popover is available                     | `boolean`           | false   |
-| offset    | Offset of the appearing position                     | `number`            | 0       |
+| Parameter   | Description                                          | Type                | Default |
+| ----------- | ---------------------------------------------------- | ------------------- | ------- |
+| v-model     | Whether manually visible                             | `boolean`           | false   |
+| content     | Displayed content                                    | `string` \| `Array` | -       |
+| mode        | Current display mode, determines how content is shown | `normal` \| `menu`  | normal  |
+| placement   | The position where the popover appears[^1]           | `string`            | bottom  |
+| disabled    | Whether the popover is enabled                       | `boolean`           | false   |
+| offset      | Offset of the appearance position                    | `number`            | 0       |
+| customClass | Custom external class name                           | `string`            | -       |
+| customStyle | Defines external styles to be used                   | `CSSProperties`     | -       |
+| showClose   | Whether to show the close button                     | `boolean`           | false   |
 
 ### Methods
 
-| Name  | Description                             | Callback Parameters |
-| ----- | --------------------------------------- | ------------------- |
-| open  | Event to open the tooltip popup         | -                   |
-| close | Event to close the tooltip popup        | -                   |
+| Event Name | Description                                    | Callback Parameters        |
+| ---------- | ---------------------------------------------- | -------------------------- |
+| open       | Event triggered when the tooltip popup opens   | -                          |
+| close      | Event triggered when the tooltip popup closes  | -                          |
+| change     | Triggered when the bubble state changes        | params: PopoverParamsVo    |
+| menuClick  | Triggered when a menu item is clicked          | params: PopoverItemParamsVo |
 
 ### Slots
 
-| Slot Name | Description                       | Value Received |
-| --------- | --------------------------------- | -------------- |
-| default   | Default slot                      | -              |
-| content   | Custom content inside the popover | -              |
+| Slot Name | Description                     | Accepted Value |
+| --------- | ------------------------------- | -------------- |
+| default   | Default slot                    | -              |
+| content   | Custom content inside the bubble | -              |
 
 ### CSS Variables
 
-| Variable                    | Description                | Default                        |
-| --------------------------- | -------------------------- | ------------------------------ |
-| `--hy-popover-z-index`      | Z-index level              | `998`                          |
-| `--hy-popover-icon-size`    | Icon size                  | `18px`                         |
-| `--hy-popover-menu-padding` | Menu padding               | `20rpx 0`                      |
-| `--hy-popover-min-height`   | Minimum height             | `36px`                         |
-| `--hy-popover-width`        | Width                      | `200px`                        |
-| `--hy-popover-line-height`  | Line height                | `22px`                         |
-| `--hy-popover-radius`       | Popover/menu border radius | Follows `--hy-radius-sm` (8rpx) |
-| `--hy-popover-border`       | Menu row divider           | Follows `--hy-border-line`     |
+| Variable Name                 | Description                          | Default                                |
+| ----------------------------- | ------------------------------------ | -------------------------------------- |
+| `--hy-popover-z-index`        | Z-index level                        | `998`                                  |
+| `--hy-popover-icon-size`      | Icon size                            | `18px`                                 |
+| `--hy-popover-menu-padding`   | Menu padding                         | `20rpx 0`                              |
+| `--hy-popover-min-height`     | Minimum height                       | `36px`                                 |
+| `--hy-popover-width`          | Width                                | `200px`                                |
+| `--hy-popover-line-height`    | Line height                          | `22px`                                 |
+| `--hy-popover-radius`         | Bubble/menu border radius            | Follows `--hy-radius-sm` (8rpx)        |
+| `--hy-popover-border`         | Menu row divider                     | Follows `--hy-border-line`             |
+| `--hy-popover-background`     | Popup bubble background color        | Follows `--hy-background--box`         |
+| `--hy-popover-inner-padding`  | Custom content area padding          | Follows `--hy-border-margin-padding-base` |
+| `--hy-popover-menu-padding-x` | Menu bubble horizontal padding       | Follows `--hy-border-margin-padding-base` |
+| `--hy-popover-shadow-base`    | Base shadow                          | Follows `--hy-shadow-base`             |
 
 [^1]: `left-top`: top-left; `left-bottom`: bottom-left; `right-top`: top-right; `right-bottom`: bottom-right; `left-center`: middle-left; `right-center`: middle-right; `top-center`: top-center; `bottom-center`: bottom-center;
 

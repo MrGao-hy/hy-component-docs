@@ -1,8 +1,8 @@
 # NumberStep Stepper Component
 
-> This component is typically used in mall/shopping scenarios for selecting the quantity of items
+> This component is commonly used in mall shopping scenarios for selecting item quantities
 
-## :pushpin: Platform Compatibility
+## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
 | -------- | --- | ------------------- | ------------------- |
@@ -29,9 +29,9 @@ import { vue } from 'vue';
 const value = ref(12);
 ```
 
-### Step Size
+### Step Setting
 
-- Use the `step` property to set the value changed each time the plus or minus button is clicked. The default is 1. In the example below, the value increases or decreases by 2 each time
+- Use the `step` property to set the value change each time the plus or minus button is clicked. The default is 1. In the example below, 2 is added or subtracted each time
 
 ```html
 <template>
@@ -62,14 +62,14 @@ const value = ref(12);
 
 ### Disable
 
-- Use `disabled` to disable the stepper; when disabled, the plus/minus buttons cannot be clicked and the input value cannot be modified
+- Use `disabled` to disable the stepper. When disabled, the plus/minus buttons cannot be clicked and the input value cannot be modified
 - Use `disabledInput` to disable the input field
 - Use `disablePlus` to disable the plus button
 - Use `disableMinus` to disable the minus button
 - Use `longPress` to disable the long-press event
 
 ```html
-<!-- Disable the input field by setting the `disabled` parameter; when disabled, the plus/minus buttons cannot be clicked and the input value cannot be modified -->
+<!-- Disable the input field by setting the `disabled` parameter. When disabled, the plus/minus buttons cannot be clicked and the input value cannot be modified -->
 <hy-number-step :disabled="true"></hy-number-step>
 
 <!-- Disable the input field -->
@@ -192,28 +192,28 @@ const value = ref(1);
 
 ### NumberStep Props
 
-| Parameter | Description | Type | Default Value |
+| Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model | The value used for two-way binding; when initialized, it defaults to the min value (minimum) | `number` | - |
+| v-model | Value used for two-way binding; when initialized, it is set to the default min value (minimum) | `number` | - |
 | min | The minimum value the user can enter | `number` | 1 |
 | max | The maximum value the user can enter | `number` | Number.MAX_SAFE_INTEGER |
-| step | Step size, the value added or subtracted each time; supports decimal values if decimals are needed | `number` | 1 |
+| step | Step size, the value added or subtracted each time; supports decimal values if needed | `number` | 1 |
 | integer | Whether only positive integers can be entered | `boolean` | false |
 | disabled | Whether to disable operations, including the input field and plus/minus buttons | `boolean` | false |
 | disabledInput | Whether to disable the input field | `boolean` | false |
 | asyncChange | Whether to enable asynchronous changes; when enabled, the input value must be controlled manually | `boolean` | false |
-| inputWidth | Input field width; numeric values default to px | `string`\|`number` | 35 |
+| inputWidth | Input field width, default unit px for numeric values | `string`\|`number` | 35 |
 | showMinus | Whether to show the minus button | `boolean` | true |
 | showPlus | Whether to show the plus button | `boolean` | true |
 | decimalLength | Number of decimal places to display | `string`\|`number` | - |
-| longPress | Whether long-press is allowed to increment/decrement | `boolean` | true |
+| longPress | Whether long-pressing to add or subtract is allowed | `boolean` | true |
 | color | Color of the input text and plus/minus button icons | `string` | - |
-| buttonWidth | Button width; numeric values default to px | `string`\|`number` | 30 |
-| buttonSize | Button height; numeric values default to px, and the input field height matches this value | `string`\|`number` | 30 |
-| buttonRadius | Button border radius; numeric values default to px | `string`\|`number` | - |
+| buttonWidth | Button width, default unit px for numeric values | `string`\|`number` | 30 |
+| buttonSize | Button height, default unit px for numeric values; the input field height matches this value | `string`\|`number` | 30 |
+| buttonRadius | Button border radius, default unit px for numeric values | `string`\|`number` | - |
 | bgColor | Background color of the input field and buttons | `string` | - |
 | inputBgColor | Independent background color of the input field | `string` | - |
-| cursorSpacing | Specifies the distance between the cursor and the keyboard to prevent the keyboard from covering the input field; numeric values default to px | `string`\|`number` | 100 |
+| cursorSpacing | Specifies the distance between the cursor and the keyboard to prevent the keyboard from covering the input field, default unit px for numeric values | `string`\|`number` | 100 |
 | disablePlus | Whether to disable the plus button | `boolean` | false |
 | disableMinus | Whether to disable the minus button | `boolean` | false |
 | minusIcon | Collection of icon properties for the minus button, see [Icon API](./icon#api) for details | `HyIconProps` | - |
@@ -225,31 +225,34 @@ const value = ref(1);
 ### Events
 
 | Event Name | Description | Callback Parameters |
-| ---------- | ----------- | ------------------- |
-| focus      | Triggered when the input field gains focus | value: number |
-| blur       | Triggered when the input field loses focus | value: number |
-| change     | Triggered when the input field content changes | value: number |
-| overLimit  | Triggered when the range threshold is exceeded | type: `minus`\|`plus` |
-| plus       | Triggered when the plus button is clicked | value: number |
-| minus      | Triggered when the minus button is clicked | value: number |
+| --------- | ------------------------ | --------------------- |
+| focus     | Triggered when the input field gains focus | value: number |
+| blur      | Triggered when the input field loses focus | value: number |
+| change    | Triggered when the input field content changes | value: number |
+| overLimit | Triggered when the range threshold is exceeded | type: `minus`\|`plus` |
+| plus      | Triggered when the plus button is clicked | value: number |
+| minus     | Triggered when the minus button is clicked | value: number |
 
 ### Slots
 
-| Slot Name | Description | Value |
-| --------- | ----------- | ----- |
-| minus     | Minus button | -     |
-| input     | Input field  | record |
-| plus      | Plus button  | -     |
+| Slot Name | Description | Value Received |
+| ------ | -------- | ------ |
+| minus  | Minus button | -      |
+| input  | Input field | record |
+| plus   | Plus button | -      |
 
 ### CSS Variables
 
-| Variable Name                     | Description                     | Default Value                     |
-| --------------------------------- | ------------------------------- | --------------------------------- |
-| `--hy-number-step-btn-width`      | Plus/minus button width         | `35px`                            |
-| `--hy-number-step-radius`         | Border radius                   | `4px`                             |
-| `--hy-number-step-font-size`      | Font size                       | `15px`                            |
-| `--hy-number-step-input-margin`   | Input field outer margin        | `0 2px`                           |
-| `--hy-number-step-input-color`    | Input text color                | Follows `--hy-text-color`         |
-| `--hy-number-step-disabled-color` | Disabled text color             | Follows `--hy-text-color--disabled` |
+| Variable Name | Description | Default |
+| --- | --- | --- |
+| `--hy-number-step-btn-width` | Plus/minus button width | `35px` |
+| `--hy-number-step-radius` | Border radius | `4px` |
+| `--hy-number-step-font-size` | Font size | `15px` |
+| `--hy-number-step-input-margin` | Input field outer margin | `0 2px` |
+| `--hy-number-step-input-color` | Input text color | Follows `--hy-text-color` |
+| `--hy-number-step-disabled-color` | Disabled text color | Follows `--hy-text-color--disabled` |
+| `--hy-number-step-background` | Stepper background color (plus/minus buttons and input field) | Follows `--hy-background--empty` |
+| `--hy-number-step-btn-hover-background` | Plus/minus button pressed-state background color | Follows `--hy-background--hover` |
+| `--hy-number-step-disabled-background` | Disabled-state background color (plus/minus buttons and input field) | Follows `--hy-background--disabled` |
 
 <demo-model url="pages-design/numberBox/numberBox"></demo-model>

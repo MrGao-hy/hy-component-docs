@@ -1,89 +1,47 @@
 # Index-Bar Component
 
 > An index bar component for quickly locating list content, supporting both tap and swipe interactions, and compatible with Mini Program and App platforms.
+>
+> The component takes over the scroll container internally. Content is passed in via the default slot, group titles are marked with `hy-index-anchor`, and the active index is automatically synced while scrolling, with anchor sticky positioning.
 
 ## :pushpin: Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ------------------- | ------------------- |
-| ✔        | ✔   | ✔                   | ✔                   |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
-## :japanese_castle: Basic Usage Example
+## :japanese_castle: Basic Usage
+
+Place the list content into the `hy-index-bar` default slot, and mark each group's title with `hy-index-anchor`; index values are collected automatically, so there is no need to manually pass in `indexList`.
 
 ```html
 <template>
-    <view class="index-bar-demo">
-        <view class="content-list">
-            <view
-                v-for="(group, index) in contactList"
-                :key="index"
-                :id="`section-${group.index}`"
-                class="contact-group"
-            >
-                <view class="group-title">{{ group.index }}</view>
-                <view v-for="(contact, idx) in group.list" :key="idx" class="contact-item">
-                    {{ contact.name }}
-                </view>
+    <hy-index-bar v-model="activeIndex">
+        <view v-for="item in contactList" :key="item.index" class="contact-group">
+            <hy-index-anchor :index="item.index" />
+            <view v-for="(contact, idx) in item.list" :key="idx" class="contact-item">
+                {{ contact.name }}
             </view>
         </view>
-
-        <!-- Index bar -->
-        <hy-index-bar v-model="activeIndex" :index-list="indexList" @scroll="handleScroll" />
-    </view>
+    </hy-index-bar>
 </template>
 
 <script setup>
-    import { ref, computed } from 'vue';
+    import { ref } from 'vue';
 
-    // Contact data
     const contactList = ref([
-        { index: 'A', list: [{ name: '阿杰' }, { name: '阿明' }] },
-        { index: 'B', list: [{ name: '贝贝' }, { name: '宝宝' }] },
+        { index: 'A', list: [{ name: 'A Jie' }, { name: 'A Ming' }] },
+        { index: 'B', list: [{ name: 'Bei Bei' }, { name: 'Bao Bao' }] },
         // More data...
     ]);
 
-    // Index list
-    const indexList = computed(() => contactList.value.map((item) => item.index));
-
-    // Currently active index
-    const activeIndex = ref('A');
-
-    // Scroll event handler
-    const handleScroll = (index) => {
-        // Scroll to the corresponding position based on the index
-        uni.createSelectorQuery()
-            .select(`#section-${index}`)
-            .boundingClientRect((rect) => {
-                if (rect) {
-                    uni.pageScrollTo({
-                        scrollTop: rect.top,
-                        duration: 300,
-                    });
-                }
-            })
-            .exec();
-    };
+    // The currently active index, automatically synced by the index bar on scroll/click
+    const activeIndex = ref('');
 </script>
 
 <style lang="scss" scoped>
-    .index-bar-demo {
-        position: relative;
-        height: 100vh;
-    }
-
-    .content-list {
-        padding: 20rpx;
-    }
-
     .contact-group {
         margin-bottom: 40rpx;
-    }
-
-    .group-title {
-        font-size: 32rpx;
-        font-weight: bold;
-        padding: 10rpx 0;
-        background-color: #f5f5f5;
     }
 
     .contact-item {
@@ -94,47 +52,79 @@
 </style>
 ```
 
-### Hide the Toast Prompt
+::: tip The index bar container requires a definite height in order to scroll properly. `height` defaults to filling its parent (`100%`); if the parent's height is undetermined, specify it via `customStyle`, for example deducting the navigation bar placeholder on H5: `{ height: 'calc(100vh - 44px)' }`. :::
+
+### Disabling Anchor Sticky Positioning
+
+Anchor sticky positioning is enabled by default; when scrolling to a group, the anchor is fixed at the top of the scroll container. Disable it via `sticky`:
 
 ```html
-<hy-index-bar v-model="activeIndex" :index-list="indexList" :show-toast="false" />
+<hy-index-bar v-model="activeIndex" :sticky="false">
+    <hy-index-anchor v-for="item in indexList" :key="item" :index="item" />
+</hy-index-bar>
 ```
 
-### Custom Styling
+### Hiding the Toast
+
+Use `show-toast` to control whether the index letter toast bubble is displayed.
+
+```html
+<hy-index-bar v-model="activeIndex" :show-toast="false">
+    <hy-index-anchor v-for="item in indexList" :key="item" :index="item" />
+</hy-index-bar>
+```
+
+### Index Bar Position
+
+Use `position` to set the index bar position. Optional values are `left` and `right`, with `right` as the default.
+
+```html
+<hy-index-bar v-model="activeIndex" position="left">...</hy-index-bar>
+```
+
+### Custom Styles
 
 ```html
 <hy-index-bar
     v-model="activeIndex"
-    :index-list="indexList"
     :index-color="'#666'"
     :active-index-color="'#007AFF'"
-    :index-bg-color="'#f0f0f0'"
+    :index-bg-color="'transparent'"
     :active-index-bg-color="'#e0e0e0'"
     :index-size="14"
     :width="30"
     :height="'80%'"
-    :customStyle="{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }"
-/>
+    :custom-style="{ backgroundColor: 'rgba(255, 255, 255, 0.8)' }"
+>
+    ...
+</hy-index-bar>
 ```
 
-### Index List Data Format
+### Manually Specifying the Index List
 
-Two data formats are supported:
-
-### 1. String Array
+By default, index values are automatically collected from the `hy-index-anchor` elements inside the slot. If you need to customize the index bar's displayed items (e.g., a different order from the anchors, or showing only a subset of indexes), you can manually specify `indexList`, which supports string/number arrays or object arrays.
 
 ```js
-const indexList = ref(['A', 'B', 'C', 'D', 'E']);
+// String array
+const indexList = ['A', 'B', 'C', 'D'];
+
+// Object array: index is the index value, title is the heading, data is the list data
+const indexList = [
+    { index: 'A', title: 'A', data: [...] },
+    { index: 'B', title: 'B', data: [...] }
+];
 ```
 
-### 2. Object Array
+```html
+<hy-index-bar v-model="activeIndex" :index-list="indexList">...</hy-index-bar>
+```
 
-```js
-const indexList = ref([
-  { index: 'A', data: [...] },
-  { index: 'B', data: [...] },
-  { index: 'C', data: [...] }
-])
+### Using Anchors Independently
+
+`hy-index-anchor` can also be used standalone, without the index bar. In this case, `active` controls the active state and `sticky` controls the sticky positioning.
+
+```html
+<hy-index-anchor :index="'A'" :active="true" :sticky="true" :offset-top="0" />
 ```
 
 ### Complete Code
@@ -143,164 +133,64 @@ const indexList = ref([
 
 ```vue [vue]
 <template>
-    <hy-config-provider>
-        <scroll-view class="hy-scroll-view" scroll-y :scroll-top="scrollTop" @scroll="handleScroll">
-            <view
-                v-for="item in indexList"
-                :key="item.index"
-                class="hy-index-section"
-                :id="`index-${item.index}`"
-            >
-                <view class="hy-index-section__title hy-title">{{ item.index }}</view>
-                <view class="hy-index-section__container">
-                    <view
-                        v-for="(city, cityIndex) in item.data"
-                        :key="cityIndex"
-                        class="hy-index-section__item"
-                    >
-                        {{ city }}
-                    </view>
+    <hy-index-bar
+        v-model="currentActiveIndex"
+        :position="position"
+        :show-toast="showToast"
+        :custom-style="barCustomStyle"
+    >
+        <view v-for="item in indexList" :key="item.index" class="hy-index-section">
+            <!-- Index anchor: auto-registered once placed in the slot; sticks to top and highlights when scrolled to the corresponding group -->
+            <hy-index-anchor :index="item.index" />
+            <view class="hy-index-section__container">
+                <view
+                    v-for="(city, cityIndex) in item.data"
+                    :key="cityIndex"
+                    class="hy-index-section__item"
+                >
+                    {{ city }}
                 </view>
             </view>
-        </scroll-view>
-
-        <hy-index-bar
-            v-model="currentActiveIndex"
-            :index-list="indexs"
-            :position="position"
-            :show-toast="showToast"
-            @click="handleIndexClick"
-            @scroll="handleIndexScroll"
-        />
-    </hy-config-provider>
+        </view>
+    </hy-index-bar>
 </template>
 ```
 
 ```ts [index.ts]
-import { ref, reactive, computed, getCurrentInstance, nextTick, onMounted } from 'vue';
-import { storeToRefs } from 'pinia';
-import { getRect, sleep } from '@hy-app/ui';
+import { ref, computed } from 'vue';
+import type { CSSProperties } from 'vue';
 
-const instance = getCurrentInstance();
 // Index bar position
-const position = ref<string>('right');
-const sectionRect = ref<UniNamespace.NodeInfo[]>([]);
-const scrollTop = ref<number>(0);
-// Whether to show the toast prompt
+const position = ref<'left' | 'right'>('right');
+// Whether to show the toast
 const showToast = ref<boolean>(true);
-// Currently active index
+// The currently active index, automatically synced by the index bar on scroll/click
 const currentActiveIndex = ref<string>('');
-const isScroll = ref<boolean>(true);
-// Mock city data
-const cityData = reactive({
-    A: ['安庆', '安阳', '鞍山', '安顺', '安康', '阿克苏', '阿勒泰'],
-    B: [
-        '北京',
-        '上海',
-        '广州',
-        '深圳',
-        '重庆',
-        '成都',
-        '杭州',
-        '武汉',
-        '西安',
-        '苏州',
-        '天津',
-        '南京',
-        '长沙',
-        '郑州',
-        '东莞',
-        '青岛',
-        '沈阳',
-        '宁波',
-        '昆明',
-    ],
-    C: ['长春', '常州', '长沙', '成都', '重庆', '福州', '长春', '长沙'],
-    D: ['大连', '东莞', '德州', '大同', '大庆', '大理'],
-    E: ['鄂州', '恩施', '鄂州'],
-    F: ['福州', '佛山', '抚顺', '阜新', '阜阳', '抚州'],
-    G: ['广州', '贵阳', '桂林', '赣州', '广元', '广安'],
-    H: ['杭州', '合肥', '哈尔滨', '海口', '呼和浩特', '湖州', '邯郸', '汉中', '衡水'],
-    J: ['济南', '长春', '吉林', '锦州', '荆州', '荆门', '晋江'],
-    K: ['昆明', '开封', '克拉玛依', '喀什'],
-    L: ['兰州', '洛阳', '临沂', '聊城', '龙岩', '丽江'],
-    M: ['绵阳', '马鞍山', '茂名', '梅州', '眉山'],
-    N: ['南京', '南昌', '南宁', '南通', '宁波', '南阳', '南充'],
-    P: ['平顶山', '盘锦', '攀枝花', '萍乡'],
-    Q: ['青岛', '泉州', '曲靖', '秦皇岛', '齐齐哈尔', '庆阳'],
-    R: ['日照', '日喀则', '荣昌'],
-    S: ['深圳', '苏州', '沈阳', '石家庄', '绍兴', '厦门', '商丘', '上饶', '十堰'],
-    T: ['天津', '太原', '唐山', '泰州', '台州', '通辽', '吐鲁番'],
-    W: ['武汉', '西安', '温州', '无锡', '潍坊', '乌鲁木齐', '威海', '渭南'],
-    X: ['西安', '厦门', '徐州', '新乡', '信阳', '襄阳', '西宁'],
-    Y: ['烟台', '扬州', '宜昌', '岳阳', '延安', '银川', '运城'],
-    Z: ['郑州', '株洲', '珠海', '中山', '湛江', '肇庆', '张家口', '枣庄'],
-});
+// The index bar container requires a definite height; on H5, deduct the navigation bar placeholder, otherwise scrolling will fall through to the page level
+const barCustomStyle = { height: '100vh' } as CSSProperties;
+// #ifdef H5
+barCustomStyle.height = 'calc(100vh - 44px)';
+// #endif
 
-// Convert to index list format
-const indexList = computed(() => {
-    return Object.keys(cityData)
+const cityData = {
+    A: ['Anqing', 'Anyang', 'Anshan', 'Anshun', 'Ankang', 'Aksu', 'Altay'],
+    B: ['Beijing', 'Shanghai', 'Guangzhou', 'Shenzhen', 'Chongqing', 'Chengdu', 'Hangzhou', 'Wuhan', "Xi'an"],
+    C: ['Changchun', 'Changzhou', 'Changsha', 'Chengdu', 'Chongqing', 'Fuzhou'],
+    D: ['Dalian', 'Dongguan', 'Dezhou', 'Datong', 'Daqing', 'Dali'],
+    // More data...
+};
+
+// Convert to the index list format; index values are auto-collected by anchors, no need to pass in index-list manually
+const indexList = computed(() =>
+    Object.keys(cityData)
         .sort()
-        .map((key) => ({
-            index: key,
-            title: key,
-            data: cityData[key as keyof typeof cityData],
-        }));
-});
-const indexs = computed(() => {
-    return Object.keys(cityData).sort();
-});
-
-onMounted(() => {
-    nextTick(() => {
-        getRect('.hy-index-section', true).then((rect) => {
-            sectionRect.value = rect;
-        });
-    });
-});
-
-// Handle scroll event
-const handleScroll = (e: any) => {
-    // Use uni.createSelectorQuery() to get the position info of all index sections
-    const scrollTop = e.detail.scrollTop;
-    if (isScroll.value) {
-        const index = sectionRect.value.findIndex((item) => item.top - 1 > scrollTop) - 1;
-        const keys = Object.keys(cityData);
-        console.log(keys[index], '==');
-        currentActiveIndex.value = keys[index];
-    }
-};
-
-// Handle index click event
-const handleIndexClick = (index: string, event: Event) => {
-    scrollToSection(index);
-};
-
-// Handle index scroll event
-const handleIndexScroll = (index: string) => {
-    scrollToSection(index);
-};
-
-const scrollToSection = async (i: string) => {
-    isScroll.value = false;
-    const index = Object.keys(cityData).findIndex((item) => item === i);
-    scrollTop.value = sectionRect.value[index]?.top!;
-    await sleep();
-    isScroll.value = true;
-};
+        .map((key) => ({ index: key, title: key, data: cityData[key] }))
+);
 ```
 
 ```scss [index.scss]
-.hy-scroll-view {
-    width: 100%;
-    height: 100%;
-}
-
 .hy-index-section {
     padding: $hy-border-margin-padding-base;
-
-    @include e(title) {
-    }
 
     @include e(item) {
         font-size: 28rpx;
@@ -313,7 +203,7 @@ const scrollToSection = async (i: string) => {
 
     @include e(container) {
         padding: $hy-border-margin-padding-base 0;
-        border-radius: $hy-border-radius-base;
+        border-radius: $hy-radius-base;
         background: $hy-background--container;
     }
 }
@@ -325,38 +215,87 @@ const scrollToSection = async (i: string) => {
 
 ### IndexBar Props
 
-| Parameter | Description | Type | Default |
+| Prop | Description | Type | Default |
 | --- | --- | --- | --- |
-| v-model | Currently active index value | `string` | - |
-| indexList | Index list data; supports string arrays or object arrays | `string`\|`number`\|`IIndexItem[]` | - |
-| position | Index bar position; optional values: 'left', 'right' | `left`\|`right` | right |
-| showToast | Whether to show the index letter toast | `boolean` | true |
+| v-model | The currently active index value | `string`\|`number` | '' |
+| indexList | Index list data, supports string/number arrays or object arrays; if not provided, index values of the `hy-index-anchor` elements inside the slot are collected automatically | `IIndexItem[]` | [] |
+| sticky | Whether the anchor automatically sticks to top; when sticky, the anchor is fixed at the top of the scroll container | `boolean` | true |
+| position | Index bar position, optional values: `left`, `right` | `left`\|`right` | right |
+| showToast | Whether to display the index letter toast | `boolean` | true |
 | indexColor | Index item color | `string` | - |
-| activeIndexColor | Color of the index item in active state | `string` | - |
+| activeIndexColor | Active index item color | `string` | - |
 | indexBgColor | Index item background color | `string` | transparent |
-| activeIndexBgColor | Background color of the index item in active state | `string` | - |
-| indexSize | Index item size; number values default to px | `number`\|`string` | 12 |
-| height | Index bar height; number values default to px | `number`\|`string` | 100% |
-| width | Index bar width; number values default to px | number/string | 20 |
-| customStyle | Custom external styles to apply | `CSSProperties` | - |
+| activeIndexBgColor | Active index item background color | `string` | - |
+| indexSize | Index item size, numbers default to px | `number`\|`string` | 12 |
+| height | Component container height, numbers default to px, defaults to filling the parent | `number`\|`string` | 100% |
+| width | Index item width/height, numbers default to px | `number`\|`string` | 20 |
+| customStyle | Custom external style | `CSSProperties` | - |
+| customClass | Custom external class name | `string` | - |
+
+#### IIndexItem
+
+| Field | Description                       | Type               |
+| ----- | -------------------------- | ------------------ |
+| index | Index value                     | `string`\|`number` |
+| title | Title corresponding to the index             | `string`           |
+| data  | List data corresponding to the index (optional) | `any[]`            |
+
+`indexList` can also directly accept `string[]` or `number[]`.
+
+### IndexAnchor Props
+
+| Prop | Description | Type | Default |
+| --- | --- | --- | --- |
+| index | Index value, also serves as the anchor id and default title content (required) | `string`\|`number` | - |
+| active | Whether the current index is active; only effective when used independently (not placed inside the `hy-index-bar` slot); when used with the index bar, the active state is driven by v-model | `boolean` | false |
+| sticky | Whether sticky positioning is enabled; only effective when used independently, and only takes effect in the active state; when used with the index bar, the index bar's `sticky` takes precedence | `boolean` | true |
+| offsetTop | Offset from the top of the scroll container when sticky, in px | `number`\|`string` | 0 |
+| zIndex | z-index when sticky | `number`\|`string` | 1 |
+| customStyle | Custom external style | `CSSProperties` | - |
 | customClass | Custom external class name | `string` | - |
 
 ### Events
 
-| Event Name | Description | Callback Parameters |
-| ------ | ---------------- | ----------------------------------------------------------- |
-| click  | Triggered when an index item is clicked | index: string - the clicked index value<br>event: Event - the event object |
-| scroll | Triggered when the index bar is swiped | index: string - the index value currently swiped to |
+| Event | Description | Callback Parameters |
+| --- | --- | --- |
+| click | Triggered when an index item is clicked | index: `string`\|`number` - the clicked index value; event: Event - the event object |
+| scroll | Triggered when sliding on the index bar | index: `string`\|`number` - the index value currently slid to |
+| update:modelValue | Triggered when the index value changes | index: `string`\|`number` - the current index value |
+
+### Slots
+
+| Slot  | Description                                                | Accepted Values |
+| ------- | --------------------------------------------------- | ------ |
+| default | Index bar list content; group titles are marked with `hy-index-anchor` | -      |
 
 ### CSS Variables
 
-| Variable Name                   | Description | Default |
-| -------------------------------- | ---------------- | --------------------------------- |
-| `--hy-index-bar-z-index`         | Stacking level | `999`                             |
-| `--hy-index-bar-toast-size`      | Toast bubble size | `50px`                            |
-| `--hy-index-bar-index-color`     | Index text color | Follows `--hy-text-color--3`      |
-| `--hy-index-bar-index-radius`    | Index item border radius | Follows `--hy-radius-sm` (8rpx)   |
-| `--hy-index-bar-toast-color`     | Toast bubble text color | `#ffffff`                         |
+#### hy-index-bar
+
+| Variable | Description | Default |
+| --- | --- | --- |
+| `--hy-index-bar-z-index` | z-index | `999` |
+| `--hy-index-bar-toast-size` | Toast bubble size | `50px` |
+| `--hy-index-bar-index-color` | Index text color | Follows `--hy-text-color--3` |
+| `--hy-index-bar-index-radius` | Index item border radius | Follows `--hy-radius-sm` (8rpx) |
+| `--hy-index-bar-toast-color` | Toast bubble text color | `#ffffff` |
 | `--hy-index-bar-toast-font-size` | Toast bubble font size | Follows `--hy-font-size-lg` (36rpx) |
+| `--hy-index-bar-primary` | Active index theme color | Follows `--hy-primary` |
+| `--hy-index-bar-index-active-background` | Index item selected background color | Follows `--hy-background--hover` |
+| `--hy-index-bar-list-margin` | Index list right margin | Follows `--hy-border-margin-padding-base` |
+| `--hy-index-bar-toast-background` | Toast bubble background color | Follows `--hy-background--empty` |
+
+#### hy-index-anchor
+
+| Variable                          | Description                 | Default                                 |
+| ------------------------------- | -------------------- | -------------------------------------- |
+| `--hy-index-anchor-text-color`  | Index title text color     | Follows `--hy-text-color`                 |
+| `--hy-index-anchor-background`  | Index title background color       | Follows `--hy-background--container`      |
+| `--hy-index-anchor-primary`     | Active index title text color | Follows `--hy-primary`                    |
+| `--hy-index-anchor-font-size`   | Index title font size         | Follows `--hy-font-size-sm`               |
+| `--hy-index-anchor-font-weight` | Index title font weight         | Follows `--hy-font-weight-medium`         |
+| `--hy-index-anchor-padding-y`   | Index title vertical padding   | Follows `--hy-border-margin-padding-sm`   |
+| `--hy-index-anchor-padding-x`   | Index title horizontal padding   | Follows `--hy-border-margin-padding-base` |
+| `--hy-index-anchor-z-index`     | Sticky z-index             | `1`                                    |
 
 <demo-model url="pages-design/indexBar/indexBar"></demo-model>

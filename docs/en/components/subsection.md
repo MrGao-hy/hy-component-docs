@@ -1,28 +1,28 @@
 # Subsection Component
 
-> A subsection (segmented control) component, used for single-select switching among multiple options.
+> A subsection (segment control) component, used for single-select switching among multiple options.
 
 ## :pushpin: Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ------------------- | ------------------- |
-| ✔        | ✔   | ✔                   | ✔                   |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
 ## :warning: Notes
 
-::: warning Note
+::: warning Notes
 
 - The `list` prop supports three forms: string array, number array, and object array
 - Object array items use the `name` and `value` fields by default, which can be customized via `customKeys`
 - The background color `bgColor` takes effect when `mode` is `button`; it has no effect when `mode` is `subsection`
 - The `current` prop sets the default selected index (starting from 0)
-- When binding with `v-model`, the value is the `value` of the selected item (string or number)
+- When bound with `v-model`, the value is the `value` of the selected item (string or number)
 
 :::
 
-## :japanese_castle: Basic Usage Examples
+## :japanese_castle: Basic Usage
 
-### String Array Format
+### String Array Form
 
 ```html
 <template>
@@ -32,12 +32,12 @@
 <script setup lang="ts">
     import { ref } from 'vue';
 
-    const value = ref('未付款');
-    const list = ['未付款', '待评价', '已付款'];
+    const value = ref('Unpaid');
+    const list = ['Unpaid', 'Pending Review', 'Paid'];
 </script>
 ```
 
-### Number Array Format
+### Number Array Form
 
 ```html
 <template>
@@ -52,7 +52,7 @@
 </script>
 ```
 
-### Object Array Format
+### Object Array Form
 
 ```html
 <template>
@@ -64,9 +64,9 @@
 
     const value = ref('all');
     const list = [
-        { name: '全部', value: 'all' },
-        { name: '未核销', value: 'unused' },
-        { name: '已核销', value: 'used' },
+        { name: 'All', value: 'all' },
+        { name: 'Unredeemed', value: 'unused' },
+        { name: 'Redeemed', value: 'used' },
     ];
 </script>
 ```
@@ -81,8 +81,8 @@
 <script setup lang="ts">
     import { ref } from 'vue';
 
-    const value = ref('待评价');
-    const list = ['未付款', '待评价', '已付款'];
+    const value = ref('Pending Review');
+    const list = ['Unpaid', 'Pending Review', 'Paid'];
 </script>
 ```
 
@@ -98,8 +98,8 @@
 <script setup lang="ts">
     import { ref } from 'vue';
 
-    const value = ref('选项一');
-    const list = ['选项一', '选项二', '选项三'];
+    const value = ref('Option 1');
+    const list = ['Option 1', 'Option 2', 'Option 3'];
 </script>
 ```
 
@@ -113,8 +113,8 @@
 <script setup lang="ts">
     import { ref } from 'vue';
 
-    const value = ref('选项一');
-    const list = ['选项一', '选项二', '选项三'];
+    const value = ref('Option 1');
+    const list = ['Option 1', 'Option 2', 'Option 3'];
 </script>
 ```
 
@@ -135,8 +135,8 @@
 <script setup lang="ts">
     import { ref } from 'vue';
 
-    const value = ref('未付款');
-    const list = ['未付款', '待评价', '已付款'];
+    const value = ref('Unpaid');
+    const list = ['Unpaid', 'Pending Review', 'Paid'];
 </script>
 ```
 
@@ -156,8 +156,8 @@
 <script setup lang="ts">
     import { ref } from 'vue';
 
-    const value = ref('选项一');
-    const list = ['选项一', '选项二', '选项三'];
+    const value = ref('Option 1');
+    const list = ['Option 1', 'Option 2', 'Option 3'];
 </script>
 ```
 
@@ -171,8 +171,8 @@
 <script setup lang="ts">
     import { ref } from 'vue';
 
-    const value = ref('未付款');
-    const list = ['未付款', '待评价', '已付款'];
+    const value = ref('Unpaid');
+    const list = ['Unpaid', 'Pending Review', 'Paid'];
 </script>
 ```
 
@@ -188,12 +188,12 @@
 <script setup lang="ts">
     import { ref } from 'vue';
 
-    const value = ref('选项一');
-    const list = ['选项一', '选项二', '选项三'];
+    const value = ref('Option 1');
+    const list = ['Option 1', 'Option 2', 'Option 3'];
 </script>
 ```
 
-### Disable Bold for Active Font
+### Active Font Without Bold
 
 ```html
 <template>
@@ -203,14 +203,14 @@
 <script setup lang="ts">
     import { ref } from 'vue';
 
-    const value = ref('选项一');
-    const list = ['选项一', '选项二', '选项三'];
+    const value = ref('Option 1');
+    const list = ['Option 1', 'Option 2', 'Option 3'];
 </script>
 ```
 
 ## Custom Key Names
 
-### Customize Fields with customKeys
+### Custom Fields with customKeys
 
 ```html
 <template>
@@ -226,9 +226,9 @@
 
     const value = ref(1);
     const list = [
-        { title: '全部', id: 1 },
-        { title: '待付款', id: 2 },
-        { title: '已完成', id: 3 },
+        { title: 'All', id: 1 },
+        { title: 'Unpaid', id: 2 },
+        { title: 'Completed', id: 3 },
     ];
 </script>
 ```
@@ -241,19 +241,19 @@
 <template>
     <view>
         <hy-subsection :list="list" v-model="value" @change="handleChange"></hy-subsection>
-        <view class="current-value">当前选中：{{ value }}</view>
+        <view class="current-value">Currently selected: {{ value }}</view>
     </view>
 </template>
 
 <script setup lang="ts">
     import { ref } from 'vue';
 
-    const value = ref('未付款');
-    const list = ['未付款', '待评价', '已付款'];
+    const value = ref('Unpaid');
+    const list = ['Unpaid', 'Pending Review', 'Paid'];
 
     const handleChange = (index: number) => {
-        console.log('选中索引:', index);
-        console.log('选中值:', value.value);
+        console.log('Selected index:', index);
+        console.log('Selected value:', value.value);
     };
 </script>
 
@@ -267,16 +267,16 @@
 </style>
 ```
 
-### Content Switching
+### Combined with Content Switching
 
 ```html
 <template>
     <view>
         <hy-subsection :list="list" v-model="value" mode="subsection"></hy-subsection>
         <view class="content-box">
-            <view v-if="value === 'all'">显示全部内容</view>
-            <view v-else-if="value === 'unused'">显示未核销内容</view>
-            <view v-else>显示已核销内容</view>
+            <view v-if="value === 'all'">Show all content</view>
+            <view v-else-if="value === 'unused'">Show unredeemed content</view>
+            <view v-else>Show redeemed content</view>
         </view>
     </view>
 </template>
@@ -286,9 +286,9 @@
 
     const value = ref('all');
     const list = [
-        { name: '全部', value: 'all' },
-        { name: '未核销', value: 'unused' },
-        { name: '已核销', value: 'used' },
+        { name: 'All', value: 'all' },
+        { name: 'Unredeemed', value: 'unused' },
+        { name: 'Redeemed', value: 'used' },
     ];
 </script>
 
@@ -304,33 +304,33 @@
 
 ### Subsection Props
 
-| Parameter | Description | Type | Default |
+| Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | modelValue / v-model | Value of the selected item | `string` \| `number` | - |
 | current | Default selected index (starting from 0) | `number` | 0 |
 | list | Array of options | `SubSectionVo[]` | [] |
-| customKeys | Key mapping for list | `object` | { name: 'name', value: 'value' } |
+| customKeys | Key mapping for `list` | `object` | { name: 'name', value: 'value' } |
 | activeColor | Color when active | `string` | - |
 | inactiveColor | Color when inactive | `string` | - |
 | mode | Mode, `button` or `subsection` | `string` | button |
 | fontSize | Font size, in px | `number` | 12 |
 | bold | Whether the active option's font is bold | `boolean` | true |
 | bgColor | Component background color (effective in button mode) | `string` | - |
-| customStyle | Custom external styles | `CSSProperties` | - |
+| customStyle | Custom external styles to apply | `CSSProperties` | - |
 | customClass | Custom external class name | `string` | - |
 
 ### Events
 
-| Event Name        | Description                        | Callback Parameters        |
-| ----------------- | ---------------------------------- | -------------------------- |
-| change            | Triggered when the option changes  | `index: number`            |
-| update:modelValue | Triggered when the selected value changes | `value: string \| number` |
+| Event Name         | Description                        | Callback Parameters       |
+| ------------------ | ---------------------------------- | ------------------------- |
+| change             | Triggered when an option changes   | `index: number`           |
+| update:modelValue  | Triggered when the value changes   | `value: string \| number` |
 
 ### Slots
 
-| Slot Name | Description  | Value |
-| --------- | ------------ | ----- |
-| default   | Default slot | -     |
+| Slot Name | Description   | Accepted Values |
+| --------- | ------------- | --------------- |
+| default   | Default slot  | -               |
 
 ### Typings
 
@@ -338,11 +338,11 @@
 
 ```ts
 export interface SubSectionItemVo extends AnyObject {
-    /** 显示文本 */
+    /** Display text */
     name: string;
-    /** 对应值 */
+    /** Corresponding value */
     value: string | number;
-    /** 扩展字段 */
+    /** Extended fields */
     [key: string]: any;
 }
 
@@ -353,13 +353,16 @@ export type SubSectionVo = string | number | SubSectionItemVo;
 
 ### CSS Variables
 
-| Variable Name                  | Description            | Default                          |
-| ------------------------------ | ---------------------- | -------------------------------- |
-| `--hy-subsection-height`       | Outer height           | `35px`                           |
-| `--hy-subsection-padding`      | Outer padding          | `3px`                            |
-| `--hy-subsection-inner-height` | Inner slider height    | `32px`                           |
-| `--hy-subsection-font-size`    | Font size              | `12px`                           |
-| `--hy-subsection-line-height`  | Line height            | `14px`                           |
-| `--hy-subsection-radius`       | Overall border radius  | Follows `--hy-radius-sm` (8rpx)  |
+| Variable                            | Description                            | Default                           |
+| ----------------------------------- | -------------------------------------- | --------------------------------- |
+| `--hy-subsection-height`            | Outer height                           | `35px`                            |
+| `--hy-subsection-padding`           | Outer padding                          | `3px`                             |
+| `--hy-subsection-inner-height`      | Inner slider height                    | `32px`                            |
+| `--hy-subsection-font-size`         | Font size                              | `12px`                            |
+| `--hy-subsection-line-height`       | Line height                            | `14px`                            |
+| `--hy-subsection-radius`            | Overall border radius                  | Follows `--hy-radius-sm` (8rpx)   |
+| `--hy-subsection-bar-background`    | Slider background color                | Follows `--hy-background--container` |
+| `--hy-subsection-button-background` | Base slot background color in button mode | Follows `--hy-background--3`   |
+| `--hy-subsection-primary`           | Theme color                            | Follows `--hy-primary`            |
 
 <demo-model url="pages-design/subsection/subsection"></demo-model>

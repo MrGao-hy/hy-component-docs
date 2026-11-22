@@ -1,6 +1,6 @@
-# ReadMore Expand-to-Read-More Component
+# ReadMore Expand to Read More Component
 
-> This component is typically used for scenarios where the content is long: part of it is initially collapsed, and clicking expands the full content.
+> This component is generally used in scenarios where the content is long: part of it is initially collapsed, and clicking expands the full content.
 
 ## :pushpin: Platform Compatibility
 
@@ -8,7 +8,7 @@
 | -------- | --- | ------------------- | ------------------- |
 | ✔        | ✔   | ✔                   | ✔                   |
 
-## :japanese_castle: Basic Usage Example
+## :japanese_castle: Basic Usage
 
 ```html
 <!-- Global usage -->
@@ -20,14 +20,14 @@
 ```ts
 import { ref } from 'vue';
 
-const content = ref(`A mountain needs no height; with immortals it gains fame. Water needs no depth; with a dragon it gains spirit. Though this is a humble room, my virtue lends it fragrance.
-Moss creeps green up the steps; grass hues drift blue through the blinds. Scholars chat and laugh here; no unlearned visitors come. One may strum the plain zither or read the golden classics.
-No strings and pipes to disturb the ear, no scrolls and ledgers to weary the body. Like Zhuge's cottage in Nanyang and Ziyun's pavilion in western Shu. As Confucius said: "How can it be humble?"`);
+const content = ref(`A mountain need not be high; with immortals dwelling there, it gains renown. Water need not be deep; with a dragon dwelling there, it gains spirit. Though this is a humble room, my virtue lends it fragrance.
+Moss creeps green up the steps, and the color of grass reflects through the curtains. Learned scholars chat and laugh here; no commoners come and go. One may play the unadorned qin or read the golden scriptures.
+No cacophony of pipes and strings deafens the ears, no official documents weary the body. It is like Zhuge Liang's hut in Nanyang and Ziyun's pavilion in Western Shu. As Confucius said: "What is humble about it?"`);
 ```
 
 ### Configuring the Expand Height
 
-- By configuring the `showHeight` height in px, the "Expand to read full text" button will only appear if the height of the content passed in via the slot exceeds this value
+- By setting the `showHeight` height (in px), the "Read more" button will only appear when the content passed in via the slot exceeds this height
 
 ```html
 <hy-read-more showHeight="600">
@@ -37,9 +37,9 @@ No strings and pipes to disturb the ear, no scrolls and ledgers to weary the bod
 
 ### Custom Styles
 
-::: warning Note
+::: warning Tip
 
-The upper part of this component has a white fading shadow, used to blend the click area with the text content. If you don't want this shadow, you can adjust the shadowStyle object, whose internals are as follows:
+The upper part of this component has a white blurred shadow, used to blend the clickable area with the text content. If you don't want this shadow, you can adjust the shadowStyle object, whose internal structure is as follows:
 
 ```javascript
 {
@@ -47,7 +47,7 @@ The upper part of this component has a white fading shadow, used to blend the cl
     backgroundImage: "linear-gradient(-180deg, rgba(255, 255, 255, 0) 0%, #fff 80%)",
     // #endif
     // #ifdef APP-NVUE
-    // Complex backgroundImage properties are not supported on nvue
+    // nvue does not support setting complex backgroundImage properties
     backgroundImage: "linear-gradient(to top, #fff, rgba(255, 255, 255, 0.5))",
     // #endif
     paddingTop: "100px",
@@ -57,7 +57,7 @@ The upper part of this component has a white fading shadow, used to blend the cl
 
 :::
 
-- If you don't want the shadow, simply set `backgroundImage` to `none`, and adjust `paddingTop` and `marginTop` to appropriate values yourself.
+- If you don't want the shadow, simply set `backgroundImage` to `none`. As for `paddingTop` and `marginTop`, adjust them to appropriate values as needed.
 
 ```html
 <template>
@@ -77,99 +77,47 @@ The upper part of this component has a white fading shadow, used to blend the cl
 </script>
 ```
 
-### Asynchronous Initialization
-
-::: warning Note
-
-Sometimes the content to be displayed is fetched from the backend. When the component initializes in its internal mounted lifecycle, the request has not yet returned, which can cause an inaccuracy in the content height during initialization. After the request completes and rendering finishes (i.e., in `this.$nextTick`), you can call the component's init method via ref to re-initialize it.
-
-:::
-
-```html
-<template>
-    <hy-read-more showHeight="600" ref="uReadMoreRef">
-        <rich-text :nodes="content"></rich-text>
-    </hy-read-more>
-</template>
-
-<script setup>
-    import { ref, onMounted, nextTick } from 'vue';
-
-    // Create reactive data
-    const content = ref('');
-
-    // Create component reference
-    const uReadMoreRef = ref(null);
-
-    // Simulate a backend request
-    async function fetchData() {
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                resolve(`A mountain needs no height; with immortals it gains fame. Water needs no depth; with a dragon it gains spirit. Though this is a humble room, my virtue lends it fragrance.
-      Moss creeps green up the steps; grass hues drift blue through the blinds. Scholars chat and laugh here; no unlearned visitors come. One may strum the plain zither or read the golden classics.
-      No strings and pipes to disturb the ear, no scrolls and ledgers to weary the body. Like Zhuge's cottage in Nanyang and Ziyun's pavilion in western Shu. As Confucius said: "How can it be humble?"`);
-            }, 2000);
-        });
-    }
-
-    // Called after the component is mounted
-    onMounted(async () => {
-        await fetchData();
-        content.value = text;
-
-        // Wait for the DOM to update
-        await nextTick();
-
-        // Call the init method of the child component
-        if (uReadMoreRef.value) {
-            uReadMoreRef.value.init();
-        }
-    });
-</script>
-```
-
 ## API
 
 ### readMore Props
 
-| Prop | Description | Type | Default |
+| Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
 | showHeight | The "expand full text" button is only displayed when the content exceeds this height; the default unit is px | `string`\|`number` | 400 |
 | toggle | Whether to show a collapse button after expanding | `boolean` | false |
-| closeText | Prompt text when collapsed | `string` | Expand to read full text |
+| closeText | Prompt text when collapsed | `string` | Read more |
 | openText | Prompt text when expanded | `string` | Collapse |
 | color | Color of the prompt text | `string` | - |
 | fontSize | Size of the prompt text; the default unit is px | `string`\|`number` | 14 |
-| textIndent | Number of characters to indent the first line of a paragraph | `string` | 2em |
+| textIndent | Number of characters for the first-line indent of paragraphs | `string` | 2em |
 | name | Used as the callback parameter returned in the open and close events | `string` | - |
 | shadowStyle | Custom handling of the shadow, in object form | `CSSProperties` | - |
 | customStyle | External styles to be applied | `CSSProperties` | - |
+| customClass | Custom external class name | `string` | - |
 
 ### Events
 
 | Event Name | Description | Callback Parameter |
-| ---------- | ----------- | ------------------ |
-| open       | Triggered when the content is expanded | name - the value of the name prop passed in |
-| close      | Triggered when the content is collapsed | name - the value of the name prop passed in |
+| ------ | ---------------- | ------------------------------ |
+| open   | Triggered when the content is expanded | name - the name parameter value passed in props |
+| close  | Triggered when the content is collapsed | name - the name parameter value passed in props |
 
 ### Slots
 
-| Slot Name | Description | Accepted Value |
-| --------- | ----------- | -------------- |
-| default   | Default slot | -              |
-
-### Methods
-
-| Method | Description |
-| ------ | ----------- |
-| init   | Re-initializes the component's internal height calculation process |
+| Slot Name | Description | Accepted Values |
+| ------- | -------- | ------ |
+| default | Default slot | -      |
 
 ### CSS Variables
 
-| Variable Name                 | Description | Default |
-| ----------------------------- | ----------- | ------- |
-| `--hy-read-more-font-size`   | Font size | `15px`  |
+| Variable | Description | Default |
+| --- | --- | --- |
+| `--hy-read-more-font-size` | Font size | `15px` |
 | `--hy-read-more-mask-height` | Gradient mask height | `100px` |
-| `--hy-read-more-line-height` | Line height | `30px`  |
+| `--hy-read-more-line-height` | Line height | `30px` |
+| `--hy-read-more-mask-background` | Gradient background color of the expand mask (fades from transparent to this color) | Follows `--hy-background--container` |
+| `--hy-read-more-primary` | Primary color | Follows `--hy-primary` |
+| `--hy-read-more-text-margin` | Right margin of the expand text | Follows `--hy-border-margin-padding-sm` |
+| `--hy-read-more-toggle-margin` | Top and bottom margins of the expand button | Follows `--hy-border-margin-padding-sm` |
 
 <demo-model url="pages-design/readMore/readMore"></demo-model>

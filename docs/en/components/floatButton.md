@@ -1,12 +1,12 @@
-# FloatButton Floating Button
+# FloatButton Floating Button Component
 
 > A floating action button component that displays a set of action buttons when pressed.
 
 ## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ------------------- | ------------------- |
-| ✔        | ✔   | ✔                   | ✔                   |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
 ## :japanese_castle: Basic Usage Examples
 
@@ -47,10 +47,10 @@
 
 ### FloatButton Size
 
-- Set the float button size via `size`
-    - `small`: small button
-    - `medium`: medium button
-    - `large`: large button
+- Set the floating button size via `size`
+    - `small` small button
+    - `medium` medium button
+    - `large` large button
     - Enter a number or a number with a unit to customize the button size
 
 ```html
@@ -65,9 +65,9 @@
 
 ### FloatButton Shape
 
-- Set different float button shapes via `shape`
-    - `circle`: circular
-    - `square`: square
+- Set different shapes of the floating button via `shape`
+    - `circle` round
+    - `square` square
 
 ```html
 <template>
@@ -76,15 +76,15 @@
 </template>
 ```
 
-### FloatButton Open Direction
+### FloatButton Opening Direction
 
-- Set different expansion directions for the float button via `direction`
-    - `column`: expands upward
-    - `row`: expands horizontally
+- Set the direction in which the floating button opens via `direction`
+    - `column` expands upward
+    - `row` expands horizontally
 
 ::: tip Note
 
-Horizontal display expands to the right by default; if the `left` value is greater than half of the screen width, it will expand to the left instead.
+In horizontal mode, the menu expands to the right by default; if the left value is greater than half of the screen width, it will expand to the left.
 
 :::
 
@@ -102,7 +102,7 @@ Horizontal display expands to the right by default; if the `left` value is great
 
 ### Whether to Float
 
-- Set whether the float button floats via `float`
+- Set whether the floating button floats via `float`
 
 ```html
 <template>
@@ -110,9 +110,9 @@ Horizontal display expands to the right by default; if the `left` value is great
 </template>
 ```
 
-### Show Shadow
+### Showing a Shadow
 
-- Set whether the float button displays a shadow via `shadow`
+- Set whether the floating button shows a shadow via `shadow`
 
 ```html
 <template>
@@ -120,80 +120,71 @@ Horizontal display expands to the right by default; if the `left` value is great
 </template>
 ```
 
-### Set Opacity
-
-- Set the float button's opacity via `opacity`
-
-```html
-<template>
-    <hy-float-button :opacity="0.1"></hy-float-button>
-</template>
-```
-
 ## API
 
 ### FloatButton Props
 
-| Parameter    | Description                                                                  | Type                     | Default Value                                   |
-| ------------ | ---------------------------------------------------------------------------- | ------------------------ | ----------------------------------------------- |
-| menus        | Menu collection                                                              | `(string\|AnyObject)[]`  | -                                               |
-| direction    | Open direction[^1]                                                           | `row`\|`column`          | column                                          |
-| icon         | Icon displayed on the button                                                 | `string`                 | PLUS                                            |
-| iconSize     | Button icon size, numeric values default to px                               | `number`\|`string`       | -                                               |
-| iconColor    | Button icon color                                                            | `string`                 | #FFFFFF                                         |
-| gap          | Spacing between the float button and the edge of the visible area, numeric values default to px | `Object`        | \{ left: 16, right: 16, top: 16, bottom: 40 \}  |
-| zIndex       | z-index                                                                      | `number`                 | 10086                                           |
-| bgColor      | Button background color                                                      | `string`                 | -                                               |
-| text         | Button text                                                                  | `string`                 | -                                               |
-| fontSize     | Button text size, numeric values default to px                               | `number`\|`string`       | 12px                                            |
-| textColor    | Button text color                                                            | `string`                 | -                                               |
-| size         | Button size[^2]                                                              | `string`                 | medium                                          |
-| shape        | Button shape[^3]                                                             | `circle`\|`square`       | circle                                          |
-| opacity      | Button opacity                                                               | `number`                 | 1                                               |
-| shadow       | Whether to show a shadow                                                     | `boolean`                | true                                            |
-| float        | Whether to show the floating animation                                       | `boolean`                | true                                            |
-| fixed        | Whether to fix the position                                                  | `boolean`                | true                                            |
-| draggable    | Whether the float button can be dragged                                      | `boolean`                | true                                            |
-| position     | Float button position[^4]                                                    | `string`                 | 'right-bottom'                                  |
-| expandable   | Controls whether the menu expands on click                                   | `boolean`                | true                                            |
-| customStyle  | Custom external styles to be applied                                         | `CSSProperties`          | -                                               |
-| customClass  | Custom external class name                                                   | `string`                 | -                                               |
+| Prop | Description | Type | Default |
+| --- | --- | --- | --- |
+| menus | Menu collection | `(string\|AnyObject)[]` | - |
+| direction | Opening direction[^1] | `row`\|`column` | column |
+| icon | Icon displayed on the button | `string` | PLUS |
+| iconSize | Size of the button icon; numbers default to px | `number`\|`string` | - |
+| iconColor | Color of the button icon | `string` | #FFFFFF |
+| gap | Spacing between the floating button and the edge of the visible area; numbers default to px | `Object` | \{ left: 16, right: 16, top: 16, bottom: 40 \} |
+| zIndex | Stack level | `number` | 10086 |
+| bgColor | Button background color | `string` | - |
+| text | Button text | `string` | - |
+| fontSize | Button text size; numbers default to px | `number`\|`string` | 12px |
+| textColor | Button text color | `string` | - |
+| size | Button size[^2] | `string` | medium |
+| shape | Button shape[^3] | `circle`\|`square` | circle |
+| shadow | Whether to show a shadow | `boolean` | true |
+| float | Whether to show the floating animation | `boolean` | true |
+| fixed | Whether to fix the position | `boolean` | true |
+| draggable | Whether the floating button can be dragged | `boolean` | true |
+| position | Floating button position[^4] | `string` | 'right-bottom' |
+| expandable | Controls whether the menu expands when clicked | `boolean` | true |
+| customStyle | Custom external styles to be applied | `CSSProperties` | - |
+| customClass | Custom external class name | `string` | - |
 
 ### gap
 
-| Parameter | Description                           | Type     | Default |
-| --------- | ------------------------------------- | -------- | ------- |
-| left      | Minimum distance from the left edge   | `number` | 16      |
-| right     | Minimum distance from the right edge  | `number` | 16      |
-| top       | Minimum distance from the top edge    | `number` | 16      |
-| bottom    | Minimum distance from the bottom edge | `number` | 40      |
+| Prop    | Description                     | Type     | Default |
+| ------ | ------------------------ | -------- | ------ |
+| left   | Minimum distance from the left edge | `number` | 16     |
+| right  | Minimum distance from the right edge | `number` | 16     |
+| top    | Minimum distance from the top | `number` | 16     |
+| bottom | Minimum distance from the bottom | `number` | 40     |
 
 ### Events
 
-| Event Name | Description              | Callback Parameters                     |
-| ---------- | ------------------------ | --------------------------------------- |
-| click      | Click on the button      | -                                       |
-| clickItem  | Click on a menu item     | temp: menu data, index: index           |
+| Event Name | Description | Callback Parameters                       |
+| --------- | ---------- | ----------------------------- |
+| click     | Triggered when the button is clicked   | -                             |
+| clickItem | Triggered when a menu item is clicked | temp: menu item data, index: index |
 
 ### Slots
 
-| Slot Name | Description    | Received Value |
-| --------- | -------------- | -------------- |
-| default   | Button content | -              |
+| Slot Name | Description | Accepted Values |
+| ------- | -------- | ------ |
+| default | Button content | -      |
 
 ### CSS Variables
 
-| Variable Name                        | Description            | Default Value                          |
-| ------------------------------------ | ---------------------- | -------------------------------------- |
-| `--hy-float-button-radius`           | Button border radius   | Follows `--hy-radius-sm` (8rpx)        |
-| `--hy-float-button-menus-max-height` | Menu max height        | `250px`                                |
-| `--hy-float-button-menu-font-size`   | Menu font size         | Follows `--hy-font-size-base` (28rpx)  |
+| Variable Name                        | Description           | Default Value                       |
+| ------------------------------------ | ------------ | ----------------------------------- |
+| `--hy-float-button-radius`           | Button border radius     | Follows `--hy-radius-sm` (8rpx)       |
+| `--hy-float-button-menus-max-height` | Maximum menu height | `250px`                             |
+| `--hy-float-button-menu-font-size`   | Menu font size     | Follows `--hy-font-size-base` (28rpx) |
+| `--hy-float-button-primary`          | Theme color       | Follows `--hy-primary`                 |
+| `--hy-float-button-shadow-base`      | Base shadow     | Follows `--hy-shadow-base`             |
 
 [^1]: `row`: horizontal; `column`: vertical
 
-[^2]: `circle`: semicircular on both sides; `square`: square with rounded corners
+[^2]: `circle`: semicircles on both sides; `square`: square with rounded corners
 
-[^3]: `normal`: default size; `large`: large size; `small`: small size; `number`: any size;
+[^3]: `normal`: default size; `large`: large size; `small`: small size, `number`: any size;
 
 [^4]: `left-top`: top-left; `left-bottom`: bottom-left; `right-top`: top-right; `right-bottom`: bottom-right; `left-center`: middle-left; `right-center`: middle-right; `top-center`: top-center; `bottom-center`: bottom-center;
 

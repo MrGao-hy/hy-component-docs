@@ -5,15 +5,15 @@
 ## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ---------- | ------------ |
-| ✔        | ✔   | ✔          | ✔            |
+| -------- | --- | ------------------- | ------------------- |
+| ✔        | ✔   | ✔                   | ✔                   |
 
 ## :japanese_castle: Basic Usage Example
 
 ::: code-group
 
 ```html [vue]
-<!-- Global usage -->
+<!-- 全局使用 -->
 <hy-form-group :columns="columns" :formData="formData"></hy-form-group>
 ```
 
@@ -23,7 +23,7 @@ import { HyWarn, FormTypeEnum } from 'hy-app';
 import type { FormColumnsType } from 'hy-app';
 
 const formData: AnyObject = reactive({
-    custom: 'Custom value',
+    custom: '自定义值',
     isShow: true,
     sex: '1',
 });
@@ -32,36 +32,36 @@ const formRef = ref<InstanceType<typeof HyForm>>(null);
 const columns: FormColumnsType[] = reactive([
     {
         field: 'name',
-        label: 'Name',
+        label: '名字',
         type: FormTypeEnum.TEXT,
         rules: {
             required: true,
-            message: 'No content entered',
+            message: '没有填内容',
             trigger: ['blur'],
         },
     },
     {
         field: 'sex',
-        label: 'Gender',
+        label: '性别',
         type: FormTypeEnum.RADIO,
         actions: [
-            { label: 'Female', value: '0' },
-            { label: 'Male', value: '1' },
+            { label: '女', value: '0' },
+            { label: '男', value: '1' },
         ],
         rules: {
             required: true,
-            message: 'No content entered',
+            message: '没有填内容',
             trigger: ['blur', 'change'],
         },
     },
     {
         field: 'phone',
-        label: 'Phone Number',
+        label: '手机号',
         type: FormTypeEnum.TEXT,
         rules: [
             {
                 required: true,
-                message: 'Please enter your phone number',
+                message: '请输入您的手机号',
                 trigger: ['blur', 'change'],
             },
             {
@@ -72,7 +72,7 @@ const columns: FormColumnsType[] = reactive([
     },
     {
         field: 'password',
-        label: 'Password',
+        label: '密码',
         type: FormTypeEnum.PASSWORD,
         rules: {
             type: 'password',
@@ -81,66 +81,66 @@ const columns: FormColumnsType[] = reactive([
     },
     {
         field: 'isShow',
-        label: 'Disabled',
+        label: '是否禁用',
         type: FormTypeEnum.SWITCH,
     },
     {
         field: 'time',
-        label: 'Date',
+        label: '日期',
         type: FormTypeEnum.DATE,
         border: 'bottom',
         rules: {
             required: true,
-            message: 'Please enter your date',
+            message: '请输入您的日期',
             trigger: ['blur', 'change'],
         },
     },
     {
         field: 'address',
-        label: 'Address',
+        label: '地址',
         type: FormTypeEnum.ADDRESS,
         rules: {
             required: true,
-            message: 'Please enter your address',
+            message: '请输入您的地址',
             trigger: ['blur', 'change'],
         },
     },
     {
         field: 'select',
-        label: 'Select Education',
+        label: '选择学历',
         type: FormTypeEnum.SELECT,
         select: [
             [
-                { text: 'Primary School', id: '1' },
-                { text: 'Junior High', id: '2' },
-                { text: 'Senior High', id: '3' },
-                { text: 'University', id: '4' },
+                { text: '小学', id: '1' },
+                { text: '初中', id: '2' },
+                { text: '高中', id: '3' },
+                { text: '大学', id: '4' },
             ],
         ],
         rules: {
             required: true,
-            message: 'Please select your education',
+            message: '请输入您的学历',
             trigger: ['blur', 'change'],
         },
     },
     {
         field: 'age',
-        label: 'Age',
+        label: '年龄',
         type: FormTypeEnum.NUMBER,
         rules: [
             {
                 required: true,
-                message: 'Please enter your age',
+                message: '请输入您的年龄',
                 trigger: ['blur', 'change'],
             },
             {
                 required: true,
-                message: 'Cannot be less than the minimum value',
+                message: '不能小于最小值',
                 min: 10,
                 trigger: ['blur', 'change'],
             },
             {
-                message: 'Cannot exceed the maximum value',
+                message: '不能大于最大值',
                 max: 20,
                 trigger: ['change'],
             },
@@ -148,11 +148,11 @@ const columns: FormColumnsType[] = reactive([
     },
     {
         field: 'remark',
-        label: 'Remarks',
+        label: '备注',
         type: FormTypeEnum.TEXTAREA,
         rules: {
             required: true,
-            message: 'Please enter your address',
+            message: '请输入您的地址',
             trigger: ['blur', 'change'],
         },
     },
@@ -171,7 +171,7 @@ const handleSubmit = () => {
 
 ::: danger Note
 
-WeChat Mini Program difference: WeChat Mini Programs cannot dynamically set slots, so custom slots are not supported. The documentation will be updated if other solutions become available.
+WeChat Mini Program difference: WeChat Mini Programs cannot set slots dynamically, so custom slots are not supported. The documentation will be updated if another solution becomes available.
 
 :::
 
@@ -195,11 +195,11 @@ import type { FormColumnsType } from 'hy-app';
 const columns: FormColumnsType[] = reactive([
     {
         field: 'custom',
-        label: 'Custom Content',
+        label: '自定义内容',
         type: FormTypeEnum.CUSTOM,
         rules: {
             required: true,
-            message: 'Please enter your custom content',
+            message: '请输入您的自定义内容',
             trigger: ['blur', 'change'],
         },
     },
@@ -210,77 +210,79 @@ const columns: FormColumnsType[] = reactive([
 
 ## API
 
-| Parameter      | Description                                          | Type                       | Default |
-| -------------- | ---------------------------------------------------- | -------------------------- | ------- |
-| columns        | Form field configuration                             | `array`                    | -       |
-| formData       | Form values                                          | `object`                   | -       |
-| labelPosition  | Position of the form label                           | `left`\|`top`              | left    |
-| labelWidth     | Label width                                          | `string`\|`number`         | auto    |
-| right          | Whether input values are right-aligned               | `boolean`                  | false   |
-| labelAlign     | Alignment of the label text                          | `left`\|`center`\|`right`  | left    |
-| border         | Show bottom underline for each form row              | `boolean`                  | false   |
-| disabled       | Disable the form[^1]                                 | `boolean`                  | false   |
-| input          | Collection of [Input API properties](./input#api)    | `HyInputProps`             | -       |
-| textarea       | Collection of [Textarea API properties](./textarea#api) | `HyTextareaProps`       | -       |
-| picker         | Collection of [Picker API properties](./picker#api)  | `HyPickerProps`            | -       |
-| switchItem     | Collection of [Switch API properties](./switch#api)  | `HySwitchProps`            | -       |
-| radio          | Collection of [Radio API properties](./radio#api)    | `HyRadioProps`             | -       |
-| checkButton    | Collection of [CheckButton API properties](./checkButton#api) | `HyCheckButtonProps` | -       |
+| Parameter      | Description                                    | Type                       | Default |
+| -------------- | ---------------------------------------------- | -------------------------- | ------- |
+| columns        | Form field configuration                       | `array`                    | -       |
+| formData       | Form values                                    | `object`                   | -       |
+| labelPosition  | Position of the form label                     | `left`\|`top`              | left    |
+| labelWidth     | Label width                                    | `string`\|`number`         | auto    |
+| right          | Whether the input value is right-aligned       | `boolean`                  | false   |
+| labelAlign     | Alignment of the label text                    | `left`\|`center`\|`right`  | left    |
+| border         | Show a bottom underline for each form row      | `boolean`                  | false   |
+| disabled       | Disable the form[^1]                           | `boolean`                  | false   |
+| input          | Collection of [Input props API](./input#api)   | `HyInputProps`             | -       |
+| textarea       | Collection of [Textarea props API](./textarea#api) | `HyTextareaProps`       | -       |
+| picker         | Collection of [Picker props API](./picker#api) | `HyPickerProps`            | -       |
+| switchItem     | Collection of [Switch props API](./switch#api) | `HySwitchProps`            | -       |
+| radio          | Collection of [Radio props API](./radio#api)   | `HyRadioProps`             | -       |
+| checkButton    | Collection of [CheckButton props API](./checkButton#api) | `HyCheckButtonProps` | -       |
+| customClass    | Custom external class name                     | `string`                   | -       |
+| customStyle    | External styles to be applied                  | `CSSProperties`            | -       |
 
 ### columns
 
-| Parameter  | Description                                                             | Type                          | Default |
-| ---------- | ----------------------------------------------------------------------- | ----------------------------- | ------- |
-| label      | Text description                                                        | `string`                      | -       |
-| field      | Field name                                                              | `string`                      | -       |
-| right      | Pin content to the right                                                | `boolean`                     | -       |
-| type       | [Form type](./formGroup#type) (see the enumerated fields below).        | `enum`                        | -       |
-| maxCount   | Maximum number of file uploads (when type is upload)                    | `number`                      | -       |
-| select     | Picker configuration data collection[^2]                                | `string[][]`\|`{text:string;id:string}[][]` | - |
-| actions    | Radio configuration data collection[^3]                                 | `string`                      | -       |
-| mode       | Date display format (optional when type is date)                        | `enum`                        | -       |
-| rules      | Validation rules                                                        | `object`\|`array`             | -       |
-| input      | Collection of [Input API properties](./input#api)                       | `HyInputProps`                | -       |
-| textarea   | Collection of [Textarea API properties](./textarea#api)                 | `HyTextareaProps`             | -       |
-| picker     | Collection of [Picker API properties](./picker#api)                     | `HyPickerProps`               | -       |
-| switchItem | Collection of [Switch API properties](./switch#api)                     | `HySwitchProps`               | -       |
-| radio      | Collection of [Radio API properties](./radio#api)                       | `HyRadioProps`                | -       |
-| checkButton| Collection of [CheckButton API properties](./checkButton#api)           | `HyCheckButtonProps`          | -       |
+| Parameter   | Description                                                       | Type                          | Default |
+| ----------- | ----------------------------------------------------------------- | ----------------------------- | ------- |
+| label       | Text description                                                  | `string`                      | -       |
+| field       | Field name                                                        | `string`                      | -       |
+| right       | Content fixed to the right                                        | `boolean`                     | -       |
+| type        | [Form type](./formGroup#type) (see the enumerated fields below).  | `enum`                        | -       |
+| maxCount    | Maximum number of file uploads (when type is upload)              | `number`                      | -       |
+| select      | Picker configuration data collection[^2]                          | `string[][]`\|`{text:string;id:string}[][]` | - |
+| actions     | Radio configuration data collection[^3]                           | `string`                      | -       |
+| mode        | Date display format (optional when type is date)                  | `enum`                        | -       |
+| rules       | Validation rules                                                  | `object`\|`array`             | -       |
+| input       | Collection of [Input props API](./input#api)                      | `HyInputProps`                | -       |
+| textarea    | Collection of [Textarea props API](./textarea#api)                | `HyTextareaProps`             | -       |
+| picker      | Collection of [Picker props API](./picker#api)                    | `HyPickerProps`               | -       |
+| switchItem  | Collection of [Switch props API](./switch#api)                    | `HySwitchProps`               | -       |
+| radio       | Collection of [Radio props API](./radio#api)                      | `HyRadioProps`                | -       |
+| checkButton | Collection of [CheckButton props API](./checkButton#api)          | `HyCheckButtonProps`          | -       |
 
 ### actions
 
-| Parameter | Description           | Type                | Default |
-| --------- | --------------------- | ------------------- | ------- |
-| label     | Displayed text content | `string`           | -       |
-| value     | Retrieved value       | `string`\|`number`  | -       |
-| checked   | Whether selected      | `boolean`           | -       |
-| disabled  | Whether disabled      | `boolean`           | -       |
+| Parameter | Description            | Type                 | Default |
+| --------- | ---------------------- | -------------------- | ------- |
+| label     | Displayed text content | `string`             | -       |
+| value     | The obtained value     | `string`\|`number`   | -       |
+| checked   | Whether selected       | `boolean`            | -       |
+| disabled  | Whether disabled       | `boolean`            | -       |
 
 ### rules
 
-| Parameter | Description                                                         | Type                         | Default |
-| --------- | ------------------------------------------------------------------- | ---------------------------- | ------- |
-| required  | Whether required                                                    | `boolean`                    | -       |
-| message   | Message shown when validation fails                                 | `string`                     | -       |
-| trigger   | Form event validation                                               | `(blur\|change)[]`           | -       |
-| min       | Minimum number of input characters                                  | `number`                     | -       |
-| max       | Maximum number of input characters                                  | `number`                     | -       |
-| type      | Phone number, email, or complex password validation                 | `phone`\|`email`\|`password` | -       |
-| validator | Custom validation rule                                              | `Function`                   | -       |
+| Parameter | Description                                                        | Type                        | Default |
+| --------- | ------------------------------------------------------------------ | --------------------------- | ------- |
+| required  | Whether required                                                   | `boolean`                   | -       |
+| message   | Error message shown when validation fails                          | `string`                    | -       |
+| trigger   | Form event validation                                              | `(blur\|change)[]`          | -       |
+| min       | Minimum number of input characters                                 | `number`                    | -       |
+| max       | Maximum number of input characters                                 | `number`                    | -       |
+| type      | Phone number validation, email validation, complex password validation | `phone`\|`email`\|`password` | -    |
+| validator | Custom validation rule                                             | `Function`                  | -       |
 
 ### type Values
 
 - `UPLOAD` File upload
-- `TEXT` Regular text input
+- `TEXT` Regular input
 - `NUMBER` Number input
 - `PASSWORD` Password input
 - `ID_CARD` ID card input
 - `RADIO` Radio
-- `DATE` Time picker
+- `DATE` Date picker
 - `SELECT` Selector
 - `ADDRESS` Address picker
 - `SWITCH` Switch
-- `DETAIL` Detail
+- `DETAIL` Details
 - `TEXTAREA` Textarea
 - `CUSTOM` Custom slot
 
@@ -296,17 +298,23 @@ const columns: FormColumnsType[] = reactive([
 
 ## Methods
 
-| Method Name   | Description     | Parameters            |
-| ------------- | --------------- | --------------------- |
-| validate      | Validate the form | -                   |
-| resetFields   | Reset the form    | -                   |
+| Method        | Description      | Parameters            |
+| ------------- | ---------------- | --------------------- |
+| validate      | Validate the form | -                    |
+| resetFields   | Reset the form    | -                     |
 | clearValidate | Clear validation  | `(fields?: string[])` |
-| submit        | Submit the form   | -                   |
+| submit        | Submit the form   | -                     |
 
-[^1]: This disabled option takes priority over the disabled setting in columns
+[^1]: This disabled state takes precedence over the disabled property within columns.
 
-[^2]: Required when type = select (see the [HyPicker](./picker.md) component)
+[^2]: Required when type = select (see the [HyPicker](./picker.md) component).
 
-[^3]: Required when type = radio (see the [HyRadio](./radio.md) component)
+[^3]: Required when type = radio (see the [HyRadio](./radio.md) component).
+
+### FormGroup Slots
+
+| Slot Name | Description                              | Received Values |
+| --------- | ---------------------------------------- | --------------- |
+| default   | Default slot, used for custom content    | -               |
 
 <demo-model url="pages-design/formGroup/formGroup"></demo-model>

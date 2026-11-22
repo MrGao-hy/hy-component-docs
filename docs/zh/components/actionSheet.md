@@ -194,7 +194,7 @@ list = {
 
 <script setup lang="ts">
     import { ref } from 'vue';
-    import type { IActionSheetAction } from '@/package/components/hy-action-sheet/typing';
+    import type { IActionSheetAction } from '@hy-app/ui';
 
     const show = ref(false);
 

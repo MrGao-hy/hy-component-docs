@@ -1,14 +1,14 @@
 # Loading Animation Component
 
-> This component is a small animation, currently used in the loading state scenarios of Hy's loadMore (Load More) and other components.
+> This component is a small animation, currently used in Hy's loadMore (load more) and other components for their loading state scenarios.
 
-## :pushpin: Platform Differences
+## :pushpin: Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
 | -------- | --- | ------------------- | ------------------- |
 | ✔        | ✔   | ✔                   | ✔                   |
 
-## :japanese_castle: Basic Usage Examples
+## :japanese_castle: Basic Usage Example
 
 ```html
 <!-- Global usage -->
@@ -29,9 +29,9 @@
 ### Mode Types
 
 - Configure `mode` to specify the mode
-    - `spinner` flower petal style (default)
+    - `spinner` petal shape (default)
     - `circle` ring loading style
-    - `semicircle` half-circle loading style
+    - `semicircle` semicircle loading style
     - `dots` bouncing dots loading style
     - `bars` sound wave bars loading style
 
@@ -45,7 +45,7 @@
 </template>
 ```
 
-### Layout Type
+### Layout Types
 
 - Configure `direction` to specify whether the text and icon are arranged vertically
     - `row` loading icon and text arranged horizontally
@@ -60,7 +60,7 @@
 
 ### Animation Mode
 
-- `timing-function` can specify the `animation-timing-function` CSS property of the animation when `mode` is `semicircle` or `circle`, defaults to `ease-in-out`
+- `timing-function` can specify the `animation-timing-function` CSS property of the animation when `mode` is `semicircle` or `circle`; the default is `ease-in-out`
 
 ```html
 <template>
@@ -104,34 +104,37 @@
 
 ### Loading Props
 
-| Parameter | Description | Type | Default Value |
+| Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
 | show | Whether to show the animation | `boolean` | true |
 | color | Icon color | `string` | - |
-| textColor | Prompt text color | `string` | #909399 |
+| textColor | Hint text color | `string` | #909399 |
 | direction | Whether the icon and text are arranged vertically | `column`\|`row` | row |
 | mode | Mode selection[^1] | `spinner`\|`circle`\|`semicircle`\|`dots` \|`bars` | spinner |
-| size | Loading icon size, default unit in px | `string` \| `number` | 24 |
-| textSize | Loading text size, default unit in px | `string` \| `number` | 15 |
+| size | Size of the loading icon, default unit px for numeric values | `string` \| `number` | 24 |
+| textSize | Size of the loading text, default unit px for numeric values | `string` \| `number` | 15 |
 | text | Text content | `string` | - |
 | timingFunction | Specifies the animation-timing-function CSS property, only effective when mode is circle or semicircle | `ease-in-out`\|`ease-out`\| `ease-in`\|`linear`\|`ease` | ease-in-out |
 | duration | Animation execution cycle time, in ms | `number` | 1200 |
 | inactiveColor | Dark edge color of the icon, effective when mode is circle | `string` | - |
-| customStyle | Define external styles to be applied | `string` | - |
+| customStyle | Defines external styles to be applied | `string` | - |
 | customClass | Custom external class name | `string` | - |
 
-[^1]: `spinner`: flower petal shape; `circle`: circular; `small`: small size; `semicircle`: half circle
+[^1]: `spinner`: petal shape; `circle`: circle; `small`: small size; `semicircle`: semicircle
 
 ### CSS Variables
 
-| Variable Name                       | Description             | Default Value                |
-| ----------------------------------- | ----------------------- | ---------------------------- |
-| `--hy-loading-text-font-size`      | Text font size          | `14px`                       |
-| `--hy-loading-text-line-height`    | Text line height        | `20px`                       |
-| `--hy-loading-border-width`        | Ring border width       | `3px`                        |
-| `--hy-loading-bg-color`            | Ring track color        | `#e5e5e5`                    |
-| `--hy-loading-dots-gap`            | Dot spacing             | `6px`                        |
-| `--hy-loading-bars-gap`            | Bar spacing             | `3px`                        |
-| `--hy-loading-vertical-text-color` | Vertical text color     | Follows `--hy-text-color--grey` |
+| Variable | Description | Default |
+| --- | --- | --- |
+| `--hy-loading-text-font-size` | Text font size | `14px` |
+| `--hy-loading-text-line-height` | Text line height | `20px` |
+| `--hy-loading-border-width` | Ring border width | `3px` |
+| `--hy-loading-bg-color` | Ring track color | `#e5e5e5` |
+| `--hy-loading-dots-gap` | Dot spacing | `6px` |
+| `--hy-loading-bars-gap` | Bar spacing | `3px` |
+| `--hy-loading-vertical-text-color` | Vertical text color | Follows `--hy-text-color--grey` |
+| `--hy-loading-column-text-margin` | Top margin of vertically arranged text | Follows `--hy-border-margin-padding-base` |
+| `--hy-loading-primary` | Theme color | Follows `--hy-primary` |
+| `--hy-loading-row-text-margin` | Left margin of horizontally arranged text | Follows `--hy-border-margin-padding-base` |
 
 <demo-model url="pages-design/loading/loading"></demo-model>

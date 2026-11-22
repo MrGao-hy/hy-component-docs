@@ -1,8 +1,8 @@
-# Flex Flexible Layout Component
+# Flex Layout Component
 
-> Flex provides spacing for block-level elements without adding a wrapper element itself. It is suitable for arranging child elements in vertical or horizontal directions, and offers greater flexibility and control.
+> Flex provides spacing for block-level elements without adding a wrapper element itself. It is suitable for laying out child elements in vertical or horizontal directions, offering greater flexibility and control.
 
-## :pushpin:Platform Compatibility Notes
+## :pushpin:Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
 | -------- | --- | ---------- | ------------ |
@@ -32,7 +32,7 @@
 
 ### Setting Spacing
 
-- Control the spacing between elements via `gap`; the first value of the array is the horizontal spacing, and the second is the vertical spacing
+- Control the spacing between elements via `gap`. The first value in the array is the horizontal spacing, and the second is the vertical spacing
 
 ```html
 <hy-flex :gap="10">
@@ -42,7 +42,7 @@
 </hy-flex>
 ```
 
-### Automatic Wrapping
+### Auto Wrapping
 
 - Enable automatic wrapping via `wrap`
 
@@ -60,18 +60,22 @@
 
 | Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
-| vertical | Whether the flex main axis direction is vertical, using flex-direction: column | `boolean` | false |
+| vertical | Whether the flex main axis is vertical, uses flex-direction: column | `boolean` | false |
 | wrap | Sets whether elements are displayed in a single line or multiple lines | `boolean` | nowrap |
 | justify | Sets the alignment of elements along the main axis[^1] | `string` | flex-start |
 | align | Sets the alignment of elements along the cross axis[^2] | `string` | flex-start |
 | flex | flex CSS shorthand property | `string` | initial |
-| gap | Sets the gap between grids; the default unit for numeric values is px | `string`\|`number`\|`number[]` | 0 |
+| gap | Sets the gap between grid items, default unit is px | `string`\|`number`\|`number[]` | 0 |
 | basis | Controls the initial size of child elements along the main axis | `string` | auto |
 | customStyle | Custom external styles to be applied | `CSSProperties` | - |
 | customClass | Custom external class name | `string` | - |
 
+### Flex Slots
+
+| Slot Name | Description | Accepted Value | | --- | --- | --- | --- | | default | Default slot, used for custom content | - |
+
 <demo-model url="pages-design/flex/flex"></demo-model>
 
-[^1]: flex-start: left-aligned; center: centered; flex-end: right-aligned; space-between: justified, with equal spacing between items; space-around: equal spacing on both sides of each item, with the spacing between items being twice the spacing between items and the container edges; space-evenly: all spacing completely equal;
+[^1]: flex-start: left-aligned; center: center-aligned; flex-end: right-aligned; space-between: justified, with equal spacing between items; space-around: each item has equal spacing on both sides, and the spacing between items is twice the spacing between an item and the edge; space-evenly: all spacing is completely equal;
 
-[^2]: flex-start: top-aligned; center: centered; flex-end: bottom-aligned; stretch: stretched to fill the container; baseline: baseline-aligned;
+[^2]: flex-start: top-aligned; center: center-aligned; flex-end: bottom-aligned; stretch: stretched to fill the container; baseline: baseline-aligned;

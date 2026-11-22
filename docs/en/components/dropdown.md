@@ -1,12 +1,12 @@
-# Dropdown Component
+# Dropdown Menu Component
 
-> A dropdown menu component used to display filter criteria or selection operations, with support for multi-level menu selection.
+> A dropdown menu component used to display filter conditions or selection options, with support for multi-level menu selection.
 
 ## :pushpin: Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ------------------- | ------------------- |
-| ✔        | ✔   | ✔                   | ✔                   |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
 ## :warning: Notes
 
@@ -15,8 +15,8 @@
 - This component must be used together with `hy-dropdown` and `hy-dropdown-item`
 - `hy-dropdown-item` must be nested inside `hy-dropdown`
 - Use `v-model` to two-way bind the `value` of the selected item
-- Array items passed to the `menus` property must contain both `label` and `value` fields
-- Clicking a menu item will automatically close other expanded menus
+- Each item in the array passed to the `menus` prop must contain `label` and `value` fields
+- Clicking a menu item automatically closes other expanded menus
 
 :::
 
@@ -34,7 +34,7 @@
             @change="handleChange"
         ></hy-dropdown-item>
         <hy-dropdown-item
-            title="Donghua"
+            title="Chinese Animation"
             :menus="options_2"
             v-model="value_2"
             @change="handleChange"
@@ -62,7 +62,7 @@
     ]);
 
     const options_2 = ref([
-        { label: 'The Westwards', value: 1 },
+        { label: 'Journey to the West', value: 1 },
         { label: 'Battle Through the Heavens', value: 2 },
         { label: 'Swallowed Star', value: 3 },
         { label: 'Soul Land', value: 4 },
@@ -73,7 +73,7 @@
         { label: 'China', value: 1 },
         { label: 'Japan', value: 2 },
         { label: 'South Korea', value: 3 },
-        { label: 'USA', value: 4 },
+        { label: 'United States', value: 4 },
     ]);
 
     const handleChange = (item, index) => {
@@ -122,7 +122,7 @@
 </script>
 ```
 
-### Disabling an Item
+### Disable an Item
 
 ```html
 <template>
@@ -149,7 +149,7 @@
 </script>
 ```
 
-### Showing the Bottom Border
+### Show Bottom Border
 
 ```html
 <template>
@@ -193,47 +193,50 @@
 
 ### Dropdown Props
 
-| Prop              | Description                                                                 | Type                 | Default         |
-| ----------------- | --------------------------------------------------------------------------- | -------------------- | --------------- |
-| height            | Height of the title menu; numbers default to px                             | `string`\|`number`   | 40              |
-| borderBottom      | Whether the title menu shows a bottom border                                | `boolean`            | false           |
-| sticky            | Whether to use fixed positioning                                            | `boolean`            | true            |
-| activeColor       | Color of the title and tab when selected                                    | `string`             | -               |
-| inactiveColor     | Color of the title and tab when not selected                                | `string`             | #606266         |
-| titleSize         | Font size of the title and tab when selected; numbers default to px         | `string`\|`number`   | -               |
-| closeOnClickMask  | Whether clicking the mask closes the popup                                  | `boolean`            | true            |
-| menuIcon          | Icon name on the right side of the title menu                               | `string`             | ARROW_DOWN_FILL |
-| menuIconSize      | Size of the icon on the right side of the title menu; numbers default to px | `string`\|`number`   | 14              |
-| customStyle       | Custom external styles to be applied                                        | `CSSProperties`      | -               |
+| Prop             | Description                                                    | Type               | Default  |
+| ---------------- | -------------------------------------------------------------- | ------------------ | -------- |
+| height           | Height of the title menu; numeric values default to px         | `string`\|`number` | 40       |
+| borderBottom     | Whether to show the bottom border of the title menu            | `boolean`          | false    |
+| sticky           | Whether to use fixed positioning                               | `boolean`          | true     |
+| activeColor      | Color of the selected title and tab                            | `string`           | -        |
+| inactiveColor    | Color of the unselected title and tab                          | `string`           | #606266  |
+| titleSize        | Font size of the selected title and tab; defaults to px        | `string`\|`number` | -        |
+| closeOnClickMask | Close the popup when the mask is clicked                       | `boolean`          | true     |
+| menuIcon         | Name of the icon on the right side of the title menu           | `string`           | DOWN_FILL |
+| menuIconSize     | Size of the icon on the right side of the title menu; defaults to px | `string`\|`number` | 14  |
+| customStyle      | Custom external styles                                         | `CSSProperties`    | -        |
+| customClass      | Custom external class name                                     | `string`           | -        |
 
 ### DropdownItem Props
 
-| Prop     | Description                               | Type                | Default |
-| -------- | ----------------------------------------- | ------------------- | ------- |
-| v-model  | Two-way binding of the selected item's value | `string`\|`number`  | -       |
-| title    | Menu item title                           | `string`            | -       |
-| menus    | Options data                              | `array`             | []      |
-| disabled | Whether clicks are disabled               | `boolean`           | false   |
+| Prop        | Description                                  | Type               | Default |
+| ----------- | -------------------------------------------- | ------------------ | ------- |
+| v-model     | Two-way binding of the selected item's value | `string`\|`number` | -       |
+| title       | Menu item title                              | `string`           | -       |
+| menus       | Option data                                  | `array`            | []      |
+| disabled    | Whether clicks are disabled                  | `boolean`          | false   |
+| customStyle | Custom external styles                       | `CSSProperties`    | -       |
+| customClass | Custom external class name                   | `string`           | -       |
 
 ### Events
 
-| Event  | Description                      | Callback Parameters                            |
-| ------ | -------------------------------- | ---------------------------------------------- |
-| change | Triggered when an option is clicked | `item: DropdownMenuItem`, `index: number`   |
+| Event Name | Description                    | Callback Parameters                             |
+| ---------- | ------------------------------ | ----------------------------------------------- |
+| change     | Triggered when an option is clicked | `item: DropdownMenuItem`, `index: number`  |
 
 ## Slots
 
 ### Dropdown Slots
 
-| Slot    | Description               | Accepted Values |
-| ------- | ------------------------- | --------------- |
-| default | Dropdown menu item content | -               |
+| Slot Name | Description               | Accepted Values |
+| --------- | ------------------------- | --------------- |
+| default   | Dropdown menu item content | -               |
 
 ### DropdownItem Slots
 
-| Slot    | Description                | Accepted Values |
-| ------- | -------------------------- | --------------- |
-| default | Custom menu item content   | -               |
+| Slot Name | Description               | Accepted Values |
+| --------- | ------------------------- | --------------- |
+| default   | Custom menu item content  | -               |
 
 ## Typings
 
@@ -252,8 +255,14 @@ export interface DropdownMenuItem {
 
 ### CSS Variables
 
-| Variable                    | Description      | Default                      |
-| --------------------------- | ---------------- | ---------------------------- |
-| `--hy-dropdown-item-border` | List item divider | Follows `--hy-border-line`  |
+| Variable Name                          | Description                   | Default                                |
+| -------------------------------------- | ----------------------------- | -------------------------------------- |
+| `--hy-dropdown-item-border`            | List item divider             | Follows `--hy-border-line`             |
+| `--hy-dropdown-background`             | Background color              | Follows `--hy-background`              |
+| `--hy-dropdown-item-header-background` | Header background color       | Follows `--hy-background--container`   |
+| `--hy-dropdown-item-header-padding`    | Header padding                | Follows `--hy-border-margin-padding-base` |
+| `--hy-dropdown-item-icon-color`        | Icon color                    | Follows `--hy-icon-color`              |
+| `--hy-dropdown-item-panel-background`  | Dropdown panel background color | Follows `--hy-background--container` |
+| `--hy-dropdown-item-primary`           | Theme color                   | Follows `--hy-primary`                 |
 
 <demo-model url="pages-design/dropdown/dropdown"></demo-model>

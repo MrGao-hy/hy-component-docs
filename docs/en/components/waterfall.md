@@ -1,18 +1,18 @@
 # Waterfall Component
 
-> This is a waterfall-style component with content divided into left and right columns. It works even better when combined with uView's lazy-load component. Compared to some approaches that merely split items into left and right columns by odd/even index, or that fail to make use of Vue scoped slots, uView's waterfall component achieves true componentization. Paired with the LazyLoad and loadMore components, it works out of the box and will surely impress you.
+> This is a waterfall-flow style component whose content is divided into left and right columns. It works even better when combined with uView's lazy-load component. Compared to some approaches that simply split items into left and right columns by odd/even index, or that fail to leverage Vue scoped slots, the uView waterfall flow achieves true componentization. Paired with the LazyLoad lazy-loading and loadMore load-more components, it works out of the box and is sure to impress you.
 
 ::: warning Note
 
-Since the demo on the right is embedded via an iframe tag, it lacks the APIs required to run on mobile devices. Additionally, due to the small demo area or insufficient screen resolution, the demo may have issues. These problems do not occur on mobile. Please scan the QR code in the "Demo" section in the upper right corner with your phone to view the corresponding effect.
+Since the demo on the right is embedded via an iframe tag, it lacks the APIs required to run on mobile devices. In addition, the demo area may be too small, or your computer's resolution may not be high enough, which can cause issues with the demo. These problems do not occur on mobile. Please scan the QR code in the "Demo" section at the top right corner with your phone to view the corresponding effect.
 
 :::
 
 ## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ------------------- | ------------------- |
-| ✔        | ✔   | ✔                   | ✔                   |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
 ## :japanese_castle: Basic Usage Example
 
@@ -35,7 +35,7 @@ const flowList = [...]
         <hy-waterfall v-model="flowList" ref="waterfallRef">
             <template v-slot:left="{ leftList }">
                 <view class="demo-water" v-for="(item, index) in leftList" :key="index">
-                    <!-- WeChat Mini Program requires HX 2.8.11 or later to support importing other components within a template, such as the u-lazy-load component below -->
+                    <!-- WeChat Mini Program requires HBuilderX 2.8.11 or later to support importing other components inside template, such as the u-lazy-load component below -->
                     <hy-image width="100%" mode="widthFix" radius="5" :src="item.image"></hy-image>
                     <view class="demo-title">{{ item.title }}</view>
                     <view class="demo-price">{{ item.price }} yuan</view>
@@ -111,7 +111,7 @@ const flowList = [...]
     const addRandomData = () => {
         for (let i = 0; i < 20; i++) {
             let index = random(0, list.length - 1);
-            // Convert to a string first and then back to an object, to avoid data confusion caused by array object references
+            // Convert to a string first and then back to an object to avoid data confusion caused by array object references
             let item = JSON.parse(JSON.stringify(list[index]));
             item.id = guid();
             flowList.value.push(item);
@@ -297,9 +297,9 @@ export default [
 
 :::
 
-::: warning Precautions
+::: warning Note
 
-The component has an add-time parameter, which defines the time interval for adding individual items to the queue. Since image loading takes time, the heights of the left and right waterfall columns will change at unpredictable moments. The larger the add-time value, the better the effect for the program; however, for users, a larger value may mean items being added one by one to the end of the queue at a perceptible speed. Therefore, this is a double-edged result.
+The component has an add-time parameter, which sets the time interval for adding individual items to the queue. Since images take time to load, the heights of the left and right waterfall columns will change from time to time. The larger the add-time value, the better the program's visual result; however, for users, a larger value means items may be added to the end of the queue one by one at a perceptible speed. So this is a double-edged trade-off.
 
 :::
 
@@ -307,24 +307,26 @@ The component has an add-time parameter, which defines the time interval for add
 
 ### Waterfall Props
 
-| Parameter | Description                                                         | Type     | Default Value |
-| --------- | ------------------------------------------------------------------- | -------- | ------------- |
-| v-modal   | Receives the list value                                             | `array`  | -             |
-| addTime   | Time interval for adding individual items to the queue, in ms       | `number` | 200           |
-| idKey     | Key name of the unique value of the data                            | `string` | id            |
+| Parameter   | Description                                              | Type            | Default |
+| ----------- | -------------------------------------------------------- | --------------- | ------- |
+| v-model     | Receives the list value                                  | `array`         | -       |
+| addTime     | Time interval for adding individual items to the queue, in ms | `number`  | 200     |
+| idKey       | Key name of the data's unique value                      | `string`        | id      |
+| customStyle | Defines external styles to be applied                    | `CSSProperties` | -       |
+| customClass | Custom external class name                               | `string`        | -       |
 
 ### Methods
 
-| Event Name | Description          | Parameters                                      |
-| ---------- | -------------------- | ----------------------------------------------- |
-| clear      | Clears the list data | -                                               |
-| remove     | Removes an item      | id: the unique value, must be consistent with idKey |
+| Name   | Description           | Parameters                                        |
+| ------ | --------------------- | ------------------------------------------------- |
+| clear  | Clears the list data  | -                                                 |
+| remove | Removes a single item | id: the unique value, must match the `idKey`      |
 
 ### Slots
 
-| Slot Name | Description          | Received Value |
-| --------- | -------------------- | -------------- |
-| left      | Left content slot    | -              |
-| right     | Right content slot   | -              |
+| Slot Name | Description           | Received Value |
+| --------- | --------------------- | -------------- |
+| left      | Left content slot     | -              |
+| right     | Right content slot    | -              |
 
 <demo-model url="pages-design/waterfall/waterfall"></demo-model>

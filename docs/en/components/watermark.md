@@ -1,23 +1,23 @@
 # Watermark Component
 
-> Add a specified image or text to a page or component, which can be used for scenarios such as copyright protection and brand promotion.
+> Add a specified image or text on a page or component, which can be used for copyright protection, brand promotion, and other scenarios.
 
-## :pushpin: Platform Difference Notes
+## :pushpin: Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ---------- | ------------ |
-| ✔        | ✔   | ✔          | ✔            |
+| -------- | --- | ------------------- | ------------------- |
+| ✔        | ✔   | ✔                   | ✔                   |
 
 ## :japanese_castle: Basic Usage Example
 
 ```html
 <!-- Global usage -->
-<hy-watermark content="Huayue Component Library"></hy-watermark>
+<hy-watermark content="Hy Component Library"></hy-watermark>
 ```
 
 ### Image Watermark
 
-- By setting `image`, set a network image URL or Base64 image
+- By setting `image`, specify a network image URL or a Base64 image
 - `image-width`: watermark image width
 - `image-height`: watermark image height
 
@@ -39,7 +39,7 @@ The DingTalk Mini Program platform only supports network images
 
 ### Partial Watermark
 
-- By setting `full-screen`, set whether it is a full-screen watermark (if `full-screen` is false, it is a partial watermark).
+- By setting `full-screen`, specify whether to use a full-screen watermark (if `full-screen` is false, it is a partial watermark).
 
 ```html
 <template>
@@ -50,9 +50,9 @@ The DingTalk Mini Program platform only supports network images
 </template>
 ```
 
-### Custom Z-Index and Opacity
+### Custom Z-index and Opacity
 
-- By setting `image`, set a network image URL or Base64 image; set the watermark image width and height via the image-width and image-height fields.
+- By setting `image`, specify a network image URL or a Base64 image, and set the width and height of the watermark image via the image-width and image-height fields.
 
 ```html
 <template>
@@ -62,8 +62,8 @@ The DingTalk Mini Program platform only supports network images
 
 ### Watermark Spacing
 
-- By setting `gutterX`, set the spacing distance along the x-axis.
-- By setting `gutterY`, set the spacing distance along the y-axis.
+- By setting `gutterX`, set the spacing along the x-axis.
+- By setting `gutterY`, set the spacing along the y-axis.
 
 ```html
 <template>
@@ -77,8 +77,8 @@ The DingTalk Mini Program platform only supports network images
 
 ### Canvas Width
 
-- By setting `width`, set the width of a single watermark canvas.
-- By setting `height`, set the height of a single watermark canvas.
+- By setting `width`, set the canvas width of a single watermark.
+- By setting `height`, set the canvas height of a single watermark.
 
 ```html
 <template>
@@ -110,7 +110,7 @@ The DingTalk Mini Program platform only supports network images
 
 ### Watermark Rotation Angle
 
-- By setting `rotate`, set the watermark rotation angle.
+- By setting `rotate`, set the rotation angle of the watermark.
 
 ```html
 <template>
@@ -123,7 +123,7 @@ The DingTalk Mini Program platform only supports network images
 
 ### Watermark Opacity
 
-- By setting `opacity`, set the watermark opacity.
+- By setting `opacity`, set the opacity of the watermark.
 
 ```html
 <template>
@@ -134,13 +134,13 @@ The DingTalk Mini Program platform only supports network images
 </template>
 ```
 
-### Anti-Deletion <Badge>^0.6.4</Badge>
+### Anti-deletion <Badge>^0.6.4</Badge>
 
 - By setting `isAntiTheft`, prevent the watermark image from being deleted or tampered with.
 
 ```html
 <template>
-    <hy-watermark text="Huayue Component Library" :isAntiTheft="true"></hy-watermark>
+    <hy-watermark text="Hy Component Library" :isAntiTheft="true"></hy-watermark>
 </template>
 ```
 
@@ -151,8 +151,8 @@ The DingTalk Mini Program platform only supports network images
 | Parameter | Description | Type | Default |
 | --- | --- | --- | --- |
 | title | Title | `string` | - |
-| content | Content to display | `string` | - |
-| image | Image URL to display, supports network images and base64 | `string` | - |
+| content | Displayed content | `string` | - |
+| image | URL of the image to display, supports network images and base64 | `string` | - |
 | imageHeight | Image height, default unit px | `number` | 50 |
 | imageWidth | Image width, default unit px | `number` | 70 |
 | gutterX | X-axis spacing, default unit px | `number` | 0 |
@@ -164,12 +164,14 @@ The DingTalk Mini Program platform only supports network images
 | titleColor | Whether it is a full-screen watermark | `boolean` | true |
 | color | Watermark font color | `string` | #8c8c8c |
 | size | Watermark font size, default unit px | `number` | 14 |
-| fontStyle | Watermark font style (only supported on WeChat, Alipay, and h5) | `normal`\|`italic`\|`oblique` | normal |
-| fontWeight | Watermark font weight (only supported on WeChat, Alipay, and h5) | `normal`\|`bold`\|`bolder` | normal |
-| fontFamily | Watermark font family (only supported on WeChat, Alipay, and h5) | `string` | PingFang SC |
+| fontStyle | Watermark font style (only supported on WeChat, Alipay, and H5) | `normal`\|`italic`\|`oblique` | normal |
+| fontWeight | Watermark font weight (only supported on WeChat, Alipay, and H5) | `normal`\|`bold`\|`bolder` | normal |
+| fontFamily | Watermark font family (only supported on WeChat, Alipay, and H5) | `string` | PingFang SC |
 | rotate | Watermark rotation angle | `number` | -25 |
 | zIndex | Custom z-index | `number` | 10086 |
 | opacity | Custom opacity, value range 0~1 | `number` | 0.5 |
-| isAntiTheft`v0.6.4` | Anti-deletion and anti-style-tampering feature (effective on h5) | `boolean` | false |
+| isAntiTheft | Anti-deletion and anti-style-modification feature (supported since v0.6.4, effective on H5) | `boolean` | false |
+| customStyle | Define external styles to be used | `CSSProperties` | - |
+| customClass | Custom external class name | `string` | - |
 
 <demo-model url="pages-design/watermark/watermark"></demo-model>

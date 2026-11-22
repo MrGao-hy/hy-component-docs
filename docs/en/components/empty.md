@@ -1,12 +1,12 @@
 # Empty Component
 
-> This component is used for scenarios where content needs to be loaded but the first page of data comes back empty, displaying a "no content" prompt. We have carefully selected over a dozen scenario-specific icons for your convenience.
+> This component is used for scenarios where content needs to be loaded, but the first page of data loads empty, prompting a "no content" state. We have carefully selected icons for a dozen-plus scenarios for your convenience.
 
-## :pushpin: Platform Compatibility
+## :pushpin: Platform Compatibility Notes
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ---------- | ------------ |
-| ✔        | ✔   | ✔          | ✔            |
+| -------- | --- | -------------------- | ------------------- |
+| ✔        | ✔   | ✔                    | ✔                   |
 
 ## :japanese_castle: Basic Usage Example
 
@@ -15,9 +15,9 @@
 <hy-empty></hy-empty>
 ```
 
-### Displaying and Configuring the Button
+### Show and Configure Button
 
-- `btnText` Text to display on the button
+- `btnText` Button display text
 - `btnSize` Button size
 - `btnShape` Button shape
 - `btnPlain` Whether the button is outlined
@@ -35,7 +35,7 @@
 </template>
 ```
 
-### Configuring the Prompt Text
+### Configure Prompt Text
 
 - `desSize` Prompt text size
 - `desColor` Prompt text color
@@ -67,40 +67,41 @@
 | Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | show | Whether to show the component | `boolean` | true |
-| mode | Empty state page content | `string` | content |
+| mode | Empty state content | `string` | content |
 | imageUrl | Empty state icon image | `string` | - |
-| zIndex | Component z-index | `number` | 889 |
-| width | Image width, numbers default to px | `string`\|`number` | 240px |
-| height | Image height, numbers default to px | `string`\|`number` | 240px |
-| description | Prompt message | `string` | No data yet |
-| desSize | Prompt message size, numbers default to px | `string`\|`number` | 15 |
+| zIndex | Component stacking level | `number` | 889 |
+| width | Image width, numbers default to px unit | `string`\|`number` | 240px |
+| height | Image height, numbers default to px unit | `string`\|`number` | 240px |
+| description | Prompt message | `string` | No data |
+| desSize | Prompt message size, numbers default to px unit | `string`\|`number` | 15 |
 | desColor | Prompt message color | `string` | - |
 | imgMargin | Icon image margin | `string` | - |
-| button | Collection of button properties, displayed when text has a value, see [Button API](./button#api) for details | `HyButtonProps` | - |
+| button | Collection of button properties; displayed when text has a value, see [Button API](./button#api) | `HyButtonProps` | - |
 | navigateUrl | Navigation URL | `string` | - |
 | customStyle | Custom outer style of the component | `CSSProperties` | - |
 | customClass | Custom outer class name | `string` | - |
 
 ### Events
 
-| Event Name | Description                | Callback Parameters |
-| ------ | ---------------- | -------- |
-| click  | Function executed when the button is clicked | -        |
+| Event  | Description                        | Callback Parameters |
+| ------ | ---------------------------------- | ------------------- |
+| click  | Function executed on button click  | -                   |
 
 ### Slots
 
-| Slot Name   | Description                  | Accepted Value |
-| ----------- | ------------------------- | ------ |
-| default     | Default slot                     | -      |
-| description | Custom bottom description | -      |
+| Slot Name   | Description                   | Accepted Value |
+| ----------- | ----------------------------- | -------------- |
+| default     | Default slot                  | -              |
+| description | Custom bottom description     | -              |
 
 ### CSS Variables
 
-| Variable Name                  | Description            | Default                       |
-| ------------------------------ | ------------ | ---------------------------- |
-| `--hy-empty-description-width` | Description text width | `70%`                        |
-| `--hy-empty-button-margin-top` | Button top margin      | `100rpx`                     |
-| `--hy-empty-description-color` | Description text color | Follows `--hy-text-color--grey` |
+| Variable                            | Description                    | Default                                |
+| ----------------------------------- | ------------------------------ | -------------------------------------- |
+| `--hy-empty-description-width`      | Description text width         | `70%`                                  |
+| `--hy-empty-button-margin-top`      | Button top margin              | `100rpx`                               |
+| `--hy-empty-description-color`      | Description text color         | Follows `--hy-text-color--grey`        |
+| `--hy-empty-description-margin-top` | Description text top margin    | Follows `--hy-border-margin-padding-base` |
 
 [^1]: `normal`: default size; `large`: large size; `small`: small size; `mini`: mini size
 

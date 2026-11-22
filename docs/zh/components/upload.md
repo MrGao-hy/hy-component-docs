@@ -27,7 +27,7 @@
 
 ```ts [index.ts]
 import { ref } from 'vue';
-import type { FileVo } from '@/package/components/hy-upload/typing';
+import type { FileVo } from '@hy-app/ui';
 
 const list = ref<FileVo[]>([]);
 
@@ -75,8 +75,7 @@ const afterRead = (event: any) => {
 
 ```ts [index.ts]
 import { ref } from 'vue';
-import type { FileVo } from '@/package/components/hy-upload/typing';
-import { isArray } from '@/package';
+import { isArray, type FileVo } from '@hy-app/ui';
 
 const list = ref<FileVo[]>([]);
 
@@ -125,7 +124,7 @@ const afterRead = (event: any) => {
 
 <script setup lang="ts">
     import { ref } from 'vue';
-    import type { FileVo } from '@/package/components/hy-upload/typing';
+    import type { FileVo } from '@hy-app/ui';
 
     const list = ref<FileVo[]>([]);
 
@@ -153,7 +152,7 @@ const afterRead = (event: any) => {
 
 <script setup lang="ts">
     import { ref } from 'vue';
-    import type { FileVo } from '@/package/components/hy-upload/typing';
+    import type { FileVo } from '@hy-app/ui';
 
     const list = ref<FileVo[]>([]);
 
@@ -288,7 +287,7 @@ const afterRead = (event: any) => {
 
 <script setup lang="ts">
     import { ref } from 'vue';
-    import type { FileVo } from '@/package/components/hy-upload/typing';
+    import type { FileVo } from '@hy-app/ui';
 
     const list = ref<FileVo[]>([
         {

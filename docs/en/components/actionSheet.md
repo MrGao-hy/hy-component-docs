@@ -1,23 +1,23 @@
 # ActionSheet Component
 
-> The ActionSheet component is used to pop up an action menu from the bottom of the screen, providing a clear list of options for the user to select and return a result.
+> The ActionSheet component is used to pop up an action menu from the bottom of the screen, providing a clear list of options for the user to select from and return the result.
 
 ## Use Cases
 
-- Bottom popup menu selection (e.g., share, delete, action options, etc.)
-- Scenarios where the user needs to choose one of several options to perform a specific action
+- Bottom popup menu selection (e.g., sharing, deleting, action options, etc.)
+- Scenarios where one of multiple options must be selected to perform a specific action
 - Custom action panels (e.g., sharing to different platforms)
 - Quick options for form operations (e.g., selecting a payment method, delivery method, etc.)
 
 ## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ------------------- | ------------------- |
-| ✔        | ✔   | ✔                   | ✔                   |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
 ## :warning: Notes
 
-::: warning Notes
+::: warning Note
 
 1. v-model Binding
 
@@ -33,19 +33,19 @@ const show = ref(false);
 
 2. Difference Between actions and panels
 
-| Property | Purpose          | Display Effect                                                                 |
-| -------- | ---------------- | ------------------------------------------------------------------------------ |
-| actions  | Text option list | Vertically arranged text options, supporting states like disabled, loading, and description |
-| panels   | Icon panel       | Horizontally arranged icons + text, supporting multi-row display               |
+| Property | Purpose      | Display Effect                                                        |
+| -------- | ------------ | --------------------------------------------------------------------- |
+| actions  | Text option list | Vertically arranged text options, supporting states such as disabled, loading, and description |
+| panels   | Icon panel   | Horizontally arranged icons + text, supporting multi-row display      |
 
 **Note:** `actions` and `panels` cannot be used at the same time; `actions` takes precedence.
 
 3. panels Data Format
 
-`panels` supports both one-dimensional and two dimensional arrays:
+`panels` supports one-dimensional arrays and two-dimensional arrays:
 
 ```ts
-// One-dimensional array: single row display
+// One-dimensional array: single-row display
 const panels1 = ref([
     { iconUrl: 'https://xxx.png', name: 'WeChat' },
     { iconUrl: 'https://xxx.png', name: 'Weibo' },
@@ -59,14 +59,14 @@ const panels2 = ref([
     ],
     [
         { iconUrl: 'https://xxx.png', name: 'QQ' },
-        { iconUrl: 'https://xxx.png', name: 'Favorites' },
+        { iconUrl: 'https://xxx.png', name: 'Favorite' },
     ],
 ]);
 ```
 
 4. closeOnClickAction Property
 
-Whether to automatically close the popup after an option is clicked, default `true`:
+Whether to automatically close the popup after an option is clicked, default is `true`:
 
 ```html
 <!-- Do not close automatically after clicking -->
@@ -75,7 +75,7 @@ Whether to automatically close the popup after an option is clicked, default `tr
 
 5. select Event Parameters
 
-The parameters returned by the select event differ depending on whether `actions` or `panels` is used:
+Depending on whether `actions` or `panels` is used, the select event returns different parameters:
 
 **actions mode:**
 
@@ -110,9 +110,9 @@ list = {
 };
 ```
 
-6. Style Customization
+6. Custom Styles
 
-The component supports style customization via `customStyle` and `customClass`:
+The component supports custom styles via `customStyle` and `customClass`:
 
 ```html
 <hy-action-sheet
@@ -159,7 +159,7 @@ The component supports style customization via `customStyle` and `customClass`:
     <hy-action-sheet
         v-model="show"
         :actions="actions"
-        title="I am the title"
+        title="I am a title"
         @select="onSelect"
     ></hy-action-sheet>
 </template>
@@ -194,7 +194,7 @@ The component supports style customization via `customStyle` and `customClass`:
 
 <script setup lang="ts">
     import { ref } from 'vue';
-    import type { IActionSheetAction } from '@/package/components/hy-action-sheet/typing';
+    import type { IActionSheetAction } from '@hy-app/ui';
 
     const show = ref(false);
 
@@ -210,7 +210,7 @@ The component supports style customization via `customStyle` and `customClass`:
         },
         {
             name: 'Option 3',
-            sub: 'Description', // Description
+            sub: 'Description', // Description text
         },
     ]);
 </script>
@@ -254,7 +254,7 @@ The component supports style customization via `customStyle` and `customClass`:
 </script>
 ```
 
-### Custom Panel (Two-dimensional Array - Multiple Rows)
+### Custom Panel (Two-dimensional Array - Multi-row)
 
 ```html
 <template>
@@ -277,10 +277,10 @@ const panels = ref([
         { iconUrl: 'https://xxx.png', name: 'WeChat' },
         { iconUrl: 'https://xxx.png', name: 'Weibo' },
         { iconUrl: 'https://xxx.png', name: 'QQ' },
-        { iconUrl: 'https://xxx.png', name: 'Favorites' },
+        { iconUrl: 'https://xxx.png', name: 'Favorite' },
     ],
     [
-        { iconUrl: 'https://xxx.png', name: 'WeChat Friend' },
+        { iconUrl: 'https://xxx.png', name: 'WeChat Friends' },
         { iconUrl: 'https://xxx.png', name: 'Moments' },
     ],
 ]);
@@ -312,7 +312,7 @@ const onSelect = (params: any) => {
 
 ## :test_tube: Complete Example Page
 
-::: details Click to view the example code
+::: details Open to view the example code
 
 ```html
 <template>
@@ -330,7 +330,7 @@ const onSelect = (params: any) => {
         <hy-action-sheet
             v-model="list[1].value"
             :actions="actions"
-            title="I am the title"
+            title="I am a title"
             @select="onClick"
         ></hy-action-sheet>
 
@@ -392,7 +392,7 @@ const panels = ref([
         { iconUrl: 'https://xxx.png', name: 'QQ' },
     ],
     [
-        { iconUrl: 'https://xxx.png', name: 'WeChat Friend' },
+        { iconUrl: 'https://xxx.png', name: 'WeChat Friends' },
         { iconUrl: 'https://xxx.png', name: 'Moments' },
     ],
 ]);
@@ -418,21 +418,21 @@ const onClick = (temp: any) => {
 | title | Title | `string` | - |
 | titleAlign | Title text alignment | `center`\|`left`\|`right` | center |
 | actions | Menu options | `IActionSheetAction[]` | [] |
-| panels | Custom panel items; can be an array of strings or objects; if it is a two-dimensional array, panels are displayed in multiple rows | `Array<IActionSheetPanel \| IActionSheetPanel[]>` | [] |
-| cancelText | Text of the cancel button; the button is displayed when not empty | `string` | - |
+| panels | Custom panel items; can be an array of strings or an array of objects; if it is a two-dimensional array, it will be displayed in multiple rows | `Array<IActionSheetPanel \| IActionSheetPanel[]>` | [] |
+| cancelText | Text of the cancel button; the button is displayed when this is not empty | `string` | - |
 | closeOnClickAction | Whether to close the popup when a menu item is clicked | `boolean` | true |
-| closeOnClickOverlay | Whether clicking the overlay closes the popup; see the examples above | `boolean` | true |
+| closeOnClickOverlay | Whether clicking the overlay is allowed to close the popup; see the example above | `boolean` | true |
 | duration | Popup animation duration | `number` | 200 |
 | zIndex | Menu z-index | `number` | 100 |
 | round | Border radius value | `string` \| `number` | 20 |
 | safeAreaInsetBottom | Whether to enable bottom safe area adaptation | `boolean` | true |
-| customStyle | Custom outer style | `CSSProperties` | - |
-| customClass | Custom outer class name | `string` | - |
+| customStyle | External styles to be applied | `CSSProperties` | - |
+| customClass | Custom external class name | `string` | - |
 | customHeaderClass | Custom title class name | `string` | - |
 
 ### Typings
 
-::: details Type definitions
+::: details Type Description
 
 ```ts
 interface IActionSheetAction {
@@ -441,7 +441,7 @@ interface IActionSheetAction {
      */
     name: string;
     /**
-     * Description
+     * Description text
      */
     sub?: string;
     /**
@@ -471,19 +471,19 @@ interface IActionSheetPanel {
 
 interface SelectEventParams {
     /**
-     * Selected content
+     * The selected content
      */
     item: any;
     /**
-     * Selected row index
+     * The selected horizontal index
      */
     rowIndex?: number;
     /**
-     * Selected column index
+     * The selected vertical index
      */
     colIndex?: number;
     /**
-     * Selected index
+     * The selected index
      */
     index?: number;
 }
@@ -495,26 +495,26 @@ interface SelectEventParams {
 
 | Event Name | Description | Callback Parameters |
 | --- | --- | --- |
-| select | Triggered when an option is clicked | Menu options or one-dimensional panel array (item: option object, index: option index), two-dimensional panel array (item: option object, rowIndex: option row index, colIndex: option column index) |
+| select | Triggered when an option is clicked | Menu options or one-dimensional array of custom panels (item: option object, index: option index); two-dimensional array of custom panels (item: option object, rowIndex: option row index, colIndex: option column index) |
 | open | Triggered when the popup opens | - |
 | close | Triggered when the popup closes | - |
 | cancel | Triggered when the cancel button is clicked | - |
 
 ### Slots
 
-| Slot Name | Description | Value |
-| --------- | ----------- | ----- |
-| default | Default panel slot | -     |
+| Slot Name | Description      | Received Value |
+| --------- | ---------------- | -------------- |
+| default   | Default panel slot | -            |
 
 ### CSS Variables
 
-| Variable Name | Description | Default |
+| Variable | Description | Default |
 | --- | --- | --- |
 | `--hy-action-sheet-width` | Panel width | `calc(100vw - 20px)` |
 | `--hy-action-sheet-item-height` | Option height | `48px` |
 | `--hy-action-sheet-header-line-height` | Header line height | `44px` |
 | `--hy-action-sheet-cancel-width` | Cancel button width | `calc(100% - 48px)` |
-| `--hy-action-sheet-cancel-margin` | Cancel button margin | `0 auto 24px` |
+| `--hy-action-sheet-cancel-margin` | Cancel button outer margin | `0 auto 24px` |
 | `--hy-action-sheet-close-top` | Close button top margin | `20px` |
 | `--hy-action-sheet-close-right` | Close button right margin | `15px` |
 | `--hy-action-sheet-panel-height` | Share panel item height | `160rpx` |
@@ -528,5 +528,11 @@ interface SelectEventParams {
 | `--hy-action-sheet-close-radius` | Close button border radius | Follows `--hy-radius-circle` (50%) |
 | `--hy-action-sheet-panel-img-radius` | Share panel icon border radius | Follows `--hy-radius-base` (20rpx) |
 | `--hy-action-sheet-panel-title-font-size` | Share panel title font size | Follows `--hy-font-size-sm` (24rpx) |
+| `--hy-action-sheet-actions-padding-y` | Vertical padding of the options area | Follows `--hy-border-margin-padding-base` |
+| `--hy-action-sheet-cancel-background` | Cancel button background color | Follows `--hy-background--track` |
+| `--hy-action-sheet-header-padding` | Header horizontal and top padding | Follows `--hy-border-margin-padding-base` |
+| `--hy-action-sheet-panel-img-size` | Panel image size | Follows `--hy-img-size-base` |
+| `--hy-action-sheet-panel-padding-x` | Panel item horizontal padding | Follows `--hy-border-margin-padding-base` |
+| `--hy-action-sheet-panel-padding-y` | Panel item vertical padding | Follows `--hy-border-margin-padding-sm` |
 
 <demo-model url="pages-design/actionSheet/actionSheet"></demo-model>

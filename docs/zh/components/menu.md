@@ -56,56 +56,43 @@ const list = [
 
 ```vue [vue]
 <template>
-    <hy-config-provider :custom-style="themeColor" :theme="darkMode">
-        <hy-menu v-model="current" :list="list" color="red" @change="onChange"></hy-menu>
+    <hy-menu v-model="current" :list="list" color="red" @change="onChange"></hy-menu>
 
-        <scroll-view
-            class="scroll-view"
-            scroll-y
-            scroll-with-animation
-            :scroll-top="scrollTop"
-            :throttle="false"
-            @scroll="onScroll"
-        >
-            <view :class="['item', `item--${item.id}`]" v-for="(item, index) in data" :key="index">
-                <view class="hy-title">
-                    <text class="text">{{ item.name }}</text>
-                </view>
-                <view class="hy-container">
-                    <hy-grid
-                        :list="item.children"
-                        :col="2"
-                        :custom-keys="{ icon: 'url', name: 'name' }"
-                        :icon-config="{ size: 50 }"
-                    ></hy-grid>
-                </view>
+    <scroll-view
+        class="scroll-view"
+        scroll-y
+        scroll-with-animation
+        :scroll-top="scrollTop"
+        :throttle="false"
+        @scroll="onScroll"
+    >
+        <view :class="['item', `item--${item.id}`]" v-for="(item, index) in data" :key="index">
+            <view class="hy-title">
+                <text class="text">{{ item.name }}</text>
             </view>
-        </scroll-view>
-    </hy-config-provider>
+            <view class="hy-container">
+                <hy-grid
+                    :list="item.children"
+                    :col="2"
+                    :custom-keys="{ icon: 'url', name: 'name' }"
+                    :icon-config="{ size: 50 }"
+                ></hy-grid>
+            </view>
+        </view>
+    </scroll-view>
 </template>
 ```
 
 ```ts [.ts]
 import { computed, onMounted, ref } from 'vue';
-import { useThemeStore } from '@/store';
 import { data } from './data';
-import { IconConfig, debounce } from '@hy-app/ui';
-
-// 组件
-import HyMenu from '@/package/components/hy-menu/hy-menu.vue';
-import HyGrid from '@/package/components/hy-grid/hy-grid.vue';
-import HyConfigProvider from '@/package/components/hy-config-provider/hy-config-provider.vue';
-import type { MenuParamsVo } from '@/package/components/hy-menu/typing';
-import { getRect } from '@/package';
-
-const themeStore = useThemeStore();
+import { IconConfig, debounce, getRect, type MenuParamsVo } from '@hy-app/ui';
 
 interface ItemTopVo {
     id: string | number;
     top: number;
 }
 
-const { themeColor, darkMode } = themeStore;
 const scrollTop = ref<number>(0);
 const itemScrollTop = ref<ItemTopVo[]>([]);
 const current = ref<string | number>(1);
@@ -483,9 +470,6 @@ export const data = [
 ```
 
 ```scss [.scss]
-.hy-config-provider {
-    display: flex;
-}
 .scroll-view {
     padding: 20rpx;
 }

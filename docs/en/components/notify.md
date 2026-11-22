@@ -5,8 +5,8 @@
 ## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | -------------------- | ------------------- |
-| ✔        | ✔   | ✔                    | ✔                   |
+| -------- | --- | ------------------- | ------------------- |
+| ✔        | ✔   | ✔                   | ✔                   |
 
 ## :warning: Notes
 
@@ -14,7 +14,7 @@
 
 - When `duration` is 0, the message notification will not disappear automatically; you need to manually call the `close` method to close it
 - On H5, the navigation bar height (44px) is automatically reserved by default; other platforms are not affected
-- When `safeAreaInsetTop` is set to true, the top status bar height is automatically reserved
+- When `safeAreaInsetTop` is set to true, the top status bar height will be automatically reserved
 
 :::
 
@@ -137,12 +137,12 @@
 </script>
 ```
 
-### Custom Style
+### Custom Styles
 
 ```html
 <template>
     <hy-notify ref="notifyRef"></hy-notify>
-    <hy-button text="Custom Color" @click="showCustomStyle"></hy-button>
+    <hy-button text="Custom Colors" @click="showCustomStyle"></hy-button>
 </template>
 
 <script setup>
@@ -225,7 +225,7 @@
 
     const showNotify = () => {
         notifyRef.value.show({
-            message: 'Callback executed after 3 seconds',
+            message: 'Callback executes after 3 seconds',
             duration: 3000,
             complete: () => {
                 uni.showToast({
@@ -242,31 +242,30 @@
 
 ### Notify Props
 
-| Parameter | Description | Type | Default |
+| Prop | Description | Type | Default |
 | --- | --- | --- | --- |
-| modelValue | Whether to show the notification | `boolean` | false |
 | top | Distance from the top (44px by default on H5) | `number` | 0 |
 | type | Theme type | `primary`\|`success`\|`warning`\|`error`\|`info` | primary |
 | color | Font color | `string` | #ffffff |
 | bgColor | Background color | `string` | - |
 | icon | Custom icon name | `string` | - |
 | message | Text content to display | `string` | - |
-| duration | Display duration in ms; does not disappear when set to 0 | `number` | 3000 |
+| duration | Display duration; does not disappear when set to 0, in ms | `number` | 3000 |
 | fontSize | Font size; numbers default to px | `number` \| `string` | 15 |
 | safeAreaInsetTop | Whether to reserve top safe area (status bar height) | `boolean` | false |
-| customStyle | Custom external styles to be applied | `CSSProperties` | - |
+| customStyle | Custom external styles to apply | `CSSProperties` | - |
 | customClass | Custom external class name | `string` | - |
 
 ### Methods
 
-| Method | Description        | Parameter Type  |
-| ------ | ------------------ | --------------- |
-| show   | Show the notification and load the configuration | `NotifyOptions` |
-| close  | Close the notification           | -               |
+| Method | Description | Parameter Type |
+| ------ | ----------- | -------------- |
+| show   | Shows the notification and loads the configuration | `NotifyOptions` |
+| close  | Closes the notification | - |
 
 ### NotifyOptions Configuration
 
-| Parameter | Description | Type | Default |
+| Option | Description | Type | Default |
 | --- | --- | --- | --- |
 | top | Distance from the top | `number` | 0 |
 | type | Theme type | `primary`\|`success`\|`warning`\|`error`\|`info` | primary |
@@ -274,20 +273,20 @@
 | bgColor | Background color | `string` | - |
 | icon | Custom icon name | `string` | - |
 | message | Text content to display | `string` | - |
-| duration | Display duration in ms; does not disappear when set to 0 | `number` | 3000 |
+| duration | Display duration; does not disappear when set to 0, in ms | `number` | 3000 |
 | fontSize | Font size; numbers default to px | `number` \| `string` | 15 |
 | safeAreaInsetTop | Whether to reserve top safe area | `boolean` | false |
 | complete | Callback function after closing | `() => void` | - |
 
 ### Slots
 
-| Slot | Description       | Accepted Value |
-| ---- | ------------------ | -------------- |
-| icon | Custom notification icon | -              |
+| Slot | Description | Accepted Value |
+| ---- | ----------- | -------------- |
+| icon | Custom notification icon | - |
 
 ## typings
 
-::: details Type Description
+::: details Type Definitions
 
 ```ts
 type NotifyType = 'primary' | 'success' | 'warning' | 'error' | 'info';
@@ -320,8 +319,9 @@ interface NotifyOptions {
 
 ### CSS Variables
 
-| Variable                | Description | Default                             |
-| ----------------------- | ----------- | ----------------------------------- |
-| `--hy-notify-font-size` | Font size   | Follows `--hy-font-size-base` (28rpx) |
+| Variable                | Description   | Default                                |
+| ----------------------- | ------------- | -------------------------------------- |
+| `--hy-notify-font-size` | Text font size | Follows `--hy-font-size-base` (28rpx)   |
+| `--hy-notify-padding`   | Notification bar padding | Follows `--hy-border-margin-padding-base` |
 
 <demo-model url="pages-design/notify/notify"></demo-model>

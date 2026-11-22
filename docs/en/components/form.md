@@ -1,12 +1,12 @@
 # Form Component (hy-form)
 
-> A simple and easy-to-use form component consisting of two components, `hy-form` and `hy-form-item`, with support for form validation, data binding, and more. This form component system provides you with a complete, flexible, and easy-to-use form solution that can meet most form development needs.
+> A simple and easy-to-use form component, consisting of two components: `hy-form` and `hy-form-item`, supporting form validation, data binding, and more. This form component system provides you with a complete, flexible, and easy-to-use form solution that can meet most form development needs.
 
 ## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ------------------- | ------------------- |
-| ✔        | ✔   | ✔                   | ✔                   |
+| -------- | --- | -------------------- | ------------------- |
+| ✔        | ✔   | ✔                    | ✔                   |
 
 ## :japanese_castle: Component Features
 
@@ -20,31 +20,31 @@
 
 ::: danger Notes
 
-1. The form component uses `provide/inject` for data communication, so make sure the `hy-form-item` component is used inside `hy-form`
-2. Validation rules support the array format, so multiple validation rules can be set
+1. The form component uses `provide/inject` for data communication; make sure the `hy-form-item` component is used inside `hy-form`
+2. Validation rules support array format, allowing multiple validation rules to be set
 3. A custom validation function returning `true` means validation passed; returning `false` or a string means validation failed
-4. Form data is automatically two-way bound, so there is no need to handle data synchronization manually
-5. Real-time validation and blur validation are supported, and validation timing can be controlled via the `trigger` property
+4. Form data is automatically two-way bound; no manual data synchronization is needed
+5. Real-time validation and blur validation are supported; the validation timing can be controlled via the `trigger` attribute
 
 :::
 
 ### ✅ Form Validation System
 
-- **Required validation** - Supports the `required` property
-- **Length validation** - Supports the `min` and `max` properties
+- **Required validation** - Supports the `required` attribute
+- **Length validation** - Supports `min` and `max` attributes
 - **Type validation** - Supports phone number, email, and password format validation
 - **Custom validation** - Supports custom validation functions
 - **Trigger timing** - Supports validation triggered by `blur` and `change` events
 
 ### ✅ Flexible Layout
 
-- Supports label position settings (`left` / `top`)
-- Supports custom label widths
-- Supports label alignment settings
+- Supports label position setting (`left` / `top`)
+- Supports custom label width
+- Supports label alignment setting
 
 ### ✅ Error Message Display
 
-- Displays validation error messages in real time
+- Real-time display of validation error messages
 - Supports clearing validation and resetting the form
 
 ### ✅ Rich API
@@ -61,20 +61,20 @@
 1. **Required validation**
 
     ```javascript
-    { required: true, message: 'Please enter a username' }
+    { required: true, message: 'Please enter username' }
     ```
 
 2. **Length validation**
 
     ```javascript
-    { min: 2, max: 20, message: 'Length must be between 2 and 20 characters' }
+    { min: 2, max: 20, message: 'Length must be 2 to 20 characters' }
     ```
 
 3. **Type validation**
 
     ```javascript
     { type: 'phone', message: 'Please enter a valid phone number' }
-    { type: 'email', message: 'Please enter a valid email address' }
+    { type: 'email', message: 'Please enter a valid email format' }
     { type: 'password', message: 'Invalid password format' }
     ```
 
@@ -91,14 +91,14 @@
     ```
 5. **Trigger timing**
     ```ts
-    { required: true, message: 'Please enter a username', trigger: ['blur', 'change'] }
+    { required: true, message: 'Please enter username', trigger: ['blur', 'change'] }
     ```
 
 ### Validation Triggers
 
 - **Real-time validation** - Triggered when data changes
 - **Blur validation** - Triggered when focus is lost
-- **Manual validation** - Triggered by calling the `validate()` method
+- **Manual validation** - Call the `validate()` method
 
 ## Style Design
 
@@ -110,8 +110,8 @@
 
 ### Visual Feedback
 
-- Red asterisk indicator for required fields
-- Error messages displayed in red text
+- Red asterisk marker for required fields
+- Red text for error messages
 - Error state styles for form controls
 
 ## Usage Recommendations
@@ -123,23 +123,23 @@
 2. **Validation rule design**
     - Set validation trigger timing appropriately
     - Provide clear error messages
-    - Use custom validation to handle complex logic
+    - Use custom validation for complex logic
 
 3. **Performance optimization**
-    - Avoid complex computations inside validation functions
+    - Avoid complex computations in validation functions
     - Use validation trigger timing wisely
-    - Remove unneeded validation rules promptly
+    - Clean up unnecessary validation rules in a timely manner
 
 4. **User experience**
-    - Provide immediate validation feedback
+    - Provide instant validation feedback
     - Clear error message prompts
     - Support form reset and validation clearing
 
 ## Extensibility
 
-This form component is designed with excellent extensibility:
+This form component is designed with good extensibility:
 
-1. **Support for new form controls** - Just place new controls inside form items
+1. **Support for new form controls** - Simply place new controls inside form items
 2. **Support for new validation types** - New validation rules can be added to the validation system
 3. **Support for custom styles** - Styles can be customized via CSS variables and class names
 4. **Support for internationalization** - Error messages can support multiple languages
@@ -150,11 +150,11 @@ This form component is designed with excellent extensibility:
 <template>
     <hy-form ref="formRef" :model="formData" :rules="rules" label-width="80px">
         <hy-form-item label="Username" prop="username" required>
-            <hy-input v-model="formData.username" placeholder="Please enter a username" />
+            <hy-input v-model="formData.username" placeholder="Please enter username" />
         </hy-form-item>
 
-        <hy-form-item label="Phone" prop="phone" required>
-            <hy-input v-model="formData.phone" type="number" placeholder="Please enter a phone number" />
+        <hy-form-item label="Phone Number" prop="phone" required>
+            <hy-input v-model="formData.phone" type="number" placeholder="Please enter phone number" />
         </hy-form-item>
 
         <hy-form-item label="Gender" prop="gender">
@@ -174,16 +174,16 @@ This form component is designed with excellent extensibility:
 
     const rules = {
         username: [
-            { required: true, message: 'Please enter a username', trigger: ['blur', 'change'] },
+            { required: true, message: 'Please enter username', trigger: ['blur', 'change'] },
             {
                 min: 2,
                 max: 20,
-                message: 'Username must be 2 to 20 characters long',
+                message: 'Username must be 2 to 20 characters',
                 trigger: ['blur', 'change'],
             },
         ],
         phone: [
-            { required: true, message: 'Please enter a phone number', trigger: ['blur', 'change'] },
+            { required: true, message: 'Please enter phone number', trigger: ['blur', 'change'] },
             { type: 'phone', message: 'Please enter a valid phone number', trigger: ['blur', 'change'] },
         ],
     };
@@ -202,19 +202,19 @@ This form component is designed with excellent extensibility:
 const rules = {
   // Basic validation
   username: [
-    { required: true, message: 'Please enter a username', trigger: ['blur', 'change'] },
-    { min: 2, max: 20, message: 'Username must be 2 to 20 characters long', trigger: ['blur', 'change'] }
+    { required: true, message: 'Please enter username', trigger: ['blur', 'change'] },
+    { min: 2, max: 20, message: 'Username must be 2 to 20 characters', trigger: ['blur', 'change'] }
   ],
 
   // Type validation
   phone: [
-    { required: true, message: 'Please enter a phone number', trigger: ['blur', 'change'] },
+    { required: true, message: 'Please enter phone number', trigger: ['blur', 'change'] },
     { type: 'phone', message: 'Please enter a valid phone number', trigger: ['blur', 'change'] }
   ],
 
   // Custom validation
   confirmPassword: [
-    { required: true, message: 'Please confirm your password' },
+    { required: true, message: 'Please confirm password' },
     {
       validator: (value: string) => {
         if (value !== formData.password) {
@@ -229,7 +229,7 @@ const rules = {
   email: [
     {
       type: 'email',
-      message: 'Please enter a valid email address',
+      message: 'Please enter a valid email format',
       trigger: ['blur', 'change']
     }
   ]
@@ -251,15 +251,15 @@ const rules = {
             label-position="left"
         >
             <hy-form-item label="Username" prop="username" required>
-                <hy-input v-model="formData.username" placeholder="Please enter a username" />
+                <hy-input v-model="formData.username" placeholder="Please enter username" />
             </hy-form-item>
 
-            <hy-form-item label="Phone" prop="phone" required>
-                <hy-input v-model="formData.phone" type="number" placeholder="Please enter a phone number" />
+            <hy-form-item label="Phone Number" prop="phone" required>
+                <hy-input v-model="formData.phone" type="number" placeholder="Please enter phone number" />
             </hy-form-item>
 
             <hy-form-item label="Email" prop="email">
-                <hy-input v-model="formData.email" placeholder="Please enter an email address" />
+                <hy-input v-model="formData.email" placeholder="Please enter email" />
             </hy-form-item>
 
             <hy-form-item label="Gender" prop="gender">
@@ -300,19 +300,19 @@ const rules = {
 
     const rules = {
         username: [
-            { required: true, message: 'Please enter a username' },
+            { required: true, message: 'Please enter username' },
             {
                 min: 2,
                 max: 20,
-                message: 'Username must be 2 to 20 characters long',
+                message: 'Username must be 2 to 20 characters',
                 trigger: ['change', 'blur'],
             },
         ],
         phone: [
-            { required: true, message: 'Please enter a phone number' },
+            { required: true, message: 'Please enter phone number' },
             { type: 'phone', message: 'Please enter a valid phone number', trigger: ['change', 'blur'] },
         ],
-        email: [{ type: 'email', message: 'Please enter a valid email address', trigger: ['change', 'blur'] }],
+        email: [{ type: 'email', message: 'Please enter a valid email format', trigger: ['change', 'blur'] }],
     };
 
     const genderOptions = [
@@ -343,7 +343,7 @@ const rules = {
 
 :::
 
-### Wrapping the Form Component
+### Encapsulated Form Component
 
 ::: details Click to view the complete example
 
@@ -531,7 +531,7 @@ const registerFormColumns = reactive([
         field: 'creditCode',
         type: FormTypeEnum.NUMBER,
         input: {
-            placeholder: 'Please enter the unified social credit code (18 digits)',
+            placeholder: 'Please enter the Unified Social Credit Code (18 digits)',
             prefixIcon: { name: 'xinyongdaima', customPrefix: 'icon' },
             customStyle: { height: '80rpx' },
         },
@@ -541,30 +541,30 @@ const registerFormColumns = reactive([
         type: FormTypeEnum.SELECT,
         select: [
             [
-                { label: 'No base', value: 'No base' },
-                { label: 'Planting base', value: 'Planting base' },
-                { label: 'GAP base', value: 'GAP base' },
-                { label: 'Fresh processing', value: 'Fresh processing' },
-                { label: 'Breeding base', value: 'Breeding base' },
+                { label: 'No Base', value: 'No Base' },
+                { label: 'Planting Base', value: 'Planting Base' },
+                { label: 'GAP Base', value: 'GAP Base' },
+                { label: 'Fresh Processing', value: 'Fresh Processing' },
+                { label: 'Breeding Base', value: 'Breeding Base' },
             ],
         ],
         input: {
-            placeholder: 'Please select the production area information',
+            placeholder: 'Please select origin information',
             prefixIcon: { name: 'chandiguanli_icox', customPrefix: 'icon' },
             customStyle: { height: '80rpx' },
         },
     },
     {
         field: 'invoice',
-        label: 'Invoice information:',
+        label: 'Invoice Information:',
         type: FormTypeEnum.RADIO,
         actions: [
             {
-                label: 'General invoice',
+                label: 'Regular Invoice',
                 value: 'apply',
             },
             {
-                label: 'VAT invoice',
+                label: 'VAT Invoice',
                 value: 'banana',
             },
         ],
@@ -582,7 +582,7 @@ const registerFormColumns = reactive([
         field: 'contactUnit',
         type: FormTypeEnum.TEXT,
         input: {
-            placeholder: 'Please enter the contact job title',
+            placeholder: 'Please enter the contact position',
             prefixIcon: { name: 'zhiwu', customPrefix: 'icon' },
             customStyle: { height: '80rpx' },
         },
@@ -619,11 +619,11 @@ const registerFormRules = reactive({
     ],
     producingArea: {
         required: true,
-        message: 'Please select the production area information',
+        message: 'Please select origin information',
     },
     invoice: {
         required: true,
-        message: 'Please select the invoice type',
+        message: 'Please select an invoice type',
     },
     contactName: [
         {
@@ -635,14 +635,14 @@ const registerFormRules = reactive({
     contactUnit: [
         {
             required: true,
-            message: 'Please enter the contact job title',
+            message: "Please enter the contact's position",
             trigger: ['blur', 'change'],
         },
     ],
     contactPhone: [
         {
             required: true,
-            message: 'Please enter the contact phone number',
+            message: "Please enter the contact's phone number",
             trigger: ['blur', 'change'],
         },
         {
@@ -660,80 +660,96 @@ const registerFormRules = reactive({
 
 ### hy-form Props
 
-| Parameter     | Description            | Type                             | Default  |
-| ------------- | ---------------------- | -------------------------------- | -------- |
-| model         | Form data object       | `Record<string, any>`            | -        |
-| rules         | Validation rules       | `FormItemRule`\|`FormItemRule[]` | -        |
-| border        | Form bottom border     | `boolean`                        | false    |
-| labelWidth    | Label width            | `string` \| `number`             | `'auto'` |
-| labelPosition | Label position         | `left` \| `top`                  | `'left'` |
-| labelAlign    | Label alignment        | `left` \| `center` \| `right`    | `'left'` |
+| Parameter     | Description                         | Type                             | Default  |
+| ------------- | ----------------------------------- | -------------------------------- | -------- |
+| model         | Form data object                    | `Record<string, any>`            | -        |
+| rules         | Validation rules                    | `FormItemRule`\|`FormItemRule[]` | -        |
+| border        | Bottom border of the form           | `boolean`                        | false    |
+| labelWidth    | Label width                         | `string` \| `number`             | `'auto'` |
+| labelPosition | Label position                      | `left` \| `top`                  | `'left'` |
+| labelAlign    | Label alignment                     | `left` \| `center` \| `right`    | `'left'` |
+| customStyle   | External styles to be applied       | `CSSProperties`                  | -        |
+| customClass   | Custom external class name          | `string`                         | -        |
 
 ### hy-form-item Props
 
-| Parameter | Description      | Type      | Default |
-| --------- | ---------------- | --------- | ------- |
-| label     | Label text       | `string`  | -       |
-| prop      | Form field name  | `string`  | -       |
-| required  | Whether required | `boolean` | `false` |
-| rules     | Validation rules | `any`     | `{}`    |
+| Parameter   | Description                   | Type            | Default |
+| ----------- | ----------------------------- | --------------- | ------- |
+| label       | Label text                    | `string`        | -       |
+| prop        | Form field name               | `string`        | -       |
+| required    | Whether required              | `boolean`       | `false` |
+| rules       | Validation rules              | `any`           | `{}`    |
+| customStyle | External styles to be applied | `CSSProperties` | -       |
+| customClass | Custom external class name    | `string`        | -       |
 
-### FormItemRule
+#### FormItemRule
 
-> The `rules` type is `{[key: string]: FormItemRule | FormItemRule[]}`
+> rules type `{[key: string]: FormItemRule | FormItemRule[]}`
 
-| Parameter | Description                        | Type                             | Default |
-| --------- | ---------------------------------- | -------------------------------- | ------- |
-| required  | Whether required                   | `boolean`                        | -       |
-| message   | Message shown on validation error  | `string`                         | -       |
-| min       | Minimum length                     | `number`                         | -       |
-| max       | Maximum length                     | `number`                         | -       |
-| type      | Validation type                    | `phone` \| `email` \| `password` | -       |
-| trigger   | When validation is triggered       | `(blur \| change)[]`             | -       |
-| validator | Custom validation function         | `Function`                       | -       |
+| Parameter | Description                          | Type                             | Default |
+| --------- | ------------------------------------ | -------------------------------- | ------- |
+| required  | Whether required                     | `boolean`                        | -       |
+| message   | Error message when validation fails  | `string`                         | -       |
+| min       | Minimum length                       | `number`                         | -       |
+| max       | Maximum length                       | `number`                         | -       |
+| type      | Validation type                      | `phone` \| `email` \| `password` | -       |
+| trigger   | When validation is triggered         | `(blur \| change)[]`             | -       |
+| validator | Custom validation function           | `Function`                       | -       |
 
 ## Events
 
 ### hy-form Events
 
-| Event name | Description                   | Callback parameters                                |
-| ---------- | ----------------------------- | -------------------------------------------------- |
-| submit     | Triggered on form submit      | `(data: Record<string, any>)`                      |
-| validate   | Triggered on form validation  | `(valid: boolean, errors: Record<string, string>)` |
+| Event Name | Description                     | Callback Parameters                                |
+| ---------- | ------------------------------- | -------------------------------------------------- |
+| submit     | Triggered on form submission    | `(data: Record<string, any>)`                      |
+| validate   | Triggered on form validation    | `(valid: boolean, errors: Record<string, string>)` |
 
 ### hy-form-item Events
 
-| Event name | Description                  | Callback parameters |
-| ---------- | ---------------------------- | ------------------- |
-| change     | Triggered when value changes | `(value: any)`      |
-| blur       | Triggered on blur            | `(value: any)`      |
+| Event Name | Description                    | Callback Parameters |
+| ---------- | ------------------------------ | ------------------- |
+| change     | Triggered when value changes   | `(value: any)`      |
+| blur       | Triggered when focus is lost   | `(value: any)`      |
 
 ## Methods
 
 ### hy-form Methods
 
-| Method name   | Description        | Parameters            |
-| ------------- | ------------------ | --------------------- |
-| validate      | Validates the form | -                     |
-| resetFields   | Resets the form    | -                     |
-| clearValidate | Clears validation  | `(fields?: string[])` |
-| submit        | Submits the form   | -                     |
+| Method Name   | Description      | Parameters            |
+| ------------- | ---------------- | --------------------- |
+| validate      | Validates the form | -                   |
+| resetFields   | Resets the form  | -                     |
+| clearValidate | Clears validation | `(fields?: string[])` |
+| submit        | Submits the form | -                     |
 
 ### hy-form-item Methods
 
-| Method name   | Description          | Parameters                         |
-| ------------- | -------------------- | ---------------------------------- |
-| validate      | Validates the field  | `(trigger?: 'blur' \| 'change')`   |
-| resetField    | Resets the field     | -                                  |
-| clearValidate | Clears validation    | -                                  |
+| Method Name   | Description       | Parameters                        |
+| ------------- | ----------------- | --------------------------------- |
+| validate      | Validates the field | `(trigger?: 'blur' \| 'change')` |
+| resetField    | Resets the field  | -                                 |
+| clearValidate | Clears validation | -                                 |
+
+### FormItem Slots
+
+| Slot Name | Description                           | Received Values |
+| --------- | ------------------------------------- | --------------- |
+| default   | Default slot for custom content       | -               |
+
+### Form Slots
+
+| Slot Name | Description                           | Received Values |
+| --------- | ------------------------------------- | --------------- |
+| default   | Default slot for custom content       | -               |
 
 ### CSS Variables
 
-| Variable name                    | Description              | Default                   |
-| -------------------------------- | ------------------------ | ------------------------- |
-| `--hy-form-item-margin-bottom`   | Bottom margin            | `16px`                    |
-| `--hy-form-item-error-color`     | Error message color      | `#ff4d4f`                 |
-| `--hy-form-item-error-font-size` | Error message font size  | `12px`                    |
-| `--hy-form-item-label-color`     | Label text color         | Follows `--hy-text-color` |
+| Variable Name                    | Description               | Default Value         |
+| -------------------------------- | ------------------------- | --------------------- |
+| `--hy-form-item-margin-bottom`   | Bottom margin             | `16px`                |
+| `--hy-form-item-error-color`     | Error message color       | `#ff4d4f`             |
+| `--hy-form-item-error-font-size` | Error message font size   | `12px`                |
+| `--hy-form-item-label-color`     | Label text color          | Follows `--hy-text-color` |
 
 <demo-model url="pages-design/form/form"></demo-model>

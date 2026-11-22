@@ -1,12 +1,12 @@
 # Table Component
 
-> Table is a high-performance table component developed with Uniapp. It supports fixed columns, sorting, striped rows, custom slots, and other features, making it suitable for a wide range of data display scenarios.
+> Table is a high-performance table component developed based on Uniapp. It supports fixed columns, sorting, striped rows, custom slots, and other features, making it suitable for various data display scenarios.
 
-## :pushpin: Platform Differences
+## :pushpin: Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ---------- | ------------ |
-| ✔        | ✔   | ✔          | ✔            |
+| -------- | --- | ------------------- | ------------------- |
+| ✔        | ✔   | ✔                   | ✔                   |
 
 ## :warning: Notes
 
@@ -14,16 +14,16 @@
 
 1. It is recommended to use numbers for the table height (height) and row height (rowHeight); the component will automatically append the px unit
 2. Fixed columns must specify the width property, otherwise layout issues may occur
-3. For large datasets (>1000 rows), it is recommended to use virtual scrolling or paginated loading to improve performance
+3. For large amounts of data (>1000 rows), virtual scrolling or paginated loading is recommended to improve performance
 4. The formatter function should be kept as simple as possible to avoid complex calculations affecting rendering performance
-5. For long text in table content, it is recommended to enable the ellipsis property to avoid layout breakage
+5. For long text in table content, it is recommended to enable the ellipsis property to avoid layout issues
 
 :::
 
-## Main Features
+## Key Features
 
 - Support for left and right fixed columns
-- Header sorting functionality
+- Header sorting
 - Striped row style
 - Custom row height and table height
 - Empty state and loading state display
@@ -43,15 +43,15 @@
 ```ts [Script]
 import { ref } from 'vue';
 
-// Table data
+// 表格数据
 const tableData = ref([
     { id: 1, name: '张三', age: 28, gender: '男', address: '北京市朝阳区' },
     { id: 2, name: '李四', age: 32, gender: '女', address: '上海市浦东新区' },
     { id: 3, name: '王五', age: 25, gender: '男', address: '广州市天河区' },
-    // More data...
+    // 更多数据...
 ]);
 
-// Column configuration
+// 列配置
 const columns = ref([
     { title: 'ID', key: 'id', width: 80, fixed: 'left' },
     { title: '姓名', key: 'name', width: 120 },
@@ -76,7 +76,7 @@ Because dynamic slots cannot be used in WeChat Mini Programs, this slot approach
 
 ```html [Template]
 <hy-table :data="tableData" :columns="columns" :height="500">
-    <!-- Custom action column -->
+    <!-- 自定义操作列 -->
     <template #right="{ row, col, index }">
         <hy-flex v-if="col.key === 'action'" gap="2">
             <hy-button text="编辑" size="mini" plain :border="false"></hy-button>
@@ -292,7 +292,7 @@ const tableData = reactive([
 
     const handleSort = (field: string, order: string) => {
         console.log('排序字段:', field, '排序顺序:', order);
-        // You can request sorted data from the backend here
+        // 可以在这里请求后端排序数据
     };
 </script>
 ```
@@ -327,7 +327,7 @@ const tableData = reactive([
     const tableData = ref([])
 
     onMounted(async () => {
-      // Simulate asynchronous loading
+      // 模拟异步加载
       loading.value = true
       await new Promise(resolve => setTimeout(resolve, 2000))
       tableData.value = [...]
@@ -355,50 +355,52 @@ You can customize the table style by overriding CSS variables:
 
 ### Table Props
 
-| Prop       | Description                                                       | Type               | Default Value |
-| ---------- | ----------------------------------------------------------------- | ------------------ | ------ |
-| data       | Table data source                                                 | `Array`            | -      |
-| columns    | Column configuration                                              | `ITableColumn[]`   | -      |
-| height     | Table height; supports a number or a string with a unit, numbers default to px | `string`\|`number` | 400    |
-| rowHeight  | Row height; supports a number or a string with a unit, numbers default to px   | `string`\|`number` | 50     |
-| stripe     | Whether to show striped rows                                      | `boolean`          | false  |
-| border     | Whether to show horizontal borders                                | `boolean`          | true   |
-| loading    | Whether to show the loading state                                 | `boolean`          | false  |
-| rowKey     | Unique key field of row data                                      | `string`           | id     |
-| showHeader | Whether to show the table header                                  | `boolean`          | true   |
-| emptyUrl   | Image URL for the empty state                                     | `string`           | -      |
-| emptyDes   | Description text for the empty state                              | `string`           | -      |
+| Prop        | Description                                                      | Type               | Default |
+| ----------- | ---------------------------------------------------------------- | ------------------ | ------- |
+| data        | Table data source                                                | `Array`            | -       |
+| columns     | Column configuration                                             | `ITableColumn[]`   | -       |
+| height      | Table height, supports number or string with unit; px by default | `string`\|`number` | 400     |
+| rowHeight   | Row height, supports number or string with unit; px by default   | `string`\|`number` | 50      |
+| stripe      | Whether to show striped rows                                     | `boolean`          | false   |
+| border      | Whether to show horizontal borders                               | `boolean`          | true    |
+| loading     | Whether to show loading state                                    | `boolean`          | false   |
+| rowKey      | Unique key name of row data                                      | `string`           | id      |
+| showHeader  | Whether to show the table header                                 | `boolean`          | true    |
+| emptyUrl    | Image URL for the empty state                                    | `string`           | -       |
+| emptyDes    | Description text for the empty state                             | `string`           | -       |
+| customStyle | External styles to be applied                                    | `CSSProperties`    | -       |
+| customClass | Custom external class name                                       | `string`           | -       |
 
 ### Events
 
-| Event Name  | Description                            | Callback Parameters                    |
-| ----------- | -------------------------------------- | -------------------------------------- |
-| sort-change | Triggered when the sort condition changes | sortField: String, sortOrder: SortType |
-| row-click   | Triggered when a row is clicked        | row: Object, index: Number             |
+| Event       | Description                          | Callback Parameters                    |
+| ----------- | ------------------------------------ | -------------------------------------- |
+| sort-change | Triggered when sort conditions change | sortField: String, sortOrder: SortType |
+| row-click   | Triggered when a row is clicked       | row: Object, index: Number             |
 
 ### Slots
 
-#### Column Header Slots
+#### Header Slots
 
-| Slot Name  | Description                                  | Parameters                 |
-| ---------- | -------------------------------------------- | -------------------------- |
-| left-head  | Header slot for the left fixed columns       | col: column configuration object |
-| head       | Header slot for the middle scrollable columns | col: column configuration object |
-| right-head | Header slot for the right fixed columns      | col: column configuration object |
+| Slot       | Description                            | Parameters             |
+| ---------- | -------------------------------------- | ---------------------- |
+| left-head  | Header slot for left fixed columns     | col: column config     |
+| head       | Header slot for middle scroll columns  | col: column config     |
+| right-head | Header slot for right fixed columns    | col: column config     |
 
 #### Content Slots
 
-| Slot Name | Description                                   | Parameters                                                    |
-| --------- | --------------------------------------------- | ------------------------------------------------------------- |
-| left      | Content slot for the left fixed columns       | row: row data, col: column configuration, index: row index    |
-| default   | Content slot for the middle scrollable columns | row: row data, col: column configuration, index: row index   |
-| right     | Content slot for the right fixed columns      | row: row data, col: column configuration, index: row index    |
+| Slot    | Description                           | Parameters                                             |
+| ------- | ------------------------------------- | ------------------------------------------------------ |
+| left    | Content slot for left fixed columns   | row: row data, col: column config, index: row index    |
+| default | Content slot for middle scroll columns | row: row data, col: column config, index: row index    |
+| right   | Content slot for right fixed columns  | row: row data, col: column config, index: row index    |
 
 ### Other Slots
 
-| Slot Name | Description          |
-| --------- | -------------------- |
-| empty     | Custom empty state   |
+| Slot  | Description       |
+| ----- | ----------------- |
+| empty | Custom empty state |
 
 ### Typings
 
@@ -406,23 +408,23 @@ You can customize the table style by overriding CSS variables:
 
 ```ts
 export interface ITableColumn {
-    /** Column title */
+    /** 列标题 */
     title: string;
-    /** Corresponding data field name */
+    /** 对应数据字段名 */
     key: string;
-    /** Column width (numbers default to px) */
+    /** 列宽 (数字默认 px) */
     width: number;
-    /** Alignment */
+    /** 对齐方式 */
     align?: HyApp.RowCenterType;
-    /** Whether sorting is enabled */
+    /** 是否开启排序 */
     sortable?: boolean;
-    /** Whether to enable ellipsis for overly long text */
+    /** 是否开启文本超长省略 */
     ellipsis?: boolean;
-    /** When ellipsis is enabled, whether to show the full content on tap (Tooltip) */
+    /** 开启省略后，是否开启点击显示完整内容(Tooltip) */
     tooltip?: boolean;
-    /** Whether the column is fixed ('left' | 'right') */
+    /** 是否固定 ('left' | 'right') */
     fixed?: 'left' | 'right';
-    /** Data processing function */
+    /** 处理数据函数 */
     formatter?: (value: any, row: any) => string;
 }
 
@@ -433,7 +435,7 @@ export type SortType = 'asc' | 'desc' | 'normal';
 
 ### CSS Variables
 
-| Variable Name | Description | Default Value |
+| Variable | Description | Default |
 | --- | --- | --- |
 | `--hy-table-header-text-color` | Header text color | `#909399` |
 | `--hy-table-stripe-bg` | Striped row background color | Follows `--hy-background--table-header` |
@@ -442,8 +444,11 @@ export type SortType = 'asc' | 'desc' | 'normal';
 | `--hy-table-header-cell-font-size` | Header cell font size | `28rpx` |
 | `--hy-table-cell-padding` | Content cell padding | `0 8px` |
 | `--hy-table-cell-font-size` | Content cell font size | `14px` |
-| `--hy-table-fixed-left-shadow` | Fixed column shadow (left side) | `4px 0 10px rgba(0, 0, 0, 0.1)` |
-| `--hy-table-fixed-right-shadow` | Fixed column shadow (right side) | `-4px 0 10px rgba(0, 0, 0, 0.1)` |
-| `--hy-table-border` | Table border (including cell dividers, synchronized in 8 places) | Follows `--hy-border-line` |
+| `--hy-table-fixed-left-shadow` | Fixed column shadow (left) | `4px 0 10px rgba(0, 0, 0, 0.1)` |
+| `--hy-table-fixed-right-shadow` | Fixed column shadow (right) | `-4px 0 10px rgba(0, 0, 0, 0.1)` |
+| `--hy-table-border` | Table border (including cell divider lines, synced in 8 places) | Follows `--hy-border-line` |
+| `--hy-table-background` | Table background color (data rows and loading mask) | Follows `--hy-background--container` |
+| `--hy-table-header-background` | Header background color | Follows `--hy-background--table-header` |
+| `--hy-table-primary` | Primary color | Follows `--hy-primary` |
 
 <demo-model url="pages-design/table/table"></demo-model>

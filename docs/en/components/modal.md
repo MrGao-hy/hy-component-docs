@@ -1,21 +1,21 @@
 # Modal Component
 
-> A popup modal, commonly used for message notifications, message confirmation, and completing specific interaction operations within the current page.
+> A popup modal, commonly used for message alerts, message confirmation, and completing specific interactions within the current page.
 
 ## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ------------------- | ------------------- |
-| ✔        | ✔   | ✔                   | ✔                   |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
 ## :warning: Notes
 
-::: warning Note
+::: warning Notes
 
-- When `closeOnClickOverlay` is enabled, clicking the overlay only triggers the `close` event and does not automatically close the modal; you need to handle the closing logic yourself
+- When `closeOnClickOverlay` is enabled, clicking the overlay only triggers the `close` event; it does not automatically close the modal. You need to handle the closing logic yourself
 - The `asyncClose` and `asyncCancelClose` properties have been replaced by the `loading` and `autoClose` properties in the current implementation
-- When a custom slot is passed, the `content` property will be ignored
-- When customizing popup components on the current page, it is recommended to explicitly pass `:message="false"` to `hy-modal` to declare it as an independent modal, preventing button clicks from being taken over and invalidated by the global message callback
+- When a custom slot is passed, the `content` property becomes ineffective
+- When customizing popup components on the current page, it is recommended to explicitly pass `:message="false"` to `hy-modal`, declaring it as an independent modal, to prevent button clicks from being taken over by the global message callback and becoming unresponsive
 
 :::
 
@@ -92,7 +92,7 @@
 </script>
 ```
 
-### Swap Button Positions
+### Swapping Button Positions
 
 ```html
 <template>
@@ -140,7 +140,7 @@
 </script>
 ```
 
-### Control Modal Width
+### Controlling Modal Width
 
 ```html
 <template>
@@ -326,7 +326,7 @@
 </script>
 ```
 
-### Disable Zoom Effect
+### Disabling the Zoom Effect
 
 ```html
 <template>
@@ -372,13 +372,13 @@
 </script>
 ```
 
-## :confetti_ball: Global Message and Custom Modal Coexistence
+## :confetti_ball: Coexistence of Global Messages and Custom Modals
 
-`useMessage()` injects a global message state into all descendant components, and it needs to be paired with a `hy-modal` carrying the `message` property as a driver instance to render the popup.
+`useMessage()` injects a global message state into all descendant components, and needs to be paired with a `hy-modal` carrying the `message` property as a driver instance to render popups.
 
-However, when a **global message driver instance** and a **custom modal** exist on the same page, the custom `hy-modal` is also within the injection scope: if it is mistakenly identified as the driver instance, its visibility will follow the global state and its button clicks will be taken over by the global callback, manifesting as `v-model` not working and clicking the confirm/cancel buttons having no effect.
+However, when a **global message driver instance** and a **custom modal** coexist on the same page, the custom `hy-modal` is also within the injection scope: if it is mistakenly identified as the driver instance, its visibility will follow the global state and its button clicks will be taken over by the global callbacks, manifesting as `v-model` not working and no response when clicking the confirm/cancel buttons.
 
-In this case, explicitly passing `:message="false"` to the custom modal declares it as an independent modal, which fully relies on `v-model` and the `confirm`/`cancel` events and is not hijacked by the globally injected state.
+In this case, explicitly passing `:message="false"` to the custom modal declares it as an independent modal that fully relies on `v-model` and the `confirm`/`cancel` events, unaffected by the hijacking of the globally injected state.
 
 ### Complete Example
 
@@ -429,11 +429,11 @@ In this case, explicitly passing `:message="false"` to the custom modal declares
 </script>
 ```
 
-::: tip Tip
+::: tip Tips
 
-- It is recommended to call `useMessage()` once in a common layout component and mount `<hy-modal />` there, so that all pages using that layout share the same global message instance;
+- It is recommended to call `useMessage()` once in a common layout component and mount `<hy-modal />` there; all pages using that layout share the same global message instance;
 - Do not bind `v-model` to the global message driver instance; its visibility is entirely controlled by `message.alert` / `message.confirm`;
-- When a custom modal on the same page doesn't respond to clicks or `v-model` doesn't work, first check whether `:message="false"` is missing.
+- When a custom modal on the same page has unresponsive clicks or a non-working `v-model`, first check whether `:message="false"` was accidentally omitted.
 
 :::
 
@@ -441,12 +441,12 @@ In this case, explicitly passing `:message="false"` to the custom modal declares
 
 ### Props
 
-| Parameter | Description | Type | Default |
+| Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | modelValue | Whether to show the modal | `boolean` | false |
-| message | Whether to act as the driver instance for useMessage global messages; when `true`, visibility and callbacks are controlled by `message.alert` / `message.confirm`; when `false`, it is an independent modal that uses `v-model` and the `confirm`/`cancel` events and is not hijacked by the globally injected state | `boolean` | false |
+| message | Whether to act as the driver instance for the `useMessage` global message; when `true`, visibility and callbacks are controlled by `message.alert` / `message.confirm`; when `false`, it is an independent modal relying on `v-model` and the `confirm`/`cancel` events, unaffected by the globally injected state | `boolean` | false |
 | title | Title content | `string` | - |
-| content | Modal content; invalid if slot content is passed | `string` | - |
+| content | Modal content; ineffective if slot content is passed | `string` | - |
 | confirmText | Text of the confirm button | `string` | Confirm |
 | cancelText | Text of the cancel button | `string` | Cancel |
 | showConfirmButton | Whether to show the confirm button | `boolean` | true |
@@ -457,42 +457,40 @@ In this case, explicitly passing `:message="false"` to the custom modal declares
 | zoom | Whether to enable zoom mode | `boolean` | true |
 | round | Modal border radius; supports number, px, and rpx units | `string`\|`number` | 16 |
 | autoClose | Whether to automatically close after clicking the confirm button | `boolean` | true |
-| loading | Whether to show loading state | `boolean` | false |
-| closeOnClickOverlay | Whether to allow closing the Modal by clicking the overlay (Note: the close event must be handled by yourself; the close callback is only executed when the overlay is clicked while closeOnClickOverlay is enabled) | `boolean` | false |
-| negativeTop | Upward offset value; applies a negative margin-top to shift the modal upward, avoiding overlap with the keyboard; number values default to px unit | `number` | 0 |
-| width | Modal width; percentages are not supported; number values default to px unit, rpx unit is supported | `string`\|`number` | 550rpx |
-| confirmButtonShape | Confirm button shape; when set, the cancel button will not be displayed; optional values: circle, square | `string` | - |
+| loading | Whether to show the loading state | `boolean` | false |
+| closeOnClickOverlay | Whether clicking the overlay is allowed to close the Modal (Note: the close event must be handled by yourself; the close callback is only executed when the overlay is clicked after closeOnClickOverlay is enabled) | `boolean` | false |
+| negativeTop | Upward offset value; applies a negative margin-top to shift the modal upward, avoiding overlap with the keyboard; the default unit for numbers is px | `number` | 0 |
+| width | Modal width; percentages are not supported; the default unit for numbers is px, and rpx is supported | `string`\|`number` | 550rpx |
 | contentTextAlign | Text alignment; optional values: left, center, right | `string` | left |
-| customStyle | Custom external styles | `CSSProperties` | - |
+| customStyle | Custom external styles to apply | `CSSProperties` | - |
 | customClass | Custom external class name | `string` | - |
 
 ### Events
 
-| Event Name | Description | Callback Parameters |
-| ---------- | ----------- | ------------------- |
-| confirm | Triggered when the confirm button is clicked | - |
-| cancel | Triggered when the cancel button is clicked | - |
-| close | Triggered when closing by clicking the overlay; only effective when closeOnClickOverlay is true | - |
+| Event   | Description                                                        | Callback Parameters |
+| ------- | ------------------------------------------------------------------ | ------------------- |
+| confirm | Triggered when the confirm button is clicked                       | -                   |
+| cancel  | Triggered when the cancel button is clicked                        | -                   |
+| close   | Triggered when closing via overlay click; only effective when closeOnClickOverlay is true | -        |
 
 ### Slots
 
-| Slot Name | Description | Accepted Value |
-| --------- | ----------- | -------------- |
-| default | Custom content; overrides the content property | - |
-| confirmButton | Custom button, used for scenarios requiring authorization via button in WeChat Mini Program popups | - |
+| Slot          | Description                                                                      | Accepted Values |
+| ------------- | -------------------------------------------------------------------------------- | --------------- |
+| default       | Custom content; overrides the content property                                   | -               |
+| confirmButton | Custom button, used for scenarios requiring button-based authorization in WeChat Mini Program popups | -    |
 
 ### CSS Variables
 
-| Variable Name | Description | Default |
+| Variable | Description | Default |
 | --- | --- | --- |
-| `--hy-modal-max-width` | Popup max width | `650rpx` |
+| `--hy-modal-max-width` | Maximum popup width | `650rpx` |
 | `--hy-modal-radius` | Border radius | Follows `--hy-radius-base` (20rpx) |
 | `--hy-modal-title-padding-top` | Title top padding | `25px` |
 | `--hy-modal-content-padding` | Content padding | `20px` |
 | `--hy-modal-button-group-padding` | Button group padding | `20px` |
 | `--hy-modal-confirm-button-padding` | Confirm button area padding | `0 25px 15px` |
 | `--hy-modal-button-height` | Button height | `43px` |
-| `--hy-modal-button-radius` | Button border radius | Follows `--hy-radius-semicircle` (100px) |
 | `--hy-modal-button-font-size` | Button font size | `16px` |
 | `--hy-modal-title-font-size` | Title font size | Follows `--hy-font-size-base` (28rpx) |
 | `--hy-modal-title-color` | Title color | Follows `--hy-text-color` |
@@ -500,5 +498,8 @@ In this case, explicitly passing `:message="false"` to the custom modal declares
 | `--hy-modal-content-color` | Content color | Follows `--hy-text-color--grey` |
 | `--hy-modal-button-confirm-color` | Confirm button color | `#FFFFFF` |
 | `--hy-modal-button-cancel-color` | Cancel button color | Follows `--hy-text-color` |
+| `--hy-modal-button-cancel-background` | Cancel button background color | Follows `--hy-background--empty` |
+| `--hy-modal-button-gap` | Gap between the two bottom buttons | Follows `--hy-border-margin-padding-lg` |
+| `--hy-modal-primary` | Theme color | Follows `--hy-primary` |
 
 <demo-model url="pages-design/modal/modal"></demo-model>

@@ -1,25 +1,25 @@
 # List Virtual Scrolling Component
 
-> This component renders only the DOM for visible content, reducing DOM operations and optimizing performance. It is ideal for scenarios involving large lists of data.
+> This component renders only the DOM within the visible area, reducing DOM operations and optimizing performance. It is ideal for scenarios where large amounts of data need to be displayed in a list.
 
-## :pushpin:Platform Differences
+## :pushpin: Platform Differences
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
 | -------- | --- | -------------------- | ------------------- |
 | ✔        | ✔   | ✔                    | ✔                   |
 
-## :warning:Notes
+## :warning: Notes
 
 ::: warning Notes
 
-- `containerHeight` must be set; otherwise, all data will be loaded and virtual scrolling optimization will not take effect
+- `containerHeight` must be set; otherwise, all data will be loaded and the virtual scrolling optimization will not take effect
 - `itemHeight` must match the actual content height; otherwise, the virtual scrolling calculation will be incorrect
-- The WeChat Mini Program has some restrictions on the use of `slot` — named `slot` cannot be used multiple times within a `v-for`
-- For large data scenarios (e.g., 1000+ items), virtual scrolling is recommended for better performance
+- The WeChat Mini Program has some restrictions on the use of `slot` — a named `slot` cannot be used multiple times inside `v-for`
+- For scenarios with large data volumes (e.g., 1000+ items), virtual scrolling is recommended for better performance
 
 :::
 
-## :japanese_castle:Basic Usage Examples
+## :japanese_castle: Basic Usage Examples
 
 ### Basic List
 
@@ -272,7 +272,7 @@
         </template>
         <template #footer>
             <view class="custom-footer">
-                <hy-button type="primary" text="Load More" @click="loadMore"></hy-button>
+                <hy-button type="primary" text="Load more" @click="loadMore"></hy-button>
             </view>
         </template>
     </hy-list>
@@ -302,7 +302,7 @@
 </style>
 ```
 
-### Styled List Items
+### List Items with Custom Styles
 
 ```html
 <template>
@@ -336,38 +336,54 @@
 
 ### List Props
 
-| Parameter | Description | Type | Default |
+| Prop | Description | Type | Default |
 | --- | --- | --- | --- |
 | list | Data list | `array` | [] |
-| containerHeight | Container height; must be set, otherwise all data will be loaded. Numeric values default to px units | `string` \| `number` | 100% |
-| itemHeight | Item container height; must match the content height, otherwise the calculation will be incorrect. Numeric values default to px units | `string` \| `number` | 40px |
-| padding | Item container padding. Numeric values default to px units | `string` \| `number` | 10 |
-| marginBottom | Item container bottom margin, included in the container calculation. Numeric values default to px units | `string` \| `number` | 0 |
-| borderRadius | Item container border radius. Numeric values default to px units | `string` \| `number` | 3px |
+| containerHeight | Container height; must be set, otherwise all data will be loaded; numeric values default to px | `string` \| `number` | 100% |
+| itemHeight | Item container height; must match the content height, otherwise the calculation will be incorrect; numeric values default to px | `string` \| `number` | 40px |
+| padding | Inner padding of the item container; numeric values default to px | `string` \| `number` | 10 |
+| marginBottom | Bottom margin of the item container; it is included in the container calculation; numeric values default to px | `string` \| `number` | 0 |
+| borderRadius | Border radius of the item container; numeric values default to px | `string` \| `number` | 3px |
 | background | Container background color | `string` | transparent |
 | border | Whether to show the border | `boolean` | false |
 | line | Number of columns to display (currently supports 1 and 2 columns) | `number` | 1 |
-| keyField | Unique identifier key for each item | `string` | id |
-| load | Loading status | `loadMore` \| `loading` \| `noMore` | loadMore |
-| showDivider | Whether to show the bottom loading status indicator | `boolean` | true |
+| keyField | Unique key of each item | `string` | id |
+| load | Load status | `loadMore` \| `loading` \| `noMore` | loadMore |
+| showDivider | Whether to show the bottom load status indicator | `boolean` | true |
+| customStyle | External styles to be applied | `CSSProperties` | - |
+| customClass | Custom external class name | `string` | - |
 
 ### Events
 
-| Event Name    | Description                       | Callback Parameters       |
-| ------------- | --------------------------------- | ------------------------- |
-| click         | Triggered when a list item is clicked | item: single data item |
-| scrollToLower | Triggered when scrolled to the bottom | -                      |
+| Event Name   | Description                       | Callback Parameters            |
+| ------------ | --------------------------------- | ------------------------------ |
+| click        | Triggered when a list item is clicked | item: single data item content |
+| scrollToLower | Triggered when scrolling to the bottom | -                            |
+
+### Methods
+
+| Method Name         | Description                                   | Parameters                         |
+| ------------------- | --------------------------------------------- | ---------------------------------- |
+| refreshHeightCache  | Refresh the height cache of list items        | -                                  |
+| scrollToIndex       | Scroll to the list item at the specified index | `index: number, offset?: number`  |
+| scrollToTop         | Scroll to the top of the list                 | -                                  |
 
 ### Slots
 
-| Slot Name  | Description                                              | Received Values                       |
-| ---------- | -------------------------------------------------------- | ------------------------------------- |
-| default    | Custom overall list content                              | record: data in the current visible area |
-| content    | Custom content for each item in single-column mode       | record: single data item              |
-| left       | Single container on the left in two-column mode (H5/APP) | record: single data item              |
-| left-list  | Left list slot in two-column mode (Mini Program)         | record: left list data                |
-| right      | Single container on the right in two-column mode (H5/APP) | record: single data item            |
-| right-list | Right list slot in two-column mode (Mini Program)        | record: right list data               |
-| footer     | Footer slot for customizing the load-more area           | -                                     |
+| Slot Name  | Description                                        | Received Values                      |
+| ---------- | -------------------------------------------------- | ------------------------------------ |
+| default    | Custom overall list content                        | record: data in the current visible area |
+| content    | Custom content for each item in single-column mode | record: single data item             |
+| left       | Single left container in two-column mode (H5/APP)  | record: single data item             |
+| left-list  | Left list slot in two-column mode (Mini Program)   | record: left list data               |
+| right      | Single right container in two-column mode (H5/APP) | record: single data item             |
+| right-list | Right list slot in two-column mode (Mini Program)  | record: right list data              |
+| footer     | Footer slot for customizing the load-more area     | -                                    |
+
+### CSS Variables
+
+| Variable Name           | Description                              | Default                                 |
+| ----------------------- | ---------------------------------------- | --------------------------------------- |
+| `--hy-list-left-margin` | Right margin of the left column container | Follows `--hy-border-margin-padding-base` |
 
 <demo-model url="pages-design/list/list"></demo-model>

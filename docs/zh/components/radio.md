@@ -38,7 +38,6 @@ const value = ref('apply');
 ```
 
 ```ts
-import { HyCheckobox } from 'hy-app';
 import { ref } from 'vue';
 
 const columns = [

@@ -1,12 +1,12 @@
 # TabBar Component
 
-> Bottom navigation bar, used for switching between different pages.
+> A bottom navigation bar used to switch between different pages.
 
-## :pushpin: Platform Differences
+## :pushpin: Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ---------- | ------------ |
-| ✔        | ✔   | ✔          | ✔            |
+| -------- | --- | ------------------- | ------------------- |
+| ✔        | ✔   | ✔                   | ✔                   |
 
 ## :japanese_castle: Basic Usage
 
@@ -49,13 +49,13 @@ const list = [
 ];
 ```
 
-### Badge Indicator
+### Badge Hint
 
-- `badgeProp`: Accepts badge parameters
+- `badgeProp`: receives badge parameters
 
 ::: tip Note
 
-When `isDot` is `true`, `value` must have a value. If there is no number, you can set it to `true`, otherwise it will not be displayed
+When `isDot` is true, `value` must have a value. If there is no number, you can set it to `true`, otherwise it will not be displayed
 
 :::
 
@@ -88,7 +88,7 @@ When `isDot` is `true`, `value` must have a value. If there is no number, you ca
 </hy-tabbar-group>
 ```
 
-### Rounded Navigation Bar
+### Custom Colors
 
 ```html
 <hy-tabbar-group v-model="current" @change="onChange" activeColor="red" inactiveColor="green">
@@ -98,7 +98,7 @@ When `isDot` is `true`, `value` must have a value. If there is no number, you ca
 </hy-tabbar-group>
 ```
 
-### icon Slot
+### Icon Slot
 
 ```html
 <hy-tabbar-group v-model="current" @change="onChange">
@@ -116,70 +116,70 @@ When `isDot` is `true`, `value` must have a value. If there is no number, you ca
 
 ### TabBar Props
 
-| Parameter   | Description                  | Type             | Default |
-| ----------- | ---------------------------- | ---------------- | ------- |
-| modelValue  | Index of the selected item   | `number`         | 0       |
-| list        | Navigation bar data set      | `TabBarListVo[]` | []      |
-| fixed       | Whether to fix to the bottom | `boolean`        | true    |
-| placeholder | Whether to show a placeholder element | `boolean` | false |
-| color       | Icon and text color          | `string`         | -       |
-| baseBgColor | Track color                  | `string`         | -       |
-| bgColor     | Background color             | `string`         | -       |
-| activeColor | Active circular background color | `string`      | -       |
-| badgeProps  | Badge [API props](./badge#api) | `HyBadgeProps` | -       |
-| customStyle | Define external styles to be used | `CSSProperties` | -    |
-| customClass | Custom external class name   | `string`         | -       |
+| Parameter   | Description                       | Type             | Default |
+| ----------- | --------------------------------- | ---------------- | ------- |
+| modelValue  | Index of the selected item        | `number`         | 0       |
+| list        | Navigation bar data collection    | `TabBarListVo[]` | []      |
+| fixed       | Whether fixed to the bottom       | `boolean`        | true    |
+| placeholder | Whether to show a placeholder     | `boolean`        | false   |
+| color       | Icon and text color               | `string`         | -       |
+| baseBgColor | Track color                       | `string`         | -       |
+| bgColor     | Background color                  | `string`         | -       |
+| activeColor | Active circle background color    | `string`         | -       |
+| badgeProps  | Badge [API props](./badge#api)    | `HyBadgeProps`   | -       |
+| customStyle | Define external styles to be used | `CSSProperties`  | -       |
+| customClass | Custom external class name        | `string`         | -       |
 
 #### list
 
-| Parameter | Description               | Type   | Default |
-| --------- | ------------------------- | ------ | ------- |
-| name      | tabBar name               | string | -       |
-| icon      | icon or image             | string | -       |
-| badge     | Badge value               | number | -       |
+| Parameter | Description                  | Type   | Default |
+| --------- | ---------------------------- | ------ | ------- |
+| name      | tabBar name                  | string | -       |
+| icon      | Icon or image                | string | -       |
+| badge     | Badge value                  | number | -       |
 
 ### TabBarGroup Props
 
-| Parameter | Description | Type | Default |
-| --- | --- | --- | --- |
-| modelValue | Index of the selected item | `number` | 0 |
-| fixed | Whether to fix to the bottom | `boolean` | false |
-| border | Whether to show the top border | `boolean` | true |
-| placeholder | Whether to show a placeholder element | `boolean` | true |
-| shape | Shape of the navigation bar | `string` | 'square' |
-| bgColor | Background color | `string` | - |
-| activeColor | Active color | `string` | - |
-| inactiveColor | Inactive color | `string` | - |
-| safeAreaInsetBottom | Bottom safe area adaptation - mainly for iPhone X and later models | `boolean` | true |
-| iconSize | Icon size | `string`\|`number` | - |
-| fontSize | Font size | `string`\|`number` | - |
-| badgeProps | Badge partial props | `HyBadgeProps` | - |
-| zIndex | z-index level | `number` | 10086 |
-| customStyle | Define external styles to be used | `CSSProperties` | - |
-| customClass | Custom external class name | `string` | - |
+| Parameter           | Description                                                                  | Type                          | Default   |
+| ------------------- | ---------------------------------------------------------------------------- | ----------------------------- | --------- |
+| modelValue          | Index of the selected item                                                   | `number`                      | 0         |
+| fixed               | Whether fixed to the bottom                                                  | `boolean`                     | false     |
+| border              | Whether to show the top border                                               | `boolean`                     | true      |
+| placeholder         | Whether to show a placeholder                                                | `boolean`                     | true      |
+| shape               | Shape of the navigation bar                                                  | `string`                      | 'square'  |
+| bgColor             | Background color                                                             | `string`                      | -         |
+| activeColor         | Active color                                                                 | `string`                      | -         |
+| inactiveColor       | Inactive color                                                               | `string`                      | -         |
+| safeAreaInsetBottom | Bottom safe area adaptation - mainly for iPhone X and later models           | `boolean`                     | true      |
+| iconSize            | Icon size                                                                    | `string`\|`number`            | -         |
+| fontSize            | Text size                                                                    | `string`\|`number`            | -         |
+| badgeProps          | Badge partial props                                                          | `HyBadgeProps`                | -         |
+| zIndex              | z-index level                                                                | `number`                      | 10086     |
+| customStyle         | Define external styles to be used                                            | `CSSProperties`               | -         |
+| customClass         | Custom external class name                                                   | `string`                      | -         |
 
 ### TabBarItem Props
 
-| Parameter | Description | Type | Default |
-| --- | --- | --- | --- |
-| icon | Icon | `string` | - |
-| title | Title | `string` | - |
-| name | Unique identifier | `string`\|`number` | - |
-| value | Badge display value; when the badge is a dot, `value` must be set to `true` or have a value | `string`\|`number`\|`boolean` | - |
+| Parameter | Description                                                                                  | Type                                  | Default |
+| --------- | -------------------------------------------------------------------------------------------- | ------------------------------------- | ------- |
+| icon      | Icon                                                                                         | `string`                              | -       |
+| title     | Title                                                                                        | `string`                              | -       |
+| name      | Unique identifier                                                                            | `string`\|`number`                    | -       |
+| value     | Badge display value; when the badge is a dot, value must be set to true or have a value      | `string`\|`number`\|`boolean`         | -       |
 
 ## Events
 
 ### TabBar Emits
 
-| Event Name | Description          | Callback Parameter |
-| ---------- | -------------------- | ------------------ |
-| change     | Update selected index | value: number     |
+| Event  | Description               | Callback        |
+| ------ | ------------------------- | --------------- |
+| change | Update selected index     | value: number   |
 
 ### TabBarGroup Emits
 
-| Event Name | Description          | Callback Parameter           |
-| ---------- | -------------------- | ---------------------------- |
-| change     | Update selected index | \{value: string \| number}   |
+| Event  | Description               | Callback                        |
+| ------ | ------------------------- | ------------------------------- |
+| change | Update selected index     | \{value: string \| number}      |
 
 ## Slots
 
@@ -191,9 +191,10 @@ The tabBar icon slot has no effect in mini programs
 
 :::
 
-| Slot Name | Description | Accepted Value |
-| --------- | ----------- | -------------- |
-| icon      | Icon slot   | -              |
+| Slot Name | Description                          | Accepted Value |
+| --------- | ------------------------------------ | -------------- |
+| icon      | Icon slot                            | -              |
+| default   | Default slot for custom content      | -              |
 
 ### TabBarItem Slots
 
@@ -203,7 +204,7 @@ The tabBar icon slot has no effect in mini programs
 
 ### Typings
 
-::: details Type Description
+::: details Type Definitions
 
 ```ts
 export interface TabBarItem {
@@ -212,7 +213,7 @@ export interface TabBarItem {
      * */
     name: string;
     /**
-     * icon or image
+     * Icon or image
      * */
     icon: string;
     /**
@@ -228,30 +229,36 @@ export interface TabBarItem {
 
 #### hy-tabbar
 
-| Variable                     | Description      | Default                                    |
-| ---------------------------- | ---------------- | ------------------------------------------ |
-| `--hy-tabbar-height`         | Height           | `60px` (automatically adds bottom safe area) |
-| `--hy-tabbar-radius`         | Top border radius | `15rpx 15rpx 0 0`                          |
-| `--hy-tabbar-padding`        | Padding          | `0 20rpx`                                  |
-| `--hy-tabbar-item-width`     | Item width       | `60px`                                     |
-| `--hy-tabbar-indicator-size` | Indicator size   | `50px`                                     |
-| `--hy-tabbar-circle-size`    | Raised circle size | `40px`                                   |
+| Variable Name                 | Description                 | Default                                           |
+| ----------------------------- | --------------------------- | ------------------------------------------------- |
+| `--hy-tabbar-height`          | Height                      | `60px` (automatically adds bottom safe area)      |
+| `--hy-tabbar-radius`          | Top border radius           | `15rpx 15rpx 0 0`                                 |
+| `--hy-tabbar-padding`         | Padding                     | `0 20rpx`                                         |
+| `--hy-tabbar-item-width`      | Item width                  | `60px`                                            |
+| `--hy-tabbar-indicator-size`  | Indicator size              | `50px`                                            |
+| `--hy-tabbar-circle-size`     | Protruding circle size      | `40px`                                            |
+| `--hy-tabbar-background`      | Bottom bar background color | Follows `--hy-background--container`              |
+| `--hy-tabbar-primary`         | Primary color               | Follows `--hy-primary`                            |
 
 #### hy-tabbar-group
 
-| Variable                     | Description                 | Default                                  |
-| ---------------------------- | --------------------------- | ---------------------------------------- |
-| `--hy-tabbar-group-height`   | Height                      | `100rpx`                                 |
-| `--hy-tabbar-group-z-index`  | Z-index                     | `500`                                    |
-| `--hy-tabbar-group-radius`   | Capsule mode border radius  | Follows `--hy-radius-semicircle` (100px) |
-| `--hy-tabbar-group-border`   | Top border                  | Follows `--hy-border-line`               |
+| Variable Name                      | Description                        | Default                                              |
+| ---------------------------------- | ---------------------------------- | ---------------------------------------------------- |
+| `--hy-tabbar-group-height`         | Height                             | `100rpx`                                             |
+| `--hy-tabbar-group-z-index`        | Z-index level                      | `500`                                                |
+| `--hy-tabbar-group-radius`         | Capsule mode border radius         | Follows `--hy-radius-semicircle` (100px)             |
+| `--hy-tabbar-group-border`         | Top border                         | Follows `--hy-border-line`                           |
+| `--hy-tabbar-group-background`     | Bottom bar background color        | Follows `--hy-background--container`                 |
+| `--hy-tabbar-group-circle-margin`  | Capsule mode horizontal margin     | Follows `--hy-border-margin-padding-lg`              |
+| `--hy-tabbar-group-shadow-base`    | Base shadow                        | Follows `--hy-shadow-base`                           |
 
 #### hy-tabbar-item
 
-| Variable                           | Description      | Default                             |
-| ---------------------------------- | ---------------- | ----------------------------------- |
-| `--hy-tabbar-item-icon-size`       | Icon size        | `40rpx`                             |
-| `--hy-tabbar-item-title-font-size` | Title font size  | Follows `--hy-font-size-sm` (24rpx) |
-| `--hy-tabbar-item-inactive-color`  | Inactive color   | Follows `--hy-text-color--grey`     |
+| Variable Name                      | Description       | Default                                 |
+| ---------------------------------- | ----------------- | --------------------------------------- |
+| `--hy-tabbar-item-icon-size`       | Icon size         | `40rpx`                                 |
+| `--hy-tabbar-item-title-font-size` | Title font size   | Follows `--hy-font-size-sm` (24rpx)     |
+| `--hy-tabbar-item-inactive-color`  | Inactive color    | Follows `--hy-text-color--grey`         |
+| `--hy-tabbar-item-primary`         | Primary color     | Follows `--hy-primary`                  |
 
 <demo-model url="pages-design/tabBar/tabBar"></demo-model>

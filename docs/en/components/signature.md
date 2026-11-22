@@ -12,15 +12,15 @@
 
 ::: warning Notes
 
-- If the exported image is blurry, you can set exportScale to 2 or higher.
+- If the exported image looks blurry, you can set exportScale to 2 or higher.
 
 :::
 
 ### 1. Unable to Draw Inside a Popup
 
-::: warning Reason
+::: warning Cause
 
-- When used inside a popup in the WeChat Mini Program, the component's `onMounted` may have already executed before the popup is opened, which causes initialization to fail. You need to call the initialization method again after the popup opens:
+- When used inside a popup in the WeChat Mini Program, the component's `onMounted` may have already executed before the popup is opened, causing initialization to fail. You need to call the initialization method again after the popup opens:
 
 :::
 
@@ -52,8 +52,8 @@ const onOpen = () => {
 
 ### Customizing the Pen
 
-- Set `lineWidth` to configure the stroke width
-- Set `pen-color` to configure the stroke color
+- Set the stroke width via `lineWidth`
+- Set the stroke color via `pen-color`
 
 ```html
 <template>
@@ -63,7 +63,7 @@ const onOpen = () => {
 
 ### History Operations
 
-- Set `enableHistory` to control whether history operations are available
+- Use `enableHistory` to control whether history operations are available
 
 ```html
 <template>
@@ -71,12 +71,12 @@ const onOpen = () => {
 </template>
 ```
 
-### Customizing Pressure Parameters
+### Custom Pen Pressure Parameters
 
-- Enable pressure mode with `pressure` to simulate real handwriting. In pressure mode, the stroke width varies with writing speed.
-- `min-width`: minimum stroke width, i.e., the line thickness when writing quickly
-- `max-width`: maximum stroke width, i.e., the line thickness when writing slowly
-- `min-speed`: speed threshold, used to adjust the pressure sensitivity
+- Enable pen pressure mode via `pressure` to simulate real handwriting. In pen pressure mode, stroke thickness varies with writing speed.
+- `min-width`: the minimum stroke width, i.e., line thickness when writing quickly
+- `max-width`: the maximum stroke width, i.e., line thickness when writing slowly
+- `min-speed`: the speed threshold, used to adjust pressure sensitivity
 
 ```html
 <template>
@@ -103,7 +103,7 @@ const onOpen = () => {
                     @click="restore"
                     :disabled="currentStep >= historyList.length"
                 >
-                    Redo
+                    Restore
                 </hy-button>
                 <hy-button size="small" plain @click="clear">Clear</hy-button>
                 <hy-button size="small" @click="confirm">Confirm</hy-button>
@@ -138,7 +138,7 @@ You can implement a landscape signature page by configuring the page's `pageOrie
                             Undo
                         </hy-button>
                         <hy-button size="small" plain @click="restore" :disabled="!canRedo">
-                            Redo
+                            Restore
                         </hy-button>
                         <hy-button size="small" plain @click="clear">Clear</hy-button>
                         <hy-button size="small" type="primary" @click="confirm">Done</hy-button>
@@ -206,58 +206,65 @@ onMounted(() => {
 
 ### Signature Props
 
-| Prop             | Description                                | Type               | Default |
-| ---------------- | ------------------------------------------ | ------------------ | ------- |
-| pen-color        | Signature pen color                        | `string`           | #000000 |
-| line-width       | Signature pen width                        | `number`           | 3       |
-| height           | Canvas height; numbers default to px       | `number`\|`string` | -       |
-| width            | Canvas width; numbers default to px        | `number`\|`string` | -       |
-| clear-text       | Text of the clear button                   | `string`           | -       |
-| confirm-text     | Text of the confirm button                 | `string`           | -       |
-| file-type        | Exported image type                        | `string`           | png     |
-| quality          | Exported image quality (0-1)               | `number`           | 1       |
-| export-scale     | Scale ratio of the exported image          | `number`           | 1       |
-| disabled         | Whether to disable the signature board     | `boolean`          | false   |
-| background-color | Background color of the canvas board       | `string`           | -       |
-| disable-scroll   | Whether to disable canvas scrolling        | `boolean`          | true    |
-| enable-history   | Whether to enable history records          | `boolean`          | false   |
-| step             | History record step size                   | `number`           | 1       |
-| pressure         | Whether to enable pressure mode            | `boolean`          | false   |
-| min-width        | Minimum width in pressure mode             | `number`           | 2       |
-| max-width        | Maximum width in pressure mode             | `number`           | 6       |
-| min-speed        | Speed threshold in pressure mode           | `number`           | 1.5     |
+| Parameter        | Description                                  | Type               | Default |
+| ---------------- | -------------------------------------------- | ------------------ | ------- |
+| penColor        | Color of the signature pen                   | `string`           | #000000 |
+| lineWidth       | Width of the signature pen                   | `number`           | 3       |
+| height          | Canvas height, numbers default to px         | `number`\|`string` | -       |
+| width           | Canvas width, numbers default to px          | `number`\|`string` | -       |
+| fileType        | Exported image type                          | `string`           | png     |
+| quality         | Exported image quality (0-1)                 | `number`           | 1       |
+| exportScale     | Scale ratio of the exported image            | `number`           | 1       |
+| disabled        | Whether to disable the signature board       | `boolean`          | false   |
+| backgroundColor | Background color of the canvas board         | `string`           | -       |
+| disableScroll   | Whether to disable canvas scrolling          | `boolean`          | true    |
+| enableHistory   | Whether to enable history records            | `boolean`          | false   |
+| step            | History record step size                     | `number`           | 1       |
+| pressure        | Whether to enable pen pressure mode          | `boolean`          | false   |
+| minWidth        | Minimum width in pen pressure mode           | `number`           | 2       |
+| maxWidth        | Maximum width in pen pressure mode           | `number`           | 6       |
+| minSpeed        | Speed threshold in pen pressure mode         | `number`           | 1.5     |
+| clearText       | Text of the clear button                     | `string`           | Clear   |
+| confirmText     | Text of the confirm button                   | `string`           | Confirm |
+| restoreText     | Text of the restore button                   | `string`           | Restore |
+| revokeText      | Text of the undo button                      | `string`           | Undo    |
+| round           | Border radius                                | `string`           | 10rpx   |
+| customClass     | Custom external class name                   | `string`           | -       |
+| customStyle     | Custom external styles                       | `CSSProperties`    | -       |
 
 ### Events
 
-| Event   | Description                              | Callback Parameters     |
-| ------- | ---------------------------------------- | ----------------------- |
-| start   | Triggered when signing starts            | event: TouchEvent       |
-| end     | Triggered when signing ends              | event: TouchEvent       |
-| signing | Triggered during signing                 | event: TouchEvent       |
+| Event   | Description                            | Callback Parameters   |
+| ------- | -------------------------------------- | --------------------- |
+| start   | Triggered when signing starts          | event: TouchEvent     |
+| end     | Triggered when signing ends            | event: TouchEvent     |
+| signing | Triggered during signing               | event: TouchEvent     |
 | confirm | Triggered when the signature is confirmed | result: SignatureResult |
-| clear   | Triggered when the signature is cleared  | -                       |
+| clear   | Triggered when the signature is cleared   | -                     |
 
 ### Methods
 
-| Name    | Description             | Parameters            |
-| ------- | ----------------------- | --------------------- |
+| Name    | Description                | Parameters            |
+| ------- | -------------------------- | --------------------- |
 | init    | Initialize the signature board | forceUpdate?: boolean |
-| confirm | Confirm the signature   | -                     |
-| clear   | Clear the signature     | -                     |
-| restore | Redo the previous step  | -                     |
-| revoke  | Undo the previous step  | -                     |
+| confirm | Confirm the signature      | -                     |
+| clear   | Clear the signature        | -                     |
+| restore | Restore the previous step  | -                     |
+| revoke  | Undo the previous step     | -                     |
 
 ### Slots
 
-| Slot   | Description         | Received Values                                                |
-| ------ | ------------------- | -------------------------------------------------------------- |
-| footer | Custom bottom buttons | clear, confirm, restore, revoke, currentStep, historyList     |
+| Slot   | Description          | Received Values                                          |
+| ------ | -------------------- | -------------------------------------------------------- |
+| footer | Custom bottom buttons | clear, confirm, restore, revoke, currentStep, historyList |
 
 ### CSS Variables
 
-| Variable                | Description                    | Default                            |
-| ----------------------- | ------------------------------ | ---------------------------------- |
+| Variable | Description | Default |
+| --- | --- | --- |
 | `--hy-signature-radius` | Border radius of the canvas area | Follows `--hy-radius-base` (20rpx) |
-| `--hy-signature-border` | Border of the canvas area        | Follows `--hy-border-line`         |
+| `--hy-signature-border` | Border of the canvas area | Follows `--hy-border-line` |
+| `--hy-signature-content-background` | Background color of the canvas area | Follows `--hy-background--3` |
+| `--hy-signature-footer-margin-top` | Top margin of the bottom action bar | Follows `--hy-border-margin-padding-base` |
 
 <demo-model url="pages-design/signature/signature"></demo-model>

@@ -1,21 +1,21 @@
 # Divider Component
 
-> A divider used to separate content, typically used at the bottom of a page as a "no more" hint
+> A divider line for separating content, typically used for the "No more" prompt at the bottom of a page
 
-## :pushpin: Platform Differences
+## :pushpin:Platform Compatibility Notes
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ------------------- | ------------------- |
-| ✔        | ✔   | ✔                   | ✔                   |
+| -------- | --- | ---------- | ------------ |
+| ✔        | ✔   | ✔          | ✔            |
 
-## :japanese_castle: Basic Usage Examples
+## :japanese_castle:Basic Usage Examples
 
 ```html
 <!-- Global usage -->
 <hy-divider text="Divider"></hy-divider>
 ```
 
-### Set Dashed Line
+### Setting a Dashed Line
 
 - Use `dashed` to specify a dashed line
 
@@ -25,20 +25,20 @@
 </template>
 ```
 
-### Set Hairline
+### Setting a Hairline
 
 - Use `hairline` to specify a thin line
 
 ```html
 <template>
-    <!-- Thin line -->
+    <!--Thin line-->
     <hy-divider text="Moonset" hairline></hy-divider>
-    <!-- Thick line -->
+    <!--Thick line-->
     <hy-divider text="Moonset" :hairline="false"></hy-divider>
 </template>
 ```
 
-### Replace Text with a Dot
+### Replacing Text with a Dot
 
 - Use `dot` to replace the text with a dot
 
@@ -48,9 +48,9 @@
 </template>
 ```
 
-### Set Text Alignment (Left/Right)
+### Setting Text Alignment
 
-- Use `textPosition` to specify the text alignment
+- Use `textPosition` to align the text to the left or right
     - `left`: text aligned to the left
     - `center`: text centered (default)
     - `right`: text aligned to the right
@@ -62,7 +62,7 @@
 </template>
 ```
 
-### Set Text Color and Line Color
+### Setting Text Color and Line Color
 
 - Use `textColor` and `lineColor` to specify the text color and line color
 
@@ -76,37 +76,32 @@
 
 ### Divider Props
 
-| Parameter | Description | Type | Default |
+| Parameter | Description | Type | Default Value |
 | --- | --- | --- | --- |
 | text | Text content | `string`\|`loadMore`\| `loading`\|`noMore` | - |
 | dashed | Whether to use a dashed line | `boolean` | false |
-| hairline | Whether to use a thin line | `boolean` | true |
-| dot | Whether to replace the text with a dot; takes precedence over the text field | `boolean` | false |
+| hairline | Whether to use a thin line (hairline) | `boolean` | true |
+| dot | Whether to replace the text with a dot, takes precedence over the text field | `boolean` | false |
 | textPosition | Position of the text content | `center`\|`left`\|`right` | center |
-| textSize | Text size; numeric values default to px | `string` \| `number` | 14 |
+| textSize | Text size, default unit is px for numeric values | `string` \| `number` | 14 |
 | textColor | Text color | `string` | #909399 |
 | lineColor | Line color | `string` | #dcdfe6 |
-| loadingIcon | Icon for the loading state | `string` | LOADING |
-| loadMoreText | Prompt before loading | `string` | Load more |
-| loadingText | Loading prompt | `string` | Loading... |
-| noMoreText | "No more" prompt | `string` | No more data |
-| marginTop | Distance from the previous element; numeric values default to px | `string` \| `number` | 0 |
-| marginBottom | Distance from the next element; numeric values default to px | `string` \| `number` | 0 |
-| customStyle | Custom external styles to apply | `CSSProperties` | - |
+| loadMoreText | Prompt text before loading | `string` | Load more |
+| loadingText | Prompt text while loading | `string` | Loading... |
+| noMoreText | Prompt text when there is no more data | `string` | No more data |
+| marginTop | Distance from the previous element, default unit is px for numeric values | `string` \| `number` | 0 |
+| marginBottom | Distance from the next element, default unit is px for numeric values | `string` \| `number` | 0 |
+| customStyle | Custom external styles to be applied | `CSSProperties` | - |
 | customClass | Custom external class name | `string` | - |
-
-### Events
-
-| Event Name | Description | Callback Parameters |
-| ---------- | ----------- | ------------------- |
-| click      | Click event | -                   |
 
 ### CSS Variables
 
-| Variable Name                | Description       | Default                            |
-| ---------------------------- | ----------------- | ---------------------------------- |
-| `--hy-divider-min-height`    | Minimum height    | `35px`                             |
-| `--hy-divider-text-color`    | Text/dot color    | Follows `--hy-text-color--3`       |
-| `--hy-divider-dot-font-size` | Dot font size     | Follows `--hy-font-size-sm` (24rpx) |
+| Variable Name                | Description     | Default Value                        |
+| ---------------------------- | -------------- | ------------------------------------ |
+| `--hy-divider-min-height`    | Minimum height | `35px`                               |
+| `--hy-divider-text-color`    | Text/dot color | Follows `--hy-text-color--3`            |
+| `--hy-divider-dot-font-size` | Dot font size  | Follows `--hy-font-size-sm` (24rpx)    |
+| `--hy-divider-dot-margin`    | Dot left/right margin | Follows `--hy-border-margin-padding-sm` |
+| `--hy-divider-text-margin`   | Text left/right margin | Follows `--hy-border-margin-padding-sm` |
 
 <demo-model url="pages-design/divider/divider"></demo-model>

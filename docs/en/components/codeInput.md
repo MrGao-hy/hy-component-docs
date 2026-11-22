@@ -1,21 +1,21 @@
 # CodeInput Verification Code Input Component
 
-> This component is typically used in scenarios where a user's SMS verification code needs to be verified, and it can also be used in combination with Hy's keyboard component
+> This component is generally used in scenarios where a user's SMS verification code needs to be verified. It can also be used together with Hy's keyboard component
 
-## :pushpin: Platform Differences
+## :pushpin: Platform Compatibility
 
 | APP(vue) | H5  | WeChat Mini Program | Alipay Mini Program |
-| -------- | --- | ---------- | ------------ |
-| ✔        | ✔   | ✔          | ✔            |
+| -------- | --- | ------------------- | ------------------- |
+| ✔        | ✔   | ✔                   | ✔                   |
 
 ## :warning: Notes
 
 ::: warning Notes
 
 - When `disabledKeyboard` is set to `true`, tapping the input box will not bring up the system keyboard, making it suitable for use with a custom keyboard
-- When the `dot` parameter is set to `true`, the entered content will be displayed as dots, but the event callbacks will return the real value
-- `mode` supports two modes: `box` (box mode) and `line` (bottom line mode)
-- The `disabledDot` parameter controls whether entering a decimal point is disabled; it defaults to `true` (input disabled)
+- When the `dot` parameter is set to `true`, the entered content is displayed as dots, but event callbacks still return the real value
+- `mode` supports two modes: `box` (box mode) and `line` (bottom underline mode)
+- The `disabledDot` parameter controls whether entering the decimal point is disabled; the default is `true` (input disabled)
 
 :::
 
@@ -47,7 +47,7 @@
 </script>
 ```
 
-### Cell Spacing
+### Box Spacing
 
 ```html
 <template>
@@ -147,7 +147,7 @@
 
 ### Working with a Custom Keyboard
 
-When a custom keyboard is needed, set `disabledKeyboard` to `true` to prevent conflicts between the system keyboard and the custom keyboard. The custom keyboard opens automatically when the input box is tapped and gains focus.
+When you need to use a custom keyboard, set `disabledKeyboard` to `true` to prevent the system keyboard from conflicting with the custom keyboard. The custom keyboard opens automatically when the input box is tapped and gains focus.
 
 ```html
 <template>
@@ -171,13 +171,13 @@ When a custom keyboard is needed, set `disabledKeyboard` to `true` to prevent co
             @delete="handleKeyboardDelete"
             @close="handleCloseKeyboard"
         >
-            <!-- Simulates the verification code auto-fill suggestion bar of the system keyboard: reads the clipboard when the keyboard is brought up, and fills the code with one tap -->
+            <!-- Simulates the verification code auto-fill suggestion bar of the system keyboard: reads the clipboard when the keyboard is brought up, and fills in the code with one tap -->
             <template #title>
                 <view v-if="clipboardCode" class="hy-code-suggestion" @click="handleFillCode">
                     <hy-icon name="message" size="14"></hy-icon>
-                    <text class="hy-code-suggestion__label">Clipboard Code</text>
+                    <text class="hy-code-suggestion__label">Clipboard verification code</text>
                     <text class="hy-code-suggestion__code">{{ clipboardCode }}</text>
-                    <text class="hy-code-suggestion__fill">Tap to Fill</text>
+                    <text class="hy-code-suggestion__fill">Tap to fill</text>
                 </view>
             </template>
         </hy-keyboard>
@@ -193,18 +193,19 @@ When a custom keyboard is needed, set `disabledKeyboard` to `true` to prevent co
     const clipboardCode = ref('');
 
     /**
-     * Brings up the custom keyboard and tries to read the verification code from the clipboard
-     * Simulates the auto-fill suggestion that appears above the keyboard in a real app after an SMS verification code is received
+     * Brings up the custom keyboard and tries to read the verification code from the clipboard.
+     * Simulates the auto-fill suggestion that appears above the keyboard in a real app
+     * after receiving an SMS verification code.
      */
     const handleOpenKeyboard = () => {
         showKeyboard.value = true;
         uni.getClipboardData({
             success: (res) => {
-                // Strip non-numeric characters and take the first 6 digits, e.g. "Your verification code is 123456, do not disclose it" -> "123456"
+                // Strip non-numeric characters and take the first 6 digits, e.g. "Your verification code is 123456, do not share it" -> "123456"
                 const code = String(res.data || '')
                     .replace(/\D/g, '')
                     .slice(0, 6);
-                // Do not show the suggestion bar again if the same verification code has already been filled in
+                // Don't show the suggestion bar again if the same code has already been filled in
                 clipboardCode.value = code && code !== keyboardValue.value ? code : '';
             },
             fail: () => {
@@ -214,7 +215,8 @@ When a custom keyboard is needed, set `disabledKeyboard` to `true` to prevent co
     };
 
     /**
-     * Simulates blur when the custom keyboard is closed, to avoid residual focus highlight
+     * Simulates blur in sync when closing the custom keyboard,
+     * to avoid a lingering focus highlight
      * */
     const handleCloseKeyboard = () => {
         showKeyboard.value = false;
@@ -222,13 +224,13 @@ When a custom keyboard is needed, set `disabledKeyboard` to `true` to prevent co
     };
 
     /**
-     * Taps the suggestion bar to fill in the verification code with one tap and collapse the keyboard
+     * Fills in the verification code with one tap from the suggestion bar and collapses the keyboard
      * */
     const handleFillCode = () => {
         keyboardValue.value = clipboardCode.value;
         clipboardCode.value = '';
         showKeyboard.value = false;
-        // Simulates blur to avoid residual focus highlight
+        // Simulate blur in sync to avoid a lingering focus highlight
         codeInputRef.value?.blur();
     };
 </script>
@@ -240,7 +242,7 @@ When a custom keyboard is needed, set `disabledKeyboard` to `true` to prevent co
         color: #909399;
     }
 
-    /* Verification code auto-fill suggestion bar (placed at the top of the keyboard, white capsule + light shadow, referencing the SMS verification code fill suggestion of the system keyboard) */
+    /* Verification code auto-fill suggestion bar (in the keyboard header, white capsule + light shadow, modeled after the system keyboard's SMS verification code fill suggestion) */
     .hy-code-suggestion {
         display: flex;
         align-items: center;
@@ -286,7 +288,7 @@ When a custom keyboard is needed, set `disabledKeyboard` to `true` to prevent co
     const value = ref('');
 
     const handleChange = (value) => {
-        console.log('Input content changed:', value);
+        console.log('Input changed:', value);
     };
 
     const handleFinish = (value) => {
@@ -309,7 +311,7 @@ When a custom keyboard is needed, set `disabledKeyboard` to `true` to prevent co
 
     const handleFocus = () => {
         console.log('Input box focused');
-        // A custom keyboard can be opened here
+        // You can open a custom keyboard here
     };
 
     const handleBlur = () => {
@@ -322,56 +324,59 @@ When a custom keyboard is needed, set `disabledKeyboard` to `true` to prevent co
 
 ### CodeInput Props
 
-| Parameter         | Description                                                | Type               | Default |
-| ----------------- | ---------------------------------------------------------- | ------------------ | ------- |
-| v-model           | Preset value                                               | `string`\|`number` | -       |
-| adjustPosition    | Whether the page is automatically pushed up when the keyboard pops up | `boolean` | true |
-| maxlength         | Number of characters to input                              | `number`           | 6       |
-| border            | Borderless input box                                       | `boolean`          | true    |
-| dot               | Whether to fill with dots                                  | `boolean`          | true    |
-| mode              | Mode selection, see the "Basic Usage" section above        | `box`\|`line`      | box     |
-| hairline          | Whether to use a hairline border                           | `boolean`          | false   |
-| space             | Distance between characters                                | `number`           | 10      |
-| focus             | Whether to automatically gain focus                        | `boolean`          | false   |
-| bold              | Whether the font and input line are bold                   | `boolean`          | false   |
-| color             | Font color                                                 | `string`           | -       |
-| fontSize          | Font size, in rpx                                          | `string`\|`number` | 18      |
+| Parameter         | Description                                                        | Type               | Default |
+| ----------------- | ------------------------------------------------------------------ | ------------------ | ------- |
+| v-model           | Preset value                                                       | `string`\|`number` | -       |
+| adjustPosition    | Whether to automatically push the page up when the keyboard pops up | `boolean`          | true    |
+| maxlength         | Number of characters to input                                      | `number`           | 6       |
+| border            | Borderless input box                                               | `boolean`          | true    |
+| dot               | Whether to fill with dots                                          | `boolean`          | true    |
+| mode              | Mode selection, see "Basic Usage" above for details                | `box`\|`line`      | box     |
+| hairline          | Whether to use a hairline border                                   | `boolean`          | false   |
+| space             | Spacing between characters                                         | `number`           | 10      |
+| focus             | Whether to automatically gain focus                                | `boolean`          | false   |
+| bold              | Whether the font and input line are bold                           | `boolean`          | false   |
+| color             | Font color                                                         | `string`           | -       |
+| fontSize          | Font size, unit rpx                                                | `string`\|`number` | 18      |
 | size              | Size of the input box, width equals height, numeric values default to px | `string`\|`number` | 35 |
-| disabledKeyboard  | Disable bringing up the system keyboard by tapping the input box | `boolean`    | false   |
-| borderColor       | Border and line color                                      | `string`           | -       |
-| disabledDot       | Whether to disable entering the "." symbol                 | `boolean`          | true    |
-| customStyle       | Custom external styles to be applied                       | `CSSProperties`    | -       |
-| customClass       | Custom external class name                                 | `string`           | -       |
+| disabledKeyboard  | Disable bringing up the system keyboard when the input box is tapped | `boolean`         | false   |
+| borderColor       | Border and line color                                              | `string`           | -       |
+| disabledDot       | Whether to disable entering the "." symbol                         | `boolean`          | true    |
+| customStyle       | Custom external styles to apply                                    | `CSSProperties`    | -       |
+| customClass       | Custom external class name                                         | `string`           | -       |
 
 ### Events
 
-| Event Name        | Description                                                            | Callback Parameters         |
-| ----------------- | ---------------------------------------------------------------------- | --------------------------- |
-| update:modelValue | Update value                                                           | value: the currently entered value |
-| click             | Triggered when the component is clicked                                | -                           |
-| change            | Triggered when the input content changes, see above for details        | value: the currently entered value |
-| finish            | Triggered when the number of entered characters reaches the maxlength value, see above for details | value: the currently entered value |
-| focus             | Triggered when the input box gains focus                               | -                           |
-| blur              | Triggered when the input box loses focus                               | -                           |
+| Event             | Description                                                                  | Callback Parameters     |
+| ----------------- | ---------------------------------------------------------------------------- | ----------------------- |
+| update:modelValue | Update value                                                                 | value: current input    |
+| click             | Triggered when the component is clicked                                      | -                       |
+| change            | Triggered when the input content changes, see above for details              | value: current input    |
+| finish            | Triggered when the number of input characters reaches the maxlength value, see above for details | value: current input |
+| focus             | Triggered when the input box gains focus                                     | -                       |
+| blur              | Triggered when the input box loses focus                                     | -                       |
 
 ### Methods
 
-| Method | Description                                                                                     | Parameters |
-| ------ | ----------------------------------------------------------------------------------------------- | ---------- |
-| blur   | Exposed blur method, allowing external code to simulate blur in scenarios such as closing a custom keyboard | - |
+| Method | Description                                                                                      | Parameters |
+| ------ | ------------------------------------------------------------------------------------------------ | ---------- |
+| blur   | Exposes a blur method, allowing external code to simulate blur in scenarios such as closing a custom keyboard | -  |
 
 ### CSS Variables
 
-| Variable Name                  | Description                          | Default                                |
-| ------------------------------ | ------------------------------------ | -------------------------------------- |
-| `--hy-code-input-font-size`    | Font size                            | `15px`                                 |
-| `--hy-code-input-dot-size`     | Password dot size                    | `7px`                                  |
-| `--hy-code-input-line-width`   | Underline width                      | `40px`                                 |
-| `--hy-code-input-text-color`   | Character color                      | Follows `--hy-icon-color`              |
-| `--hy-code-input-dot-radius`   | Password dot border radius           | Follows `--hy-radius-semicircle` (100px) |
-| `--hy-code-input-no-radius`    | Borderless mode border radius        | Follows `--hy-radius-sm` (8rpx)        |
-| `--hy-code-input-cursor-color` | Cursor color                         | Follows `--hy-text-color`              |
-| `--hy-code-input-line-radius`  | Underline border radius              | Follows `--hy-radius-semicircle` (100px) |
-| `--hy-code-input-border-color` | Default state border/line color      | Follows `--hy-border-color--2`         |
+| Variable                        | Description                          | Default                                    |
+| ------------------------------- | ------------------------------------ | ------------------------------------------ |
+| `--hy-code-input-font-size`     | Font size                            | `15px`                                     |
+| `--hy-code-input-dot-size`      | Password dot size                    | `7px`                                      |
+| `--hy-code-input-line-width`    | Underline width                      | `40px`                                     |
+| `--hy-code-input-text-color`    | Character color                      | Follows `--hy-icon-color`                  |
+| `--hy-code-input-dot-radius`    | Password dot border radius           | Follows `--hy-radius-semicircle` (100px)   |
+| `--hy-code-input-no-radius`     | Borderless mode border radius        | Follows `--hy-radius-sm` (8rpx)            |
+| `--hy-code-input-cursor-color`  | Cursor color                         | Follows `--hy-text-color`                  |
+| `--hy-code-input-line-radius`   | Underline border radius              | Follows `--hy-radius-semicircle` (100px)   |
+| `--hy-code-input-border-color`  | Default border/line color            | Follows `--hy-border-color--2`             |
+| `--hy-code-input-icon-color`    | Icon color                           | Follows `--hy-icon-color`                  |
+| `--hy-code-input-no-background` | Borderless mode cell background      | Follows `--hy-background--track`           |
+| `--hy-code-input-primary`       | Theme color                          | Follows `--hy-primary`                     |
 
 <demo-model url="pages-design/codeInput/codeInput"></demo-model>
