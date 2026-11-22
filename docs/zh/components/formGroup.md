@@ -313,6 +313,8 @@ const columns: FormColumnsType[] = reactive([
 
 ### FormGroup Slots
 
-| 插槽名 | 说明 | 接收值 | | --- | --- | --- | --- | | default | 默认插槽，用于自定义内容 | - |
+| 插槽名  | 说明                     | 接收值 |
+| ------- | ------------------------ | ------ |
+| default | 默认插槽，用于自定义内容 | -      |
 
 <demo-model url="pages-design/formGroup/formGroup"></demo-model>

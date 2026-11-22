@@ -29,12 +29,7 @@ const basicPage = ref<number>(5);
 
 ```html
 <template>
-    <hy-pagination
-        v-model="simplePage"
-        mode="simple"
-        :total="120"
-        :page-size="10"
-    ></hy-pagination>
+    <hy-pagination v-model="simplePage" mode="simple" :total="120" :page-size="10"></hy-pagination>
 </template>
 ```
 
@@ -127,27 +122,27 @@ const basicPage = ref<number>(5);
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+    import { ref } from 'vue';
 
-/** 自定义插槽：页码、上一页、下一页均通过插槽渲染 */
-const slotPage = ref<number>(3);
+    /** 自定义插槽：页码、上一页、下一页均通过插槽渲染 */
+    const slotPage = ref<number>(3);
 </script>
 
 <style scoped lang="scss">
-/* page 插槽示例：自定义页码字号与字重 */
-.pagination-slot__page {
-    font-size: 30rpx;
-    font-weight: 500;
+    /* page 插槽示例：自定义页码字号与字重 */
+    .pagination-slot__page {
+        font-size: 30rpx;
+        font-weight: 500;
 
-    &--active {
-        font-weight: 700;
+        &--active {
+            font-weight: 700;
+        }
     }
-}
 
-/* prev-text / next-text 插槽示例：用箭头替代默认文字 */
-.pagination-slot__arrow {
-    font-size: 32rpx;
-}
+    /* prev-text / next-text 插槽示例：用箭头替代默认文字 */
+    .pagination-slot__arrow {
+        font-size: 32rpx;
+    }
 </style>
 ```
 
@@ -173,18 +168,18 @@ const slotPage = ref<number>(3);
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+    import { ref } from 'vue';
 
-const customPage = ref<number>(1);
+    const customPage = ref<number>(1);
 </script>
 
 <style lang="scss">
-.pagination-custom {
-    /* 覆盖主题色、单元格圆角与轨道背景 */
-    --hy-pagination-primary: #1bbfe8;
-    --hy-pagination-radius: 44rpx;
-    --hy-pagination-background: transparent;
-}
+    .pagination-custom {
+        /* 覆盖主题色、单元格圆角与轨道背景 */
+        --hy-pagination-primary: #1bbfe8;
+        --hy-pagination-radius: 44rpx;
+        --hy-pagination-background: transparent;
+    }
 </style>
 ```
 
@@ -192,22 +187,22 @@ const customPage = ref<number>(1);
 
 ### Pagination Props
 
-| 参数         | 说明                                         | 类型                  | 默认值  |
-| ---------- | -------------------------------------------- | --------------------- | ------- |
-| v-model    | 当前页                                       | `number`              | 1       |
-| mode       | 分页模式                                     | `'simple' \| 'multi'` | `multi` |
-| totalPage  | 总页数，如果有total，则优先使用total计算页数 | `number`              | 1       |
-| pageCount  | 页码按钮数量，不含上一页、下一页与省略号     | `number`              | 5       |
-| showIcon   | 上一页、下一页是否使用图标                   | `boolean`             | false   |
-| showMessage | 是否展示总条数                               | `boolean`             | false   |
-| total      | 总条数                                       | `number`              | 0       |
-| pageSize   | 每页条数                                     | `number`              | 10      |
-| prevText   | 上一页文本                                   | `string`              | 上一页  |
-| nextText   | 下一页文本                                   | `string`              | 下一页  |
-| ellipsisText | 省略号文本                                   | `string`              | `...`   |
+| 参数          | 说明                                         | 类型                  | 默认值  |
+| ------------- | -------------------------------------------- | --------------------- | ------- |
+| v-model       | 当前页                                       | `number`              | 1       |
+| mode          | 分页模式                                     | `'simple' \| 'multi'` | `multi` |
+| totalPage     | 总页数，如果有total，则优先使用total计算页数 | `number`              | 1       |
+| pageCount     | 页码按钮数量，不含上一页、下一页与省略号     | `number`              | 5       |
+| showIcon      | 上一页、下一页是否使用图标                   | `boolean`             | false   |
+| showMessage   | 是否展示总条数                               | `boolean`             | false   |
+| total         | 总条数                                       | `number`              | 0       |
+| pageSize      | 每页条数                                     | `number`              | 10      |
+| prevText      | 上一页文本                                   | `string`              | 上一页  |
+| nextText      | 下一页文本                                   | `string`              | 下一页  |
+| ellipsisText  | 省略号文本                                   | `string`              | `...`   |
 | hideIfOnePage | 总页数只有一页时是否隐藏                     | `boolean`             | true    |
-| customStyle | 定义需要用到的外部样式                       | `CSSProperties`       | -       |
-| customClass | 自定义外部类名                               | `string`              | -       |
+| customStyle   | 定义需要用到的外部样式                       | `CSSProperties`       | -       |
+| customClass   | 自定义外部类名                               | `string`              | -       |
 
 ### Events
 

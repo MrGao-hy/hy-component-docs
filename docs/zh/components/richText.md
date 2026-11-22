@@ -271,22 +271,22 @@ export default `<title>富文本示例</title>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+    import { ref } from 'vue';
 
-const richTextRef = ref();
+    const richTextRef = ref();
 
-/** 在尾部追加一段 html */
-const onAppend = () => {
-    richTextRef.value?.setContent('<p>追加的内容</p>', true);
-};
+    /** 在尾部追加一段 html */
+    const onAppend = () => {
+        richTextRef.value?.setContent('<p>追加的内容</p>', true);
+    };
 
-/** 获取纯文本内容与内容尺寸 */
-const onQuery = () => {
-    console.log(richTextRef.value?.getText());
-    richTextRef.value?.getRect().then((rect) => {
-        console.log(rect.width, rect.height);
-    });
-};
+    /** 获取纯文本内容与内容尺寸 */
+    const onQuery = () => {
+        console.log(richTextRef.value?.getText());
+        richTextRef.value?.getRect().then((rect) => {
+            console.log(rect.width, rect.height);
+        });
+    };
 </script>
 ```
 
@@ -294,35 +294,35 @@ const onQuery = () => {
 
 ### RichText Props
 
-| 参数           | 说明                                             | 类型                               | 默认值 |
-| -------------- | ------------------------------------------------ | ---------------------------------- | ------ |
-| content        | 用于渲染的 html 字符串                           | `string`                           | `''`   |
-| containerStyle | 容器的样式                                       | `string`                           | `''`   |
-| domain         | 主域名，用于拼接链接                             | `string`                           | `''`   |
-| selectable     | 是否开启长按复制（传入 `'force'` 可在 iOS 强制开启） | `boolean \| string`           | false  |
-| setTitle       | 是否将 title 标签的内容设置到页面标题           | `boolean \| string`                | true   |
-| tagStyle       | 标签的默认样式                                   | `Record<string, string>`           | `{}`   |
-| customClass    | 自定义外部类名                                   | `string`                           | `''`   |
-| customStyle    | 定义需要用到的外部样式                           | `string \| Record<string, string>` | `''`   |
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| content | 用于渲染的 html 字符串 | `string` | `''` |
+| containerStyle | 容器的样式 | `string` | `''` |
+| domain | 主域名，用于拼接链接 | `string` | `''` |
+| selectable | 是否开启长按复制（传入 `'force'` 可在 iOS 强制开启） | `boolean \| string` | false |
+| setTitle | 是否将 title 标签的内容设置到页面标题 | `boolean \| string` | true |
+| tagStyle | 标签的默认样式 | `Record<string, string>` | `{}` |
+| customClass | 自定义外部类名 | `string` | `''` |
+| customStyle | 定义需要用到的外部样式 | `string \| Record<string, string>` | `''` |
 
 ## Events
 
-| 事件名 | 说明                                     | 回调参数                                        |
-| ------ | ---------------------------------------- | ----------------------------------------------- |
-| load   | dom 结构加载完毕时触发                   | -                                               |
-| ready  | 渲染高度稳定后触发（350ms 内高度无变化） | `rect: Partial<HyRichTextRect>`，内容大小与位置 |
-| click  | 容器被点击时触发                         | -                                               |
-| tap    | 容器被点击时触发                         | -                                               |
+| 事件名 | 说明 | 回调参数 |
+| --- | --- | --- |
+| load | dom 结构加载完毕时触发 | - |
+| ready | 渲染高度稳定后触发（350ms 内高度无变化） | `rect: Partial<HyRichTextRect>`，内容大小与位置 |
+| click | 容器被点击时触发 | - |
+| tap | 容器被点击时触发 | - |
 
 ### Methods
 
 通过 `ref` 获取组件实例后可调用以下方法。
 
-| 方法名     | 说明                                        | 类型                                           |
-| ---------- | ------------------------------------------- | ---------------------------------------------- |
-| setContent | 设置内容，`append` 为 `true` 时在尾部追加   | `(content: string, append?: boolean) => void`  |
-| getText    | 获取文本内容                                | `(nodes?: any[]) => string`                    |
-| getRect    | 获取内容大小和位置                          | `() => Promise<HyRichTextRect>`                |
+| 方法名 | 说明 | 类型 |
+| --- | --- | --- |
+| setContent | 设置内容，`append` 为 `true` 时在尾部追加 | `(content: string, append?: boolean) => void` |
+| getText | 获取文本内容 | `(nodes?: any[]) => string` |
+| getRect | 获取内容大小和位置 | `() => Promise<HyRichTextRect>` |
 
 `HyRichTextRect` 结构：
 
