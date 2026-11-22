@@ -187,6 +187,7 @@
                     { "text": "Parse", "link": "/en/components/parse" },
                     { "text": "Qrcode", "link": "/en/components/qrcode" },
                     { "text": "ReadMore", "link": "/en/components/readMore" },
+                    { "text": "RichText", "link": "/components/richText" },
                     { "text": "ScrollList", "link": "/en/components/scrollList" },
                     { "text": "Swiper", "link": "/en/components/swiper" },
                     { "text": "Table", "link": "/en/components/table" },

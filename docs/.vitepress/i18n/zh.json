@@ -142,7 +142,7 @@
                     { "text": "Empty 空状态", "link": "/components/empty" },
                     { "text": "LineProgress 线形进度条", "link": "/components/lineProgress" },
                     { "text": "Loading 加载动画", "link": "/components/loading" },
-                    { "text": "RollingNum 滚动数字", "link": "/components/rollingNum" },
+                    { "text": "RollingNum 翻牌数字", "link": "/components/rollingNum" },
                     { "text": "Skeleton 骨架屏", "link": "/components/skeleton" }
                 ]
             },
